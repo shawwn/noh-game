@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nome"
+	
+	icon="icon.tga"
+	
+	passiveeffect="state.effect"
+	
+	effecttype="StatusBuff"
+>
+	<onframe />
+	
+	<onactivatepreimpact>
+		<setvar0 a="0.25" b="combat_manacost" op="mult" />
+		<heal a="var0" target="source_entity" />
+	</onactivatepreimpact>
+	
+	<modifier key="manaregen_aura" modpriority="100" exclusive="true"
+		manaregen="1"
+	/>
+	
+	<modifier key="armor_aura" modpriority="4" exclusive="true"
+		armor="4"
+	/>
+</state>

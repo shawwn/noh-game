@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Ophelia_Ability2"
+
+	radius="400"
+	impactdelay="5700,4700,3700,2700"
+	lifetime="6000,5000,4000,3000"
+	targetselection="all"
+	targetscheme="ally_units"
+	maximpactspertarget="1"
+	effect="effects/area.effect"
+>
+	
+	
+	<onimpact>
+		
+		<condition test="hasstate State_Ophelia_Ability2">
+			<teleport source="target_entity" target="proxy_position" interpolate="false" />
+			<disjoint target="target_entity" />
+			<playeffect effect="effects/teleport_impact.effect" source="target_entity"/>
+		</condition>
+	</onimpact>
+	
+</affector>

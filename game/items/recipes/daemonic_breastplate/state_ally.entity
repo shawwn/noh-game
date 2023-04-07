@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DaemonicBreastplate_Ally"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="state_ally.effect"
+	
+	armor="5"
+	attackspeed="0.15"
+	
+	effecttype="StatusBuff"
+>
+</state>

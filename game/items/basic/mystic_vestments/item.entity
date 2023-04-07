@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_MysticVestments"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="400"
+	
+	actiontype="passive"
+>
+	<modifier key="magic_armor" modpriority="5" exclusive="true"
+		magicarmor="5"
+	/>
+</item>

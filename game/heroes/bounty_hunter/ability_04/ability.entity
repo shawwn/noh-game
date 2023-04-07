@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_BountyHunter4"
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_BountyHunter_Ability4"
+	
+	anim="ability_1"
+	casttime="800"
+	castactiontime="300"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	casteffecttype="Magic"
+	targetscheme="enemy_heroes"
+	
+	manacost="70,60,50"
+	cooldowntime="10000,7000,5000"
+	
+	range="750,950,1150"
+>
+	<onimpact >
+		<applystate name="State_BountyHunter_Ability4" duration="30000" proxy="source_entity" />
+	</onimpact>
+</ability>

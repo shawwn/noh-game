@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vanya_Ability1"
+
+	
+	
+	icon="icon.tga"
+	effecttype="StatusBuff"
+	passiveeffect="effects/selfstate.effect"
+	basedamagemultiplier="0.7,0.9,1.1,1.3"
+>
+	<onframe />
+	<onattackimpact >
+		<applystate name="State_Vanya_Ability_1_Target" duration="2500"/>
+	</onattackimpact>
+</state>

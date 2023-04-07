@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_TowerGuardian2"
+	
+	icon="icon.tga"
+	
+	anim="ability_2"
+	casttime="5000"
+	castactiontime="0"
+	casteffect="effects/cast.effect"
+
+
+	actiontype="target_entity"
+	targetscheme="other_bosses"
+	casteffecttype=""
+	manacost="200"
+	cooldowntime="10000"
+	ischanneling="true"
+	channelrange="700"
+	
+	range="600"
+	
+>
+	<onchannelstart>
+		<applystate name="State_TowerGuardian_Ability2_Self" target="source_entity" proxy="proxy_entity" ischannel="true" />
+		<applystate name="State_TowerGuardian_Ability2" target="proxy_entity" proxy="source_entity" ischannel="true" />
+		<applystate name="State_TowerGuardian_Ability2_Other_effects" target="proxy_entity" proxy="source_entity" ischannel="true" />
+	</onchannelstart>
+	
+
+
+	<onframe>
+		<condition test="proxy_entity == 0">
+			<setproxy searchfortarget="true" searchorigin="source_entity" radius="1500" targetscheme="other_bosses" ignoreinvulnerable="true" />
+		</condition>
+		<condition test="proxy_entity != 0">
+			<condition test="not_target_type dead" target="proxy_entity">
+				<condition test="not_target_type corpse" target="proxy_entity">
+					<condition test="target_health_percent lt 0.6" target="proxy_entity">
+						<canactivate>
+							<useability target="proxy_entity"/>
+						</canactivate>
+					</condition>
+				</condition>
+			</condition>
+		</condition>
+	</onframe>
+
+</ability>

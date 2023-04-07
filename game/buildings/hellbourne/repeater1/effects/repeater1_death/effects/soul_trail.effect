@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="soul_trail" deferred="true">
+
+<definitions>
+	<particlesystem name="system0" space="world">
+	
+		<trailemitter
+
+			bone="_bone_fx_spirit"
+			spawnrate="100"
+			particlelife="700"
+			texpostime="700"
+		 	texposscale="0.0"
+		 	texstretchscale="1.0"
+			material="/shared/effects/materials/soul_trail.material"
+		>
+			<particle 
+
+				startcolor="0 0 0"
+				midcolor=".15 .4 .7"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				
+				startsize="10"
+				endsize="2" />		
+		</trailemitter>			
+
+
+
+	</particlesystem>
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

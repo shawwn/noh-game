@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chronos_Ability3"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype="StatusDebuff"
+	agilitypercharge="-1,-1,-2,-3"
+>
+	<oninflict>
+		<addcharges count="1" timed="true" />
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" timed="true" />
+	</onrefresh>
+
+</state>

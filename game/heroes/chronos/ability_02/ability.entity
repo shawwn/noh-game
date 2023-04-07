@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Chronos2"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+>
+	<ondamaged >
+		<chance threshold="0.10,0.15,0.20,0.25">
+			<heal target="source_entity" a="source_damage" b="1.0" op="mult" />
+			<canactivate>
+				<playeffect effect="ability.effect" source="source_entity" target="" />
+				<startcooldown />
+			</canactivate>
+		</chance>
+	</ondamaged>
+	
+
+</ability>

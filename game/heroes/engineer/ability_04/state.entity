@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Engineer_Ability4"
+	
+	icon="icon.tga"
+	passiveeffect="/shared/effects/stun.effect"
+	
+	stunned="true"
+	
+	effecttype=""
+>
+	<onexpired>
+		<playanim name="idle" target="target_entity" />
+	</onexpired>
+</state>

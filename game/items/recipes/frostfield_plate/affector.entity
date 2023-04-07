@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_FrostfieldPlate"
+
+	radiusstart="0"
+	radiusend="744"
+	
+	lifetime="2000"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	maximpactspertarget="1"
+	persist="true"
+	canturn="false"
+	effect="effects/affector.effect"
+	impacteffect="effects/impact.effect"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="200" />
+		<applystate name="State_FrostfieldPlate" duration="4000"/>
+	</onimpact>
+</affector>
+

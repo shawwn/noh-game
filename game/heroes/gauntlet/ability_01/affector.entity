@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Gauntlet_Ability1"
+
+	radius="75"
+	lifetime="-1"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="all_units"
+	effecttype="Physical"
+>
+	<onspawn>
+		<setparam a="0" />
+	</onspawn>
+	
+	<onimpact>
+					<areaofeffect
+						radius="250"
+						targetselection="all"
+						targetscheme="organic_enemy_units"
+						effecttype="Magic"
+					>
+						<damage effecttype="Magic" amount="100,150,300"/>
+					</areaofeffect>
+				
+				<condition target="this_owner_entity" test="hasstate State_Gauntlet_Ability1_2">
+					<playeffect effect="effects/impact2.effect" source="target_position" target="target_position"/>
+					<areaofeffect
+						radius="250"
+						targetselection="all"
+						targetscheme="organic_enemy_units"
+						effecttype="Magic"
+					>
+						
+	</onimpact>
+</affector>

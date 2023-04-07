@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2">
+
+	<anim name="portrait" clip="clips/portrait.clip" loop="true"/>
+	
+	<anim name="idle" clip="clips/default_1.clip" minstartframe="0" maxstartframe="-1" loop="true"/>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" loop="true" fps="30">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/move_%.wav 400 1800 .5"/>
+	</anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="105">
+		<frameevent frame="4" cmd="StartEffect effects/death.effect 1"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="100">
+		<frameevent frame="14" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .4"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="100">
+		<frameevent frame="14" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .4"/>
+	</anim>
+
+</model>

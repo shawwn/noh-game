@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<powerup
+	name="Powerup_MoveSpeed"
+	
+	
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin="yellow"
+	
+	passiveeffect="passive.effect"
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.5"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="32"
+	boundsradius="16"
+	selectionradius="32"
+	targetoffset="0 0 16"
+
+	maxhealth="75"
+
+	immunity="MagicImmunity1"
+
+	attacktype="none"
+	combattype="Ranged"
+	
+	touchstate="State_PowerupMoveSpeed"
+	touchstateduration="30000"
+	touchaction=""
+	touchactionparamater=""
+	touchsound="/shared/sounds/announcer/powerup_haste.wav"
+>
+</powerup>

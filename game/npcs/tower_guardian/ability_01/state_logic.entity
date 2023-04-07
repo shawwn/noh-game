@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_TowerGuardian_Ability1_Logic"
+
+	
+	
+	icon="icon.tga"
+
+	impactinterval="5000"	
+	ishidden="true"
+
+	
+>
+	<onimpact>
+		<condition test="target_health_percent lt 0.9" target="source_entity">
+			<condition test="not_hasstate State_TowerGuardian_Ability1_RecentlyUsed" target="source_entity">
+				<condition test="not_hasstate State_TowerGuardian_Ability2_Self" target="source_entity">
+					<testnearby radius="300" targetscheme="enemy_units" />
+					<setvar0 a="result" />
+					<condition test="var0 ge 3">
+						<applystate name="State_TowerGuardian_Ability1_Activate" duration="3000" />
+					</condition>
+					<condition test="var0 eq 2">
+						<chance threshold="0.66">
+							<applystate name="State_TowerGuardian_Ability1_Activate" duration="3000" />
+						</chance>
+					</condition>
+					<condition test="var0 eq 1">
+						<chance threshold="0.33">
+							<applystate name="State_TowerGuardian_Ability1_Activate" duration="3000" />
+						</chance>
+					</condition>
+				</condition>
+			</condition>
+		</condition>
+	</onimpact>
+</state>

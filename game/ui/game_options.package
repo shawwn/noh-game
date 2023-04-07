@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<!-- Templates -->
+	<template name="keybind_button_state">
+		<widgetstate statename="{state}" x="{x=}" y="{y=}">
+			<panel visible="{frame=true}" float="bottom" padding="0">
+				<frame texture="/ui/info/button.tga" borderthickness="0.8h"/>				
+			</panel>
+			<label width="100%" height="100%" textvalign="center" textalign="center"
+				valign="center" align="center" font="dyn_8" color="{color=white}" shadow="true" shadowcolor="{shadowcolor=#7F6E00}"
+				onshow="SetText(GetKeybindButton('{table}', '{action}', '{param}', {num}));"
+				onrefresh="SetText(GetKeybindButton('{table}', '{action}', '{param}', {num}));">
+			</label>
+		</widgetstate>
+	</template>
+	
+	<template name="keybind_button">
+		<button x="{x=0}" y="-0.1h" width="10.0h" height="1.8h" valign="center" align="right" color="invisible"
+			onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+			onclick="
+				PlaySound('/shared/sounds/ui/button_click_01.wav');
+				_keybind_command = '{command}';
+				_keybind_table = '{table}';
+				_keybind_action = '{action}';
+				_keybind_param = '{param}';
+				_keybind_num = '{num}';
+				_keybind_old_button = GetKeybindButton('{table}', '{action}', '{param}', {num});
+				showWidget('keybind_button_binder');
+				"
+		>
+			<instance name="keybind_button_state" state="up" frame="false" color="white" shadowcolor="black" table="{table}" action="{action}" param="{param}" num="{num}"/>
+			<instance name="keybind_button_state" state="over" table="{table}" action="{action}" param="{param}" num="{num}"/>
+			<instance name="keybind_button_state" state="down" x="1" y="1" table="{table}" action="{action}" param="{param}" num="{num}"/>
+		</button>
+	</template>
+	
+	<template name="keybind_not_list_item">
+		<panel height="2.4h" width="100%" align="left" color="invisible">
+			<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 .5" noclick="1" />
+			<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />				
+			<panel visible="{hastip=0}" noclick="1" color="invisible">
+				<instance name="tip_mark" tip_id="{tipid}" x="0.2h" width="1.6h" height="1.6h" valign="center" align="left" />					
+			</panel>				
+			<label x="{labelx=0.5h}" width="100%" height="100%" textalign="left" textvalign="center" align="left" font="dyn_9" color="#59c3f8" shadow="true">{label}</label>				
+			<instance name="keybind_button" x="-10.5h" num="0" command="{command}" table="{table}" action="{action}" param="{param=}"/>
+			<instance name="keybind_button" x="-0.4h" num="1" command="{command}" table="{table}" action="{action}" param="{param=}"/>				
+			<instance name="generic_tooltip" x="2.2h" y="0" width="36.0h" height="{tipheight=7.3h}" align="left" valign="bottom" tip_id="{tipid}" title="{label}" label="{tool_tip_content}" />
+		</panel>
+	</template>
+
+	<template name="keybind">
+		<listitem>
+			<panel height="2.4h" width="100%" align="left" color="invisible">
+				<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 .5" noclick="1" />
+				<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />				
+				<panel visible="{hastip=0}" noclick="1" color="invisible">
+					<instance name="tip_mark" tip_id="{tipid}" x="0.2h" width="1.6h" height="1.6h" valign="center" align="left" />					
+				</panel>				
+				<label x="{labelx=0.5h}" width="100%" height="100%" textalign="left" textvalign="center" align="left" font="dyn_9" color="#59c3f8" shadow="true">{label}</label>				
+				<instance name="keybind_button" x="-10.5h" num="0" command="{command}" table="{table}" action="{action}" param="{param=}"/>
+				<instance name="keybind_button" x="-0.4h" num="1" command="{command}" table="{table}" action="{action}" param="{param=}"/>				
+				<instance name="generic_tooltip" x="2.2h" y="0" width="36.0h" height="{tipheight=7.3h}" align="left" valign="bottom" tip_id="{tipid}" title="{label}" label="{tool_tip_content}" />
+			</panel>
+		</listitem>
+	</template>
+	
+	<template name="keybind_impulse_button">
+		<button x="{x=0}" y="-0.1h" width="10.0h" height="1.8h" valign="center" align="right" color="invisible"
+			onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+			onclick="
+				PlaySound('/shared/sounds/ui/button_click_01.wav');
+				_keybind_command = '{command}';
+				_keybind_table = '{table}';
+				_keybind_action = '{action}';
+				_keybind_param = '{param}';
+				_keybind_num = '{num}';
+				_keybind_old_button = GetKeybindButton('{table}', '{action}', '{param}', {num});
+				showWidget('keybind_impulse_binder');
+				"
+		>
+			<instance name="keybind_button_state" state="up" frame="false" color="white" shadowcolor="black" table="{table}" action="{action}" param="{param}" num="{num}"/>
+			<instance name="keybind_button_state" state="over" table="{table}" action="{action}" param="{param}" num="{num}"/>
+			<instance name="keybind_button_state" state="down" x="1" y="1" table="{table}" action="{action}" param="{param}" num="{num}"/>
+		</button>
+	</template>
+	
+	<template name="keybind_impulse">
+		<listitem>
+			<panel height="2.4h" width="100%" align="left" color="invisible">
+				<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 .5" noclick="1" />
+				<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+
+				<label x="0.5h" width="100%" height="100%" textalign="left" textvalign="center" align="left" font="dyn_9" color="#59c3f8" shadow="true">{label}</label>
+
+				<instance name="keybind_impulse_button" x="-10.5h" num="0" command="{command}" table="{table}" action="{action}" param="{param=}"/>
+				<instance name="keybind_impulse_button" x="-0.4h" num="1" command="{command}" table="{table}" action="{action}" param="{param=}"/>
+			</panel>
+		</listitem>
+	</template>
+
+	<template name="keybind_type">
+		<listitem>
+			<panel height="2.4h" width="100%" align="left" color="invisible">
+				<label width="100%" height="100%" textalign="left" textvalign="center" align="left" font="dyn_10" color="white" shadow="true">{label}</label>
+			</panel>
+		</listitem>
+	</template>
+
+	<template name="keybind_header">
+		<panel x="{x}" y="{y}" width="{width=100%}" height="2.4h" align="left" color="invisible">
+			<label width="100%" height="100%" textalign="left" textvalign="center" align="left" font="dyn_8" color="yellow" shadow="true">options_yellow_label_action</label>
+			<label width="10.0h" x="-10.5h" height="100%" textalign="center" textvalign="center" align="right" font="dyn_8" color="yellow" shadow="true">options_yellow_label_primary</label>
+			<label width="10.0h" x="-0.4h" height="100%" textalign="center" textvalign="center" align="right" font="dyn_8" color="yellow" shadow="true">options_yellow_label_secondary</label>
+		</panel>
+	</template>
+	
+	<template name="action_buttons">
+		<panel y="{y=60.0h}" width="{width=-4%}" align="center" height="{height=2.5h}" noclick="1" visible="1" color="invisible">
+			<instance name="button2" width="25%" font="dyn_10" label="options_button_reset_all" borderthickness=".8h" onclick="OptionsResetAll(); PlaySound('/shared/sounds/ui/button_click.mp3');" onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');" enabled="false" />
+			<instance name="button2" x="36%" width="20%" font="dyn_10" label="options_button_ok" borderthickness=".8h" onclick="{onclose} OptionsApply();" onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');" />
+			<instance name="button2" x="58%" width="20%" font="dyn_10" label="general_cancel"  borderthickness=".8h" onclick="{onclose} OptionsCancel();" onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');" />			
+			<instance name="button2" x="80%" width="20%" font="dyn_10" label="options_button_apply"  borderthickness=".8h" onclick="OptionsApply();" onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');" /> 
+		</panel>
+	</template>
+	
+	<template name="options_menu">
+		<panel y="3.0h" width="-2%" align="center" height="6.0h" noclick="1" onload="HideOnly('button_graphics_inactive'); ShowOnly('button_graphics_active');">
+			<instance name="tab_bar" />
+
+			<instance 
+				name="options_button"
+				button_name="button_graphics"
+				group="options_buttons"
+				onclick="ShowOnly('Noptions_graphics');"
+				x="0" width="18%"
+				lbl="options_button_graphics"
+				icon="/ui/elements/options_icon_graphics.tga"				
+			/>
+			<instance 
+				name="options_button"
+				button_name="button_sound"
+				group="options_buttons"
+				onclick="ShowOnly('Noptions_sound');"
+				x="18%" width="18%"
+				lbl="options_button_sound"
+				icon="/ui/elements/options_icon_sound.tga"				
+			/>
+			<instance 
+				name="options_button"
+				button_name="button_voice"
+				group="options_buttons"
+				onclick="ShowOnly('Noptions_voice');"
+				x="36%" width="18%"
+				lbl="options_button_voice"
+				icon="/ui/elements/options_icon_voice.tga"				
+			/>
+			<instance 
+				name="options_button"
+				button_name="button_controls"
+				group="options_buttons"
+				onclick="ShowOnly('Noptions_controls');"
+				x="54%" width="18%"
+				lbl="options_button_controls"
+				icon="/ui/elements/options_icon_controls.tga"				
+			/>
+			
+			<panel x="72%" width="28%" valign="center" color="invisible" noclick="1">
+				<panel height="25%" color="invisible">
+					<label width="100%" height="100%" valign="bottom" textalign="center" textvalign="center" font="dyn_8" color="white" shadow="1" noclick="1" watch="AccountInfo" ontrigger="SetText(param1);"/>
+				</panel>
+				
+				<panel y="25%" width="50%" height="75%" color="invisible">
+					<instance 
+						name="options_button2"
+						button_name="button_awards"
+						group="options_buttons"
+						onclick="ShowOnly('Noptions_awards');"
+						x="0" width="100%"
+						lbl="options_button_awards"
+						icon="/ui/elements/options_icon_achieve.tga"				
+					/>
+				</panel>
+				
+				<panel y="25%" x="50%" width="50%" height="75%" color="invisible">
+					<instance 
+						name="options_button2"
+						button_name="button_stats"
+						group="options_buttons"
+						onclick="ShowOnly('Noptions_stats');"
+						x="0" width="100%"
+						lbl="options_button_stats"
+						icon="/ui/elements/options_icon_stats.tga"				
+					/>
+				</panel>
+				
+			</panel>
+		
+		</panel>
+	</template>
+	
+	
+	<template name="button_instructions">
+		<label width="-1.0h" height="3.0h" textvalign="center" textalign="center" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true">options_bind_instructions_button</label>
+		<instance
+			name="button2"
+			y="3.4h"
+			x="1.0h"
+			height="2.4h"
+			width="10.0h"
+			align="left"
+			label="options_bind_button_default"
+			onclick="
+				HideWidget('keybind_button_binder');
+				Cmd('Unbind ' # _keybind_table # ' ' # _keybind_old_button);
+				Cmd('DefaultGameBind ' # ' ' # _keybind_num # ' ' # _keybind_table # ' ' # _keybind_action # ' ' # _keybind_param);
+				PlaySound('/shared/sounds/ui/tutorial/popup_show_1.mp3');
+				Refresh();"
+		/>
+
+		<instance
+			name="button2"
+			y="3.4h"
+			height="2.4h"
+			width="10.0h"
+			align="center"
+			label="options_bind_button_clear"
+			onclick="
+				HideWidget('keybind_button_binder');
+				Cmd('Unbind ' # _keybind_table # ' ' # _keybind_old_button);
+				Cmd('BindButton ' # ' ' # _keybind_table # ' INVALID ' # _keybind_action # ' ' # _keybind_param);
+				PlaySound('/shared/sounds/ui/tutorial/popup_show_1.mp3');
+				Refresh();"
+		/>
+
+		<instance
+			name="button2"
+			y="3.4h"
+			x="-1.0h"
+			height="2.4h"
+			width="10.0h"
+			align="right"
+			label="general_cancel"
+			onclick="HideWidget('keybind_button_binder');"
+		/>
+	</template>	
+	
+	<template name="options_button_binder">		
+		<panel name="keybind_button_binder" visible="0">		
+			<buttoncatcher
+				name="keybind_button_catcher"
+				align="center" valign="top"
+				height="101%"
+				color="#000000c0"
+				onbutton="
+					HideWidget('keybind_button_binder');
+					Cmd('Unbind ' # _keybind_table # ' ' # _keybind_old_button);
+					Cmd('BindButton ' # _keybind_table # ' ' # param # ' ' # _keybind_action # ' ' # _keybind_param);
+					PlaySound('/shared/sounds/ui/tutorial/popup_show_1.mp3');
+					Refresh();"
+			/>		
+			
+		<panel visible="1" blockinput="true" noclick="1">
+			<instance
+				name="alert_box"
+				width="35.0h"
+				height="11.0h"
+				align="center"
+				label="options_bind_header"
+				show_close="0"
+				body="button_instructions"
+			/>
+		</panel>
+			
+		</panel>
+	</template>
+	
+	<template name="options_impulse_binder">
+		<panel name="keybind_impulse_binder" visible="0">		
+			<buttoncatcher
+				name="keybind_impulse_catcher"
+				align="center" valign="top"
+				color="#000000c0"
+				height="101%"
+				impulse="true"
+				onbutton="
+					HideWidget('keybind_impulse_binder');
+					Cmd('Unbind ' # _keybind_table # ' ' # _keybind_old_button);
+					Cmd('BindImpulse ' # _keybind_table # ' ' # param # ' ' # _keybind_action # ' ' # _keybind_param);
+					PlaySound('/shared/sounds/ui/tutorial/popup_show_1.mp3');
+					Refresh();"
+			/>			
+			<panel width="35.0h" height="11.4h" align="center" valign="center" noclick="1">
+				<frame  texture="/ui/frames/tooltip_bg.tga" color="#0c1b3bc9" borderthickness=".6h" align="left" valign="top" noclick="1">
+					<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" noclick="1"/>
+					<instance name="header_bar" buttonsize="1.8h" height="2.4h" lbl="options_bind_header" show_close="0" />	
+
+					<label y="3.5h" width="-1.0h" height="3.0h" textalign="center" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true">options_bind_instructions_impulse</label>
+					
+					<instance
+						name="button2"
+						y="7.8h"
+						x="1.0h"
+						height="2.4h"
+						width="10.0h"
+						align="left"
+						label="options_bind_button_default"
+						onclick="
+							HideWidget('keybind_impulse_binder');
+							Cmd('Unbind ' # _keybind_table # ' ' # _keybind_old_button);
+							Cmd('DefaultGameBind ' # ' ' # _keybind_num # ' ' # _keybind_table # ' ' # _keybind_action # ' ' # _keybind_param);
+							PlaySound('/shared/sounds/ui/tutorial/popup_show_1.mp3');
+							Refresh();"
+					/>
+
+					<instance
+						name="button2"
+						y="7.8h"
+						height="2.4h"
+						width="10.0h"
+						align="center"
+						label="options_bind_button_clear"
+						onclick="
+							HideWidget('keybind_impulse_binder');
+							Cmd('Unbind ' # _keybind_table # ' ' # _keybind_old_button);
+							Cmd('BindImpulse ' # _keybind_table # ' INVALID ' # _keybind_action # ' ' # _keybind_param);
+							PlaySound('/shared/sounds/ui/tutorial/popup_show_1.mp3');
+							Refresh();"
+					/>
+	
+					<instance
+						name="button2"
+						y="7.8h"
+						x="-1.0h"
+						height="2.4h"
+						width="10.0h"
+						align="right"
+						label="general_cancel"
+						onclick="HideWidget('keybind_impulse_binder');"
+					/>				
+				</frame>
+			</panel>			
+		</panel>
+	</template>
+	
+	<template name="Noptions">
+	
+		<instance name="options_menu" />
+	
+		<!-- Graphics -->
+		<panel name="Noptions_graphics" group="option_panel" padding=".5h" noclick="1" color="invisible" visible="1">
+		
+			<instance name="action_buttons" y="63.5h" onclose="{onclose}" />
+		
+			<panel y="41.3h" width="-2%" align="center" height="19.8h" borderthickness="14" color="invisible">
+				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" />
+				
+				<panel y="17.2h" width="96%" height="2.0h" align="center" noclick="1" color="invisible" float="right" padding="0">				
+					<panel width="33.3%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="foliage_tip" font="dyn_9" cvar="gfx_foliage" label="options_display_foliage" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="25h" height="5.8h" align="left" tip_id="foliage_tip" title="options_display_foliage" label="options_foliage_tip_text" />
+					</panel>
+					<panel width="33.3%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="vsync_tip" font="dyn_9" cvar="options_vsync" label="options_vsync" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="38h" height="7.3h" align="center" tip_id="vsync_tip" title="options_vsync" label="options_vsync_tip_text" />
+					</panel>
+					<panel width="33.3%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="lights_tip" font="dyn_9" cvar="vid_dynamicLights" label="options_dynamic_lights" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="38h" height="7.3h" align="right" tip_id="lights_tip" title="options_dynamic_lights" label="options_dynamic_lights_tip" />
+					</panel>
+				</panel>
+								
+				<panel y="14.8h" width="96%" height="2.0h" align="center" noclick="1" color="invisible" float="right" padding="0">				
+					<panel width="33.3%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="reflection_tip" font="dyn_9" cvar="vid_reflections" label="options_reflections" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="38h" height="5.8h" align="left" tip_id="reflection_tip" title="options_reflections" label="options_reflections_tip" />
+					</panel>
+					<panel width="33.3%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="refraction_tip" font="dyn_9" cvar="vid_sceneBuffer" label="options_refraction" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="38h" height="5.8h" align="center" tip_id="refraction_tip" title="options_refraction" label="options_refraction_tip" />
+					</panel>
+					<panel width="33.3%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="postproc_tip" font="dyn_9" cvar="vid_postEffects" label="options_post_processing" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="25h" height="5.8h" align="right" tip_id="postproc_tip" title="options_post_processing" label="options_post_processing_tip" />
+					</panel>
+				</panel>
+
+				<panel y="12.4h" height="2h" noclick="1">
+					<panel width="96%" height="1" align="center" valign="center" color="#414653"/>
+				</panel>
+				
+				<panel y="10.0h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_special_effects</label>
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+						<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="2" cvar="options_effectQuality" data=""
+							populate="
+								AddTemplateListItem('Ncombobox_item', '1', 'label', 'options_low');
+								AddTemplateListItem('Ncombobox_item', '0', 'label', 'options_high');"
+						/>
+					</panel>
+					<instance name="tip_mark" tip_id="speceffects_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="10.3h" align="right" tip_id="speceffects_tip" title="options_special_effects" label="options_special_effects_tip" />
+				</panel>
+				
+				<panel y="7.6h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_shadow_quality</label>
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+						<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="5" cvar="options_shadowQuality" data=""
+							populate="
+								AddTemplateListItem('Ncombobox_item', '4', 'label', 'options_disabled');
+								AddTemplateListItem('Ncombobox_item', '3', 'label', 'options_low');
+								AddTemplateListItem('Ncombobox_item', '2', 'label', 'options_medium');
+								AddTemplateListItem('Ncombobox_item', '1', 'label', 'options_high');"
+						/>
+					</panel>
+					<instance name="tip_mark" tip_id="shadowclarity_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="10.3h" align="right" tip_id="shadowclarity_tip" title="options_shadow_quality" label="options_shadow_quality_tip" />
+				</panel>
+				
+				<panel y="5.2h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_shader_quality</label>
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+						<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="3" cvar="options_shaderQuality" data=""
+							populate="
+								AddTemplateListItem('Ncombobox_item', '2', 'label', 'options_low');
+								AddTemplateListItem('Ncombobox_item', '1', 'label', 'options_medium');
+								AddTemplateListItem('Ncombobox_item', '0', 'label', 'options_high');"
+						/>
+					</panel>
+					<instance name="tip_mark" tip_id="shaderquality_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="10.3h" align="right" tip_id="shaderquality_tip" title="options_shader_quality" label="options_shader_quality_tip" />
+				</panel>
+				
+				<panel y="2.8h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_texture_size</label>
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+						<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="4" cvar="options_textureSize" data=""
+							populate="
+								AddTemplateListItem('Ncombobox_item', '2', 'label', 'options_low');
+								AddTemplateListItem('Ncombobox_item', '1', 'label', 'options_medium');
+								AddTemplateListItem('Ncombobox_item', '0', 'label', 'options_high');"
+						/>
+					</panel>
+					<instance name="tip_mark" tip_id="texturesize_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="7.3h" align="right" tip_id="texturesize_tip" title="options_label_texture_size" label="options_texture_size_tip" />
+				</panel>
+				
+				<panel y=".4h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_model_quality</label>
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+						<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="20" cvar="options_modelQuality" data=""
+							populate="
+								AddTemplateListItem('Ncombobox_item', 'low', 'label', 'options_low');
+								AddTemplateListItem('Ncombobox_item', 'med', 'label', 'options_medium');
+								AddTemplateListItem('Ncombobox_item', 'high', 'label', 'options_high');"
+						/>
+					</panel>
+					<instance name="tip_mark" tip_id="modelvertexes_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="8.8h" align="right" tip_id="modelvertexes_tip" title="options_label_model_quality" label="options_model_quality_tip" />
+				</panel>
+			</panel>
+			
+			<panel y="38.3h" width="-2%" align="center" height="2.5h">
+				<instance y="4" name="header_bar" lbl="options_header_rendering_options" lbl_font="dyn_9" show_close="0" />		
+			</panel>
+			
+			<panel y="12.5h" width="-2%" align="center" height="25.3h" borderthickness="14" color="0 0 0 .5" noclick="1" reverse="true">
+			
+				<if condition="StringEquals(host_os,'linux')">
+					<panel y=".4h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+						<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_display</label>
+						<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+						<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+							<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="10" cvar="options_display" data="AddDisplays" onselect="CreateString('_saved_options_resolution',options_resolution );Call('video_resolution_combobox','ComboBoxCmd(\'clear\');AddResolutions(\'Ncombobox_item\');SetSelectedItemByValue(_saved_options_resolution);If(StringEmpty(options_resolution), SetSelectedItemByIndex(0))');" />
+						</panel>
+						<instance name="tip_mark" tip_id="display_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+						<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="5.8h" align="right" tip_id="display_tip" title="options_label_display" label="options_display_tip" />
+					</panel>
+					
+					<panel y="2.8h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+						<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_resolution</label>
+						<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+						<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+							<instance name="Noptions_combobox" id="video_resolution_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="10" cvar="options_resolution" data="AddResolutions" onselect="CreateString('_saved_options_refreshRate', options_refreshRate);Call('video_refreshrate_combobox','ComboBoxCmd(\'clear\');AddRefreshRates(\'Ncombobox_item\');SetSelectedItemByValue(_saved_options_refreshRate);If(StringEmpty(options_refreshRate) || options_refreshRate == 0, SetSelectedItemByIndex(0))');"/>
+						</panel>
+						<instance name="tip_mark" tip_id="resolution_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+						<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="5.8h" align="right" tip_id="resolution_tip" title="options_label_resolution" label="options_resolution_tip" />
+					</panel>
+				</if>
+				
+				<if condition="StringEquals(host_os,'windows') || StringEquals(host_os, 'macos')">
+					<panel y=".4h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+						<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_resolution</label>
+						<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+						<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+							<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="10" cvar="options_resolution" data="AddResolutions" />
+						</panel>
+						<instance name="tip_mark" tip_id="resolution_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+						<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="5.8h" align="right" tip_id="resolution_tip" title="options_label_resolution" label="options_resolution_tip" />
+					</panel>
+				
+					<panel y="2.8h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+						<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_color_depth</label>
+						<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+						<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+							<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="10" cvar="options_bpp" data="AddColorDepths" />
+						</panel>
+						<instance name="tip_mark" tip_id="colordepth_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+						<instance name="generic_tooltip" x="-68@" width="23h" height="8.8h" align="right" tip_id="colordepth_tip" title="options_label_color_depth" label="options_color_depth_tip" />
+					</panel>
+				</if>
+				
+				<panel y="5.2h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_refresh_rate</label>
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+						<instance name="Noptions_combobox" id="video_refreshrate_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="10" cvar="options_refreshRate" data="AddRefreshRates" />
+					</panel>
+					<instance name="tip_mark" tip_id="refreshrate_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" width="23h" height="8.8h" align="right" tip_id="refreshrate_tip" title="options_label_refresh_rate" label="options_tip_refresh_rate" />
+				</panel>
+				
+				<panel y="7.6h" width="96%" height="2h" align="center" color="invisible" noclick="1">				
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_anti_aliasing</label>
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+						<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="10" cvar="options_antialiasing" data="AddAntiAliasingModes" />
+					</panel>
+					<instance name="tip_mark" tip_id="aa_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" width="23h" height="10.3h" align="right" tip_id="aa_tip" title="options_label_anti_aliasing" label="options_label_anti_aliasing_tip" />
+				</panel>
+				
+				<panel y="10.0h" width="96%" height="2h" align="center" color="invisible" noclick="1">				
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_aspect_ratio</label>
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+						<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="10" cvar="vid_aspect" data="AddAspectModes" />
+					</panel>
+					<instance name="tip_mark" tip_id="aspect_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" width="23h" height="10.3h" align="right" tip_id="aspect_tip" title="options_label_aspect_ratio" label="options_label_aspect_ratio_tip" />
+				</panel>
+				
+				<!--
+				<panel y="10h" width="96%" height="2h" align="center" color="invisible" noclick="1">				
+					<label height="100%" textvalign="center" font="dyn_9" color="white">Transparency AA</label>
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+						<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="3" cvar="" data="" />
+					</panel>
+					<instance name="tip_mark" tip_id="taa_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" width="23h" height="16.3h" align="right" tip_id="taa_tip" title="options_checkbox_transparency_aa_label" label="options_checkbox_transparency_aa_desc" />
+				</panel>
+				-->
+				
+				<panel y="12.4h" width="96%" height="2h" align="center" color="invisible" noclick="1">				
+					<label height="100%" textvalign="center" font="dyn_9" color="white">options_label_texture_filtering</label>					
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="10" cvar="vid_textureFiltering" data="AddTextureFilteringModes" />
+					</panel>
+					<instance name="tip_mark" tip_id="tfilter_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" width="23h" height="14.8h" align="right" tip_id="tfilter_tip" title="options_label_texture_filtering" label="options_label_texture_filtering_tip" />
+				</panel>
+				
+				<panel y="14.8h" height="2h" noclick="1">
+					<panel width="96%" height="1" align="center" valign="center" color="#414653"/>
+				</panel>
+				
+				<panel y="17.2h" width="96%" height="2.4h" align="center" noclick="1" color="invisible">					
+					<panel x="0" width="97%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_slider" cvar="vid_gamma" slider_name="Noptions_slider_gamma" minvalue="0.5" maxvalue="2.0" value="FtoA(vid_gamma, 2)" label="options_label_brightness" action=""/>
+					</panel>
+					<instance name="tip_mark" tip_id="brightness_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-56@" width="23h" height="8.8h" align="right" tip_id="brightness_tip" title="options_brightness_tip_header" label="options_brightness_tip" />
+					
+				</panel>
+				
+				<panel y="20.1h" height="2h" noclick="1" color="invisible">
+					<panel width="96%" height="1" align="center" valign="center" color="#414653"/>
+				</panel>
+				
+				<panel y="22.5h" width="96%" height="2.0h" align="center" noclick="1" color="invisible" float="right" padding="0">
+				
+					<panel width="36%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="fullscreen_tip" font="dyn_9" cvar="options_fullscreen" label="options_checkbox_full_screen_mode" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="24h" height="4.3h" align="left" tip_id="fullscreen_tip" title="options_checkbox_full_screen_mode" label="options_full_screen_tip" />
+					</panel>
+					<panel width="34%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="exclusive_tip" font="dyn_9" cvar="options_exclusive" label="options_checkbox_exclusive_mode" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="28h" height="7.3h" align="center" tip_id="exclusive_tip" title="options_checkbox_exclusive_mode" label="options_exclusive_mode_tip" />
+					</panel>
+					<panel width="30%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="frameque_tip" font="dyn_9" cvar="options_framequeuing" label="options_checkbox_frame_queuing" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="24h" height="7.3h" align="right" tip_id="frameque_tip" title="options_checkbox_frame_queuing" label="options_frame_queuing_tip" />
+					</panel>
+					
+				</panel>
+				
+				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+			</panel>
+
+			<panel y="9.5h" width="-2%" align="center" height="2.5h" noclick="1">
+				<instance y="4" name="header_bar" lbl="options_header_video_options" lbl_font="dyn_9" show_close="0" />		
+			</panel>			
+			
+			<panel y="0" height="2.5h" noclick="1">
+				<instance name="header_bar" lbl="options_header_game_options" show_close="1" onclick="{onclose} OptionsCancel();" /> 
+			</panel>
+			
+		</panel>
+		<!-- END Graphics -->
+		
+		<!-- Sound -->
+		<panel name="Noptions_sound" group="option_panel" padding=".5h" noclick="1" color="invisible" visible="0">
+		
+			<instance name="action_buttons" y="63.5h" onclose="{onclose}" />
+			
+			<panel y="31.0h" width="-2%" align="center" height="20.9h" borderthickness="14" color="0 0 0 .5" noclick="1">
+				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+				
+				<panel y="18.0h" width="96%" height="2.0h" align="center" noclick="1" color="invisible" float="right" padding="0">
+				
+					<panel x="11%" width="50%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="nosound_tip" font="dyn_9" cvar="sound_disable" label="options_checkbox_disable_all_sounds" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="20h" height="4.3h" align="center" tip_id="nosound_tip" title="options_checkbox_disable_all_sounds" label="options_disable_all_sounds_tip" />
+					</panel>
+					<panel x="55%" width="50%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="reactions_tip" font="dyn_9" cvar="" label="options_checkbox_unit_reactions" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="30h" height="5.8h" align="right" tip_id="reactions_tip" title="options_checkbox_unit_reactions" label="options_unit_reactions_tip" />
+					</panel>
+					
+				</panel>
+				
+				<panel y="15.6h" height="2h" noclick="1">
+					<panel width="96%" height="1" align="center" valign="center" color="#414653"/>
+				</panel>
+				
+				<panel y="12.8h" width="96%" height="2.4h" align="center" color="invisible" noclick="1">
+					<panel x="0" width="97%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_slider" cvar="sound_numChannels" slider_name="Noptions_slider_soundNumChannels" minvalue="32" maxvalue="256" value="sound_numChannels" label="options_label_sound_channels" action=""/>
+					</panel>
+					<instance name="tip_mark" tip_id="channels_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-56@" width="23h" height="6.2h" align="right" tip_id="channels_tip" title="options_sound_channels_tip_header" label="options_sound_channels_tip" />
+				</panel>
+				
+				<panel y="10.4h" height="2h" noclick="1">
+					<panel width="96%" height="1" align="center" valign="center" color="#414653"/>
+				</panel>
+				
+				<panel y="7.6h" width="96%" height="2.4h" align="center" color="invisible" noclick="1">
+
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_sound_quality</label>
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+						<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="4" listbgheight="11h" cvar="options_soundQuality" data=""
+							populate="
+								AddTemplateListItem('Ncombobox_item', '2', 'label', 'options_very_low');
+								AddTemplateListItem('Ncombobox_item', '1', 'label', 'options_low');
+								AddTemplateListItem('Ncombobox_item', '0', 'label', 'options_normal');"
+							/>
+					</panel>
+					<instance name="tip_mark" tip_id="quality_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="5.5h" align="right" tip_id="quality_tip" title="options_label_sound_quality" label="options_sound_quality_tip" />
+
+				</panel>
+				
+				<panel y="5.2h" height="2h" noclick="1">
+					<panel width="96%" height="1" align="center" valign="center" color="#414653"/>
+				</panel>
+				
+				<panel y="2.8h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_recording_driver</label>
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+						<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="4" listbgheight="11h" cvar="sound_recording_driver" data="AddSoundRecordingDrivers" />
+					</panel>
+					<instance name="tip_mark" tip_id="recording_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="4.3h" align="right" tip_id="recording_tip" title="options_label_recording_driver" label="options_recording_drive_tip" />
+				</panel>
+				
+				<panel y=".4h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_playback_driver</label>
+					<image x="36%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />						
+					<panel x="39%" width="58%" height="100%" valign="center" align="left" color="invisible" noclick="1">				
+						<instance name="Noptions_combobox" x="0" width="100%" itemwidth="100%" maxlistheight="4" listbgheight="11h" cvar="sound_driver" data="AddSoundPlaybackDrivers" />
+					</panel>
+					<instance name="tip_mark" tip_id="playback_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="4.3h" align="right" tip_id="playback_tip" title="options_label_playback_driver" label="options_playback_driver_tip" />
+				</panel>				
+			</panel>
+			
+			<panel y="28.0h" width="-2%" align="center" height="2.5h" noclick="1">
+				<instance y="4" name="header_bar" lbl="options_header_sound_options" lbl_font="dyn_9" show_close="0" />		
+			</panel>
+			
+			<panel y="12.5h" width="-2%" align="center" height="15.0h" borderthickness="14" color="0 0 0 .5" noclick="1">
+				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+				
+				<panel y="11.0h" width="96%" height="2.4h" align="center" color="invisible" noclick="1">
+					<panel x="0" width="97%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_slider" cvar="sound_musicVolume" slider_name="Noptions_slider_musicVolume" minvalue="0" maxvalue="1" value="round (sound_musicVolume * 100)" label="options_label_music_volume" action=""/>
+					</panel>
+					<instance name="tip_mark" tip_id="music_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-56@" width="23h" height="4.3h" align="right" tip_id="music_tip" title="options_label_music_volume_tip_header" label="options_label_music_volume_tip" />
+				</panel>
+
+				<panel y="8.0h" width="96%" height="2.4h" align="center" color="invisible" noclick="1">
+					<panel x="0" width="97%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_slider" cvar="sound_interfaceVolume" slider_name="Noptions_slider_interfaceVolume" minvalue="0" maxvalue="1" value="round (sound_interfaceVolume * 100)" label="options_label_interface_volume" action=""/>
+					</panel>
+					<instance name="tip_mark" tip_id="interface_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-56@" width="23h" height="5.8h" align="right" tip_id="interface_tip" title="options_interface_volume_tip_header" label="options_interface_volume_tip" />
+				</panel>
+
+				<panel y="5.0h" width="96%" height="2.4h" align="center" color="invisible" noclick="1">
+					<panel x="0" width="97%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_slider" cvar="sound_sfxVolume" slider_name="Noptions_slider_sfxVolume" minvalue="0" maxvalue="1" value="round (sound_sfxVolume * 100)" label="options_label_sound_effects" action=""/>
+					</panel>
+					<instance name="tip_mark" tip_id="soundfx_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-56@" width="23h" height="5.8h" align="right" tip_id="soundfx_tip" title="options_sound_effects_tip_header" label="options_sound_effects_tip" />
+				</panel>
+
+				<panel y="1.2h" width="96%" height="2.4h" align="center" color="invisible" noclick="1">
+					<panel x="0" width="97%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_slider" cvar="sound_masterVolume" slider_name="Noptions_slider_masterVolume" minvalue="0" maxvalue="1" value="round (sound_masterVolume * 100)" label="options_label_master_volume" action=""/>
+					</panel>
+					<instance name="tip_mark" tip_id="mvolume_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-56@" width="23h" height="4.3h" align="right" tip_id="mvolume_tip" title="options_master_volume_tip_header" label="options_master_volume_tip" />					
+				</panel>				
+			</panel>
+
+			<panel y="9.5h" width="-2%" align="center" height="2.5h" noclick="1">
+				<instance y="4" name="header_bar" lbl="options_header_volume_options" lbl_font="dyn_9" show_close="0" />		
+			</panel>			
+						
+			<panel y="0" height="2.5h" noclick="1">
+				<instance name="header_bar" lbl="options_header_game_options" show_close="1" onclick="{onclose} OptionsCancel();" /> 
+			</panel>
+			
+		</panel>
+		<!-- END Sound -->
+		
+		<!-- Voice -->
+		<panel name="Noptions_voice" group="option_panel" padding=".5h" noclick="1" color="invisible" visible="0" onshow="UpdateMicSettings();">
+		
+			<instance name="action_buttons" y="63.5h" onclose="{onclose}" />
+			
+			<panel name="ptt_false" y="39.7h" width="-2%" align="center" height="9.0h" borderthickness="14" color="0 0 0 .5" visible="0" noclick="1" group="ptt_options">
+				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+			
+				<panel y="5.6h" width="96%" height="2.4h" align="center" color="invisible" noclick="1">
+					<panel x="0" width="97%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_slider" cvar="voice_micOnLevel" slider_name="Noptions_slider_vaSensitivity" minvalue="0" maxvalue="100" value="" label="options_label_mic_on_sensitivity" action=""/>
+					</panel>
+					<instance name="tip_mark" tip_id="onsensitivity_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-56@" width="30h" height="10.3h" align="right" tip_id="onsensitivity_tip" title="options_label_mic_on_sensitivity" label="options_mic_on_sensitivity_tip" />
+				</panel>
+				
+				<panel y="3.2h" height="2h" noclick="1">
+					<panel width="96%" height="1" align="center" valign="center" color="#414653"/>
+				</panel>
+				
+				<panel y=".78h" width="96%" height="2.4h" align="center" color="invisible" noclick="1">
+					<panel x="0" width="97%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_slider" cvar="voice_micOnTime" slider_name="Noptions_slider_vaTime" minvalue="0" maxvalue="2000" value="" label="options_label_mic_off_time" action=""/>
+					</panel>
+					<instance name="tip_mark" tip_id="silence_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-60@" y="0" width="23h" height="7.3h" align="right" tip_id="silence_tip" title="options_label_mic_off_time" label="options_mic_off_time_tip" />
+
+				</panel>
+			
+			</panel>
+			
+			<panel name="ptt_true" y="39.7h" width="-2%" align="center" height="6.3h" borderthickness="14" color="0 0 0 .5" visible="1" noclick="1" group="ptt_options">
+				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+			
+				<panel y="3.3h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_lane_talk_keybind</label>
+					<image x="39%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />					
+					<panel x="-1.6h" width="53%" align="right">
+						<instance name="keybind_not_list_item" label="" table="game" action="VoicePushToLaneTalk" />
+					</panel>
+					<instance name="tip_mark" tip_id="pttlanebutton_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="10.3h" align="right" tip_id="pttlanebutton_tip" title="options_label_lane_talk_keybind" label="options_push_to_lane_talk_tip" />
+				</panel>
+				
+				<panel y=".5h" width="96%" height="2h" align="center" color="invisible" noclick="1">
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_push_to_talk_keybind</label>
+					<image x="39%" width="3%" height="2@" valign="center" texture="/ui/info/arrow.tga" />					
+					<panel x="-1.6h" width="53%" align="right">
+						<instance name="keybind_not_list_item" label="" table="game" action="VoicePushToTalk" />
+					</panel>
+					<instance name="tip_mark" tip_id="pttbutton_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="7.3h" align="right" tip_id="pttbutton_tip" title="options_label_push_to_talk_keybind" label="options_push_to_talk_tip" />
+				</panel>
+			
+			</panel>
+			
+			<panel y="36.7h" width="-2%" align="center" height="2.5h" noclick="1">
+				<instance y="4" name="header_bar" lbl="options_header_voice_chat_talk_settings" lbl_font="dyn_9" show_close="0" />		
+			</panel>
+			
+			<panel y="12.5h" width="-2%" align="center" height="23.7h" borderthickness="14" color="0 0 0 .5" noclick="1">
+				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+				
+				<panel y="20.4h" width="96%" height="2.0h" align="center" noclick="1" color="invisible" padding="0" onshow="if(voice_pushToTalk, ShowOnly('ptt_true'), ShowOnly('ptt_false'));">
+				
+					<panel x="12%" width="50%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="novoice_tip" font="dyn_9" cvar="voice_disabled" label="options_checkbox_disable_voice_chat" />
+						<instance name="generic_tooltip" y="2.0h" x="-11%" width="24h" height="5.8h" align="left" tip_id="novoice_tip" title="options_checkbox_disable_voice_chat" label="options_disable_voice_chat_tip" />
+					</panel>
+					
+					<panel x="58%" width="50%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="ptt_tip" font="dyn_9" cvar="voice_pushToTalk" label="options_checkbox_push_to_talk" onclick="if(voice_pushToTalk, ShowOnly('ptt_true'), ShowOnly('ptt_false'));"/>
+						<instance name="generic_tooltip" y="2.0h" x="-26%" width="34h" height="8.8h" align="right" tip_id="ptt_tip" title="options_checkbox_push_to_talk" label="options_push_to_talk_enable_tip" />
+					</panel>
+					
+				</panel>			
+				
+				<panel y="17.4h" height="2h" noclick="1">
+					<panel width="96%" height="1" align="center" valign="center" color="#414653"/>
+				</panel>
+				
+				<panel y="15.6h" width="20%" height="2.4h" align="center" color="invisible" noclick="1">
+					<instance name="Noptions_checkbox" height="1.5h" tip_id="micboost_tip" font="dyn_9" cvar="voice_micBoost" label="options_checkbox_mic_boost" />
+					<instance name="generic_tooltip" y="2.0h" width="23h" height="7.3h" align="center" tip_id="micboost_tip" title="options_checkbox_mic_boost" label="options_mic_boost_tip" />
+				</panel>
+
+				<panel y="11.6h" width="96%" height="2.4h" align="center" color="invisible" noclick="1">
+					<panel x="0" width="97%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_slider" cvar="voice_audioDampen" slider_name="Noptions_slider_audiodampen" minvalue="0" maxvalue="1" value="voice_audiodampen" label="options_label_auto_sound_dampen" action=""/>
+					</panel>
+					<instance name="tip_mark" tip_id="autodampen_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-56@" width="23h" height="10.3h" align="right" tip_id="autodampen_tip" title="options_auto_dampen_tip_header" label="options_auto_dampen_tip" />
+				</panel>
+				
+				<panel y="8.6h" width="96%" height="2.4h" align="center" color="invisible" noclick="1">
+					<panel x="0" width="97%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_slider" cvar="voice_micVolume" slider_name="Noptions_slider_linein" minvalue="0" maxvalue="1" value="FtoA(voice_micVolume, 2)" label="options_label_microphone_volume" action=""/>
+					</panel>
+					<instance name="tip_mark" tip_id="linein_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-56@" width="23h" height="7.3h" align="right" tip_id="linein_tip" title="options_mic_volume_tip_header" label="options_mic_volume_tip" />
+				</panel>
+				
+				<panel y="5.6h" width="96%" height="2.4h" align="center" color="invisible" noclick="1">
+					<panel x="0" width="97%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_slider" cvar="voice_volume" slider_name="Noptions_slider_voicevol" minvalue="0" maxvalue="1" value="FtoA(voice_volume, 2)" label="options_label_voice_chat_volume" action=""/>
+					</panel>
+					<instance name="tip_mark" tip_id="voicevol_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-56@" width="23h" height="5.5h" align="right" tip_id="voicevol_tip" title="options_voice_chat_volume_tip_header" label="options_voice_chat_volume_tip" />
+				</panel>
+				
+				<panel y="3.2h" height="2h" noclick="1">
+					<panel width="96%" height="1" align="center" valign="center" color="#414653"/>
+				</panel>
+				
+				<panel y=".8h" width="96%" height="2.4h" align="center" color="invisible" noclick="1" onhide="VoiceStopTest(); HideWidget('voice_test_stop'); ShowWidget('voice_test_start');">
+
+					<label height="100%" width="38%" textvalign="center" font="dyn_9" color="white">options_label_test_mic_level</label>
+					
+					<instance name="button2" button_name="voice_test_start" x="26%" height="2.0h" width="20%" valign="center" font="dyn_9" label="options_button_begin_test"  borderthickness=".8h" onclick="VoiceStartTest(); ShowWidget('voice_test_stop'); HideWidget();" onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');" /> 
+					<instance name="button2" button_name="voice_test_stop" visible="false" x="26%" height="2.0h" width="20%" valign="center" font="dyn_9" label="options_button_stop_test"  borderthickness=".8h" onclick="VoiceStopTest(); ShowWidget('voice_test_start'); HideWidget();" onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');" /> 
+					
+					<panel x="46.5%" width="50%" height="100%" valign="center" align="left" color="invisible">
+						<image width="84%" align="center" texture="/ui/info/slider_backdrop_c.tga" color="#b0b0b0" />							
+						<image height="100%" width="100@" align="left" texture="/ui/info/slider_backdrop_l.tga" color="#b0b0b0" />
+						<image height="100%" width="100@" align="right" texture="/ui/info/slider_backdrop_r.tga" color="#b0b0b0" />
+
+						<panel height="100%" width="11%" color="invisible" valign="center">
+							<label width="100%" height="100%" textalign="center" textvalign="center" align="center" font="dyn_8" color="white" shadow="true">0</label>
+						</panel>
+
+						<panel x="12%" height="2h" width="72%" color="invisible" valign="center">
+							<panel color="#00008877" width="0" height="2.2h" valign="center" align="left" watch="VoiceLevel" ontrigger="SetWidth(param # '%');"/>
+							<panel color="#88888877" width="4%" height="2.2h" valign="center" x="48%" align="left"/>
+						</panel>
+
+						<panel height="100%" width="17%" align="right" color="invisible" valign="center">
+							<label width="100%" height="100%" textalign="center" textvalign="center" align="center" font="dyn_8" color="white" shadow="true">100</label>
+						</panel>
+
+					</panel>
+					
+					<instance name="tip_mark" tip_id="testlevel_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-68@" y="0" width="23h" height="4.3h" align="right" tip_id="testlevel_tip" title="options_label_test_mic_level" label="options_test_mic_level_tip" />
+
+				</panel>
+				
+			</panel>
+			
+			<panel y="9.5h" width="-2%" align="center" height="2.5h" noclick="1">
+				<instance y="4" name="header_bar" lbl="options_header_voice_chat_options" lbl_font="dyn_9" show_close="0" />		
+			</panel>			
+			
+			<panel y="0" height="2.5h" noclick="1">
+				<instance name="header_bar" lbl="options_header_game_options" show_close="1" onclick="{onclose} OptionsCancel();" /> 
+			</panel>
+			
+		</panel>
+		<!-- END Voice -->
+		
+		<!-- Controls -->
+		<panel name="Noptions_controls" group="option_panel" padding=".5h" noclick="1" color="invisible" visible="0">
+		
+			<instance name="action_buttons" y="63.5h" onclose="{onclose}" />
+						
+			<panel y="25.0h" width="-2%" align="center" height="38h" color="invisible" noclick="1">
+				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+				
+				<panel width="-1.0h" align="center">
+					<instance y="0.5h" width="-2.0h" name="keybind_header" />
+								
+					<listbox
+						y="3.0h"
+						width="-2.0h"
+						height="-5.95h"
+						align="left"
+						valign="top"
+						itemwidth="100%"
+						itemheight="2.9h"
+						itemheightfudge="3"
+						color="invisible"
+						hoverselect="false"
+						select="false"
+						scrolltexture="/ui/info/combobox.tga"
+						exteriorscrollbars="true"
+						scrollbarsize="2.0h"
+						scrollbaroffset="0"
+						handleheight="2.0h"
+						onload="
+							CreateString('_keybind_command');
+							CreateString('_keybind_table');
+							CreateString('_keybind_action');
+							CreateString('_keybind_param');
+							CreateString('_keybind_num');
+							CreateString('_keybind_old_button');"
+					>
+						<instance name="keybind_type" label="options_label_game_controls" />
+						<instance name="keybind" label="options_label_primary_keybind" table="game" action="CommanderPrimary" labelx="2.0h" hastip="1" tipheight="5.8h" tipid="co_primarybtn_tip" tool_tip_content="options_label_primary_keybind_tooltip" />
+						<instance name="keybind" label="options_label_secondary_keybind" table="game" action="CommanderSecondary" labelx="2.0h" hastip="1" tipheight="5.8h" tipid="co_secondarybtn_tip" tool_tip_content="options_label_secondary_keybind_tooltip" />
+						<instance name="keybind" label="options_label_shift_keybind" table="game" action="CommanderModifier1" labelx="2.0h" hastip="1" tipheight="4.3h" tipid="co_shiftmod_tip" tool_tip_content="options_label_shiftmod_keybind_tooltip" />
+						<instance name="keybind" label="options_label_ctrl_keybind" table="game" action="CommanderModifier2" labelx="2.0h" hastip="1" tipheight="5.8h" tipid="co_ctrlmod_tip" tool_tip_content="options_label_ctrlmod_keybind_tooltip" />
+						<instance name="keybind" label="options_label_on-screen_info_keybind" table="game" action="AltInfo" />
+						<instance name="keybind_impulse" label="options_label_on-screen_info_toggle_keybind" table="game" action="ToggleAltInfo" />
+						<instance name="keybind_impulse" label="options_label_minimap_ping_keybind" table="game" action="CommanderPing" />
+						<instance name="keybind" label="general_cancel" table="game" action="Cancel" />
+						<instance name="keybind_impulse" label="options_label_open_game_menu_keybind" table="game" action="ToggleMenu" />
+						<instance name="keybind_impulse" label="options_label_open_shop_keybind" table="game" action="ToggleShop" />
+						<instance name="keybind_impulse" label="options_label_chat_team_keybind" table="game" action="ChatTeam" />
+						<instance name="keybind_impulse" label="options_label_chat_all_keybind" table="game" action="ChatAll" />
+						<instance name="keybind" label="options_label_show_chat_keybind" table="game" action="ShowChat" />
+						<instance name="keybind_impulse" label="options_label_select_hero_keybind" table="game" action="SelectHero" />
+						<instance name="keybind_impulse" label="options_label_attack_keybind" table="game" action="OrderAttack" />
+						<instance name="keybind_impulse" label="options_label_stop_keybind" table="game" action="OrderStop" />
+						<instance name="keybind_impulse" label="options_label_hold_keybind" table="game" action="OrderHold" />
+						<instance name="keybind_impulse" label="options_label_move_keybind" table="game" action="OrderMove" />
+						<instance name="keybind_impulse" label="options_label_patrol_keybind" table="game" action="OrderPatrol" />
+						<instance name="keybind_impulse" label="options_label_next_unit_keybind" table="game" action="NextUnit" />
+						<instance name="keybind_impulse" label="options_label_previous_unit_keybind" table="game" action="PrevUnit" />
+						<instance name="keybind_impulse" label="options_label_next_centered_keybind" table="game" action="NextUnitCentered" />
+						<instance name="keybind_impulse" label="options_label_previous_centered_keybind" table="game" action="PrevUnitCentered" />
+						<instance name="keybind_impulse" label="options_label_next_shopper_keybind" table="game" action="NextInventoryUnit" />
+						<instance name="keybind_impulse" label="options_label_previous_shopper_keybind" table="game" action="PrevInventoryUnit" />
+						<instance name="keybind_impulse" label="options_label_nshopper_center_keybind" table="game" action="NextInventoryUnitCentered" />
+						<instance name="keybind_impulse" label="options_label_pshopper_center_keybind" table="game" action="PrevInventoryUnitCentered" />
+						<instance name="keybind_impulse" label="options_label_acti_ab_1_keybind" table="game" action="ActivateTool" param="0" />
+						<instance name="keybind_impulse" label="options_label_acti_ab_2_keybind" table="game" action="ActivateTool" param="1" />
+						<instance name="keybind_impulse" label="options_label_acti_ab_3_keybind" table="game" action="ActivateTool" param="2" />
+						<instance name="keybind_impulse" label="options_label_acti_ab_4_keybind" table="game" action="ActivateTool" param="3" />
+						<instance name="keybind_impulse" label="options_label_acti_extra_ab_1_keybind" table="game" action="ActivateTool" param="5" />
+						<instance name="keybind_impulse" label="options_label_acti_extra_ab_2_keybind" table="game" action="ActivateTool" param="6" />
+						<instance name="keybind_impulse" label="options_label_acti_extra_ab_3_keybind" table="game" action="ActivateTool" param="7" />
+						<instance name="keybind_impulse" label="options_label_attribute_boost_keybind" table="game" action="ActivateTool" param="4" />
+						<instance name="keybind_impulse" label="options_label_acti_inven_1_keybind" table="game" action="ActivateTool" param="25" />
+						<instance name="keybind_impulse" label="options_label_acti_inven_2_keybind" table="game" action="ActivateTool" param="26" />
+						<instance name="keybind_impulse" label="options_label_acti_inven_3_keybind" table="game" action="ActivateTool" param="27" />
+						<instance name="keybind_impulse" label="options_label_acti_inven_4_keybind" table="game" action="ActivateTool" param="28" />
+						<instance name="keybind_impulse" label="options_label_acti_inven_5_keybind" table="game" action="ActivateTool" param="29" />
+						<instance name="keybind_impulse" label="options_label_acti_inven_6_keybind" table="game" action="ActivateTool" param="30" />
+						<instance name="keybind_impulse" label="options_label_taunt_keybind" table="game" action="ActivateTool" param="8" />
+						<instance name="keybind_impulse" label="options_label_prev_attack_mod_keybind" table="game" action="PrevAttackModifier" />
+						<instance name="keybind_impulse" label="options_label_next_attack_mod_keybind" table="game" action="NextAttackModifier" />
+						<instance name="keybind_impulse" label="options_label_levelup_keybind" table="game" action="ToggleLevelup" />
+						<instance name="keybind_type" label="options_header_control_groups" />
+						<instance name="keybind_impulse" label="options_label_recall_1_keybind" table="game" action="RecallSelection" param="1" />
+						<instance name="keybind_impulse" label="options_label_recall_2_keybind" table="game" action="RecallSelection" param="2" />
+						<instance name="keybind_impulse" label="options_label_recall_3_keybind" table="game" action="RecallSelection" param="3" />
+						<instance name="keybind_impulse" label="options_label_recall_4_keybind" table="game" action="RecallSelection" param="4" />
+						<instance name="keybind_impulse" label="options_label_recall_5_keybind" table="game" action="RecallSelection" param="5" />
+						<instance name="keybind_impulse" label="options_label_recall_6_keybind" table="game" action="RecallSelection" param="6" />
+						<instance name="keybind_impulse" label="options_label_recall_7_keybind" table="game" action="RecallSelection" param="7" />
+						<instance name="keybind_impulse" label="options_label_recall_8_keybind" table="game" action="RecallSelection" param="8" />
+						<instance name="keybind_impulse" label="options_label_recall_9_keybind" table="game" action="RecallSelection" param="9" />
+						<instance name="keybind_impulse" label="options_label_recall_10_keybind" table="game" action="RecallSelection" param="0" />
+						<instance name="keybind_impulse" label="options_label_save_selection_1_keybind" table="game" action="SaveSelection" param="1" />
+						<instance name="keybind_impulse" label="options_label_save_selection_2_keybind" table="game" action="SaveSelection" param="2" />
+						<instance name="keybind_impulse" label="options_label_save_selection_3_keybind" table="game" action="SaveSelection" param="3" />
+						<instance name="keybind_impulse" label="options_label_save_selection_4_keybind" table="game" action="SaveSelection" param="4" />
+						<instance name="keybind_impulse" label="options_label_save_selection_5_keybind" table="game" action="SaveSelection" param="5" />
+						<instance name="keybind_impulse" label="options_label_save_selection_6_keybind" table="game" action="SaveSelection" param="6" />
+						<instance name="keybind_impulse" label="options_label_save_selection_7_keybind" table="game" action="SaveSelection" param="7" />
+						<instance name="keybind_impulse" label="options_label_save_selection_8_keybind" table="game" action="SaveSelection" param="8" />
+						<instance name="keybind_impulse" label="options_label_save_selection_9_keybind" table="game" action="SaveSelection" param="9" />
+						<instance name="keybind_impulse" label="options_label_save_selection_10_keybind" table="game" action="SaveSelection" param="0" />
+						<instance name="keybind_impulse" label="options_label_add_selection_1_keybind" table="game" action="AddToSelection" param="1" />
+						<instance name="keybind_impulse" label="options_label_add_selection_2_keybind" table="game" action="AddToSelection" param="2" />
+						<instance name="keybind_impulse" label="options_label_add_selection_3_keybind" table="game" action="AddToSelection" param="3" />
+						<instance name="keybind_impulse" label="options_label_add_selection_4_keybind" table="game" action="AddToSelection" param="4" />
+						<instance name="keybind_impulse" label="options_label_add_selection_5_keybind" table="game" action="AddToSelection" param="5" />
+						<instance name="keybind_impulse" label="options_label_add_selection_6_keybind" table="game" action="AddToSelection" param="6" />
+						<instance name="keybind_impulse" label="options_label_add_selection_7_keybind" table="game" action="AddToSelection" param="7" />
+						<instance name="keybind_impulse" label="options_label_add_selection_8_keybind" table="game" action="AddToSelection" param="8" />
+						<instance name="keybind_impulse" label="options_label_add_selection_9_keybind" table="game" action="AddToSelection" param="9" />
+						<instance name="keybind_impulse" label="options_label_add_selection_10_keybind" table="game" action="AddToSelection" param="0" />
+						<instance name="keybind_impulse" label="options_label_remove_select_1_keybind" table="game" action="RemoveFromSelection" param="1" />
+						<instance name="keybind_impulse" label="options_label_remove_select_2_keybind" table="game" action="RemoveFromSelection" param="2" />
+						<instance name="keybind_impulse" label="options_label_remove_select_3_keybind" table="game" action="RemoveFromSelection" param="3" />
+						<instance name="keybind_impulse" label="options_label_remove_select_4_keybind" table="game" action="RemoveFromSelection" param="4" />
+						<instance name="keybind_impulse" label="options_label_remove_select_5_keybind" table="game" action="RemoveFromSelection" param="5" />
+						<instance name="keybind_impulse" label="options_label_remove_select_6_keybind" table="game" action="RemoveFromSelection" param="6" />
+						<instance name="keybind_impulse" label="options_label_remove_select_7_keybind" table="game" action="RemoveFromSelection" param="7" />
+						<instance name="keybind_impulse" label="options_label_remove_select_8_keybind" table="game" action="RemoveFromSelection" param="8" />
+						<instance name="keybind_impulse" label="options_label_remove_select_9_keybind" table="game" action="RemoveFromSelection" param="9" />
+						<instance name="keybind_impulse" label="options_label_remove_select_10_keybind" table="game" action="RemoveFromSelection" param="0" />
+						<instance name="keybind_type" label="options_header_camera_controls" />
+						<instance name="keybind" label="options_label_move_forward_keybind" table="game" action="MoveForward" />
+						<instance name="keybind" label="options_label_move_left_keybind" table="game" action="MoveLeft" />
+						<instance name="keybind" label="options_label_move_back_keybind" table="game" action="MoveBack" />
+						<instance name="keybind" label="options_label_move_right_keybind" table="game" action="MoveRight" />
+						<instance name="keybind" label="options_label_camera_drag_keybind" table="game" action="CameraDrag" />
+						<instance name="keybind" label="options_label_center_screen_keybind" table="game" action="Center" labelx="2.0h" hastip="1" tipheight="5.8h" tipid="co_center_tip" tool_tip_content="options_label_center_screen_keybind_tooltip"/>
+						<instance name="keybind" label="options_label_center_info_keybind" table="game" action="CenterInfo" labelx="2.0h" hastip="1" tipheight="5.8h" tipid="co_centerinfo_tip" tool_tip_content="options_label_center_info_keybind_tooltip" />
+						<instance name="keybind_impulse" label="options_label_zoom_out_keybind" table="game" action="ZoomOut" />
+						<instance name="keybind_impulse" label="options_label_zoom_in_keybind" table="game" action="ZoomIn" />
+						<instance name="keybind" label="options_label_free_look_keybind" table="game" action="FreeLook" />
+						<instance name="keybind_impulse" label="options_label_reset_camera_keybind" table="game" action="ResetCamera" />
+						<instance name="keybind_impulse" label="options_label_camera_up_keybind" table="game" action="CameraUp" />
+						<instance name="keybind_impulse" label="options_label_camera_down_keybind" table="game" action="CameraDown" />
+						<instance name="keybind_type" label="options_header_random_stuff" />
+						<instance name="keybind_impulse" label="options_label_mute_sound_keybind" table="game" action="ToggleCvar" param="sound_mute" />
+						<instance name="keybind_impulse" label="options_label_mute_music_keybind" table="game" action="ToggleCvar" param="sound_muteMusic" />
+						<instance name="keybind_type" label="options_header_shop" />
+						<instance name="keybind_impulse" label="options_label_slot_1_keybind" table="shop" action="Shop" param="0" />
+						<instance name="keybind_impulse" label="options_label_slot_2_keybind" table="shop" action="Shop" param="1" />
+						<instance name="keybind_impulse" label="options_label_slot_3_keybind" table="shop" action="Shop" param="2" />
+						<instance name="keybind_impulse" label="options_label_slot_4_keybind" table="shop" action="Shop" param="3" />
+						<instance name="keybind_impulse" label="options_label_slot_5_keybind" table="shop" action="Shop" param="4" />
+						<instance name="keybind_impulse" label="options_label_slot_6_keybind" table="shop" action="Shop" param="5" />
+						<instance name="keybind_impulse" label="options_label_slot_7_keybind" table="shop" action="Shop" param="6" />
+						<instance name="keybind_impulse" label="options_label_slot_8_keybind" table="shop" action="Shop" param="7" />
+						<instance name="keybind_impulse" label="options_label_slot_9_keybind" table="shop" action="Shop" param="8" />
+						<instance name="keybind_impulse" label="options_label_slot_10_keybind" table="shop" action="Shop" param="9" />
+						<instance name="keybind_impulse" label="options_label_slot_11_keybind" table="shop" action="Shop" param="10" />
+						<instance name="keybind_impulse" label="options_label_slot_12_keybind" table="shop" action="Shop" param="11" />
+						<instance name="keybind_impulse" label="options_label_close_shop_keybind" table="shop" action="Shop" param="-1" />
+						<instance name="keybind_impulse" label="options_label_recipe_history_back_keybind" table="shop" action="RecipeBack" />
+						<instance name="keybind_impulse" label="options_label_recipe_history_for_keybind" table="shop" action="RecipeForward" />
+					</listbox>
+					
+					<instance name="button2" y="-0.75h" width="12h" height="2.0h" align="center" valign="bottom" font="dyn_10" label="options_button_default_binds" borderthickness=".8h" onclick="Exec('default_binds.cfg'); Refresh(); PlaySound('/shared/sounds/ui/button_click.mp3');" onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');" />
+				</panel>
+			</panel>
+			
+			<panel y="22.0h" width="-2%" align="center" height="2.5h" noclick="1">
+				<instance y="4" name="header_bar" lbl="options_header_control_options" lbl_font="dyn_9" show_close="0" />
+			</panel>
+			
+			<panel y="12.5h" width="-2%" align="center" height="9.0h" color="invisible" noclick="1">
+				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+				
+				<panel y="5.6h" width="96%" height="2.0h" align="center" noclick="1" color="invisible" float="right" padding="0">
+					<panel width="34%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="edgescroll_tip" font="dyn_9" cvar="cam_edgeScroll" label="options_checkbox_screen_edge_scroll" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="30h" height="7.3h" align="left" tip_id="edgescroll_tip" title="options_checkbox_screen_edge_scroll" label="options_screen_edge_scroll_tip" />
+					</panel>
+					<panel width="31%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="constraincursor_tip" font="dyn_9" cvar="cg_constrainCursor" label="options_checkbox_constrain_cursor" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="30h" height="7.3h" align="center" tip_id="constraincursor_tip" title="options_checkbox_constrain_cursor" label="options_constrain_cursor_tip" />
+					</panel>
+					<panel width="35%" color="invisible">
+						<instance name="Noptions_checkbox" height="1.5h" tip_id="xp_tip" font="dyn_9" cvar="cg_drawRewardExp" label="options_checkbox_display_xp_rewards" />
+						<instance name="generic_tooltip" y="2.0h" x="0" width="30h" height="7.3h" align="right" tip_id="xp_tip" title="options_checkbox_display_xp_rewards" label="options_display_xp_rewards_tip" />
+					</panel>
+				</panel>
+				
+				<panel y="3.2h" height="2h" noclick="1">
+					<panel width="96%" height="1" align="center" valign="center" color="#414653"/>
+				</panel>
+				
+				<panel y="1.2h" width="96%" height="2.4h" align="center" color="invisible" noclick="1">
+					<panel x="0" width="97%" height="100%" valign="center" align="left" color="invisible" noclick="1">
+						<instance name="Noptions_slider" cvar="cam_scrollSpeed" slider_name="Noptions_slider_scrollSpeed" minvalue="100" maxvalue="6000" step="100" value="round (cam_scrollSpeed)" label="options_label_scroll_speed" action=""/>
+					</panel>
+					<instance name="tip_mark" tip_id="camerascroll_tip" x="97%" width="1.8h" height="1.8h" valign="center" align="left" />
+					<instance name="generic_tooltip" x="-56@" width="23h" height="5.8h" align="right" tip_id="camerascroll_tip" title="options_camera_scroll_speed_tip_header" label="options_camera_scroll_speed_tip" />					
+				</panel>
+			</panel>
+			
+			<panel y="9.5h" width="-2%" align="center" height="2.5h" noclick="1">
+				<instance y="4" name="header_bar" lbl="options_header_input_options" lbl_font="dyn_9" show_close="0" />
+			</panel>
+			
+			<panel y="0" height="2.5h" noclick="1">
+				<instance name="header_bar" lbl="options_header_game_options" show_close="1" onclick="{onclose} OptionsCancel();" /> 
+			</panel>
+			
+		</panel>
+		<!-- END Controls -->
+		
+		<!-- Stats -->
+		<panel name="Noptions_awards" group="option_panel" padding=".5h" noclick="1" color="invisible" visible="0">
+		
+			<panel y="9.5h" width="-2%" align="center" height="2.5h" noclick="1">
+				<instance y="4" name="header_bar" lbl="options_button_awards" lbl_font="dyn_9" show_close="0" />		
+			</panel>			
+			
+			<panel y="0" height="2.5h" noclick="1">
+				<instance name="header_bar" lbl="options_header_game_options" show_close="1" onclick="{onclose} OptionsCancel();" /> 
+			</panel>
+			
+		</panel>
+		<!-- END Stats -->
+				
+		<!-- Stats -->
+		<panel name="Noptions_stats" group="option_panel" padding=".5h" noclick="1" color="invisible" visible="0">
+		
+			<panel name="playerstats_opts" align="center" y="9.5h" width="-2%" height="-9.5h" noclick="1" visible="1">
+				<instance name="no_frame" body="player_stats_full" noclick="0" cangrab="0"/>
+				<panel color="0 0 0 0.8" watch="LoginStatus" ontrigger="SetVisible(!param2);">
+					<label
+						width="80%" height="2.0h"
+						align="center" valign="center"
+						textalign="center" textvalign="center"
+						font="dyn_14" color="1.0 0.7 0.2 1" shadow="true"
+						content="options_header_login_to_view_stats"
+					/>
+				</panel>
+			</panel>
+			
+			<panel y="0" height="2.5h" noclick="1">
+				<instance name="header_bar" lbl="options_header_game_options" show_close="1" onclick="{onclose} OptionsCancel();" /> 
+			</panel>
+			
+		</panel>
+		<!-- END Stats -->
+		
+		<instance name="options_button_binder" />
+		<instance name="options_impulse_binder" />
+
+	</template>
+	
+</package>

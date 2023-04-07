@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_NomesWisdom"
+	
+	icon="icon.tga"
+	
+	cost="600"
+	components="Item_ManaRegen3 Item_MajorTotem Item_NeophytesBook"
+	
+	actiontype="passive"
+	
+	strength="6"
+	agility="6"
+	intelligence="16"
+	damage="10"
+	manaregenmultiplier="1.00"
+>
+	<modifier key="NomesWisdom" modpriority="100" exclusive="true">
+		<aura state="State_Nome" radius="800" targetscheme="ally_units" effecttype="Buff" propagatecondition="not_stealthed" />
+	</modifier>
+</item>

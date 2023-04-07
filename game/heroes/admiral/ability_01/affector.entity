@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Admiral_Ability1"
+	
+	radius="225"
+	impactdelay="2000"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+>
+	<onexpired>
+		<playeffect effect="../../../heroes/kraken/ability_04/effects/portin.effect" source="target_position" target="" />
+	</onexpired>
+	
+	<onimpact>
+		<damage effecttype="Magic" amount="60,90,120,150"/>
+		<applystate name="State_Admiral_Ability1" duration="1500"/>
+		<spawnprojectile name="Projectile_Admiral_Ability1_Toss" source="target_entity" target="target_entity" bind="target_entity" ignoretargetoffset="true" noresponse="true" />
+	</onimpact>
+</affector>

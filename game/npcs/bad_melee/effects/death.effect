@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="death" deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1.2">
+
+			<groundsprite
+				name="emitter0" 
+				count="1"
+				material="/shared/effects/materials/blob.material"
+				life="8000"
+				startsize="10"
+				endsize="40"				
+				position="-5 20 0"
+				color=".2"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+			/>
+			
+			<groundsprite
+				name="emitter0" 
+				count="1"
+				material="/shared/effects/materials/blob.material"
+				life="8000"
+				startsize="10"
+				endsize="50"				
+				position="5 30 0"
+				color=".3"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+			/>	
+
+			<groundsprite
+				life="8000"
+				name="emitter0" 
+				count="1"
+				material="/shared/effects/materials/blob.material"
+				size="40"				
+				color=".2"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+			/>
+
+			<!-- Tar Explosion -->
+
+			<simpleemitter 
+				count="20"
+         			spawnrate="1222"				
+          			particlelife="2200"
+				speed="420"
+				offsetsphere="20 20 20"
+          			material="/shared/effects/materials/bubble_blend.material"
+				gravity="4"
+				drag="0.15"
+				angle="45"
+      			  >
+  				<particle 
+					maxangle="360"			
+					minanglespeed="-24"
+					maxanglespeed="24"
+					maxscale="4"					
+					startcolor=".4"	
+					endcolor=".1"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					startsize="7"
+					endsize="5"	
+				/>
+        		</simpleemitter>
+		
+			<simpleemitter 
+				count="20"
+         			spawnrate="1222"				
+				minparticlelife="800"
+          			maxparticlelife="2400"
+				speed="220"
+				offsetsphere="20 20 20"
+          			material="/shared/effects/materials/blood_white.material"
+				gravity="2"
+				drag="0.1"
+				angle="75"
+      			  >
+  				<particle 
+					maxangle="360"			
+					minanglespeed="-24"
+					maxanglespeed="24"
+					scale="4"					
+					startcolor=".22 .22 .27"
+					endcolor=".15"	
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					startsize="7"
+					endsize="12"					
+				/>
+        		</simpleemitter>
+
+			<simpleemitter 
+				count="10"
+         			spawnrate="1222"				
+          			particlelife="1000"
+				speed="220"
+				offsetsphere="20 20 20"
+          			material="/shared/effects/materials/bubble_add.material"
+				gravity="2"
+				drag="0.1"
+				angle="45"
+      			  >
+  				<particle 
+					maxangle="360"			
+					minanglespeed="-24"
+					maxanglespeed="24"
+					maxscale="1"					
+					startcolor=".6"	
+					endcolor=".1"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					startsize="7"
+					endsize="0"	
+				/>
+        		</simpleemitter>
+
+			<simpleemitter 
+				count="12"
+         			spawnrate="1222"				
+          			particlelife="2000"
+				speed="100"
+				offsetsphere="22"
+          			material="/shared/effects/materials/dust_smoke_02.material"
+				gravity="2"
+				drag="0.13"
+				angle="25"
+      			  >
+  				<particle 
+					maxangle="45"			
+					maxscale="6"					
+					startcolor=".15 .15 .2"	
+					endcolor="0"
+					startalpha=".5"
+					endalpha="0"
+					startsize="6"
+					endsize="13"					
+				/>
+        		</simpleemitter>
+
+			<simpleemitter 
+				life="5000"
+				delay="1400"
+         			spawnrate="20"				
+				position="0 0 5"
+				minparticlelife="300"
+          			maxparticlelife="1000"
+				speed="20"
+				offsetsphere="30 30 5"
+          			material="/shared/effects/materials/bubble_blend.material"
+				drag="1"
+				angle="0"
+				depthbias="-20"
+      			  >
+  				<particle 
+					maxangle="360"			
+					minscale="0"
+					maxscale="3"					
+					startcolor=".5"	
+					endcolor="0"
+					startalpha="1"
+					endalpha="0"
+					startsize="4"
+					endsize="1"
+				/>
+        		</simpleemitter>		
+
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

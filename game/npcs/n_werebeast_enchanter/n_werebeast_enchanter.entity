@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neutral
+	name="Neutral_WerebeastEnchanter"
+	
+	
+	
+	icon="icons/creep.tga"
+	portrait="icons/creep.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.2"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="36"
+	targetoffset="0 0 54"
+
+	movespeed="320"
+	turnrate="320"
+
+	maxhealth="500"
+	healthregen="0.5"
+	maxmana="400"
+	manaregen="0.75"
+
+	armor="1"
+	magicarmor="0"
+
+	cancarryitems="false"
+	inventory0=""
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+
+	attackduration="1000"
+	attackactiontime="490"
+	attackcooldown="1350"
+	attackdamagemin="30"
+	attackdamagemax="35"
+	attacknumanims="1"
+	attackoffset="30 30 70"
+	attackprojectile="Projectile_werebeast_enchanter_attack"
+	attackrange="300"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="sounds/impact.effect"
+	attacktype="ranged"
+	combattype="Ranged"
+
+	aggrorange="250"
+	sightrangeday="800"
+	sightrangenight="800"
+
+	experiencebounty="62"
+	goldbountymin="30"
+	goldbountymax="40"
+	
+	corpsetime="15000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+</neutral>

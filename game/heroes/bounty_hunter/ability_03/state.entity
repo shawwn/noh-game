@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_BountyHunter_Ability3"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="../../../items/recipes/shroud_of_the_assasin/state.effect"
+	stealthtype="hero"
+	fadetime="10"
+	unitwalking="true"
+	
+	effecttype="StatusBuff"
+>
+	<oninflict>
+		<forgetattacks />
+		<startfade />
+	</oninflict>
+	<onframe />
+
+	<onattack>
+		<bonusdamageadd target="" a="30,60,90,120" />
+		<expire />	
+	</onattack>
+	
+	<onactivatepreimpact>
+		<expire />
+	</onactivatepreimpact>
+</state>

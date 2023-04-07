@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Vindicator4"
+
+	icon="icon.tga"
+	statuseffecttooltip="State_Vindicator_Ability4"
+	
+	anim="ability_4"
+	casttime="851"
+	castactiontime="300"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="global"
+	targetscheme="enemy_heroes"
+	casteffecttype="SuperiorMagic"
+	
+	manacost="250,350,450"
+	cooldowntime="160000"
+>
+
+	<onaction>
+		<playeffect effect="effects/pages.effect" target="source_entity" source="source_entity"/>
+	</onaction>
+	<onimpact>
+		
+		<applystate name="State_Vindicator_Ability4" duration="3000,4000,5000" />
+	</onimpact>
+</ability>

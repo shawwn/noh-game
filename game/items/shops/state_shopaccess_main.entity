@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ShopAccess_Main"
+
+	icon="/items/icons/scroll.tga"
+	passiveeffect=""
+	
+	effecttype=""
+	
+	shopaccess="Shop_Supplies Shop_Accessories Shop_Accessories2 Shop_Weapons Shop_Relics Shop_Recipes1 Shop_Recipes1a Shop_Recipes2 Shop_Recipes2a Shop_Recipes3 Shop_Recipes4 Shop_Recipes5"
+	stashaccess="true"
+>
+</state>

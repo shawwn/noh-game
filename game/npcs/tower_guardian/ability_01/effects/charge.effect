@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" useentityeffectscale="1" deferred="true">
+
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+			<model
+				life="4000"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".1 .5 1"
+				endcolor=".1 .5 1"
+				startscale="1"
+				
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell2.material"
+				startalpha="0"
+				midalpha=".25"
+				endalpha=".1"
+			/>
+		<model
+				life="800"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".5 2 3"
+				endcolor="0 0 0"
+				startscale="1"
+				
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell2.material"
+				startalpha="0"
+				midalpha="5"
+				endalpha="0"
+			/>
+			
+			<model
+				delay="1100"
+				life="800"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".5 2 3"
+				endcolor="0 0 0"
+				startscale="1"
+				midscale="1.05"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell2.material"
+				startalpha="0"
+				midalpha="5"
+				endalpha="0"
+			/>
+			
+			<model
+				delay="2850"
+				life="500"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".5 2 3"
+				endcolor="0 0 0"
+				startscale="1"
+				midscale="1.2"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell2.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+			/>
+		
+		<template name="electricbeams">
+			<beam
+				delay="delay1"
+				owner_a="source"
+				owner_b="source"
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				size="25"
+				startcolor="0 1 1"
+				midcolor="0 1 1"
+				endcolor=" 0 0 0"
+				midcolorpos="0.8"
+				life="600"
+				
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				startframe=".6"
+				framespeed="{framespeed1}"
+				
+			/>			
+			</template>
+			<instance name="electricbeams" bonea="_bone_fx_04" boneb="_bone_fx_06"  framespeed1="3" delay1="0"/>
+			<instance name="electricbeams" bonea="_bone_fx_25" boneb="_bone_fx_16" framespeed1="6"  delay1="125"/>
+			<instance name="electricbeams" bonea="_bone_fx_25" boneb="Bip01 R Foot" framespeed1="3" delay1="0"/>
+			<instance name="electricbeams" bonea="_bone_fx_14" boneb="_bone_fx_13" framespeed1="3" delay1="175"/>
+			<instance name="electricbeams" bonea="_bone_fx_10" boneb="_bone_fx_11" framespeed1="5" delay1="150"/>
+			<instance name="electricbeams" bonea="_bone_fx_06" boneb="_bone_fx_14" framespeed1="3" delay1="0"/>
+			<instance name="electricbeams" bonea="_bone_fx_12" boneb="_bone_fx_04" framespeed1="10" delay1="500"/>
+		
+		<template name="electricbeams2">
+			<beam
+				delay="2500"
+				owner_a="source"
+				owner_b="source"
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				size="25"
+				startcolor="0 1 1"
+				midcolor="0 1 1"
+				endcolor=" 0 0 0"
+				midcolorpos="0.8"
+				life="600"
+				
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				startframe=".6"
+				framespeed="{framespeed1}"
+				
+			/>			
+			</template>
+			<instance name="electricbeams2" bonea="_bone_fx_04" boneb="_bone_fx_06"  framespeed1="3"/>
+			<instance name="electricbeams2" bonea="_bone_fx_25" boneb="_bone_fx_16" framespeed1="6" />
+			<instance name="electricbeams2" bonea="_bone_fx_25" boneb="Bip01 R Foot" framespeed1="3"/>
+			<instance name="electricbeams2" bonea="_bone_fx_14" boneb="_bone_fx_13" framespeed1="3" />
+			<instance name="electricbeams2" bonea="_bone_fx_10" boneb="_bone_fx_11" framespeed1="5" />
+			<instance name="electricbeams2" bonea="_bone_fx_06" boneb="_bone_fx_14" framespeed1="3" />
+			<instance name="electricbeams2" bonea="_bone_fx_12" boneb="_bone_fx_04" framespeed1="10" />
+			
+			
+		<template name="electricbeams3">	
+			<beam
+				delay="1200"
+				owner_a="source"
+				owner_b="source"
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				size="25"
+				startcolor="0 1 1"
+				midcolor="0 1 1"
+				endcolor=" 0 0 0"
+				midcolorpos="0.8"
+				life="600"
+				
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				startframe=".6"
+				framespeed="{framespeed1}"
+				
+			/>			
+			</template>
+			<instance name="electricbeams3" bonea="_bone_fx_04" boneb="_bone_fx_06"  framespeed1="3"/>
+			<instance name="electricbeams3" bonea="_bone_fx_25" boneb="_bone_fx_16" framespeed1="6" />
+			<instance name="electricbeams3" bonea="_bone_fx_25" boneb="Bip01 R Foot" framespeed1="3"/>
+			<instance name="electricbeams3" bonea="_bone_fx_14" boneb="_bone_fx_13" framespeed1="3" />
+			<instance name="electricbeams3" bonea="_bone_fx_10" boneb="_bone_fx_11" framespeed1="5" />
+			<instance name="electricbeams3" bonea="_bone_fx_06" boneb="_bone_fx_14" framespeed1="3" />
+			<instance name="electricbeams3" bonea="_bone_fx_12" boneb="_bone_fx_04" framespeed1="10" />
+		
+		</particlesystem>
+		
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnparticlesystem instance="instance1" particlesystem="system1" />
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+
+</effect>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Recipes3"
+	
+	allowremoteaccess="true"
+
+	style="recipes"
+	header="/ui/elements/shop/shopkeeper_recipes.tga"
+	
+	icon="shop_recipes3.tga"
+	order="1"
+	slot="7"
+>
+	<item name="Item_IronShield" />
+	<item name="Item_MagicArmor2" />
+	<item name="Item_Excruciator" />
+	<item name="Item_Shield2" />	
+	
+	<item name="Item_HealthMana2" />
+	
+	<item name="Item_Stealth" />
+
+	<item name="Item_Immunity" />
+	<item name="Item_FrostfieldPlate" />
+
+	<item name="Item_HealthMana3" />
+	<item name="Item_Protect" />
+	<item name="Item_BehemothsHeart" />
+	<item name="Item_DaemonicBreastplate" />
+</shop>

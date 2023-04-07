@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Vindicator2"
+
+	icon="icon.tga"
+
+	casttime="851"
+	castactiontime="300"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	cooldowntime="3000,2000,1000,0"
+	noninterrupting="true"
+
+	range="600"
+	activatescheme="canattack"
+	actiontype="attack"
+	targetscheme="enemy_units"
+	casteffecttype="Attack"
+	projectile="Projectile_Vindicator_Ability1"
+	manacost="15"
+	casteffect="effects/cast.effect"
+>
+	<onaction>
+		<playeffect effect="effects/cast_impact.effect" source="source_entity" target="" />
+	</onaction>
+	
+	<onimpact>
+		<setvar0 a="0.15,0.30,0.45,0.60" b="source_intelligence" op="mult"/> 
+		<damage effecttype="" amount="1" b="var0" op="mult"/>
+		<popup name="execution" a="var0" source="target_entity" target="source_entity" />
+	</onimpact>
+</ability>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Yogi2"
+
+	statuseffecttooltip="State_Yogi_Ability2"
+	statuseffectheader="true"
+	icon="icons/ability_2.tga"
+	
+	anim="ability_2"
+	casttime="1000"
+	castactiontime="500"
+	casteffect="effects/ability_02/cast.effect"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="global"
+	targetscheme="my_units"
+	casteffecttype=""
+	
+	manacost="50"
+	cooldowntime="30000"
+>
+	<onimpact>
+		<applystate name="State_Yogi_Ability2" duration="10000" target="target_entity"/>
+	</onimpact>
+	
+	<modifier key="synergy1" modpriority="100">
+		<onimpact effectdescription="true">
+			<applystate name="State_Yogi_Ability2" duration="20000" target="target_entity"/>
+		</onimpact>
+	</modifier>
+	
+	<modifier key="synergy2" modpriority="100">
+		<onimpact  effectdescription="true">
+			<applystate name="State_Yogi_Ability2" duration="30000" target="target_entity"/>
+		</onimpact>
+	</modifier>
+	
+	<modifier key="synergy3" modpriority="100">
+		<onimpact  effectdescription="true">
+			<applystate name="State_Yogi_Ability2" duration="40000" target="target_entity"/>
+		</onimpact>
+	</modifier>
+	
+	<modifier key="synergy4" modpriority="100">
+		<onimpact  effectdescription="true">
+			<applystate name="State_Yogi_Ability2" duration="50000" target="target_entity"/>
+		</onimpact>
+	</modifier>
+</ability>

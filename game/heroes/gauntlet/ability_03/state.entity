@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Predator_Ability4"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	
+        movespeedslow="0.25,0.35,0.45,0.55"
+	attackspeedslow="0.25,0.35,0.45,0.60"
+	norefresh="true"
+
+	
+	effecttype="StatusBuff"
+	
+	maxcharges="10"
+	initialcharges="2"
+>
+	<onframe >
+		<condition test="charges gt 3">
+			<setactivemodifierkey name="pred4_1" />
+		</condition>
+		<condition test="charges gt 7">
+			<setactivemodifierkey name="pred4_2" />
+		</condition>
+		<condition test="charges gt 11">
+			<setactivemodifierkey name="pred4_3" />
+		</condition>
+	</onframe>
+	
+	<onattackedpostimpact>
+		<condition test="target_type Hero">
+			<addcharges count="2" />
+		</condition>
+		<condition test="not_target_type Hero">
+			<condition test="target_type Boss" >
+				<addcharges  count="2" />
+			</condition>
+			<condition test="not_target_type Boss" >
+				<addcharges count="1" />
+			</condition>
+		</condition>
+	</onattackedpostimpact>
+
+	<modifier key="pred4_1" modpriority="100"	
+		passiveeffect="effects/state_level1.effect"
+	/>
+	<modifier key="pred4_2" modpriority="100"	
+		passiveeffect="effects/state_level2.effect"
+	/>
+	<modifier key="pred4_3" modpriority="100"	
+		passiveeffect="effects/state_level3.effect"
+	/>	
+
+</state>

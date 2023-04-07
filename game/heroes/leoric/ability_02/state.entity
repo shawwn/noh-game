@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Leoric_Ability2"
+
+	icon="icon.tga"
+	
+	
+	passiveeffect="../../../items/recipes/abyssal_skull/state.effect"
+			
+	effecttype="StatusBuff"
+	
+
+>
+	<onframe/>
+	<modifier key="vamp_leoric" condition="melee" modpriority="100"
+		lifesteal="0.10,0.16,0.22,0.28"
+	/>
+
+</state>

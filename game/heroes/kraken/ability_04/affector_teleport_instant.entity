@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Kraken_Ability4_Teleport_Instant"
+	effect="effects/ability_self.effect"	
+	radius="350"
+	targetselection="all"
+	targetscheme="all_other_units"
+	maximpactspertarget="1"
+
+>
+	
+	<onimpact>
+		<condition test="target_type alive">
+			<unbind target="target_entity" />
+			<cantarget targetscheme="enemy_units">
+				<damage effecttype="Magic" amount="150,300,450" />
+			</cantarget>
+			
+			<teleport source="target_entity" target="proxy_position" interpolate="false" />
+			
+			<disjoint target="target_entity" />
+		</condition>
+	</onimpact>
+</affector>

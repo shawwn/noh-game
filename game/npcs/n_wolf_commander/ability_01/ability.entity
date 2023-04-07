@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_WolfCommander1"
+
+	
+	
+	icon="icon.tga"
+	
+	actiontype="passive"
+>
+	<aura state="State_WolfCommander_Ability1" radius="500" targetscheme="ally_units" />
+</ability>

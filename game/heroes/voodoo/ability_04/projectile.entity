@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Ward_Attack"
+
+	speed="1000"
+	gravity="1100"
+
+	modelscale="1.15"
+	model="/shared/models/invis.mdf"
+
+	traileffect="projectile/trail.effect"
+	impacteffect="projectile/impact.effect"
+>
+</projectile>

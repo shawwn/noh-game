@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+
+			<model
+				expirelife="300"
+				parentmodel="true"
+				parentskeleton="true"
+				loop="true"
+				life="3000"
+				startcolor="0.0 0.0 1.0"
+				midcolor="0 0 0"
+				endcolor="0 0 1"
+				material="/shared/effects/materials/shell2.material"
+			/>
+
+			<beam
+				expirelife="300"
+				bone_a="_bone_fx_2"
+				bone_b="_bone_fx_4"
+				loop="1"
+				size="20"
+				life="550"
+				startcolor="0 0 1"
+				midcolor="0 1 1"
+				endcolor="0 0 1"
+				delay="600"
+				alpha=".0001"
+				material="/shared/effects/materials/femme_lightning_06.material"
+				framespeed="1"
+			/>
+
+			<beam
+				expirelife="300"
+				bone_a="_bone_fx_3"
+				bone_b="_bone_fx_5"
+				loop="1"
+				size="20"
+				life="1000"
+				startcolor="0 0 1"
+				midcolor="0 1 1"
+				endcolor="0 0 1"
+				delay="600"
+				alpha=".0001"
+				material="/shared/effects/materials/femme_lightning_06.material"
+				framespeed="1"
+			/>
+		
+			<beam
+				expirelife="300"
+				bone_a="_bone_fx_2"
+				bone_b="_bone_fx_5"
+				loop="1"
+				size="20"
+				life="1000"
+				startcolor="0 0 1"
+				midcolor="0 1 1"
+				endcolor="0 0 1"
+				delay="600"
+				alpha=".0001"
+				material="/shared/effects/materials/femme_lightning_06.material"
+				framespeed="1"
+			/>
+
+			<beam
+				expirelife="300"
+				bone_a="_bone_fx_3"
+				bone_b="_bone_fx_4"
+				loop="1"
+				size="20"
+				life="1000"
+				startcolor="0 0 1"
+				midcolor="0 1 1"
+				endcolor="0 0 1"
+				delay="600"
+				alpha=".0001"
+				material="/shared/effects/materials/femme_lightning_06.material"
+				framespeed="1"
+			/>
+			
+			<billboard
+				expirelife="300"
+				startcolor="0 0 .3"
+				midcolor="0 0 .3"
+				endcolor="0 0 .3"
+				position="0 0 50"
+				material="/shared/effects/materials/glow_01.material"
+				size="75"
+				depthbias="-60"
+				loop="true"
+				life="3000"
+			/>
+			
+			<billboard
+				expirelife="300"
+				bone="_bone_fx_1"
+				startcolor="0 0 0"
+				midcolor=".25"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/blink.material"
+				startsize="5"
+				midsize="70"
+				endsize="5"
+				depthbias="0"
+				loop="true"
+				life="2000"
+				rollspeed="-90"
+			/>
+			
+			<billboard
+				expirelife="300"
+				bone="_bone_fx_1"
+				delay="1000"
+				startcolor="0 0 .2"
+				midcolor="0 0 0"
+				endcolor="0 0 .2"
+				material="/shared/effects/materials/glow_01.material"
+				size="85"
+				depthbias="-60"
+				loop="true"
+				life="3000"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

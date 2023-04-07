@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="dragon_slave" persistent="true" useentityeffectscale="true">
+	<definitions>
+
+		
+	<particlesystem name="system0" space="world" scale="1">
+		<simpleemitter
+			bone="Bip01 L Hand"			
+			
+			count="1"
+			spawnrate="5555"
+			particlelife="1000"
+			gravity="1.0"
+			speed="1050.0"
+			drag="0.0"
+			acceleration="0.0"
+			
+			minangle="0"
+			maxangle="0"
+			directionalspace="local"
+			direction="0 .75 -1"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+			
+			
+		>
+			<particle
+				turn="1"
+			>		
+
+			
+
+				
+				
+				
+				<simpleemitter			
+					spawnrate="2211"				
+					particlelife="800"								
+					position="0 0 0"
+					material="/shared/effects/materials/shieldstarfish.material"				
+					particledirectionalspace="local"
+					offsetdirection="0 0 0"
+					offsetradial="0"
+					count="2"
+				>
+
+					<particle 
+						minangle="-15"
+						maxangle="-15"
+						minanglespeed="0"
+						startcolor=".5 .4 1"
+						endcolor="0 0 0"
+						maxanglespeed="00"
+						startframe="0"
+						endframe="1"
+										
+						startsize="20"				
+						endsize="100"				
+
+						startalpha=".3"
+						midalpha=".3"
+						endalpha="0"
+						midalphapos=".5"					
+						
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						flare="0"
+						yaw="00"
+					
+					/>
+				</simpleemitter>
+	
+				<simpleemitter			
+					spawnrate="111"				
+					particlelife="800"								
+					position="0 0 0"
+					material="/shared/effects/materials/refract_swell.material"				
+					particledirectionalspace="local"
+					offsetdirection="0 0 0"
+					offsetradial="0"
+					param=".4"
+					count="1"
+				>
+
+					<particle 		
+						startsize="100"				
+						endsize="200"				
+						param="0.7"
+						startalpha=".3"
+						midalpha=".3"
+						endalpha="0"
+						midalphapos=".5"					
+						
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						flare="0"
+						yaw="00"
+					
+					/>
+				</simpleemitter>	
+			
+			
+		
+			
+				<model
+					delay="0"
+					model="../../projectile/effects/model.mdf"
+					bone="_bone_1"
+					anim=""
+					directionalspace="local"
+					position="0.0 0.0 0.0"
+					pitch="0"
+					yaw="0"
+					
+					life="1500"
+					startalpha="1"
+					scale="0.85"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					color="2 2 2"					
+				/>
+				
+				<model					
+					model="spire/projectile.mdf"
+					
+					anim="idle"
+					scale="1.35"
+					position="0.0 0.0 0.0"
+					directionalspace="local"
+					startalpha="1.0"
+					endalpha="0"
+					pitch="0"
+					yaw="0"
+					color="1 1 .8"
+					life="1200"
+					turn="1"
+					
+				>
+					
+					
+
+
+				
+					<twopointtrailemitter
+							
+							bone_a="_bone_fx_1"
+							bone_b="_bone_fx_2"
+							spawnrate="60"
+							particlelife="550"
+							position="0 0 0"
+							texpostime="550"
+							texposscale="0"
+							texstretchscale="2.0"
+							subframepose="1"				
+							material="/shared/effects/materials/chainlinkconnect.material"
+							
+						>
+							<particle 				
+								color="1 1 .8"
+								
+								startalpha="1"
+								endalpha="1"
+								
+							/>
+					</twopointtrailemitter>	
+					<twopointtrailemitter		
+							
+							bone_a="_bone_fx_3"
+							bone_b="_bone_fx_4"
+							spawnrate="60"
+							particlelife="550"
+							position="10 0 0"
+							texpostime="550"
+							texposscale="0"
+							texstretchscale="2.0"
+							subframepose="1"				
+							material="/shared/effects/materials/chainlinkconnect.material"
+							
+						>
+							<particle 				
+								color="1 1 .8"
+								
+								startalpha="1"
+								endalpha="0"
+								
+							/>
+					</twopointtrailemitter>	
+				</model>				
+							
+			</particle>		
+
+		</simpleemitter>	
+
+		<simpleemitter
+			bone="Bip01 R Hand"			
+			count="1"
+			spawnrate="5000"
+			particlelife="1000"
+			gravity="1.0"
+			speed="1050.0"
+			drag="0.0"
+			acceleration="0.0"
+			
+			minangle="0"
+			maxangle="0"
+			directionalspace="local"
+			direction="0 1 .5"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+			
+			
+		>
+			<particle
+				turn="1"
+			>
+				<simpleemitter			
+					spawnrate="2211"				
+					particlelife="800"								
+					position="0 0 0"
+					material="/shared/effects/materials/shieldstarfish.material"				
+					particledirectionalspace="local"
+					offsetdirection="0 0 0"
+					offsetradial="0"
+					count="2"
+				>
+
+					<particle 
+						minangle="-15"
+						maxangle="-15"
+						minanglespeed="0"
+						startcolor=".5 .4 1"
+						endcolor="0 0 0"
+						maxanglespeed="00"
+						startframe="0"
+						endframe="1"
+										
+						startsize="20"				
+						endsize="100"				
+
+						startalpha=".3"
+						midalpha=".3"
+						endalpha="0"
+						midalphapos=".5"					
+						
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						flare="0"
+						yaw="00"
+					
+					/>
+				</simpleemitter>
+	
+				<simpleemitter			
+					spawnrate="111"				
+					particlelife="800"								
+					position="0 0 0"
+					material="/shared/effects/materials/refract_swell.material"				
+					particledirectionalspace="local"
+					offsetdirection="0 0 0"
+					offsetradial="0"
+					param=".4"
+					count="1"
+				>
+
+					<particle 		
+						startsize="100"				
+						endsize="200"				
+						param="0.7"
+						startalpha=".3"
+						midalpha=".3"
+						endalpha="0"
+						midalphapos=".5"					
+						
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						flare="0"
+						yaw="00"
+					
+					/>
+				</simpleemitter>	
+			
+				<model
+					delay="0"
+					model="../../projectile/effects/model.mdf"
+					bone="_bone_1"
+					anim=""
+					directionalspace="local"
+					position="0.0 0.0 0.0"
+					pitch="0"
+					yaw="0"
+					
+					life="1500"
+					startalpha="1"
+					scale="0.85"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					color="2 2 2"					
+				/>
+				
+				<model					
+					model="spire/projectile.mdf"
+					
+					anim="idle"
+					scale="1.35"
+					position="0.0 0.0 0.0"
+					directionalspace="local"
+					startalpha="1.0"
+					endalpha="0"
+					pitch="0"
+					yaw="0"
+					color="1 1 .8"
+					life="1200"
+					turn="1"
+					
+				>
+					
+					<twopointtrailemitter
+							
+							bone_a="_bone_fx_1"
+							bone_b="_bone_fx_2"
+							spawnrate="60"
+							particlelife="550"
+							position="0 0 0"
+							texpostime="550"
+							texposscale="0"
+							texstretchscale="2.5"
+							subframepose="1"				
+							material="/shared/effects/materials/chainlinkconnect.material"
+							
+						>
+							<particle 				
+								color="1 1 .8"
+								
+								startalpha="1"
+								endalpha="1"
+								
+							/>
+					</twopointtrailemitter>	
+					<twopointtrailemitter		
+							
+							bone_a="_bone_fx_3"
+							bone_b="_bone_fx_4"
+							spawnrate="60"
+							particlelife="550"
+							position="10 0 0"
+							texpostime="550"
+							texposscale="0"
+							texstretchscale="2.5"
+							subframepose="1"				
+							material="/shared/effects/materials/chainlinkconnect.material"
+							
+						>
+							<particle 				
+								color="1 1 .8"
+								
+								startalpha="1"
+								endalpha="0"
+								
+							/>
+					</twopointtrailemitter>	
+				</model>				
+							
+			</particle>		
+
+		</simpleemitter>
+		
+	
+		
+		
+
+
+
+		
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

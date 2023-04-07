@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model.max" file="high.model" type="K2">
+
+	<anim name="idle" clip="clips/idle.clip" loop="true"/>
+	
+	<anim name="spawn_1" clip="clips/birth_1.clip" fps="30" loop="false">
+	</anim>
+
+	<anim name="walk_1" clip="clips/walk.clip" fps="44" loop="true">
+		<frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="3" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .07"/>
+		<frameevent frame="3" cmd="StartEffect /shared/effects/footstep_r_grass.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .07"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/footstep_l_grass.effect"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/atk1.clip">
+		<frameevent frame="10" cmd="PlaySoundLinear /npcs/bad_melee/sounds/attack_%.wav 0 1200 .4"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/atk2.clip">
+		<frameevent frame="10" cmd="PlaySoundLinear /npcs/bad_melee/sounds/attack_%.wav 0 1200 .4"/>
+	</anim>
+	
+	<anim name="death_1" clip="clips/death.clip" fps="50" loop="true" blendtime="100" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear /shared/sounds/effects/gib_explode.wav 0 1800 1"/>
+		<frameevent frame="1" cmd="StartEffect effects/lasthit.effect"/>
+	</anim>
+	
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="clips/getup_1.clip"/>
+</model>

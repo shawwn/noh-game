@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			color="1 .85 .3"
+			alpha=".8"
+		/>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				sample="/shared/sounds/items/item_stealth.wav"
+			/>
+			
+			
+			<twopointtrailemitter
+				life="5000"
+			 	bone_a="Bip01 L Clavicle"
+				bone_b="Bip01 L Hand"
+				spawnrate="100"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+			>
+	         	<particle
+					startcolor=".8 .7 .1"
+					endcolor="0" 
+				/>
+			</twopointtrailemitter>
+			
+			<twopointtrailemitter
+				life="1500"
+				bone_a="Bip01 R Clavicle"
+				bone_b="Bip01 R Hand"
+				spawnrate="100"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+			>
+	            <particle
+					startcolor=".8 .7 .1"
+					endcolor="0" 
+				/>
+			</twopointtrailemitter>
+					
+			<twopointtrailemitter
+				life="500"
+				bone_a="Bip01 R Foot"
+				bone_b="Bip01 R Thigh"
+				spawnrate="100"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+			>
+	           	 <particle
+					startcolor=".8 .7 .1"
+					endcolor="0" 
+				/>
+			</twopointtrailemitter>	
+
+			<twopointtrailemitter
+				life="5000"
+				bone_a="Bip01 L Foot"
+				bone_b="Bip01 L Thigh"
+				spawnrate="100"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+			>
+           		<particle
+					startcolor=".8 .7 .1"
+					endcolor="0" 
+				/>
+			</twopointtrailemitter>			
+						
+			<twopointtrailemitter
+				life="5000"
+				bone_a="Bip01 Pelvis"
+				bone_b="Bip01 Head"
+				spawnrate="100"
+				particlelife="500"
+				texpostime="500"
+				texposscale="0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+			>
+           		<particle
+					startcolor=".8 .7 .1"
+					endcolor="0" 
+				/>
+			</twopointtrailemitter>
+			
+		<simpleemitter
+				position="0 0 50"
+				spawnrate="40"
+				particlelife="800"
+				gravity="3"
+				material="/shared/effects/materials/pyroclast_02.material"
+				offsetsphere="15 15 25"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				inheritvelocity=".5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					startsize="20"
+					midsize="60"
+					endsize="20"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					startcolor=".8 .7 .1"
+					midcolor=".8 .7 .1"
+					endcolor="0 0 0"
+					midcolorpos=".15"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+			</simpleemitter>
+
+
+					
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		  <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+  		  <spawnmodifier instance="instance1" modifier="modifier0"/> 
+  		  <waitfordeath instance="instance0" />
+
+	</thread>
+
+</effect>

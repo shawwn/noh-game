@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Item4K"
+	
+	icon="icon.tga"
+	
+	morphpriority="100"
+	morphmodel="model.mdf"
+	morphpreglobalscale="1.26"
+	morpheffectscale="1.0"
+	morphmodelscale="1.0"
+	morphmovespeed="100"
+	
+	silenced="true"
+	disarmed="true"
+	perplexed="true"
+	
+	effecttype="StatusDebuff"
+>
+	<onframe />
+	
+	<onattackedpreimpact priority="-9999">
+		<setvalue name="combat_evasion" a="0" />
+	</onattackedpreimpact>
+	
+	<onattackedpredamage priority="-9999">
+		<setvalue name="combat_deflection" a="0" />
+	</onattackedpredamage>
+</state>

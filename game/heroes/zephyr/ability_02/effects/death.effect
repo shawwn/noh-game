@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".85" entityeffectscale="true">
+
+			<simpleemitter	
+			position="0 0 50"
+				life="400"
+				spawnrate="6600"		
+				gravity="10"
+				count="10"
+				speed="500"
+				drag=".01"
+				minangle="0"
+				maxangle="20"
+				particlelife="1600"
+				direction="0 0 1"
+				offsetsphere="35"
+				material="/shared/effects/materials/dust.material"		
+			>
+				<particle	
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="40"
+					endsize="180"
+					color=".75 .9 1"
+					startalpha=".5"
+					endalpha="0"					
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+			position="0 0 50"
+				life="500"
+				spawnrate="8"
+				particlelife="1000"
+				gravity="2"
+				speed="250.0"
+				direction="0 0 1"
+				angle="20"
+				material="/shared/effects/materials/refract_longsplash.material"
+			>
+				<particle
+					startalpha="1.0"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-80"
+					maxanglespeed="80"
+					startsize="50"
+					endsize="110"
+					param=".2"
+					depthbias="-160"
+				/>
+			</simpleemitter>
+
+			<billboard				
+				delay="200"
+				life="400"
+				material="/shared/effects/materials/outsplash_blend.material"
+				position="0 0 75"
+				depthbias="-230"
+				startcolor="1 1 .5"
+				endcolor="1 1 .5"
+				startsize="10"
+				endsize="200"
+				startalpha=".6"
+				midalpha=".6"
+				endalpha="0"				
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+				anchor=".8"
+			/>	
+
+			<simpleemitter
+				spawnrate="4555"
+				particlelife="600"
+				count="15"
+				gravity="-1"
+				material="/shared/effects/materials/flare1.material"
+				position="0 0 75"
+				offsetsphere="70"
+				minangle="-90"
+				maxangle="90"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="300"
+					size="130"
+					startcolor=".3 .3 .25"
+					endcolor="0"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+					endstickiness="1"
+					startwidth="320"
+					height="80"
+					flare="1"
+				/>
+			</simpleemitter>
+
+			<billboard	
+				position="0 0 75"
+				material="/shared/effects/materials/refract_ring.material"	
+				startsize="100"
+				endsize="500"
+				life="800"
+				startalpha=".25"
+				endalpha="0"
+				param="0.25"
+				depthbias="-60"
+			/>
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

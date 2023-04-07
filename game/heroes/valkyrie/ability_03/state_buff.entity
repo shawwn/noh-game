@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Valkyrie_Ability3_Buff"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_ally.effect"
+
+	attackspeed="0.04,0.08,0.12,0.16"
+	movespeedmultiplier="0.04,0.08,0.12,0.16"
+	effecttype="StatusBuff"
+>
+
+</state>

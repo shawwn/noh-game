@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_VoidTalisman"
+
+	icon="icon.tga"
+	
+	cost="1500"
+	statuseffecttooltip="State_VoidTalisman"
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true" 
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="25000"
+	cooldowntype="VoidTalisman"
+	
+	manacost="0"
+	casteffect="effects/cast.effect"
+	intelligence="7"
+	strength="7"
+	agility="7"
+	
+
+>
+	<onimpact>
+		<cantarget effecttype="Magic">
+			<applystate name="State_VoidTalisman" duration="4000"/>
+		</cantarget>
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

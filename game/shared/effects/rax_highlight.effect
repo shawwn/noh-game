@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="1">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1.25">
+
+<!--
+			<groundsprite
+				material="/shared/effects/materials/attrition.material"
+				startsize="40"
+				midsize="40"
+				endsize="40"
+				color=".35 .25 .15"
+			/>
+-->	
+			<groundsprite
+				life="3750"
+				material="/shared/effects/materials/attrition.material"
+				startsize="70"
+				midsize="75"
+				endsize="70"
+				startcolor=".4 .35 .3"
+				midcolor=".4 .35 .3"
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				yawspeed="90"
+			/>
+
+			<simpleemitter
+				life="2000"
+				timenudge="2000"
+				spawnrate="15"
+				particlelife="2000"
+				gravity="-55"
+				speed="40"
+				drag=".08"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetsphere="10 10 0"
+				minangle="90"
+				maxangle="-90"
+			>
+				<particle 
+					startcolor="0 0 0"
+					midcolor=".65 .35 .15"
+					endcolor="0"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="20"
+					midwidth="15"
+					endwidth="6"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="1750"
+					lockup="true"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="2000"
+				timenudge="2000"
+				spawnrate="15"
+				particlelife="1000"
+				material="/shared/effects/materials/flare2.material"
+				position="0 0 15"
+				offsetsphere="30 30 0"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".45 .45 .35"
+					endcolor="0 0 0"
+					midcolorpos="0.5"
+					startalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					width="19"
+					startheight="0"
+					endheight="50"
+					flare="true"
+					turn="true"
+				/>
+			</simpleemitter>
+			
+<!--
+			<simpleemitter
+			timenudge="7500"
+				spawnrate="2"
+				particlelife="5000"
+				material="/shared/effects/materials/flare2.material"
+				position="0 0 0"
+				offsetsphere="0 0 0"
+			>
+			
+				<particle>
+					<model
+						model="up_down/model.mdf"
+						anim="idle"
+						scale="3.5"
+						position="0 0 0"
+					>
+						
+						<billboard
+							bone="_bone_fx_01"
+							life="2000"
+							color="1 .25 0"
+							startalpha=".5"
+							midalpha=".5"
+							endalpha=".5"
+							midalphapos=".75"
+							size="13"
+							material="/shared/effects/materials/arrow.material"
+							lockup="true"
+							yawspeed="0"
+							loop="true"
+						/>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+
+			<model
+				model="selection_box/model.mdf"
+				anim="idle"
+				scale=".5"
+				position="0 0 0"
+				color=".3 .225 .2"
+				yaw="215"
+				yawspeed="90"
+			>
+			
+				<billboard
+					bone="Box01"
+					life="1000"
+					position="0 0 25"
+					color=".25 .175 .065"	
+					size="120"			
+					material="/shared/effects/materials/triangle_corners.material"
+					loop="true"
+					lockup="true"
+					pitch="90"
+					rollspeed="-90"
+				/>
+				
+				<billboard
+					bone="Box01"
+					life="1000"
+					position="0 0 25"
+					color=".25 .175 .065"	
+					size="130"			
+					material="/shared/effects/materials/square.material"
+					loop="true"
+					lockup="true"
+					pitch="90"
+					rollspeed="-90"
+				/>
+				
+			</model>
+
+			<model
+				model="selection_box/model.mdf"
+				anim="idle"
+				scale=".375"
+				position="0 0 75"
+				color=".3 .225 .2"
+				yaw="0"
+				yawspeed="-90"
+			>
+			</model>
+-->
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<waitfordeath instance="instance1" />
+	<waitfordeath instance="instance0" />
+</thread>
+
+</effect>
+
+
+
+
+
+
+

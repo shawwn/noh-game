@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_HomecomingStone_Target"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/target.effect"
+	
+	immobilized="true"
+	disarmed="true"
+	silenced="true"
+	perplexed="true"
+	
+	effecttype=""
+>
+</state>

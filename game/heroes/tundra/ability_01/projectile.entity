@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Tundra_Ability1"
+
+	gravity="4000"
+	lifetime="520"
+	useexactlifetime="true"
+>
+</projectile>

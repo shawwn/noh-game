@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_RunesOfTheBlight"
+	
+	statuseffecttooltip="State_RunesOfTheBlight"
+	icon="icon.tga"
+	
+	cost="90"
+	initialcharges="3"
+	chargecost="1"
+	destroyonempty="true"
+	rechargeable="true"
+	allowsharing="true"
+	
+	actiontype="target_entity"
+	targetscheme="trees"
+	casttime="100"
+	castactiontime="50"
+	range="100"
+>
+	<onimpact>
+		<applystate name="State_RunesOfTheBlight" duration="16000" target="source_entity" />
+		<killtrees/>
+	</onimpact>
+</item>

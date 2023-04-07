@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="spike.max" file="high.model" type="K2" >
+<anim name="idle" clip="idle.clip" loop="true" fps="50"/>
+<anim name="stun" clip="stun.clip" loop="false" loopbackframe="-1"/>
+<anim name="fast_impact" clip="impact.clip" fps="20" loop="false" loopbackframe="-1"/>
+</model>

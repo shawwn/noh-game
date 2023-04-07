@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+
+<definitions>
+	<particlesystem name="system0" space="world">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".8"
+				sample="../sounds/cast2.wav"
+			/>
+
+		<twopointtrailemitter
+			delay="185"
+			life="220"
+			bone_a="_bone_weapon1"
+			bone_b="_bone_weapon3"
+			spawnrate="500"
+			particlelife="250"
+			texpostime="200"
+			texposscale="1.0"
+			texstretchscale="0.0"
+			material="/shared/effects/materials/swoosh_white.material"
+			subframepose="true"
+		>
+			<particle 
+				startcolor=".025 1 .175"
+				endcolor="0 0 0"/>
+		</twopointtrailemitter>
+		
+		<simpleemitter
+			delay="150"
+			bone="_bone_weaponattach"
+			count="1"
+			particlelife="200"
+			gravity="-6"
+			speed="0"
+			acceleration="0"
+			position="0 0 0"
+			material="/shared/effects/materials/flare_01.material"
+		>
+			<particle
+				anglespeed="20"
+				startcolor="0 0 0"
+				midcolor=".025 1 .175"
+				endcolor="0 0 0"
+				midcolorpos=".1"
+				startsize="65"
+				midsize="85"
+				endsize="0"
+			/>
+		</simpleemitter>
+
+		<simpleemitter
+			delay="150"
+			bone="_bone_weaponattach"
+			count="1"
+			particlelife="200"
+			gravity="-6"
+			speed="0.0"
+			acceleration="0.0"
+			position="0 0 0"
+			material="/shared/effects/materials/star_03.material"
+		>
+			<particle
+				anglespeed="20"
+				startcolor="0 0 0"
+				midcolor=".025 1 .175"
+				endcolor="0 0 0"
+				midcolorpos=".1"
+				startsize="65"
+				midsize="85"
+				endsize="0"
+			/>
+		</simpleemitter>
+		
+		<simpleemitter
+			delay="300"
+			bone="_bone_weaponattach"
+			count="1"
+			particlelife="200"
+			gravity="-6"
+			speed="0.0"
+			acceleration="0.0"
+			position="0 0 0"
+			material="/shared/effects/materials/star_03.material"
+		>
+			<particle
+				anglespeed="20"
+				startcolor="0 0 0"
+				midcolor=".025 1 .175"
+				endcolor="0 0 0"
+				midcolorpos=".1"
+				startsize="50"
+				midsize="60"
+				endsize="0"
+			/>
+		</simpleemitter>
+		
+		<!--<billboard
+			delay="0"
+			bone="_bone_weaponattach"
+			position="0 0 0"
+			life="200"
+			color="1 1 1"
+			startalpha="1.0"
+			endalpha="1"
+			startparam="0.05"
+			endparam="0.0"
+			startsize="25"
+			endsize="150"
+			material="/shared/effects/materials/refract_pinch.material"
+			lockup="1"
+			pitch="90"
+			depthbias="-30"
+		/>
+		
+		<billboard
+			bone="_bone_weaponattach"
+			position="0 0 0"
+			delay="150"
+			life="300"
+			color="1 1 1"
+			startalpha="1.0"
+			endalpha="1.0"
+			startparam="0.05"
+			endparam="0.0"
+			startsize="150"
+			endsize="25"
+			lockup="1"
+			pitch="90"
+			material="/shared/effects/materials/refract_pinch.material"
+				depthbias="-30"
+		/>-->
+
+	</particlesystem>
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>

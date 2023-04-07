@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Arachna_Ability4"
+	
+	
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="../summon/model.mdf"
+	skin=""
+	
+	isunit="false"
+	
+	passiveeffect=""
+	spawneffect="../summon/effects/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="2.2"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="64"
+	boundsradius="0"
+	isselectable="true"
+	iscontrollable="false"
+	selectionradius="40"
+	targetoffset="0 0 0"
+	
+	maxhealth="350,550,800"
+	armor="5"
+	healthregen="0"
+
+	movespeed="400"
+	turnrate="360"
+
+	cancarryitems="false"
+	unitwalking="true"
+	
+	diewithowner="true"
+	deathtime="0"
+	corpsetime="2000"
+
+	deathnumanims="1"
+	deathanim="death_%"
+	
+	expirenumanims="1"
+	expireanim="death_%"	
+	immunity="PetImmunity"
+	
+	
+	attackduration="1000"
+	attackactiontime="500"
+	attackcooldown="1000"
+	attackdamagemin="62,138,225"
+	attackdamagemax="62,138,225"
+	attacknumanims="1"
+	attackoffset="0 60 100"
+	attackprojectile=""
+	attackrange="100"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="../summon/effects/impact.effect"
+	attacktype="melee"
+	combattype="Melee"
+	drawonmap="true"
+	sightrangeday="600"
+	clearvision="true"
+	revealtype="eye"
+	revealrange="600"
+
+	lifetime="15000"
+>
+	<onspawn>
+		<order command="attack" force="true" forceduration="15000" source="target_entity" target="proxy_entity" />
+	</onspawn>
+	
+	<onattackimpact>
+		<applystate name="State_Arachna_Ability4" target="target_entity" duration="1500" />
+	</onattackimpact>
+	
+</pet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Glowstone"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="1200"
+
+	actiontype="passive"
+	
+	maxhealth="200"
+	maxmana="150"
+>
+</item>

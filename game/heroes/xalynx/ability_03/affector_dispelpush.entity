@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Xalynx_Ability3_DispelPush"
+	life="400"
+	radius="100"
+	effect=""
+	targetselection="all"
+	targetscheme="all_units"
+>
+	<onimpact>
+		<expirestate name="State_Xalynx_Ability3" target="target_entity"/>
+	</onimpact>
+</affector>

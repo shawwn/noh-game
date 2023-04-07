@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hellbringer_Ability1"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	displaylevel="true"
+	
+	effecttype="StatusDebuff"
+
+	movespeedslow="0.3,0.4,0.5,0.6"
+	attackspeed="-0.3,-0.4,-0.5,-0.6"
+>
+</state>

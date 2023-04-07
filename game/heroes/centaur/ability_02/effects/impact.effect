@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityscale="false">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<sound
+				delay="100"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1500"
+				volume=".9"
+				sample="../sounds/impact.wav"
+			/>
+
+
+			<groundsprite
+				material="/shared/effects/materials/ground_smash_overlay.material"
+				delay="100"
+				size="128"
+				color="1 1 1"
+				startalpha=".85"
+				endalpha="0"
+				life="1500"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

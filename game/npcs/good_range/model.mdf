@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" >
+
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" minstartframe="0" maxstartframe="-1"/>
+
+	<anim name="portrait" clip="clips/portrait.clip" loop="true" minstartframe="0" maxstartframe="-1"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="32" loop="false">
+		<frameevent frame="12" fps="40" cmd="PlaySoundLinear /npcs/good_range/sounds/attack_%.wav 0 1200 .2"/>
+	</anim>
+
+	<anim name="attack_2"  clip="clips/attack_2.clip" fps="32" loop="false">
+		<frameevent frame="14" cmd="PlaySoundLinear /npcs/good_range/sounds/attack_%.wav 0 1200 .2"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="38" loop="true" minstartframe="0" maxstartframe="-1">
+		<frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="3" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="StartEffect effects/death.effect"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_%.wav 0 1200 .55"/>
+	</anim>
+
+	<anim name="death_gib_1" clip="clips/death_1.clip">	
+		<frameevent frame="1" cmd="PlaySoundLinear /shared/sounds/effects/gib_explode.wav 0 1800 1"/>
+		<frameevent frame="1" cmd="StartEffect effects/lasthit.effect"/>
+	</anim>	
+
+	<anim name="death_deny_1" clip="clips/deny.clip" loop="true" blendtime="100" loopbackframe="-1">
+		<frameevent frame="10" cmd="StartEffect effects/deny.effect"/>
+	</anim>
+
+</model>

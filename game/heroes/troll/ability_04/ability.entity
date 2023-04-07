@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Troll4"
+
+	
+	
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="210"
+	castactiontime="100"
+	statuseffecttooltip="State_Troll_Ability4"
+	frontqueue="true"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="global"
+	targetscheme="ally_heroes"
+	casteffecttype=""
+	
+	manacost="75"
+	cooldowntime="25000"
+	noninterrupting="true"
+	inheritmovement="true"
+		
+	casteffect=""
+>
+	<onaction>
+		<applystate name="State_Troll_Ability4" duration="8000" target="source_entity" />
+	</onaction>
+	<onimpact effectdescription="true">
+		<applystate name="State_Troll_Ability4" duration="5000" />
+	</onimpact>
+	
+</ability>

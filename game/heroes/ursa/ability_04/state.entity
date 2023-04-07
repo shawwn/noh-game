@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ursa_Ability4"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="../../../heroes/scar/ability_4/effects/state.effect"
+
+	effecttype="StatusBuff"
+>
+	<oninflict>
+		<setactivemodifierkey name="furyswipes" />
+	</oninflict>
+	
+	<onexpired>
+		<setactivemodifierkey name="" />
+	</onexpired>
+
+	<onattack >
+		<cantarget targetscheme="enemy_units">
+			<bonusdamageadd target="" a="0.04,0.05,0.06" b="source_health" op="mult"/>
+		</cantarget>
+	</onattack>
+
+</state>

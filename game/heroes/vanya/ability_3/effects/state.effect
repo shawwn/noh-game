@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<modifier 
+			name="modifier0"
+			startcolor="1 1 1"
+			endcolor="2 1 1"
+			life="450"
+			delay="1300"
+		/>
+
+		<particlesystem name="system0" space="world" scale=".75">
+		
+			<billboard
+				bone="_bone_lefthand"
+				material="/shared/effects/materials/whitedot.material"
+				size="50"
+				depthbias="-50"
+				rollspeed="-100"
+				startcolor=".5 0 .2"
+				endcolor="0"
+				expirelife="300"
+			/>
+
+			<model
+				bone="_bone_lefthand"
+				model="ring.mdf"
+				scale=".25"
+				color="1 0 1"
+				yawspeed="149"
+				startalpha="1"
+				endalpha="0"
+				expirelife="300"
+			/>
+			
+			<billboard
+				bone="_bone_righthand"
+				material="/shared/effects/materials/whitedot.material"
+				size="50"
+				depthbias="-50"
+				rollspeed="-100"
+				startcolor=".5 0 .2"
+				endcolor="0"
+				expirelife="300"
+			/>
+
+			<model
+				bone="_bone_righthand"
+				model="ring.mdf"
+				scale=".25"
+				color="1 0 1"
+				yawspeed="149"
+				startalpha="1"
+				endalpha="0"
+				expirelife="300"
+			/>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+     	 	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

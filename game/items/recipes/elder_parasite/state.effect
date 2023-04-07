@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<simpleemitter
+			name="trail_01"
+			life="2000"
+			spawnrate="100"
+			particlelife="2000"
+			material="/shared/effects/materials/dragon.material"
+		>
+			<particle
+				startcolor="1 0 0"
+				midcolor=".6 0 0"
+				endcolor="0 0 0"
+				startsize="0"
+				midsize="8"
+				endsize="0"
+				midcolorpos=".1"
+				midsizepos=".1"
+			/>
+		</simpleemitter>
+		
+		<particlesystem name="system0" space="world" >
+		
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="0.6"
+				sample="/shared/sounds/items/item_lifesteal3_impact.wav"
+			/>
+
+			<trackeremitter
+				count="10"
+				bone="_bone_centerofchest"
+				owner="target"
+				targetbone="_bone_centerofchest"
+				targetowner="source"
+				tracktype="angular"
+				trackspeed="8.0"
+				drag="0"
+				spawnrate="250"
+				particlelife="3000"
+				gravity="-50"
+				offsetsphere="5 5 5"
+				minspeed="10.0"
+				maxspeed="220.0"
+				acceleration="30.0"
+				direction="0.0 0.0 1.0"
+				inheritvelocity="0.0"
+				distancelife="true"
+			>
+					<particle
+						emitter0="trail_01"
+					/>
+			</trackeremitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Gloves3"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="900"
+	components="Item_GlovesOfHaste Item_GlovesOfHaste"
+	anim="item_1"
+	attackspeed="0.3"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_creeps"
+	casteffecttype="Transmute"
+	range="600"
+	casttime="300"
+	castactiontime="100"
+	casteffect="cast.effect"
+	manacost="25"
+	cooldowntime="100000"
+	cooldowntype="gloves3"
+	projectile="Projectile_Gloves3"
+>
+	<onimpact>
+		<kill target="target_entity" goldbountymult="3.0"/>
+		<playeffect effect="convert.effect" source="target_entity"/>
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1.75">
+		
+			<model
+				position="0 0 50"
+				name="circleOfBones"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				anim="idle"
+				scale="1.5"
+				yawspeed="-160"
+				pitchspeed="-45"
+			>
+				<template name="redTrail">
+					<trailemitter
+						spawnrate="25"
+						minparticlelife="550"
+						maxparticlelife="1000"
+						bone="{bone}"
+						texpostime="0"
+						texposscale="0"
+						texstretchscale=".5"
+						material="/shared/effects/materials/flare2.material"
+					>
+						<particle
+							startcolor=".5 0 0"
+							midcolor="1 0 0"
+							endcolor="0 0 0"
+							midcolorpos=".8"
+							startsize="4"
+							endsize=".5"
+						/>
+					</trailemitter>
+				</template>
+				
+				<instance name="redTrail" bone="_bone_fx_01"/>
+				<instance name="redTrail" bone="_bone_fx_05"/>
+				<instance name="redTrail" bone="_bone_fx_09"/>
+			
+				<template name="glow">
+					<billboard
+						bone="{bone01}"
+						size="15"
+						depthbias="-100"
+						position="0 0 0"
+						material="/shared/effects/materials/fire_09.material"
+						lockup="true"
+						pitch="90"
+						startcolor="1 .5 .5"
+						endcolor="1 .5 .5"
+					/>
+				</template>
+
+				<instance name="glow" bone01="_bone_fx_01"/>
+				<instance name="glow" bone01="_bone_fx_05"/>
+				<instance name="glow" bone01="_bone_fx_09"/>
+
+				<template name="puffs">
+					<simpleemitter
+						bone="{bone02}"
+						spawnrate="10"
+						minparticlelife="750"
+						maxparticlelife="1500"
+						gravity="0"
+						drag="0"
+						position="0 0 0"
+						offsetsphere="0 0 0"
+						material="/shared/effects/materials/phantom_smoke_13.material"
+						startparticlealpha="1"
+						endparticlealpha="0"
+					>
+						<particle
+							maxangle="360"
+							minanglespeed="-6"
+							maxanglespeed="6"
+							startcolor=".2 .0 .0"
+							midcolor=".2 .0 .0"
+							endcolor="0 0 0"
+							midcolorpos=".8"
+							startalpha=".75 .75 .75"
+							endalpha="0 0 0"
+							startsize="0"
+							endsize="30"
+							endanchor="0"
+						/>
+					</simpleemitter>
+				</template>
+
+				<instance name="puffs" bone02="_bone_fx_01"/>
+				<instance name="puffs" bone02="_bone_fx_05"/>
+				<instance name="puffs" bone02="_bone_fx_09"/>
+			
+			</model>
+
+			<model
+				life="3000"
+				bone="_bone_overhead"
+				position="0 0 0"
+				name="circleOfBones"
+				model="model.mdf"
+				anim="idle"
+				scale="1"
+				startcolor="0 0 0"
+				midcolor="1 1 1"
+				endcolor="0 0 0"
+				yaw="180"
+			>
+			</model>
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>
+

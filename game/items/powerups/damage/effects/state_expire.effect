@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+
+	<definitions>
+		
+		<particlesystem name="system0" space="entity">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume=".8"
+				sample="../sounds/attack.wav"
+			/>
+
+			<sound
+				delay="1000"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume=".5"
+				sample="../sounds/attack.wav"
+			/>
+
+			<sound
+				delay="2000"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume=".3"
+				sample="../sounds/attack.wav"
+			/>
+
+			<sound
+				delay="3000"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume=".1"
+				sample="../sounds/attack.wav"
+			/>
+	
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+      		<waitfordeath instance="instance0" />
+
+	</thread>
+
+</effect>

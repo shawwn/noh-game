@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters color="1 0 0" />
+	<phase
+		name="color"
+		vs="effect"
+		ps="effect"
+		
+		srcblend="BLEND_SRC_ALPHA"
+		dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
+		cull="CULL_NONE"
+		translucent="true"
+		depthwrite="false"
+		depthbias="1"
+		depthslopebias="true"
+		alphawrite="false"
+	>
+		<sampler
+			name="diffuse"
+			texture="../textures/area_cast_indicator_simple.tga"
+			repeat_u="false"
+			repeat_v="false"
+			mipmaps="true"
+			fullquality="true"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+</material>

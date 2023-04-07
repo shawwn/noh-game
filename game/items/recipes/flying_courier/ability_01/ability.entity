@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_FlyingCourier1"
+
+	icon="icon.tga"
+	anim=""
+	statuseffecttooltip="State_FlyingCourier_Ability1"
+	
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+
+	actiontype="no_target"
+	casteffecttype=""
+	
+	manacost="0"
+	cooldowntime="40000"
+	
+	targetscheme="ally_units"
+>
+	<onimpact>
+		<applystate name="State_FlyingCourier_Ability1" duration="20000"/>
+	</onimpact>
+</ability>

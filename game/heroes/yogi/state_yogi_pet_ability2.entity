@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Yogi_Pet_Ability2"
+
+	
+	
+	icon="summon/icons/ability_2.tga"
+	passiveeffect="/shared/effects/entangle/vines.effect"
+	
+	immobilized="true"
+	revealed="true"
+	
+	effecttype="StatusDebuff"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" amount="40" b="frametime" op="mult"/>
+	</onframe>
+</state>

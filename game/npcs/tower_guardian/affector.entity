@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_TowerGuardian_StartPoint"
+
+	radius="200"
+	lifetime="-1"
+	impactinterval="500"
+	targetselection="all"
+	targetscheme="boss1"
+	ignoreinvulnerable="true"
+	
+>
+	<onimpact>
+		<expirestate name="State_TowerGuardian_Return" target="target_entity"/>
+	</onimpact>
+	
+</affector>

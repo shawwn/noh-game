@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vindicator_Ability3_Aura"
+
+	icon="icon.tga"
+	
+	ishidden="true"
+>
+	<onframe />
+	
+	<onabilityfinish>
+		<cantarget source="this_inflictor_entity" target="this_owner_entity" effecttype="Magic">
+			<casteffecttype entity="inflictor_entity" effecttype="Attack" />
+			<else>
+				<applystate name="State_Vindicator_Ability3_Silence" duration="750,1500,2250,3000" source="this_inflictor_entity" target="this_owner_entity" />
+			</else>
+		</cantarget>
+	</onabilityfinish>
+</state>

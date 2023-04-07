@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PhantomLancer_Ability1"	
+	
+	icon="icon.tga"
+	
+	movespeedslow="0.1,0.2,0.3,0.4"
+	
+	passiveeffect="../../../heroes/ophelia/ability_01/projectile/state_enemy.effect"
+	effecttype="StatusDebuff"
+>
+
+	<onframe />
+	
+</state>

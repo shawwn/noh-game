@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bubbles2"
+	statuseffecttooltip="State_Bubbles_Ability2"
+
+	icon="icon.tga"
+	
+	anim="ability_2"
+	casttime="600"
+	castactiontime="100"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	targetradius="400"	
+	
+	casteffecttype="Magic"
+	casteffect="efects/cast.effect"
+	manacost="100,110,120,130"
+	cooldowntime="20000"
+>
+	<onimpact>
+		<playeffect effect="effects/aoe.effect" source="source_position" target="source_position"/>	
+		<spawnaffector name="Affector_Bubbles_Ability2" target="source_position"/>	
+	</onimpact>
+</ability>

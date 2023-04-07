@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Arachna3"
+
+	
+	
+	
+	icon="icon.tga"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+
+	actiontype="passive"
+>
+	<aura state="State_Arachna_Ability3" radius="500" targetscheme="ally_ranged_units" propagatecondition="not_stealthed" />
+	
+
+</ability>

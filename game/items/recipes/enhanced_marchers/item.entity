@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_EnhancedMarchers"
+	
+	statuseffecttooltip="State_EnhancedMarchers"
+	
+	icon="icon.tga"
+	
+	cost="0"
+	components="Item_Marchers Item_Punchdagger Item_Punchdagger"
+	autoassemble="true"
+	allowdisassemble="true"
+	
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="12000"
+	cooldowntype="enhancedmarchers"
+	
+	damage="24"
+>
+	<onimpact>
+		<playeffect effect="cast.effect" />
+		<applystate name="State_EnhancedMarchers" duration="6000" />
+	</onimpact>
+	
+	<modifier key="movespeed" modpriority="70" exclusive="true"
+		movespeed="70"
+	/>
+</item>

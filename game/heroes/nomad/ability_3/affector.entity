@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Nomad_Ability3"
+
+	radius="200,200,200,200"
+	
+	lifetime="100,100,100,100"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	effect="ability.effect"
+>
+	<onimpact>
+		<attack targetscheme="enemy_units" source="this_owner_entity"/>
+		<applystate name="State_Nomad_Ability3_Night" duration="1000,2000,3000,4000"/>
+	</onimpact>
+</affector>

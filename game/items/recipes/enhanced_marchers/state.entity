@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_EnhancedMarchers"
+
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	
+	movespeedmultiplier="0.12"
+	unitwalking="true"
+	
+	effecttype="StatusBuff"
+>
+	<onframe />
+</state>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Confluence"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="2100"
+	
+	actiontype="passive"
+	
+	strength="10"
+	agility="10"
+	intelligence="10"
+>
+</item>

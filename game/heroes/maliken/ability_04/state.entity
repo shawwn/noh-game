@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Maliken_Ability4"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/ability_04/ability_04.effect"
+	displaylevel="true"
+	propagatetoillusions="true"
+	
+	armorstart="20,40,60"
+	armormid="20,40,60"
+	armorend="0.0"
+	armorduration="7000"
+	armormidpos="0.25"
+
+	morphmodel="model.mdf"
+	modifierkey="malikenult"
+	modifierkey2="malikenult"
+	morphpreglobalscale="1.64"
+	morphpriority="90"
+	
+	effecttype=""
+>
+	<onframe />
+	<onattack>
+	
+		<addattackactions>
+			<cantarget targetscheme="enemy_units">
+				<splashdamage a="total_adjusted_damage" b="0.15,0.25,0.35" op="mult" radius="75" effecttype="Physical Splash" targetscheme="enemy_units" />
+				<splashdamage a="total_adjusted_damage" b="0.15,0.25,0.35" op="mult" radius="200" effecttype="Physical Splash" targetscheme="enemy_units" />
+				<splashdamage a="total_adjusted_damage" b="0.20,0.25,0.3" op="mult" radius="350" effecttype="Physical Splash" targetscheme="enemy_units" />
+			</cantarget>
+		</addattackactions>
+	</onattack>
+	
+	<onexpired>
+		<playeffect effect="effects/cast.effect" source="source_entity" target="" />
+	</onexpired>
+</state>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true" >
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.5">
+
+			<billboard
+				bone="_bone_centerofchest"				
+				material="/shared/effects/materials/whitedot.material"
+				depthbias="-3"
+				size="140"
+				life="300"
+				startcolor=".6 .3 0"	
+				endcolor="0"			
+			/>
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume=".45"
+				sample="/shared/sounds/items/item_pierce.wav"
+			/>
+
+			<model
+				bone="_bone_centerofchest"
+				model="blade.mdf"			
+				startscale="0.5"
+				endscale="0"
+				expirelife="300"
+				color=".8"
+			/>
+
+			<model
+				loop="1"
+				bone="_bone_centerofchest"
+				life="2400"				
+				model="blade.mdf"			
+				scale="0.5"
+				startalpha="0"
+				midalpha="5"
+				endalpha="0"
+				expirelife="200"
+				startcolor=" .6 .4 0 "					
+				midcolor="3 2 0"
+				endcolor=".6 .4 0"
+				material="/shared/effects/materials/shell2.material"
+			/>
+
+			<model
+				bone="_bone_centerofchest"
+				model="blade.mdf"			
+				startscale="0.3"
+				endscale="0"
+				startalpha="1"
+				endalpha="0"
+				expirelife="300"
+				color=".8"					
+				yaw="22.5"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest2"				
+				material="/shared/effects/materials/flare1.material"
+				depthbias="-3"
+				size="140"
+				expirelife="300"
+				startcolor=".6 .3 0"	
+				endcolor="0"			
+			/>		
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

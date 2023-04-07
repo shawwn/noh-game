@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_DiseasedRider_Ability4"
+
+	speed="522"
+	gravity="0"
+	
+	flying="true"
+	flyheight="48"
+
+	modelscale="1.2"
+	model="effects/model.mdf"
+
+	impacteffect="effects/impact.effect"
+	invalideffect=""
+	traileffect="effects/trail.effect"
+>
+	<onimpact>
+		<cantarget effecttype="Magic">
+				<damage effecttype="Magic" amount="280,370,460"/>
+				<applystate name="State_Stunned" duration="100"/>
+				<applystate name="State_DiseasedRider_Ability4" duration="4000"/>
+				
+		</cantarget>
+		<bounce count="12" range="600" targetscheme="visible_organic_enemy_units" effecttype="Magic" />
+	</onimpact>
+	
+	<modifier key="ult_boost" priority="100" >
+		<cantarget effecttype="Magic">
+			<damage effecttype="Magic" amount="370,460,550"/>
+			<applystate name="State_Stunned" duration="100"/>
+			<applystate name="State_DiseasedRider_Ability4" duration="4000"/>
+		</cantarget>
+		<bounce count="12" range="600" targetscheme="visible_organic_enemy_units" effecttype="Magic" />
+	</modifier>
+</projectile>

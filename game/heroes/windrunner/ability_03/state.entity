@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Windrunner_Ability3"
+
+	
+	
+	icon="/heroes/ebulus/ability_02/icon.tga"
+	passiveeffect="state.effect"
+	
+	armor="5,10,15,20"
+	movespeedmultiplier="0.10"
+	unitwalking="true"
+	disarmed="false"
+	
+
+	modifierkey="ability1"
+	morphpriority="50"
+	morphmodel="/npcs/good_range_super_creep/model.mdf"
+	
+	effecttype="StatusBuff"
+>
+	<aura state="State_Windrunner_Ability3_Enemy" radius="150,200,250,300" targetscheme="enemy_units" />
+</state>

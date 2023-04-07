@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" useentityeffectscale="1">
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			life="750"
+			startcolor="1 0 0"
+			midcolor=".2"
+			endcolor="1"
+		/>
+		
+		<particlesystem name="system0" space="entity" scale=".8">
+
+			<beam
+				life="350"				
+				bone_b="_bone_centerofchest"
+				position_a="0 0 1040"
+				size="40"
+				color=".9 .2 .0"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+
+			/>
+			
+			
+
+
+			<beam
+				life="350"				
+				bone_b="_bone_centerofchest"
+				position_a="0 0 1040"
+				size="60"
+				color="..9 .2 .0"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="350"
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_centerofchest"
+				position_a="0 0 1040"
+				size="60"
+				color=".9 .2 .0"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+			/>
+		
+		
+			
+		
+			<billboard
+				life="200"
+				startcolor="0 0 0"
+				midcolor=".5 .2 .0"
+				endcolor="0 0 0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam="0.05"
+				endparam="0.0"
+				
+				
+				startsize="400"
+				midsize="400"
+				endsize="400"
+				midsizepos=".4"
+				
+				
+				depthbias="-100"
+				position="0 0 20"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="true"
+				pitch="90"
+			/>	
+		<simpleemitter
+			
+			spawnrate="150"
+			bone="_bone_centerofchest"
+			count="25"
+			particlelife="200"			
+			gravity="0"
+			speed="70"
+			drag="0"
+			acceleration="0"
+			position="0 0 0"
+
+
+			material="/shared/effects/materials/lightning_02.material"
+			offsetsphere="1 1 1"
+			minangle="360"
+			maxangle="180"
+			direction="1 0 0"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+
+
+			<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="50"
+				maxanglespeed="150"
+				startcolor=".9 0 0"
+				midcolor=".9 .2 .0"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+
+				startframe="0"
+				endframe="1"
+				startsize="1"
+				midsize="29"
+				endsize="49"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".5"
+				startstickiness="0"
+				endstickiness="0"
+
+
+			/>
+
+
+		</simpleemitter>
+
+			<simpleemitter
+				life="500"
+				spawnrate="250"
+				bone="_bone_centerofchest"
+				particlelife="400"
+				gravity="0"
+				speed="150"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/wisp_inner.material"
+				offsetsphere="25"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+				offsetdirection="0 0 0"
+				offsetradial="30 30 40"
+			>
+				<particle
+					startcolor=".9 .2 0"
+					midcolor=".9 .0 .2"
+					endcolor="0 0 0"
+					midcolorpos=".4"
+					startalpha="1.0"
+					endalpha="0.0"
+					minangle="-90"
+					maxangle="90"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startwidth="180"
+					midwidth="35"
+					endwidth="1"
+					midwidthpos=".5"
+					startheight="70"
+					endheight="0"
+					flare="true"
+					turn="false"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				life="250"
+				spawnrate="35"
+				particlelife="1000"
+				gravity="-10"
+				speed="0.0"
+				drag="0.0"
+				acceleration="0.0"
+				material="/shared/effects/materials/dust_smoke_03.material"
+				offsetsphere="20 20 20"
+				position="0 0 0"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-22"
+					maxanglespeed="22"
+					color=".9 .0 .0"
+					startsize="80"
+					endsize="150"
+					startalpha="-"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".3"
+				/>
+			</simpleemitter>
+			
+			<skeletonemitter
+				life="3000"
+				spawnrate="180"
+				count="200"
+				particlelife="100"
+				gravity="0"
+				speed="2.0"
+				drag="0.0"
+				acceleration="0.0"
+				material="/shared/effects/materials/femme_lightning_06.material"
+				offsetsphere="25"
+				position="0 0 0"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-180"
+					maxanglespeed="180"
+					startcolor=".9 .1 .0"
+					endcolor=".9 .1 .0"
+					startwidth="45"
+					midwidth="25"
+					endwidth="25"
+					midwidthpos=".75"
+					height="15"
+					turn="true"
+					framespeed="1.75"
+				/>
+				
+				
+			</skeletonemitter>
+
+			<skeletonemitter
+					life="3000"
+					spawnrate="280"
+					count="200"
+					particlelife="70"
+					gravity="0"
+					speed="40"
+					drag="0"
+					acceleration="0"
+					position="0 0 0"
+					material="/shared/effects/materials/femme_lightning_10.material"
+					offsetsphere="25 25 25"
+					minangle="360"
+					maxangle="180"
+					direction="1 0 0"
+					offsetdirection="0 0 0"
+					offsetradial="0 0 0"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						minanglespeed="50"
+						maxanglespeed="190"
+						color=".9 0 .3"
+						midcolorpos=".8"
+						startframe="0"
+						endframe="1"
+						startsize="15"
+						midsize="35"
+						endsize="15"
+						startstickiness=".2"
+						endstickiness=".2"
+					/>
+					
+					
+			</skeletonemitter>
+
+			<simpleemitter
+				count="35"
+				spawnrate="222"
+				minparticlelife="600"
+				maxparticlelife="2200"
+				gravity="0"
+				drag="0"
+				speed="20"
+				position="0 0 0"
+				offsetsphere="40 40 60"
+				material="/shared/effects/materials/neb_add.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-44"
+					maxanglespeed="44"
+					scale="5"
+					startcolor=".9 .0 .0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					startanchor="-"
+					endanchor="1"
+					startsize="15"
+					endsize="34"
+				/>
+			</simpleemitter>
+
+		
+
+			<simpleemitter
+				count="2"
+				spawnrate="222"
+				particlelife="500"
+				gravity="0"
+				drag="0"
+				speed="20"
+				position="0 0 0"
+				offsetsphere="40 40 60"
+			>
+				<particle>
+					<billboard
+						life="400"
+						color="1.0 1.0 1.0"
+						midalphapos="0.25"
+						param="0.01555"
+						startsize="60"
+						endsize="224"
+						startalpha="0"
+						midalpha=".9"
+						endalpha="0"
+						depthbias="-19"
+						position="0 0 0"
+						material="/shared/effects/materials/refract_ring.material"
+						lockup="0"
+						pitch="0"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<billboard
+				life="500"
+				color="1.0 1.0 1.0"
+				midalphapos="0.25"
+				param="0.01"
+				startsize="60"
+				endsize="224"
+				startalpha="0"
+				midalpha=".65"
+				endalpha="0"
+				depthbias="-19"
+				position="0 0 71"
+				material="/shared/effects/materials/refract_swirl.material"
+				rollspeed="-90"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

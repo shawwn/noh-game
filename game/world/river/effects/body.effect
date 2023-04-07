@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="water_splash_01">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<template name="splash">			
+
+
+
+				
+
+				<simpleemitter		
+					bone="{bone}"
+					spawnrate="2"
+					speed="1"
+				
+					particlelife="2500"							
+					position="0 55 10"	
+					particledirectionalspace="local"
+					direction="0 -1 0"
+					minangle="0"
+					maxangle="0"
+					inheritvelocity="0.25"
+				>
+
+					<particle
+						turn="true"
+					>
+						<billboard
+							life="2500"
+							material="/shared/effects/materials/refract_wellwave.material"
+							startalpha="1.0"
+							midalpha="1.0"
+							endalpha="0.0"		
+							
+							midalphapos="0.75"							
+							
+							startparam=".07"
+							endparam="0.00"
+							startsize="33"
+							endsize="282"
+							directionalspace="local"
+							pitch="-90"
+							lockup="true"
+							lockright="true"
+						/>						
+			
+					</particle>
+				</simpleemitter>
+				
+			
+			</template>
+
+
+
+		<instance name="splash" bone="_bone_splash01"/>
+		<instance name="splash" bone="_bone_splash02"/>
+		<instance name="splash" bone="_bone_splash03"/>
+		<instance name="splash" bone="_bone_splash04"/>
+
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Leoric_Ability1"
+
+	speed="700"
+	gravity="300"
+
+	modelscale="0.2"
+	model="../../../heroes/pyromancer/ability_04/effects/spinner.mdf"
+	traileffect="../../../heroes/pyromancer/ability_04/effects/ability_04_impact.effect"
+	effectscale="0.3"
+>
+</projectile>

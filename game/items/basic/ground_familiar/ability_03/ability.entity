@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_GroundFamiliar3"
+
+	icon="icon.tga"
+	anim=""
+	
+	casttime="0"
+	castactiontime="0"
+
+	actiontype="no_target"
+>
+	<onimpact>
+		<transferitemstohero />
+	</onimpact>
+</ability>

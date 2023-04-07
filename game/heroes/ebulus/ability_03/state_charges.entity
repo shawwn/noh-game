@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ebulus_Ability3_Charges"
+	
+	ishidden="true"
+	impactinterval="5000"
+	maxcharges="1,2,2,3"
+
+>
+	<oninflict>
+
+	</oninflict>
+	<onimpact>
+		<damage effecttype="DummyDmg" amount="1" target="source_entity" source="source_entity" />
+	</onimpact>
+</state>

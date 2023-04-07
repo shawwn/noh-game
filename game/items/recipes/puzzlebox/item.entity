@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Summon"
+	
+	icon="icon.tga"
+	
+	cost="1000"
+	components="Item_BlessedArmband Item_NeophytesBook"
+	maxlevel="3"
+	
+	actiontype="no_target"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="90000"
+	cooldowntype="summon"
+	manacost="50"
+	
+	intelligence="15,21,24"
+	strength="6,10,14"
+	
+	initialstock="2"
+	maxstock="9"
+	restockdelay="600000"
+>
+	<onimpact>
+		<spawnunit name="Pet_NecroMelee" count="1" maxactive="1" offset="32 64" />
+		<spawnunit name="Pet_NecroRanged" count="1" maxactive="1" offset="-32 64" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

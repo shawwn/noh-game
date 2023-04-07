@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="pages.max" file="pages.model" type="K2">
+
+	<anim name="idle" clip="pages.clip" loopbackframe="-1" fps="25"/>
+
+</model>

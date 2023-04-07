@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_TowerMaster_Ability1"
+
+	radius="300"
+	lifetime="-1"
+	targetscheme="enemy_units"
+	targetselection="all"
+	effecttype="Physical"
+	
+	effect="effects/aoedamage.effect"
+	impacteffect="effects/impact.effect"
+>
+	<onframe>
+		<evaluate a="param" b="frametime" op="mult" />
+		<damage effecttype="Physical" amount="1" b="result" op="mult" />
+	</onframe>
+	
+</affector>

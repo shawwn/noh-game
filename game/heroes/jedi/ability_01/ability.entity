@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Jedi1"
+
+	statuseffecttooltip="State_Jedi_Ability1"
+	statuseffectheader="true"
+	icon="icon.tga"
+	
+	anim="attack_1"
+	casttime="0"
+	castactiontime="0"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_self"
+	casteffecttype="Magic"
+	frontqueue="true"
+	
+	manacost="50,80,110,140"
+	cooldowntime="55000"
+
+	noninterrupting="true"
+	inheritmovement="true"
+
+>
+	<onimpact>
+		<applystate name="State_Jedi_Ability1" duration="30000"/>		
+	</onimpact>
+</ability>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PowerupRegen"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	
+	healthregenpercent="0.06"
+	manaregenpercent="0.10"
+	
+	
+	effecttype="StatusBuff"
+>
+	<ondamaged>
+		<condition test="target_type enemy">
+			<expire />
+		</condition>
+	</ondamaged>
+</state>

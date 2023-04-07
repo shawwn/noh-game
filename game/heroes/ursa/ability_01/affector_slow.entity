@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Ursa_Ability1_Slow"
+
+	radius="365"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="70,120,170,220"/>
+		<applystate name="State_Ursa_Ability1" duration="4000" />
+	</onimpact>
+</affector>

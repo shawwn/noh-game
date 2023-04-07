@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+    name="Gadget_BountyHunter_Ability4"
+    
+    iscontrollable="false"
+    invulnerable="true"
+	
+    goldbountymin="75,150,225"
+    goldbountymax="75,150,225"
+>
+</gadget>

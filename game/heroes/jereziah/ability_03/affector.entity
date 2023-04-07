@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Jereziah_Ability3"
+
+	radius="350"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	
+
+>
+	<onimpact>
+		<applystate name="State_Jereziah_Ability3" duration="3000" />
+	</onimpact>
+</affector>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_TowerMaster_Ability2"
+
+	radius="200"
+	
+	impactdelay="2500"
+	targetselection="all"
+	targetscheme="all_units"
+	effecttype="Magic"
+	
+	effect="effects/impact.effect"
+>
+	<onimpact>
+		<cantarget targetscheme="ally_units">
+			<damage effecttype="Magic" amount="300" nonlethal="true"/>
+		</cantarget>
+		<cantarget targetscheme="enemy_units">
+			<damage effecttype="Magic" amount="300" />
+		</cantarget>
+		<playeffect effect="effects/damageimpact.effect" source="target_entity" target="" />
+		<cantarget targetscheme="enemy_units">
+			<push force="400" duration="250" />
+			<push force="800" duration="250" source="this_entity" />
+		</cantarget>
+	</onimpact>
+</affector>

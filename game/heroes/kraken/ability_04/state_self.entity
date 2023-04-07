@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kraken_Ability4_Self"
+
+	
+	
+	icon="icon.tga"
+
+>
+	<aura state="State_Kraken_Ability4_Enemy" radius="400" targetscheme="enemy_units" />
+	
+</state>

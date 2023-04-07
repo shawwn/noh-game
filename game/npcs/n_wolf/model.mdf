@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" >
+
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" minstartframe="0" maxstartframe="-1"/>
+
+	<anim name="portrait" clip="clips/portrait.clip" fps="30" loop="true" minstartframe="0" maxstartframe="-1"/>
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="34" loop="false" blendtime="200">
+		<frameevent frame="18" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_1.wav 0 1200 .4"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="34" loop="false" blendtime="200">
+		<frameevent frame="9" cmd="PlaySoundLinear /npcs/n_wolf/sounds/attack_grunt_%.wav 0 1200 .45"/>
+		<frameevent frame="18" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_2.wav 0 1200 .4"/>
+	</anim>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="37" loop="true" blendtime="200" minstartframe="0" maxstartframe="-1">
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="5" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="17" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="21" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="14" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="death_1" clip="clips/death_1.clip" fps="35" loop="true" loopbackframe="-1">
+		<frameevent frame="11" cmd="PlaySoundLinear /npcs/n_wolf/sounds/death.wav 0 1800 .35"/>
+	</anim>
+
+	<anim name="stun_1" clip="clips/default_1.clip" fps="30" loop="false" loopbackframe="1" numframes="1"/>
+
+</model>

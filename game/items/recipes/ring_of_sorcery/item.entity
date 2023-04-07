@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Replenish"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="525"
+	components="Item_BrainOfMaliken Item_GuardianRing"
+	
+	actiontype="self_position"
+	targetscheme="ally_units"
+	targetradius="400"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="33000"
+	cooldowntype="replenish"
+	manacost="25"
+	
+	armor="3"
+	maxmana="300"
+>
+	<onimpact>
+		<playeffect effect="cast.effect" source="source_position" />
+		<spawnaffector name="Affector_Item5B" />
+	</onimpact>
+</item>

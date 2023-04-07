@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Techies_Ability4"
+
+	radius="425,435,450"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	impactdelay="500"
+	effect=""
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="300,450,600" />
+	</onimpact>
+	
+	<modifier key="ult_boost" priority="100">
+		<onimpact>
+			<damage effecttype="Magic" amount="450,600,750" />
+		</onimpact>
+	</modifier>
+</affector>

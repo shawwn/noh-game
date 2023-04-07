@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.0">
+
+			
+			<template name="eyeglow">
+			
+			<billboard
+				bone="{bone}"
+				life="500"
+				loop="1"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 .7 .3"
+				startcolor=".15 .85 1.91"
+				midcolor=".62 1.33 2.40"								endcolor=".15 .85 1.91"
+				size="6"
+				depthbias="0"
+				expirelife="300"
+			/>
+			
+			</template>
+			
+			<instance name="eyeglow" bone="_bone_lefteye" />			
+			<instance name="eyeglow" bone="_bone_righteye" />
+			
+			
+
+			<skeletonemitter
+					spawnrate="30"					
+					particlelife="70"			
+					gravity="0"
+					speed="15"
+					drag="0"
+					acceleration="0"
+					position="0 0 0"
+
+					material="/shared/effects/materials/lightning_01.material"
+					offsetsphere="15 16 10"
+					minangle="360"
+					maxangle="180"
+					direction="1 0 0"
+					offsetdirection="0 0 0"
+					offsetradial="0 0 0"
+				>
+
+
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="50"
+						maxanglespeed="190"
+						
+					
+						color=".2 .5 .9"
+						midcolorpos=".8"
+
+						startframe="0"
+						endframe="1"
+						startsize="20"
+						midsize="30"
+						endsize="30"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						startstickiness=".2"
+						endstickiness=".2"
+					/>
+			</skeletonemitter>	
+
+		</particlesystem>
+		
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

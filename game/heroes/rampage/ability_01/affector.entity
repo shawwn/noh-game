@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Rampage_Ability1"
+
+	lifetime="-1"
+	radius="35"
+  	destroytrees="false"
+>
+</affector>

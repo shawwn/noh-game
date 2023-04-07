@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">	
+
+			<sound
+				soundloop="true"
+				fadein="200"
+				fadeout="300"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".3"
+				sample="../sounds/state.wav"
+			/>
+
+			<template name="glowboards">
+				
+				<model
+						
+						model="eyeball/model.mdf"
+						scale=".5"
+						anim="idle"
+						position="0 0 220.0"
+						directionalspace="local"
+						alpha="1.0"
+						yawspeed="10"
+						loop="true"
+						
+						expirelife="2000"
+						color="1.6 1.5 1.0"
+				/>
+			<!--		
+				<model						
+						model="eyeball/eye_effect.mdf"
+						scale="1"
+						anim="idle"
+						position="0 0 50.0"
+						directionalspace="local"
+						alpha="1.0"
+						yawspeed="0"
+						loop="true"
+						
+						expirelife="2000"
+						color="1.6 1.5 1.0"
+				>
+		
+					<meshemitter
+						mesh="_invis_iris"
+						spawnrate="60"
+						
+						minangle="0"						
+						maxangle="1"						
+					
+						particlelife="1000"
+						drag=".04"
+						speed="114"						
+						
+						material="/shared/effects/materials/whitedot.material"						
+					>
+						<particle
+		
+							startcolor=".4 .2 0"
+							midcolor=".2 .2 0.0"							
+							endcolor="0 0 0"
+							
+							startsize="10"
+							endsize="1"
+							heightdistort="0.10"
+							turn="1"
+
+							
+						/>
+
+					</meshemitter>
+				
+					<meshemitter
+						mesh="_invis_iris"
+						spawnrate="60"
+						
+						minangle="0"						
+						maxangle="1"						
+					
+						particlelife="400"
+						drag=".04"
+						speed="114"						
+						
+						material="/shared/effects/materials/whitedot.material"						
+					>
+						<particle
+		
+							startcolor=".4 .2 0"
+							midcolor=".2 .2 0.0"							
+							endcolor="0 0 0"
+							
+							startsize="10"
+							endsize="1"
+							heightdistort="0.10"
+							turn="1"
+
+							
+						/>
+
+					</meshemitter>
+
+					
+					<meshemitter
+						mesh="_invis_outer"
+						spawnrate="30"
+						
+						minangle="0"						
+						maxangle="5"						
+					
+						particlelife="1000"
+						drag=".04"
+						speed="114"						
+						
+						material="/shared/effects/materials/neb_add.material"						
+					>
+						<particle
+		
+							startcolor=".4 .2 1"
+							midcolor=".2 .2 1"							
+							endcolor="0 0 0"
+							
+							startsize="52"
+							endsize="52"
+							heightdistort="0.20"
+							turn="1"
+
+							
+						/>
+
+					</meshemitter>		
+					<meshemitter
+						mesh="_invis_inner"
+						spawnrate="30"
+						
+						minangle="0"						
+						maxangle="5"						
+					
+						particlelife="1000"
+						drag=".01"
+						speed="114"						
+						
+						material="/shared/effects/materials/whitedot.material"						
+					>
+						<particle
+		
+							startcolor=".4 .2 1"
+							midcolor=".2 .2 1"							
+							endcolor="0 0 0"
+							
+							startsize="52"
+							endsize="52"
+							heightdistort="0.20"
+							turn="1"
+
+							
+						/>
+
+					</meshemitter>					
+				</model>				
+				
+
+				
+				-->
+				
+				
+				<billboard	
+					
+					material="/shared/effects/materials/whitedot.material"
+					position="0 0 {pos1}"
+					startsize="{startsize}"
+					midsize="{midsize}"
+					endsize="{startsize}"
+					
+					color=".15 .075 .0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					life="2000"
+					loop="true"
+					depthbias="-280"
+				/>	
+				</template>
+				
+				<instance name="glowboards" midsize="200" startsize="150" pos1="0"/>
+				<instance name="glowboards" midsize="200" startsize="150" pos1="-100"/>
+			
+				
+				<simpleemitter	
+					
+					spawnrate="2"
+					particlelife="1400"
+							
+					acceleration="50"
+					position="0 0 -50"
+
+					depthbias="-230"
+					material="/shared/effects/materials/rad_add.material"
+					offsetsphere="0 0 0"
+					minangle="0"
+					maxangle="360"
+					direction="0 0 0"
+					particledirectionalspace="local"
+					
+				>
+
+					<particle 
+						minangle="-120"
+						maxangle="120"
+						minanglespeed="100"
+
+						startcolor="0 0 0"
+						midcolor=".1 .055 0"
+						endcolor="0 0 0"
+						midcolorpos=".7"
+
+						maxanglespeed="0"
+						startframe="0"
+						endframe="1"				
+						
+						
+							
+						size="250"
+						midsizepos=".7"		
+
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".7"
+						anchor="1"
+					/>
+				</simpleemitter>
+
+
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="purged" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.75">
+
+	
+		<simpleemitter
+			life="300"
+			spawnrate="20"
+			
+			bone="_bone_centerofchest"
+			particlelife="250"			
+			gravity="0"
+			speed="50"
+			drag="0"
+			acceleration="1"
+			position="0 0 0"
+
+			material="/shared/effects/materials/electric_impact_01.material"
+			offsetsphere="0 0 0"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 0"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="0"
+				maxanglespeed="1440"
+
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".5"
+
+				startframe="0"
+				endframe="0"
+
+				startsize="5"
+				midsize="50"
+				endsize="90"
+				midsizepos=".5"
+
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".6"
+
+				startstickiness="0"
+				endstickiness="0"
+
+				lockup="false"
+				lockright="false"
+				pitch="0"
+				yaw="0"
+
+				/>
+			</simpleemitter>			
+
+
+<!-- white to light -->	
+		
+		<simpleemitter
+			life="3000"
+			spawnrate="50"
+			bone="_bone_centerofchest"
+			
+			particlelife="350"			
+			gravity="0"
+			speed="70"
+			drag="0"
+			acceleration="0"
+			position="0 0 0"
+
+
+			material="/shared/effects/materials/lightning_02.material"
+			offsetsphere="1 1 1"
+			minangle="360"
+			maxangle="180"
+			direction="1 0 0"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+
+
+			<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="50"
+				maxanglespeed="150"
+				startcolor="1 1 1"
+				midcolor=".1 .1 .1"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+
+				startframe="0"
+				endframe="1"
+				startsize="1"
+				midsize="30"
+				endsize="50"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".5"
+				startstickiness="0"
+				endstickiness="0"
+
+
+			/>
+
+
+		</simpleemitter>
+
+<!--light blue lightning -->		
+		
+		<simpleemitter
+			life="3000"
+			spawnrate="50"
+			bone="_bone_centerofchest"
+			
+			particlelife="350"			
+			gravity="0"
+			speed="70"
+			drag="0"
+			acceleration="0"
+			position="0 0 0"
+
+
+			material="/shared/effects/materials/lightning_02.material"
+			offsetsphere="1 1 1"
+			minangle="360"
+			maxangle="180"
+			direction="1 0 0"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+
+
+			<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="50"
+				maxanglespeed="150"
+				startcolor="0 1 1"
+				midcolor="0 .1 .1"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+
+				startframe="0"
+				endframe="1"
+				startsize="1"
+				midsize="30"
+				endsize="50"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".5"
+				startstickiness="0"
+				endstickiness="0"
+
+
+			/>
+	
+		</simpleemitter>
+
+<!--white lightning -->
+		<simpleemitter
+			life="4000"
+			spawnrate="50"
+			bone="_bone_centerofchest"
+			
+			particlelife="350"			
+			gravity="0"
+			speed="70"
+			drag="0"
+			acceleration="0"
+			position="0 0 0"
+
+
+			material="/shared/effects/materials/lightning_02.material"
+			offsetsphere="1 1 1"
+			minangle="360"
+			maxangle="180"
+			direction="1 0 0"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+
+
+			<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="50"
+				maxanglespeed="150"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+
+				startframe="0"
+				endframe="1"
+				startsize="1"
+				midsize="10"
+				endsize="15"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".5"
+				startstickiness="0"
+				endstickiness="0"
+
+
+			/>
+			
+		</simpleemitter>
+		
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Stunned_Knockdown"
+	
+	ishidden="true"
+	silenced="true"
+	disarmed="true"
+	immobilized="true"
+	perplexed="true"
+	effecttype="StatusDisable"
+	
+	passiveeffect="effects/stun.effect"
+>
+	<onexpired>
+		<playanim name="idle" target="target_entity" />
+	</onexpired>
+</state>

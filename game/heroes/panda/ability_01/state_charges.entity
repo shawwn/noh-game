@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Panda_Ability1_Charges"
+	
+	ishidden="true"
+	impactinterval="4000"
+	maxcharges="1,2,3,4"
+
+>
+	<oninflict>
+	
+	</oninflict>
+	<onimpact>
+		<damage effecttype="DummyDmg" amount="1" target="source_entity" source="source_entity" />
+	</onimpact>
+</state>

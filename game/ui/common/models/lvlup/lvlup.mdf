@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="interface_flare_source.max" file="lvlup.model" type="K2" >
+	<anim name="idle" startframe="0" fps="45" clip="lvlup.clip" loop="false" loopbackframe="-1" blendtime="0" />
+</model>

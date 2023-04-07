@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Mortred3"
+	
+	
+	statuseffecttooltip="State_Mortred_Ability3"
+	
+	icon="icon.tga"
+	
+	anim="attack_3"
+	casttime="0"
+	castactiontime="0"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	actiontype="target_self"
+	manacost="65"
+	
+	cooldowntime="25000"
+
+	noninterrupting="true"
+	inheritmovement="true"
+
+	>
+		<aura state="State_Mortred_Aura" radius="100" targetscheme="ally_units" effecttype=""/>
+
+	<onimpact >
+		<applystate name="State_Mortred_Ability3" duration="20000,23000,26000,30000" />
+	</onimpact>
+</ability>

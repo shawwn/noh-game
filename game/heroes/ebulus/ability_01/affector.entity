@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Ebulus_Ability1"
+
+	radiusstart="50"
+	radiusend="1050"
+	
+	arcstart="20"
+	arcend="20"
+	
+	innerradiusoffset="128"
+	
+	lifetime="500"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	persist="true"
+	
+	effect="effects/trail.effect"
+>
+
+</affector>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Vindicator_Attack"
+
+	speed="1000"
+	gravity="1000"
+
+	modelscale="0.5"
+	model="effects/projectile.mdf"
+
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>
+</projectile>

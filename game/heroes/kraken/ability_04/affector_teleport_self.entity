@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Kraken_Ability4_Teleport_Self"
+	effect=""	
+	radius="0"
+	lifetime="4000,5000,6000"
+	impactdelay="4000,5000,6000"
+	targetselection="all"
+	targetscheme="self"
+	maximpactspertarget="1"
+	ignoreinvulnerable="true"
+>
+	<onframe>
+		<condition test="distance gt 3000" source="this_owner_entity" target="proxy_entity">
+			<condition test="distance gt 3500" source="this_owner_entity" target="proxy_entity">
+				<delete target="this_entity" source="" />
+			</condition>
+			<condition test="distance lt 3500" source="this_owner_entity" target="proxy_entity">
+				<expirestate name="State_Kraken_Ability4_Self" target="this_owner_entity" />
+				<spawnaffector name="Affector_Kraken_Ability4_Teleport_Self_Instant" target="this_owner_entity" proxy="proxy_entity" />
+				<delete target="this_entity" source="" />
+			</condition>
+		</condition>
+	</onframe>
+	<onimpact>
+		<condition test="target_type alive">
+			<unbind target="target_entity" />
+			<playanim name="idle" source="target_entity" />
+			<playeffect effect="effects/portout.effect" source="source_position" />
+			<teleport source="target_entity" target="proxy_position" interpolate="false" />
+			<playeffect effect="effects/portin.effect" source="target_position" />
+			<disjoint target="target_entity" />
+			<kill source="" target="proxy_entity" />
+		</condition>
+	</onimpact>
+</affector>

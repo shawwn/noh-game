@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Recommended"
+
+	style="recipes"
+	header="/ui/elements/shop/shopkeeper_recipes.tga"
+	
+	icon="shop_recommended.tga"
+	order="0"
+	slot="11"
+	
+	recommendeditems="true"
+>
+</shop>

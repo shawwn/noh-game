@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Minotaur1"
+
+	
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_Catmanleader_Ability1"
+	targetradius="200"
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	casttime="1000"
+	castactiontime="500"
+
+	casteffecttype="Magic"
+	manacost="100"
+	cooldowntime="20000"
+	anim="ability_1"
+
+	
+>
+	<onimpact >
+		<spawnaffector name="Affector_Minotaur_Ability1" target="source_position"/>
+		<playeffect effect="effects/cast.effect"  source="source_position"/>
+	</onimpact>
+	
+	<ontargetacquired>
+		<setproxy/>
+	</ontargetacquired>
+	
+	<onthink>
+		<condition target="proxy_entity" test="target_entity != 0 and canactivate and distance lt 150 and not_hasorder">
+			<useability target="proxy_entity"/>
+		</condition>
+	</onthink>
+</ability>

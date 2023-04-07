@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="laguna_flame_cast_viewer">
+	<definitions>
+		<particlesystem name="system0" space="entity">
+
+
+			<beam
+
+				
+				bone_a="_bone_fx_03"
+				bone_b="_bone_fx_04"
+				size="250"
+				color="1 1 1"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_01.material"
+
+				framespeed="1.75"
+
+			/>
+
+			<beam
+
+				
+				bone_a="_bone_fx_03"
+				bone_b="_bone_fx_04"
+				size="250"
+				color="1 1 1"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_01.material"
+
+				framespeed="1.75"
+
+			/>
+
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

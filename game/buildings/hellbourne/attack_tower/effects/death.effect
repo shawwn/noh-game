@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+			
+			<model
+				life="8000"
+				model="death/model.mdf"
+				anim="idle"
+				startcolor="1 1 1"
+				midcolor=".5 .5 .5"
+				endcolor="0 0 0"
+				midcolorpos=".3"
+				startalpha="1"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos=".1"
+			/>
+		
+		</particlesystem>
+		
+		<modifier
+			color="1 1 1"
+			alpha="0"
+		/>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnmodifier instance="instance0"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+	</thread>
+
+</effect>

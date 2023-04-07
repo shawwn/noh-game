@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="xalynx_thing.max" file="spire.model" type="K2">
+	<anim name="idle" clip="spire.clip"  loop="1" loopbackframe="-1" fps="45">
+		
+	</anim>
+</model>

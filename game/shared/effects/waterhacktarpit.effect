@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="footstep_r_small">
+	<definitions>
+		<particlesystem name="system0" space="world">
+				
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="0.125"
+				sample="/shared/sounds/footsteps/tarpit_%.wav"
+			/>		
+	
+
+				<simpleemitter		
+					
+					spawnrate="1111"
+					count="1"
+					particlelife="1500"							
+					position="0 35 10"	
+					
+					direction="0 1 0"
+					minangle="0"
+					maxangle="0"
+					inheritvelocity="0.25"
+				>
+
+					<particle
+						turn="true"
+					>
+						<billboard
+							life="3100"
+							material="/shared/effects/materials/refract_wellwave.material"
+							startalpha="0"
+							midalpha="1.0"
+							endalpha="0.0"		
+							
+							midalphapos="0.3"							
+							
+							startparam=".2"
+							endparam="0.00"
+							startsize="33"
+							endsize="332"
+							directionalspace="local"
+							pitch="-90"
+							lockup="true"
+							lockright="true"
+						/>						
+			
+					</particle>
+				</simpleemitter>				
+				
+			
+			
+				
+				
+				
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

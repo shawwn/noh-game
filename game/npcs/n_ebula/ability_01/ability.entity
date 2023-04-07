@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ebula1"
+
+	
+	
+	icon="icon.tga"
+	
+	actiontype="passive"
+>
+	<onattackimpact >
+		<cantarget targetscheme="enemy_units">
+			<condition test="target_type hero">
+				<applystate name="State_Ebula_Ability1" duration="10000" />
+			</condition>
+			<condition test="not_target_type hero">
+				<applystate name="State_Ebula_Ability1" duration="20000" />
+			</condition>
+		</cantarget>
+	</onattackimpact>
+
+</ability>

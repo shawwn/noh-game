@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_LifeSteal5"
+	
+	icon="icon.tga"
+	
+	cost="300"
+	components="Item_ManaRegen3 Item_HungrySpirit Item_TrinketOfRestoration"
+	
+	actiontype="passive"
+>
+	<aura state="State_Item5E" radius="900" targetscheme="ally_units" effecttype="Buff" propagatecondition="not_stealthed" />
+
+	<modifier key="vamp_melee" condition="melee" modpriority="100"
+	>
+		<onattackimpact>
+			<playeffect effect="lifesteal.effect" source="source_entity" target="target_entity" />
+		</onattackimpact>
+	</modifier>
+</item>

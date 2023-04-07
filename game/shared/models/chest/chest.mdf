@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="chest.max" file="chest.model" type="K2">
+	<anim name="idle" clip="chest.clip" blendtime="0" loop="true" startframe="50">
+		<startevent cmd="StartEffect chest.effect 0" />
+	</anim>
+	<anim name="open" clip="chest.clip" blendtime="0" startframe="1" numframes="50" loop="false">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/chest_place.mp3 0 800 0.8" />
+		<frameevent frame="26" cmd="PlaySoundLinear sounds/chest_open.mp3 0 800 1.0" />
+	</anim>
+	<anim name="death" clip="chest.clip" blendtime="200" startframe="1" numframes="1" loop="true" loopbackframe="-1">
+		<startevent cmd="StopEffect 0" />
+	</anim>
+</model>

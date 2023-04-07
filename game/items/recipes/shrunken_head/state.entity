@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Item3E"
+
+	
+	
+	icon="icon.tga"
+
+	passiveeffect="state.effect"
+	
+	immunitytype="MagicImmunity1"
+	
+	effecttype=""
+>
+</state>

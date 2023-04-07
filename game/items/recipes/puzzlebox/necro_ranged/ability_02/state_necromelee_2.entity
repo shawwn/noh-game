@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_NecroRanged_2"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	attackspeed="0.03,0.06,0.09"
+	movespeedmultiplier="0.03,0.06,0.09"
+	effecttype="StatusBuff"
+>
+</state>

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="bolt_lightning_02" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+			
+			<sound
+				sample="/heroes/kunas/ability_01/sounds/ability_01_impact_0%.wav"
+				volume="0.2"
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="1800"
+			/>		
+			
+			
+			<simpleemitter	
+				count="1"
+				particlelife="3500"
+			>
+				<particle>
+
+					<groundsprite	
+						delay="300"				
+						life="2400"
+						material="/shared/effects/materials/ground_smash_overlay.material"
+						size="40"			
+						color="1.0 1.0 1.0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+					/>		
+				</particle>
+			</simpleemitter>
+		
+			<debris
+				delay="200"
+				scale=".3"
+				life="3000"
+				model="/shared/effects/models/debris/debris.mdf"
+				anim="idle"	
+				minspeed="300.0"
+				maxspeed="400.0"
+				minrotationspeed="500.0"
+				maxrotationspeed="600.0"
+				gravity="20.0"
+				minangle="0"
+				color=".6 .6 .5"
+				maxangle="20"
+				collide="true"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.9"
+				bounce="0.7"
+				reflect="0.6"
+				animpose="false"
+			/>
+			
+		
+		
+			<simpleemitter
+				delay="200"
+				offsetsphere="0 0 0"
+				spawnrate="222"			
+				count="3"
+				particlelife="1300"			
+				gravity="-.5"					
+				acceleration="0"
+				speed="20"
+				position="0 0 20"
+				material="/shared/effects/materials/pyroclast_01.material"	
+			>
+				<particle
+						minangle="-360"
+						maxangle="360"
+						color=".36 .33 .3"
+						startsize="10"
+						endsize="100"
+						minanglespeed="-30"
+						maxanglespeed="33"
+						
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+			
+						frame="1"
+						framespeed="1"
+
+					
+						anchor="1"
+		
+						lockup="0"
+						lockright="false"
+
+						
+						turn="false"
+				/>
+
+			</simpleemitter>
+
+		
+			<model	 
+				name="hammer"
+				life="800"
+				model="hammer.mdf"
+				anim="idle"
+				yawspeed="0"
+				scale="1.4"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="0 0 0"
+				position="0.0 0.0 0.0"
+				directionalspace="global"
+			/>
+						
+			<twopointtrailemitter
+				owner="hammer"
+				life="1000"
+				name="trail01"
+				bone_a="_bone_01"
+				bone_b="_bone_02"
+				spawnrate="45"
+				
+				startminparticlelife="500"
+				startmaxparticlelife="500"		
+				
+				endminparticlelife="1"
+				endmaxparticlelife="1" 
+
+				texpostime="500"
+			 	texposscale="1"
+			 	texstretchscale="0"				
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle 
+					startcolor=".2 0.2 1" 
+					midcolor="0.8 .2 0"
+					endcolor="0 0 0"
+				/>
+			</twopointtrailemitter>		
+
+			<twopointtrailemitter
+				owner="hammer"
+				life="1000"
+				name="trail01"
+				bone_a="_bone_03"
+				bone_b="_bone_04"
+				spawnrate="45"
+				
+				startminparticlelife="500"
+				startmaxparticlelife="500"		
+				
+				endminparticlelife="1"
+				endmaxparticlelife="1" 
+
+				texpostime="500"
+			 	texposscale="1"
+			 	texstretchscale="0"				
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle 
+					startcolor=".2 0.2 1" 
+					midcolor="0.8 .2 0"
+					endcolor="0 0 0"
+				/>
+			</twopointtrailemitter>				
+							
+			<beam
+				life="550"
+				delay="200"
+				bone_a="_bone_head"
+				bone_b="_bone_head"
+
+				position_a="0 0 600"
+
+				size="40"
+				startcolor="1 .5 0"
+				endcolor=".4 .8 .8"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+
+				framespeed="1.75"
+
+			/>
+
+			<beam
+
+				life="550"
+				delay="200"
+
+				bone_a="_bone_head"
+				bone_b="_bone_head"
+
+				position_a="0 0 600"
+
+				size="60"
+				startcolor="1 .5 0"
+				endcolor=".15 .4 .4"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+
+				framespeed="1.75"
+
+			/>
+
+			<beam
+
+				life="550"
+				delay="200"
+				bone_a="_bone_head"
+				bone_b="_bone_head"
+
+				position_a="0 0 600"
+				size="80"
+				startcolor="1 .5 0"
+				endcolor=".5 1 1"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_06.material"
+
+				framespeed="1.75"
+
+			/>			
+						
+			<simpleemitter
+				bone="_bone_head"
+				delay="300"
+				life="250"
+				spawnrate="25"
+				particlelife="600"
+				gravity="0"
+				speed="2.0"
+				drag="0.0"
+				acceleration="0.0"
+				material="/shared/effects/materials/femme_lightning_06.material"
+				offsetsphere="5 5 5"
+				position="0 0 0"
+				
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-22"
+					maxanglespeed="22"
+					startcolor="1 .4 0"
+					endcolor=".2 1 1"
+					width="150"
+					height="46"
+					
+					turn="true"
+					framespeed="1.75"
+				/>	
+			</simpleemitter>		
+						
+			<skeletonemitter
+					life="2500"
+					delay="450"
+					spawnrate="280"
+					count="50"
+					
+					particlelife="70"			
+					gravity="0"
+					speed="40"
+					drag="0"
+					acceleration="0"
+					position="0 0 0"
+
+					material="/shared/effects/materials/lightning_01.material"
+					offsetsphere="5 16 10"
+					minangle="360"
+					maxangle="180"
+					direction="1 0 0"
+					offsetdirection="0 0 0"
+					offsetradial="0 0 0"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="50"
+						maxanglespeed="190"
+						
+					
+						color=".2 .5 1"
+						midcolorpos=".8"
+
+						startframe="0"
+						endframe="1"
+						startsize="20"
+						midsize="10"
+						endsize="20"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						startstickiness=".2"
+						endstickiness=".2"
+					/>
+			</skeletonemitter>	
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" /> 
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

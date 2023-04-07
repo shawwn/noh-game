@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Immunity"
+	
+	
+	
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_Item3E"
+	
+	cost="1300"
+	components="Item_MightyBlade Item_Warhammer"
+	
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="80000"
+	cooldowntype="immunity"
+	noninterrupting="true"
+	manacost="0"
+	
+	damage="24"
+	strength="10"
+>
+	<onimpact>
+		<applystate name="State_Item3E" duration="10000"/>
+		<dispel type="StatusDebuff" />
+		<setactivemodifierkey name="shb9"/>
+	</onimpact>
+
+	<modifier
+		key="shb9"
+		modpriority="100"
+		displayname="true"
+		
+		cooldowntime="75000"
+	>
+		<onimpact>
+			<applystate name="State_Item3E" duration="9000"/>
+			<dispel type="StatusDebuff" />
+			<setactivemodifierkey name="shb8"/>
+		</onimpact>
+	</modifier>
+
+	<modifier
+		key="shb8"
+		modpriority="100"
+		displayname="true"
+		
+		cooldowntime="70000"
+	>
+		<onimpact>
+			<applystate name="State_Item3E" duration="8000"/>
+			<dispel type="StatusDebuff" />
+			<setactivemodifierkey name="shb7"/>
+		</onimpact>
+	</modifier>
+
+	<modifier
+		key="shb7"
+		modpriority="100"
+		displayname="true"
+		
+		cooldowntime="65000"
+	>
+		<onimpact>
+			<applystate name="State_Item3E" duration="7000"/>
+			<dispel type="StatusDebuff" />
+			<setactivemodifierkey name="shb6"/>
+		</onimpact>
+	</modifier>
+
+	<modifier
+		key="shb6"
+		modpriority="100"
+		displayname="true"
+		
+		cooldowntime="60000"
+	>
+		<onimpact>
+			<applystate name="State_Item3E" duration="6000"/>
+			<dispel type="StatusDebuff" />
+			<setactivemodifierkey name="shb5"/>
+		</onimpact>
+	</modifier>
+
+	<modifier
+		key="shb5"
+		modpriority="100"
+		displayname="true"
+		
+		cooldowntime="55000"
+	>
+		<onimpact>
+			<applystate name="State_Item3E" duration="5000"/>
+			<dispel type="StatusDebuff" />
+		</onimpact>
+	</modifier>
+</item>

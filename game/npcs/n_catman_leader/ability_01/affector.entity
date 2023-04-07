@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Catmanleader_Ability1"
+
+	radius="300"
+	
+	targetscheme="enemy_units"
+	targetselection="all"
+	effecttype="Magic"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="150" />
+		<applystate name="State_Catmanleader_Ability1" duration="3000"/>
+	</onimpact>
+</affector>

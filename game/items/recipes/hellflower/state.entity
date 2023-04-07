@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Item5K"
+
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	
+	silenced="true"
+	incomingdamagemultiplier="0.20"
+	perplexed="true"
+	
+	effecttype="StatusDebuff"
+>
+	<onframe />
+</state>

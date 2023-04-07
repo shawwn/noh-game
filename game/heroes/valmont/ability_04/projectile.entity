@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Valmont_Ability4"
+
+	speed="5000"
+	gravity="0"	
+	modelscale="0.65"
+	model="effects/bullet.mdf"
+	deatheffect="effects/impact.effect"
+	effectscale="1"
+	impactstealth="true"
+	canturn="true"
+	impacteffect="effects/ability_04_impact.effect"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="400,550,700" target="proxy_entity" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100"
+	>
+		<onimpact>
+			<damage effecttype="Magic" amount="500,700,900" target="proxy_entity" />
+		</onimpact>
+	</modifier>
+</projectile>

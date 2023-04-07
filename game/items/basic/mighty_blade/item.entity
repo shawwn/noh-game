@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_MightyBlade"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="1000"
+	
+	actiontype="passive"
+	
+	strength="10"
+>
+</item>

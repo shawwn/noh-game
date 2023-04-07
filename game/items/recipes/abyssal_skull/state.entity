@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Item5E"
+	
+	icon="icon.tga"
+	
+	basedamagemultiplier="0.15"
+	passiveeffect="state.effect"
+	
+	effecttype="StatusBuff"
+>
+	<onframe />
+	<modifier key="vamp_melee" condition="melee" modpriority="100"
+		lifesteal="0.15"
+	/>
+	
+	<modifier key="manaregen_aura" modpriority="80" exclusive="true"
+		manaregen="0.8"
+	/>
+	
+	<modifier key="armor_aura" modpriority="5" exclusive="true"
+		armor="5"
+	/>
+</state>

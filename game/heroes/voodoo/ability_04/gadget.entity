@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Voodoo_Ability4"
+	
+	
+	
+	icon="icons/ability_4.tga"
+	portrait="icons/ability_4.tga"
+	model="effects/ward.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	spawneffect="effects/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	isselectable="true"
+	orderconfirmedsound=""
+	
+	preglobalscale="1.0"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="26"
+	targetoffset="0 0 64"
+
+	movespeed="0"
+	turnrate="320"
+	ismobile="false"
+	canrotate="true"
+
+	maxhealth="0"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	invulnerable="true"
+	canattack="true"
+
+	attackduration="300"
+	attackactiontime="0"
+	attackcooldown="300"
+	attackdamagemin="60,90,120"
+	attackdamagemax="60,90,120"
+	attacknumanims="1"
+	attackoffset="0 25 110"
+	attackprojectile="Projectile_Ward_Attack"
+	attackrange="700"
+	attackstarteffect=""
+	attackactioneffect="effects/attack.effect"
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	attackdamagetype="Physical"
+	attacktargetscheme="enemy_heroes"
+	
+	aggrorange="600"
+	sightrangeday="1200"
+	sightrangenight="800"
+
+	experiencebounty="31"
+	goldbountymin="23"
+	goldbountymax="38"
+	
+	lifetime="8000"
+>
+	<onattackimpact>
+		<bounce count="0,0,1" range="550" damagemult="1" targetscheme="visible_enemy_heroes" />
+	</onattackimpact>
+	
+	<modifier key="ult_boost" modpriority="100"
+		displayname="true"
+		attackdamagemin="90,120,150"
+		attackdamagemax="90,120,150"
+	>	
+		<onattack>
+			<split count="0,0,2" range="600" damagemult="1" targetscheme="visible_enemy_heroes" />
+		</onattack>
+		
+		<onattackimpact>
+			<bounce count="0,1,0" range="550" damagemult="1" targetscheme="visible_enemy_heroes" />
+		</onattackimpact>
+	</modifier>
+</gadget>

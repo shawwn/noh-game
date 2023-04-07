@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Voodoo"
+	
+	
+	
+	team="Hellbourne"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	
+	preglobalscale="1.4"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+
+	movespeed="305"
+	turnrate="320"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-1.0"
+	magicarmor="5.5"
+
+	inventory0="Ability_Voodoo1"
+	inventory1="Ability_Voodoo2"
+	inventory2="Ability_Voodoo3"
+	inventory3="Ability_Voodoo4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+
+	attackduration="1000"
+	attackactiontime="550"
+	attackcooldown="1700"
+	attackdamagemin="32"
+	attackdamagemax="42"
+	attacknumanims="2"
+	attackoffset="20 64 100"
+	attackprojectile="Projectile_Voodoo_Attack"
+	attackrange="600"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	
+	corpsetime="3300"
+	corpsefadetime="3000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+
+	primaryattribute="Intelligence"
+	strength="16"
+	strengthperlevel="1.8"
+	agility="13"
+	agilityperlevel="1.4"
+	intelligence="19"
+	intelligenceperlevel="2.9"
+>
+</hero>

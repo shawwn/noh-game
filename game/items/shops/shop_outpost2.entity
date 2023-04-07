@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Outpost2"
+
+	style="outpost"
+	header="/ui/elements/shop/shopkeeper_outpost.tga"
+	
+	icon="shop_outpost.tga"
+	order="0"
+	slot="10"
+>
+	<item name="Item_HungrySpirit" />
+	<item name="Item_Steamstaff" />
+	<item name="Item_HelmOfTheVictim" />
+	
+	
+	<item name="Item_BrainOfMaliken" />
+	<item name="Item_SnakeBracelet" />
+	<item name="Item_Confluence" />
+	<item name="Item_PortalKey" />
+</shop>

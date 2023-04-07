@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<template name="ccwidget_message_display">
+		<!-- Header -->
+		<panel height="{headerheight=22}" y="-{headerheight=22}" align="center" blockinput="false" noclick="true">
+			<label x="6" align="left" valign="center" textvalign="center" font="{titlefont=dyn_10}" color="{titlecolor=white}" shadow="true" blockinput="false" noclick="true">{title}</label>
+		</panel>
+
+		<label width="-20" height="24" textvalign="center" textalign="center" align="center" font="dyn_10" color="white" shadow="true" blockinput="false" noclick="true">cc_message_label_enter_name_message</label>
+
+		<!-- Footer -->
+		<panel height="{footerheight=28}" y="{footerheight=28}" visible="{footer=1}" valign="bottom" blockinput="false" noclick="true">
+			<instance
+				parentid="{id}"
+				y="4"
+				height="20" width="100"
+				align="center"
+				name="ccbutton"
+				label="cc_message_label_message"
+				onclick="ChatOpenMessage(_target_nick); Call('cceditbox_{id}message_textbox','EraseInputLine();'); HideWidget('ccwidget_message');"
+				bordercolor="{bordercolor=#A0A0A077}"
+			/>
+		</panel>
+		
+		<instance name="cceditbox" parentid="{id}" id="message" y="28" width="-10" height="20" align="center" bordercolor="{bordercolor=#A0A0A077}" cvar="_target_nick" onshow="SetFocus(true);" onenter="ChatOpenMessage(_target_nick); EraseInputLine(); HideWidget('ccwidget_message');" onesc="EraseInputLine();"/>
+	</template>
+	
+			<instance name="ccwidget"
+				id="message"
+				title="cc_message_label_message"
+				height="55" width="300"
+				align="center" valign="center"
+				y="-70"
+				bordercolor="#007E7E77"
+				canresize="false"
+				rememberposition="0"
+			/>
+</package>

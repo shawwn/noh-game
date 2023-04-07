@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chipper_Ability4_Ally"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	
+	attackspeed="-0.35"
+	duration="750,1250,1750"
+	
+	effecttype="StatusDebuff"
+>
+</state>

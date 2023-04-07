@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<billboard				
+			      size="30"
+				life="8000"
+				loop="1"
+				position="0 0 14"
+				bone="_bone_overhead"
+				depthbias="-100"
+				material="/shared/effects/materials/whitedot.material"				
+				startcolor="1 .8 .0"
+				midcolor="1 .8 .0"
+				endcolor="1 .8 .0"
+			/>
+	
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="10"
+				particlelife="1000"
+				minspeed="0"
+				maxspeed="100"
+				drag="0.035"
+				offsetsphere="15"
+				material="/shared/effects/materials/refract_outsplash.material"
+			>
+				<particle
+					startalpha=".3"
+					endalpha="0.0"
+					maxangle="360"
+					anglespeed="-90"
+					startsize="20"
+					endsize="70"
+					param=".15"
+					depthbias="-30"
+				/>
+			</simpleemitter>
+
+			<groundsprite
+
+			life="8000"
+			loop="true"
+			material="/shared/effects/materials/sun_stroke.material"
+			startsize="45"
+			midsize="45"
+			endsize="45"
+			midsizepos=".5"
+			startcolor="1 .8 .0"
+			midcolor="1 .8 .0"
+			endcolor="1 .8 .0"
+			
+
+			midcolorpos=".2"
+			minangle="0"
+			maxangle="0"
+			angles="0 0 0"
+			yawspeed="0"
+			
+
+
+		/>
+
+
+		
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		  <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+  		  <spawnmodifier instance="instance1" modifier="modifier0"/> 
+  		  <waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

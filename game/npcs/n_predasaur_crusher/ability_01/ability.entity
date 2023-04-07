@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Predasaur1"
+
+	
+	
+	
+	icon="icon.tga"
+	
+
+	actiontype="passive"
+>
+	<aura state="State_Predasaur_Ability1" radius="900" targetscheme="ally_units" />
+</ability>

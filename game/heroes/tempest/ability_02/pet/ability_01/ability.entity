@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Elemental1"
+
+	icon="/heroes/tempest/ability_02/icon.tga"
+	
+	actiontype="passive"
+	cooldowntime="300000"
+	
+	maxcharges="6"
+>
+	<onattack>
+		<canactivate>
+			<cantarget targetscheme="enemy_units">
+				<addcharges count="1" />
+			</cantarget>
+			<condition test="charges eq 6">
+				<consume source="source_entity" item="Ability_Elemental1" ignorecharges="true">
+					<multcharges value="0" />
+					<spawnunit name="Pet_Tempest_Ability2" target="source_position" lifetime="source_lifetime" pushentity="true"/>
+					<consume source="stack_entity" item="Ability_Elemental1" ignorecharges="true"/>
+					<heal a="1" b="target_missinghealth" op="mult" target="source_entity" />
+				</consume>
+			</condition>
+		</canactivate>
+	</onattack>
+</ability>

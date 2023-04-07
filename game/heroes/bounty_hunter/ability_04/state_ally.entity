@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_BountyHunter_Ability4_Ally"
+
+	icon="icon.tga"
+	passiveeffect=""
+	movespeedmultiplier="0.2"
+>
+</state>

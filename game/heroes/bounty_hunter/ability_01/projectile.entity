@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_BountyHunter_Ability1"
+
+	speed="2000"
+	gravity="100"
+	modelscale="0.6"
+	model="../../../heroes/vindicator/projectile/effects/projectile_glave.mdf"
+
+	impacteffect="../../../heroes/vindicator/projectile/effects/impact.effect"
+	traileffect=""
+>
+</projectile>

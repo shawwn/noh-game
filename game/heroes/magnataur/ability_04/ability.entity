@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Magnataur4"
+
+	
+	
+	icon="icon.tga"
+	
+	anim="attack_2"
+	casttime="500"
+	castactiontime="250"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	targetradius="410"
+	casteffecttype="Magic"
+	
+	manacost="200,250,300"
+	cooldowntime="120000,110000,100000"
+>
+	<onimpact >
+		<playeffect effect="../../../../heroes/behemoth/ability_04/effects/mainripple.effect" target="target_position" source="target_position"/>
+		<spawnunit name="Gadget_Magnataur_Ability4" target="source_entity" pushentity="true" offset="0 150" facing="source_entity" />
+		<spawnaffector name="Affector_Magnataur_Ability4" target="source_entity" proxy="stack_entity" />
+	</onimpact>
+</ability>

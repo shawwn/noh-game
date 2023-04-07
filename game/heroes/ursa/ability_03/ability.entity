@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ursa3"
+
+	icon="icon.tga"
+	
+	anim="ability_3"
+	casttime="0"
+	castactiontime="0"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	passiveeffect="effects/state_self.effect"
+	
+	actiontype="passive"
+	casteffecttype="Physical"
+	targetscheme="enemy_units"
+	
+	damagepercharge="1"
+	maxcharges="100"
+	
+	modifierkey="UrsaAttack1,UrsaAttack2,UrsaAttack3,UrsaAttack4"
+>
+	<onimpact />
+
+	<onattackimpact>
+		<cantarget targetscheme="enemy_units">
+			<condition target="target_entity" test="not_hasstate State_Ursa_Ability3">
+				<applystate name="State_Ursa_Ability3" duration="3000" target="target_entity" />
+				<evaluate a="charges" b="2" op="div" />
+				<setcharges a="result" />
+			</condition>
+			<condition target="target_entity" test="hasstate State_Ursa_Ability3">
+				<applystate name="State_Ursa_Ability3" duration="3000" target="target_entity" />
+				<addcharges count="5,7,9,11" />
+			</condition>
+		</cantarget>
+	</onattackimpact>
+	
+	<ondeath>
+		<setcharges a="0" />
+	</ondeath>
+</ability>

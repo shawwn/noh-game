@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_02">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.2">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".3" 
+				sample="../sounds/impact_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".3" 
+				sample="../sounds/cast2.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".2" 
+				sample="/heroes/rocky/ability_01/sounds/ability_01_impact_%.wav"
+			/>	
+
+			<groundsprite
+				
+				life="1200"				
+				material="/shared/effects/materials/star2_add.material"				
+				size="110"			
+				
+				startcolor=" 0 0 0"
+				midcolor=".3 .4 .8"
+				endcolor="0 0 0"
+				yaw="108"	
+				
+			/>
+		
+		
+
+			<simpleemitter
+				minparticlelife="500"
+				maxparticlelife="1400"
+				spawnrate="555"
+				count="8"
+				life="300"
+				gravity="5"
+				speed="250"
+				material="/shared/effects/materials/dust.material"
+				offsetsphere="10"
+				angle="10"
+				position="0 0 30"
+				direction="0 0 1"
+				drag="0.15"
+				depthbias="-60"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					color=".44 .42 .4"
+					maxstartsize="55"
+					minstartsize="55"
+					endsize="200"
+					startalpha=".5"
+					endalpha="0"
+				/>
+
+			</simpleemitter>
+
+
+
+		
+			<model				
+				life="3000"			
+				model="spire/spire.mdf"
+				anim="idle"
+				yawspeed="0"
+				scale="1"
+				color="1 .9 .9"					
+			>
+			
+				<template name="sparks">	
+
+				
+				
+	
+					<simpleemitter
+						delay="0"
+						bone="{bone}"
+						minparticlelife="500"
+						maxparticlelife="1400"
+						spawnrate="25"
+						life="1000"
+						drag=".1"
+						gravity="5"
+						speed="250"
+						material="/shared/effects/materials/whitedot.material"
+						offsetsphere="3"
+						directionalspace="local"
+						minangle="0"
+						maxangle="30"
+						position="0 0 0"
+						direction="0 0 1"
+						
+						depthbias="0"
+					>
+						<particle 
+							startcolor="1 1 .2"
+							
+							midcolor="1 .3 0"
+							endcolor="0 0 0"
+							startheightdistort=".06"
+						
+							endframe="15"
+							
+							startsize="3"
+							midsize="4"
+							endsize="4"
+							
+							startalpha="0"
+							midalpha="0"
+							endalpha="0"
+							midalphapos="0"
+							startstickiness="0"
+							endstickiness="0"
+							turn="1"
+						/>
+
+					</simpleemitter>	
+				</template>
+				<template name="chains">	
+
+					<simpleemitter
+						delay="0"
+						bone="{bone}"
+						minparticlelife="500"
+						maxparticlelife="1400"
+						spawnrate="555"
+						count="8"
+						life="300"
+						gravity="5"
+						speed="250"
+						material="/shared/effects/materials/dust.material"
+						offsetsphere="10"
+						directionalspace="localq"
+						angle="10"
+						position="0 0 30"
+						direction="0 0 1"
+						drag="0.15"
+						depthbias="-60"
+					>
+						<particle 
+							minangle="-360"
+							maxangle="360"
+							minanglespeed="-50"
+							maxanglespeed="50"
+							color=".44 .42 .4"
+							maxstartsize="22"
+							minstartsize="22"
+							endsize="22"
+							startalpha=".5"
+							endalpha="0"
+						/>
+
+					</simpleemitter>
+
+
+				
+					<model
+						delay="0"
+						model="../../projectile/effects/model.mdf"
+						bone="{bone}"
+						anim=""
+						scale="0.45"
+						position="0.0 0.0 0.0"
+						pitch="0"
+						yaw="-90"
+
+						life="{life}"
+						startalpha="1"
+						midalpha="1"
+						endalpha="1"
+						color="1 1 .8"					
+					/>
+					
+					
+					<model
+						
+						model="spire/projectile.mdf"
+						bone="{bone}"
+						anim="idle"
+						scale="0.85"
+						position="0.0 0.0 0.0"
+						directionalspace="local"
+						startalpha="1.0"
+						endalpha="1.0"
+						minyaw="-360"
+						maxyaw="360"
+						color="1 1 .8"
+						
+					>
+						
+						<twopointtrailemitter		
+								
+								bone_a="_bone_fx_1"
+								bone_b="_bone_fx_2"
+								spawnrate="30"
+								particlelife="950"
+								position="0 0 0"
+								texpostime="950"
+								texposscale="0"
+								texstretchscale="2.5"
+								subframepose="1"				
+								material="/shared/effects/materials/chainlinkconnect.material"
+								
+							>
+								<particle 				
+									color="1 1 .8"
+									
+									startalpha="1"
+									endalpha="0"
+									
+								/>
+						</twopointtrailemitter>	
+						<twopointtrailemitter		
+								
+								bone_a="_bone_fx_3"
+								bone_b="_bone_fx_4"
+								spawnrate="30"
+								particlelife="950"
+								position="10 0 0"
+								texpostime="950"
+								texposscale="0"
+								texstretchscale="2.5"
+								subframepose="1"				
+								material="/shared/effects/materials/chainlinkconnect.material"
+								
+							>
+								<particle 				
+									color="1 1 .8"
+									
+									startalpha="1"
+									endalpha="0"
+									
+								/>
+						</twopointtrailemitter>	
+					</model>		
+				</template>			
+			
+				<instance name="chains" bone="_bone_1" life="900"/>
+				<instance name="chains" bone="_bone_2" life="900"/>
+				<instance name="chains" bone="_bone_3" life="900"/>
+				<instance name="chains" bone="_bone_4" life="1200"/>
+				
+				<instance name="sparks" bone="_bone_5"/>
+				<instance name="sparks" bone="_bone_6"/>
+				<instance name="sparks" bone="_bone_7"/>
+				<instance name="sparks" bone="_bone_8"/>				
+			</model>
+
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 scale="11.0" radius="1200" duration="400" frequency="22" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

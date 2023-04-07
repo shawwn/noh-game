@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DaemonicBreastplate_Enemy"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="state_enemy.effect"
+	
+	armor="-5"
+	
+	effecttype="StatusDebuff"
+>
+</state>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Vulture1"
+
+	
+	
+	icon="icon.tga"
+	
+	anim=""
+	casttime="30000"
+	castactiontime="500"
+
+	ischanneling="true"
+	actiontype="target_position"
+	casteffecttype="Magic"
+	
+	manacost="200"
+	cooldowntime="120000"
+	
+	range="500"
+>
+	<onchannelstart>
+		<spawnunit name="Pet_Vulture_Ability1" count="1" target="target_position" ischannel="true"/>
+	</onchannelstart>
+	
+	<ontargetacquired>
+		<setproxy/>
+	</ontargetacquired>
+	
+	<onthink>
+		<condition target="proxy_entity" test="target_entity != 0 and canactivate and distance lt 500 and not_hasorder">
+			<useability target="proxy_entity"/>
+		</condition>
+	</onthink>
+</ability>

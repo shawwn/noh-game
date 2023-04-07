@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="2.2">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="800"
+				falloffend="2200"
+				volume=".65"
+				sample="sounds/cast.wav"
+			/>
+		
+			<billboard
+				life="600"
+				startcolor=".0 1 .0"	
+				midcolor=".0 1 .5"
+				endcolor="0 0 0"
+				midcolorpos=".6"
+				startsize="20"
+				endsize="110"
+				position="0 0 40"
+				material="/shared/effects/materials/corona_07.material"
+				lockup="true"
+				pitch="90"
+				anchor="1"
+			/>		
+
+			<billboard
+				life="600"
+				startcolor="2 1 .0"	
+				endcolor="0 0 0"
+				midcolorpos=".5"
+				startsize="20"
+				endsize="140"
+				position="0 0 40"
+				material="/shared/effects/materials/starlight.material"
+				anchor="1"
+			/>
+
+			<billboard
+				life="300"
+				startcolor="1 1 .0"	
+				midcolor=".0 1 .5"
+				endcolor="0 0 0"
+				startsize="80"
+				endsize="120"
+				position="0 0 40"
+				material="/shared/effects/materials/dragon.material"
+				anchor="1"
+				depthbias="-30"
+			/>
+
+			<billboard
+				life="300"
+				startcolor="1 1 .0"	
+				midcolor=".0 1 .5"
+				endcolor="0 0 0"
+				startsize="80"
+				endsize="120"
+				position="0 0 40"
+				roll="90"
+				material="/shared/effects/materials/dragon.material"
+				anchor="1"
+				depthbias="-30"
+			/>
+	
+			<simpleemitter
+				spawnrate="60"
+				count="13"
+				bone="Bip01 Spine"
+				particlelife="850"			
+				gravity="-25"
+				position="0 0 10"
+				material="/shared/effects/materials/blink.material"
+				offsetsphere="30 30 10"
+				minangle="-90"
+				maxangle="90"
+				depthbias="-30"
+			>
+				<particle 
+					startcolor="1 1 0"
+					midcolor="0 1 .3"
+					endcolor="0 0 0"
+					midcolorpos=".4"
+					startwidth="10"
+					midwidth="7.5"
+					endwidth="3"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="800"
+					lockup="true"
+					anchor="1"
+				/>
+			</simpleemitter>
+	
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

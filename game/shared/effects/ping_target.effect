@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="waypoint">
+	<definitions>
+		<particlesystem name="system0" space="world">
+			
+			<billboard 
+				life="1000"
+				material="/shared/effects/materials/flare2.material" 
+				width="50"				
+			
+				height="200"				
+				
+				lockup="true"
+				loop="true"
+				startcolor="0 .5 0"
+				midcolor="0 1 0"
+				endcolor="0 .5 0"
+				
+				timenudge="-30"
+			/>	
+		
+		
+<simpleemitter
+					
+			spawnrate="3"
+			particlelife="3000"				
+			gravity="-.8"
+			material="/shared/effects/materials/smokering.material"
+			offsetsphere="0 0 0"
+			minspeed="0"
+			maxspeed="4"
+		>
+			<particle
+				minangle="0"
+				maxangle="360"
+				minanglespeed="-20"
+				maxanglespeed="20"
+
+				startsize="30"
+				endsize="50"
+				startcolor="0 0 0"
+				midcolor=".2 .8 .2"
+				endcolor="0 0 0"
+				startanchor="0"
+				endanchor="0.0"
+			/>
+</simpleemitter>	
+
+
+		<groundsprite
+			life="2000"
+			material="/shared/effects/materials/starlight.material"
+			startsize="200"
+			midsize="40"
+			endsize="30"
+			midsizepos=".9"				
+			loop="true"		
+			startcolor="0 0 0"			
+			midcolor="0 .6 0"
+			endcolor="0 0 0"			
+			yawspeed="100"			
+		/>	
+		
+		
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

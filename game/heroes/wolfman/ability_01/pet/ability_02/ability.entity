@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_WolfMan_Ability1_Pet_Ability2"
+
+	
+	
+	icon="icon.tga"
+
+	actiontype="passive"
+
+	stealthtype="hero"
+	fadetime="3000"
+>
+	<onspawn>
+		<startfade />
+	</onspawn>
+	
+	<onattackstart>
+		<startfade a="source_attackduration" />
+	</onattackstart>
+	
+	<onactivatestart>
+		<startfade a="castduration" />
+	</onactivatestart>
+</ability>

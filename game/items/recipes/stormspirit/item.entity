@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Intelligence6"
+
+	icon="icon.tga"
+	
+	cost="600"
+	components="Item_Scarab Item_NeophytesBook Item_Manatube"
+	statuseffecttooltip="State_Item2I"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_units_and_self"
+	casteffecttype="Magic"
+	range="600"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="30000"
+	cooldowntype="intelligence6"
+	manacost="75"
+	
+	intelligence="10"
+	manaregenmultiplier="1.5"
+	movespeed="25"
+>
+	<onimpact>
+		<spawnunit name="Gadget_Item2I" target="target_position" mount="target_entity" />
+		<applystate name="State_Item2I" duration="2500" />
+	</onimpact>
+</item>

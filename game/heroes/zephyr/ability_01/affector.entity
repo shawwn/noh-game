@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Zephyr_Ability1"
+
+	radiusstart="70"
+	radiusend="250"
+	speed="800"
+	lifetime="675"
+	arc="150"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic Push"
+	maximpactspertarget="1"
+	persist="true"
+	effect="effects/steamer.effect"
+>
+	<onimpact>
+		<playanim name="knock_1" target="target_entity" />
+		<applystate name="State_Stunned_Knockdown" duration="1000" />
+		<spawnunit name="Gadget_Zephyr_Ability1" target="target_entity" offsetspace="this_entity" pushentity="true" offset="0 -10" />
+		<push force="625" duration="600" source="stack_entity" />
+		<damage effecttype="Magic" amount="75,125,175,250" />
+	</onimpact>
+</affector>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Accursed_Ability3"
+
+	
+	
+	icon="icons/icon.tga"
+
+	passiveeffect="state.effect"
+	
+	attackspeed="-0.2"
+	movespeedslow="0.3"
+	
+	displaytimer="true"
+	
+	effecttype="StatusDebuff"
+>
+</state>

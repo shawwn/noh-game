@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="Chiprel_01_anim_Rig_cleanrig01.max" file="character.model" type="K2" loddistance="1000">
+
+	<anim name="idle" clip="clips/idle.clip" loop="true">
+	</anim>
+
+	<anim name="portrait" clip="clips/portrait.clip" loop="true"/>
+		
+	<anim name="attack_1" clip="clips/acorn_throw.clip">
+		<frameevent frame="5" cmd="PlaySound sounds/attack_%.wav 100"/>
+	</anim>
+
+	<anim name="death_1" clip="clips/death.clip" loop="true" loopbackframe="14">
+		<frameevent frame="1" cmd="PlaySound sounds/death.wav 100"/>
+	</anim>
+
+	<anim name="walk_1" clip="clips/run_fwd.clip" loop="true" fps="45">
+		<frameevent frame="1" cmd="PlaySound sounds/move_%.wav 30 0.5 0"/>
+		<frameevent frame="1" cmd="PlaySound /shared/sounds/footsteps/#GetTerrainType()#_%.wav 10 0.4 0"/>
+		<frameevent frame="9" cmd="PlaySound /shared/sounds/footsteps/#GetTerrainType()#_%.wav 10 0.4 0"/>
+	</anim>
+
+</model>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nomad_Ability2_DamageOverTime"
+
+	
+	
+	icon="icon.tga"
+	
+	impactinterval="1000"
+	
+	passiveeffect="effects/ability_01_state.effect"
+
+	effecttype="StatusDebuff"
+	
+>
+	<onframe >
+	</onframe>
+
+	<onimpact>
+		<damage effecttype="Physical" amount="5,10,15,20" />
+	</onimpact>
+</state>

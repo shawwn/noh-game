@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Magnataur_Ability1"
+	
+	radius="200"
+	lifetime="1000"
+	impactinterval="333"
+	maxintervals="4"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	destroytrees="true"
+>
+	<oninterval>
+		<playeffect effect="effects/affector.effect" source="target_position" target="" />
+	</oninterval>
+	
+	<onimpact>
+		<damage effecttype="Magic" amount="20,30,40,50" />
+		<applystate name="State_Stunned" duration="300" />
+	</onimpact>
+</affector>

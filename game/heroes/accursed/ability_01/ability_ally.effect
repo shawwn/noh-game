@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="aphotic_shield" persistent="1">
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			delay="200"
+			life="1000"
+			startcolor="11 5 2"
+			endcolor="1.0 1.0 1.0"
+		/>
+		
+		<particlesystem name="system0" space="world" scale="0.7">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume="0.5" 
+				sample="/heroes/accursed/ability_01/sounds/ability_01_ally.wav"
+			/>
+		
+			<simpleemitter
+				life="500"
+	         		bone="Bip01 Spine1"			
+				directionalspace="global"
+				position="0 0 5"				
+				spawnrate="5000"
+				depthbias="-100"
+				particlelife="300"
+				count="35"
+				direction="0 0 1"	
+          			material="/shared/effects/materials/smash_add.material"
+         	>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor="1 0.2 0"
+					endcolor="0"
+					midcolorpos="0.25"
+					startsize="40"
+					endsize="75"
+					startanchor="1.0"
+					midanchor="0.9"
+					endanchor="0.8"
+					flare="1"
+					startheight="100"
+					endheight="50"
+				/>
+			</simpleemitter>
+
+			
+					<billboard
+						bone="_bone_centerofchest"
+						life="600"
+						param="0.3"	
+						startsize="120"
+						endsize="254"
+						startalpha="0"
+						midalpha=".9"
+						endalpha="0"				
+						depthbias="-29"
+						material="/shared/effects/materials/refract_pinch.material"
+						lockup="0"
+						pitch="0"
+					/>
+
+
+					<billboard
+						bone="_bone_centerofchest"
+						life="500"
+						startcolor="1"
+						endcolor="1 .3 0"						
+						midalphapos="0.25"
+						startsize="20"
+						endsize="500"
+						startalpha="1"
+						midalpha=".9"
+						endalpha="0"				
+						depthbias="-19"
+						material="/shared/effects/materials/nova_01.material"
+						lockup="0"
+						pitch="0"
+					/>
+
+			<billboard
+				life="300"
+				bone="_bone_centerofchest"
+				depthbias="-50"
+				material="/shared/effects/materials/stomp_01.material"
+				startsize="180"
+				endsize="280"
+				startcolor="2 .4 0"
+				endcolor="0 0 0"
+				maxroll="360"
+			/>
+	
+			
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0"  particlesystem="system0" />	
+	  <spawnmodifier instance="instance1" modifier="modifier0"/>  
+	  <waitfordeath instance="instance0" />
+	  <waitfordeath instance="instance1" />	  
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

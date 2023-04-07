@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="sound">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<sound
+				falloff="65.0" 
+				volume="0.4" 
+				sample="chest_shimmer.mp3"
+				soundloop="true"
+				fadein="500"
+				fadeout="400"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

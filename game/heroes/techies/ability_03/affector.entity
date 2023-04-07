@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Techies_Ability3"
+
+	radius="500"	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	impacteffect=""
+	
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="350,400,450,500" />
+	</onimpact>
+</affector>

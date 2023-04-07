@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ophelia_Ability1_Enemy"
+
+	
+	
+	icon="icon.tga"
+	
+	movespeedslow="0.08,0.16,0.24,0.32"
+	
+	passiveeffect="projectile/state_enemy.effect"
+	effecttype="StatusDebuff"
+>
+	<ondamaged>
+		<accumulatedamage scale="1.0" />
+	</ondamaged>
+
+	<onexpired>
+		<damage target="this_owner_entity" effecttype="Physical" amount="0.07,0.14,0.21,0.28" b="accumulator" op="mult" />
+		<popup name="bonus_damage" a="result" source="target_entity" target="source_entity" />
+	</onexpired>
+	<onframe />
+	
+</state>

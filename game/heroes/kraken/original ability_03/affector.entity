@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Kraken_Ability3_Small"
+
+	radius="200"
+
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="30,50,70,90" />
+	</onimpact>
+</affector>

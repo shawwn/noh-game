@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadwood_Ability1"
+
+	icon="icon.tga"
+	passiveeffect="effects/impact.effect"
+	immobilized="true"
+	armor="-1,-2,-3,-4"
+	effecttype="StatusDebuff"
+>
+	
+	<onimpact>
+		<damage effecttype="Magic DOT" amount="100" b="frametime" op="mult"/>
+		<condition test="proxy_entity == 0">
+			<expire />
+		</condition>
+	</onimpact>
+</state>

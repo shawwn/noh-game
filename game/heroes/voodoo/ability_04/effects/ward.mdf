@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="" file="ward.model" type="K2" >
+	<anim name="idle" clip="ward.clip" loop="1"/>
+	
+	<anim name="death_1" clip="death.clip" loopbackframe="-1" loop="1">
+		<frameevent frame="1" cmd="StartEffect death.effect"/>
+	</anim>
+</model> 

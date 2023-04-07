@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model.max" file="high.model" type="K2" >
+
+	<spawnevent cmd="StartEffect effects/main_body.effect 0"/>
+
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" loopbackframe="1">
+		<frameevent frame="1" cmd="StopEffect 1"/>	
+	</anim>
+	
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+		<startevent cmd="StopSound 0"/>
+		<frameevent frame="1" cmd="StopEffect 0"/>	
+		<frameevent frame="1" cmd="StopEffect 1"/>			
+		<frameevent frame="1" cmd="StartEffect effects/death_stage.effect 1"/>
+		<frameevent frame="250" cmd="starteffect /buildings/legion/main/effects/death/scar.effect"/>
+	</anim>	
+
+</model>

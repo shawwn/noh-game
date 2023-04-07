@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Techies_Ability3_Close"
+
+	radius="500"	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	impacteffect=""
+	
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="300,450,700,1050" />
+	</onimpact>
+</affector>

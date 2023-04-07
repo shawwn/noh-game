@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface name="game_loading">
+	<!-- Background -->
+	<panel width="177.7h" height="100h"	align="center" color="black">
+		<image
+			noclick="1"
+			watch="LoadingImage"
+			visible="false"
+			ontrigger="SetVisible(!StringEmpty(param)); SetTexture(param);"
+		/>
+		<image
+			width="50h" height="50h"
+			align="center" valign="center"
+			texture="/textures/logo.tga"
+			watch="LoadingImage"
+			ontrigger="SetVisible(StringEmpty(param));"
+		/>
+	</panel>
+</interface>

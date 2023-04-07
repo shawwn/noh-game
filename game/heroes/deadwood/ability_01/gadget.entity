@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Deadwood_Ability1"
+	
+	model="/shared/models/invis.mdf"
+	skin=""
+	unitwalking="true"
+	diewithowner="false"
+	
+	stealthtype="Unrevealable"
+	fadetime="0"
+	
+	passiveeffect="effects/delay.effect"
+	spawneffect=""
+	respawneffect=""
+	deatheffect=""
+	selectsound=""
+	isselectable="false"
+	orderconfirmedsound=""
+	
+	preglobalscale="1.35"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="36"
+	targetoffset="0 0 0"
+
+
+	drawonmap="false"
+	invulnerable="true"
+	canattack="false"
+
+	corpsetime="0"
+	corpsefadetime="0"
+	deathtime="0"
+	
+	lifetime="1350"
+
+			
+	effecttype="Magic"
+>
+	<onexpired>
+		<spawnaffector name="Affector_Deadwood_Ability1" target="target_position" owner="this_owner_entity" source="this_owner_entity" />
+		<onimpact>
+			<applystate name="State_Deadwood_Ability1_PushImmunity" radius="125" targetscheme="enemy_units" duration="1000,1700,2300,3000" />
+		</onimpact>
+	</onexpired>
+</gadget>

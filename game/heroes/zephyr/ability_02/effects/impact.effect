@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+	<definitions>
+		<particlesystem deferred="true" name="system0" space="world" scale="1.0">
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".5"
+				sample="/shared/sounds/impacts/impact_body_%.wav"
+			/>
+
+			<!-- feather poof -->
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				life="500"
+				count="5"
+				spawnrate="75"
+				particlelife="700"
+				gravity=".5"
+				speed="150"
+				drag="0.1"
+				acceleration="0.0"
+				material="/shared/effects/materials/leaf.material"
+				offsetsphere="35 35 50"
+				direction="0 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="220"
+					minsize="5"
+					maxsize="10"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color=".7"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+			</simpleemitter>
+		
+			
+	</particlesystem>
+		
+</definitions>
+<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		
+		<waitfordeath  instance="instance1"/>
+</thread>
+</effect>
+
+
+
+
+

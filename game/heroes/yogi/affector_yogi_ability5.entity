@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Yogi_Ability5"
+
+	radius="900"
+	
+	targetscheme="my_units"
+	targetselection="all"
+	effecttype="Magic"
+>
+	<onimpact>
+		<applystate name="State_Yogi_Ability5" duration="10000"/>
+	</onimpact>
+</affector>

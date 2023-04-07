@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<creep
+	name="Creep_LegionRanged"
+	
+	
+	
+	icon="icons/creep.tga,/npcs/good_range_super_creep/icon.tga"
+	portrait="icons/creep.tga,/npcs/good_range_super_creep/icon.tga"
+	model="model.mdf,/npcs/good_range_super_creep/model.mdf"
+	skin=""
+	gibanim="death_gib_1"
+	deniedanim="death_deny_1"
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.3,1.53"
+	modelscale="1.0"
+	effectscale="0.8"
+	boundsheight="64"
+	boundsradius="8"
+	selectionradius="32"
+	targetoffset="0 0 64"
+
+	movespeed="325"
+	turnrate="320"
+
+	maxhealth="300,475"
+	healthregen="2.0"
+	maxmana="300"
+	manaregen="0.75"
+
+	armor="0,1"
+	magicarmor="0"
+
+	cancarryitems="false"
+	inventory0=""
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+
+	attackduration="1000"
+	attackactiontime="600"
+	attackcooldown="1000"
+	attackdamagemin="21,41"
+	attackdamagemax="26,46"
+	attacknumanims="2"
+	attackoffset="0 32 28"
+	attackprojectile="Projectile_GoodCreepAttack"
+	attackrange="500"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Ranged"
+
+	aggrorange="800"
+	proximityrange="500"
+	sightrangeday="1400"
+	sightrangenight="800"
+
+	experiencebounty="41,25"
+	goldbountymin="35,20"
+	goldbountymax="50,40"
+	
+	corpsetime="10000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	attackdamageminpercharge="2,3"
+	attackdamagemaxpercharge="2,3"
+	maxhealthpercharge="10,18"
+>
+</creep>

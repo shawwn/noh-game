@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Kraken_Ability1"
+
+	speed="1000"
+	gravity="2100"
+	canturn="0"
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	casttime="1000"
+	castactiontime="200"
+	traileffect="projectile.effect"
+	impacteffect="impact.effect"
+>
+</projectile>

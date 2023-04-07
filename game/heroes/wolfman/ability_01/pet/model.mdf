@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model">
+
+	<anim name="spawn_1" clip="clips/spawn_1.clip">
+		<frameevent frame="1" cmd="StartEffect effects/spawn.effect"/>
+	</anim>
+	
+	<anim name="idle" clip="clips/default.clip" loop="true"/>
+	
+	<anim name="portrait" clip="clips/portrait.clip" loop="true"/>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" loop="true" fps="45">
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="20" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="22" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="18" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="22" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="65">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death.wav 400 1800 .65"/>
+		<frameevent frame="50" cmd="StartEffect effects/death.effect"/>
+		<frameevent frame="64" cmd="StartEffect effects/death_corpse.effect"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip">
+		<frameevent frame="22" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .65"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip">
+		<frameevent frame="22" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .65"/>
+		<frameevent frame="14" cmd="PlaySoundLinear sounds/attack_grunt_%.wav 400 1800 .7"/>
+	</anim>
+
+</model>

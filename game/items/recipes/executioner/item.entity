@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Strength6"
+	
+	icon="icon.tga"
+
+	statuseffecttooltip="State_Item2B"
+	cost="800"
+	components="Item_BlessedArmband Item_MightyBlade"
+	actiontype="passive"
+	
+	strength="16"
+	damage="10"
+>
+	<modifier key="attack" modpriority="50" exclusive="true"
+		statuseffecttooltip="State_Item2B"
+	>
+		<onattackimpact effectdescription="true">
+			<cantarget targetscheme="enemy_units">
+			<condition test="bounce_count lt 2">
+					<applystate name="State_Item2B" duration="2500"/>
+					<playeffect effect="impact.effect" source="target_entity"/>
+				</condition>
+			</cantarget>
+		</onattackimpact>
+	</modifier>
+</item>

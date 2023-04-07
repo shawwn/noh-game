@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Zephyr4"
+
+	
+	
+	icon="icon.tga"
+
+	statuseffecttooltip="State_Zephyr_Ability4_Buff"
+	statuseffecttooltip2="State_Zephyr_Ability4_Debuff"
+	anim="ability_4"
+	casttime="1000"
+	castactiontime="300"
+	casteffect="effects/spin.effect"
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	targetradius="550"
+	actiontype="target_position"
+	
+	range="600,800,1000"
+	manacost="150,200,250"
+	cooldowntime="120000"
+>
+	<onimpact >
+		<spawnunit name="Gadget_Zephyr_Ability4" target="target_position" />
+	</onimpact>
+</ability>

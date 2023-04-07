@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_PushStaff"
+
+	speed="2000"
+	gravity="12000"
+
+	modelscale="1.0"
+	model=""
+	deatheffect="effects/area.effect"
+	canturn="false"
+>
+</projectile>

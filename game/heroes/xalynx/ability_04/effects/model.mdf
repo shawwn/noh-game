@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="" file="model.model" type="K2" >
+
+<anim name="out" clip="default_1.clip" fps="40" loop="0"/>
+<anim name="up" clip="up.clip" fps="30" loop="0"/>
+
+</model>

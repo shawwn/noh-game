@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_TrinketOfRestoration"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="350"
+	
+	actiontype="passive"
+	allowsharing="true"
+	
+	healthregen="2"
+>
+</item>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Vulture_Ability1_large"
+
+	radius="600"
+	
+	lifetime="-1"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+>
+	<onframe>
+		<damage effecttype="Magic" amount="15" b="frametime" op="mult" />
+	</onframe>
+</affector>

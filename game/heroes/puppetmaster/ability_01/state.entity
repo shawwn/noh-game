@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PuppetMaster_Ability1"
+	
+	
+	icon="icon.tga"
+	
+	passiveeffect=""
+	effecttype="StatusDebuff Push"
+	attackspeed="-0.1,-0.15,-0.20,-0.25"
+	
+
+>
+
+
+	<onframe>
+		<condition test="not_hasstate State_PuppetMaster_Ability1_PushImmunity">
+			<push force="-155" duration="50" source="proxy_position" />
+		</condition>
+		<condition test="hasstate State_PuppetMaster_Ability1_ImmobilePush">
+			<push force="-500" duration="50" source="proxy_position" />
+		</condition>
+		<condition test="distance gt 500" source="proxy_entity" target="this_owner_entity">
+			<expire />
+		</condition>
+	</onframe>
+	
+	<onexpired>
+		<kill target="proxy_entity" source="" />
+	</onexpired>
+</state>

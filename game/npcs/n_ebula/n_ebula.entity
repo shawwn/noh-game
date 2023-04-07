@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neutral
+	name="Neutral_Ebula"
+	
+	
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.5"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="36"
+	targetoffset="0 0 54"
+
+	movespeed="270"
+	turnrate="320"
+
+	maxhealth="370"
+	healthregen="0.5"
+	maxmana="0"
+	manaregen="0"
+
+	armor="1"
+	magicarmor="0"
+
+	cancarryitems="false"
+	inventory0="Ability_Ebula1"
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+
+	attackduration="1000"
+	attackactiontime="400"
+	attackcooldown="1600"
+	attackdamagemin="30"
+	attackdamagemax="36"
+	attacknumanims="1"
+	attackoffset="0 30 50"
+	attackprojectile="Projectile_EbulaAttack"
+	attackrange="500"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Ranged"
+
+	aggrorange="250"
+	sightrangeday="400"
+	sightrangenight="400"
+
+	experiencebounty="41"
+	goldbountymin="26"
+	goldbountymax="34"
+	
+	corpsetime="15000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+</neutral>

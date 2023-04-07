@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PowerupDamage"
+
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	
+	basedamagemultiplier="1"
+	
+	effecttype="StatusBuff"
+>
+</state>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ursa4"
+
+	statuseffecttooltip="State_Ursa_Ability4"
+	statuseffectheader="true"
+	
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="500"
+	castactiontime="500"
+	casteffect=""
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_self"
+	
+	manacost="0"
+	cooldowntime="25000"
+>
+	<onimpact >
+		<applystate name="State_Ursa_Ability4" duration="15000" />
+	</onimpact>
+</ability>

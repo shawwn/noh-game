@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
+
+	<spawnevent cmd="StartEffect ../effects/body_1.effect 0"/>
+	
+	<anim name="idle" clip="clips/default_1.clip" loop="true"/>
+	
+	<anim name="portrait" clip="clips/portrait.clip" loop="true"/>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" loop="true" fps="30"/>
+	
+	<anim name="ability_1" clip="clips/ability_1.clip"/>
+	
+	<anim name="ability_2" clip="clips/ability_2.clip"/>	
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="36"/>
+
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="38"/>
+
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="50"> 
+		<endevent cmd="StopEffect 0" />
+	</anim>
+
+</model>

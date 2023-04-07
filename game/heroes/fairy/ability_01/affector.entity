@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Fairy_Ability1"
+
+	radius="325"
+	
+	impactdelay="2500"
+	targetselection="all"
+	targetscheme="all_units"
+	effecttype="Magic"
+	
+	effect="affector.effect"
+>
+	<onimpact>
+		<cantarget targetscheme="ally_units">
+			<heal a="90,180,270,360" />
+			<playeffect effect="effects/healimpact.effect" source="target_entity" target="" />
+		</cantarget>
+		<cantarget targetscheme="enemy_units">
+			<damage effecttype="Magic" amount="90,180,270,360"/>
+			<playeffect effect="effects/damageimpact.effect" source="target_entity" target="" />
+		</cantarget>
+	</onimpact>
+</affector>

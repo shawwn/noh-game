@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<critter
+	name="Critter_Chiprel"
+	
+	
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="character.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="2.2"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="32"
+	boundsradius="8"
+	selectionradius="20"
+	targetoffset="0 0 24"
+
+	movespeed="275"
+	turnrate="320"
+
+	maxhealth="20"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	armor="0,0"
+	magicarmor="0"
+
+	cancarryitems="false"
+	inventory0=""
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+
+	canattack="false"
+	invulnerable="true"
+	attackduration="1000"
+	attackactiontime="500"
+	attackcooldown="1000"
+	attackdamagemin="0"
+	attackdamagemax="0"
+	attacknumanims="1"
+	attackoffset="0 12 24"
+	attackprojectile="Projectile_ChiprelAttack"
+	attackrange="350"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Ranged"
+
+	aggrorange="60"
+	sightrangeday="1400"
+	sightrangenight="800"
+
+	experiencebounty="0"
+	goldbountymin="1"
+	goldbountymax="1"
+	
+	corpsetime="10000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	unitwalking="true"
+	treewalking="true"
+	
+	drawonmap="false"
+>
+</critter>

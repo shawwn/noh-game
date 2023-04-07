@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_PhantomLancer4"
+
+	icon="icon.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="passive"
+	magicarmor="2,5,8"
+	agility="10,20,30"	
+>
+</ability>

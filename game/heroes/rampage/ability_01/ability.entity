@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Rampage1"
+
+	icon="icon.tga"
+	statuseffecttooltip="State_Rampage_Ability1_Self"
+	statuseffecttooltip2="State_Rampage_Ability1_Warning"
+	
+	anim="ability_1"
+	casttime="1000"
+	castactiontime="500"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	range="25000"
+	
+	manacost="120"
+	cooldowntime="25000"
+
+>
+	<onimpact>
+		<order command="attack" source="source_entity" target="target_entity" force="true" forceduration="35000" restrict="true" />
+		<applystate name="State_Rampage_Ability1_Self" target="source_entity" duration="35000" continuous="true" pushentity="true" />
+		<applystate name="State_Rampage_Ability1_Timer" target="source_entity" duration="35000" continuous="true" />
+		<applystate name="State_Rampage_Ability1_Watch" target="target_entity" duration="35000" />
+		<setproxy index="0" target="stack_entity" />
+		<spawnaffector name="Affector_Rampage_Ability1" target="source_entity" pushentity="true" />
+		<applystate name="State_Rampage_Ability1_Sight" target="target_entity" continuous="true" proxy="stack_entity" pushentity="true" />
+	</onimpact>
+
+	<onattackimpact >
+		<order command="attack" source="source_entity" target="proxy_entity" force="true" forceduration="0.01" restrict="true" />
+	</onattackimpact>
+
+	<oncancel>
+		<expirestate name="State_Rampage_Ability1_Self" target="source_entity" />
+		<expirestate name="State_Rampage_Ability1_Timer" target="source_entity" />
+		<expirestate name="State_Rampage_Ability1_Immune" target="source_entity" />
+		<expirestate name="State_Rampage_Ability1_Watch" target="target_entity" />
+	</oncancel>
+
+	<onattack>	
+		<setcharges a="0" />
+		<expirestate name="State_Rampage_Ability1_Self" target="this_owner_entity" />
+		<expirestate name="State_Rampage_Ability1_Timer" target="this_owner_entity" />
+		<expirestate name="State_Rampage_Ability1_Immune" target="this_owner_entity" />
+		<expirestate name="State_Rampage_Ability1_Watch" target="this_owner_entity" />
+	</onattack>
+	
+	<ondamaged>
+		<condition test="target_type ally">
+			<heal amount="1" />
+			<condition test="charges lt 4">
+				<addcharges count="1" />
+			</condition>
+			<condition test="charges eq 3">
+				<applystate name="State_Rampage_Ability1_Immune" target="source_entity" duration="35000" continuous="true" />
+			</condition>
+		</condition>
+	</ondamaged>
+	
+</ability>

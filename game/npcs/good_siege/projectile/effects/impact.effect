@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="impact" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+
+			<sound
+				sample="/npcs/good_siege/sounds/impact_%.wav"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="1800"
+				volume=".85"
+			/>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="2350"
+				count="22"
+				minparticlelife="800"
+				maxparticlelife="1250"
+				maxspeed="200"
+				drag="0.1"
+				angle="30"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				offsetsphere="25 25 25"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-40"
+					maxanglespeed="40"
+					startcolor="1 .3 .1"
+					midcolor=".8 .2 0"
+					endcolor="0"
+					midcolorpos=".3"
+					size="2.3"
+					startscale="5"
+					minendscale="20"
+					maxendscale="40"
+					midsizepos=".2"
+					startalpha="1"
+					midalpha="0"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-40"
+					maxanglespeed="40"
+					startcolor=".9 .3 .1"
+					midcolor=".8 .4 .15"
+					endcolor="0"
+					midcolorpos=".3"
+					size="2.3"
+					startscale="5"
+					minendscale="20"
+					maxendscale="40"
+					midsizepos=".2"
+					startalpha="1"
+					midalpha="0"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter			
+				spawnrate="500"
+				bone="_bone_centerofchest"
+				count="20"
+				particlelife="1000"
+				gravity="10"
+				minspeed="120"
+				maxspeed="170"
+				drag=".03"
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="5"
+				minangle="0"
+				maxangle="135"
+				direction="0 0 1"
+			>
+				<particle 
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					startsize="16"
+					midsize="10"
+					endsize="6"
+					startstickiness=".3"
+					endstickiness="0"
+					turn="true"
+				/>
+				<particle 
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					startsize="5"
+					midsize="3"
+					endsize="1"
+					startstickiness=".3"
+					endstickiness="0"
+					turn="true"
+				/>
+				<particle 
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					startsize="1"
+					midsize="12"
+					endsize=".1"
+					startstickiness=".3"
+					endstickiness="0"
+					turn="true"
+				/>
+			</simpleemitter>
+
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 50"
+				startcolor="0"
+				midcolor=".45 .22 0.15"
+				endcolor="0 0 0"
+				midcolorpos="0.3"					
+				size="100"
+				depthbias="-50"
+				life="300"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".8">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".6"
+				sample="../sounds/impact.wav"
+			/>
+
+			<simpleemitter
+				count="1"
+				spawnrate="1500"			
+			>
+				<particle>
+					<debris
+						position="0 0 13"
+						life="1600"
+						model="/shared/effects/models/debris/debris.mdf"
+						anim="idle"	
+						minspeed="500"
+						maxspeed="2500"
+						minrotationspeed="100"
+						maxrotationspeed="700"
+						gravity="15"
+						drag=".015"
+						minangle="40"
+						maxangle="90"
+						alpha="0"
+					>
+						<template name="glow">
+							<simpleemitter
+								bone="{bone1}"
+								life="800"
+								particlelife="800"
+								spawnrate="20"
+								depthbias="-30"
+								material="/shared/effects/materials/blob_add.material"
+								offsetsphere="10"
+								expirelife="300"
+								startparticlecolor="1"
+								endparticlecolor="0"
+							>
+								<particle 
+									minangle="0"
+									maxangle="180"
+									startcolor=".44 .05 0"
+									endcolor="0"
+									startsize="4"
+									minstartscale="2"
+									maxstartscale="4"
+									endsize="2"
+								/>
+							</simpleemitter>
+
+							<billboard
+								life="600"
+								bone="{bone1}"
+								startcolor=".4 .15 0"
+								endcolor="0 0 0"
+								size="{size1}"
+								depthbias="-40"
+								material="/shared/effects/materials/whitedot.material"
+							/>
+						</template>
+
+						<instance name="glow" bone1="_bone_debris001" size1="20"/>
+						<instance name="glow" bone1="_bone_debris003" size1="25"/>
+						<instance name="glow" bone1="_bone_debris005" size1="15"/>
+						<instance name="glow" bone1="_bone_debris007" size1="0"/>
+						<instance name="glow" bone1="_bone_debris009" size1="30"/>
+						<instance name="glow" bone2="_bone_debris002" size1="10"/>
+						<instance name="glow" bone2="_bone_debris004" size1="14"/>
+						<instance name="glow" bone2="_bone_debris006" size1="18"/>
+						<instance name="glow" bone2="_bone_debris008" size1="28"/>
+						<instance name="glow" bone2="_bone_debris010" size1="0"/>
+
+					</debris>
+				</particle>
+
+			</simpleemitter>
+
+			<billboard
+				position="0 0 50"
+				life="400"
+				depthbias="-100"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".75 .2 0"
+				endcolor="0"	
+				size="650"
+			/>
+
+			<billboard
+				life="800"
+				depthbias="-100"
+				material="/shared/effects/materials/refract_ring.material"
+				startalpha=".7"
+				endalpha="0"	
+				startsize="135"
+				endsize="1000"
+				param=".25"			
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+     	 	<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

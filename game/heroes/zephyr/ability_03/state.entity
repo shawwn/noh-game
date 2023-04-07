@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Zephyr_Ability3"
+
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	evasionmelee="0.15,0.2,0.25,0.30"
+	
+	effecttype="StatusBuff"
+>
+	<onframe />
+	<onattackedpreimpact>
+		<combatsupertype supertype="attack">
+			<chance threshold="0.15,0.2,0.25,0.30">
+				<retarget source="inflictor_entity" target="target_entity" />
+			        <playeffect effect="effects/redirect.effect" source="source_entity"/>
+			</chance>
+		</combatsupertype>
+	</onattackedpreimpact>
+</state>

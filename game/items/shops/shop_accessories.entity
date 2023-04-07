@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Accessories"
+
+	style="accessories"
+	header="/ui/elements/shop/shopkeeper_accessories.tga"
+	allowremoteaccess="true"
+	
+	icon="shop_accessories.tga"
+	order="1"
+	slot="0"
+>
+	<item name="Item_CrushingClaws" />
+	<item name="Item_DuckBoots" />
+	<item name="Item_MarkOfTheNovice" />
+	<item name="Item_MinorTotem" />
+	<item name="Item_MajorTotem" />
+	
+	<item name="Item_BlessedArmband" />
+	<item name="Item_Fleetfeet" />
+	<item name="Item_ApprenticesRobe" />
+	<item name="Item_PretendersCrown" />	
+	<item name="Item_Confluence" />
+	
+	<item name="Item_MightyBlade" />
+	<item name="Item_Quickblade" />
+</shop>

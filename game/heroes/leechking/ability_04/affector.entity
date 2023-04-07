@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Leechking_Ability4"
+
+	radius="500,650,800"
+	lifetime="-1"
+	effect="effects/aoe2.effect"
+	targetselection="all"
+	targetscheme="nonneutral_enemy_units"
+	effecttype="magic"
+	impactinterval="100"
+>
+	<onframe>
+		<damage effecttype="Magic Splash" amount="40,60,80" b="frametime" op="mult"/>
+		<applystate name="State_Leechking_Ability4_Damageeffects" duration="100" />
+	</onframe>
+	
+	<oninterval>
+		<spawnunit name="Gadget_Leechking_Ability4" target="target_position" fixedposition="true" />
+	</oninterval>
+
+</affector>

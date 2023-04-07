@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Devourer_Ability1"
+
+	speed="1600"
+	gravity="0"
+
+	modelscale="2.2"
+	model="/shared/models/invis.mdf"
+	
+	canturn="false"
+	flying="true"
+	flyheight="100"
+	
+	touchradius="96"
+	touchtargetscheme="hook_targets"
+	toucheffecttype="Physical"
+>
+	<onspawn>
+		<playeffect effect="effects/trail.effect" source="source_entity" target="this_entity" />
+	</onspawn>
+
+	<onimpact>		
+		<condition test="not_return">
+			<playanim name="ability_1_end" target="source_entity" />
+		</condition>	
+		<return />
+	</onimpact>
+	
+	<ontouch>
+		<condition test="not_bound">
+			<cantarget targetscheme="enemy_units">
+				<playeffect effect="effects/impact.effect" source="target_position" target="" />
+				<damage effecttype="Physical" amount="100,200,300,400" />
+				<applystate name="State_Stunned" duration="100" />
+			</cantarget>
+			<bind target="target_entity" />
+			<return />
+			<playanim name="ability_1_end" target="source_entity" />
+		</condition>
+	</ontouch>
+</projectile>

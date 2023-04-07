@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_ForsakenArcher3"
+
+	
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_ForsakenArcher_Ability3"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+>
+	<onlearn>
+		<setcharges a="0" />
+	</onlearn>
+	
+	<onkill propagatetoillusions="false">
+		<cantarget targetscheme="all_organic_units">
+			<spawnunit name="Pet_ForsakenArcher_Ability3" proxy="this_entity" target="target_position" maxactive="3,4,5,6" />
+
+			<condition test="charges eq 1">
+				<starttimer duration="3000" />
+			</condition>
+			<setvar0 a="3,4,5,6" />
+			<condition test="charges gt var0">
+				<setaccumulator value="30000" />
+				<areaofeffect
+					radius="9999"
+					center="source_position"
+					targetselection="all"
+					targetscheme="my_pseudo_pets"
+					ignoreinvulnerable="true"
+				>
+					<condition test="target_lifetime le accumulator">
+						<setaccumulator entity="this_entity" value="target_lifetime" />
+					</condition>
+				</areaofeffect>		
+				<starttimer duration="accumulator" />
+			</condition>
+		</cantarget>
+	</onkill>
+	
+	<onindirectkill propagatetoillusions="false">
+		<cantarget targetscheme="all_organic_units">
+			<spawnunit name="Pet_ForsakenArcher_Ability3" proxy="this_entity" target="target_position" maxactive="3,4,5,6" />
+			
+			<condition test="charges eq 1">
+				<starttimer duration="3000" />
+			</condition>
+			<setvar0 a="3,4,5,6" />
+			<condition test="charges gt var0">
+				<setaccumulator value="30000" />
+				<areaofeffect
+					radius="9999"
+					center="source_position"
+					targetselection="all"
+					targetscheme="my_pseudo_pets"
+					ignoreinvulnerable="true"
+				>
+					<condition test="target_lifetime le accumulator">
+						<setaccumulator entity="this_entity" value="target_lifetime" />
+					</condition>
+				</areaofeffect>		
+				<starttimer duration="accumulator" />
+			</condition>
+		</cantarget>
+	</onindirectkill>
+	
+	<ontimer>
+		<condition test="charges ge 1">
+			<setaccumulator value="30000" />
+			<areaofeffect
+				radius="9999"
+				center="source_position"
+				targetselection="all"
+				targetscheme="my_pseudo_pets"
+				ignoreinvulnerable="true"
+			>
+				<condition test="target_lifetime le accumulator">
+					<setaccumulator entity="this_entity" value="target_lifetime" />
+				</condition>
+			</areaofeffect>		
+			<starttimer duration="accumulator" />
+		</condition>
+	</ontimer>
+</ability>

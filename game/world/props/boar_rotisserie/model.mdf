@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model_high.max" file="model.model" type="K2" >
+
+	<spawnevent cmd="StartEffect effects/rotisserie.effect 0"/> 
+	<anim name="idle" clip="clips/default_1.clip" fps="50" loop="true"/>
+	
+</model>

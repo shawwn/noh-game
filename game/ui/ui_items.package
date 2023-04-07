@@ -1,0 +1,1318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<!-- Textures -->
+	<texture file="/ui/info/backdrop_b.tga" nocompress="true" />
+	<texture file="/ui/info/backdrop_bl.tga" nocompress="true" />
+	<texture file="/ui/info/backdrop_br.tga" nocompress="true" />
+	<texture file="/ui/info/backdrop_c.tga" nocompress="true" />
+	<texture file="/ui/info/backdrop_l.tga" nocompress="true" />
+	<texture file="/ui/info/backdrop_r.tga" nocompress="true" />
+	<texture file="/ui/info/backdrop_t.tga" nocompress="true" />
+	<texture file="/ui/info/backdrop_tl.tga" nocompress="true" />
+	<texture file="/ui/info/backdrop_tr.tga" nocompress="true" />
+	
+	<texture file="/ui/info/combobox_dropdown_b.tga" nocompress="true" />
+	<texture file="/ui/info/combobox_dropdown_bl.tga" nocompress="true" />
+	<texture file="/ui/info/combobox_dropdown_br.tga" nocompress="true" />
+	<texture file="/ui/info/combobox_dropdown_c.tga" nocompress="true" />
+	<texture file="/ui/info/combobox_dropdown_l.tga" nocompress="true" />
+	<texture file="/ui/info/combobox_dropdown_r.tga" nocompress="true" />
+	<texture file="/ui/info/combobox_dropdown_t.tga" nocompress="true" />
+	<texture file="/ui/info/combobox_dropdown_tl.tga" nocompress="true" />
+	<texture file="/ui/info/combobox_dropdown_tr.tga" nocompress="true" />
+
+	<!-- Templates -->
+	<template name="main_login_checkbox_state">
+		<widgetstate statename="{state}">		
+			<image width="5.4h" height="2.7h" align="{align}" valign="bottom" texture="/ui/mainmenu/{image}.tga"/>			
+			<image width="5.4h" height="2.7h" align="{align}" valign="bottom" visible="{checked}" texture="/ui/mainmenu/{image}_on.tga"/>
+			<label x="{textoffset}" y="0.1h" height="100%" width="100%" textalign="{align}" textvalign="center" font="{font}" color="{color}" shadow="true" noclick="1">{label}</label>			
+		</widgetstate>
+	</template>
+	
+	<template name="main_login_checkbox">
+		<panel noclick="true" color="invisible">
+			<button 
+				color="invisible"
+				numstates="2"
+				cvar="{cvar}"
+				onclick="PlaySound('/shared/sounds/ui/button_click_04.wav'); {onclick}"
+			>
+				<instance name="main_login_checkbox_state" state="up" label="{label}" align="{align}" textoffset="{textoffset}" image="{image}" font="{font=dyn_9}" color="#e0e0e0" checked="false"/>
+				<instance name="main_login_checkbox_state" state="over" label="{label}" align="{align}" textoffset="{textoffset}" image="{image}" font="{font=dyn_9}" color="#3abde7" checked="false"/>
+				<instance name="main_login_checkbox_state" state="down" label="{label}" align="{align}" textoffset="{textoffset}" image="{image}" font="{font=dyn_9}" color="#3abde7" checked="false"/>
+				<instance name="main_login_checkbox_state" state="up2" label="{label}" align="{align}" textoffset="{textoffset}" image="{image}" font="{font=dyn_9}" color="#ffaa00" checked="true"/>
+				<instance name="main_login_checkbox_state" state="over2" label="{label}" align="{align}" textoffset="{textoffset}" image="{image}" font="{font=dyn_9}" color="#3abde7" checked="true"/>
+				<instance name="main_login_checkbox_state" state="down2" label="{label}" align="{align}" textoffset="{textoffset}" image="{image}" font="{font=dyn_9}" color="#3abde7" checked="true"/>
+			</button>
+		</panel>
+	</template>
+
+	<template name="Ncombobox_item">
+		<label height="100%" x="50@" font="dyn_9" color="white" textvalign="center" shadow="true" shadowoffset="1" content="{label}"/>
+	</template>
+	
+	<template name="combobox_item_icon">
+		<image width="100@" height="100%" x="35@" texture="{texture}"/>
+		<label height="100%" x="160@" font="dyn_9" color="{color=white}" textvalign="center" shadow="true" shadowoffset="1" content="{label}"/>
+	</template>
+
+	<template name="Noptions_combobox_state">
+		<widgetstate statename="{state}">
+			<panel color="invisible">
+				<image height="100%" width="85%" align="center" texture="/ui/info/combobox_background_c.tga" color="{color}"/>
+				<image height="100%" width="100@" align="left" texture="/ui/info/combobox_background_l.tga" color="{color}"/>
+				<image height="100%" width="100@" align="right" texture="/ui/info/combobox_background_r.tga" color="{color}"/>
+				<image x="-1" width="100@" height="100%" align="right" valign="center" texture="/ui/info/combobox_button_{image}.tga" />
+			</panel>
+		</widgetstate>
+	</template> 
+	
+	<template name="Noptions_combobox">
+		<combobox
+			name="{id=}"
+			x="{x}"
+			width="{width}"
+			height="2h"
+			align="{align=right}"
+			valign="{valign=center}"
+			color="invisible"
+			itemwidth="{itemwidth}"
+			itemheight="2h"
+			maxlistheight="{maxlistheight}"
+			cvar="{cvar}"
+			exteriorscrollbars="false"
+			scrolltexture="/ui/info/combobox.tga"
+			handleheight="100@" handlewidth="100%"
+			scrollbarsize="2h"
+			scrollbaroffset="0"
+			highlight="under"
+			onload="ComboBoxCmd('clear'); {populate=}; {data}('{itemtemplate=Ncombobox_item}'); {onload=}"
+			onselect="{onselect=}"
+			onshow="{onshow=}"
+			onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav');"
+			watch="{watch=}"
+			ontrigger="{ontrigger=}"
+			visible="{visible=true}"
+			form="{form=}" data="{formdata=}"
+		>
+			<instance name="Noptions_combobox_state" state="up" color="1 1 1 1" image="up"/>
+			<instance name="Noptions_combobox_state" state="over" color="#69ccff" image="over"/>
+			<instance name="Noptions_combobox_state" state="down" color="#69ccff" image="over"/>
+			<widgetstate statename="listbg">
+				<frame height="+2.7h" y="-1.9h" texture="/ui/info/combobox_dropdown.tga" borderthickness="3h" color="white" />
+			</widgetstate>
+			<widgetstate statename="itembg">
+				<panel width="{itemwidth}" />
+			</widgetstate>
+			<widgetstate statename="itemhighlight">
+				<panel width="{itemwidth}" texture="/ui/info/header_bar_c.tga">
+					<panel width="100%" height="100%" >
+						<image height="50%" width="32" align="left" valign="top" texture="/ui/info/header_bar_tl.tga" noclick="1"/>
+						<image height="50%" width="32" align="left" valign="bottom" texture="/ui/info/header_bar_bl.tga" noclick="1"/>
+						<image height="50%" width="32" align="right" valign="top" texture="/ui/info/header_bar_tr.tga" noclick="1"/>
+						<image height="50%" width="32" align="right" valign="bottom" texture="/ui/info/header_bar_br.tga" noclick="1"/>		
+					</panel>
+				</panel>
+			</widgetstate>
+		</combobox>
+	</template>
+	
+	<template name="Noptions_slider">
+		<panel width="{width=100%}" height="100%" align="center" color="invisible">				
+			<panel height="100%" width="38%" float="bottom">
+			
+			<cvarlabel
+				width="100%" height="50%"
+				textvalign="center" textalign="right"
+				font="dyn_9"
+				color="white"
+				shadow="true"
+				prefix="{label}"
+				onload="CreateString('{slider_name}_value');"
+				cvar="{slider_name}_value"
+			/>
+			
+			<cvarlabel
+				width="100%" height="50%"
+				textvalign="center" textalign="right"
+				font="dyn_8"
+				color="#3abde7"
+				shadow="true"
+				onload="CreateString('{slider_name}_value');"
+				cvar="{slider_name}_value"
+			/>			
+				
+			</panel>
+
+			<panel width="62%" height="100%" valign="center" align="right" color="invisible">
+				<panel width="96%" height="100%" valign="center" align="right" color="invisible">
+					<image width="84%" align="center" texture="/ui/info/slider_backdrop_c.tga" />							
+					<image height="100%" width="100@" align="left" texture="/ui/info/slider_backdrop_l.tga" />
+					<image height="100%" width="100@" align="right" texture="/ui/info/slider_backdrop_r.tga" />
+
+					<panel height="100%" width="15%" color="invisible" valign="center">
+						<label width="100%" height="100%" textalign="center" textvalign="center" align="center" font="dyn_8" color="white" shadow="true">ui_items_slider_low</label>
+					</panel>
+
+					<panel height="2h" width="70%" align="center" color="invisible" valign="center">
+
+						<slider
+							name="{slider_name}"
+							slotwidth="-1" slotheight="0.6h"
+							slotcolor="1 1 1 1"
+							handlewidth="100@" handleheight="100%"
+							handlecolor="1 1 1 1"
+							cvar="{cvar}"
+							minvalue="{minvalue}" maxvalue="{maxvalue}"
+							step="{step}"
+							texture="/ui/info/slider.tga"
+							onchange="Set({slider_name}_value, {value}); {action=};"
+							onshow="Set({slider_name}_value, {value});"
+						/>
+					</panel>
+
+					<panel height="100%" width="15%" align="right" color="invisible" valign="center">
+						<label width="100%" height="100%" textalign="center" textvalign="center" align="center" font="dyn_8" color="white" shadow="true">ui_items_slider_high</label>
+					</panel>
+
+				</panel>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="Noptions_checkbox_state">
+		<widgetstate statename="{state}" float="right" padding="3%">
+			<panel width="{size}" color="invisible">
+				<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+				<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+				<image x="0.15h" y="0.15h" width="-0.3h" height="-0.3h" texture="/ui/elements/check.tga" visible="{checked}" />
+			</panel>
+			<label width="-{size}" height="100%" textvalign="center" font="{font}" color="{color}" shadow="true">{label}</label>
+		</widgetstate>
+	</template>
+	
+	<template name="Noptions_checkbox">
+		<panel width="{width=90%}" height="{height=1.5h}" align="{align=center}" valign="{valign=top}" noclick="true" color="invisible">
+			<button 
+				color="invisible"
+				numstates="2"
+				cvar="{cvar=}"
+				onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); {onclick=}"
+				onmouseover="If(!StringEmpty('{tip_id}'), ShowWidget('{tip_id}')); PlaySound('/shared/sounds/ui/ccpanel/button_over_01.wav');"
+				onmouseout="If(!StringEmpty('{tip_id}'), HideWidget('{tip_id}'));"
+				watch="{watch=}"
+				ontrigger="{ontrigger=}"
+			>
+				<instance name="Noptions_checkbox_state" state="up" size="{height=1.5h}" label="{label}" font="{font=dyn_9}" color="white" checked="false"/>
+				<instance name="Noptions_checkbox_state" state="over" size="{height=1.5h}" label="{label}" font="{font=dyn_9}" color="#3abde7" checked="false"/>
+				<instance name="Noptions_checkbox_state" state="down" size="{height=1.5h}" label="{label}" font="{font=dyn_9}" color="#3abde7" checked="false"/>
+				<instance name="Noptions_checkbox_state" state="up2" size="{height=1.5h}" label="{label}" font="{font=dyn_9}" color="#ffaa00" checked="true"/>
+				<instance name="Noptions_checkbox_state" state="over2" size="{height=1.5h}" label="{label}" font="{font=dyn_9}" color="#3abde7" checked="true"/>
+				<instance name="Noptions_checkbox_state" state="down2" size="{height=1.5h}" label="{label}" font="{font=dyn_9}" color="#3abde7" checked="true"/>
+			</button>
+		</panel>
+	</template>
+	
+	<template name="more_options">
+		<button height="1.5h" valign="center" numstates="2" color="invisible" onclick="ToggleWidget('{id}_options');" onrightclick="ToggleWidget('{id}_options');">					
+			<widgetstate statename="up1" float="right" padding="3%">				
+				<panel width="1.5h" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+				</panel>
+				<label width="-1.5h" height="100%" textvalign="center" font="dyn_9" color="1 1 1 1" shadow="true">{display_label}</label>
+			</widgetstate>			
+			<widgetstate statename="over1" float="right" padding="3%">
+				<panel width="1.5h" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+				</panel>
+				<label width="-1.5h" height="100%" textvalign="center" font="dyn_9" color="#3abde7" shadow="true">{display_label}</label>
+			</widgetstate>			
+			<widgetstate statename="down1" float="right" padding="3%">
+				<panel width="1.5h" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+				</panel>
+				<label width="-1.5h" height="100%" textvalign="center" font="dyn_9" color="#3abde7" shadow="true">{display_label}</label>
+			</widgetstate>			
+			<widgetstate statename="up2" float="right" padding="3%">
+				<panel width="1.5h" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+					<image x="0.15h" y="0.15h" width="-0.3h" height="-0.3h" texture="/ui/elements/check.tga"/>
+				</panel>
+				<label width="-1.5h" height="100%" textvalign="center" font="dyn_9" color="#ffaa00" shadow="true">{display_label}</label>
+			</widgetstate>			
+			<widgetstate statename="over2" float="right" padding="3%">
+				<panel width="1.5h" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+					<image x="0.15h" y="0.15h" width="-0.3h" height="-0.3h" texture="/ui/elements/check.tga"/>
+				</panel>
+				<label width="-1.5h" height="100%" textvalign="center" font="dyn_9" color="#3abde7" shadow="true">{display_label}</label>
+			</widgetstate>			
+			<widgetstate statename="down2" float="right" padding="3%">
+				<panel width="1.5h" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+					<image x="0.15h" y="0.15h" width="-0.3h" height="-0.3h" texture="/ui/elements/check.tga"/>
+				</panel>
+				<label width="-1.5h" height="100%" textvalign="center" font="dyn_9" color="#3abde7" shadow="true">{display_label}</label>
+			</widgetstate>			
+		</button>
+	</template>
+	
+	<template name="field">
+		<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="#171a28"/>
+		<frame texture="/ui/frames/roundframe.tga" color="#bbdefa" borderthickness="0.5h"/>
+		<textbox
+			name="{widgetname}"
+			taborder="{order}"
+			passwordchar="{passchar=}"
+			maxlength="{maxlength=-1}"
+			y="0.3h"
+			width="-1.0h"
+			align="center"
+			color="invisible"
+			font="dyn_9"
+			textcolor="white"
+			shadow="true"
+			onchange="{onchange}"
+			onshow="{onshow}"
+			onfocus="{onfocus}"
+			onlosefocus="{onlosefocus}"
+			form="{form=}"
+			data="{data=}"
+		/>		
+	</template>
+	
+	<template name="tab_bar">
+		<panel x="{x}" y="{y}" width="{width=100%}" height="{height=100%}" align="{align}" valign="{valign}" color="invisible" noclick="true" passivechildren="true">
+			<image width="-64" align="center" texture="/ui/info/tab_bar_c.tga" color="{color=#ffffff}"/>
+			<image height="50.1%" width="32" align="left" valign="top" texture="/ui/info/tab_bar_tl.tga" color="{color=#ffffff}"/>
+			<image height="49.9%" width="32" align="left" valign="bottom" texture="/ui/info/tab_bar_bl.tga" color="{color=#ffffff}"/>
+			<image height="50.1%" width="32" align="right" valign="top" texture="/ui/info/tab_bar_tr.tga" color="{color=#ffffff}"/>
+			<image height="49.9%" width="32" align="right" valign="bottom" texture="/ui/info/tab_bar_br.tga" color="{color=#ffffff}"/>
+		</panel>
+	</template>
+
+	<template name="header_bar">
+		<panel group="{group}" x="{x}" y="{y}" width="{width=100%}" height="{height=100%}" align="{align}" valign="{valign}" color="invisible" noclick="{noclick=1}" blockinput="0">
+			<image width="-64" align="center" texture="/ui/info/header_bar_c.tga" color="{color=#ffffff}" noclick="1" blockinput="0"/>
+			<image height="50.1%" width="32" align="left" valign="top" texture="/ui/info/header_bar_tl.tga" color="{color=#ffffff}" noclick="1" blockinput="0"/>
+			<image height="49.9%" width="32" align="left" valign="bottom" texture="/ui/info/header_bar_bl.tga" color="{color=#ffffff}" noclick="1" blockinput="0"/>
+			<image height="50.1%" width="32" align="right" valign="top" texture="/ui/info/header_bar_tr.tga" color="{color=#ffffff}" noclick="1" blockinput="0"/>
+			<image height="49.9%" width="32" align="right" valign="bottom" texture="/ui/info/header_bar_br.tga" color="{color=#ffffff}" noclick="1" blockinput="0"/>
+		
+			<label name="{label_name}" x="6" y="-1" width="100%" height="100%" font="{lbl_font=dyn_10}" textvalign="center" color="{lbl_color=white}" watch="{watch}" ontrigger="{ontrigger}" noclick="1" blockinput="0">{lbl}</label>
+			<button
+				visible="{show_close}"
+				x="-6" y="-1"			
+				width="{buttonsize=1.8h}" height="{buttonsize=1.8h}"
+				align="right"
+				valign="center"
+				color="1 1 1 1"
+				texture="/ui/info/close_button.tga"
+				onclick="PlaySound('/shared/sounds/ui/ccpanel/button_close_02.wav'); {onclick}"
+				onmouseover="PlaySound('/shared/sounds/ui/ccpanel/button_over_01.wav'); {onmouseover}"
+			/>			
+		</panel>
+	</template>
+
+	<template name="button">
+		<panel x="{x=}" y="{y=}" width="{width=100%}" height="{height=100%}" align="{align=}" valign="{valign=}" noclick="true">
+			<panel color="1 0 0 0" width="220%" height="400%" valign="center" align="center" visible="{effect=1}" noclick="true">
+				<modelpanel 
+					name="{id}"
+					fog="true"
+					fogcolor="0 0 0" fognear="500" fogfar="600" fogscale="1"
+					noclick="true"						
+					cameraangles="0.0 0.0 180.0"
+					camerapos="0.0 500.0 0.0"
+					camerafov="90.0"
+					camerafar="600.0"
+					model0="/ui/effects/nebula/button_smoke.mdf"
+					anim0="start"
+					depthclear="false"
+					depthcompress="true"
+				/>				
+			</panel>		
+
+			<button
+				group="{group}"
+				name="{button_name}"
+				color="invisible"
+				visible="{visible=true}"
+				watch="{watch}"
+				enabled="{enabled=true}"
+				ontrigger="{ontrigger}"
+				onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav'); Call('{id}', 'SetAnim(0, \'start\');');   Call('{id}',  'SetEffect(0, \'/ui/effects/nebula/button_smoke.effect\');'); {onmouseover}"
+				onmouseout="{onmouseout}"
+				onclick="PlaySound('{sound=/shared/sounds/ui/button_click_01.wav}'); {onclick}"
+				onenter="PlaySound('{sound='/shared/sounds/ui/button_click_01.wav}'); {onenter}"
+				onshow="{onshow}"
+				hotkey="{hotkey}"
+				onhotkey="PlaySound('{sound=/shared/sounds/ui/button_click_01.wav'}'); {onhotkey}"
+			>
+				<widgetstate statename="up">
+					<frame texture="/ui/info/button.tga" borderthickness="{borderthickness=12}" color="1 1 1 1"/>
+					<!--<frame texture="/ui/frames/roundframe.tga" color="gray" borderthickness="8"/>-->				
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="white" shadow="true" shadowcolor="black">{label}</label>
+				</widgetstate>
+				
+			
+			
+				<widgetstate statename="over">
+					<frame texture="/ui/info/button_over.tga" borderthickness="{borderthickness=12}" />				
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="white" shadow="true" shadowcolor="#7F6E00">{label}</label>
+				</widgetstate>
+				
+				
+				<widgetstate statename="down" x="1" y="1">
+					<frame texture="/ui/info/button_down.tga" borderthickness="{borderthickness=12}" color="white"/>
+					
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="#3f0001" shadow="true" shadowcolor="#7F6E00">{label}</label>
+				</widgetstate>
+				<widgetstate statename="disabled">
+					<frame texture="/ui/info/button.tga" borderthickness="{borderthickness=8}" color="1 1 1 1"/>	
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="8" color=".3 .3 .3 .7"/>
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="#494c5f" shadow="true" shadowcolor="black">{label}</label>
+				</widgetstate>
+			</button>
+		</panel>
+	</template>
+
+	<template name="button3">
+		<panel x="{x=}" y="{y=}" width="{width=100%}" height="{height=100%}" align="{align=}" valign="{valign=}" noclick="true">
+			<button
+				group="{group}"
+				name="{button_name}"
+				color="invisible"				
+				visible="{visible=true}"
+				watch="{watch}"
+				enabled="{enabled=true}"
+				ontrigger="{ontrigger}"
+				onmouseover="PlaySound('/shared/sounds/ui/menu/button_over.wav'); {onmouseover}"
+				onmouseout="{onmouseout}"
+				onclick="PlaySound('{sound=/shared/sounds/ui/menu/button_click.wav}'); {onclick}"
+				onenter="{onenter}"
+				onshow="{onshow}"
+				onframe="{onframe}"
+				hotkey="{hotkey}"
+				onhotkey="{onhotkey}"
+				onenable="{onenable}"
+			>
+				<widgetstate statename="up">
+					<frame texture="/ui/info/button.tga" borderthickness="{borderthickness=0.8h}" color="1 1 1 1"/>
+					<!--<frame texture="/ui/frames/roundframe.tga" color="gray" borderthickness="8"/>-->				
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="white" shadow="true" shadowcolor="black">{label}</label>
+				</widgetstate>
+
+				<widgetstate statename="over">
+					<frame texture="/ui/info/button_over.tga" borderthickness="{borderthickness=0.8h}" />				
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="white" shadow="true" shadowcolor="#7F6E00">{label}</label>
+				</widgetstate>
+
+				<widgetstate statename="down" x="1" y="1">
+					<frame texture="/ui/info/button_down.tga" borderthickness="{borderthickness=0.8h}" color="white"/>
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="#3f0001" shadow="true" shadowcolor="#7F6E00">{label}</label>
+				</widgetstate>
+				
+				<widgetstate statename="disabled">
+					<frame texture="/ui/info/button.tga" borderthickness="{borderthickness=0.8h}" color="1 1 1 1"/>	
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="0.8h" color=".3 .3 .3 .7"/>
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="#494c5f" shadow="true" shadowcolor="black">{label}</label>
+				</widgetstate>
+			</button>
+		</panel>
+	</template>	
+	
+	<template name="button2">
+		<panel x="{x=}" y="{y=}" width="{width=100%}" height="{height=100%}" align="{align=}" valign="{valign=}" noclick="true">
+			<button
+				group="{group}"
+				name="{button_name}"
+				color="invisible"
+				visible="{visible=true}"
+				watch="{watch=}"
+				enabled="{enabled=true}"
+				ontrigger="{ontrigger=}"
+				onmouseover="PlaySound('/shared/sounds/ui/ccpanel/button_over_02.wav'); {onmouseover}"
+				onmouseout="{onmouseout}"
+				onclick="PlaySound('{sound=/shared/sounds/ui/ccpanel/button_click_02.wav}'); {onclick}"
+				onenter="PlaySound('{sound='/shared/sounds/ui/ccpanel/button_click_02.wav}'); {onenter}"
+				onshow="{onshow}"
+				hotkey="{hotkey}"
+				onhotkey="PlaySound('{sound=/shared/sounds/ui/ccpanel/button_click_02.wav'}'); {onhotkey}"
+			>
+				<widgetstate statename="up">
+					<frame texture="/ui/info/button.tga" borderthickness="{borderthickness=0.8h}" color="1 1 1 1"/>				
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="white" shadow="true" shadowcolor="black" watch="{labelwatch}" ontrigger="{labelontrigger}">{label}</label>
+				</widgetstate>			
+			
+				<widgetstate statename="over">
+					<frame texture="/ui/info/button_over.tga" borderthickness="{borderthickness=0.8h}" />				
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="white" shadow="true" shadowcolor="#7F6E00" watch="{labelwatch}" ontrigger="{labelontrigger}">{label}</label>
+				</widgetstate>		
+				
+				<widgetstate statename="down" x="1" y="1">
+					<frame texture="/ui/info/button_down.tga" borderthickness="{borderthickness=0.8h}" color="white"/>					
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="#FFFF00" shadow="true" shadowcolor="#7F6E00" watch="{labelwatch}" ontrigger="{labelontrigger}">{label}</label>
+				</widgetstate>
+				<widgetstate statename="disabled">
+					<frame texture="/ui/info/button.tga" borderthickness="{borderthickness=0.8h}" color="1 1 1 1"/>	
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="0.8h" color=".3 .3 .3 .7"/>
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="#494c5f" shadow="true" shadowcolor="black" watch="{labelwatch}" ontrigger="{labelontrigger}">{label}</label>
+				</widgetstate>
+			</button>
+		</panel>
+	</template>
+	
+	<template name="button_game"> <!-- NO MOUSE OVER SOUNDS OR EFFECTS! -->
+		<panel x="{x=}" y="{y=}" width="{width=100%}" height="{height=100%}" align="{align=}" valign="{valign=}"  noclick="true">
+			<button
+				group="{group}"
+				name="{button_name}"
+				color="invisible"
+				visible="{visible=true}"
+				watch="{watch}"
+				enabled="{enabled=true}"
+				ontrigger="{ontrigger}"
+				onmouseover="{onmouseover}"
+				onmouseout="{onmouseout}"
+				onclick="PlaySound('{sound=/shared/sounds/ui/button_click_01.wav}'); {onclick}"
+				onenter="PlaySound('{sound='/shared/sounds/ui/button_click_01.wav}'); {onenter}"
+				onshow="{onshow}"
+				hotkey="{hotkey}"
+				onhotkey="PlaySound('{sound=/shared/sounds/ui/button_click_01.wav'}'); {onhotkey}"
+				interactive="false"
+			>
+				<widgetstate statename="up">
+					<frame texture="/ui/info/button.tga" borderthickness="{borderthickness=0.8h}" color="1 1 1 1"/>				
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="white" shadow="true" shadowcolor="black">{label}</label>
+				</widgetstate>			
+			
+				<widgetstate statename="over">
+					<frame texture="/ui/info/button_over.tga" borderthickness="{borderthickness=0.8h}" />				
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="white" shadow="true" shadowcolor="#7F6E00">{label}</label>
+				</widgetstate>		
+				
+				<widgetstate statename="down" x="1" y="1">
+					<frame texture="/ui/info/button_down.tga" borderthickness="{borderthickness=0.8h}" color="white"/>					
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="#3f0001" shadow="true" shadowcolor="#7F6E00">{label}</label>
+				</widgetstate>
+				<widgetstate statename="disabled">
+					<frame texture="/ui/info/button.tga" borderthickness="{borderthickness=0.8h}" color="1 1 1 1"/>	
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="0.8h" color=".3 .3 .3 .7"/>
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="#494c5f" shadow="true" shadowcolor="black">{label}</label>
+				</widgetstate>
+			</button>
+		</panel>
+	</template>
+	
+	<template name="add_friend_button">
+		<panel color="invisible" x="{x=0}" width="{width=1.8h}" height="{height=1.8h}" valign="{valign=center}" align="{align=center}" noclick="true" watch="EndGamePlayerStats{player}" ontrigger="CreateString('_add_buddy_name_stats_{player}', param2); If(StringLength(param2) gt 0 and !IsBuddy(param2) and IsLoggedIn(), ShowWidget('add_friend_button_stats_{player}'), HideWidget('add_friend_button_stats_{player}'));">
+			<button
+				name="add_friend_button_stats_{player}"
+				color="invisible"
+				visible="false"
+				onmouseover="{onmouseover}"
+				onmouseout="{onmouseout}"
+				onclick="ChatAddBuddy(_add_buddy_name_stats_{player}); HideWidget(); {onclick}"
+			>			
+				<widgetstate statename="up">
+					<image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/addfriend_up.tga" />
+				</widgetstate>			
+
+				<widgetstate statename="over">
+					<image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/addfriend_over.tga" />
+				</widgetstate>
+				
+				<widgetstate statename="down" x="1" y="1">
+					<image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/addfriend_over.tga" />
+				</widgetstate>
+			</button>
+		</panel>		
+	</template>
+	
+	<template name="expand_button">
+		<panel group="{group}" color="invisible" x="{x=0}" width="{width=1.8h}" height="{height=1.8h}" valign="{valign=center}" align="{align=center}" noclick="true" visible="{visible=true}">
+			<button
+				name="{button_name}"
+				color="invisible"
+				onmouseover="{onmouseover}"
+				onmouseout="{onmouseout}"
+				onclick="{onclick}"
+			>			
+				<widgetstate statename="up">
+					<image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/expand_up.tga" />
+				</widgetstate>			
+
+				<widgetstate statename="over">
+					<image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/expand_over.tga" />
+				</widgetstate>
+
+			</button>
+		</panel>		
+	</template>
+	
+	<template name="tip_mark" >
+		<panel color="invisible" x="{x}" y="{y}" width="{width}" height="{height}" valign="{valign}" align="{align}" noclick="true">
+			<button
+				name="{button_name}"
+				color="invisible"
+				visible="{visible=true}"
+				onmouseover="showwidget('{tip_id}');"
+				onmouseout="hidewidget('{tip_id}');"
+			>			
+				<widgetstate statename="up">
+					<image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/tip_mark_up.tga" />
+				</widgetstate>			
+
+				<widgetstate statename="over">
+					<image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/tip_mark_over.tga" />
+				</widgetstate>
+			</button>
+		</panel>		
+	</template>
+	
+	<template name="generic_tooltip">
+		<panel name="{tip_id}" y="{y}" x="{x}" width="{width=100%}" height="{height=100%}" align="{align=left}" valign="{valign=top}" color="invisible" visible="{visible=0}" noclick="1">
+			<frame  texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .8" borderthickness=".6h" align="left" valign="top" noclick="1">
+				<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" noclick="1"/>
+				
+				<label width="-5%" height="2.2h" textvalign="bottom" textalign="left" align="center" font="dyn_10" color="#ffab01" shadow="1" noclick="1">{title}</label>
+				<label y="2.2h" width="-5%" height="100%" textvalign="top" textalign="left" align="center" font="dyn_9" noclick="1" color="white" shadow="1" wrap="1" watch="{label_watch}" ontrigger="{label_ontrigger}">{label}</label>
+				
+			</frame>
+		</panel>
+	</template>
+	
+	<template name="simple_tooltip">
+		<panel name="{tip_id}" group="{group}" y="{y}" x="{x}" width="{width}" height="{height}" align="{align=left}" valign="{valign=top}" color="invisible" visible="{visible=0}" noclick="1" watch="{panelwatch=}" ontrigger="{panelontrigger=}">
+			<frame  texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .75" borderthickness=".6h" align="left" valign="top">
+				<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>				
+				<label y="{textvoffset=0}" width="-6%" height="-6%" textvalign="{textvalign=center}" textalign="center" align="center" valign="center" font="{font=dyn_9}" color="white" shadow="1" wrap="1" watch="{watch=}" ontrigger="{ontrigger=}">{label}</label>
+			</frame>
+		</panel>
+	</template>
+	
+	<template name="tab_button">
+		<panel x="{x}" y="{y}" width="{width=100%}" height="{height=100%}" align="{align=left}" valign="{valign=center}" noclick="true">
+			<button
+				group="{group}"
+				name="{button_name}"
+				color="invisible"
+				visible="{visible=true}"
+				watch="{watch}"
+				enabled="{enabled=true}"
+				ontrigger="{ontrigger}"
+				onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+				onmouseout="{onmouseout}"
+				onclick="PlaySound('{sound=/shared/sounds/ui/button_click_01.wav}'); {onclick}"
+				onenter="PlaySound('{sound='/shared/sounds/ui/button_click_01.wav}'); {onenter}"
+				onshow="{onshow}"
+				hotkey="{hotkey}"
+				onhotkey="PlaySound('{sound=/shared/sounds/ui/button_click_01.wav'}'); {onhotkey}"
+			>
+				<widgetstate statename="up">
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="white" shadow="true" shadowcolor="black">{label}</label>
+				</widgetstate>			
+				<widgetstate statename="over">
+					<frame texture="/ui/info/button_over.tga" borderthickness="{borderthickness=.8h}" />				
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="white" shadow="true" shadowcolor="black">{label}</label>
+				</widgetstate>								
+				<widgetstate statename="down" x="0" y="1">
+					<frame texture="/ui/info/button_down.tga" borderthickness="{borderthickness=.8h}" color="white"/>					
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="white" shadow="true" shadowcolor="black">{label}</label>
+				</widgetstate>
+				<widgetstate statename="disabled">
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="8" color="#666666"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#666666" borderthickness=".8h"/>
+					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="#333333" shadow="true" shadowcolor="black">{label}</label>
+				</widgetstate>
+			</button>
+		</panel>
+	</template>
+	
+	<template name="tab_current">
+		<panel width="{width=100%}" height="{height=100%}" align="{align=}" valign="{valign=}" noclick="true">
+			<frame texture="/ui/info/button_down.tga" borderthickness="{borderthickness=12}" color="white"/>					
+			<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="white" shadow="true" shadowcolor="black">{label}</label>
+		</panel>
+	</template>
+	
+	<template name="options_button">	
+		<panel x="{x}" width="{width=20%}" valign="center" color="invisible" noclick="true">			
+			<button
+				group="{group}_inactive"
+				name="{button_name}_inactive"
+				color="invisible"
+				onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+				onmouseout=""
+				onclick="PlaySound('{sound=/shared/sounds/ui/button_click_01.wav}'); ShowOnly('{button_name}_active'); HideOnly('{button_name}_inactive'); {onclick};"
+			>
+				<widgetstate statename="up">
+				</widgetstate>
+				<widgetstate statename="over">
+					<frame texture="/ui/info/button_over.tga" borderthickness="0.8h" />
+				</widgetstate>
+				<widgetstate statename="down" x="1" y="1">
+					<frame texture="/ui/info/button_down.tga" borderthickness="0.8h" />
+				</widgetstate>
+			</button>
+			<button
+				group="{group}_active"
+				name="{button_name}_active"
+				color="invisible"
+				onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+				onmouseout=""
+				onclick="PlaySound('{sound=/shared/sounds/ui/button_click_01.wav}'); {onclick};"
+				visible="false"
+			>
+				<widgetstate statename="up">
+					<frame texture="/ui/info/button.tga" borderthickness="0.8h" />
+				</widgetstate>
+				<widgetstate statename="over">
+					<frame texture="/ui/info/button_over.tga" borderthickness="0.8h" />
+				</widgetstate>
+				<widgetstate statename="down" x="1" y="1">
+					<frame texture="/ui/info/button_down.tga" borderthickness="0.8h" />
+				</widgetstate>
+			</button>				
+			<image y="4%" width="66@" height="66%" align="center" valign="top" texture="{icon}" noclick="1" />
+			<label width="100%" height="30%" valign="bottom" textalign="center" textvalign="center" font="dyn_9" color="white" shadow="1" noclick="1">{lbl}</label>
+		</panel>	
+	</template>
+	
+	<template name="options_button2">	
+		<panel x="{x}" width="{width=20%}" valign="center" color="invisible" noclick="true">			
+			<button
+				group="{group}_inactive"
+				name="{button_name}_inactive"
+				color="invisible"
+				onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+				onmouseout=""
+				onclick="PlaySound('{sound=/shared/sounds/ui/button_click_01.wav}'); ShowOnly('{button_name}_active'); HideOnly('{button_name}_inactive'); {onclick};"
+			>
+				<widgetstate statename="up">
+				</widgetstate>
+				<widgetstate statename="over">
+					<frame texture="/ui/info/button_over.tga" borderthickness="0.8h" />
+				</widgetstate>
+				<widgetstate statename="down" x="1" y="1">
+					<frame texture="/ui/info/button_down.tga" borderthickness="0.8h" />
+				</widgetstate>
+			</button>
+			<button
+				group="{group}_active"
+				name="{button_name}_active"
+				color="invisible"
+				onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+				onmouseout=""
+				onclick="PlaySound('{sound=/shared/sounds/ui/button_click_01.wav}'); {onclick};"
+				visible="false"
+			>
+				<widgetstate statename="up">
+					<frame texture="/ui/info/button.tga" borderthickness="0.8h" />
+				</widgetstate>
+				<widgetstate statename="over">
+					<frame texture="/ui/info/button_over.tga" borderthickness="0.8h" />
+				</widgetstate>
+				<widgetstate statename="down" x="1" y="1">
+					<frame texture="/ui/info/button_down.tga" borderthickness="0.8h" />
+				</widgetstate>
+			</button>				
+			<image y="4%" width="66@" height="66%" align="center" valign="top" texture="{icon}" noclick="1" />
+			<label width="100%" height="40%" valign="bottom" textalign="center" textvalign="center" font="dyn_8" color="white" shadow="1" noclick="1">{lbl}</label>
+		</panel>	
+	</template>
+	
+	<template name="frame_stone">
+		<panel name="{window_name}" x="{x}" y="{y}" width="{width=100%}" height="{height=100%}" align="{align}" valign="{valign}" cangrab="{cangrab=true}" noclick="{noclick=1}">			
+			<panel y="2.5h" width="-5.0h" height="-4.0h" align="center" valign="top" color="{backercolor=black}" />
+			
+			<image height="-5.0h" width="5.3h" vscale="{vscale=1}" vtile="1" align="left" valign="center" texture="/ui/frames/stone_l.tga" noclick="1"/>
+			<image height="-5.0h" width="5.3h" vscale="{vscale=1}" vtile="1" align="right" valign="center" texture="/ui/frames/stone_r.tga" noclick="1"/>
+			
+			<image height="5.3h" width="-5.0h" uscale="{uscale=1}" utile="1" align="center" valign="top" texture="/ui/frames/stone_t.tga" noclick="1"/>
+			<image height="5.3h" width="-5.0h" uscale="{uscale=1}" utile="1" align="center" valign="bottom" texture="/ui/frames/stone_b.tga" noclick="1"/>
+			
+			<image height="10.6h" width="5.3h" align="left" valign="top" texture="/ui/frames/stone_tl.tga" noclick="1"/>
+			<image height="10.6h" width="5.3h" align="right" valign="top" texture="/ui/frames/stone_tr.tga" noclick="1"/>	
+						
+			<image height="10.6h" width="21.2h" align="left" valign="bottom" texture="/ui/frames/stone_bl.tga" noclick="1"/>		
+			<image height="10.6h" width="21.2h" align="right" valign="bottom" texture="/ui/frames/stone_br.tga" noclick="1"/>
+			
+			<panel y="0.6h" align="center" valign="center" width="-8h" height="-7.0h" color="invisible" visible="1" noclick="1" >	
+				<instance name="{body}" onclose="{onclose}" />
+			</panel>
+							
+			<image height="5.3h" width="42.7h" align="center" valign="top" texture="/ui/frames/stone_ornamental_top.tga" visible="{vis_ornate_top=1}" noclick="1"/>
+			<image height="2.65h" width="21.2h" align="center" valign="bottom" texture="/ui/frames/stone_ornamental_bottom.tga" visible="{vis_ornate_bottom=1}" noclick="1"/>		
+
+		</panel>
+	</template>
+	
+	<template name="no_frame">
+		<panel name="{window_name}" x="{x}" y="{y}" width="{width=100%}" height="{height=100%}" align="{align}" valign="{valign}" cangrab="{cangrab=true}" noclick="{noclick=1}">			
+			<instance name="{body}" onclose="{onclose}" tos_link="{tos_link}" close="{close}" show_close="{show_close}"/>
+		</panel>
+	</template>
+	
+	<template name="frame_stone_brown" >
+		<panel name="{window_name}" group="{group}" x="{x}" y="{y}" width="{width=100%}" height="{height=100%}" align="{align}" valign="{valign}" cangrab="{cangrab=true}" noclick="{noclick=1}" visible="{visible=true}" watch="{watch}" ontrigger="{ontrigger}">
+			<panel y="2.5h" width="-5.0h" height="-4.0h" align="center" valign="top" color="{backercolor=black}" />
+		
+			<image height="-5.0h" width="5.3h" vscale="{vscale=1}" vtile="1" align="left" valign="center" texture="/ui/frames/stone_l_brown.tga" noclick="1"/>
+			<image height="-5.0h" width="5.3h" vscale="{vscale=1}" vtile="1" align="right" valign="center" texture="/ui/frames/stone_r_brown.tga" noclick="1"/>
+			
+			<image height="5.3h" width="-5.0h" uscale="{uscale=1}" utile="1" align="center" valign="top" texture="/ui/frames/stone_t_brown.tga" noclick="1"/>
+			<image height="5.3h" width="-5.0h" uscale="{uscale=1}" utile="1" align="center" valign="bottom" texture="/ui/frames/stone_b_brown.tga" noclick="1"/>
+
+			<image height="10.6h" width="5.3h" align="left" valign="top" texture="/ui/frames/stone_tl_brown.tga" noclick="1"/>
+			<image height="10.6h" width="5.3h" align="right" valign="top" texture="/ui/frames/stone_tr_brown.tga" noclick="1"/>	
+						
+			<image height="10.6h" width="21.2h" align="left" valign="bottom" texture="/ui/frames/stone_bl_brown.tga" noclick="1"/>		
+			<image height="10.6h" width="21.2h" align="right" valign="bottom" texture="/ui/frames/stone_br_brown.tga" noclick="1"/>
+			
+			<panel y="0.6h" align="center" valign="center" width="-8h" height="-7.0h" color="invisible" visible="1" noclick="1" >	
+				<instance name="{body}"/>
+			</panel>
+			
+			<image height="5.3h" width="42.7h" align="center" valign="top" texture="/ui/frames/stone_ornamental_top_brown.tga" visible="{vis_ornate_top=1}" noclick="1"/>
+			<image height="2.65h" width="21.2h" align="center" valign="bottom" texture="/ui/frames/stone_ornamental_bottom_brown.tga" visible="{vis_ornate_bottom=1}" noclick="1"/>
+		</panel>
+	</template>
+	
+	<template name="frame_ornate_32" >
+		<panel name="{window_name}" x="{x}" y="{y}" width="{width=100%}" height="{height=100%}" align="{align}" valign="{valign}"  cangrab="{cangrab=true}" noclick="{noclick=1}">			
+			<image width="120%" height="114%" y="3" align="center" valign="center" visible="{nebula=true}" texture="/ui/ornate/neb_bg.tga" rendermode="additive"  noclick="1"/>
+			<panel x="0" y="6" align="center" valign="center" width="-40" height="-42" color="{backercolor=0 0 0 1}" visible="{backer=1}" noclick="1" >	
+				<instance name="{body}"/>
+			</panel>
+			<image height="16" width="-16" uscale="9" utile="1" align="center" valign="bottom" texture="/ui/ornate/32/ornate_bottom.tga" noclick="1" />			
+			<image height="-16" width="32" vscale="9" vtile="1" align="left" valign="bottom" texture="/ui/ornate/32/ornate_left.tga"  noclick="1"/>	
+			<image height="-16" width="32" vscale="9" vtile="1"  align="right" valign="bottom" texture="/ui/ornate/32/ornate_right.tga"  noclick="1"/>	
+			<image height="32" width="-16" align="center"  uscale="9" utile="1" valign="top" texture="/ui/ornate/32/ornate_top.tga"  noclick="1"/>		
+			
+			<image height="32" width="32" align="left" valign="top" texture="/ui/ornate/32/ornate_corner_tl.tga" noclick="1"/>
+			<image height="32" width="32" align="right" valign="top" texture="/ui/ornate/32/ornate_corner_tr.tga" noclick="1"/>				
+			<image height="32" width="32" align="left" valign="bottom" texture="/ui/ornate/32/ornate_corner_bl.tga" noclick="1"/>
+			<image height="32" width="32" align="right" valign="bottom" texture="/ui/ornate/32/ornate_corner_br.tga" noclick="1"/>		
+			
+			<image height="32" width="128" align="left" valign="top" texture="/ui/ornate/32/ornate_ornamental_tl.tga" noclick="1"/>
+			<image height="32" width="128" align="right" valign="top" texture="/ui/ornate/32/ornate_ornamental_tr.tga" noclick="1"/>	
+			
+			<image height="32" width="128" align="center" valign="top" texture="/ui/ornate/32/ornate_ornamental_top.tga" noclick="1"/>		
+			
+			<image height="32" width="128" align="left" valign="bottom" texture="/ui/ornate/32/ornate_ornamental_bl.tga" noclick="1"/>		
+			<image height="32" width="128" align="right" valign="bottom" texture="/ui/ornate/32/ornate_ornamental_br.tga" noclick="1"/>
+			
+			<image height="256" width="32" align="left" valign="center" texture="/ui/ornate/32/ornate_ornamental_l.tga" noclick="1"/>	
+			<image height="256" width="32" align="right" valign="center" texture="/ui/ornate/32/ornate_ornamental_r.tga" noclick="1"/>
+		</panel>
+	</template>	
+	
+	<template name="frame_ornate_64" >
+		<panel x="{x}" y="{y}" width="{width}" height="{height}" align="{align}" valign="{valign}"  cangrab="true">			
+			<image width="128%" height="118%" y="3" align="center" valign="center" texture="/ui/ornate/neb_bg.tga" rendermode="additive"  noclick="1"/>
+			<panel x="0" y="12" align="center" valign="center" width="-80" height="-82" color="black" noclick="1" >	
+				<instance name="{body}" />
+			</panel>
+			
+			<image height="32" width="-32"  uscale="9" utile="1" align="center" valign="bottom" texture="/ui/ornate/ornate_bottom.tga" noclick="1" />			
+			<image height="-32" width="64" vscale="9" vtile="1" align="left" valign="bottom" texture="/ui/ornate/ornate_left.tga"  noclick="1"/>	
+			<image height="-32" width="64" vscale="9" vtile="1"  align="right" valign="bottom" texture="/ui/ornate/ornate_right.tga"  noclick="1"/>	
+			<image height="64" width="-32" align="center"  uscale="9" utile="1" valign="top" texture="/ui/ornate/ornate_top.tga"  noclick="1"/>		
+			
+			<image height="64" width="64" align="left" valign="top" texture="/ui/ornate/ornate_corner_tl.tga" noclick="1"/>
+			<image height="64" width="64" align="right" valign="top" texture="/ui/ornate/ornate_corner_tr.tga" noclick="1"/>				
+			<image height="64" width="64" align="left" valign="bottom" texture="/ui/ornate/ornate_corner_bl.tga" noclick="1"/>
+			<image height="64" width="64" align="right" valign="bottom" texture="/ui/ornate/ornate_corner_br.tga" noclick="1"/>		
+			
+			<image height="64" width="256" align="left" valign="top" texture="/ui/ornate/ornate_ornamental_tl.tga" noclick="1"/>
+			<image height="64" width="256" align="right" valign="top" texture="/ui/ornate/ornate_ornamental_tr.tga" noclick="1"/>	
+			
+			<image height="64" width="256" align="center" valign="top" texture="/ui/ornate/ornate_ornamental_top.tga" noclick="1"/>		
+			
+			<image height="64" width="256" align="left" valign="bottom" texture="/ui/ornate/ornate_ornamental_bl.tga" noclick="1"/>		
+			<image height="64" width="256" align="right" valign="bottom" texture="/ui/ornate/ornate_ornamental_br.tga" noclick="1"/>
+			
+			<image height="512" width="64" align="left" valign="center" texture="/ui/ornate/ornate_ornamental_l.tga" noclick="1"/>	
+			<image height="512" width="64" align="right" valign="center" texture="/ui/ornate/ornate_ornamental_r.tga" noclick="1"/>
+		</panel>
+	</template>
+	
+	<template name="frame_ornate_128" >
+		<panel x="{x}" y="{y}" width="{width}" height="{height}" align="{align}" valign="{valign}"  cangrab="true">			
+			<image width="120%" height="114%" y="3" align="center" valign="center" texture="/ui/ornate/neb_bg.tga" rendermode="additive" noclick="1"/>
+			<panel x="0" y="12" align="center" valign="center" width="-80" height="-82" color="black" noclick="1" >	
+				<instance name="{body}" />
+			</panel>	
+			<image height="64" width="-64" tilex="1"  align="center" valign="bottom" texture="/ui/ornate/ornate_bottom.tga" noclick="1"/>			
+			<image height="-64" width="128" tilex="1"  align="left" valign="bottom" texture="/ui/ornate/ornate_left.tga" noclick="1"/>	
+			<image height="-64" width="128" tilex="1"  align="right" valign="bottom" texture="/ui/ornate/ornate_right.tga" noclick="1"/>	
+			<image height="128" width="-64" align="center" uscale="5" utile="1" valign="top" texture="/ui/ornate/ornate_top.tga" noclick="1"/>		
+			
+			<image height="128" width="128" align="left" valign="top" texture="/ui/ornate/ornate_corner_tl.tga" noclick="1"/>
+			<image height="128" width="128" align="right" valign="top" texture="/ui/ornate/ornate_corner_tr.tga" noclick="1"/>				
+			<image height="128" width="128" align="left" valign="bottom" texture="/ui/ornate/ornate_corner_bl.tga" noclick="1"/>
+			<image height="128" width="128" align="right" valign="bottom" texture="/ui/ornate/ornate_corner_br.tga" noclick="1"/>		
+			
+			<image height="128" width="512" align="left" valign="top" texture="/ui/ornate/ornate_ornamental_tl.tga" noclick="1"/>
+			<image height="128" width="512" align="right" valign="top" texture="/ui/ornate/ornate_ornamental_tr.tga" noclick="1"/>	
+			
+			<image height="128" width="512" align="center" valign="top" texture="/ui/ornate/ornate_ornamental_top.tga" noclick="1"/>		
+			
+			<image height="128" width="512" align="left" valign="bottom" texture="/ui/ornate/ornate_ornamental_bl.tga" noclick="1"/>		
+			<image height="128" width="512" align="right" valign="bottom" texture="/ui/ornate/ornate_ornamental_br.tga" noclick="1"/>
+			
+			<image height="1024" width="128" align="left" valign="center" texture="/ui/ornate/ornate_ornamental_l.tga" noclick="1"/>	
+			<image height="1024" width="128" align="right" valign="center" texture="/ui/ornate/ornate_ornamental_r.tga" noclick="1"/>
+		</panel>	
+	</template>
+	
+	<template name="frame_simple_32" >
+		<panel name="{window_name}" x="{x}" y="{y}" width="{width=100%}" height="{height=100%}" align="{align}" valign="{valign}"  cangrab="{cangrab=true}" noclick="{noclick=1}">			
+			<image width="120%" height="114%" y="3" align="center" valign="center" visible="{nebula=true}" texture="/ui/ornate/neb_bg.tga" rendermode="additive"  noclick="1"/>
+			<panel x="0" y="6" align="center" valign="center" width="-40" height="-42" color="{backercolor=0 0 0 1}" visible="{backer=1}" noclick="1" >	
+				<instance name="{body}"/>
+			</panel>
+			<image height="16" width="-16"  uscale="0" utile="1" align="center" valign="bottom" texture="/ui/ornate/32/ornate_bottom.tga" noclick="1" />			
+			<image height="-16" width="32" vscale="0" vtile="1" align="left" valign="bottom" texture="/ui/ornate/32/ornate_left.tga"  noclick="1"/>	
+			<image height="-16" width="32" vscale="0" vtile="1"  align="right" valign="bottom" texture="/ui/ornate/32/ornate_right.tga"  noclick="1"/>	
+			<image height="32" width="-16" align="center"  uscale="0" utile="1" valign="top" texture="/ui/ornate/32/ornate_top.tga"  noclick="1"/>		
+			
+			<image height="32" width="32" align="left" valign="top" texture="/ui/ornate/32/ornate_corner_tl.tga" noclick="1"/>
+			<image height="32" width="32" align="right" valign="top" texture="/ui/ornate/32/ornate_corner_tr.tga" noclick="1"/>				
+			<image height="32" width="32" align="left" valign="bottom" texture="/ui/ornate/32/ornate_corner_bl.tga" noclick="1"/>
+			<image height="32" width="32" align="right" valign="bottom" texture="/ui/ornate/32/ornate_corner_br.tga" noclick="1"/>		
+						
+			<image height="32" width="128" align="center" valign="top" texture="/ui/ornate/32/ornate_ornamental_top.tga" noclick="1"/>		
+			
+			<image height="256" width="32" align="left" valign="center" texture="/ui/ornate/32/ornate_ornamental_l.tga" noclick="1"/>	
+			<image height="256" width="32" align="right" valign="center" texture="/ui/ornate/32/ornate_ornamental_r.tga" noclick="1"/>
+		</panel>
+	</template>
+	
+	<template name="rightclick_menu_item">
+		<panel sticky="true" stickytoinvis="false" height="2.2h" width="100%" visible="false" color="invisible" group="rightclick_menu_{menu}" onshow="if({condition}, if(_ui_showing_menu, Split(Set('_temp_items', _temp_items + 1), Call('{menu}', 'SetHeight((2.2 * _temp_items + 1.0) # \'h\');'))), SetVisible(false));">
+			<button onclick="PlaySound('/shared/sounds/ui/button_rightclick_01.mp3'); {onclick}; HideWidget('{menu}');" color="invisible">
+				<widgetstate statename="up">
+					<panel x="0.25h" width="-0.5h" color="invisible" noclick="true" blockinput="false"/>
+					<label x="0.5h" color="white" font="dyn_10" textvalign="center" noclick="true" blockinput="false">{label}</label>
+				</widgetstate>
+
+				<widgetstate statename="over">
+					<panel x="0.25h" width="-0.5h" color="1 1 1 .15" noclick="true" blockinput="false"/>
+					<label x="0.5h" color="white" font="dyn_10" textvalign="center" noclick="true" blockinput="false">{label}</label>
+				</widgetstate>
+
+				<widgetstate statename="down">
+					<panel x="0.25h" width="-0.5h" color="1 1 1 .075" noclick="true" blockinput="false"/>
+					<label x="0.5h" color="white" font="dyn_10" textvalign="center" noclick="true" blockinput="false">{label}</label>
+				</widgetstate>
+			</button>
+		</panel>	
+	</template>
+	
+	<template name="rightclick_menu">
+		<panel name="{menu_name}" width="{width=14.0h}" visible="0" onshow="CreateBool('_ui_showing_menu', true); CreateInt('_temp_items', 0); HideGroup('rightclick_menu_{menu_name}'); ShowGroup('rightclick_menu_{menu_name}'); Set(_ui_showing_menu, false); SetFocus(true);" onlosefocus="If(!ChildHasFocus(), HideWidget());">
+			<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 1" noclick="1" />
+			<frame color="invisible" bordercolor="#838147" borderthickness="2" noclick="1" />
+			<frame color="invisible" bordercolor="black" borderthickness="1" noclick="1" />
+			
+			<panel name="{menu_name}_choices" float="bottom" y="0.5h">
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item1condition=true} and {numitems} ge 1" onclick="{item1value}" label="{item1label}"/>			
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item2condition=true} and {numitems} ge 2" onclick="{item2value}" label="{item2label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item3condition=true} and {numitems} ge 3" onclick="{item3value}" label="{item3label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item4condition=true} and {numitems} ge 4" onclick="{item4value}" label="{item4label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item5condition=true} and {numitems} ge 5" onclick="{item5value}" label="{item5label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item6condition=true} and {numitems} ge 6" onclick="{item6value}" label="{item6label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item7condition=true} and {numitems} ge 7" onclick="{item7value}" label="{item7label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item8condition=true} and {numitems} ge 8" onclick="{item8value}" label="{item8label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item9condition=true} and {numitems} ge 9" onclick="{item9value}" label="{item9label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item10condition=true} and {numitems} ge 10" onclick="{item10value}" label="{item10label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item11condition=true} and {numitems} ge 11" onclick="{item11value}" label="{item11label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item12condition=true} and {numitems} ge 12" onclick="{item12value}" label="{item12label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item13condition=true} and {numitems} ge 13" onclick="{item13value}" label="{item13label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item14condition=true} and {numitems} ge 14" onclick="{item14value}" label="{item14label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item15condition=true} and {numitems} ge 15" onclick="{item15value}" label="{item15label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item16condition=true} and {numitems} ge 16" onclick="{item16value}" label="{item16label}"/>
+				<instance name="rightclick_menu_item" menu="{menu_name}" condition="{item17condition=true} and {numitems} ge 17" onclick="{item17value}" label="{item17label}"/>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="cc_rightclick_menu">
+		<instance name="rightclick_menu" menu_name="{menu_name}" numitems="17"
+			item1value="ChatOpenMessage(ui_lastSelectedUser);" item1label="ui_items_cc_right_click_send_message" item1condition="!StringEquals(GetAccountName(), ui_lastSelectedUser) and ChatUserOnline(ui_lastSelectedUser)"
+			item2value="ChatJoinGame(ui_lastSelectedUser);" item2label="ui_items_cc_right_click_joing_game" item2condition="ChatUserInGame(ui_lastSelectedUser) and !StringEquals(GetAccountName(), ui_lastSelectedUser)"
+			item3value="ChatOpenClanMessage();" item3label="ui_items_cc_right_click_message_clan" item3condition="IsInClan() and IsClanMember(ui_lastSelectedUser)"
+			item4value="GetPlayerStatsName(ui_lastSelectedUser); ShowCCPanel(); ShowCCStatistics(true);" item4label="ui_items_cc_right_click_view_stats"
+			item5value="ChatAddBuddy(ui_lastSelectedUser);" item5label="ui_items_cc_right_click_add_buddy" item5condition="!IsBuddy(ui_lastSelectedUser) and !StringEquals(GetAccountName(), ui_lastSelectedUser)"
+			item6value="ChatRemoveBuddy(ui_lastSelectedUser);" item6label="ui_items_cc_right_click_remove_buddy" item6condition="IsBuddy(ui_lastSelectedUser) and !StringEquals(GetAccountName(), ui_lastSelectedUser)"
+			item7value="GameInvite(ui_lastSelectedUser);" item7label="ui_items_cc_right_click_invite_to_game" item7condition="((IsPrivateGame() and IsHost()) or !IsPrivateGame()) and !StringEquals(GetAccountName(), ui_lastSelectedUser) and ChatUserOnline(ui_lastSelectedUser) and ChatInGame() and !ChatUserInGame(ui_lastSelectedUser)"
+			item8value="GetUserInfo(ui_lastSelectedUser);" item8label="ui_items_cc_right_click_user_info" item8condition="!StringEquals(GetAccountName(), ui_lastSelectedUser)"
+			item9value="ChatChannelKick(ui_lastSelectedUser, '{channel}');" item9label="ui_items_cc_right_click_channel_kick" item9condition="!StringEquals(GetAccountName(), ui_lastSelectedUser) and ChatGetAdminLevel(GetAccountName(), '{channel}') gt ChatGetAdminLevel(ui_lastSelectedUser, '{channel}')"
+			item10value="ChatChannelBan(ui_lastSelectedUser, '{channel}');" item10label="ui_items_cc_right_click_channel_ban" item10condition="!StringEquals(GetAccountName(), ui_lastSelectedUser) and ChatGetAdminLevel(GetAccountName(), '{channel}') gt ChatGetAdminLevel(ui_lastSelectedUser, '{channel}')"
+			item11value="ChatChannelSilence(ui_lastSelectedUser, '{channel}', 5);" item11label="ui_items_cc_right_click_channel_silence" item11condition="!StringEquals(GetAccountName(), ui_lastSelectedUser) and ChatGetAdminLevel(GetAccountName(), '{channel}') gt ChatGetAdminLevel(ui_lastSelectedUser, '{channel}')"
+			item12value="ChatIgnore(ui_lastSelectedUser);" item12label="ui_items_cc_right_click_ignore" item12condition="!StringEquals(GetAccountName(), ui_lastSelectedUser) and !ChatIsIgnored(ui_lastSelectedUser)"
+			item13value="ChatUnignore(ui_lastSelectedUser);" item13label="ui_items_cc_right_click_unignore" item13condition="!StringEquals(GetAccountName(), ui_lastSelectedUser) and ChatIsIgnored(ui_lastSelectedUser)"
+			item14value="ChatAddBanlist(ui_lastSelectedUser, 'Unknown');" item14label="ui_items_cc_right_click_addban" item14condition="!StringEquals(GetAccountName(), ui_lastSelectedUser) and !ChatIsBanned(ui_lastSelectedUser)"
+			item15value="ChatRemoveBanlist(ui_lastSelectedUser);" item15label="ui_items_cc_right_click_remban" item15condition="!StringEquals(GetAccountName(), ui_lastSelectedUser) and ChatIsBanned(ui_lastSelectedUser)"
+			item16value="ChatChannelPromote(ui_lastSelectedUser, '{channel}');" item16label="ui_items_cc_right_click_channel_promote" item16condition="!StringEquals(GetAccountName(), ui_lastSelectedUser) and ChatGetAdminLevel(GetAccountName(), '{channel}') gt (ChatGetAdminLevel(ui_lastSelectedUser, '{channel}') + 1)"
+			item17value="ChatChannelDemote(ui_lastSelectedUser, '{channel}');" item17label="ui_items_cc_right_click_channel_demote" item17condition="!StringEquals(GetAccountName(), ui_lastSelectedUser) and ChatGetAdminLevel(GetAccountName(), '{channel}') gt ChatGetAdminLevel(ui_lastSelectedUser, '{channel}') and ChatIsAdmin(ui_lastSelectedUser, '{channel}')"
+		/>
+	</template>
+	
+	<template name="cc_friend_online">
+		<panel passivechildren="true"
+			onrightclick="
+				Set('ui_lastSelectedUser', '{name}');
+				Call('{tooltip}', 'SetVisible(true);');
+				Call('{tooltip}', 'SetAbsoluteX(\'' # GetMouseX() # '\');');
+				Call('{tooltip}', 'SetAbsoluteY(\'' # GetMouseY() # '\');');
+				Call('{tooltip}_choices', 'ListBoxCmd(\'SelectNone\');');
+				PlaySound('/shared/sounds/ui/button_rightclick_01.mp3');
+				SetFocusName('{tooltip}');">
+				
+			<label width="-1.6h" textvalign="center" textalign="left" align="center" valign="center" font="dyn_9" color="white" shadow="1" wrap="1">{name}</label>
+		</panel>
+	</template>
+	
+	<template name="cc_friend_game">
+		<panel passivechildren="true"
+			onrightclick="
+				Set('ui_lastSelectedUser', '{name}');
+				Call('{tooltip}', 'SetVisible(true);');
+				Call('{tooltip}', 'SetAbsoluteX(\'' # GetMouseX() # '\');');
+				Call('{tooltip}', 'SetAbsoluteY(\'' # GetMouseY() # '\');');
+				Call('{tooltip}_choices', 'ListBoxCmd(\'SelectNone\');');
+				PlaySound('/shared/sounds/ui/button_rightclick_01.mp3');
+				SetFocusName('{tooltip}');">
+				
+			<label width="-1.6h" textvalign="center" textalign="left" align="center" valign="center" font="dyn_9" color="#f3c113" shadow="1" wrap="1">{name}</label>
+		</panel>
+	</template>
+	
+	<template name="cc_friend_offline">
+		<panel passivechildren="true"
+			onrightclick="
+				Set('ui_lastSelectedUser', '{name}');
+				Call('{tooltip}', 'SetVisible(true);');
+				Call('{tooltip}', 'SetAbsoluteX(\'' # GetMouseX() # '\');');
+				Call('{tooltip}', 'SetAbsoluteY(\'' # GetMouseY() # '\');');
+				Call('{tooltip}_choices', 'ListBoxCmd(\'SelectNone\');');
+				PlaySound('/shared/sounds/ui/button_rightclick_01.mp3');
+				SetFocusName('{tooltip}');">
+				
+			<label width="-1.6h" textvalign="center" textalign="left" align="center" valign="center" font="dyn_9" color="#80878d" shadow="1" wrap="1">{name}</label>
+		</panel>
+	</template>
+	
+	<template name="cc_friend_header">
+		<instance name="header_bar" color="#b3a4a4" />
+		<frame color="invisible" bordercolor="#697a9748" borderthickness="2" noclick="1" />
+		<frame color="invisible" bordercolor="0 0 0 .8" borderthickness="1" noclick="1" />
+		
+		<label width="-1.0h" height="-6%" textvalign="center" textalign="left" align="center" valign="center" font="dyn_10" color="white" shadow="1" wrap="1">{label}</label>		
+	</template>
+	
+	<!-- NEW BUDDY LISTBOX -->
+	<template name="buddy_listbox">
+		<panel name="{listbox_name}_panel" width="-1.0h" height="-1.0h" align="center" valign="center" onload="CreateInt('{listbox_name}_num_expanded', 0);">
+			<frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
+			<listbox
+				name="{listbox_name}_listbox"
+				visible="true"
+				align="center" valign="top"
+				color="invisible"
+				font="dyn_10"					
+				itemwidth="100%"
+				itemheight="2.2h"					
+				select="true"
+				hoverselect="false"
+				highlight="under"
+				highlightcolor="#67a7da33"
+				highlightbordercolor="invisible"
+				exteriorscrollbars="false"
+				scrollbarplaceholder="false"
+				scrolltexture="/ui/info/combobox.tga"
+				scrollbarsize="2.0h" 
+				handleheight="2.0h"
+				clearselection="true"
+				ondoubleclick="{ondoubleclick}"
+				watch1="ChatBuddyOnline"
+				ontrigger1="AddTemplateListItemWithSort('cc_friend_online', param, '1' # param, 'name', param, 'tooltip', '{tooltip}');"
+				watch2="ChatBuddyGame"
+				ontrigger2="AddTemplateListItemWithSort('cc_friend_game', param, '3' # param, 'name', param, 'tooltip', '{tooltip}');"
+				watch3="ChatBuddyOffline"
+				ontrigger3="AddTemplateListItemWithSort('cc_friend_offline', param, '5' # param, 'name', param, 'tooltip', '{tooltip}');"
+				watch4="ChatBuddyEvent"
+				ontrigger4="
+					(*param)();
+					If(StringEquals(param, 'ClearItems'),
+						Split(
+							AddTemplateListItemWithSort('cc_friend_header', '0', '0', 'label', 'ui_items_cc_friends_online', 'select', false),
+							AddTemplateListItemWithSort('cc_friend_header', '2', '2', 'label', 'ui_items_cc_friends_in_game', 'select', false),
+							AddTemplateListItemWithSort('cc_friend_header', '4', '4', 'label', 'ui_items_cc_friends_offline', 'select', false)));"
+				onselect="Set('ui_lastSelectedUser', this);"
+				onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip'));"
+			/>
+		</panel>
+	</template>
+	
+	<!-- Friends List Hover Info -->
+	<template name="friend_hovertip">	
+		<panel name="hover_tip" x="-210" y="-30" height="108" width="186" valign="top" align="left" visible="0" color="#00000099" onshow="SetX(cc_community_X-186-1); SetY(cc_community_Y+108-1); BringToFront();">
+			<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="8" style="lobby_window_bg"/>
+			<frame texture="/ui/frames/roundframe.tga" color="#585858" borderthickness="8"/>
+	
+			<image x="6" y="6" width="50" height="50" texture="/ui/elements/tmp_avatar.tga" watch="ChatHoverAvatar"/>
+	
+			<panel x="60" y="6" width="120" height="50">
+				<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="6" color="#6600004d"/>
+				<frame texture="/ui/frames/roundframe.tga" color="#585858" borderthickness="8"/>
+	
+				<label x="5" y="5" width="100%" font="dyn_12" color="red" shadow="true" watch="ChatHoverName" ontrigger="SetText(param);"/>
+				<label x="8" y="21" font="dyn_10" color="yellow" shadow="true">ui_items_friend_clan_label</label>
+				<label x="8" y="33" width="100%" font="dyn_10" color="white" shadow="true" watch="ChatHoverClan" ontrigger="SetText(If(StringEmpty(param), Translate('ui_items_friend_no_clan_label'), param));"/>
+			</panel>
+	
+			<label x="8" y="61" width="100%" font="dyn_10" color="white" shadow="true" watch="ChatHoverServer" ontrigger="SetText(Translate('ui_items_friend_server_label') # param);"/>
+			<!-- label x="8" y="76" font="dyn_10" color="white" shadow="true">^yTeam: ^*{team}</label -->
+			<label x="8" y="76" width="100%" font="dyn_10" color="white" shadow="true" watch="ChatHoverGameTime" ontrigger="SetText(Translate('ui_items_friend_game_time_label') # param);"/>
+			
+			<label x="0" y="93" width="100%" font="dyn_8" color="white" shadow="true" textalign="center">ui_items_friend_right_click_label</label>
+	
+		</panel>
+	</template>
+	
+	<template name="player_voice_button">
+		<button
+			name="{id}"
+			group="{group}"
+			x="{x}" y="{y}"
+			width="{width=100%}" height="{height=100%}"
+			align="{align}" valign="{valign=center}"
+			color="invisible"
+			onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav'); {onmouseover}"
+			onmouseout="{onmouseout}"
+			onclick="PlaySound('/shared/sounds/ui/button_click_05.wav'); ToggleVoiceMute(*(name # '_voice_client_num')); if(IsVoiceMuted(*(name # '_voice_client_num')), SetButtonState(2), if(*(name # '_voice_talking'), SetButtonState(1), SetButtonState(0)));"
+			numstates="3"
+			visible="{visible=true}"
+			onshow="if(GetLocalTeam() != {team} and !({alwaysvisible=false}), SetVisible(false)); SetButtonState(0);"
+			watch="VoiceChatTalking{teamindex}"
+			ontrigger="SetEnabled(param3 != GetLocalClientNum()); SetVisible({alwaysvisible=false} or GetLocalTeam() == param4); CreateInt(name # '_voice_client_num', param3); CreateBool(name # '_voice_talking', param0); if(IsVoiceMuted(param3), SetButtonState(2), if(param0, SetButtonState(1), SetButtonState(0)));"
+		>
+			<widgetstate statename="up">
+				<image texture="{texture}" />
+			</widgetstate>
+
+			<widgetstate statename="over">
+				<image texture="{texture}" />
+			</widgetstate>
+
+			<widgetstate statename="down" x="1" y="1">
+				<image texture="{texture}" />
+			</widgetstate>
+
+			<widgetstate statename="disabled">
+				<image texture="{texture}" color=".5 .5 .5 1"/>
+			</widgetstate>
+
+			<widgetstate statename="up2">
+				<image texture="{texture}" color=".0 .8 .0 1"/>
+			</widgetstate>
+
+			<widgetstate statename="over2">
+				<image texture="{texture}" color=".0 .8 .0 1"/>
+			</widgetstate>
+
+			<widgetstate statename="down2" x="1" y="1">
+				<image texture="{texture}" color=".0 .8 .0 1"/>
+			</widgetstate>
+			
+			<widgetstate statename="up3">
+				<image texture="{texture}" color=".8 .0 .0 1"/>
+			</widgetstate>
+
+			<widgetstate statename="over3">
+				<image texture="{texture}" color=".8 .0 .0 1"/>
+			</widgetstate>
+
+			<widgetstate statename="down3" x="1" y="1">
+				<image texture="{texture}" color=".8 .0 .0 1"/>
+			</widgetstate>
+		</button>
+	</template>
+
+	<!-- Round button template -->
+	<template name="round_button2">
+		<button
+			group="{group}"
+			name="{button_name}"
+			x="{x}" y="{y}"
+			width="{width=100%}" height="{height=100%}"
+			align="{align}" valign="{valign}"
+			color="invisible"
+			visible="{visible=true}"
+			watch="{watch}"
+			enabled="{enabled=true}"
+			ontrigger="{ontrigger}"
+			onmouseover="{onmouseover}"
+			onmouseout="{onmouseout}"
+			onclick="{onclick}"
+			onenter="{onenter}"
+			onshow="{onshow}"
+			hotkey="{hotkey}"
+			onhotkey="{onhotkey}"
+		>
+			<widgetstate statename="up">
+				<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="0.7h" color="white"/>
+				<frame texture="/ui/frames/roundframe.tga" color="gray" borderthickness="0.7h"/>
+				<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="black" shadow="true" shadowcolor="gray">{label}</label>
+			</widgetstate>
+			<widgetstate statename="over">
+				<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="0.7h" color="#FFE333"/>
+				<frame texture="/ui/frames/roundframe.tga" color="#7F6E00" borderthickness="0.7h"/>
+				<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="white" shadow="true" shadowcolor="#7F6E00">{label}</label>
+			</widgetstate>
+			<widgetstate statename="down" x="1" y="1">
+				<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="0.7h" color="#FFE333"/>
+				<frame texture="/ui/frames/roundframe.tga" color="#7F6E00" borderthickness="0.7h"/>
+				<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="#3f0001" shadow="true" shadowcolor="#7F6E00">{label}</label>
+			</widgetstate>
+			<widgetstate statename="disabled">
+				<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="0.7h" color="#666666"/>
+				<frame texture="/ui/frames/roundframe.tga" color="#666666" borderthickness="0.7h"/>
+				<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font}" color="#333333" shadow="true" shadowcolor="black">{label}</label>
+			</widgetstate>
+		</button>
+	</template>
+	
+	<!-- Alert Box -->
+	<template name="alert_box">
+		<panel width="{width}" height="{height}" align="{align=center}" valign="{valign=center}" x="{x}" y="{y}" noclick="1">
+		<frame color="0 0 0 .8" bordercolor="#455166" borderthickness="1" noclick="1" />		
+			<panel y="-0.5h" width="-1.0h" height="-3.4h" align="center" valign="bottom" noclick="1">
+				<frame texture="/ui/frames/tooltip_bg.tga" color="#2c4b6c" noclick="1"/>
+				<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />				
+				<panel width="-1.0h" height="-1.0h" align="center" valign="center" color="invisible" noclick="1">				
+					<instance name="{body}"/>				
+				</panel>				
+			</panel>			
+			<instance
+				name="header_bar"
+				buttonsize="1.8h"
+				height="2.4h"
+				width="-2"
+				y="1"
+				align="center"
+				lbl="{label}"
+				show_close="{show_close=false}"
+				onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); {closebtn_click}');"
+			/>			
+		</panel>
+	</template>
+	
+	<template name="recently_played_listbox">
+		<panel name="{listbox_name}_panel" width="-1.0h" height="-1.0h" align="center" valign="center" onload="CreateInt('{listbox_name}_num_expanded', 0);">
+			<frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
+			<listbox
+				name="{listbox_name}_listbox"
+				visible="true"
+				align="center" valign="top"
+				color="invisible"
+				font="dyn_10"					
+				itemwidth="100%"
+				itemheight="2.2h"					
+				select="true"
+				hoverselect="false"
+				highlight="under"
+				highlightcolor="#67a7da33"
+				highlightbordercolor="invisible"
+				exteriorscrollbars="false"
+				scrollbarplaceholder="false"
+				scrolltexture="/ui/info/combobox.tga"
+				scrollbarsize="2.0h" 
+				handleheight="2.0h"
+				clearselection="true"
+				ondoubleclick="{ondoubleclick}"
+				watch1="ChatRecentlyPlayedPlayer"
+				ontrigger1="AddTemplateListItemWithSort('cc_recently_played_player', param0, param1, 'name', param0, 'tooltip', '{tooltip}');"
+				watch2="ChatRecentlyPlayedHeader"
+				ontrigger2="AddTemplateListItemWithSort('cc_recently_played_header', param0, param0, 'matchid', param0, 'time', param1, 'gamename', param2, 'select', false);"
+				watch3="ChatRecentlyPlayedEvent"
+				ontrigger3="(*param)();"
+				onselect="Set('ui_lastSelectedUser', this);"
+				onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip'));"
+			/>
+		</panel>
+	</template>
+	
+	<template name="cc_recently_played_player">
+		<panel passivechildren="true"
+			onrightclick="
+				Set('ui_lastSelectedUser', '{name}');
+				Call('{tooltip}', 'SetVisible(true);');
+				Call('{tooltip}', 'SetAbsoluteX(\'' # GetMouseX() # '\');');
+				Call('{tooltip}', 'SetAbsoluteY(\'' # GetMouseY() # '\');');
+				Call('{tooltip}_choices', 'ListBoxCmd(\'SelectNone\');');
+				PlaySound('/shared/sounds/ui/button_rightclick_01.mp3');
+				SetFocusName('{tooltip}');">
+				
+			<label width="-1.6h" textvalign="center" textalign="left" align="center" valign="center" font="dyn_9" color="#80878d" shadow="1" wrap="1">{name}</label>
+		</panel>
+	</template>
+	
+	<template name="cc_recently_played_header">
+		<instance name="header_bar" color="#b3a4a4" />
+		<frame color="invisible" bordercolor="#697a9748" borderthickness="2" noclick="1" />
+		<frame color="invisible" bordercolor="0 0 0 .8" borderthickness="1" noclick="1" />
+		
+		<label width="44%" x="1%" height="-6%" textvalign="center" textalign="left" align="left" valign="center" font="dyn_10" color="white" shadow="1" wrap="false">{gamename}</label>
+		<label width="54%" x="-1%" height="-6%" textvalign="center" textalign="right" align="right" valign="center" font="dyn_10" color="white" shadow="1" wrap="false">{matchid}, {time}</label>
+	</template>
+	
+	<template name="autocomplete_list">
+		<panel name="{listbox_name}_panel" y="{y=0}" x="{x=0}" width="{width=-1.0h}" height="{height=-1.0h}" align="{align=center}" valign="{valign=center}">
+			<frame texture="/ui/info/backdrop.tga" borderthickness="1.6h" color="1 1 1 1" noclick="1" />
+			<listbox
+				name="{listbox_name}_listbox"
+				visible="true"
+				align="center" valign="top"
+				color="invisible"
+				font="dyn_10"
+				itemwidth="100%"
+				itemheight="2.2h"
+				select="true"
+				hoverselect="true"
+				highlight="under"
+				highlightcolor="#67a7da33"
+				highlightbordercolor="invisible"
+				exteriorscrollbars="false"
+				scrollbarplaceholder="false"
+				scrolltexture="/ui/info/combobox.tga"
+				scrollbarsize="2.0h" 
+				handleheight="2.0h"
+				clearselection="true"
+				onclick="{onclick}"
+				ondoubleclick="{ondoubleclick}"
+				watch1="ChatAutoCompleteClear"
+				ontrigger1="ClearItems();"
+				watch2="ChatAutoCompleteAdd"
+				ontrigger2="AddTemplateListItem('autocomplete_player', param0, 'name', param0);"
+				onselect="Set('ui_lastSelectedUser', this); Call(ui_autocompleteTextBox, 'SetInputLine(ui_lastSelectedUser);'); ChatAutoCompleteClear();"
+			/>
+		</panel>
+	</template>
+	
+	<template name="autocomplete_player">
+		<label width="-1.6h" textvalign="center" textalign="left" align="center" valign="center" font="dyn_9" color="1 1 1 1" shadow="1" wrap="1">{name}</label>
+	</template>
+</package>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<waypoint
+	name="Entity_Waypoint"
+	model="/shared/models/queflag/model.mdf"
+	modelscale="0.6"
+>
+</waypoint>

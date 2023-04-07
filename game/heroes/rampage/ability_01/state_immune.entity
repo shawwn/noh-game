@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability1_Immune"
+	
+	icon="icon.tga"
+	passiveeffect="effects/charge.effect"
+	
+	immunitytype="MagicImmunity1"
+
+	effecttype="StatusBuff"
+>
+
+
+</state>

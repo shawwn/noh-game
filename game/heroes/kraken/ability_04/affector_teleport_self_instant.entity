@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Kraken_Ability4_Teleport_Self_Instant"
+	effect="effects/ability_self.effect"	
+	radius="0"
+	targetselection="all"
+	targetscheme="self"
+	maximpactspertarget="1"
+	ignoreinvulnerable="true"
+>
+	<onimpact>
+		<condition test="target_type alive">
+			<unbind target="target_entity" />
+			<playanim name="idle" source="target_entity" />
+			<playeffect effect="effects/portout.effect" source="source_position" />
+			<teleport source="target_entity" target="proxy_position" interpolate="false" />
+			<playeffect effect="effects/portin.effect" source="target_position" />
+			<disjoint target="target_entity" />
+			<kill source="" target="proxy_entity" />
+		</condition>
+	</onimpact>
+</affector>

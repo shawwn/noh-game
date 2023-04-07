@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_BountyHunter2"	
+	statuseffecttooltip="State_BountyHunter_Ability2"
+	icon="icon.tga"
+	cooldowntime="21000,16000,11000,6000"
+	casteffect="effects/sound.effect"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	actiontype="passive"
+	passiveeffect="effects/dagger.effect"
+>
+<onattackstart>
+		<canactivate>
+			<cantarget targetscheme="enemy_units" effecttype="Magic">
+				<chance threshold="1">									<condition test="target_type_hero">
+						<addattackactions>
+							<applystate name="State_BountyHunter_Ability2" duration="3000" />
+							<damage effecttype="Physical" amount="30,60,90,120" />
+						</addattackactions>
+					</condition>
+					<condition test="not_target_type hero">
+						<addattackactions>
+							<applystate name="State_BountyHunter_Ability2" duration="3000" />
+							<damage effecttype="Physical" amount="30,60,90,120" />
+						</addattackactions>
+					</condition>
+						<addattackactions>
+						<playeffect effect="effects/maim.effect" target="target_entity" source="source_entity"/>
+						<startcooldown />
+					</addattackactions>
+					<playanim name="attack_1" speed="source_attackspeed" target="source_entity" />
+					<playeffect effect="effects/state_out.effect" target="source_entity" source="source_entity"/>
+				</chance>
+			</cantarget>
+		</canactivate>
+	</onattackstart>
+
+	<onattackimpact />
+
+</ability>

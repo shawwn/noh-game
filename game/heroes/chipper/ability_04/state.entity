@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chipper_Ability4"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	deniable="true"
+	
+	effecttype=""
+>
+	<oninflict>
+		<damage effecttype="Magic" amount="100,200,300" />
+	</oninflict>
+	
+	<onframe>
+		<damage effecttype="Magic DOT" amount="75,125,175" b="frametime" op="mult"  />
+	</onframe>
+</state>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+		
+			<simpleemitter
+				spawnrate="2"
+				particlelife="2500"
+				speed="10"
+				minangle="90"
+				maxangle="90"
+				position="0 2 2"
+				material="/shared/effects/materials/refract_wave2.material"
+				inheritvelocity="0.35"
+			>
+				<particle
+					color="2 2 2"
+					startalpha="1.0"
+					midalpha="1.0"
+					endalpha="0.0"
+					midalphapos="0.75"
+					startparam=".05"
+					endparam="0.00"
+					startsize="13"
+					endsize="256"
+					depthbias="0"
+					position="0 0 4"
+					lockup="true"
+					pitch="90"
+				/>
+			</simpleemitter>
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

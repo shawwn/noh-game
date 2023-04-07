@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Techies_Ability1_Touch"
+
+	radius="200"
+	lifetime="-1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Physical"
+	impactdelay="2000"
+	effect=""
+>
+	<onimpact>
+		<kill target="proxy_entity" source="" />
+	</onimpact>
+</affector>

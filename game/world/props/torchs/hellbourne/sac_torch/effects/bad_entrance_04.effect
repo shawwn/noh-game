@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="bad_entrance_04" pausable="true">
+	<definitions>
+		<particlesystem name="system0" space="entity">
+
+<!-- ****************************** TOP  ************************  -->
+
+		<simpleemitter
+		
+			spawnrate="12"
+			bone="_bone_fx_01"
+			particlelife="1800"			
+			gravity="-4.5"
+			speed="16"
+			drag=".2"
+			acceleration="2"
+			position="0 0 15"
+
+
+			material="/shared/effects/materials/flames_07.material"
+			offsetsphere="3 3 3"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 0"
+		>
+
+			<particle 
+				minangle="-15"
+				maxangle="-15"
+				minanglespeed="0"
+
+				startcolor="1 0 0"
+				midcolor="1 .5 0"
+				endcolor="1 .8 0"
+				midcolorpos=".6"
+
+				maxanglespeed="00"
+				startframe="0"
+				endframe="1"
+
+				startsize="8"
+				midsize="24"
+				endsize="8"
+				midsizepos=".8"
+
+				startalpha=".3"
+				midalpha=".8"
+				endalpha="0"
+				midalphapos=".2"
+
+				startstickiness="0"
+				endstickiness="0"
+			/>
+		</simpleemitter>
+
+		<simpleemitter
+		
+			spawnrate="20"
+			bone="_bone_fx_01"
+			particlelife="2400"			
+			gravity="-4.5"
+			speed="16"
+			drag=".2"
+			acceleration="2"
+			position="0 0 10"
+
+
+			material="/shared/effects/materials/flames_02.material"
+			offsetsphere="3 3 3"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 0"
+		>
+
+			<particle 
+				minangle="-15"
+				maxangle="-15"
+				minanglespeed="0"
+
+				startcolor=".7 0 0"
+				midcolor="1 .5 0"
+				endcolor="1 .8 0"
+				midcolorpos=".6"
+
+				maxanglespeed="00"
+				startframe="0"
+				endframe="1"
+				startsize="4"
+				midsize="28"
+				endsize="8"
+				midsizepos=".8"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".1"
+				startstickiness="0"
+				endstickiness="0"
+			/>
+		</simpleemitter>
+
+		<simpleemitter
+		
+			spawnrate="30"
+			bone="_bone_fx_01"
+			particlelife="3200"			
+			gravity="-.5"
+			speed="1"
+			drag=".007"
+			acceleration="1"
+			position="0 0 44"
+
+
+			material="/shared/effects/materials/smoke_particle.material"
+			offsetsphere="3 3 3"
+			minangle="55"
+			maxangle="85"
+			direction="0 0 0"
+		>
+
+			<particle 
+				minangle="-15"
+				maxangle="-15"
+				minanglespeed="0"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".7"
+				maxanglespeed="00"
+				startframe="0"
+				endframe="1"
+				startsize="4"
+				midsize="20"
+				endsize="8"
+				midsizepos=".2"
+
+				startalpha="0"
+				midalpha=".05"
+				endalpha="0"
+				midalphapos=".9"
+
+				startstickiness="0"
+				endstickiness="0"
+			/>
+		</simpleemitter>
+
+		<simpleemitter
+		
+			spawnrate="28"
+			bone="_bone_fx_03"
+			particlelife="1600"			
+			gravity="-1.5"
+			speed="175"
+			drag=".007"
+			acceleration="10"
+			position="0 0 1"
+
+
+			material="/shared/effects/materials/whitedot.material"
+			offsetsphere="3 3 3"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 0"
+		>
+
+			<particle 
+				minangle="-15"
+				maxangle="-15"
+				minanglespeed="0"
+				startcolor="1 1 1"
+				midcolor="1 1 0"
+				endcolor=".7 0 0"
+				midcolorpos=".1"
+				maxanglespeed="00"
+				startframe="0"
+				endframe="1"
+
+				startsize=".01"
+				midsize="8"
+				endsize="1"
+				midsizepos=".8"
+
+				startalpha="0"
+				midalpha=".04"
+				endalpha="0"
+				midalphapos=".6"
+
+				startstickiness="0"
+				endstickiness="0"
+			/>
+		</simpleemitter>
+
+		<simpleemitter
+		
+			spawnrate="10"
+			bone="_bone_fx_03"
+			particlelife="400"			
+			gravity="-5"
+			speed="20"
+			drag=".007"
+			acceleration="10"
+			position="0 0 -15"
+
+
+			material="/shared/effects/materials/whitedot.material"
+			offsetsphere="2 2 2"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 0"
+		>
+
+			<particle 
+				minangle="-15"
+				maxangle="-15"
+				minanglespeed="0"
+				startcolor="1 1 1"
+				midcolor="1 1 0"
+				endcolor=".7 0 0"
+				midcolorpos=".1"
+				maxanglespeed="00"
+				startframe="0"
+				endframe="1"
+
+				startsize=".1"
+				midsize="3"
+				endsize=".1"
+				midsizepos=".1"
+
+				startalpha="0"
+				midalpha=".1"
+				endalpha="0"
+				midalphapos=".9"
+
+				startstickiness="0"
+				endstickiness="0"
+			/>
+		</simpleemitter>
+
+<!-- ********************************  BOTTOM  *************************************  -->
+
+
+
+		<simpleemitter
+		
+			spawnrate="10"
+			bone="_bone_fx_02"
+			particlelife="2000"			
+			gravity="-1"
+			speed="5"
+			drag=".2"
+			acceleration="1"
+			position="0 0 -10"
+
+
+			material="/shared/effects/materials/water_06.material"
+			offsetsphere="1 1 1"
+			minangle="0"
+			maxangle="-10"
+			direction="0 0 0"
+		>
+
+			<particle 
+				minangle="-15"
+				maxangle="-15"
+				minanglespeed="0"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".4"
+				maxanglespeed="00"
+				startframe="0"
+				endframe="1"
+				startsize="5"
+				midsize="10"
+				endsize="2.5"
+				midsizepos=".2"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".1"
+				startstickiness="0"
+				endstickiness="0"
+			/>
+		</simpleemitter>
+
+		<simpleemitter
+		
+			spawnrate="5"
+			bone="_bone_fx_02"
+			particlelife="1500"			
+			gravity="-1"
+			speed="5"
+			drag=".2"
+			acceleration="1"
+			position="0 0 -10"
+
+
+			material="/shared/effects/materials/water_06.material"
+			offsetsphere="1 1 1"
+			minangle="0"
+			maxangle="-10"
+			direction="0 0 0"
+		>
+
+			<particle 
+				minangle="-15"
+				maxangle="-15"
+				minanglespeed="0"
+				startcolor="0 0 0"
+				midcolor="1 1 1"
+				endcolor="0 0 0"
+				midcolorpos=".4"
+				maxanglespeed="00"
+				startframe="0"
+				endframe="1"
+				startsize="7"
+				midsize="10"
+				endsize="2.5"
+				midsizepos=".2"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".1"
+				startstickiness="0"
+				endstickiness="0"
+			/>
+		</simpleemitter>
+
+<!--
+
+		<simpleemitter
+		
+			spawnrate="45"
+			bone="_bone_fx_02"
+			particlelife="2800"			
+			gravity="-.5"
+			speed="10"
+			drag=".007"
+			acceleration="1"
+			position="0 0 -10"
+
+
+			material="/shared/effects/materials/smoke_particle.material"
+			offsetsphere="1 1 1"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 0"
+		>
+
+			<particle 
+				minangle="-15"
+				maxangle="-15"
+				minanglespeed="0"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".7"
+				maxanglespeed="00"
+				startframe="0"
+				endframe="1"
+
+				startsize="10"
+				midsize="1"
+				endsize="20"
+				midsizepos=".6"
+
+				startalpha="0"
+				midalpha=".1"
+				endalpha="0"
+				midalphapos=".2"
+
+				startstickiness="0"
+				endstickiness="0"
+			/>
+		</simpleemitter>
+
+-->
+
+
+<!--		
+		
+		<simpleemitter
+		
+			spawnrate="45"
+			bone="_bone_fx_02"
+			particlelife="2800"			
+			gravity="-.5"
+			speed="10"
+			drag=".007"
+			acceleration="1"
+			position="0 0 -10"
+
+
+			material="/shared/effects/materials/smoke_particle.material"
+			offsetsphere="2 2 2"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 0"
+		>
+
+			<particle 
+				minangle="-15"
+				maxangle="-15"
+				minanglespeed="0"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".7"
+				maxanglespeed="00"
+				startframe="0"
+				endframe="1"
+
+				startsize="8"
+				midsize="1"
+				endsize="8"
+				midsizepos=".6"
+
+				startalpha="0"
+				midalpha=".2"
+				endalpha="0"
+				midalphapos=".2"
+
+				startstickiness="0"
+				endstickiness="0"
+			/>
+		</simpleemitter>
+
+ -->
+
+		<simpleemitter
+		
+			spawnrate="50"
+			bone="_bone_fx_02"
+			particlelife="800"			
+			gravity="-1"
+			speed="5"
+			drag=".2"
+			acceleration="1"
+			position="0 0 -10"
+
+
+			material="/shared/effects/materials/fairy_glow_03.material"
+			offsetsphere="3 3 3"
+			minangle="0"
+			maxangle="-10"
+			direction="0 0 0"
+		>
+
+			<particle 
+				minangle="-15"
+				maxangle="-15"
+				minanglespeed="0"
+				startcolor="0 0 0"
+				midcolor=".5 .5 0"
+				endcolor="0 0 0"
+				midcolorpos=".4"
+				maxanglespeed="00"
+				startframe="0"
+				endframe="1"
+				startsize="10"
+				midsize="10"
+				endsize="2.5"
+				midsizepos=".2"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				midalphapos=".1"
+				startstickiness="0"
+				endstickiness="0"
+			/>
+		</simpleemitter>
+
+
+        
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

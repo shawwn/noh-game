@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" usentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.25">
+			
+			<billboard
+				bone="_bone_overhead"
+				material="/shared/effects/materials/broken_shield_01.material"
+				startsize="28"
+				endsize="0" 
+				startcolor="1 1 1"
+				endcolor="0 0 0"
+				position="0 0 25"
+				life="100"
+			/>
+			
+			<simpleemitter	
+				bone="_bone_overhead"			
+				count="1"
+				particlelife="300"			
+				position="0 0 25"					
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					startcolor="0 .35 .3"						
+					endcolor="0 0 0"						
+					startsize="50"
+					endsize="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

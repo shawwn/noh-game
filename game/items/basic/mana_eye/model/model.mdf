@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="ward.max" file="eye.model" type="K2" >
+	<anim name="idle" clip="default_1.clip" fps="20" loop="true" loopbackframe="1"/>
+
+	<anim name="death_1" clip="death_1.clip" loop="true" loopbackframe="-1">
+		<startevent cmd="StartEffect death.effect 0"/>
+	</anim>
+	
+</model>

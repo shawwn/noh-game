@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_FlamingEye"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model/model.mdf"
+	skin=""
+	
+	passiveeffect="body.effect"
+	spawneffect=""
+	respawneffect=""
+
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="0.9"
+	modelscale="1.25"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	isselectable="true"
+	iscontrollable="false"
+	selectionradius="20"
+	targetoffset="0 0 64"
+	unitwalking="true"
+
+	canrotate="false"
+	ismobile="false"
+
+	maxhealth="200"
+
+	immunity="GadgetImmunity"
+
+	attacktype="none"
+	combattype="Ranged"
+	stealthtype="ward"
+
+	sightrangeday="1600"
+	sightrangenight="1600"
+	
+	goldbountymin="50"
+	goldbountymax="50"
+
+	lifetime="360000"
+>
+</gadget>

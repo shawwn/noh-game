@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ophelia2"
+
+	
+	
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_Ophelia_Ability2"
+	
+	anim="ability_2"
+	casttime="6000,5000,4000,3000"
+	castactiontime="300"
+	ischanneling="true"
+	casteffect="effects/cast.effect"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	casteffecttype="Magic"
+	targetscheme="all_other_units"
+	
+	manacost="175"
+	cooldowntime="30000"
+	
+	range="600"
+>
+	<onlearn>
+		<setproxy searchfortarget="true" searchorigin="source_entity" radius="9999" targetscheme="WellMarker" ignoreinvulnerable="true" />		
+	</onlearn>
+	<onspawn>
+		<setproxy searchfortarget="true" searchorigin="source_entity" radius="9999" targetscheme="WellMarker" ignoreinvulnerable="true" />		
+	</onspawn>
+
+	<onchannelstart>
+		<condition test="target_type mine">
+			<playeffect effect="effects/teleport_impact.effect" source="target_position"/>
+			<playeffect effect="effects/teleport_impact.effect" source="target_entity"/>
+			<teleport source="target_entity" target="proxy_position" interpolate="false" />
+			<disjoint target="target_entity" />
+			
+			
+			<order command="stop" force="true" source="source_entity" target="source_entity" />
+			<order command="stop" force="true" source="target_entity" target="target_entity" />
+		</condition>
+	</onchannelstart>
+	
+	<onimpact >
+		<cantarget targetscheme="enemy_units">
+			<damage min="50,100,150,200" max="100,200,300,400" />
+			<playeffect effect="effects/damage_impact.effect" source="target_entity" />
+			<order command="stop" force="true" source="source_entity" target="source_entity" />
+		</cantarget>
+		<cantarget targetscheme="ally_units">
+			<applystate name="State_Ophelia_Ability2" ischannel="true" /> 
+			<spawnaffector name="Affector_Ophelia_Ability2" proxy="proxy_entity" target="target_position" ischannel="true" /> <!-- play AOE effect at affector's location, similar to what we did with fairy. it should be very simple. this is the area ally has to stay in to teleport -->
+			
+		</cantarget>
+	</onimpact>
+</ability>

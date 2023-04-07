@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_TowerMaster_Ability1_Channeling"
+
+	
+	
+	icon="icon.tga"
+	ishidden="false"
+	passiveeffect="effects/channel.effect"
+
+
+	
+>
+
+</state>

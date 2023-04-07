@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.3">
+
+			<groundsprite
+
+				life="800"
+				loop="true"
+				material="/shared/effects/materials/luna_aura_01.material"
+				startsize="35"
+				midsize="40"
+				endsize="35"
+				midsizepos=".5"
+				startcolor=".2 .2 0"
+				midcolor=".9 .9 .2"
+				endcolor=".2 .2 0"
+				
+
+				midcolorpos=".2"
+				minangle="0"
+				maxangle="0"
+				angles="0 0 0"
+				yawspeed="0"
+				
+
+
+			/>
+
+
+			<billboard
+				bone="_bone_weapon03"	
+				material="/shared/effects/materials/whitedot.material"
+				color=".24 .4 .2"
+				size="50"
+			/>
+			
+			<simpleemitter
+				bone="_bone_weapon03"	
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="40"
+				particlelife="100"
+			>
+				<particle
+				
+				color=".24 .4 .2"
+				startsize="8"
+				endsize="4">
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_weapon03"	
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="400"
+				particlelife="300"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+				heightdistort="0.01"
+				turn="1"
+				startcolor=".7 .7 .2"
+				endcolor="0 0 0"
+				startsize="3"
+				endsize="0">
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_weapon03"
+				material="/shared/effects/materials/phantom_smoke_06.material"
+				spawnrate="60"
+				particlelife="300"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+				roll="180"
+				heightdistort="0.01"
+				turn="1"
+				startcolor="0 0 0"
+				midcolor=".4 .8 .05"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				startsize="36"
+				endsize="20">
+				</particle>
+			</simpleemitter>			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

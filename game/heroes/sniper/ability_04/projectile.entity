@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Sniper_Ability4"
+
+	speed="2500"
+	gravity="100"	
+	modelscale="0.35"
+	model="effects/bullet.mdf"
+	deatheffect="effects/impact.effect"
+	effectscale="0.01"
+	impactstealth="true"
+	canturn="true"
+	impacteffect="effects/ability_04_impact.effect"
+>
+	<onimpact>
+		<damage effecttype="Physical" amount="355,505,655" />
+		<applystate name="State_Stunned" duration="200"/>
+		<applystate name="State_Sniper_Ability4_Slow" duration="4000"/>
+	</onimpact>
+
+</projectile>

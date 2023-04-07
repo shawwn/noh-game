@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Weapon1"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="0"
+	components="Item_Steamstaff Item_ApprenticesRobe Item_Scarab"
+	autoassemble="true"
+	allowdisassemble="true"
+	
+	actiontype="passive"
+	
+	attackspeed="0.1"
+	manaregenmultiplier="0.75"
+	intelligence="6"
+	damage="15"
+>
+</item>

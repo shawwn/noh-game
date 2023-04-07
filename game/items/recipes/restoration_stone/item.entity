@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_RestorationStone"
+
+	icon="icon.tga"
+	
+	cost="1875"
+	components="Item_Regen Item_Weapon1"
+	
+	actiontype="no_target"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="210000"
+	cooldowntype="restorationstone"
+	manacost="375"
+	
+	intelligence="6"
+	healthregen="5"
+	manaregenmultiplier="2.0"
+	attackspeed=".10"
+	damage="40"
+>
+	<onimpact>
+		<refreshabilities />
+		<refreshinventoryitems excluded="Item_RestorationStone Item_Immunity"/>
+		<playeffect effect="cast.effect"/>
+	</onimpact>
+</item>

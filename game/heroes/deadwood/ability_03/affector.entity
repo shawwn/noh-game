@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Deadwood_Ability3"
+
+	radius="150"
+	minlength="500"
+	maxlength="500"
+	
+	destroytrees="true"
+	
+	targetscheme="trees"
+	lifetime="10000"
+	persist="false"
+	effecttype="Magic"
+>
+	<onframe>
+		<killtrees radius="150"/>
+	</onframe>
+</affector>

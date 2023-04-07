@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Vanya_Ability3"
+
+	radius="200"
+	lifetime="-1"
+
+	targetselection="closest"
+	targetscheme="enemy_units"
+	maximpactspertarget="1"
+>
+	<onimpact>
+		<attack targetscheme="enemy_units" source="this_owner_entity" />
+		<resetattackcooldown/>
+	</onimpact>
+</affector>

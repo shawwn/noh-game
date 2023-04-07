@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ManaBattery"
+
+	
+	
+	icon="icon.tga"
+
+	effecttype=""
+>
+	<onabilityimpact>
+		<addcharges target="this_inflictor_entity"/>
+	</onabilityimpact>
+</state>

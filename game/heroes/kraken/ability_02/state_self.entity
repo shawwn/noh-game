@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kraken_Ability2_Self"
+
+	
+	
+	icon="icon.tga"
+	
+	invulnerable="false"
+	silenced="true"
+	perplexed="true"
+	immobilized="false"
+	disarmed="true"
+	
+	passiveeffect="effects/charge_state.effect"
+	
+	effecttype=""
+>
+
+</state>

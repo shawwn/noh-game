@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neutral
+	name="Neutral_Dragon"
+	
+	
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="2.8"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="64"
+	boundsradius="24"
+	selectionradius="36"
+	targetoffset="0 0 54"
+
+	movespeed="350"
+	turnrate="320"
+
+	maxhealth="950"
+	healthregen="0.5"
+	maxmana="0"
+	manaregen="0"
+
+	armor="2"
+	magicarmor="0"
+	immunity="AncientImmunity"
+
+	cancarryitems="false"
+	inventory0=""
+	inventory1=""
+	inventory2=""
+	inventory3=""
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+
+	attackduration="1000"
+	attackactiontime="350"
+	attackcooldown="3800"
+	attackdamagemin="34"
+	attackdamagemax="45"
+	attacknumanims="1"
+	attackoffset="0 100 130"
+	attackprojectile="Projectile_DragonAttack"
+	attackrange="500"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="/shared/sounds/impacts/impact_medium.effect"
+	attacktype="ranged"
+	combattype="Ranged"
+	
+	aggrorange="250"
+	sightrangeday="800"
+	sightrangenight="800"
+
+	experiencebounty="62"
+	goldbountymin="44"
+	goldbountymax="56"
+	
+	corpsetime="15000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+</neutral>

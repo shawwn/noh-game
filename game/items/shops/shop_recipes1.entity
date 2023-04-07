@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Recipes1"
+	
+	style="recipes"
+	header="/ui/elements/shop/shopkeeper_recipes.tga"
+	allowremoteaccess="true"
+	
+	icon="shop_recipes1.tga"
+	order="1"
+	slot="5"
+>
+	<item name="Item_Strength5" />
+	<item name="Item_Soulscream" />
+	<item name="Item_Intelligence5" />
+	<item name="Item_Weapon1" />	
+
+	<item name="Item_Regen" />
+	<item name="Item_WhisperingHelm" />
+	<item name="Item_Gloves3" />
+	<item name="Item_Sicarius" />	
+
+	<item name="Item_PlatedGreaves" />
+	<item name="Item_EnhancedMarchers" />
+	<item name="Item_Steamboots" />
+	<item name="Item_PostHaste" />
+</shop>

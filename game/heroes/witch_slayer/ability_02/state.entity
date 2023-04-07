@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WitchSlayer_Ability2"
+
+	icon="icon.tga"
+	
+	disarmed="true"
+	silenced="true"
+	perplexed="true"
+
+	morphpriority="100"
+	morphmodelscale="0.5"
+	morphmovespeed="100"
+	
+	effecttype="StatusDebuff"
+	passiveeffect="effects/link.effect"
+	
+>
+	<onframe />
+</state>

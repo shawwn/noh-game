@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="Self_State_Sniper_Ability4"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/channeling.effect"
+	immobilized="true"
+	frozen="true"
+
+>
+
+</state>

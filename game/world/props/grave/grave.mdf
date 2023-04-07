@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="GRAVEback2.max" file="grave.model" type="K2" >
+
+<spawnevent cmd="StartEffect effects/grave.effect"/>
+	<anim name="idle" clip="clips/grave.clip"  loop="1"/>
+</model>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_BountyHunter1"
+	
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="800"
+	castactiontime="300"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	
+	manacost="90,115,135,155"
+	cooldowntime="10000"
+	
+	projectile="Projectile_BountyHunter_Ability1"
+	range="650"
+>
+	<onimpact >
+		<damage effecttype="Magic" amount="100,175,250,325"/>
+		<applystate name="State_Stunned" duration="100"/>
+	</onimpact>
+</ability>

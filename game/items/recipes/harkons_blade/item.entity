@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_HarkonsBlade"
+
+	statuseffecttooltip="State_Item_HarkonsBlade_MagicArmor"
+	icon="icon.tga"
+	cost="500"
+	components="Item_Weapon1"
+	
+	actiontype="toggle"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	casttime="0"
+	castactiontime="0"
+	casteffecttype="Magic Attack"
+	attackeffecttype="Attack"
+	targetscheme="enemy_units"
+	manacost="75"
+
+	intelligence="35"
+	damage="25"
+	attackspeed="0.10"
+	manaregenmultiplier="1.50"
+	
+	projectile="Projectile_HarkonAttack"
+>
+	<ontoggleon>
+		<setactivemodifierkey name="Harkon" />
+		<popup name="poison" a="1" />
+	</ontoggleon>
+	
+	<ontoggleoff>
+		<setactivemodifierkey name="" />
+	</ontoggleoff>
+	
+	<modifier key="Harkon">
+		<popup name="poison" a="1" />
+		<onpreimpact>
+			<seteffecttype name="combat_damagetype" effecttype="Magic" />
+		</onpreimpact>
+		
+		<onpredamage>
+			<applystate name="State_Item_HarkonsBlade_MagicArmor" duration="5000" />
+		</onpredamage>
+		
+		<onimpact />
+	</modifier>
+</item>

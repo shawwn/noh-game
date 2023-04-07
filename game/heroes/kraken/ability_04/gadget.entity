@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Kraken_Ability4"
+	
+	
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="/shared/models/invis.mdf"
+	skin=""
+	unitwalking="true"
+	diewithowner="true"
+	
+	passiveeffect="effects/ability.effect"
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	isselectable="true"
+	orderconfirmedsound=""
+	
+	preglobalscale="1.5"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="36"
+	targetoffset="0 0 0"
+
+	movespeed="0"
+	turnrate="0"
+	ismobile="false"
+	canrotate="false"
+
+	maxhealth="0"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	invulnerable="true"
+	canattack="false"
+
+	sightrangeday="1200"
+	sightrangenight="800"
+	corpsetime="0"
+	
+	maxdistancefromowner="3500"
+	
+	lifetime="60000"
+
+>
+</gadget>

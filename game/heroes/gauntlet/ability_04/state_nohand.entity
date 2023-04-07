@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gauntlet_Ability4_NoHand"
+
+	icon="icon.tga"
+	ishidden="false"
+	modifierkey="gaunetlet_nohand"
+
+>
+
+</state>

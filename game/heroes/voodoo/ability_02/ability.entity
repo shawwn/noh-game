@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Voodoo2"
+
+	
+	
+	icon="icon.tga"
+	
+	anim="ability_2"
+	casttime="1000"
+	castactiontime="500"
+	statuseffecttooltip="State_Voodoo_Ability2_Buff"
+	statuseffecttooltip2="State_Voodoo_Ability2_Debuff"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="all_units"
+	
+	casteffecttype="Magic"
+	
+	manacost="90,110,130,150"
+	cooldowntime="24000"
+	
+	range="500"
+>
+	<onimpact >
+		<cantarget targetscheme="ally_units">
+			<applystate name="State_Voodoo_Ability2_Buff" duration="8000" />
+		</cantarget>
+		<cantarget targetscheme="enemy_units">
+			<applystate name="State_Voodoo_Ability2_Debuff" duration="8000" />
+		</cantarget>
+	</onimpact>
+</ability>

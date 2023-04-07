@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_DwarfMagi_Ability3_4x"
+
+	radius="600"
+	
+	maxtotalimpacts="3"
+	maximpactspertarget="1"
+	targetselection="random"
+	targetscheme="ally_units"
+	effecttype="Magic"
+>
+	<onimpact>
+		<applystate name="State_DwarfMagi_Ability3" duration="30000"/>
+	</onimpact>
+</affector>

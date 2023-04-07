@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="default_1.max" file="high.model" type="K2">
+
+	<anim name="idle" clip="clips/default_1.clip" loop="true"/>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" loop="true" fps="22" />
+	
+	<anim name="death_2" clip="clips/death_1.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="death_1" clip="clips/death_2.clip" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="StartEffect effects/death.effect 1"/>
+	</anim>
+	
+	<anim name="ability_1" clip="clips/ability_1.clip" loop="true" loopbackframe="12"/>
+	
+	<anim name="ablity_2" clip="clips/ability_2.clip"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip"/>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip"/>
+
+	<anim name="attack_3" clip="clips/attack_3.clip"/>
+
+	<anim name="attack_4" clip="clips/attack_4.clip"/>	
+	
+	<anim name="attack_5" clip="clips/attack_5.clip"/>
+
+</model>

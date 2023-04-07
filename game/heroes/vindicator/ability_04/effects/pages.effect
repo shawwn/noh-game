@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name=" ">
+	<definitions>
+	
+	
+		<particlesystem name="system0" space="world" scale="0.85" >
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="2500"
+				falloffend="2500"
+				volume="1"
+				sample="../sounds/cast.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="2500"
+				falloffend="2500"
+				volume="1"
+				sample="../sounds/cast2.wav"
+			/>
+
+			<sound
+				delay="100"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".86"
+				sample="../sounds/impact.wav"
+			/>
+			
+			<light
+				life="1150"			
+				startcolor="0 4 9"			
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="400"
+				falloffend="555"
+				position="0 0 50"	
+			/>	
+		
+			<billboard	
+				bone="_bone_book_root"
+				life="400"				
+				startsize="720"				
+				endsize="0"
+				material="/shared/effects/materials/whitedot.material"
+				startalpha="1"
+				endalpha="0"
+				startcolor="0 0 0 "
+				midcolor=".0 .5 .8"
+				endcolor="0 0 0 "
+				depthbias="-30"
+			/>	
+
+				
+			<simpleemitter
+				
+				life="300"
+				spawnrate="1283"
+				bone="_bone_book_root"
+				particlelife="500"			
+				gravity="-1.5"
+				speed="443"
+				offsetsphere="22 22 22"
+				position="0 0 50"
+				direction="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+			>						
+				<particle 
+					heightdistort="0.07"
+					startcolor="0 0 0"
+					midcolor=".2 .5 1"
+					endcolor="0 0 0"
+					size="5"
+
+					turn="1"					
+				/>	
+				
+			
+
+			</simpleemitter>
+						
+			
+			
+			<simpleemitter	
+				delay="100"
+							
+				spawnrate="4000"
+				count="1"
+				particlelife="2700"
+				>
+				<particle >				
+					<model
+						position="0 0 0"
+						life="2700"
+						model="pages.mdf"
+						anim="idle"
+						startcolor="1 2  2"
+						midcolor="1 1 1"
+						endcolor="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".25"
+					>
+					</model>
+
+
+					<simpleemitter
+						position="0 0 149"
+						spawnrate="233"
+						particlelife="1200"
+						count="10"
+						particlelifealloc="6000"
+						direction="0 0 1"
+						minangle="0"
+						maxangle="90"
+						gravity="9.0"
+						minspeed="520"
+						maxspeed="782.0"
+						drag="0.0"
+						acceleration="0.0"
+						inheritvelocity="0.0"
+					>
+						<particle>
+							<trailemitter
+								life="1200"
+								startparticlecolor="1 1 1"
+								endparticlecolor="0 0 0"
+								spawnrate="30"
+								particlelife="1200"
+								texpostime="1200"
+								texposscale="0"
+								texstretchscale="1"	
+								material="/shared/effects/materials/arrow_trail.material"
+							>
+								<particle
+									 startcolor="0 0.5 1"
+									 midcolor="0 0.3 1"
+									 endcolor="0 0 0"
+									 startsize="5"
+									 midsize="5"
+									 endsize="5"
+									 midsizepos="0.2"
+							 />
+							</trailemitter>	
+						</particle>
+						<particle>
+							<trailemitter
+								life="1200"
+								startparticlecolor="0 0 0"
+								midparticlecolor="1 1 1"
+								endparticlecolor="0 0 0"
+								spawnrate="30"
+								particlelife="1200"
+								texpostime="1200"
+								texposscale="0"
+								texstretchscale="1"	
+								material="/shared/effects/materials/arrow_trail.material"
+							>
+								<particle
+									 startcolor="0 0.5 1"
+									 midcolor="0 0.3 1"
+									 endcolor="0 0 0"
+									 startsize="5"
+									 midsize="5"
+									 endsize="5"
+									 midsizepos="0.2"
+							 />
+							</trailemitter>	
+
+							
+							<trailemitter
+								life="1200"
+								startparticlecolor="0 0 0"
+								midparticlecolor=".5 1 1"
+								endparticlecolor="0 0 0"
+								spawnrate="30"
+								particlelife="1200"
+								texpostime="1200"
+								texposscale="0"
+								texstretchscale="1"	
+								material="/shared/effects/materials/arrow_trail.material"
+							>
+								<particle
+									 startcolor="0 0.9 1"
+									 midcolor="0 0.5 1"
+									 endcolor="0 0 0"
+									 startsize="10"
+									 midsize="10"
+									 endsize="5"
+									 midsizepos="0.2"
+							 />
+							</trailemitter>						
+						</particle>			
+					</simpleemitter>					
+				</particle>				
+			</simpleemitter>
+			
+			<simpleemitter	
+				bone="_bone_book_root"			
+				spawnrate="5"				
+				particlelife="800"	
+				count="2"				
+				position="0 0 30"
+				material="/shared/effects/materials/refract_swell.material"				
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+				param=".4"
+			>
+
+				<particle 		
+					startsize="120"				
+					endsize="300"				
+					param="0.5"
+					startalpha=".3"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".5"					
+					
+	
+				
+				/>
+			</simpleemitter>	
+			
+	
+		
+      </particlesystem>
+   </definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	
+	<waitfordeath instance="instance0" />
+	<wait duration="20000"/>
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

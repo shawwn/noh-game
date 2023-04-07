@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters />
+	<phase
+		name="color"
+		vs="effect_reveal"
+		ps="effect_reveal"
+		srcblend="BLEND_ONE"
+		dstblend="BLEND_ONE"
+		cull="CULL_FRONT"
+		translucent="true"
+		depthwrite="false"
+		depthbias="1"
+		depthslopebias="true"
+		alphawrite="false"
+	>
+		<sampler
+			name="diffuse"
+			texture="../textures/g1_ground_d.tga"
+			repeat_u="false"
+			repeat_v="false"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<sampler
+			name="reveal"
+			texture="../textures/ground_reveal.tga"
+			repeat_u="false"
+			repeat_v="false"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+</material>

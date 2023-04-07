@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_HarkonsBlade_Self"
+
+	
+	
+	icon="icon.tga"
+	ishidden="true"
+	modifierkey="Harkons_Active"
+>
+</state>

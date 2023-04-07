@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" useentityeffectscale="true" scale="1">
+
+			<simpleemitter	
+				bone="Bip01 R Foot"
+				life="100"
+				spawnrate="35"		
+				gravity="13"
+				speed="1230"
+				drag=".2"
+				minangle="-90"
+				maxangle="90"
+				particlelife="550"
+				offsetsphere="8"
+				depthbias="-40"
+				material="/shared/effects/materials/water_spray_blend.material"			
+			>
+				<particle 
+					startsize="10"
+					endsize="70"				
+					startalpha="0.65"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+				/>			
+			</simpleemitter>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

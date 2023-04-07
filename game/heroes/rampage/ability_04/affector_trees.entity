@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Rampage_Ability4_Trees"
+
+	radius="100"
+	lifetime="1550"
+
+  	destroytrees="true"
+>
+	<onimpact/>
+</affector>

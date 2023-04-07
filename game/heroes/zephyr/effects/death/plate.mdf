@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="turkey_model.max" file="plate.model" type="K2" >
+
+<anim name="idle" clip="plate.clip" fps="50" loop="true" loopbackframe="-1"/>
+
+</model>

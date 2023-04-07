@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Voodoo_Ability3"
+
+	
+	
+	icon="icon.tga"
+	
+	impactinterval="4000"
+	
+	passiveeffect="effects/state.effect"
+	
+	effecttype=""
+>
+	<oninflict>
+		<savehealth />
+	</oninflict>
+
+	<onframe >
+		<damage effecttype="Magic" amount="5,10,15,20" b="frametime" op="mult" />
+	</onframe>
+
+	<onimpact>
+		<damage effecttype="Magic" amount="0.1,0.2,0.3,0.4" b="healthlost" op="mult" />
+		<popup name="bonus_damage" a="result" source="target_entity" target="source_entity" />
+	</onimpact>
+</state>

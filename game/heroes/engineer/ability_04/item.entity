@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_PushStaff"
+	
+	statuseffecttooltip="State_PushStaff"
+	statuseffectheader="true"
+	icon="icon.tga"
+	
+	cost="500"
+	components="Item_MajorTotem Item_NeophytesBook"
+	
+	actiontype="target_entity"
+	targetscheme="all_heroes"
+	casteffecttype="Magic"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="16000"
+	range="800"
+	manacost="25"
+	cooldowntype="PushStaff"
+
+	strength="6"
+	agility="6"
+	intelligence="16"
+	
+>
+	<onimpact>
+		<spawnaffector name="Affector_PushStaff_Delay" target="target_entity" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

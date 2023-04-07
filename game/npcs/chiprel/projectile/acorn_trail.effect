@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="boar_projectile">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+
+		<trailemitter
+			bone="_bone_acorn"
+			spawnrate="50"
+			particlelife="1000"
+			texpostime="100"
+			texposscale="1.0"
+			texstretchscale="0.0"
+			material="/shared/effects/materials/white_trail.material"
+		>
+			<particle startcolor="0 0 0" midcolor=".12 .12 0" endcolor=".24 .24 .24" startsize="7.5" endsize="0" startalpha="0" midalpha=".02" endalpha="0" midalphapos=".3" />
+		</trailemitter>
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+		</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

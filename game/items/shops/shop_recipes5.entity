@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Recipes5"
+	
+	allowremoteaccess="true"
+
+	style="recipes"
+	header="/ui/elements/shop/shopkeeper_recipes.tga"
+	
+	icon="shop_recipes5.tga"
+	order="1"
+	slot="9"
+>
+
+	<item name="Item_Strength6" />
+	<item name="Item_Brutalizer" />
+	<item name="Item_Lightning1" />
+	<item name="Item_ManaBurn1" />
+	
+	<item name="Item_Pierce" />	
+	<item name="Item_StrengthAgility" />
+	<item name="Item_Freeze" />
+	<item name="Item_HarkonsBlade" />
+
+	<item name="Item_Lightning2" />
+	<item name="Item_LifeSteal4" />
+</shop>

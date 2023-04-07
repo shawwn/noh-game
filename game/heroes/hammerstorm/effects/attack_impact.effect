@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="attack_impact">
+	<definitions>
+		<particlesystem name="system0" space="entity" useentityeffectscale="true">
+
+			<sound
+				sample="/heroes/hammerstorm/sounds/impact_%.wav"
+				linearfalloff="true"
+				falloffstart="600"
+				falloffend="1700"
+				volume="1"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="400"
+				startcolor=".1 .3 0"
+				midcolor=".1 .3 0"
+				endcolor="0 0 0"
+				startsize="25"
+				endsize="135"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/glow_01.material"
+				lockup="true"
+				pitch="90"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="400"
+				startcolor=".1 1 .05"
+				midcolor=".1 1 .05"
+				endcolor="0 0 0"
+				startsize="25"
+				endsize="135"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/stomp_01.material"
+				lockup="true"
+				pitch="90"
+			/>
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>

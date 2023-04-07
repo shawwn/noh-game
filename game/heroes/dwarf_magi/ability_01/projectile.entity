@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_DwarfMagi_Ability1"
+
+	speed="800"
+	gravity="1000"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+
+	effectscale="2.5"
+	impacteffect=""
+	traileffect=""
+>
+</projectile>

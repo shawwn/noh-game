@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Electrician_Ability4_Allies"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	movespeedslowstart="-0.3,-0.4,-0.5"
+	movespeedslowmid="-0.2"
+	movespeedslowend="0.0"
+	movespeedslowmidpos="0.20"
+	
+	effecttype="StatusBuff"
+>
+	<onframe />
+</state>

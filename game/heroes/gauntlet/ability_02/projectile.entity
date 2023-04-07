@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Gauntlet_Ability2"
+
+	speed="1200"
+	gravity="0"
+
+	modelscale="2.45"
+	model="projectile/model.mdf"
+	traileffect=""
+	impacteffect="/heroes/gauntlet/effects/impact.effect"
+	
+	canturn="true"
+	flying="true"
+	flyheight="100"
+	
+	touchradius="75"
+	touchradiusdiradjust="true"
+	touchtargetscheme="hook_targets"
+	toucheffecttype="Physical"
+>
+	<onspawn>
+				
+	</onspawn>
+
+	<onimpact>		
+		<condition test="not_return">
+			<playanim name="ability_2_end" target="source_entity" />
+		</condition>	
+		<return />
+	</onimpact>
+	
+	<ontouch>
+		<condition test="not_bound">
+			<cantarget targetscheme="enemy_units">
+				<playeffect effect="effects/impact.effect" source="target_position" target="" />
+				<damage effecttype="Magic" amount="100,200,300,400" />
+				<applystate name="State_Stunned" duration="100" />
+			</cantarget>
+			<bind target="target_entity" />
+			<return />
+			<playanim name="ability_2_end" target="source_entity" />
+		</condition>
+	</ontouch>
+</projectile>

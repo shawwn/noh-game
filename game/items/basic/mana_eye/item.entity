@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_ManaEye"
+	
+	icon="icon.tga"
+	cost="200"
+	initialcharges="2"
+	chargecost="1"
+	destroyonempty="true"
+	rechargeable="true"
+	allowsharing="true"
+  allowtransfer="true"
+	
+	actiontype="target_position"
+	casttime="500"
+	castactiontime="200"
+	range="600"
+	manacost="5"
+	cooldowntime="1000"
+	cooldowntype="manaeye"
+>
+	<onimpact>
+		<spawnunit name="Gadget_Item_ManaEye" target="target_position" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

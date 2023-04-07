@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_TowerGuardian_Ability1_Activate"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/charge.effect"
+	impactinterval="3000"
+	immobilized="true"
+	disarmed="true"
+	effecttype="StatusBuff"
+	
+>
+	<oninflict>
+		<playanim name="ability_01_charge"/>
+	</oninflict>
+	<onimpact>
+		<spawnaffector name="Affector_TowerGuardian_Ability1" />
+		<applystate name="State_TowerGuardian_Ability1_RecentlyUsed" duration="11000" />
+		<playanim name="ability_01_explode"/>		
+	</onimpact>
+</state>

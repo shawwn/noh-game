@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_DragonKnight3"
+
+		
+	statuseffecttooltip="State_DragonKnight_Ability3"
+	icon="icon.tga"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	armor="2,4,6,8"
+	healthregen="1,2,3,4"
+
+>
+</ability>

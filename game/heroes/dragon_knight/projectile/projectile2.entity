@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_DragonKnight_Attack_2"
+
+	speed="1200"
+	gravity="0"
+	modelscale="1.25"
+	model="../../../heroes/helldemon/ability_04/effects/skull.mdf"
+	
+	traileffect="../../../heroes/maliken/projectile/effects/trail.effect"
+	impacteffect="../../../heroes/maliken/projectile/effects/impact.effect"
+>
+</projectile>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Fairy_Ability2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	manaregen="18.75,37.5,56.25,75"
+	
+	dispelondamage="true"
+	
+	effecttype="StatusBuff"
+>
+	<onframe />
+</state>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Techies_Ability1"
+	
+	
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	
+	model="../../../heroes/engineer/ability_01/effects/projectile.mdf"
+	
+	preglobalscale="1.6"
+	modelscale="1.0"
+	effectscale="0.5"
+	boundsheight="64"
+	boundsradius="8"
+	selectionradius="48"
+	targetoffset="0 0 64"
+	isselectable="true"
+	iscontrollable="false"
+
+	canrotate="false"
+	ismobile="false"
+	unitwalking="true"
+
+	maxhealth="100"
+
+	immunity="GadgetImmunity"
+	unittype="PseudoPet LandMine"
+	attacktype="none"
+	combattype="Ranged"
+	stealthtype="ward"
+	fadetime="100"
+
+	corpsetime="0"
+	corpsefadetime="0"
+	
+	sightrangeday="100"
+	sightrangenight="100"
+>
+	<onspawn>
+		<startfade />
+		<addcharges entity="proxy_entity" count="1"  />
+	</onspawn>
+	
+	<ondeath>
+		<playeffect effect="../../../heroes/engineer/ability_01/effects/impact.effect" source="this_position" target="" occlude="true" />	
+		<spawnaffector name="Affector_Techies_Ability1" target="this_position" />
+		<spawnaffector name="Affector_Techies_Ability1_Close" target="this_position" />
+		<addcharges entity="proxy_entity" count="-1"  />
+	</ondeath>
+</gadget>

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface name="game_replay_control">
+	<!-- Includes -->
+ 	<include file="/ui/ui_items.package"/>
+
+	<!-- Styles -->
+	<style name="main_button" width="90%" height="30" color="invisible" align="center"/>
+	<style name="main_button_label" width="200" align="center" valign="center" textalign="center" font="system_large" noclick="true" color="orange"/>
+	<style name="lobby_window_header_highlight_bg" texture="/ui/frames/rounded_header_bg_white.tga" height="26" color="#A85135" borderthickness="12"/>
+	<style name="lobby_window_header_bg" texture="/ui/frames/rounded_header_bg_white.tga" height="26" color="#2E1F00" borderthickness="12"/>
+	<style name="lobby_window_header" texture="/ui/frames/roundframe_header.tga" height="26" color="#5E2D1F" borderthickness="12"/>
+	<style name="lobby_window_header_label" width="-20" align="center" textvalign="center" font="chat_14" color="white" shadow="true"/>
+	<style name="lobby_window_bg" texture="/ui/frames/rounded_bg_white.tga" borderthickness="12" color="#2E1F0055"/>
+	<style name="lobby_window" texture="/ui/frames/roundframe.tga" color="#5E2D1F" borderthickness="12"/>
+	<style name="lobby_window_footer_bg" valign="bottom" texture="/ui/frames/rounded_footer_bg_white.tga" height="35" color="#2E1F00" borderthickness="12"/>
+	<style name="lobby_window_footer" valign="bottom" texture="/ui/frames/roundframe_footer.tga" height="35" color="#5E2D1F" borderthickness="12"/>
+
+	<panel name="replay_control_small" width="160" height="26" align="center" valign="bottom" y="0" visible="1" cangrab="true">
+		<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="8" noclick="true" style="lobby_window_header_bg"/>
+		<frame texture="/ui/frames/roundframe.tga" style="lobby_window_header" noclick="true" borderthickness="8">
+			<label x="10" height="24" textvalign="center" font="chat_12" color="white" shadow="true" noclick="true">replay_control_header_rp_ctrl</label>
+			<panel x="-11" name="upper_min" height="12" width="40" valign="center" align="right" color="invisible" noclick="true">
+				<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="white" noclick="true"/>
+				<frame texture="/ui/frames/roundframe.tga" color="gray" borderthickness="4" noclick="true" />
+
+				<panel color="invisible" noclick="true">
+					<image align="center" y="0" valign="center" height="16" width="16" color="black" texture="/ui/elements/sort_up.tga"/>
+					<button
+						color="invisible"
+						onclick="
+							PlaySound('/shared/sounds/ui/button_expand.mp3');
+							ShowWidget('replay_control_main');
+							HideWidget('replay_control_small');
+							"
+					/>
+				</panel>
+			</panel>
+		</frame>
+	</panel>
+
+	<panel name="replay_control_main" width="500" height="136" align="center" valign="bottom" cangrab="true" y="0" visible="false">
+		<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="12" style="lobby_window" noclick="true"/>
+		<frame texture="/ui/frames/roundframe.tga" style="lobby_window_bg" borderthickness="12" noclick="true"/>
+
+		<panel height="-52" y="26" width="-2" align="center" texture="/ui/elements/parchment_small.tga" noclick="true"/>
+
+		<instance
+			name="round_button2"
+			x="9" y="32"
+			width="80" height="18"
+			align="left" valign="top"
+			font="chat_12" label="replay_control_button_spectate"
+			visible="false"
+			onclick=""
+		/>
+
+		<frame y="30" x="-13" valign="top" align="right" width="80" height="32"  borderthickness="6" color="black" texture="/ui/frames/inset_round.tga">
+			<label width="100%" height="45%" y="1" textvalign="center" textalign="center" valign="top" align="center" font="chat_10" color="yellow" shadow="false" watch="ReplaySpeed" ontrigger="SetText(Translate('game_replay_control_speed') # Choose(ReplaySpeed, -3, '1/8X', '1/4X', '1/2X', '1X', '2X', '4X', '8X'));"/>
+			<label width="100%" height="45%" y="-3" textvalign="center" textalign="center" valign="bottom" align="center" font="chat_12" color="white" shadow="false" watch="ReplayTime" ontrigger="SetText(FtoT(param, 2, 0));">--:--:--</label>
+		</frame>
+
+		<frame y="16" valign="center" align="center" width="-10" height="40" color="#000000aa" borderthickness="6" texture="/ui/frames/inset_round.tga" ></frame>
+
+		<frame y="30" x="0" valign="top" align="center" width="300" height="26" color="#000000AA" borderthickness="6" texture="/ui/frames/inset_round.tga">
+			<panel y="0" width="150" height="24" align="center" valign="center">
+				<label width="100%" height="100%" y="-1" textvalign="center" textalign="center" valign="center" align="center" font="chat_14" color="white" shadow="true" watch="ReplayName" ontrigger="SetText(Translate('game_replay_control_viewing') # param);"/>
+				<button color="invisible" onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); ShowWidget('choose_replay');"/>
+			</panel>
+
+			<instance
+				name="round_button2"
+				x="-4" y="0"
+				width="50" height="18"
+				align="right" valign="center"
+				font="chat_12" label="replay_control_button_next"
+				onclick="NextReplayClient();"
+			/>
+
+			<instance
+				name="round_button2"
+				x="4" y="0"
+				width="50" height="18"
+				align="left" valign="center"
+				font="chat_12" label="replay_control_button_prev"
+				onclick="PrevReplayClient();"
+			/>
+		</frame>
+
+		<instance
+			name="round_button2"
+			x="10" y="16"
+			width="114" height="32"
+			align="left" valign="center"
+			font="chat_12" label="replay_control_button_load_replay"
+			onclick=""
+		/>
+
+		<instance
+			name="round_button2"
+			x="-10" y="16"
+			width="114" height="32"
+			align="right" valign="center"
+			font="chat_12" label="replay_control_button_exit_replay"
+			onclick="ShowWidget('confirm_exit');"
+		/>
+
+		<frame y="16"  valign="center" align="center" width="234" height="40" color="invisible" borderthickness="6" texture="/ui/frames/inset_round.tga">
+			<panel width="222" height="32" color="invisible" align="center" valign="center" float="right" padding="6">
+				<panel width="32" color="invisible">
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="white"/>
+					<frame group="controls" name="control_down_restart" texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="orange" visible="false"/>
+					<frame name="control_over_restart" texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="orange" visible="false"/>
+					<frame texture="/ui/frames/roundframe.tga" color="gray" borderthickness="4"/>
+
+					<image width="24" height="24" align="center" valign="center" texture="/ui/elements/restart.tga" />
+					<button
+						onmouseover="ShowWidget('control_over_restart'); PlaySound('/shared/sounds/ui/button_expand.mp3');"
+						onclick="ShowOnly('control_down_restart'); PlaySound('/shared/sounds/ui/button_click.mp3'); ReplayIncFrame(-175);"
+						onmouseout="HideWidget('control_over_restart');"
+						color="invisible"
+					/>
+				</panel>
+				
+				<panel width="32" color="invisible">
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="white"/>
+					<frame group="controls" name="control_down_rewind" texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="orange" visible="false"/>
+					<frame name="control_over_rewind" texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="orange" visible="false"/>
+					<frame texture="/ui/frames/roundframe.tga" color="gray" borderthickness="4"/>
+					<frame name="control_over_rewind" texture="/ui/frames/roundframe.tga" color="orange" borderthickness="4" visible="false"/>
+					<image width="24" height="24" align="center" valign="center" texture="/ui/elements/rw.tga"/>
+					<button
+						onmouseover="ShowWidget('control_over_rewind'); PlaySound('/shared/sounds/ui/button_expand.mp3');"
+						onclick="ShowOnly('control_down_rewind'); PlaySound('/shared/sounds/ui/button_click.mp3'); ReplayIncPlaybackSpeed(-1);"
+						onmouseout="HideWidget('control_over_rewind');"
+						color="invisible"
+					/>
+				</panel>
+				
+				<panel width="32" color="invisible">
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="white"/>
+					<frame group="controls" name="control_down_play" texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="orange" visible="false"/>
+					<frame name="control_over_play" texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="orange" visible="false"/>
+					<frame texture="/ui/frames/roundframe.tga" color="gray" borderthickness="4"/>
+
+					<image width="28" height="28" align="center" valign="center" texture="/ui/elements/play.tga" />
+					<button
+						onmouseover="ShowWidget('control_over_play'); PlaySound('/shared/sounds/ui/button_expand.mp3');"
+						onclick="ShowOnly('control_down_play'); PlaySound('/shared/sounds/ui/button_click.mp3'); ReplaySetPlaybackSpeed(0); replay_pause = false;"
+						onmouseout="HideWidget('control_over_play');"
+						color="invisible"
+					/>
+				</panel>
+				
+				<panel width="32" color="invisible">
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="white"/>
+					<frame group="controls" name="control_down_pause" texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="orange" visible="false"/>
+					<frame name="control_over_pause" texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="orange" visible="false"/>
+					<frame texture="/ui/frames/roundframe.tga" color="gray" borderthickness="4"/>
+
+					<image width="24" height="24" align="center" valign="center" texture="/ui/elements/pause.tga" />
+					<button onmouseover="ShowWidget('control_over_pause'); PlaySound('/shared/sounds/ui/button_expand.mp3');" onclick="ShowOnly('control_down_pause'); PlaySound('/shared/sounds/ui/button_click.mp3'); Toggle('replay_pause');" onmouseout="HideWidget('control_over_pause');" color="invisible" />
+				</panel>
+				
+				<panel width="32" color="invisible">
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="white"/>
+					<frame group="controls" name="control_down_ff" texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="orange" visible="false"/>
+					<frame name="control_over_ff" texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="orange" visible="false"/>
+					<frame texture="/ui/frames/roundframe.tga" color="gray" borderthickness="4"/>
+					<image width="24" height="24" align="center" valign="center" texture="/ui/elements/ff.tga"/>
+					<button onmouseover="ShowWidget('control_over_ff'); PlaySound('/shared/sounds/ui/button_expand.mp3');" onclick="ShowOnly('control_down_ff'); PlaySound('/shared/sounds/ui/button_click.mp3'); ReplayIncPlaybackSpeed(1);" onmouseout="HideWidget('control_over_ff');" color="invisible"/>
+				</panel>
+				
+				<panel width="32" color="invisible">
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="white"/>
+					<frame group="controls" name="control_down_end" texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="orange" visible="false"></frame> <!-- frame bg -->
+					<frame name="control_over_end" texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="orange" visible="false"></frame> <!-- frame bg -->
+					<frame texture="/ui/frames/roundframe.tga" color="gray" borderthickness="4"/>
+					<image width="24" height="24" align="center" valign="center" texture="/ui/elements/end.tga" />
+					<button
+						onmouseover="ShowWidget('control_over_end'); PlaySound('/shared/sounds/ui/button_expand.mp3');"
+						onclick="ShowOnly('control_down_end'); PlaySound('/shared/sounds/ui/button_click.mp3'); ReplayIncFrame(75);"
+						onmouseout="HideWidget('control_over_end');"
+						color="invisible"
+					/>
+				</panel>
+			</panel>
+		</frame>
+
+		<frame texture="/ui/frames/rounded_header_bg_white.tga" height="26" style="lobby_window_header_bg" borderthickness="10" noclick="true"/>
+
+		<label x="10" height="24" textvalign="center" font="chat_12" color="white" shadow="true" noclick="true">replay_control_label_replay_control</label>
+
+		<frame  texture="/ui/frames/roundframe_header.tga" height="26" style="lobby_window_header" borderthickness="10" noclick="true">
+			<panel name="upper_min" x="-10" height="12" width="40" valign="center" align="right" color="invisible" noclick="true">
+				<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="4" color="white" noclick="true" />
+				<frame texture="/ui/frames/roundframe.tga" color="gray" borderthickness="4" noclick="true" />
+
+				<panel color="invisible">
+					<image align="center" y="0" valign="center" height="16" width="16" color="black" texture="/ui/elements/sort_down.tga"/>
+					<button color="invisible" onclick="PlaySound('/shared/sounds/ui/button_expand.mp3'); HideWidget('replay_control_main'); ShowWidget('replay_control_small');"/>
+				</panel>
+			</panel>
+		</frame>
+
+		<frame valign="bottom" texture="/ui/frames/rounded_footer_bg_white.tga" height="30" style="lobby_window_footer_bg"  borderthickness="10"/>
+		<frame valign="bottom" texture="/ui/frames/roundframe_footer.tga" height="30" style="lobby_window_footer" borderthickness="10">
+
+			<panel valign="center"  height="20" width="-10" color="invisible" align="center">
+				<frame style="lobby_window_bg" texture="/ui/frames/rounded_bg_white.tga"  borderthickness="8"/>
+				<frame style="lobby_window" texture="/ui/frames/roundframe.tga"  borderthickness="8"/>
+
+				<panel y="-5%"  height="20" width="9%"  color="invisible" valign="bottom">
+					<label width="100%" height="20" textalign="center" textvalign="center" align="center" font="chat_12" color="white" shadow="true">00:00</label>
+				</panel>
+
+				<panel y="0" height="10" width="82%" align="center"  color="invisible" valign="center">
+					<frame valign="bottom" height="10" color="#00000088" borderthickness="4" texture="/ui/frames/inset_round.tga">
+						<slider
+							handlecolor="#CCCCCC"
+							handlewidth="12"
+							handleheight="12"
+							slotcolor="#CCCCCCFF"
+							slotwidth="-6"
+							slotheight="8"
+							minvalue="0"
+							maxvalue="1"
+							texture="/ui/elements/generic_slider.tga"
+							watch0="ReplayFrame"
+							ontrigger0="SetValue(param);"
+							watch1="ReplayEndFrame"
+							ontrigger1="SetMaxValue(param);"
+							onenddrag="ReplaySetFrame(this);"
+						/>
+					</frame>
+				</panel>
+
+				<panel y="-5%" height="20" width="9%" align="right"  color="invisible" valign="bottom">
+					<label width="100%" height="20" textalign="center" textvalign="center" align="center" font="chat_12" color="white" shadow="true" watch="ReplayEndTime" ontrigger="SetText(FtoT(param, 1, 0));">--:--</label>
+				</panel>
+			</panel>
+		</frame>
+	</panel>
+
+	<panel name="confirm_exit" visible="false" blockinput="true" color="#000000cc">
+		<panel width="250" height="150" align="center" valign="center">
+			<panel y="-2" valign="center" height="-45" texture="/ui/elements/parchment.tga"/>
+		
+			<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="12" style="lobby_window_bg"/>
+			<frame texture="/ui/frames/roundframe.tga"  color="#5E2D1F" borderthickness="12"/>
+			<frame texture="/ui/frames/rounded_header_bg_white.tga" height="26" style="lobby_window_header_bg" borderthickness="12"/>
+			<frame texture="/ui/frames/roundframe_header.tga" height="26" style="lobby_window_header" borderthickness="12"/>
+
+			<frame valign="bottom" texture="/ui/frames/rounded_footer_bg_white.tga" height="50" style="lobby_window_header_bg" borderthickness="12"/>
+			<frame valign="bottom" texture="/ui/frames/roundframe_footer.tga" height="50" style="lobby_window_header" borderthickness="12">
+
+			<panel y="0" height="28" valign="center" align="center" width="-30" >
+				<panel height="28" width="100" align="left" color="invisible">
+					<instance name="round_button2" width="100" height="24" font="gametweener" label="replay_control_button_cancel" onclick="HideWidget('confirm_exit');"/>
+				</panel>
+				
+				<panel height="28" width="100" align="right" color="invisible">
+					<instance name="round_button2" width="100" height="24" font="gametweener" label="replay_control_button_exit" onclick="Quit();"/>
+				</panel>				
+			</panel>			
+			</frame>
+			
+			<panel  y="40" width="-30" height="50" align="center" color="invisible">
+				<label width="-20" height="24" textvalign="center" align="center" font="chat_14" wrap="true" color="white" shadow="true">replay_control_label_stop_rp</label>
+			</panel>
+			
+			<label width="-20" height="24" textvalign="center" align="center" font="chat_14" color="white" shadow="true">replay_control_label_confirm</label>
+			<button x="-12" y="7"  width="14" height="14" align="right" color="#FFFFFF99" texture="/ui/elements/xbutton.tga" onclick="PlaySound('/shared/sounds/ui/button_close.mp3'); HideWidget('confirm_exit');"/>
+
+		</panel>
+	</panel>
+	
+	<panel name="choose_replay" color="#00000088" visible="false">
+		<panel width="250" y="-299" height="310" align="center" valign="bottom">
+			<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="12" style="lobby_window"/>
+			<frame texture="/ui/frames/roundframe.tga" style="lobby_window_bg" borderthickness="12"/>
+			<panel height="-52" y="26" width="-2" align="center" texture="/ui/elements/parchment_small.tga"/>
+
+			<frame align="center" height="-65" y="30" x="0" width="-10" texture="/ui/frames/inset.tga" borderwidth="2">
+				<listbox
+					name="replay_list"
+					wrap="row"
+					width="99%"
+					height="-71"
+					y="31"
+					align="center"
+					valign="top"
+					color="#00000088"
+					itemwidth="96%"
+					itemheight="16"
+					font="gametweener"
+					highlightcolor="maroon"
+					highlightbordercolor="invisible"
+					highlight="under"
+					scrolltexture="/ui/elements/vist_scroll.tga"
+					handleheight="64"
+					hoverselect="false"
+					onselect="
+						Set(_replay_selected, param);
+						Set(_selected_replay, ('_replay_' # param));"
+					ondoubleclick="
+						If(_replay_selected != -1, StartReplay(_selected_replay));
+						Call('replay_list', 'Clear();');
+						Set(_replay_selected, -1);
+						HideWidget('replay_browser');"
+				/>
+			</frame>
+
+			<frame texture="/ui/frames/rounded_header_bg_white.tga" height="26" style="lobby_window_header_bg" borderthickness="10"></frame> <!-- frame header bg -->
+
+			<frame  texture="/ui/frames/roundframe_header.tga" height="26" style="lobby_window_header" borderthickness="10"/>
+
+			<label width="-20" height="24" textvalign="center" align="center" font="chat_12" color="white" shadow="true" >replay_control_label_choose_replay</label> <!-- header label -->
+			<button x="-12" y="7"  width="14" height="14" align="right" color="#FFFFFF99" texture="/ui/elements/xbutton.tga" onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('choose_replay');">
+			</button>
+
+			<frame valign="bottom" texture="/ui/frames/rounded_footer_bg_white.tga" height="30" style="lobby_window_footer_bg"  borderthickness="10"></frame> <!-- frame footer bg -->
+			<frame valign="bottom" texture="/ui/frames/roundframe_footer.tga" height="30" style="lobby_window_footer" borderthickness="10">
+				<panel x="-10" width="100" height="20" align="right" valign="center">
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="8" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="gray" borderthickness="8"/>
+					<label width="100%" height="100%" y="-1" textvalign="center" textalign="center" valign="center" align="center" font="chat_12" color="black" shadow="false">replay_control_button_load</label> <!-- header label -->
+					<button color="invisible" onclick="PlaySound('/shared/sounds/ui/button_click.mp3');"/>
+				</panel>
+			</frame>
+		</panel>
+	</panel>
+</interface>
+

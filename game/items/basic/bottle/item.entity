@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Bottle"
+	
+	statuseffecttooltip="State_Bottle"
+	icon="icon_3.tga"
+	
+	cost="600"
+	allowsharing="true"
+	
+	actiontype="target_self"
+	activatescheme="heroes_only"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="500"
+	cooldowntype="bottle"
+	casteffect="cast.effect"
+>
+	<onimpact effectdescription="true">
+		<applystate name="State_Bottle" duration="3000"/>
+		<setactivemodifierkey name="bottle_2" />
+	</onimpact>
+
+	<onframe>
+		<condition test="proximity ally_well 50">
+			<condition test="modifier bottle_2 or modifier bottle_1 or modifier bottle_empty">
+				<setactivemodifierkey name="" />
+				<playeffect effect="refill.effect"/>
+			</condition>
+		</condition>
+	</onframe>
+
+	<modifier key="bottle_2" modpriority="100"
+		displayname="true"
+		icon="icon_2.tga"
+	>
+		<onimpact effectdescription="true">
+			<applystate name="State_Bottle" duration="3000"/>
+			<setactivemodifierkey name="bottle_1" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="bottle_1" modpriority="100"
+		displayname="true"
+		icon="icon_1.tga"
+	>
+		<onimpact effectdescription="true">
+			<applystate name="State_Bottle" duration="3000"/>
+			<setactivemodifierkey name="bottle_empty" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="bottle_empty" modpriority="100"
+		displayname="true"
+		icon="icon_0.tga"
+		actiontype="target_entity"
+		targetscheme="bottle"
+		ignoreinvulnerable="true"
+		range="100"
+		inheritmovement="false"
+		casteffect="effects/bottle_refill.effect"
+	>
+		<onimpact effectdescription="true">
+			<condition test="entity_type Powerup_Damage">
+				<setactivemodifierkey name="bottle_damage" />
+				<delete target="target_entity" />
+				<starttimer duration="120000" />
+			</condition>
+			<condition test="entity_type Powerup_Illusion">
+				<setactivemodifierkey name="bottle_illusion" />
+				<delete target="target_entity" />
+				<starttimer duration="120000" />
+			</condition>
+			<condition test="entity_type Powerup_MoveSpeed">
+				<setactivemodifierkey name="bottle_movespeed" />
+				<delete target="target_entity" />
+				<starttimer duration="120000" />
+			</condition>
+			<condition test="entity_type Powerup_Regen">
+				<setactivemodifierkey name="bottle_regen" />
+				<delete target="target_entity" />
+				<starttimer duration="120000" />
+			</condition>
+			<condition test="entity_type Powerup_Stealth">
+				<setactivemodifierkey name="bottle_stealth" />
+				<delete target="target_entity" />
+				<starttimer duration="120000" />
+			</condition>
+		</onimpact>
+	</modifier>
+	
+	<modifier key="bottle_damage" modpriority="100"
+		displayname="true"
+		statuseffecttooltip="State_PowerupDamage"
+		icon="icon_powerup_damage.tga"
+	>
+		<onimpact>
+			<applystate name="State_PowerupDamage" duration="30000"/>
+			<setactivemodifierkey name="" />
+			<resettimer />
+		</onimpact>
+		
+		<ontimer>
+			<condition target="this_owner_entity" test="target_type hero">
+				<applystate name="State_PowerupDamage" duration="30000"/>
+				<setactivemodifierkey name="" />
+			</condition>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</ontimer>
+	</modifier>
+	
+	<modifier key="bottle_illusion" modpriority="100"
+		displayname="true"
+		statuseffecttooltip=""
+		icon="icon_powerup_illusion.tga"
+	>
+		<onimpact>
+			<spawnillusion lifetime="75000" receivedamagemultiplier="3.0" inflictdamagemultiplier="0.35" />
+			<spawnillusion lifetime="75000" receivedamagemultiplier="3.0" inflictdamagemultiplier="0.35" />
+			<setactivemodifierkey name="" />
+			<resettimer />
+		</onimpact>
+		
+		<ontimer>
+			<condition target="this_owner_entity" test="target_type hero">
+				<spawnillusion lifetime="75000" receivedamagemultiplier="3.0" inflictdamagemultiplier="0.35" />
+				<spawnillusion lifetime="75000" receivedamagemultiplier="3.0" inflictdamagemultiplier="0.35" />
+				<setactivemodifierkey name="" />
+			</condition>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</ontimer>
+	</modifier>
+	
+	<modifier key="bottle_movespeed" modpriority="100"
+		displayname="true"
+		statuseffecttooltip="State_PowerupMoveSpeed"
+		icon="icon_powerup_speed.tga"
+	>
+		<onimpact>
+			<applystate name="State_PowerupMoveSpeed" duration="30000"/>
+			<setactivemodifierkey name="" />
+			<resettimer />
+		</onimpact>
+		
+		<ontimer>
+			<condition target="this_owner_entity" test="target_type hero">
+				<applystate name="State_PowerupMoveSpeed" duration="30000"/>
+				<setactivemodifierkey name="" />
+			</condition>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</ontimer>
+	</modifier>
+	
+	<modifier key="bottle_regen" modpriority="100"
+		displayname="true"
+		statuseffecttooltip="State_PowerupRegen"
+		icon="icon_powerup_regen.tga"
+	>
+		<onimpact>
+			<applystate name="State_PowerupRegen" duration="30000"/>
+			<setactivemodifierkey name="" />
+			<resettimer />
+		</onimpact>
+		
+		<ontimer>
+			<condition target="this_owner_entity" test="target_type hero">
+				<applystate name="State_PowerupRegen" duration="30000"/>
+				<setactivemodifierkey name="" />
+			</condition>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</ontimer>
+	</modifier>
+	
+	<modifier key="bottle_stealth" modpriority="100"
+		displayname="true"
+		statuseffecttooltip="State_PowerupStealth"
+		icon="icon_powerup_stealth.tga"
+	>
+		<onimpact>
+			<applystate name="State_PowerupStealth" duration="60000"/>
+			<setactivemodifierkey name="" />
+			<resettimer />
+		</onimpact>
+		
+		<ontimer>
+			<condition target="this_owner_entity" test="target_type hero">
+				<applystate name="State_PowerupStealth" duration="60000"/>
+				<setactivemodifierkey name="" />
+			</condition>
+			<else>
+				<setactivemodifierkey name="" />
+			</else>
+		</ontimer>
+	</modifier>
+</item>

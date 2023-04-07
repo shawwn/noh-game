@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Kongor_StartPoint"
+
+	radius="200"
+	lifetime="-1"
+	impactinterval="500"
+	targetselection="all"
+	targetscheme="boss"
+	ignoreinvulnerable="true"
+	
+>
+	<onimpact>
+		<expirestate name="State_Kongor_Return" target="this_owner_entity"/>
+	</onimpact>
+	
+</affector>

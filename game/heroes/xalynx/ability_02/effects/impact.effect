@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true">
+
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			life="500"
+			startcolor="1 1 1"
+			midcolor="3 2 3"
+			endcolor="1 1 1"
+		/>
+	
+		<particlesystem name="system0" space="entity" scale="1.25">
+		
+
+		
+			<billboard
+				material="/shared/effects/materials/light_rays.material"
+				scale="1.2"
+				width="60"
+				minheight="220"
+				maxheight="400"
+				startcolor=".3 .2 .7"
+				endcolor="0 0 0"
+				position="0 0 125"						
+				lockup="1"
+				life="333"
+			/>
+
+			<groundsprite	
+				life="1333"
+				material="/shared/effects/materials/ground_smash_overlay.material"
+				minsize="15"
+				maxsize="38"			
+				color="1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos="0.80"
+				maxyaw="360"
+			/>
+		
+			<groundsprite
+				life="800"
+				material="/shared/effects/materials/whitedot_ground.material"
+				size="22"
+				midsizepos=".5"
+				startcolor=".5 .7 1"
+				endcolor="0 0 0"
+				minangle="55"
+				maxangle="55"
+				angles="0 0 0"
+			/>
+
+			<billboard
+				depthbias="-40"
+				life="200"
+				material="/shared/effects/materials/whitedot.material"
+				minsize="120"
+				maxsize="185"
+				midsizepos=".5"
+				startcolor=".4 .3 .7"
+				endcolor="0 0 0"
+				position="0 0 5"
+			/>							
+		
+		
+		
+		
+		
+		
+			<simpleemitter
+				bone="_bone_overhead"
+				spawnrate="1000"
+				count="25"
+				particlelife="250"
+				gravity="-100"
+				speed="125"
+				drag=".05"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="15 15 50"
+				minangle="0"
+				maxangle="5"
+				direction="0 0 1"
+				offsetdirection="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startcolor=".5 .5 1"
+					midcolor=".5 .5 1"
+					endcolor=".5 .5 1"
+					midcolorpos=".2"
+					startsize="5"
+					midsize="25"
+					endsize="45"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+
+			
+			
+
+			<simpleemitter
+				delay="1100"
+				bone="_bone_centerofchest"
+				spawnrate="2000"
+				count="15"
+				minparticlelife="800"
+				maxparticlelife="1400"
+				gravity="10"
+				minspeed="250"
+				maxspeed="550"
+				drag=".13"
+				offsetsphere="10"
+				material="/shared/effects/materials/blood1.material"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color=".7"
+					maxanglespeed="20"
+					minanglespeed="-20"
+					startsize="10"
+					minendsize="35"
+					maxendsize="45"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					color=".3"
+					maxanglespeed="55"
+					minanglespeed="-55"
+					startsize="10"
+					minendsize="55"
+					maxendsize="85"
+					startalpha="1"
+					midalpha=".8"
+					endalpha="0"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					color=".4"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					startsize="30"
+					minendsize="5"
+					maxendsize="10"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="2000"
+				count="15"
+				minparticlelife="800"
+				maxparticlelife="1400"
+				gravity="10"
+				minspeed="250"
+				maxspeed="550"
+				drag=".13"
+				offsetsphere="10"
+				material="/shared/effects/materials/blood1.material"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					color=".7"
+					maxanglespeed="20"
+					minanglespeed="-20"
+					startsize="10"
+					minendsize="35"
+					maxendsize="45"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color=".3"
+					maxanglespeed="55"
+					minanglespeed="-55"
+					startsize="10"
+					minendsize="55"
+					maxendsize="85"
+					startalpha="1"
+					midalpha=".8"
+					endalpha="0"
+				/>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color=".4"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					startsize="30"
+					minendsize="5"
+					maxendsize="10"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<billboard
+				life="400"
+				bone="_bone_centerofchest"
+				startsize="45"
+				endsize="180"
+				material="/shared/effects/materials/blood_08.material"
+				startalpha="1"
+				endalpha="0"
+				depthbias="10"
+				position="0 0 5"
+			/>
+			
+
+			<model
+				model="/heroes/xalynx/projectile/model.mdf"
+				anim="stun"
+				scale="0.5"
+				position="0.0 0.0 -20.0"
+				directionalspace="local"
+				startalpha="1.0"
+				endalpha="1.0"
+				yawspeed="360"
+				color="1 1 1"
+				life="300"
+			>			
+	
+				<billboard	
+					bone="blade"
+					life="300"
+					height="20"	
+					width="330"
+					lockup="1"
+					lockright="1"
+					roll="90"
+					position="0 -4 -160"
+					material="/shared/effects/materials/chainlinkconnect.material"
+				/>
+				<billboard	
+					bone="blade"
+					life="300"
+					height="20"	
+					width="330"
+					lockup="1"
+					lockright="1"
+					yaw="90"
+					roll="90"
+					position="0 -4 -160"
+					material="/shared/effects/materials/chainlinkconnect.material"
+				/>			
+				
+			</model>
+
+			
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+	  	<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

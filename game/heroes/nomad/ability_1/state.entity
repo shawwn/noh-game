@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nomad_Ability1"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	
+	armor="5,10,15,20"
+	movespeedmultiplier="0.10"
+	unitwalking="true"
+	disarmed="true"
+	
+
+	modifierkey="ability1"
+	morphpriority="50"
+	morphmodel="/heroes/nomad/sand.mdf"
+	
+	effecttype="StatusBuff"
+>
+	<aura state="State_Nomad_Ability1_Enemy" radius="150,200,250,300" targetscheme="enemy_units" />
+</state>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Frosty4"
+
+	icon="icon.tga"
+	statuseffecttooltip="State_Frosty_Ability4"
+	
+	anim="ability_4"
+	casttime="4000"
+	castactiontime="500"
+	casteffect="cast.effect"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	ischanneling="true"
+	targetradius="700"
+	
+	manacost="150,175,200"
+	cooldowntime="150000,120000,90000"
+>
+	<onchannelstart>
+		<spawnaffector name="Affector_Frosty_Ability4" target="source_entity" ischannel="true"/>		
+	</onchannelstart>
+	
+	<onimpact/>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onimpact/>
+	</modifier>
+</ability>

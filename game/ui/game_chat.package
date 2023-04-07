@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+
+	<!-- Dynamic Textures -->
+	<texture file="/ui/elements/lobby/icon_hellbourne.tga" />
+	<texture file="/ui/elements/lobby/icon_legion.tga" />
+	<texture file="/ui/elements/lobby/icon_host.tga" />
+	<texture file="/ui/elements/lobby/icon_loading.tga" />
+	<texture file="/ui/elements/lobby/icon_referee.tga" />
+	<texture file="/ui/elements/lobby/icon_spectator.tga" />
+
+	<!-- Lobby -->
+	<template name="chat_list_entry">
+		<panel texture="/ui/elements/line_break.tga" color="1 1 1  .1" float="right">
+			<panel width="100@">
+				<image
+					texture="$invis"
+					onshow="
+						If({loading=false},
+							SetTexture('/ui/elements/lobby/icon_loading.tga'),
+							If({host=false},
+								SetTexture('/ui/elements/lobby/icon_host.tga'),
+								If({referee=false},
+									SetTexture('/ui/elements/lobby/icon_referee.tga'),
+									If({team} == 0,
+										SetTexture('/ui/elements/lobby/icon_spectator.tga'),
+										If({team} == 1,
+											SetTexture('/ui/elements/lobby/icon_legion.tga'),
+											If({team} == 2, SetTexture('/ui/elements/lobby/icon_hellbourne.tga'))
+										)
+									)
+								)
+							)
+						);
+						"
+				/>
+			</panel>
+			<label
+				textvalign="center"
+				font="dyn_12" color="{color=white}"
+				shadow="true"
+				onshow="
+					If({loading=false}, SetText('{name} [' # Round({loadpercent=0} * 100) # '%%]'), SetText('{name}'));
+					If({loading=false}, SetColor('0.33 0.33 0.33 1'));
+					"
+			/>
+			
+			<button
+				x="-5" y="0"
+				width="16" height="16"
+				align="right" valign="center"
+				color="invisible"
+				onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav');"
+				onclick="PlaySound('/shared/sounds/ui/button_click_05.wav'); Kick('{name}');"
+				onshow="SetVisible(!({host=false}) and IsHost());"
+			>
+				<widgetstate statename="up">
+					<image texture="/ui/elements/kick_up.tga" />
+				</widgetstate>
+
+				<widgetstate statename="over">
+					<image texture="/ui/elements/kick_over.tga" />
+				</widgetstate>
+
+				<widgetstate statename="down" x="1" y="1">
+					<image texture="/ui/elements/kick_down.tga" />
+				</widgetstate>
+
+				<widgetstate statename="disabled">
+					<image texture="/ui/elements/kick_up.tga" color=".5 .5 .5 1"/>
+				</widgetstate>
+			</button>
+		</panel>
+	</template>
+
+	<template name="lobby_chat_window">
+		<panel name="chat" color="invisible" float="bottom" padding="1%" reverse="true">
+			<instance name="header_bar" lbl="gamechat_header_chat" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_chat_for', 'target', param7));" height="3.0h" />
+
+			<panel height="-6.0h" width="-1.0h" align="center" float="right" padding="1%">
+				<panel width="75%">
+					<frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 .5" noclick="1" />
+					<!-- Chat Buffer -->
+					<textbuffer
+						name="lobby_chat_buffer"
+						scrolltexture="/ui/info/combobox.tga"
+						handleheight="2.0h"
+						scrollbarsize="2.0h"
+						width="-1.0h" height="-1.0h"
+						align="center" valign="center"
+						textalign="left"
+						font="dyn_10"
+						wrap="true"
+						anchorbottom="true"
+						usesmileys="true"
+						maxlines="1000"
+						shadow="true"
+						color="invisible"
+						textcolor="white"
+						linktochat="true"
+						isgamechat="true"
+					/>
+				</panel>
+				<panel width="24%">
+					<frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 .6" noclick="1" />
+					<!-- Nicks in channel -->
+					<listbox
+						width="-2"
+						align="center"
+						valign="top"
+						color="invisible"
+						font="dyn_10"
+						itemwidth="100%"
+						itemheight="2.3h"
+						highlight="under"
+						highlightcolor="#67a7da62"
+						highlightbordercolor="invisible"
+						select="true"
+						clearselection="true"
+						hoverselect="false"
+						exteriorscrollbars="false"
+						scrollbarplaceholder="false"
+						scrollbarsize="2.0h"
+						scrolltexture="/ui/info/combobox.tga"
+						handleheight="2.0h"
+						watch="LobbyPlayerList"
+						ontrigger="
+							If(param0 == -1, ClearItems());
+							EraseListItemByValue(param0);
+							If((param0 != -1), Split(
+								AddTemplateListItem(
+									'chat_list_entry',
+									param0,
+									'name', param1,
+									'color', param2,
+									'host', param3,
+									'loading', param4,
+									'team', param5,
+									'referee', param6,
+									'loadpercent', param7
+									),
+								CreateString('_chat_user_' # param0 # '_name', param1),
+								SortListboxValue())
+								);
+							"
+						onrightclick="
+							Set('ui_lastSelectedUser', *('_chat_user_' # this # '_name'));
+							Set('ui_tooltipTarget', 'chat_userlist_rtclick');
+							ShowWidget(ui_tooltipTarget);
+							Call(ui_tooltipTarget, 'SetX(\'' # param0 # '\');');
+							Call(ui_tooltipTarget, 'SetY(\'' # param1 # '\');');
+							Call(ui_tooltipTarget # '_choices', 'ListBoxCmd(\'SelectNone\');');
+							PlaySound('/shared/sounds/ui/button_rightclick.mp3');
+							SetFocusName(ui_tooltipTarget);"
+					/>
+
+					<instance name="cc_rightclick_menu" menu_name="chat_userlist_rtclick"/>
+					
+				</panel>
+			</panel>
+			
+			
+			<panel height="3.0h" width="-1.0h" align="center" valign="bottom">
+				<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 .6" noclick="1" />
+				<panel name="textbox" width="64%" height="80%" valign="center" color="0 0 0 .5">
+					<frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />
+					<!-- Chat text -->
+					<textbox
+						name="game_lobby_chat_box"
+						y="0.4h"
+						x="0.4h"
+						width="-0.6h"
+						valign="center" align="center"
+						maxlength="250"
+						textalign="left" textvalign="center"
+						font="dyn_10"
+						textcolor="white"
+						shadow="false"
+						color="invisible"
+						onshow="SleepWidget(1);"
+						onwake="SetFocus(true); SetInputLine(GetCurrentChatMessage());"
+						onenter="
+							if(StringEquals(_chat_type, 'All'), AllChat(this), TeamChat(this));
+							EraseInputLine();"
+						onesc="EraseInputLine(); SetFocus(true);"
+						onchange="SetCurrentChatMessage(this); if(StringLength(this) gt 0, EnableWidget('game_lobby_send_message_button'), DisableWidget('game_lobby_send_message_button'));"
+					/>
+				</panel>
+					
+				<panel x="-25%" y="0.5h" align="right" width="10%" onload="CreateString('_chat_type', 'All');" color="invisible" noclick="1">
+					<instance name="Noptions_combobox" width="100%" valign="top" itemwidth="100%" maxlistheight="2" cvar="_chat_type" onload="AddTemplateListItem('Ncombobox_item', 'All', 'label', 'game_chat_button_all'); AddTemplateListItem('Ncombobox_item', 'Team', 'label', 'game_chat_button_team'); CreateString('_chat_type', 'All');" />
+				</panel>
+					
+				<instance
+					name="button2"
+					button_name="game_lobby_send_message_button"
+					enabled="false"
+					height="80%" width="24%"
+					align="right" valign="center"
+					font="dyn_10"
+					label="gamechat_button_send_message"
+					onclick="
+						if(StringEquals(_chat_type, 'All'), AllChat(game_lobby_chat_box), TeamChat(game_lobby_chat_box));
+						Call('game_lobby_chat_box', 'EraseInputLine();');
+						"
+				/>
+			</panel>
+
+
+		</panel>
+	</template>
+
+	<!-- Game -->
+	<template name="game_chat_window">
+		<panel name="{interface}_chatwindow" x="{xoffset}" y="{yoffset}" width="55h" valign="bottom" height="48h" borderthickness="8" texture="/ui/elements/stoneborder.tga" color="invisible" onshow="If(!StringEquals(GetCurrentChatMessage(), ''), SetFocusName('{interface}_chat_' # GetCurrentChatType() # '_input'));">
+			<textbuffer name="{interface}_chat_box" y="0" height="100%" align="left" textalign="left" font="dyn_12" fadecolor="white" color="invisible" textcolor="white" shadow="true" shadowcolor="black" width="100%" wrap="true" anchorbottom="true" usesmileys="true" fadetime="15000" usescrollbar="false" linktochat="true" isgamechat="true" watch0="GameMessage" ontrigger0="TextBufferCmd(param);"/>
+
+			<panel name="{interface}_chat_box_popup" noclick="true" visible="false">
+				<panel color="invisible" height="100%" align="left" width="100%"/>
+				<textbuffer name="{interface}_chat_box_popup_text" y="0" height="100%" align="center" width="100%" textalign="left" font="dyn_12" fadecolor="white" color="invisible" textcolor="white" shadow="true" shadowcolor="black" wrap="true" anchorbottom="true" usesmileys="true" usescrollbar="false" linktochat="true" isgamechat="true" watch0="GameMessage" ontrigger0="TextBufferCmd(param);"/>
+			</panel>
+
+			<frame name="{interface}_textbox_frame"  visible="false" y="3.5h" x="-0.4h" width="100%" valign="bottom" align="center" height="3h" borderthickness="1h" texture="/ui/elements/stoneborder.tga" color="red">
+				<label name="{interface}_chat_tip" align="left" valign="bottom" height="2h" width="19h" x="6.5h" y="1.9h" font="dyn_8" color="white" shadow="true" shadowcolor="black">gamechat_tip_hit_z_history</label>
+				<panel name="{interface}_chat_backer" align="center" valign="center" height="93.5%" width="99%" color="#00000075"/>
+				<label name="{interface}_chat_team_input_label" visible="false" textalign="center" y="13%" x="0" height="60%" font="dyn_12" color="yellow" shadow="true" shadowcolor="black" width="12%">gamechat_indicate_team</label>
+				<label name="{interface}_chat_all_input_label" visible="false" textalign="center" y="13%" x="0" height="60%" font="dyn_12" color="yellow" shadow="true" shadowcolor="black" width="12%">gamechat_indicate_all</label>
+
+				<image name="{interface}_chat_seperator" y="0" x="11%" width="0.5h" height="100%" texture="/ui/elements/stoneborder_r.tga"/>
+
+				<textbox name="{interface}_chat_team_input" y="13%" x="13.5%" height="60%" align="left" color="invisible" font="dyn_12" maxlength="250" textcolor="white" shadow="true" shadowcolor="black" width="80%" visible="false" onfocus="ShowWidget(); ShowWidget(name # '_label'); ShowWidget('{interface}_textbox_frame'); SetInputLine(GetCurrentChatMessage()); SetCurrentChatType('team');" onlosefocus="HideWidget(); HideWidget(name # '_label'); HideWidget('{interface}_textbox_frame');" onenter="TeamChat(this); SetFocus(false); ClearCurrentChatMessage();" onesc="SetFocus(false); ClearCurrentChatMessage();" onchange="SetCurrentChatMessage(this);"/>
+				<textbox name="{interface}_chat_all_input" y="13%" x="13.5%" height="60%" align="left" color="invisible" font="dyn_12" maxlength="250" textcolor="white" shadow="true" shadowcolor="black" width="80%" visible="false" onfocus="ShowWidget(); ShowWidget(name # '_label'); ShowWidget('{interface}_textbox_frame'); SetInputLine(GetCurrentChatMessage()); SetCurrentChatType('all');" onlosefocus="HideWidget(); HideWidget(name # '_label'); HideWidget('{interface}_textbox_frame');" onenter="AllChat(this); SetFocus(false); ClearCurrentChatMessage();" onesc="SetFocus(false); ClearCurrentChatMessage();" onchange="SetCurrentChatMessage(this);"/>
+			</frame>
+		</panel>
+	</template>
+</package>

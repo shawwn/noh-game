@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_TowerGuardian_Ability2"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/link.effect"
+	basedamagemultiplier="0.66"
+	modifierkey="charged_up"
+	
+>
+	<onframe >
+		<condition test="target_health_percent gt 0.001" target="proxy_entity">
+			<heal a="200" b="frametime" op="mult"/>
+		</condition>
+	</onframe>
+</state>

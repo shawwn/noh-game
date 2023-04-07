@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<!-- Lights = big time hit on FPS, turning off 
+			<light
+				life="800"
+				startcolor="0 0 0"
+				endcolor=" .5 .5 0"
+				position="0 0 80"
+				falloffend="120"
+			/>
+			
+			<light
+				delay="800"
+				life="300"
+				startcolor=".5 .5 0"		
+				endcolor="2 2 0"
+				position="0 0 80"
+				falloffend="120"	
+			/>
+			
+			<light
+				delay="1100"
+				color="2 2 0"
+				position="0 0 80"
+				falloffend="120"	
+			/>	
+			-->
+
+			<simpleemitter
+				delay="600"
+				spawnrate="1"
+				particlelife="2000"
+
+				gravity="0"
+				minspeed="0"
+				maxspeed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 5"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					minangle="0"
+					maxangle="0" 
+					minanglespeed="0"
+					maxanglespeed="0"
+
+					startsize="80"
+					endsize="175"
+					startcolor="0 0 0"
+					midcolor=".3 .3 0"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				delay="600"
+				spawnrate="40"
+				particlelife="1000"
+				gravity="0"
+				minspeed="0"
+				maxspeed="2"
+				drag="0"
+				acceleration="0"
+				position="0 5 10"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="10 10 0"
+				lockup="true"	
+			>
+				<particle
+					minangle="0"
+					maxangle="360" 
+					minanglespeed="0"
+					maxanglespeed="0"
+
+					startsize="80"
+					endsize="50"
+					startcolor="0 0 0"
+					midcolor=".3 .3 0"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					minheight="50"
+					maxheight="100"
+					width="7"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				delay="600"
+				spawnrate="100"
+				particlelife="500"			
+				gravity="0"
+				minspeed="0"
+				maxspeed="2"
+				drag="0"
+				acceleration="0"
+				position="0 2 10"
+				minangle="0"
+				maxangle="0"
+				direction="3 3 0"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="10 10 0"
+				lockup="true"
+			>
+				<particle
+					minangle="0"
+					maxangle="360" 
+					minanglespeed="0"
+					maxanglespeed="0"
+
+					startsize="80"
+					endsize="50"
+					startcolor="0 0 0"
+					midcolor=".3 .3 1"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					minheight="10"
+					maxheight="30"
+					width="7"
+				/>
+			</simpleemitter>
+
+
+			<simpleemitter
+				delay="600"
+				spawnrate="5"
+				particlelife="1000"
+
+				gravity="-8"
+				minspeed="0"
+				maxspeed="2"
+				drag=".09"
+				acceleration="0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="5 5 0"
+				lockup="true"	
+			>
+				<particle
+					minangle="0"
+					maxangle="0" 
+					minanglespeed="0"
+					maxanglespeed="0"
+
+					startsize="80"
+					endsize="50"
+					startcolor="0 0 0"
+					midcolor=".3 .3 0 "
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					minheight="80"
+					maxheight="300"
+					width="7"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+
+	

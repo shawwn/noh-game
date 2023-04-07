@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Recipes1a"
+	
+	style="recipes"
+	header="/ui/elements/shop/shopkeeper_recipes.tga"
+	allowremoteaccess="true"
+	
+	icon="shop_recipes1.tga"
+	order="1"
+	slot="5"
+>
+	
+</shop>

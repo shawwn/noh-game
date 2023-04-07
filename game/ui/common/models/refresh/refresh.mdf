@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="" file="refresh.model" type="K2" >
+	<anim name="idle" loop="true" fps="120" clip="refresh.clip" blendtime="0"/>
+</model>

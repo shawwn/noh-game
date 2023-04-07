@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model">
+	<anim name="death_1" clip="clips/death_01.clip" fps="30" loop="false">
+		<frameevent frame="1" cmd="StartEffect death.effect"/>
+	</anim>
+	<anim name="death_2" clip="clips/death_02.clip" fps="30" loop="false">
+		<frameevent frame="1" cmd="StartEffect wither.effect"/>
+	</anim>
+</model>

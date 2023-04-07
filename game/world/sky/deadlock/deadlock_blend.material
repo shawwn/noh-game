@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters vDiffuseColor="0.5 0.5 0.5" fSpecularLevel="1.0000" fGlossiness="1.0000" fBumpLevel="1.0">
+		<float name="fAlphaLeak" value="0.2" />
+	</parameters>
+	<phase name="color" vs="skybox" ps="skybox_bias" srcblend="BLEND_ONE" dstblend="BLEND_ONE_MINUS_SRC_ALPHA" cull="CULL_BACK" translucent="true" depthwrite="false">
+		<samplerCUBE name="skybox" texture="1.tga" repeat="true" mipmaps="true" fullquality="false" nocompress="false" />
+	</phase>
+</material>

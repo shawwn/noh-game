@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_DwarfMagi"
+	
+	
+	
+	team="Legion"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	
+	preglobalscale="1.48"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="44"
+	targetoffset="0 0 92"
+
+	movespeed="295"
+	turnrate="320"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="3.0"
+	magicarmor="5.5"
+
+	inventory0="Ability_DwarfMagi1"
+	inventory1="Ability_DwarfMagi2"
+	inventory2="Ability_DwarfMagi3"
+	inventory3="Ability_DwarfMagi4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+
+	attackduration="1000"
+	attackactiontime="500"
+	attackcooldown="1700"
+	attackdamagemin="41"
+	attackdamagemax="47"
+	attacknumanims="2"
+	attackoffset="0 45 60"
+	attackprojectile=""
+	attackrange="125"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+
+	primaryattribute="Intelligence"
+	strength="23"
+	strengthperlevel="3.2"
+	agility="14"
+	agilityperlevel="1.55"
+	intelligence="17"
+	intelligenceperlevel="1.9"
+>
+</hero>

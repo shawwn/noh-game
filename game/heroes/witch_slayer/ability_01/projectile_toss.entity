@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_WitchSlayer_Ability1_Toss"
+
+	gravity="4000"
+	lifetime="520"
+	useexactlifetime="true"
+>
+</projectile>

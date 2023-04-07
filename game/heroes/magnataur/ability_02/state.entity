@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Magnataur_Ability2"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/passive.effect"
+	displaylevel="true"
+	
+	basedamagemultiplier="0.15,0.25,0.35,0.45"
+		
+	effecttype="StatusBuff"
+>
+	<modifier key="empower_melee" condition="melee" modpriority="100">
+		<onattackimpact effectdescription="true">
+			<cantarget targetscheme="enemy_units">
+				<splashdamage a="total_adjusted_damage" b="0.15,0.25,0.35,0.45" op="mult" radius="225" effecttype="Physical Splash" targetscheme="enemy_units" />
+			</cantarget>
+		</onattackimpact>
+	</modifier>
+</state>

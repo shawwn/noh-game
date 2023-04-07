@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chipper_Ability1_Charges"
+	
+	ishidden="true"
+	impactinterval="4000"
+	maxcharges="1,2,2,3"
+
+>
+	<oninflict>
+		<starttimer entity="proxy_entity" duration="4000" />
+	</oninflict>
+	
+	<onimpact>
+		<damage effecttype="DummyDmg" amount="1" target="source_entity" source="source_entity" />
+	</onimpact>
+</state>

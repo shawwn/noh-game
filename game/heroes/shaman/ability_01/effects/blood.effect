@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<simpleemitter
+				delay="750"
+				bone="_bone_back"
+				spawnrate="30"
+				count="25"
+				life="1000"
+				particlelife="950"
+				gravity="-5"
+				speed="50"
+				drag=".01"
+				acceleration="0.0"
+				position="0 0 0"
+				offsetsphere="25 25 0"
+				material="/shared/effects/materials/blood1.material"
+				minangle="-30"
+				maxangle="30"
+				direction="0 0 0"
+				particledirectionalspace="local"
+				loop="true"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					angle="180"
+					color=".5 .5 .5"
+					startsize="30"
+					midsize="30"
+					minendsize="40"
+					maxendsize="60"
+					startalpha="0"
+					midalpha=".6"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="500"
+				count="25"
+				particlelife="1500"
+				spawnrate="20"
+				speed="180"
+				gravity="22"
+				minangle="0"
+				maxangle="30"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="0 0 0"
+				position="0 0 44"
+			>
+				<particle
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					color=".4 0 0"
+					startsize="30"
+					endsize="80"
+					startalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="1000"
+				delay="930"
+				particlelife="5200"
+				spawnrate="5"
+				speed="0"
+				gravity="0"
+				direction="0 0 0"
+				particledirectionalspace="local"
+				offsetsphere="100 100 0"
+				position="0 0 0"
+			>
+					<particle> 
+						<groundsprite
+							delay="500"
+							count="25"
+							life="3000"
+							material="/shared/effects/materials/blood_ground.material"
+							minyaw="-360"
+							maxyaw="360"
+							minsize="15"
+							maxsize="30"
+							position="0 0 0"
+							color=".4 .4 0"
+							midcolorpos=".1"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".1"
+						/>
+					</particle>
+			</simpleemitter>
+			
+			<template name="beam">
+				<beam
+					expirelife="1000"
+					delay="100"			
+					bone_a="{a}"
+					bone_b="{b}"
+					size="{size}"
+					startcolor=".6 .5 .0"
+					endcolor="0"
+					startalpha="1"
+					endalpha="0"
+					position="0 0 0"				
+					position_b="0 0 0"
+					material="/shared/effects/materials/vine.material"
+					startframe="{frame}"
+					framespeed="5"
+				/>	
+			</template>		
+		
+
+		
+			<instance name="beam" a="_bone_righthand" b="_bone_lefthand" size="15" frame=".6"/>
+			<instance name="beam" a="_bone_righthand" b="_bone_rightfoot" size="15" frame="5"/>
+			<instance name="beam" a="_bone_lefthand" b="_bone_leftfoot" size="15" frame="5"/>
+			<instance name="beam" a="_bone_centerofchest" b="_bone_origin" position_b="20 22 0" size="14" frame="1"/>
+			<instance name="beam" a="_bone_head" b="_bone_origin" position_b="20 34 0" size="12" frame="1"/>
+			<instance name="beam" a="_bone_head" b="_bone_origin" position_a="12 44 0" size="12" frame="1"/>
+			<instance name="beam" a="_bone_lefthand" b="_bone_origin" position_b="-30 20 0" size="12" frame="5"/>
+				
+			<instance name="beam" a="_bone_leftfoot" b="_bone_rightfoot" size="15" frame="5"/>
+			<instance name="beam" a="_bone_lefthand L ForeArm" b="Bip01 Spine" size="15" frame="5"/>
+			
+			<instance name="beam" a="_bone_righthand" b="_bone_head" size="15" frame="5"/>			
+			<instance name="beam" a="_bone_lefthand" b="_bone_head"  size="15" frame="5"/>
+			
+			<instance bame="beam" a="_bone_leftfoot" b="_bone_origin" size="13" position_b="20 20 500"/>			
+			
+			<instance name="beam" a="" b="_bone_leftfoot" size="15" frame=".8"/>
+			
+
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

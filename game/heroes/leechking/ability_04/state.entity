@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Leechking_Ability4"
+	icon="icon.tga"
+
+	effecttype="StatusBuff"
+	displaylevel="true"
+	
+	dispelonaction="true"
+	
+	stealthtype="hero"
+	fadetime="0"
+	unitwalking="true"
+	armor="2,4,6"
+	magicarmor="2,3,4"
+>
+
+
+</state>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Insanitarius"
+
+	icon="icon1.tga"
+	passiveeffect="state.effect"
+	
+	damage="31"
+	attackspeed="0.10"
+	strength="25"
+>
+	<onframe>
+		<changehealth target="source_entity" a="-35" b="frametime" op="mult" />
+	</onframe>
+	
+	<ondamaged>
+	</ondamaged>
+	
+	<onexpired>
+		<!-- target health -->
+		<setvar0 a="source_health" b="accumulator" op="sub" />
+		<setvar0 a="var0" b="1" op="max" />
+
+		<!-- max health including bonus -->
+		<setvar1 a="source_maxhealth" b="accumulator" op="add" />
+		
+		<!-- current health adjusted for no bonus -->
+		<setvar2 a="source_health" b="var1" op="div" />
+		<setvar2 a="var2" b="source_maxhealth" op="mult" />
+
+		<!-- final adjustment to reach target health after the game rescales current health -->
+		<changehealth a="var0" b="var2" op="sub" />
+	</onexpired>
+</state>

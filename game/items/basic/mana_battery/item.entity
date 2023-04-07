@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_ManaBattery"
+	
+	icon="icon.tga"
+	
+	cost="210"
+	
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	casteffect="cast.effect"
+	cooldowntime="0"
+	
+	maxcharges="10"
+	initialcharges="0"
+>
+	<modifier key="ManaBattery" modpriority="100" exclusive="true">
+		<onimpact effectdescription="true">
+			<heal a="charges" b="15" op="mult"/>
+			<givemana a="charges" b="15" op="mult"/>
+			<multcharges value="0" />
+		</onimpact>
+		
+		<aura state="State_ManaBattery" radius="1500" targetscheme="other_heroes"/>
+	</modifier>
+</item>

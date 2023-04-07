@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Predasaur_Ability1"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/ability_03/ability_03.effect"
+	
+	armor="3"
+	
+	effecttype="StatusBuff"
+>
+</state>

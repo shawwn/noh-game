@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Behemoth_Ability4_Base"
+
+	radiusstart="0"
+	radiusend="500"
+	lifetime="300"
+	
+	targetselection="all"
+	maximpactspertarget="1"
+	targetscheme="enemy_units_and_corpses"
+	effecttype="Magic"
+	
+	effect="effects/mainripple.effect"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="165,230,285"/>
+		<spawnaffector name="Affector_Behemoth_Ability4_Echo" target="target_entity"/>
+	</onimpact>
+</affector>

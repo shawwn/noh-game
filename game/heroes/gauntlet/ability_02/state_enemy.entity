@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gauntlet_Ability2_Enemy"
+	icon="icon.tga"
+
+	effecttype="StatusDebuff"
+	
+	silenced="true"
+	perplexed="true"
+	
+	passiveeffect="effects/state.effect"
+>
+	<onframe>
+		<condition test="hasstate State_Gauntlet_Ability2" target="source_entity">
+			<applystate name="State_Gauntlet_Ability2_Enemy" target="target_entity" duration="1500,2000,2500,3000" />
+		</condition>
+	</onframe>
+</state>

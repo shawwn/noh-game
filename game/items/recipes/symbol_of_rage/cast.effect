@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="tracker" persistent="true" scale="2">
+	<definitions>
+		<particlesystem name="system0" space="world" >
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				sample="/shared/sounds/items/item_lifesteal4_cast.wav"
+			/>
+
+			<simpleemitter
+				life="2000"
+				position="0 0 50"
+				spawnrate="15"
+				particlelife="2000"
+				gravity="0"
+				offsetsphere="10 10 10"
+				material="/shared/effects/materials/phantom_smoke_03.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".4 .1 0"
+					endcolor="0 0 0"
+					midcolorpos="0.4"
+					minangle="0"
+					maxangle="360"
+					startsize="0"
+					midsize="125"
+					endsize="65"
+					startalpha=".5 .5 .5"
+					endalpha="0 0 0"
+					midsizepos=".8"
+					minanglespeed="-90"
+					maxanglespeed="90"
+				/>
+			</simpleemitter>
+		
+			<model
+				life="4000"
+				position="0 0 50"
+				name="circleOfBones"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				anim="idle"
+				scale="2.5"
+			>
+				<template name="redNess">
+					<trackeremitter
+						life="2000"
+						position="0.0 0.0 0.0"
+						targetposition="0.0 0.0 50.0"
+						tracktype="target"
+						trackspeed="1.0"
+						bone="{bone}"
+						targetbone="_invisBox"
+						spawnrate="15"
+						particlelife="2000"
+						gravity="0.0"
+						offsetsphere="3 3 3"
+						minspeed="5"
+						maxspeed="15"
+						drag="0.0"
+						acceleration="0.0"
+						direction="0.0 0.0 1.0"
+						material="/shared/effects/materials/phantom_smoke_03.material"
+						inheritvelocity="1.0"
+					>
+						<particle 
+							startcolor="0 0 0"
+							midcolor=".4 .1 0"
+							endcolor="0 0 0"
+							midcolorpos="0.4"
+							minangle="0"
+							maxangle="360"
+							startsize="0"
+							midsize="35"
+							endsize="15"
+							startalpha=".5 .5 .5"
+							endalpha="0 0 0"
+							midsizepos=".8"
+							minanglespeed="-90"
+							maxanglespeed="90"
+						/>
+					</trackeremitter>
+				</template>
+				
+			<instance name="redNess" bone="_bone_fx_01"/>
+			<instance name="redNess" bone="_bone_fx_03"/>
+			<instance name="redNess" bone="_bone_fx_05"/>
+			<instance name="redNess" bone="_bone_fx_07"/>
+			<instance name="redNess" bone="_bone_fx_09"/>
+			<instance name="redNess" bone="_bone_fx_11"/>
+				
+			</model>
+		
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>
+

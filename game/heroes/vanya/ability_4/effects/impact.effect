@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="bolt_lightning_02" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.75">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".25"
+				sample="../sounds/impact.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".15"
+				sample="../sounds/cast2.wav"
+			/>
+
+			<billboard
+				delay="150"
+				bone="_bone_centerofchest"
+				life="300"
+				startcolor="0.2 0 0.6"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				startsize="100"
+				endsize="250"
+				depthbias="-32"
+				size="200"
+				
+			/>
+			
+
+			<beam
+
+				life="350"
+
+
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_centerofchest"
+
+				position_a="0 0 350"
+
+				starsize="10"
+				endsize="60"
+				color=".5 .2 .3"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+
+				framespeed="1.75"
+
+			/>
+
+			<beam
+
+				life="350"
+
+
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_centerofchest"
+
+				position_a="30 0 300"
+
+				
+				size="40"
+				color=".5 .2 .3"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+
+				framespeed="1.75"
+
+			/>
+			
+			<beam
+
+				life="350"
+
+
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_centerofchest"
+
+				position_a="0 30 280"
+
+				
+				size="30"
+				color=".5 .2 .3"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+
+				framespeed="1.75"
+
+			/>
+					
+			
+			
+			
+			<groundsprite
+				delay="150"
+				material="/shared/effects/materials/shock_01.material"
+				life="300"
+				startsize="0"
+				endsize="96"
+				startcolor="0 0 0"
+				midcolor="1 1 1"
+				endcolor="0 0 0"
+				minyaw="-360"
+				maxyaw="360"
+			/>
+       			
+			<groundsprite
+				delay="150"
+				material="/shared/effects/materials/shock_01.material"
+				life="300"
+				startsize="0"
+				endsize="96"
+				startcolor="0 0 0"
+				midcolor="1 1 1"
+				endcolor="0 0 0"
+				minyaw="-360"
+				maxyaw="360"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

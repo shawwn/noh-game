@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<template name="wind">
+				<billboard
+					bone="{bone}"
+					material="/shared/effects/materials/twirl_03.material"
+					position="0 0 {pos}"
+					size="{size}"
+					roll="105"
+					rollspeed="{speed}"
+					startcolor=".1 .1 .2 "
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					yaw="0"
+				/>
+				
+				<billboard
+					bone="{bone}"
+					material="/shared/effects/materials/pyroclast_01.material"
+					position="0 0 {pos}"
+					size="{size2}"
+					roll="105"
+					rollspeed="400"
+					startcolor=".3 .8 .35"
+					alpha=".2"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					yaw="0"
+				/>			
+			</template>
+			
+			<instance name="wind" size="22" roll="0" speed="1800" bone="_bone_cyclone01"/>
+			<instance name="wind" size="56" roll="30" speed="1800" bone="_bone_cyclone02"/>
+			<instance name="wind" size="75" roll="90" speed="1600" bone="_bone_cyclone03"/>
+			<instance name="wind" size="100" roll="180" speed="1600" bone="_bone_cyclone04"/>
+			<instance name="wind" size="200" roll="220" speed="900" bone="_bone_cyclone05"/>
+			<instance name="wind" size="350" roll="300" speed="400" bone="_bone_cyclone06"/>
+			<instance name="wind" size="400" roll="360" speed="400" bone="_bone_cyclone07"/>
+				
+			<instance name="wind" pos="21" size="22" size2="50" speed="400" roll="0" bone="_bone_cyclone01"/>
+			<instance name="wind" pos="21" size="56" size2="90" speed="400" roll="10" bone="_bone_cyclone02"/>
+			<instance name="wind" pos="21" size="75" size2="120" speed="400" roll="140" bone="_bone_cyclone03"/>
+			<instance name="wind" pos="21" size="100" size2="300" speed="400" roll="230" bone="_bone_cyclone04"/>
+			<instance name="wind" pos="21" size="200" size2="350" speed="400" roll="10" bone="_bone_cyclone05"/>
+			<instance name="wind" pos="21" size="350" size2="400" speed="400" roll="3620" bone="_bone_cyclone06"/>
+			<instance name="wind" pos="21" size="400" size2="500" speed="400" roll="60" bone="_bone_cyclone07"/>
+	
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model">
+	
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" loopbackframe="1">
+	</anim>
+	
+	<anim name="portrait" clip="clips/portrait.clip" loop="true"/>
+
+	<anim name="taunt_1" clip="clips/taunt_1.clip" fps="30" loop="false"/>
+
+	<anim name="item_1" clip="clips/ability_2.clip" fps="50"/>
+
+	<anim name="ability_1" clip="clips/ability_2.clip" fps="30" loop="false"/>
+
+	<anim name="ability_2" clip="clips/ability_2.clip" fps="30" loop="false">
+		<frameevent frame="1" cmd="PlaySound sounds/voice1.mp3 1700"/>
+	</anim>
+
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="30" blendtime="400" loop="false"/>	
+
+	<anim name="ability_4_back" clip="clips/ability_4_back.clip" fps="30" loop="false"/>
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30" loop="false">
+		<frameevent frame="5" cmd="PlaySoundLinear /heroes/hammerstorm/sounds/move_%.wav 0 850 .05"/>
+		<frameevent frame="21" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 0.55"/>
+		<frameevent frame="22" cmd="PlaySoundLinear /heroes/yogi/sounds/attack_%.wav 500 2000 0.75"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="30" loop="false">
+		<frameevent frame="5" cmd="PlaySoundLinear /heroes/hammerstorm/sounds/move_%.wav 0 850 .05"/>
+		<frameevent frame="21" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 0.55"/>
+		<frameevent frame="22" cmd="PlaySoundLinear /heroes/yogi/sounds/attack_%.wav 500 2000 0.75"/>
+		<frameevent frame="20" cmd="PlaySoundLinear /heroes/yogi/sounds/attack_grunt_%.wav 500 2000 .6"/>
+	</anim>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="32" loop="true">
+		<frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="21" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="3" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .12"/>
+		<frameevent frame="3" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="8" cmd="PlaySoundLinear /heroes/hammerstorm/sounds/move_%.wav 0 850 .05"/>
+		<frameevent frame="16" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .12"/>	
+		<frameevent frame="16" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="21" cmd="PlaySoundLinear /heroes/hammerstorm/sounds/move_%.wav 0 850 .05"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30" loop="false"/>
+
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+		<frameevent frame="8" cmd="PlaySoundLinear /heroes/yogi/sounds/death.wav 800 1500"/>
+	</anim>
+
+</model>

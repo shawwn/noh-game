@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<template name="unit_tooltip_hero">
+		<frame
+			name="unit_tooltip_hero"
+			texture="/ui/frames/tooltip_bg.tga"
+			color="#00000070"
+			borderthickness="0.5h"
+			visible="false"
+			x="-1h"
+			y="-18h"
+			align="right"
+			valign="bottom"
+			width="27h"
+			height="5.0h"
+			float="bottom"
+		>		
+			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness="0.5h"/>
+			<anchor x="1.0h" y="0.6h" />
+
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="PlayerInfo"
+				ontrigger="SetText(param0); SetColor(param1);"
+			/>
+
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="HeroName"
+				ontrigger="SetText(param);"
+			/>
+			
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="HeroLevel"
+				ontrigger="SetText(Translate('tooltip_level', 'level', param0));"
+			/>
+			
+			<panel width="-2.0h" height="0.0h"
+				onframe="If(IsVisible(), Call('unit_tooltip_hero', 'SetHeight(' # GetY() # ' + GetYFromString(\'0.55h\'));'));"
+				sticky="true"
+				stickytoinvis="false"
+			/>
+		</frame>
+	</template>
+</package>

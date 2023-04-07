@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters>
+		<vec2
+			name="vTexOffset"
+			value="0.0 0.0"
+			valuespeed="0.0031 -0.1"
+		/>
+	</parameters>
+	<phase
+		name="color"
+		vs="effect_refract_mask_anim"
+		ps="effect_refract_mask"
+		srcblend="BLEND_SRC_ALPHA"
+		dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
+		cull="CULL_NONE"
+		translucent="true"
+		refractive="true"
+		alphawrite="false"
+	>
+		<sampler
+			name="refraction"
+			texture="../textures/heat_n.tga"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="true"
+			nocompress="true"
+			filtering="true"
+		/>
+		<sampler
+			name="mask"
+			texture="../textures/heat_m.tga"
+			repeat_u="false"
+			repeat_v="false"
+			mipmaps="true"
+			fullquality="true"
+			nocompress="true"
+			filtering="true"
+		/>
+	</phase>
+</material>

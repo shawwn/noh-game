@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+	<definitions>
+		<particlesystem name="system0" useentityscale="true" space="entity">
+
+			<groundsprite
+				life="2000"
+				material="/shared/effects/materials/aspeedaura.material"
+				size="25"
+				startcolor="0.3 0 0"
+				midcolor="0.8 0 0"
+				endcolor="0.3 0 0"
+				loop="true"
+			/>
+
+
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>

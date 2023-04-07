@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="0">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.65">
+	
+			<simpleemitter
+				bone="_bone_centerofchest"
+				life="1500"
+				spawnrate="10"
+				particlelife="1800"
+				offsetsphere="10 10 0"
+				direction="0 0 1"
+				speed="50"
+				drag="-0.01"
+				timenudge="0"
+				minangle="0"
+				maxangle="50"
+				position="0 0 0"
+				material="/shared/effects/materials/neb_add.material"
+			>
+				<particle
+					size="21"
+					startcolor="0 0 0"
+					midcolor=".5 .5 .5"
+					endcolor="0 0 0"
+					turn="1"
+					heightdistort="1"
+				/>	
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				life="1500"
+				spawnrate="10"
+				particlelife="1000"
+				offsetsphere="10 10 0"
+				direction="0 0 1"
+				speed="50"
+				drag="-0.01"
+				timenudge="0"
+				minangle="0"
+				maxangle="50"
+				position="0 0 0"
+				material="/shared/effects/materials/flare2.material"
+			>
+				<particle
+					size="10"
+					startcolor="0 0 0"
+					midcolor=".25 0 .25"
+					endcolor="0 0 0"
+					turn="1"
+					heightdistort="1"
+				/>	
+			</simpleemitter>
+			
+			<groundsprite			
+				material="/shared/effects/materials/whitedot_ground.material"			
+				size="80"
+				startcolor=".2 .4 .4"
+				midcolor=".2 .4 .4"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				life="4000"
+				yawspeed="-40"			
+			/>		
+			
+			<!-- ground thing -->		
+			<groundsprite			
+				material="/shared/effects/materials/z_teleportring01.material"
+				startsize="20"
+				endsize="130"
+				startcolor=".4 .75 1"
+				endcolor="0 0 0"
+				life="1000"
+				yawspeed="-40"			
+			/>
+			
+			<groundsprite	
+				delay="1000"		
+				material="/shared/effects/materials/z_teleportring01.material"
+				startsize="20"
+				endsize="100"
+				startcolor=".4 .75 1"
+				endcolor="0 0 0"
+				life="1000"
+				yawspeed="-40"			
+			/>
+			
+			<groundsprite			
+				delay="2000"		
+				material="/shared/effects/materials/z_teleportring01.material"
+				startsize="20"
+				endsize="100"
+				startcolor=".4 .75 1"
+				endcolor="0 0 0"
+				life="1000"
+				yawspeed="-40"			
+			/>
+			
+			<groundsprite			
+				delay="3000"		
+				material="/shared/effects/materials/z_teleportring01.material"
+				startsize="30"
+				endsize="100"
+				startcolor=".4 .75 1"
+				endcolor="0 0 0"
+				life="500"
+				yawspeed="-40"			
+			/>
+			
+			<!--columns-->
+			<billboard
+				life="4000"				
+				material="/shared/effects/materials/flare2.material"
+				startheight="3000"
+				midheight="3000"
+				endheight="100"
+				midheightpos=".75"
+				width="40"
+				lockup="1"
+				startcolor=".05 .1 .2"			
+				midcolor=".05 .1 .2"			
+				endcolor="0 0 0"
+				midcolorpos=".75"
+			/>
+			
+			<billboard
+				life="4000"				
+				material="/shared/effects/materials/flare2.material"
+				startheight="3000"
+				midheight="3000"
+				endheight="100"
+				midheightpos=".75"
+				width="40"
+				lockup="1"
+				startcolor=".1 .2 .3"			
+				midcolor=".1 .2 .3"			
+				endcolor="0 0 0"
+				midcolorpos=".75"
+			/>
+
+			<simpleemitter
+				life="2000"
+				spawnrate="20"
+				particlelife="1500"
+				gravity="-1"
+				speed="30"		
+				position="0 0 20"
+				direction="0 0 1"
+				offsetsphere="15 15 0"
+				material="/shared/effects/materials/neb_add.material"
+			>
+				<particle
+					minangle="-360"
+					maxangle="0"
+					minanglespeed="0"
+					maxanglespeed="70"
+					midcolor="0 0 0"
+					startcolor="5 .5 .5"
+					endcolor="0 0 0"
+					midcolorpos=".8"
+					startframe="0"
+					endframe="1"
+					startsize="0"
+					midsize="80"
+					endsize="0"
+				/>
+			</simpleemitter>		
+
+			<!--timedSmoke-->
+			<simpleemitter
+				delay="2800"
+				offsetsphere="5 5 5"
+				spawnrate="222"			
+				count="5"
+				particlelife="1250"			
+				gravity="0"					
+				acceleration="0"
+				minspeed="10"
+				maxspeed="25"
+				position="0 0 20"					
+				material="/shared/effects/materials/pyroclast_01.material"	
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					color=".08 .3 .35"
+					startsize="50"
+					endsize="100"
+					minanglespeed="0"
+					maxanglespeed="45"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					frame="1"
+					framespeed="1"
+					anchor="1"
+					lockup="0"
+					lockright="false"
+					turn="false"
+				/>
+			</simpleemitter>
+
+			<simpleemitter	
+				life="1600"
+				spawnrate="6"		
+				particlelife="3000"			
+				offsetsphere="5 5 10"
+				direction="0 0 -1"		
+				speed="200"		
+				timenudge="2000"
+				minangle="0"
+				maxangle="2"
+				position="0 0 900"					
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					size="8"
+					height="120"
+					startcolor="0 0 0"
+					midcolor=".35 0 .35"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					lockup="1"
+				/>	
+			</simpleemitter>
+			
+			<simpleemitter	
+				life="1600"
+				spawnrate="6"		
+				particlelife="3000"			
+				offsetsphere="5 5 10"
+				direction="0 0 -1"		
+				speed="200"		
+				timenudge="2000"
+				minangle="0"
+				maxangle="2"
+				position="0 0 600"					
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					size="8"
+					height="120"
+					startcolor="0 0 0"
+					midcolor=".35 0 .35"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					lockup="1"
+				/>	
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="select_target">
+
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+		<groundsprite
+			life="400"
+			loop="false"
+
+			timenudge="0"
+
+			material="/shared/effects/materials/arrow_seq_00.material"
+
+			startsize="25"
+			midsize="3"
+			endsize="25"
+			midsizepos=".5"
+
+			startcolor="0 0 0"
+			midcolor="1 0 0"
+			endcolor="0 0 0"
+			midcolorpos=".2"
+
+			minangle="55"
+			maxangle="55"
+			angles="0 0 0"
+
+
+
+		/>
+
+
+		<groundsprite
+			life="400"
+			loop="false"
+
+			timenudge="0"
+
+			material="/shared/effects/materials/arrow_seq_00.material"
+
+			startsize="35"
+			midsize="3"
+			endsize="35"
+			midsizepos=".5"
+
+			startcolor="0 0 0"
+			midcolor="1 0 0"
+			endcolor="0 0 0"
+			midcolorpos=".2"
+
+			minangle="55"
+			maxangle="55"
+			angles="0 0 0"
+
+
+
+		/>
+
+
+		<groundsprite
+			life="470"
+			
+			timenudge="0"
+			material="/shared/effects/materials/arrow_seq_01.material"
+
+			startsize="45"
+			midsize="15"
+			endsize="45"
+			midsizepos=".5"
+
+			startcolor="0 0 0"
+			midcolor="1 0 0"
+			endcolor="0 0 0"
+			midcolorpos=".5"
+
+			minangle="55"
+			maxangle="55"
+			angles="0 0 0"
+
+
+		/>
+
+
+
+
+		<groundsprite
+			life="470"
+			
+			timenudge="-25"
+			material="/shared/effects/materials/arrow_seq_02.material"
+
+			startsize="45"
+			midsize="10"
+			endsize="45"
+			midsizepos=".5"
+
+			startcolor="0 0 0"
+			midcolor="1 0 0"
+			endcolor="0 0 0"
+			midcolorpos=".5"
+
+			minangle="55"
+			maxangle="55"
+			angles="0 0 0"
+
+
+		/>
+
+
+
+		<groundsprite
+			life="470"
+			
+			timenudge="-50"
+			material="/shared/effects/materials/arrow_seq_03.material"
+
+			startsize="45"
+			midsize="5"
+			endsize="45"
+			midsizepos=".5"
+
+			startcolor="0 0 0"
+			midcolor="1 0 0"
+			endcolor="0 0 0"
+			midcolorpos=".5"
+
+			minangle="55"
+			maxangle="55"
+			angles="0 0 0"
+
+
+		/>
+
+
+
+
+
+>
+
+
+	</particlesystem>
+
+
+
+
+
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

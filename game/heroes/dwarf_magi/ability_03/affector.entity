@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_DwarfMagi_Ability3"
+
+	radius="600"
+	
+	maxtotalimpacts="0"
+	targetselection="random"
+	targetscheme="ally_units"
+	effecttype="Magic"
+>
+	<onimpact>
+		<applystate name="State_DwarfMagi_Ability3" duration="30000"/>
+	</onimpact>
+	
+	<modifier key="DwarfMagi_Ability4_1" modpriority="100"
+		maxtotalimpacts="0"
+	/>
+	
+	<modifier key="DwarfMagi_Ability4_2" modpriority="100"
+		maxtotalimpacts="1"
+	/>
+	
+	<modifier key="DwarfMagi_Ability4_3" modpriority="100"
+		maxtotalimpacts="2"
+	/>
+	
+	<modifier key="DwarfMagi_Ability4_1_Boosted" modpriority="100"
+		maxtotalimpacts="1"
+	/>
+	
+	<modifier key="DwarfMagi_Ability4_2_Boosted" modpriority="100"
+		maxtotalimpacts="2"
+	/>
+	
+	<modifier key="DwarfMagi_Ability4_3_Boosted" modpriority="100"
+		maxtotalimpacts="3"
+	/>
+</affector>

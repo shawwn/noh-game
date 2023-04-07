@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".25"
+				sample="../sounds/impact.wav"
+			/>
+
+			<simpleemitter
+			life="1000"
+			count="1"
+			particlelife="2000"
+			>
+				<particle>
+					<model
+						life="750"
+						model="ult_effect/model.mdf"
+						anim="idle"
+						startscale="1.75"
+						midscale="1.75"
+						endscale="1.75"
+						midscalepos=".75"
+						color="0 0 0"
+						startalpha="0"
+						midalpha="0"
+						endalpha="0"
+						midalphapos=".5"
+					>
+						<twopointtrailemitter
+							name="trail01"
+							bone_a="Bip01 R Forearm"
+							bone_b="Bip01 L Forearm"
+							spawnrate="120"
+							particlelife="250"
+							gravity="5"
+							subframepose="1"
+							drag="0.01"
+							speed="100"
+							direction="0 -1 0"
+							minangle="0"
+							maxangle="0"
+							texpostime="250"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/soul_projectile.material"
+							inheritvelocity="0.25"
+						>
+							<particle
+								startcolor="0 0 0" 
+								midcolor="0 0 0"
+								endcolor="0 0 0"
+								alpha=".5"
+								startanchor="1"
+								endanchor=".4"
+							/>
+						</twopointtrailemitter>
+					</model>
+					
+					
+					
+					
+					
+					<model
+						life="5000"
+						model="spirits_out/model.mdf"
+						anim="idle"
+						minyaw="0"
+						maxyaw="25"
+						scale="2"
+						position="0 0 0"
+					>
+						<twopointtrailemitter
+							life="1000"
+							bone_a="_bone_fx_01"
+							bone_b="_bone_fx_02"
+							spawnrate="30"
+							particlelife="650"
+							texpostime="650"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/soul_projectile.material"
+						>
+							<particle
+								startcolor="0 0 0"
+								midcolor="0 0 0"
+								endcolor="0 0 0"
+								startalpha=".65"
+								endalpha="0"
+							/>
+						</twopointtrailemitter>
+						
+						<twopointtrailemitter
+							life="1000"
+							bone_a="_bone_fx_03"
+							bone_b="_bone_fx_04"
+							spawnrate="30"
+							particlelife="650"
+							texpostime="650"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/soul_projectile.material"
+						>
+							<particle
+								startcolor="0 0 0"
+								midcolor="0 0 0"
+								endcolor="0 0 0"
+								startalpha=".65"
+								endalpha="0"
+							/>
+						</twopointtrailemitter>
+							
+						<twopointtrailemitter
+							life="1000"
+							bone_a="_bone_fx_05"
+							bone_b="_bone_fx_06"
+							spawnrate="30"
+							particlelife="650"
+							texpostime="650"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/soul_projectile.material"
+						>
+							<particle
+								startcolor="0 0 0"
+								midcolor="0 0 0"
+								endcolor="0 0 0"
+								startalpha=".65"
+								endalpha="0"
+							/>
+						</twopointtrailemitter>
+					</model>
+					
+					
+					
+					
+					<simpleemitter
+					delay="500"
+						minangle="-90"
+						maxangle="-90"
+						life="400"
+						spawnrate="650"
+						count="15"
+						minparticlelife="250"
+						maxparticlelife="2000"
+						speed="2000"
+						drag="0.05"
+						gravity="-5"
+						offsetsphere="20 20 0"
+						position="0 0 75"
+						material="/shared/effects/materials/bad_healing_smoke_12.material"
+					>
+						<particle
+							minangle="-180"
+							maxangle="180"
+							minanglespeed="-150"
+							maxanglespeed="150"
+							turn="1"
+							startcolor=".4 0 .3"
+							midcolor=".3 0 .3"
+							endcolor="-1"
+							midcolorpos="0.2"
+							startsize="50"
+							minendscale="6"
+							maxendscale="10"
+							startalpha=".25"
+							midalpha=".5"
+							midalphapos="0.1"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+
+					<simpleemitter
+					delay="500"
+						life="600"
+						count="10"
+						spawnrate="500"				
+						particlelife="600"
+						gravity="-3.0"
+						offsetsphere="100 100 0"
+						direction="0 0 1"
+						position="0 0 50"						
+						material="/shared/effects/materials/dust.material"
+						depthbias="-40"
+					>
+						<particle
+							startcolor="0 0 0"
+							endcolor="0"
+							minangle="-180"
+							maxangle="180"
+							minanglespeed="0"
+							midcolorpos=".1"
+							maxanglespeed="0"
+							startsize="89"			
+							endsize="222"			
+							startalpha=".75"
+							endalpha="0"
+							
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+					delay="500"
+						position="0 0 65"
+						minangle="-90"
+						maxangle="-90"
+						life="400"
+						spawnrate="650"
+						count="20"
+						minparticlelife="250"
+						maxparticlelife="1000"
+						speed="2000"
+						drag="0.03"
+						offsetsphere="15 15 0"
+						depthbias="-40"
+						material="/shared/effects/materials/mysticenergy2.material"
+					>
+						<particle
+							minangle="-180"
+							maxangle="180"
+							minanglespeed="-250"
+							maxanglespeed="250"
+							turn="1"
+							startcolor=".7 0 .4"
+							midcolor=".3 0 .1"
+							endcolor="0"
+							midcolorpos="0.2"
+							startsize="15"
+							startstickiness="0"
+							maxendstickiness="2"
+							minendscale="6"
+							maxendscale="10"
+							startalpha=".3"
+							midalpha="1"
+							midalphapos="0.1"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+					<billboard
+					delay="500"
+						life="500"
+						startsize="250"
+						endsize="400"
+						startcolor=".25 .05 .2"
+						endcolor="0"
+						position="0 0 75"
+						material="/shared/effects/materials/starlight.material"
+					/>
+
+					<billboard
+					delay="500"
+						position="0 0 75"
+						bone="_bone_centerofchest"
+						material="/shared/effects/materials/whitedot.material"
+						startcolor="1 .25 .5"
+						endcolor="0 0 0"
+						life="300"
+						startsize="50"
+						endsize="150"
+						depthbias="-50"
+					/>
+					
+					<billboard
+						position="0 0 75"
+						delay="500"
+						life="500"
+						param="0.1"	
+						startsize="75"
+						endsize="225"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"				
+						depthbias="0"
+						material="/shared/effects/materials/refract_swell.material"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

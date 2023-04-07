@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Yogi_Ability1"
+	
+	
+	
+	icon="icons/ability_1.tga"
+	portrait="icons/ability_1.tga"
+	model="summon/model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.53"
+	modelscale="1.60,1.67,1.73,1.80"
+	effectscale="1.26"
+	boundsheight="96"
+	boundsradius="24"
+	selectionradius="60"
+	targetoffset="0 0 64"
+
+	movespeed="320,320,330,340"
+	turnrate="360"
+	turnsmoothing="0.05"
+
+	maxhealth="1400,1800,2300,2700"
+	healthregen="2"
+	maxmana="0"
+	manaregen="0"
+	immunity="TransfigureImmunity"
+
+	armor="3,4,5,6"
+	magicarmor="0"
+
+	cancarryitems="true"
+	inventory0="Ability_Bear1"
+	inventory1=",,Ability_Bear2"
+	inventory2=",,,Ability_Bear3"
+	inventory3=",,,Ability_Bear4"
+
+	attackduration="1000"
+	attackactiontime="400,377,354,331"
+	attackcooldown="1750,1650,1550,1450"
+	attackdamagemin="28"
+	attackdamagemax="38"
+	attacknumanims="2"
+	attackoffset="60 60 100"
+	attackprojectile=""
+	attackrange="128"
+	attackstarteffect=""
+	attackactioneffect="/shared/sounds/impacts/impact_heavy.effect"
+	attackimpacteffect=""
+	attacktype="melee"
+	combattype="Melee"
+
+	aggrorange="600"
+	sightrangeday="800"
+	sightrangenight="800"
+	
+	goldbountymin="100"
+	goldbountymax="100"
+	experiencebounty="196"
+	
+	tiltfactor="1.0"
+	tiltspeed="90.0"
+	
+	ispersistent="true"
+	diewithowner="true"
+	
+	unittype="persistent"
+>
+	<onspawn>
+		<playeffect effect="effects/ability_01/spawn.effect" source="target_entity" target="" />
+	</onspawn>
+	<onkilled>
+		<damage effecttype="Magic Physical" amount="100,200,300,400" inflictor="target_entity" source="target_entity" target="source_owner_entity"/>
+	</onkilled>
+	
+	<modifier key="synergy1" modpriority="100"
+		attackdamagemin="38"
+		attackdamagemax="48"
+		movespeed="330,330,340,350"
+	/>
+
+	<modifier key="synergy2" modpriority="100"
+		attackdamagemin="48"
+		attackdamagemax="58"
+		movespeed="340,340,350,360"
+	/>
+
+	<modifier key="synergy3" modpriority="100"
+		attackdamagemin="58"
+		attackdamagemax="68"
+		movespeed="350,350,360,370"
+	/>
+
+	<modifier key="synergy4" modpriority="100"
+		attackdamagemin="68"
+		attackdamagemax="78"
+		movespeed="360,360,370,380"
+	/>
+</pet>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<building
+	name="Building_LegionRepeater2"
+	
+	
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	destroyedsound=""
+	lowhealtheffect=""
+	lowhealthsound=""
+	selectsound=""
+	
+	preglobalscale="2.0"
+	modelscale="1.0"
+	effectscale="1.8"
+	boundsheight="256"
+	boundsradius="86"
+	selectionradius="116"
+	targetoffset="0 0 0"
+
+	immunity="DisableImmunity"
+	
+	maxhealth="800"
+	healthregen="0"
+
+	armor="15"
+	magicarmor="0"
+
+	attacktype="none"
+	combattype="Structure"
+
+	sightrangeday="900"
+	sightrangenight="600"
+	drawonmap="false"
+	goldbountymin="4"
+	goldbountymax="400"
+>
+</building>

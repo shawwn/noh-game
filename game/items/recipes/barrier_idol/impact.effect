@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="2.75">
+
+
+
+			
+			<billboard				
+				width="200"				
+				height="5"				
+				position="0 0 0"
+				bone="_bone_overhead"
+				life="510"
+				material="/shared/effects/materials/whitedot.material"				
+				startcolor=".0 .5 .5"
+				endcolor="0  0 0"
+			/>
+			
+			<simpleemitter	
+				bone="_bone_overhead"			
+				count="1"
+				particlelife="300"			
+				position="0 0 3"					
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					startcolor="0 .5 1"						
+					endcolor="0 0 0"						
+					midalphapos="0.9"
+					startsize="100"
+					endsize="0"
+				>
+					<billboard				
+						startsize="30"
+						endsize="60"
+						position="0 0 0"
+						bone="_bone_overhead"
+						life="500"
+						material="/shared/effects/materials/magic_shield.material"
+						color="1 1 1"
+						startalpha="1"			
+						endalpha="0"
+						depthbias="-30"			    
+					>
+					</billboard>				
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter	
+				bone="_bone_centerofchest"			
+				life="200"
+				particlelife="2300"		
+				spawnrate="200"				
+				speed="10"
+				offsetsphere="40 40 40"
+				material="/shared/effects/materials/star_04.material"
+			>
+				<particle				
+					startcolor="0 .5 1"						
+					endcolor="0 0 0"						
+					midalphapos="0.9"					
+					startsize="30"
+					endsize="0"
+					depthbias="-300"					
+				>	
+				</particle>
+
+				<particle				
+					startcolor="0 .5 .3"						
+					endcolor="0 0 0"						
+					midalphapos="0.9"					
+					startsize="30"
+					endsize="0"
+					depthbias="-300"					
+				/>				
+			</simpleemitter>			
+
+			<billboard
+				material="/shared/effects/materials/fresnel_blend.material"
+				bone="_bone_centerofchest"
+				color=".2 .7 1"
+				life="1000"
+				startalpha="1"
+				midalpha=".7"
+				endalpha="0"
+				position="0 0 10"
+				size="60"
+				depthbias="-150"			
+			/>
+
+			<billboard
+				material="/shared/effects/materials/corona_07.material"
+				bone="_bone_centerofchest"
+				startcolor="0 .3 .4"
+				endcolor="0"
+				life="1000"
+				startalpha="1"
+				midalpha=".4"
+				endalpha="0"
+				position="0 0 10"
+				size="60"
+				depthbias="-150"			
+			/>	
+		
+			<billboard
+				material="/shared/effects/materials/fresnel.material"
+				bone="_bone_centerofchest"
+				startcolor="0 .3 .5"
+				endcolor="0 0 0"
+				life="300"
+				position="0 0 10"
+				size="60"
+				depthbias="-150"			
+			/>	
+	
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

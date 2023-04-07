@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<template name="attack_tooltip_info">
+		<frame
+			name="attack_tooltip_info"
+			texture="/ui/frames/tooltip_bg.tga"
+			color="#00000070"
+			borderthickness="0.5h"
+			visible="false"
+			x="-1h"
+			y="-18h"
+			align="right"
+			valign="bottom"
+			width="27h"
+			height="5.0h"
+			float="bottom"
+		>
+			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness="0.5h"/>
+			<anchor x="1.0h" y="0.6h" />
+
+			<label width="-2.0h" height="1.8h" textalign="left" font="dyn_10" color="white" content="tooltip_attack_info" />
+
+			<panel width="-2.0h" height="1.8h" />
+
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="SelectedDamage"
+				ontrigger=
+				"
+					If(param2 == 0.0,
+						SetText(Translate('tooltip_damage') # Round(param0) # ' - ' # Round(param1)),
+						If(param2 > 0.0,
+							SetText(Translate('tooltip_damage') # Round(param0) # ' - ' # Round(param1) # ' ^g+' # Round(param2) # '^* = ^y' # Round(param0 + param2) # ' - ' # Round(param1 + param2) # '^*'),
+							SetText(Translate('tooltip_damage') # Round(param0) # ' - ' # Round(param1) # ' ^r' # Round(param2) # '^* = ^y' # Round(param0 + param2) # ' - ' # Round(param1 + param2) # '^*')
+						)
+					);
+				"
+			/>
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="SelectedAttackSpeed"
+				ontrigger="
+					If(param1 - param0 == 0.0,
+						SetText(Translate('tooltip_attack_speed') # Round(param0)),
+						If(param1 - param0 > 0.0,
+							SetText(Translate('tooltip_attack_speed') # Round(param0) # ' ^g+' # Round(param1 - param0) # '^* = ^y' # Round(param1)),
+							SetText(Translate('tooltip_attack_speed') # Round(param0) # ' ^r' # Round(param1 - param0) # '^* = ^y' # Round(param1))
+						)
+					);
+				"
+			/>
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="SelectedCastSpeed"
+				ontrigger="
+					If(param1 - param0 == 0.0,
+						SetText(Translate('tooltip_cast_speed') # Round(param0)),
+						If(param1 - param0 > 0.0,
+							SetText(Translate('tooltip_cast_speed') # Round(param0) # ' ^g+' # Round(param1 - param0) # '^* = ^y' # Round(param1)),
+							SetText(Translate('tooltip_cast_speed') # Round(param0) # ' ^r' # Round(param1 - param0) # '^* = ^y' # Round(param1))
+						)
+					);
+				"
+			/>
+
+			<panel width="-2.0h" height="1.8h" />
+
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="SelectedAttackInfo"
+				ontrigger="SetText(Translate('tooltip_attack_type') # param0);"
+			/>
+
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="SelectedAttackRange"
+				ontrigger="
+					If(param1 - param0 == 0.0,
+						SetText(Translate('tooltip_range') # Round(param0)),
+						If(param1 - param0 > 0.0,
+							SetText(Translate('tooltip_range') # Round(param0) # ' ^g+' # Round(param1 - param0) # '^* = ^y' # Round(param1)),
+							SetText(Translate('tooltip_range') # Round(param0) # ' ^r' # Round(param1 - param0) # '^* = ^y' # Round(param1))
+						)
+					);
+				"
+			/>
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="SelectedAttackCooldown"
+				ontrigger="SetText(Translate('tooltip_base_attack_cooldown', 'time', FtoA2(param0 / 1000, 0, 3)));"
+			/>
+
+			<panel width="-2.0h" height="1.8h" />
+
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="SelectedAttackCooldown"
+				ontrigger="SetText(Translate('tooltip_attack_cooldown', 'time', FtoA2(param1 / 1000, 0, 3)));"
+			/>
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="SelectedAttackCooldown"
+				ontrigger="SetText(Translate('tooltip_attacks_per_second', 'value', FtoA2(1000 / param1, 0, 3)));"
+			/>
+
+			<panel width="-2.0h" height="0.0h"
+				onframe="If(IsVisible(), Call('attack_tooltip_info', 'SetHeight(' # GetY() # ' + GetYFromString(\'0.55h\'));'));"
+				sticky="true"
+				stickytoinvis="false"
+			/>
+		</frame>
+	</template>
+</package>

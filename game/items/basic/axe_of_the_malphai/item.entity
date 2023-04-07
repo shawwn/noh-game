@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_AxeOfTheMalphai"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="3200"
+	
+	actiontype="passive"
+	
+	strength="25"
+>
+</item>

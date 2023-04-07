@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Minotaur_Ability2"
+
+	
+	
+	icon="icon.tga"
+	
+	attackspeed="0.15"
+	passiveeffect="state.effect"
+
+	effecttype="StatusBuff"
+>
+</state>

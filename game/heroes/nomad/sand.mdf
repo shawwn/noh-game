@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="sand.max" file="sand.model" type="K2" >
+	
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true"/>
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30" loop="false">
+	</anim>
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="30" loop="false">
+	</anim>
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="35" loop="true">
+	</anim>
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="false">
+	</anim>
+	<anim name="ability_2" clip="clips/ability_2.clip" fps="30" loop="false">
+	</anim>
+
+	
+</model>

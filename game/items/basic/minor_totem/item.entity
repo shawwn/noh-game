@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_MinorTotem"
+		
+	icon="icon.tga"
+	
+	cost="53"
+	
+	actiontype="passive"
+	
+	strength="1"
+	agility="1"
+	intelligence="1"
+>
+</item>

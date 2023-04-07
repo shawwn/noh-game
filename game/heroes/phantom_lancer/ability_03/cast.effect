@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityscale="true">
+	<definitions>
+		<modifier
+			name="modifier0"
+			life="500"
+			startalpha="1"
+			midalpha="0"
+			endalpha="0"
+		/>
+	
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				sample="/shared/sounds/items/item_manaburn2.wav"
+			/>
+			
+			<model
+				life="650"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".6 0 2"
+				endcolor="0 0 0"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell2.material"
+				startalpha="0"
+				endalpha="10"
+				position="0 0 0"
+			/>
+			
+			<model
+				life="650"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".6 0 2"
+				endcolor="0 0 0"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell2.material"
+				startalpha="0"
+				endalpha="10"
+				position="15 25 0"
+			/>
+			
+			<model
+				delay="250"
+				life="650"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".6 0 2"
+				endcolor="0 0 0"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell2.material"
+				startalpha="0"
+				endalpha="10"
+				position="-15 35 0"
+			/>
+			
+			<model
+				delay="250"
+				life="650"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".6 0 2"
+				endcolor="0 0 0"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell2.material"
+				startalpha="0"
+				endalpha="10"
+				position="-15 -20 0"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

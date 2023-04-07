@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Engineer_Ability2"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="effects/top/model.mdf"
+	skin=""
+	
+	passiveeffect="effects/base.effect"
+	spawneffect="effects/impact.effect"
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.6"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="40"
+	targetoffset="0 0 64"
+
+	movespeed="0"
+	turnrate="650"
+	turnsmoothing="0.05"
+	ismobile="false"
+	canrotate="true"
+
+	maxhealth="4"
+	healthregen="0"
+	healthregenreduction="1"
+	maxmana="7,10,13,16"
+	manaregenreduction="1"
+	manaregen="0"
+	
+	cancarryitems="false"
+	inventory0="Ability_Pet_Turret1"
+	inventory1="Ability_Pet_Turret2"
+
+	armor="0"
+	magicarmor="0"
+	immunity="GadgetImmunity"
+
+	canattack="true"
+	
+	attackduration="150"
+	attackactiontime="50"
+	attackcooldown="1700"
+	attackdamagemin="64,98,147,197"
+	attackdamagemax="66,102,153,203"
+	attacknumanims="1"
+	attackoffset="0 0 70"
+	attackprojectile="Projectile_EngineerTurretAttack"
+	attackrange="500,550,600,650"
+	attackstarteffect=""
+	attackactioneffect="effects/attack_impact.effect"
+	attackimpacteffect=""
+	attacktargetscheme="enemy_heroes"
+	attacktype="ranged"
+	combattype="Hero"
+
+	aggrorange="800"
+	sightrangeday="1000"
+	sightrangenight="1000"
+
+	experiencebounty="50"
+	goldbountymin="70"
+	goldbountymax="80"
+	
+	diewithowner="true"
+	defaultbehavior="sentry"
+	
+	unittype="PseudoPet SteamTurret"
+>
+	<onspawn>
+		<applystate name="State_Engineer_Ability3_Turret_damage" target="this_entity" duration="-1" />
+	</onspawn>
+
+	<ondamaged>
+		<changedamage b="1" op="min"/>
+		<applystate name="State_Engineer_Ability2_Turret_RecentlyDamaged" duration="2000" target="source_entity" />
+	</ondamaged>
+	
+	<onattackpreimpact>
+		<setvalue name="combat_lifesteal" a="0" />
+	</onattackpreimpact>
+	
+	<onattackstart>
+		<applystate name="State_Pet_Engineer_Burstfire" target="this_entity" proxy="target_entity" duration="350" /> 
+	</onattackstart>
+	
+	<onattack>
+		<condition test="source_mana lt 1" >
+			<applystate name="State_Engineer_Ability2_Turret_No_Attack" target="this_entity" duration="-1" />
+		</condition>
+		<evaluate a="1" b="7,10,13,16" op="div" />
+		<evaluate a="result" b="source_maxmana" op="mult" />
+		<takemana target="this_entity" amount="1" b="result" op="mult" />
+	</onattack>
+	
+	
+	<modifier key="Engineer_SteamTurret_Heroes" modpriority="100"
+		attacktargetscheme="turret_targets"
+	>
+	</modifier>
+	
+	<modifier key="Engineer_Ability3_1" modpriority="100"
+		attackcooldown="1445"
+	/>
+	
+	<modifier key="Engineer_Ability3_2" modpriority="100"
+		attackcooldown="1360"
+	/>
+	
+	<modifier key="Engineer_Ability3_3" modpriority="100"
+		attackcooldown="1275"
+	/>
+	
+	<modifier key="Engineer_Ability3_4" modpriority="100"
+		attackcooldown="1190"
+	/>
+	
+</pet>

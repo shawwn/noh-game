@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DragonKnight_Ability4_Dot"
+
+	
+	
+	icon="icon1.tga"
+	displaylevel="true"
+	deniable="true"
+	
+	effecttype="StatusDebuff"
+	impactinterval="1000"
+>	
+	<onimpact>
+		<damage effecttype="Magic DOT" amount="20"/>
+	</onimpact>
+</state>

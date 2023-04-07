@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			delay="200"
+			life="1000"
+			startcolor="5 1 2"
+			endcolor="1.0 1.0 1.0"
+		/>
+		
+		<particlesystem name="system0" space="world" scale="0.45">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="1000"
+				falloffend="2000" 
+				volume="0.7" 
+				sample="sounds/cast.wav"
+			/>
+		
+			<simpleemitter
+				timenudge="1300"
+				bone="_bone_centerofchest"
+				spawnrate="40"
+				particlelife="400"
+				depthbias="-50"
+				material="/shared/effects/materials/aspeedaura.material"
+				life="400"
+			>
+				<particle
+					startcolor="1"
+					midcolor=".7 .1 0"
+					midcolorpos="0.4"
+					endcolor="0"
+					minangle="-360"
+					maxangle="360"
+					flare="true"
+					size="10"
+					endscale="5"
+					startscale="1"
+					startheight="30"
+					endheight="20"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="5000"
+				count="5"
+				particlelife="300"
+				speed="50"
+				material="/shared/effects/materials/dragon2.material"
+				life="300"
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolor=".7 .1 0"
+					midcolorpos="0.3"
+					endcolor="0"
+					minangle="-360"
+					maxangle="360"
+					endsize="450"
+					height="20"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="13000"
+				count="12"
+				particlelife="400"
+				material="/shared/effects/materials/whitedot.material"
+				life="400"
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolorpos="0.3"
+					endcolor="0"
+					minangle="-360"
+					maxangle="360"
+					endsize="450"
+					height="10"
+				/>
+			</simpleemitter>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="600"
+				startsize="170"
+				endsize="800"
+				startalpha="1"
+				endalpha="0"				
+				depthbias="-55"
+				material="/shared/effects/materials/refract_ring.material"
+				startparam=".1"
+				endparam=".3"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="300"
+				startcolor="1"
+				endcolor="1 .3 0"						
+				midalphapos="0.25"
+				startsize="20"
+				endsize="400"
+				startalpha="1"
+				midalpha=".9"
+				endalpha="0"				
+				depthbias="-25"
+				material="/shared/effects/materials/nova_01.material"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0"  particlesystem="system0" />	
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />	  
+	</thread>
+
+</effect>

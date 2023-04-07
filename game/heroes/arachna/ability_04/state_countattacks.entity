@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Arachna_Ability4_CountAttacks"
+	
+	ishidden="true"
+	icon="icon.tga"
+	passiveeffect=""
+	initialcharges="4"
+	effecttype=""
+	
+>
+
+	<oninflict>
+		<setcharges a="4" />
+	</oninflict>
+
+	<onattackimpact>
+		<removecharge />
+		<condition test="charges == 0">
+			<expire />
+		</condition>
+	</onattackimpact>
+	
+	<onexpired>
+		<kill target="proxy_entity" source="" />
+	</onexpired>
+	
+	
+</state>

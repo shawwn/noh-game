@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_TokenOfStealth"
+
+  carryscheme="token"
+  clonescheme="token"
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_TokenOfStealth"
+	
+	casttime="500"
+	castactiontime="200"
+	casteffect="cast.effect"
+	
+	initialcharges="1"
+	chargecost="1"
+	maxcharges="1"
+	destroyonempty="true"
+	allowsharing="true"
+	
+	actiontype="self_position"
+	targetscheme="ally_heroes"
+	targetradius="1250"
+
+	cooldowntime="120000"
+	manacost="75"
+
+>
+	<onimpact>
+		<spawnaffector name="Affector_TokenOfStealth" target="source_position" />
+	</onimpact>
+</item>

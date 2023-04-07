@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="wind.max" file="swirl.model" type="K2" >
+	<anim name="idle" clip="swirl.clip" fps="60" loop="1"/>
+</model>

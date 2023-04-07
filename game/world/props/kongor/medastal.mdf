@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model_Kongorprops01.max" file="medastal.model" type="K2">
+
+	<spawnevent cmd="starteffect effects/medastal_fx.effect 0"/>	
+	<anim name="idle" clip="clips/default_03.clip" fps="20" loop="true" loopbackframe="1">	
+	</anim>
+	
+</model>

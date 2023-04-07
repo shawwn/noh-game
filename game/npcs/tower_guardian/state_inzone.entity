@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_TowerGuardian_InSpawnZone"
+	icon="icon.tga"
+	ishidden="true"
+	
+>
+	<onexpired>
+		<applystate name="State_TowerGuardian_Return" target="this_owner_entity" proxy="this_inflictor_entity" duration="-1" />
+	</onexpired>
+</state>

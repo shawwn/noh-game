@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters />
+	<phase
+		name="color"
+		vs="effect"
+		ps="effect"
+		srcblend="BLEND_ONE"
+		dstblend="BLEND_ONE"
+		cull="CULL_NONE"
+		translucent="true"
+		depthwrite="false"
+		depthbias="1"
+		depthslopebias="true"
+		alphawrite="false"
+	>
+		<sampler
+			name="diffuse"
+			texture="/shared/effects/textures/iris.tga"
+			repeat_u="false"
+			repeat_v="false"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+</material>

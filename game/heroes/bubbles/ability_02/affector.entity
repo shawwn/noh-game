@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Bubbles_Ability2"
+
+	radius="400"
+
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="60,120,180,240" />
+		<applystate name="State_Bubbles_Ability2" duration="100,1000,2000,3000" />
+	</onimpact>
+</affector>

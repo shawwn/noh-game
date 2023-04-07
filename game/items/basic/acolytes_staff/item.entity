@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_AcolytesStaff"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="2700"
+	
+	actiontype="passive"
+	
+	intelligence="25"
+>
+</item>

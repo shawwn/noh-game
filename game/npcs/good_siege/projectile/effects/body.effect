@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="attack_projectile">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="2.5">
+
+			<simpleemitter
+				position="0 90 0" 
+				spawnrate="35"
+				maxparticlelife="550"
+				gravity="0.0"
+				offsetsphere="3 3 3"
+				minspeed="5"
+				maxspeed="15"
+				drag="0.0"
+				acceleration="0.0"
+				direction="0.0 0.0 1.0"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				inheritvelocity="-0.1"
+				depthbias="-30"
+			>
+					<particle 
+						startcolor=".4 .2 0"
+						midcolor=".45 .1 0"
+						endcolor="0 0 0"
+						midcolorpos="0.4"				
+						minangle="0"
+						maxangle="360"
+						startsize="20"
+						midsize="25"				
+						endsize="15"
+						startalpha=".2 .2 .2"
+						midsizepos=".8"
+						minanglespeed="-90"
+						maxanglespeed="90"
+						startanchor="0.5"
+					/>
+					<particle 
+						startcolor=".6 .1 0"
+						midcolor=".45 .1 0"
+						endcolor="0 0 0"
+						midcolorpos="0.4"				
+						minangle="0"
+						maxangle="360"
+						startsize="20"
+						midsize="25"				
+						endsize="15"
+						startalpha=".3"
+						midsizepos=".8"
+						minanglespeed="-90"
+						maxanglespeed="90"
+						anchor="1"
+					/>			
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>

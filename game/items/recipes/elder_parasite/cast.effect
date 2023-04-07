@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectsscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" >
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				sample="/shared/sounds/items/item_lifesteal3_cast.wav"
+			/>
+
+			<simpleemitter
+				life="2000"
+				position="0 0 50"
+				spawnrate="15"
+				particlelife="2000"
+				gravity="0"
+				offsetsphere="10 10 10"
+				material="/shared/effects/materials/phantom_smoke_03.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".4 0 0"
+					endcolor="0 0 0"
+					midcolorpos="0.4"
+					minangle="0"
+					maxangle="360"
+					startsize="0"
+					midsize="125"
+					endsize="65"
+					startalpha=".5 .5 .5"
+					endalpha="0 0 0"
+					midsizepos=".8"
+					minanglespeed="-90"
+					maxanglespeed="90"
+				/>
+			</simpleemitter>
+
+			<billboard
+				expirelife="300"
+				startcolor=".25 0 0"
+				endcolor="0"
+				startsize="115"
+				endsize="0"
+				bone="Bip01 R Hand"
+				depthbias="-10"
+				material="/shared/effects/materials/flare1.material"
+			/>
+		
+			<simpleemitter
+				bone="_bone_righthand"
+				spawnrate="25"
+				minparticlelife="100"
+				maxparticlelife="600"
+				minspeed="0"
+				maxspeed="200"
+				drag="0.05"
+				angle="20"
+				offsetsphere="25"
+				depthbias="-20"
+				material="/shared/effects/materials/mysticenergy2.material"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-110"
+					maxanglespeed="110"
+					startcolor=".5 0 0"
+					endcolor="0"
+					size="8"
+					minendscale="5"
+					maxendscale="6"
+					endstickiness="1"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+			<billboard
+				expirelife="300"
+				startcolor=".25 0 0"
+				endcolor="0"
+				startsize="115"
+				endsize="0"
+				bone="Bip01 L Hand"
+				depthbias="-10"
+				material="/shared/effects/materials/flare1.material"
+			/>
+		
+			<simpleemitter
+				bone="_bone_lefthand"
+				spawnrate="25"
+				minparticlelife="100"
+				maxparticlelife="600"
+				minspeed="0"
+				maxspeed="200"
+				drag="0.05"
+				angle="20"
+				offsetsphere="25"
+				depthbias="-20"
+				material="/shared/effects/materials/mysticenergy2.material"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-110"
+					maxanglespeed="110"
+					startcolor=".5 0 0"
+					endcolor="0"
+					size="8"
+					minendscale="5"
+					maxendscale="6"
+					endstickiness="1"
+					anchor="1"
+				/>
+			</simpleemitter>
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+	
+</effect>

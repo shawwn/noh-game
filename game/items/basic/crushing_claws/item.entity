@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_CrushingClaws"
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="150"
+	
+	actiontype="passive"
+	
+	strength="3"
+>
+</item>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Troll_Ability1"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	displaylevel="true"
+	
+	maxhealth="100"
+	damage="15"
+	movespeed="15,20,25,30"
+	modifierkey="ability1_1,ability1_2,ability1_3,ability1_4"
+	
+	morphpriority="50"
+	morphmodel="../../../npcs/n_vagabond_leader/model.mdf"
+	morphattackrange="75"
+	morphattackprojectile=""
+	morphattackimpacteffect="/heroes/troll/effects/impact.effect"
+	morphattackcooldown="1550"
+	morphattackactiontime="400"
+	morpheffectscale="0.7"
+	morphpreglobalscale="1.6"
+	morphaggrorange="600"
+	morphattacktype="melee"
+	
+	morphinventory5="Ability_Troll5"
+	
+	effecttype=""
+>
+</state>

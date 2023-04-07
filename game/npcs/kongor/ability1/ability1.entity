@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Kongor1"
+
+	
+	
+	statuseffecttooltip=""
+	
+	icon="icon.tga"
+
+	actiontype="passive"
+	
+	cooldowntime="15000"
+>
+	<onattackedpreimpact>
+		<condition test="canactivate">
+			<negate immunitytype="MagicImmunity1">
+				<startcooldown />
+			</negate>
+		</condition>
+	</onattackedpreimpact>
+
+	<ontargettedpreimpact>
+		<condition test="canactivate">
+			<negate immunitytype="MagicImmunity1">
+				<startcooldown />
+			</negate>
+		</condition>
+	</ontargettedpreimpact>
+	
+	<onattackimpact>
+		<chance threshold="0.15">
+			<applystate name="State_Stunned" duration="1650"/>
+			<damage effecttype="Physical" amount="50"/>
+		</chance>
+	</onattackimpact>
+</ability>

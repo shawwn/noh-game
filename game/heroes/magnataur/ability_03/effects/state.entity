@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Item4D"
+
+	
+	
+
+	passiveeffect="state.effect"	
+
+	icon="icon.tga"
+
+	effecttype=""
+>
+	<onframe >
+		<damage effecttype="Magic" amount="35" b="frametime" op="mult"/>
+	</onframe>
+</state>

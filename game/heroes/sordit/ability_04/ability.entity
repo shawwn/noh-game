@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Sordit4"
+
+	icon="icon.tga"
+	statuseffecttooltip="State_Sordit_Ability4"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	anim="attack_1"
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+
+	actiontype="target_self"
+	casteffecttype=""
+	
+	manacost="160,210,260"
+	cooldowntime="90000,75000,60000"
+	
+	targetscheme=""
+>
+	<onimpact>
+		<applystate name="State_Sordit_Ability4" duration="15000,25000,35000"/>
+	</onimpact>
+</ability>

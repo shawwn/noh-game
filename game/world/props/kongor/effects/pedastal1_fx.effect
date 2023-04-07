@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="medastalEffects">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<!--greenGlow-->
+			<simpleemitter
+				bone="_bone_fx1"			
+         		spawnrate="7"				
+				minparticlelife="1500"
+          		maxparticlelife="3000"
+          		gravity="-1"
+          		drag="0"
+				position="0 0 0"
+				offsetsphere="20 20 0"
+				material="/shared/effects/materials/fairy_glow.material"
+			>
+  				<particle 
+					maxangle="360"			
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 0 0"
+					midcolor=".75 .75 .75"
+					endcolor="0 0 0"
+					startalpha="1 1 1"
+					endalpha="0 0 0"
+					startsize="50"
+					midsize="50"
+					endsize="0"
+					endanchor="0"
+				/>
+        	</simpleemitter>
+
+			<!--purpleSmokeRising-->
+			<simpleemitter
+				bone="_bone_fx1"			
+         		spawnrate="6"				
+				minparticlelife="1500"
+          		maxparticlelife="3000"
+          		gravity="-10"
+          		drag=".1"
+				position="0 0 -10"
+				offsetsphere="20 20 0"
+				material="/shared/effects/materials/phantom_smoke_16.material"
+			>
+  				<particle 
+					maxangle="360"			
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 0 0"
+					midcolor=".25 1 .25"
+					endcolor="0 0 0"
+					startalpha="1 1 1"
+					endalpha="0 0 0"
+					startsize="0"
+					endsize="100"					
+					endanchor="0"
+				/>
+        	</simpleemitter>
+
+			<!--greenSmoke-->
+			<simpleemitter
+				bone="_bone_fx1"			
+         		spawnrate="10"				
+				minparticlelife="1500"
+          		maxparticlelife="3000"
+          		gravity="0"
+          		drag="0"
+				position="0 0 0"
+				offsetsphere="25 25 0"
+				material="/shared/effects/materials/phantom_smoke_16.material"
+			>
+  				<particle 
+					maxangle="360"			
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 0 0"
+					midcolor=".1 .5 .1"
+					endcolor="0 0 0"
+					startalpha="1 1 1"
+					endalpha="0 0 0"					
+					startsize="0"
+					endsize="175"					
+					endanchor="0"
+				/>
+        	</simpleemitter>			
+			
+			<!--greenSmoke-->
+			<simpleemitter
+				bone="_bone_fx1"			
+         		spawnrate="10"				
+				minparticlelife="1500"
+          		maxparticlelife="3000"
+          		gravity="0"
+          		drag="0"
+				position="0 0 0"
+				offsetsphere="20 20 0"
+				material="/shared/effects/materials/phantom_smoke_02.material"
+			>
+  				<particle 
+					maxangle="360"			
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 0 0"
+					midcolor=".25 1 .25"
+					endcolor="0 0 0"
+					startalpha="1 1 1"
+					endalpha="0 0 0"
+					startsize="0"
+					endsize="175"					
+					endanchor="0"
+				/>
+        	</simpleemitter>					
+
+			<billboard
+				bone="_bone_fx1"
+				size="1000"
+				startcolor=".015 .07 .015"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				loop="true"
+				depthbias="-200"
+				lockup="true"
+				pitch="270"	
+			/>
+
+		</particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+   </thread>
+</effect>
+
+

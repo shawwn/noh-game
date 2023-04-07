@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Manatube"
+	icon="icon.tga"
+	cost="875"
+	allowsharing="true"
+	actiontype="passive"
+	manaregenmultiplier="1.0"
+/>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Panda_Ability3"
+
+	gravity="5000"
+	lifetime="850"
+	useexactlifetime="true"
+
+	modelscale="1.0"
+	model=""
+	deatheffect=""
+	canturn="false"
+	flying="false"
+	flyheight="0"
+>
+	<onimpact>
+		<playeffect effect="effects/state.effect" target="source_entity" source="source_entity"/>
+		<spawnaffector name="Affector_Panda_Ability3" target="target_position"/>
+	</onimpact>
+</projectile>

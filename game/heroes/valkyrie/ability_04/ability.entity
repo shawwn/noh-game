@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Valkyrie4"
+
+	
+	
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="1330"
+	castactiontime="500"
+	statuseffecttooltip="State_Valkyrie_Ability4"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="global"
+	targetscheme="ally_heroes"
+	casteffecttype=""
+	
+	manacost="100,150,200"
+	cooldowntime="120000"
+		
+	casteffect="effects/cast.effect"
+>
+	<onimpact effectdescription="true">
+		<applystate name="State_Valkyrie_Ability4" duration="7000,9000,11000" />
+	</onimpact>
+	
+</ability>

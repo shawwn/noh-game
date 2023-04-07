@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_NecroMelee_3"	
+	icon="icon.tga"
+	
+	actiontype="passive"
+	revealtype="ward"
+	revealrange="1000"	
+>
+</ability>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Silence"
+	
+	statuseffecttooltip="State_Item5K"
+	icon="icon.tga"
+	
+	cost="0"
+	components="Item_Weapon1 Item_Weapon1 Item_Weapon1"
+	autoassemble="true"
+	allowdisassemble="true"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	range="900"
+	manacost="100"
+	cooldowntime="25000"
+	cooldowntype="silence"
+	casttime="0"
+	castactiontime="0"
+	
+	intelligence="20"
+	damage="40"
+	attackspeed=".3"
+	manaregenmultiplier="2.25"
+>
+	<onimpact >
+		<applystate name="State_Item5K" duration="5000" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

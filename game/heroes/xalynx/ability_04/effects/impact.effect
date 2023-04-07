@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="1" useentityeffectscale="1">
+
+<definitions>
+	<particlesystem name="system0" space="world" scale=".85">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".3"
+				sample="../sounds/impact_%.wav"
+			/>
+	
+		<simpleemitter
+			spawnrate="1000"
+			count="1"
+			particlelife="750"
+			gravity="0"
+			speed="0"
+			drag="0"
+			acceleration="0"
+			position="0 0 0"
+			material="/shared/effects/materials/phantom_smoke_10.material"
+			offsetsphere="0 0 0"
+		>
+			<particle>
+				<model
+					life="5000"
+					model="/heroes/xalynx/ability_04/effects/model.mdf"
+					anim="up"
+					scale="11"
+					expirelife="500"
+					startparticlealpha="1"
+					endparticlealpha="0"
+					minyaw="0"
+					maxyaw="360"
+					yawspeed="100"
+					position="0 0 50"
+					directionalspace="world"
+				>
+
+					<template name="spirits">
+						<twopointtrailemitter
+							life="1000"
+							bone_a="{bone01}"
+							bone_b="{bone02}"
+							spawnrate="30"
+							minparticlelife="500"
+							maxparticlelife="500"
+							texpostime="400"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/mysticenergy2.material"
+							minexpirelife="200"
+							maxexpirelife="500"
+							startparticlecolor="0 0 1"
+							midparticlecolor=".5 .75 1"
+							endparticlecolor="0 0 0"
+							midparticlecolorpos=".7"
+						>
+							<particle
+							/>
+						</twopointtrailemitter>
+					</template>
+					
+					<instance name="spirits" bone01="_bone_01" bone02="_bone_02" />
+					<instance name="spirits" bone01="_bone_05" bone02="_bone_06" />
+					<instance name="spirits" bone01="_bone_07" bone02="_bone_08" />
+					<instance name="spirits" bone01="_bone_11" bone02="_bone_12" />
+					
+				</model>
+				
+		</particle>
+		</simpleemitter>
+		
+		<simpleemitter
+		delay="150"
+			spawnrate="75"
+			count="10"
+			particlelife="750"
+			gravity="-55"
+			speed="40"
+			drag=".08"
+			acceleration="0"
+			position="0 0 0"
+			material="/shared/effects/materials/phantom_smoke_10.material"
+			offsetsphere="30 30 0"
+			minangle="90"
+			maxangle="-90"
+		>
+			<particle 
+				startcolor="0 0 0"
+				midcolor=".25 .4 1"
+				endcolor="0 0 0"
+				midcolorpos=".1"
+				startframe="0"
+				endframe="1"
+				startwidth="25"
+				midwidth="20"
+				endwidth="10"
+				midwidthpos=".5"
+				startheight="0"
+				endheight="1050"
+				startalpha="0"
+				midalpha=".1"
+				endalpha="0"
+				midalphapos=".1"
+				lockup="true"
+			/>
+		</simpleemitter>
+		
+		<simpleemitter
+			delay="200"
+			spawnrate="100"
+			particlelife="500"
+			count="20"
+			gravity="-50"
+			speed="5"
+			acceleration="0.0"
+			position="0 0 0"
+			direction="0 0 1"
+			offsetsphere="0 0 0"
+			material="/shared/effects/materials/whitewater_01.material"
+		>
+			<particle
+				startcolor="1 1 1"
+				midcolor=".2 .4 1"
+				endcolor="0 0 0"
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+				startsize="25"
+				endsize="75"
+				flare="true"
+				turn="true"
+			/>
+		</simpleemitter>
+		
+		<billboard
+			delay="200"
+			bone="_bone_center"
+			spawnrate="50"
+			particlelife="100"
+			life="1000"
+			material="/shared/effects/materials/starlight.material"
+			startsize="25"
+			midsize="100"
+			endsize="25"
+			startcolor="0 0 0"
+			midcolor=".375 .375 .5"
+			endcolor="0 0 0"
+			midcolorpos=".15"
+		/>
+		
+		<simpleemitter
+			life="500"
+			spawnrate="5"
+			particlelife="400"
+			gravity="-6"
+			speed="0.0"
+			acceleration="0.0"
+			position="0 0 50"
+			offsetsphere="0 0 0"
+			material="/shared/effects/materials/blink.material"
+		>
+			<particle
+				startcolor="0 0 0"
+				midcolor=".75 .75 1"
+				endcolor="0 0 0"
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+				startsize="200"
+				midsize="100"
+				endsize="50"
+				lockup="true"
+				pitch="90"
+			/>
+			<particle
+				startcolor="0 0 0"
+				midcolor="1 .75 .75"
+				endcolor="0 0 0"
+				minangle="0"
+				maxangle="360"
+				minanglespeed="0"
+				maxanglespeed="0"
+				startsize="200"
+				midsize="100"
+				endsize="50"
+				lockup="true"
+				pitch="90"
+			/>
+		</simpleemitter>
+		
+		<groundsprite
+			delay="250"
+			material="/shared/effects/materials/smash_add.material"
+			startsize="10"
+			endsize="70"
+			startcolor=".1 .4 .75"
+			midcolor=".1 .4 .75"
+			midcolorpos=".7"
+			endcolor="0 0 0"
+			life="250"
+		/>
+		
+		<groundsprite
+			delay="250"
+			material="/shared/effects/materials/smash_add.material"
+			startsize="5"
+			endsize="55"
+			startcolor=".1 .4 .75"
+			midcolor=".1 .4 .75"
+			midcolorpos=".7"
+			endcolor="0 0 0"
+			life="250"
+		/>
+
+	</particlesystem>
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

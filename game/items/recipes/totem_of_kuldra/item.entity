@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Morph"
+	
+	statuseffecttooltip="State_Item4K"
+	
+	icon="icon.tga"
+	
+	cost="0"
+	components="Item_AcolytesStaff Item_Confluence Item_Manatube"
+	autoassemble="true"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="35000"
+	cooldowntype="morph"
+	range="800"
+	manacost="100"
+	
+	strength="10"
+	agility="10"
+	intelligence="35"
+	manaregenmultiplier="2.0"
+>
+	<onimpact>
+		<killillusions />
+		<playeffect effect="/heroes/pollywogpriest/effects/ability_02/effects/poof.effect" source="target_entity" />
+		<applystate name="State_Item4K" duration="3500" />
+		<dispel type="StatusStealth" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

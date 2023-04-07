@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Item2I"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	silenced="true"
+	perplexed="true"
+	disarmed="true"
+	immobilized="true"
+	invulnerable="true"
+	stunned="true"
+	
+	effecttype="StatusDebuff"
+>
+</state>

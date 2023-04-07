@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_TokenOfSight"
+	
+	passiveeffect=""
+	model="/shared/models/invis.mdf"
+	boundsheight="0"
+	boundsradius="0"
+	isselectable="false"
+	canrotate="false"
+	ismobile="false"
+	effectscale="1"
+
+	attacktype="none"
+
+	lifetime="0"
+	deathtime="0"
+	corpsetime="0"
+	
+	invulnerable="true"
+	flying="false"
+	drawonmap="false"
+	unitwalking="true"
+	
+	sightrangeday="900"
+	sightrangenight="900"
+	clearvision="true"
+	revealtype="eye"
+	revealrange="900"
+	
+>
+</gadget>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Engineer_Ability4_push"
+
+	
+	
+	icon="icon.tga"
+	
+	silenced="true"
+	perplexed="true"
+	immobilized="true"
+	disarmed="true"
+	stunned="true"
+	
+	passiveeffect="effects/push.effect"
+	
+	effecttype=""
+>
+
+</state>

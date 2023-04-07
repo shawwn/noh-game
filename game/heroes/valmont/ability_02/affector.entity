@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Valmont_Ability2"
+
+	radius="450"
+	
+	lifetime="400"
+	impactdelay="300"
+	maxtotalimpacts="1"
+	targetselection="random"
+	targetscheme="visible_enemy_units"
+	effecttype="Physical Splash"
+	persist="true"
+>
+	<onimpact>
+		<print text="omni impact" />
+		<applystate name="State_Valmont_Ability2" duration="400" target="source_entity"/>
+		<teleport interpolate="true" facetarget="true"/>
+		<damage effecttype="Physical" min="100" max="150"/>
+		<popup name="bonus_damage" target="source_entity" a="result"/>
+		<playanim name="attack_1" variations="4" length="400" target="source_entity"/>
+		<chain count="1,3,5,7"/>
+		<order command="attack"/>
+	</onimpact>
+</affector>

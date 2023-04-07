@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_NecroMelee_2"	
+	
+	icon="icon.tga"
+	
+	actiontype="passive"
+>
+	<onkilled>
+		<condition test="target_entity != 0">
+			<cantarget targetscheme="enemy_units">
+				<damage effecttype="" amount="200,400,600" target="target_entity" />
+				<playeffect effect="explode.effect" source="target_entity" target="source_entity" />
+			</cantarget>
+		</condition>
+	</onkilled>	
+</ability>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_DiseasedRider_Ability4"
+
+	radius="600"
+	
+	impactdelay="500"
+	maxtotalimpacts="4"
+	targetscheme="visible_organic_units"
+	targetselection="random"
+	effecttype="Magic"
+	persist="true"
+	
+	impacteffect="effects/impact.effect"
+	linkeffect=""
+	
+>
+	<onimpact>
+		<condition test="not_target_type self" target="target_entity" source="proxy_entity">
+			<spawnprojectile name="Projectile_DiseasedRider_Ability4" source="this_position" target="target_entity" noresponse="true" />
+			<expire />
+		</condition>
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100"
+	>
+		<onimpact>
+		<condition test="not_target_type self" target="target_entity" source="proxy_entity">
+			<spawnprojectile name="Projectile_DiseasedRider_Ability4" source="this_position" target="target_entity" noresponse="true" />
+			<expire />
+		</condition>
+	</onimpact>
+	</modifier>
+</affector>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Windrunner_Ability3_Enemy"
+	icon="/heroes/ebulus/ability_02/icon.tga"
+	displaylevel="true"
+	movespeedslow="0.08,0.16,0.24,0.30"
+>
+	<modifier key="kraken_tidalpull" condition="hero" modpriority="100"
+		passiveeffect="/heroes/kraken/ability_03/state.effect"
+	/>
+</state>

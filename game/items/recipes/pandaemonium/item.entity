@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Damage9"
+
+	icon="icon.tga"
+
+  carryscheme="doombringer"
+  clonescheme="doombringer"
+	
+	cost="0"
+	components="Item_Voulge Item_SwordOfTheHigh"
+	autoassemble="true"
+	dropondeath="true"
+  unkillable="true"
+	allowsharing="false"
+	nosell="true"
+  nostash="true"
+	
+	actiontype="passive"
+	
+	damage="250"
+>
+	<onframe />
+</item>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters />
+	<phase
+		name="color"
+		vs="effect3d"
+		ps="effect3d"
+		srcblend="BLEND_ONE"
+		dstblend="BLEND_ONE"
+		cull="CULL_NONE"
+		translucent="true"
+		alphawrite="false"
+	>
+		<samplervolume
+			name="diffuse"
+			texture="/shared/effects/textures/fireball3D_32_split/mal_flames.tga"
+			repeat_u="false"
+			repeat_v="false"
+			repeat_w="false"
+			scale_u="1.0000"
+			scale_v="1.0000"
+			fps="15"
+			mipmaps="false"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+			border="false"
+		/>
+	</phase>
+</material>

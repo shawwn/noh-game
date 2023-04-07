@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Deadwood_Ability1"
+
+	radius="200"
+	lifetime="1500,2000,2500,3000"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	
+	persist="false"
+>
+
+
+	<onimpact>
+		<applystate name="State_Deadwood_Ability1" continuous="true" proxy="this_entity" duration="500"/>
+		<applystate name="State_Damage_Deadwood_Ability1" continuous="true" proxy="this_entity" duration="1000"/>
+		<condition test="not_hasstate State_Deadwood_Ability1_PushImmunity" target="target_entity" >
+			<push force="-155" duration="400" source="this_position" />
+			<applystate name="State_Deadwood_Ability1_PushImmunity" duration="3000" />
+		</condition>
+	</onimpact>
+</affector>

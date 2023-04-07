@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Valmont_Aura"
+
+	
+	
+	icon="magia3.tga"
+	passiveeffect="effects/cast.effect"
+	displaylevel="true"
+	
+	movespeedslow="0.05,0.10,0.15,0.20"
+	
+	effecttype="StatusdeBuff"
+>
+<onframe >
+		<damage effecttype="Magic" amount="10" b="frametime" op="mult"/>
+	</onframe>
+
+</state>

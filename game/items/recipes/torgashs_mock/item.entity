@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Damage10"
+
+	icon="icon.tga"
+	
+	cost="1350"
+	components="Item_SwordOfTheHigh"
+	
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="1000"
+	cooldowntype="mockofbrilliance"
+	noresponse="true"
+	
+	passiveeffect="passive.effect"
+	damage="60"
+>
+	<modifier key="mockofbrilliance_off" modpriority="100"
+	>
+		<onimpact>
+			<setactivemodifierkey name="" />
+		</onimpact>
+		
+		<aura state="State_Item4D" radius="0" targetscheme="enemy_units" effecttype="Magic" />
+	</modifier>
+	
+	<modifier key="" modpriority="100"
+	>
+		<onimpact>
+			<setactivemodifierkey name="mockofbrilliance_off" />
+		</onimpact>
+		
+		<aura state="State_Item4D" radius="650" targetscheme="enemy_units" effecttype="Magic" />		
+	</modifier>
+</item>

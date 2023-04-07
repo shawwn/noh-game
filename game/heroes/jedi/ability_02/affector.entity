@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Jedi_Ability2"
+
+	radius="800"
+
+	targetselection="all"
+	targetscheme="ally_heroes"
+	effecttype=""
+	
+
+>
+	<onimpact>
+		<applystate name="State_Jedi_Ability2_Buff" duration="10000" />
+		<playeffect effect="effects/land.effect" target="source_position" source="source_position" occlude="true"/>
+	</onimpact>
+	
+</affector>

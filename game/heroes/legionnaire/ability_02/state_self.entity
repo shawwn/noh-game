@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Legionnaire_Ability2_Self"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	ishidden="true"
+	
+	movespeedmultiplier="10"
+	basedamagemultiplier="0.5,1,1.5,2"
+	
+	unitwalking="true"
+	
+	modifierkey="legionnairecharging"	
+>
+	<onattack>
+		<spawnaffector name="Affector_Legionnaire_Ability2" target="source_entity" proxy="target_entity"/>
+	</onattack>
+</state>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_BrainOfMaliken"
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="1000"
+	
+	actiontype="passive"
+	
+	maxmana="250"
+>
+</item>

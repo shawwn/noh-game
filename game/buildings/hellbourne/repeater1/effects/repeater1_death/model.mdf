@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="deathrig.max" file="high.model" type="K2" >
+
+<anim name="idle" clip="clips/default_1.clip" fps="30" loop="false">
+
+<frameevent frame="1" cmd="starteffect /buildings/hellbourne/repeater1/effects/repeater1_death/effects/soul_trail.effect 0"/>
+</anim>
+	
+</model>

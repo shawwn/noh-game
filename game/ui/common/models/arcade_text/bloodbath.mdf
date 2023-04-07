@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="bloodlust.max" file="bloodbath.model" type="K2" >
+	<anim name="idle" clip="bloodbath.clip" loop="1" fps="30" loopbackframe="-1" blendtime="0"/>
+</model>

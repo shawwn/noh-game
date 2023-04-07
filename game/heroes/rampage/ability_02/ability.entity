@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Rampage2"
+
+	icon="icon.tga"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	targetscheme="ally_units"
+	passiveeffect="effects/state.effect"
+	
+	damagepercharge="1"
+	
+>
+	<aura state="State_Rampage_Ability2" radius="800" targetscheme="ally_units"/>
+
+	<onimpact />
+	
+	<onframe>
+		<setvar0 a="source_movespeed" b="0.04,0.08,0.12,0.16" op="mult" />
+		<setcharges a="setvar0" />
+	</onframe>
+</ability>

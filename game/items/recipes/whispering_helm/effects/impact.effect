@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="lifeStealEffectForDominatingCreep">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<simpleemitter
+				life="2000"
+				bone="_bone_overhead"
+         		spawnrate="5"
+				minparticlelife="1500"
+          		maxparticlelife="3000"
+          		gravity="0"
+          		drag="0"
+				position="0 0 25"
+				offsetsphere="10 10 0"
+				material="/shared/effects/materials/phantom_smoke_03.material"
+			>
+  				<particle 
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor="0 0 0"
+					midcolor=".5 .5 .5"
+					endcolor="0 0 0"
+					startsize="0"
+					endsize="165"
+					endanchor="0"
+				/>
+        	</simpleemitter>
+		
+			<model
+				bone="_bone_overhead"
+				name="brain"
+				life="3500"
+				scale=".4"
+				model="brain.mdf"
+				anim="idle"
+				startcolor="0 0 0"
+				midcolor="1 1 1"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+			/>
+
+			<model
+				bone="_bone_overhead"
+				name="brain"
+				life="3500"
+				scale=".5"
+				model="brain.mdf"
+				anim="idle"
+				startcolor="0 0 0"
+				midcolor="1 1 1"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+			/>
+
+			<model
+				life="600"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="1.5 1 2"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/shell2.material"
+				startalpha="0"
+				endalpha="10"
+			/>
+
+			<model
+				life="600"
+				delay="200"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="1.5 1 2"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/shell2.material"
+				startalpha="0"
+				endalpha="10"
+			/>
+	
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

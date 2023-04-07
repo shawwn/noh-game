@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Astrolabe"
+
+	icon="icon.tga"
+	statuseffecttooltip="State_Astrolabe_Active"
+	
+	cost="900"
+	components="Item_ShieldOfTheFive Item_MysticPotpourri"
+
+	actiontype="self_position"
+	targetscheme="ally_units"
+	targetradius="450"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="45000"
+	cooldowntype="astrolabe"
+	manacost="150"
+	casteffect="cast.effect"	
+
+	strength="5"
+	agility="5"
+	intelligence="5"
+	armor="5"
+>
+	<aura state="State_Astrolabe_Aura" radius="600" targetscheme="ally_units" effecttype="Buff" propagatecondition="not_stealthed"/>
+
+	<onimpact >
+		<spawnaffector name="Affector_Astrolabe"/>
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

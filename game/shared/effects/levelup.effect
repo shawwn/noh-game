@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="level up">
+
+<definitions>
+	<particlesystem name="system0" space="world">
+
+		<sound
+			falloff="150.0" 
+			volume="1.0" 
+			sample="/human/sounds/levelup.mp3"
+		/>
+	
+		<groundsprite
+			material="/shared/effects/materials/rune_fire.material"
+			size="32"
+			startcolor="1 .4 1"
+			midcolor="1 .4 .4"
+			midcolorpos=".7"
+			endcolor="0 0 0"
+			yawspeed="15" 
+			life="1000"
+		/>
+		<groundsprite
+			material="/shared/effects/materials/rune_fire.material"
+			startsize="32"
+			endsize="45"
+			startcolor="1 .4 1"
+			midcolor="1 .4 .4"
+			midcolorpos=".7"
+			endcolor="0 0 0"
+			yawspeed="15" 
+			life="1000"
+		/>
+<!--		<groundsprite
+			material="/shared/effects/materials/rune_fire.material"
+			size="15"
+			startcolor="1 .4 1"
+			endcolor="0 0 0"
+			position="45 0 0 "
+			yawspeed="15" 
+			life="1000"
+		/>
+		<groundsprite
+			material="/shared/effects/materials/rune_fire.material"
+			size="15"
+			startcolor="1 .4 1"
+			endcolor="0 0 0"
+			position="0 45 0 "
+			yawspeed="15" 
+			life="1000"
+		/>
+
+		<groundsprite
+			material="/shared/effects/materials/rune_fire.material"
+			size="15"
+			startcolor="1 .4 1"
+			endcolor="0 0 0"
+			position="-45 0 0 "
+			yawspeed="15" 
+			life="1000"
+		/>
+		<groundsprite
+			material="/shared/effects/materials/rune_fire.material"
+			size="15"
+			startcolor="1 .4 1"
+			endcolor="0 0 0"
+			position="0 -45 0 "
+			yawspeed="15" 
+			life="1000"
+		/>  -->
+			<simpleemitter
+				spawnrate="100"
+				particlelife="500"
+				count="20"
+				gravity="0.0"
+				speed="0.0"
+				acceleration="0.0"
+				timenudge="0"
+				position="0 0 20"
+				material="/shared/effects/materials/flare2.material"
+			>
+				<particle
+					startcolor="1 .4 1"
+					endcolor="0.0 0.0 "
+					startalpha="1.0"
+					endalpha="0.0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					width="19.0"
+					startheight="0.0"
+					endheight="70.0"
+					flare="true"
+					turn="true"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="50"
+				particlelife="400"
+				count="25"
+				life="5000"
+				gravity="0.0"
+				speed="15"
+				acceleration="0.0"
+				timenudge="-100"
+				position="0 0 0"
+				offestsphere="10 10 0"
+				
+				
+				material="/shared/effects/materials/flare2.material"
+			>
+				<particle
+					startcolor="1 .5 0"
+					endcolor="0.0 0.0 0.5"
+					startalpha="1.0"
+					endalpha="0.0"
+					width="35.0"
+					startheight="0.0"
+					endheight="350.0"
+					lockup="true"
+					
+					
+				/>
+			</simpleemitter>
+<!-- ==================================================================================================== -->			
+<!--			<simpleemitter
+				spawnrate="50"
+				particlelife="500"
+				life="2000"
+				count="15"
+				gravity="0.0"
+				speed="25"
+				acceleration="0.0"
+				
+				position="35 0 0"
+				offestsphere=" 20 20 0"
+				timenudge="-220"
+				material="/shared/effects/materials/flare2.material"
+				
+			>
+				<particle
+					startcolor="1 .5 0"
+					endcolor="0.0 0.0 .5"
+					startalpha="1.0"
+					endalpha="0.0"
+					width="10.0"
+					startheight="0.0"
+					endheight="250.0"
+					lockup="true"
+					
+					
+					
+				/>
+			</simpleemitter> -->
+			
+<!--			<simpleemitter
+				spawnrate="50"
+				particlelife="500"
+				life="2000"
+				count="15"
+				gravity="0.0"
+				speed="25"
+				acceleration="0.0"
+				
+				position="0 -35 0"
+				offestsphere=" 20 20 0"
+				timenudge="-400"
+				material="/shared/effects/materials/flare2.material"
+				
+			>
+				<particle
+					startcolor="1 .5 0"
+					endcolor="0.0 0.0 .5"
+					startalpha="1.0"
+					endalpha="0.0"
+					width="10.0"
+					startheight="0.0"
+					endheight="250.0"
+					lockup="true"
+					
+					
+					
+				/>
+			</simpleemitter>  -->
+			
+<!--			<simpleemitter
+				spawnrate="50"
+				particlelife="500"
+				life="2000"
+				count="15"
+				gravity="0.0"
+				speed="25"
+				acceleration="0.0"
+				
+				position="0 35 0"
+				offestsphere=" 20 20 0"
+				timenudge="-250"
+				material="/shared/effects/materials/flare2.material"
+				
+			>
+				<particle
+					startcolor="1 .5 0"
+					endcolor="0.0 0.0 .5"
+					startalpha="1.0"
+					endalpha="0.0"
+					width="10.0"
+					startheight="0.0"
+					endheight="250.0"
+					lockup="true"
+					
+					
+					
+				/>
+			</simpleemitter> -->
+			
+<!--			<simpleemitter
+				spawnrate="50"
+				particlelife="500"
+				count="15"
+				gravity="0.0"
+				speed="25"
+				acceleration="0.0"
+				timenudge="0"
+				position="-35 0 0"
+				offestsphere=" 20 20 0"
+				
+				
+				material="/shared/effects/materials/flare2.material"
+			>
+				<particle
+					startcolor="1 .5 0"
+					endcolor=" 0 0 .5"
+					startalpha="1.0"
+					endalpha="0.0"
+					width="10.0"
+					startheight="0.0"
+					endheight="250.0"
+					lockup="true"
+					
+					
+				/>
+			</simpleemitter> -->
+			
+
+<!-- ==================================================================================================== -->
+
+
+		<simpleemitter
+			
+			count="15"
+			particlelife="1000"
+			gravity="-1"
+			speed="30"
+			drag="0.020"
+			acceleration="0.0"
+			position="0 0 50"
+
+			direction="0 0 1"
+		
+			timenudge="0"
+			offsetsphere="20 20 20"
+			material="/shared/effects/materials/flare1.material"
+			
+		>
+			<particle
+				minangle="-360"
+				maxangle="0"
+				minanglespeed="0"
+				maxanglespeed="70"
+
+
+				startcolor="1 .5 0"
+				midcolor="0 0 1"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+
+
+				startframe="0"
+				endframe="1"
+				startsize="3"
+				midsize="20"				
+				endsize="0"
+
+			/>
+
+		</simpleemitter>
+		
+<!--		<simpleemitter
+			
+			count="15"
+			particlelife="1000"
+			gravity="-2"
+			speed="50"
+			drag="0.020"
+			acceleration="0.0"
+			position="45 0 0"
+
+			direction="0 0 1"
+		
+			timenudge="0"
+			offsetsphere="10 10 10"
+			material="/shared/effects/materials/flare1.material"
+			
+		>
+			<particle
+				minangle="-360"
+				maxangle="0"
+				minanglespeed="0"
+				maxanglespeed="70"
+
+
+				startcolor="1 .5 0"
+				midcolor="0 0 1"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+
+
+				startframe="0"
+				endframe="1"
+				startsize="3"
+				midsize="10"				
+				endsize="0"
+
+			/>
+
+		</simpleemitter> -->
+		
+<!--		<simpleemitter
+			
+			count="15"
+			particlelife="1000"
+			gravity="-2"
+			speed="50"
+			drag="0.020"
+			acceleration="0.0"
+			position="-45 0 0"
+
+			direction="0 0 1"
+		
+			timenudge="0"
+			offsetsphere="10 10 10"
+			material="/shared/effects/materials/flare1.material"
+			
+		>
+			<particle
+				minangle="-360"
+				maxangle="0"
+				minanglespeed="0"
+				maxanglespeed="70"
+
+
+				startcolor="1 .5 0"
+				midcolor="0 0 1"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+
+
+				startframe="0"
+				endframe="1"
+				startsize="3"
+				midsize="10"				
+				endsize="0"
+
+			/>
+
+		</simpleemitter> -->
+<!-- ============================================================================================= -->		
+<!--		<simpleemitter
+				spawnrate="20"
+				particlelife="1500"
+				count="1"			
+				position="20 0 50"
+				offestsphere=" 0 0 0"				
+				material="/shared/effects/materials/rune_fire.material"
+			>
+				<particle
+					startcolor="1 .4 1"
+					endcolor="0.0 0.0 0.0"
+					startalpha="1.0"
+					endalpha="0.0"
+					
+					startsize="10"
+					endsize="15"
+					lockup="true"
+					
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="20"
+				particlelife="1500"
+				count="1"			
+				position="20 0 50"
+				material="/shared/effects/materials/rune_fire.material"
+			>
+				<particle
+					startcolor="1 .4 1"
+					endcolor="0.0 0.0 0.0"
+					startalpha="1.0"
+					endalpha="0.0"					
+					startsize="10"
+					endsize="25"
+					lockup="true"
+					
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="20"
+				particlelife="1500"
+				count="1"
+				position="20 0 50"						
+				material="/shared/effects/materials/rune_fire.material"
+			>
+				<particle
+					startcolor="1 .4 1"
+					endcolor="0.0 0.0 0.0"
+					startalpha="1.0"
+					endalpha="0.0"				
+					startsize="10"
+					endsize="30"
+					lockup="true"
+					
+				/>
+			</simpleemitter> -->
+<!-- ============================================================================================= -->			
+<!--			<simpleemitter
+				spawnrate="20"
+				particlelife="1500"
+				count="1"			
+				position="-20 0 50"
+				offestsphere=" 0 0 0"				
+				material="/shared/effects/materials/rune_fire.material"
+			>
+				<particle
+					startcolor="1 .4 1"
+					endcolor="0.0 0.0 0.0"
+					startalpha="1.0"
+					endalpha="0.0"
+					
+					startsize="10"
+					endsize="15"
+					lockup="true"
+					
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="20"
+				particlelife="1500"
+				count="1"			
+				position="-20 0 50"
+				material="/shared/effects/materials/rune_fire.material"
+			>
+				<particle
+					startcolor="1 .4 1"
+					endcolor="0.0 0.0 0.0"
+					startalpha="1.0"
+					endalpha="0.0"					
+					startsize="10"
+					endsize="25"
+					lockup="true"
+					
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="20"
+				particlelife="1500"
+				count="1"
+				position="-20 0 50"						
+				material="/shared/effects/materials/rune_fire.material"
+			>
+				<particle
+					startcolor="1 .4 1"
+					endcolor="0.0 0.0 0.0"
+					startalpha="1.0"
+					endalpha="0.0"				
+					startsize="10"
+					endsize="30"
+					lockup="true"
+					
+				/>
+			</simpleemitter> -->
+<!-- ============================================================================================= -->			
+<!--			<simpleemitter
+				spawnrate="20"
+				particlelife="1500"
+				count="1"			
+				position="0 0 95"
+				offestsphere=" 0 0 0"				
+				material="/shared/effects/materials/rune_fire.material"
+			>
+				<particle
+					startcolor="1 .4 1"
+					endcolor="0.0 0.0 0.0"
+					startalpha="1.0"
+					endalpha="0.0"
+					
+					startsize="20"
+					endsize="30"
+					lockup="true"
+					
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="20"
+				particlelife="1500"
+				count="1"			
+				position="0 0 95"
+				material="/shared/effects/materials/rune_fire.material"
+			>
+				<particle
+					startcolor="1 .4 1"
+					endcolor="0.0 0.0 0.0"
+					startalpha="1.0"
+					endalpha="0.0"					
+					startsize="20"
+					endsize="40"
+					lockup="true"
+					
+				/>
+			</simpleemitter> -->
+			
+<!--			<simpleemitter
+				spawnrate="20"
+				particlelife="1500"
+				count="1"
+				position="0 0 95"						
+				material="/shared/effects/materials/rune_fire.material"
+			>
+				<particle
+					startcolor="1 .4 1"
+					endcolor="0.0 0.0 0.0"
+					startalpha="1.0"
+					endalpha="0.0"				
+					startsize="20"
+					endsize="50"
+					lockup="true"
+					
+					
+				/>
+				
+				
+			</simpleemitter> -->
+			
+			<model
+				life="1000" 
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="1.0 1.0 1.0"
+				endcolor="0.0 0.0 0.0"
+				material="/shared/effects/materials/shell2.material"
+				startalpha="0"
+				endalpha="10"
+			/>
+
+	</particlesystem>
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

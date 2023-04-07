@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="purgeEffect" deferred="true" useentityeffectsscale="true">
+	<definitions>
+		<particlesystem name="system1" space="world" scale="1">
+		
+			<template name="handLightning">
+			
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="20"
+					minparticlelife="0"
+					maxparticlelife="160"
+					offsetsphere="5"
+					position="0 0 0"
+					minangle="0"
+					maxangle="360"
+					material="/shared/effects/materials/lightning_11.material"
+				>
+					<particle
+						color=".8 1 2"
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-5"
+						maxanglespeed="5"
+						width="65"
+						maxheight="60"
+						yawspeed="200"
+						pitchspeed="180"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="handLightning" bone="_bone_righthand"/>
+			<instance name="handLightning" bone="_bone_lefthand"/>
+			
+			<template name="whiteLightning">
+				<simpleemitter
+					spawnrate="25"
+					bone="{bone}"
+					particlelife="250"
+					gravity="0"
+					speed="0"
+					drag="0"
+					acceleration="0"
+					position="0 0 0"
+					material="/shared/effects/materials/lightning_02.material"
+					direction="0 0 0"
+					offsetsphere="5 5 5"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="100"
+						maxanglespeed="200"
+						startcolor="0 0 0"
+						midcolor="1 .75 1"
+						endcolor="0 0 0"
+						midcolorpos=".8"
+						startframe="0"
+						endframe="1"
+						startwidth="1"
+						midwidth="10"
+						endwidth="25"
+						height="12"
+						startalpha="0"
+						midalpha=".3"
+						endalpha="0"
+						startanchor="1"
+						endanchor=".25"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="whiteLightning" bone="_bone_righthand"/>
+			<instance name="whiteLightning" bone="_bone_lefthand"/>
+			
+			<template name="whiteDot">
+				<billboard
+					life="3000"
+					bone="{bone}"
+					startcolor="0 0 .3"
+					midcolor="0 .2 .5"
+					endcolor="0 0 .3"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					startscale=".5"
+					midscale="2"
+					endscale=".5"
+					loop="true"
+				/>
+			</template>
+			
+			<instance name="whiteDot" bone="_bone_righthand"/>
+			<instance name="whiteDot" bone="_bone_lefthand"/>
+
+			<template name="whiteDot1">
+				<billboard
+					
+					bone="{bone}"
+					startcolor=".3 .5 .7"
+					endcolor="0 0 0"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					scale=".7"
+				/>
+			</template>
+			
+			<instance name="whiteDot1" bone="_bone_righthand"/>
+			<instance name="whiteDot1" bone="_bone_lefthand"/>
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />	
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+
+
+
+
+
+

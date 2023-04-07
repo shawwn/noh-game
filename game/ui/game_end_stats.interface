@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface name="game_end_stats">
+	<!-- Packages -->
+	<include file="ui_items.package"/>
+
+	<trigger name="PlayerDetailStatsHeaderColor"/>
+	<trigger name="ToggleStatsVisible"/>
+	
+	<!-- Templates -->
+	<template name="player_overview_entry">
+		<panel width="{width}" height="100%" color="invisible" noclick="1">
+			<label height="100%" textalign="center" textvalign="center" color="white" shadow="true" font="dyn_9" noclick="1" watch="EndGamePlayerStats{player}" ontrigger="{ontrigger}"/>
+		</panel>
+	</template>
+
+	<template name="player_highlight">
+		<panel x="{x=0}" y="{y=0}" width="-2" height="-2" align="center" valign="center" texture="/ui/info/header_bar_c.tga" color="{color}" noclick="1">
+			<image height="50%" width="32" align="left" valign="top" texture="/ui/info/header_bar_tl.tga" color="{color}" noclick="1" />
+			<image height="50%" width="32" align="left" valign="bottom" texture="/ui/info/header_bar_bl.tga" color="{color}" noclick="1" />
+			<image height="50%" width="32" align="right" valign="top" texture="/ui/info/header_bar_tr.tga" color="{color}" noclick="1" />
+			<image height="50%" width="32" align="right" valign="bottom" texture="/ui/info/header_bar_br.tga" color="{color}" noclick="1" />
+		</panel>
+		<panel color="{tint=black}" rendermode="additive"/>
+	</template>
+
+	<template name="player_overview">
+		<panel height="13.5%" width="-6" align="center" watch="EndGamePlayerStats{player}" ontrigger="SetVisible(param0 != -1);">
+			<frame color="0 0 0 1" bordercolor="#393939" borderthickness="1" noclick="1" />
+
+			<panel
+				width="100%"
+				align="center"
+				texture="/ui/info/tab_bar_c.tga"
+				color="{LLcolor=white}"
+			>
+				<!-- Hover -->
+				<button
+					group="PlayerInfo"
+					color="invisible"
+					numstates="2"
+					watch="EndGamePlayerStats{player}"
+					ontrigger="
+						SetOnmouseover('
+							Call(\'detailed_player\', \'FadeIn(250);\');
+							Call(\'detailed_teams\', \'FadeOut(250);\');
+							GetDetailPlayerStats(' # param0 # ');
+							Call(\'player_stats_header_label_{team}\', \'SetText(Translate(\\\'game_end_stats_detailed\\\', \\\'name\\\', \\\'' # param2 # '\\\'));\');
+							Trigger(\'PlayerDetailStatsHeaderColor\', \'{team}\');
+							');
+						"
+					onclick="
+						If(this, EnableOnly(name), EnableGroup('PlayerInfo'));
+						If(this, ShowGroup('expanded_stats_buttons'), HideGroup('expanded_stats_buttons'));
+						"
+					onmouseover="
+						Call('detailed_player', 'FadeIn(250);');
+						Call('detailed_teams', 'FadeOut(250);');
+						Call('player_stats_header_label_{team}', 'SetText(Translate(\'game_end_stats_detailed\', \'name\', \'{player}\'));');
+						Trigger('PlayerDetailStatsHeaderColor', '{team}');
+						"
+					onmouseout="
+						If(!this, Call('detailed_player', 'FadeOut(250);'));
+						If(!this, Call('detailed_teams', 'FadeIn(250);'));
+						"
+				>
+					<widgetstate statename="up">
+					</widgetstate>
+					<widgetstate statename="over">
+						<instance name="player_highlight" color="{HLcolor}"/>
+					</widgetstate>
+					<widgetstate statename="down">
+						<instance name="player_highlight" color="{HLcolor}" x="2" y="2"/>
+					</widgetstate>
+					<widgetstate statename="up2">
+						<instance name="player_highlight" color="{HLcolor}" tint=".1 .1 .1 1"/>
+					</widgetstate>
+					<widgetstate statename="over2">
+						<instance name="player_highlight" color="{HLcolor}" tint=".12 .12 .09 1"/>
+					</widgetstate>
+					<widgetstate statename="down2">
+						<instance name="player_highlight" x="2" y="2" color="{HLcolor}" tint=".1 .1 .1 1"/>
+					</widgetstate>
+				</button>
+
+				<panel width="2.8h">
+					<image width="2.2h" height="2.2h" align="center" valign="center"  noclick="1" watch="EndGamePlayerStats{player}" ontrigger="SetTexture(param4);"/>
+				</panel>
+
+				<label x="3.0h" height="100%" textalign="left" textvalign="center" color="#f6cd6d" shadow="true" font="dyn_9" noclick="1" watch="EndGamePlayerStats{player}" ontrigger="SetText(param2); If(param1, SetColor('#f6dd30'), SetColor('#f6cd6d'));"/>
+
+				<panel x="0" width="70%" height="100%" align="right" float="right" color="invisible" noclick="1">
+					<instance name="player_overview_entry" width="11%" player="{player}" ontrigger="SetText(param5);"/>
+					<instance name="player_overview_entry" width="11%" player="{player}" ontrigger="SetText(param6);"/>
+					<instance name="player_overview_entry" width="11%" player="{player}" ontrigger="SetText(param7);"/>
+					<instance name="player_overview_entry" width="14%" player="{player}" ontrigger="SetText(param8);"/>
+					<instance name="player_overview_entry" width="13%" player="{player}" ontrigger="SetText(param9);"/>
+					<instance name="player_overview_entry" width="15%" player="{player}" ontrigger="SetText(Round(param10 * 60000 / param11));"/>
+					<panel width="18%" height="100%" color="invisible" noclick="1"/>
+					<panel width="7%" height="100%" color="invisible" noclick="1">
+						<instance name="add_friend_button" width="1.4h" height="1.4h" valign="center" align="center" player="{player}"/>
+					</panel>
+				</panel>
+			</panel>
+		</panel>
+	</template>
+
+	<template name="player_list_hd">
+		<panel height="13.5%" width="-6" align="center">
+			<instance name="tab_bar" align="center" />
+			<panel color="{color=invisible}" rendermode="overlay" noclick="1" />
+			<panel width="100%" align="center" float="right" padding="0">
+				<panel width="2.8h" />
+
+				<label height="100%" textalign="left" textvalign="center" color="#f6cd6d" shadow="true" font="dyn_9" noclick="1">endstats_header_player_name</label>
+
+				<panel x="0" width="70%" height="100%" align="right" float="right" color="invisible">
+					<label width="11%" height="100%" textalign="center" textvalign="center" color="white" shadow="true" font="dyn_9">endstats_label_lvl</label>
+					<label width="11%" height="100%" textalign="center" textvalign="center" color="white" shadow="true" font="dyn_9" noclick="1">endstats_label_hk</label>
+					<label width="11%" height="100%" textalign="center" textvalign="center" color="white" shadow="true" font="dyn_9">endstats_label_d</label>
+					<label width="14%" height="100%" textalign="center" textvalign="center" color="white" shadow="true" font="dyn_9">endstats_label_ck</label>
+					<label width="13%" height="100%" textalign="center" textvalign="center" color="white" shadow="true" font="dyn_9">endstats_label_cd</label>
+					<label width="15%" height="100%" textalign="center" textvalign="center" color="white" shadow="true" font="dyn_9">endstats_label_xp_min</label>
+					<label width="18%" height="100%" textalign="center" textvalign="center" color="white" shadow="true" font="dyn_9">endstats_label_rate</label>
+				</panel>
+			</panel>
+
+		</panel>
+	</template>
+
+	<template name="team_list">
+		<panel width="50%" color="invisible" noclick="1">
+			<panel x="{x}" height="100%" width="-2.0h" align="{align}" color="invisible" >
+				<frame color="0 0 0 1" bordercolor="#666666" borderthickness="1" noclick="1" />
+
+				<panel float="bottom" padding="0h">
+					<instance
+						name="header_bar"
+						lbl_color="white"
+						lbl_font="dyn_10"
+						lbl="{title}"
+						show_close="0"
+						height="15%" width="-4"
+						y="2"
+						align="center"
+						color="{header_bar_color}"
+					/>
+
+					<instance name="player_list_hd" color="{player_list_hd_color}" />
+
+					<instance name="player_overview" player="{a=0}" HLcolor="{HLcolor}" LLcolor="{LLcolor}" team="{team}"/>
+					<instance name="player_overview" player="{b=1}" HLcolor="{HLcolor}" LLcolor="{LLcolor}" team="{team}"/>
+					<instance name="player_overview" player="{c=2}" HLcolor="{HLcolor}" LLcolor="{LLcolor}" team="{team}"/>
+					<instance name="player_overview" player="{d=3}" HLcolor="{HLcolor}" LLcolor="{LLcolor}" team="{team}"/>
+					<instance name="player_overview" player="{e=4}" HLcolor="{HLcolor}" LLcolor="{LLcolor}" team="{team}"/>
+				</panel>
+			</panel>
+		</panel>
+	</template>
+
+	<template name="category_bar">
+		<panel height="2.2h" color="#0e121b">
+			<instance name="tab_bar" align="center" />
+			<panel color="{color}" rendermode="overlay" noclick="1" watch="PlayerDetailStatsHeaderColor" ontrigger="SetVisible(!{dynamic_color=false});"/>
+			<panel rendermode="overlay" color="red" noclick="1" visible="false" watch="PlayerDetailStatsHeaderColor" ontrigger="SetVisible({dynamic_color=false} and StringEquals(param, 'hellbourne'));"/>
+			<frame color="invisible" bordercolor="#393939" borderthickness="1" noclick="1" />
+			<label x="0.5h" textvalign="center" font="dyn_10" color="#f6cd6d" noclick="1">{label}</label>
+		</panel>
+	</template>
+	
+	<template name="detail_stats_player_stat">
+		<panel x="{x=0}" width="45%" color="invisible">
+			<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1" content="{label}"/>
+			<image x="{arrow=58%}" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+			<label align="right" height="100%" textalign="right" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="{ontrigger}"/>
+		</panel>
+	</template>
+
+	<template name="detail_stats">
+		<!-- Player totals -->
+		<panel height="18.8h" width="-1.0h" align="center">
+			<frame color="0 0 0 .5" bordercolor="#393939" borderthickness="1" noclick="1" />
+
+			<panel height="-.8h" width="-1.4h" align="center" valign="center" color="invisible" noclick="1" float="bottom" padding="0.4h">
+
+				<instance name="category_bar" color="{category_bar_color}" label="endstats_header_player_statistics" dynamic_color="{dynamic_color=false}"/>
+
+				<panel width="-1.0h" align="center" height="2.2h" color="invisible">
+					<instance name="detail_stats_player_stat" text_color="{text_color}" type="{type}" index="{index}" label="endstats_label_xp_earned" ontrigger="SetText(FtoA(param1, 0, 0, ','));"/>
+					<instance name="detail_stats_player_stat" x="50%" arrow="40%" text_color="{text_color}" type="{type}" index="{index}" label="endstats_label_xp/minute" ontrigger="SetText(FtoA(param1 * 60000 / param0, 0, 0, ','));"/>
+				</panel>
+
+				<panel width="-1.0h" align="center" height="2.2h" color="invisible">
+
+					<panel width="45%" color="invisible">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_deaths</label>
+						<instance name="expand_button" group="expanded_stats_buttons" x="21%" width="1.4h" height="1.4h" valign="center" align="left" onmouseover="ShowWidget('Death_list');" onmouseout="HideWidget('Death_list');" visible="false"/>
+						<image x="58%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label align="right" height="100%" textalign="right" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(param2);"/>
+					</panel>
+
+					<instance name="detail_stats_player_stat" x="50%" arrow="40%" text_color="{text_color}" type="{type}" index="{index}" label="endstats_label_gold_lost" ontrigger="SetText(FtoA(param18, 0, 0, ','));"/>
+				</panel>
+
+				<panel width="-1.0h" align="center" height="2.2h" color="invisible">
+					<instance name="detail_stats_player_stat" text_color="{text_color}" type="{type}" index="{index}" label="endstats_label_gold_earned" ontrigger="SetText(FtoA(param17, 0, 0, ','));"/>
+					<instance name="detail_stats_player_stat" x="50%" arrow="40%" text_color="{text_color}" type="{type}" index="{index}" label="endstats_label_gold/minute" ontrigger="SetText(FtoA(param17 * 60000 / param0, 0, 0, ','));"/>
+				</panel>
+
+				<panel width="-1.0h" align="center" height="2.2h" color="invisible">
+					<instance name="detail_stats_player_stat" text_color="{text_color}" type="{type}" index="{index}" label="endstats_label_gold_spent" ontrigger="SetText(FtoA(param19, 0, 0, ','));"/>
+					<instance name="detail_stats_player_stat" x="50%" arrow="40%" text_color="{text_color}" type="{type}" index="{index}" label="endstats_label_time_played" ontrigger="SetText(FtoT(param0, -1, 0, 'a'));"/>
+				</panel>
+
+				<panel width="-1.0h" align="center" height="2.2h" color="invisible">
+					<instance name="detail_stats_player_stat" text_color="{text_color}" type="{type}" index="{index}" label="endstats_label_action_per_min" ontrigger="SetText(Round(param20 * 60000 / param0));"/>
+				</panel>
+
+				<panel width="-1.0h" align="center" height="2.2h" color="invisible">
+					<instance name="detail_stats_player_stat" text_color="{text_color}" type="{type}" index="{index}" label="endstats_label_buy_backs" ontrigger="SetText(param21);"/>
+				</panel>
+
+			</panel>
+		</panel>
+
+		<!-- Heroes -->
+		<panel height="4.8h" width="-1.0h" align="center">
+			<frame color="0 0 0 .5" bordercolor="#393939" borderthickness="1" noclick="1" />
+
+			<panel height="-.8h" width="-1.4h" align="center" valign="center" color="invisible" noclick="1">
+
+				<instance name="category_bar" color="{category_bar_color}" label="endstats_header_enemy_heroes" dynamic_color="{dynamic_color=false}"/>
+				<panel width="-1.0h" align="center" y="2.2h" height="2.2h" color="invisible">
+
+					<panel width="25%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_hero_damage</label>
+						<image x="43%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="58%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(FtoA(param4, 0, 0, ','));"/>
+					</panel>
+
+					<panel x="30%" width="22%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_hero_kills</label>
+						<instance name="expand_button" group="expanded_stats_buttons" x="25%" width="1.4h" height="1.4h" valign="center" align="left" onmouseover="ShowWidget('Kill_list');" onmouseout="HideWidget('Kill_list');" visible="false"/>
+						<image x="42%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="58%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(param3);"/>
+					</panel>
+
+					<panel x="52%" width="22%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_hero_assists</label>
+						<instance name="expand_button" group="expanded_stats_buttons" x="40%" width="1.4h" height="1.4h" valign="center" align="left" onmouseover="ShowWidget('Assist_list');" onmouseout="HideWidget('Assist_list');" visible="false"/>
+						<image x="57%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="65%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(param5);"/>
+					</panel>
+					<panel x="76%" width="22%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_hero_gold</label>
+						<image x="35%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="58%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(FtoA(param6, 0, 0, ','));"/>
+					</panel>
+				</panel>
+			</panel>
+		</panel>
+
+		<!-- Buildings -->
+		<panel height="4.8h" width="-1.0h" align="center">
+			<frame color="0 0 0 .5" bordercolor="#393939" borderthickness="1" noclick="1" />
+
+			<panel height="-.8h" width="-1.4h" align="center" valign="center" color="invisible" noclick="1">
+				<instance name="category_bar" color="{category_bar_color}" label="endstats_header_enemy_building" dynamic_color="{dynamic_color=false}"/>
+				<panel width="-1.0h" align="center" y="2.2h" height="2.2h" color="invisible">
+
+					<panel width="25%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_building_damage</label>
+						<image x="43%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="58%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(FtoA(param15, 0, 0, ','));"/>
+					</panel>
+
+					<panel x="30%" width="22%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_building_razes</label>
+						<image x="42%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="58%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(param14);"/>
+					</panel>
+
+					<panel x="52%" width="22%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_building_gold</label>
+						<image x="57%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="65%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(FtoA(param16, 0, 0, ','));"/>
+					</panel>
+				</panel>
+			</panel>
+		</panel>
+
+		<!-- Creeps -->
+		<panel height="4.8h" width="-1.0h" align="center">
+			<frame color="0 0 0 .5" bordercolor="#393939" borderthickness="1" noclick="1" />
+
+			<panel height="-.8h" width="-1.4h" align="center" valign="center" color="invisible" noclick="1">
+				<instance name="category_bar" color="{category_bar_color}" label="endstats_header_team_creeps" dynamic_color="{dynamic_color=false}"/>
+				<panel width="-1.0h" align="center" y="2.2h" height="2.2h" color="invisible">
+
+					<panel width="25%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_creep_damage</label>
+						<image x="43%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="58%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(FtoA(param8, 0, 0, ','));"/>
+					</panel>
+
+					<panel x="30%" width="22%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_creep_kills</label>
+						<image x="42%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="58%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(FtoA(param7, 0, 0, ','));"/>
+					</panel>
+
+					<panel x="52%" width="22%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_creep_gold</label>
+						<image x="57%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="65%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(FtoA(param9, 0, 0, ','));"/>
+					</panel>
+				</panel>
+			</panel>
+		</panel>
+
+		<!-- Neutrals -->
+		<panel height="4.8h" width="-1.0h" align="center">
+			<frame color="0 0 0 .5" bordercolor="#393939" borderthickness="1" noclick="1" />
+
+			<panel height="-.8h" width="-1.4h" align="center" valign="center" color="invisible" noclick="1">
+				<instance name="category_bar" color="{category_bar_color}" label="endstats_header_neutrals" dynamic_color="{dynamic_color=false}"/>
+				<panel width="-1.0h" align="center" y="2.2h" height="2.2h" color="invisible">
+
+					<panel width="25%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_neutral_damage</label>
+						<image x="43%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="58%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(FtoA(param12, 0, 0, ','));"/>
+					</panel>
+
+					<panel x="30%" width="22%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_neutral_kills</label>
+						<image x="42%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="58%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(param11);"/>
+					</panel>
+
+					<panel x="52%" width="22%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_neutral_gold</label>
+						<image x="57%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="65%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(FtoA(param13, 0, 0, ','));"/>
+					</panel>
+				</panel>
+			</panel>
+		</panel>
+
+		<!-- Denies -->
+		<panel height="4.8h" width="-1.0h" align="center">
+			<frame color="0 0 0 .5" bordercolor="#393939" borderthickness="1" noclick="1" />
+
+			<panel height="-.8h" width="-1.4h" align="center" valign="center" color="invisible" noclick="1">
+				<instance name="category_bar" color="{category_bar_color}" label="endstats_header_creep_denies" dynamic_color="{dynamic_color=false}"/>
+				<panel width="-1.0h" align="center" y="2.2h" height="2.2h" color="invisible">
+
+					<panel width="36%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_creep_deny_count</label>
+						<image x="43%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="58%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(param10);"/>
+					</panel>
+
+					<panel x="30%" width="36%" color="invisible" noclick="1">
+						<label height="100%" textvalign="center" font="dyn_9" color="{text_color}" noclick="1">endstats_label_creep_xp_denied</label>
+						<image x="39%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+						<label x="58%" align="left" height="100%" textalign="left" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGame{type}Stats{index}" ontrigger="SetText(FtoA(param22, 0, 0, ','));"/>
+					</panel>
+
+				</panel>
+			</panel>
+		</panel>
+
+	</template>
+
+	<template name="inventory_info_tooltip">
+		<frame name="inventory_info_tooltip{slot}" x="-99%" width="21.0h" height="9.0h" align="right" valign="center" texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .8" borderthickness="8" visible="false">
+			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness="8"/>
+			<label x="12" y="8" width="170" height="22" textalign="left" font="dyn_10" color="Yellow" watch="SelectedInventoryName{slot}" ontrigger="SetText(param);" />
+			<label y="30" width="-26" height="-32" align="center" font="dyn_9" wrap="true" color="white" watch="SelectedInventoryDescription{slot}" ontrigger="SetText(param);" />
+		</frame>
+	</template>
+
+	<template name="ability_history">
+		<panel width="-1.0h" align="center" height="1.6h" color="invisible">
+			<label height="100%" textvalign="center" font="dyn_9" color="#f6cd6d" noclick="1">Level {level}</label>
+			<image x="22%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+			<label x="25%" height="100%" textvalign="center" font="dyn_9" color="white" noclick="1">{name}</label>
+			<label align="right" height="100%" textalign="right" textvalign="center" font="dyn_9" color="white" noclick="1">{time}</label>
+		</panel>
+	</template>
+
+	<template name="kill_history">
+		<panel width="-1.0h" align="center" height="1.6h" color="invisible">
+			<label height="100%" textvalign="center" font="dyn_9" color="#f6cd6d" noclick="1">{name}</label>
+			<image x="71%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+			<label align="right" height="100%" textalign="right" textvalign="center" font="dyn_9" color="white" noclick="1">{time}</label>
+		</panel>
+	</template>
+
+	<template name="assist_history">
+		<panel width="-1.0h" align="center" height="1.6h" color="invisible">
+			<label height="100%" textvalign="center" font="dyn_9" color="#f6cd6d" noclick="1">{name}</label>
+			<image x="71%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+			<label align="right" height="100%" textalign="right" textvalign="center" font="dyn_9" color="white" noclick="1">{time}</label>
+		</panel>
+	</template>
+
+	<template name="death_history">
+		<panel width="-1.0h" align="center" height="1.6h" color="invisible">
+			<label height="100%" textvalign="center" font="dyn_9" color="#f6cd6d" noclick="1">{name}</label>
+			<image x="71%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+			<label align="right" height="100%" textalign="right" textvalign="center" font="dyn_9" color="white" noclick="1">{time}</label>
+		</panel>
+	</template>
+
+	<template name="player_stats_inventory">
+		<panel width="33%" watch="EndGamePlayerDetailInventory{slot}" ontrigger="SetVisible(!StringEmpty(param0));">
+			<image width="95@" height="95%" align="center" valign="center" texture="$checker" noclick="1" watch="EndGamePlayerDetailInventory{slot}" ontrigger="SetTexture(param1);"/>
+			<frame width="95@" height="95%" align="center" valign="center" color="0 0 0 0" bordercolor="#393939" borderthickness="1" noclick="1" />
+			<panel width="95@" height="95%" align="center" valign="center" color="invisible" onmouseover="ShowWidget('inventory_info_tooltip');" onmouseout="HideWidget('inventory_info_tooltip');"/>
+		</panel>
+	</template>
+
+	<template name="hero_info">
+		<panel width="-1.0h" align="center" height="2.2h" color="invisible">
+			<label height="100%" textvalign="center" font="dyn_9" color="#f6cd6d" noclick="1">{label}</label>
+			<image x="41%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+			<label align="right" height="100%" textalign="right" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGamePlayerDetailStats" ontrigger="{ontrigger}"/>
+		</panel>
+	</template>
+
+	<template name="player_event_history">
+		<!-- Abilities -->
+		<panel name="{event}_list" visible="{visible=false}">
+			<frame color="0 0 0 1" bordercolor="#393939" borderthickness="1" noclick="1" />
+			<panel color="invisible">
+				<instance name="category_bar" color="invisible" label="{header}" dynamic_color="true"/>
+				<panel y="2.7h" float="bottom" padding=".12h">
+					<listbox
+					color="invisible"
+					itemheight="1.6h"
+					watch="{watch}"
+					ontrigger="{ontrigger}"
+					/>
+				</panel>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="double_header">
+		<panel x="{x}" y="{y}" width="{width}" height="{height}" align="{align}">
+			<panel watch="PlayerDetailStatsHeaderColor" ontrigger="SetVisible(StringEquals(param, 'legion'));">
+				<instance
+					name="header_bar"
+					label_name="{label_name}_legion"
+					lbl_color="{lbl_color}"
+					lbl_font="{lbl_font}"
+					watch="{watch}"
+					show_close="{show_close}"
+					color="white"
+				/>
+			</panel>
+			<panel watch="PlayerDetailStatsHeaderColor" ontrigger="SetVisible(StringEquals(param, 'hellbourne'));">
+				<instance
+					name="header_bar"
+					label_name="{label_name}_hellbourne"
+					lbl_color="{lbl_color}"
+					lbl_font="{lbl_font}"
+					watch="{watch}"
+					show_close="{show_close}"
+					color="#ff2828"
+				/>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="player_stats">
+		<frame color="0 0 0 1" bordercolor="#666666" borderthickness="1" noclick="1" />
+
+		<panel float="bottom" padding="0.5h">
+			<instance
+				name="double_header"
+				label_name="player_stats_header_label"
+				lbl_color="white"
+				lbl_font="dyn_10"
+				watch="EndGamePlayerDetailStats"
+				show_close="0"
+				height="2.6h" width="-4"
+				y="2"
+				align="center"
+			/>
+
+			<panel color="invisible">
+				<panel x="-.2h" width="48.2%" float="bottom" padding="0.5h" color="invisible">
+					<instance name="detail_stats" text_color="#f6cd6d" type="PlayerDetail" index="" category_bar_color="invisible" dynamic_color="true"/>
+				</panel>
+
+				<panel width="52%" align="right" color="invisible">
+					<panel height="-3.8h" width="-1.0h" align="left" float="right" padding=".5h" color="invisible">
+						<!-- Ability/Kills/Death/Assists Lists -->
+						<panel width="57%" color="invisible">
+							<instance
+								name="player_event_history"
+								event="Ability"
+								watch="EndGamePlayerDetailAbilityHistory"
+								visible="true"
+								header="Ability Selection History"
+								ontrigger="If(param0 == 0, Clear(), AddTemplateListItem('ability_history', 0, 'level', param0, 'name', param1, 'time', FtoT(param2, -1, 0, 'a')));"
+							/>
+							<instance
+								name="player_event_history"
+								event="Kill"
+								watch="EndGamePlayerDetailKills"
+								header="Kill History"
+								ontrigger="If(param0 == -1, Clear(), AddTemplateListItem('kill_history', 0, 'name', param0, 'time', FtoT(param1, -1, 0, 'a')));"
+							/>
+							<instance
+								name="player_event_history"
+								event="Death"
+								watch="EndGamePlayerDetailDeaths"
+								header="Death History"
+								ontrigger="If(param0 == -1, Clear(), AddTemplateListItem('death_history', 0, 'name', param0, 'time', FtoT(param1, -1, 0, 'a')));"
+							/>
+							<instance
+								name="player_event_history"
+								event="Assist"
+								watch="EndGamePlayerDetailAssists"
+								header="Assist History"
+								ontrigger="If(param0 == -1, Clear(), AddTemplateListItem('assist_history', 0, 'name', param0, 'time', FtoT(param1, -1, 0, 'a')));"
+							/>
+						</panel>
+
+						<!-- Atrributes -->
+						<panel width="42%" color="invisible">
+							<frame color="0 0 0 1" bordercolor="#393939" borderthickness="1" noclick="1" />
+
+							<panel float="bottom" padding="0.2h" color="invisible">
+								<instance name="category_bar" color="invisible" label="endstats_label_attributes_player" dynamic_color="true"/>
+
+								<panel width="-1.0h" align="center" height="7.0h" color="#0e121b">
+									<image width="100@" height="100%" align="left" valign="center" texture="$checker"  watch="EndGamePlayerDetailStats" ontrigger="SetTexture(param24);"/>
+									<panel y="0.5h" x="104@" width="-104@" color="invisible" float="bottom" padding="1.0h">
+										<panel height="35%" float="bottom">
+											<label height="50%" textvalign="center" font="dyn_9" color="#f6cd6d" noclick="1">endstats_label_hero_played</label>
+											<label height="50%" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGamePlayerDetailStats" ontrigger="SetText(param23);"/>
+										</panel>
+										<panel height="20%" width="-.5h">
+											<label height="100%" textvalign="center" font="dyn_9" color="#f6cd6d" noclick="1">endstats_label_hero_level</label>
+											<image x="36%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+											<label align="right" height="100%" textalign="right" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGamePlayerDetailStats" ontrigger="SetText(param25);"/>
+										</panel>
+									</panel>
+									<frame align="center" valign="center" color="0 0 0 0" bordercolor="#393939" borderthickness="1" noclick="1" />
+								</panel>
+
+								<instance name="hero_info" label="endstats_label_hero_info_health" ontrigger="SetText(Round(param26));"/>
+								<instance name="hero_info" label="endstats_label_hero_info_mana" ontrigger="SetText(Round(param27));"/>
+								<instance name="hero_info" label="endstats_label_hero_info_damage" ontrigger="SetText(Round(param28) # '-' # Round(param29));"/>
+								<instance name="hero_info" label="endstats_label_hero_info_speed" ontrigger="SetText(Round(param32));"/>
+								<instance name="hero_info" label="endstats_label_hero_info_atk_spd" ontrigger="SetText(Round(param34));"/>
+								<instance name="hero_info" label="endstats_label_hero_info_int" ontrigger="SetText(Round(param35));"/>
+								<instance name="hero_info" label="enstasts_label_hero_info_agi" ontrigger="SetText(Round(param36));"/>
+								<instance name="hero_info" label="endstats_label_hero_info_str" ontrigger="SetText(Round(param37));"/>
+								<instance name="hero_info" label="endstats_label_hero_info_armor" ontrigger="SetText(FtoA(param39, 2));"/>
+
+								<!-- Inventory -->
+								<instance name="category_bar" color="invisible" label="endstats_label_hero_info_inventory" dynamic_color	="true"/>
+								<panel width="-1.0h" align="center" height="10.8h" color="invisible" noclick="1">
+									<panel height="50%" float="right" color="invisible" noclick="1">
+										<instance name="player_stats_inventory" slot="0"/>
+										<instance name="player_stats_inventory" slot="1"/>
+										<instance name="player_stats_inventory" slot="2"/>
+									</panel>
+									<panel height="50%" valign="bottom" float="right" color="invisible" noclick="1">
+										<instance name="player_stats_inventory" slot="3"/>
+										<instance name="player_stats_inventory" slot="4"/>
+										<instance name="player_stats_inventory" slot="5"/>
+									</panel>
+									<instance name="inventory_info_tooltip" slot="0" />
+									<instance name="inventory_info_tooltip" slot="1" />
+									<instance name="inventory_info_tooltip" slot="2" />
+									<instance name="inventory_info_tooltip" slot="3" />
+									<instance name="inventory_info_tooltip" slot="4" />
+									<instance name="inventory_info_tooltip" slot="5" />
+								</panel>
+							</panel>
+						</panel>
+					</panel>
+				</panel>
+			</panel>
+		</panel>
+	</template>
+
+	<template name="match_info_header">
+		<panel width="-.5h" align="center">
+			<instance
+				name="header_bar"
+				y=".2h"
+				lbl_color="white"
+				lbl_font="dyn_10"
+				watch="EndGameMatchInfo"
+				ontrigger="If(param5 == 1, SetText(Translate('gane_end_stats_victory_legion')), SetText(Translate('game_end_stats_victory_hellbourne')));"
+				show_close="1"
+				align="center"
+				color="#328a42"
+				onclick="{onclick}"
+			/>
+			<label
+				x="-5.1h"
+				width="6.0h" height="100%"
+				align="right"
+				textvalign="center"
+				font="dyn_12" color="yellow"
+				watch="EndGameTimer"
+				ontrigger="SetText(FtoT(param0, 1, 0, '-'));"
+			/>
+		</panel>
+	</template>
+	
+	<template name="match_info_entry">
+		<panel height="2.2h" width="-1.4h" align="center" color="invisible">
+			<label height="100%" textvalign="center" font="dyn_9" color="#f6cd6d" noclick="1">{label}</label>
+			<image x="46%" width="0.8h" height="0.8h" valign="center" texture="/ui/info/arrow.tga" />
+			<label align="right" height="100%" textalign="right" textvalign="center" font="dyn_9" color="white" noclick="1" watch="EndGameMatchInfo" ontrigger="{ontrigger}"/>
+		</panel>
+	</template>
+	
+	<!-- Temp Background -->
+	<panel
+		color="0 0 0 .8" visible="false"
+		watch="EndGameInterfaceDisplay" ontrigger="If(param, Fade(0, 1, 2000)); SetVisible(param);"
+		watch0="ToggleStatsVisible" ontrigger0="If(param, FadeIn(250), FadeOut(500));"
+	/>
+
+	<!-- Main panel -->
+	<panel
+		visible="false"
+		watch="EndGameInterfaceDisplay" ontrigger="If(param, Fade(0, 1, 5000)); SetVisible(param);"
+		watch0="ToggleStatsVisible" ontrigger0="If(param, FadeIn(250), FadeOut(250));"
+	>
+		<!-- Temp Top Match Info Crap -->
+		<panel y="5.5h" height="14.1h" width="-25.0h" align="center" valign="top" color="invisible" noclick="1">
+			<frame color="0 0 0 1" bordercolor="#666666" borderthickness="1" noclick="1" />
+
+			<panel height="2.6h">
+				<instance name="match_info_header" onclick="Trigger('ToggleStatsVisible', false);"/>
+			</panel>
+
+			<!-- Match Info -->
+			<panel y="3.0h" height="-3.0h" width="20%" color="invisible" float="bottom">
+				<instance name="match_info_entry" label="endstats_label_match_id" ontrigger="SetText(param0);"/>
+				<instance name="match_info_entry" label="endstats_label_date" ontrigger="SetText(param1);"/>
+				<instance name="match_info_entry" label="endstats_label_time" ontrigger="SetText(param2);"/>
+				<instance name="match_info_entry" label="endstats_label_server" ontrigger="SetText(param3);"/>
+				<instance name="match_info_entry" label="endstats_label_match_length" ontrigger="SetText(FtoT(param4, -1, 0, 'a'));"/>
+			</panel>
+
+			<!-- Logo -->
+			<image width="26.0h" height="26.0h" texture="/ui/elements/logo.tga" align="center" valign="center" />
+
+			<!-- Comment Box -->
+			<panel name="match_comment_panel" y="3.0h" x="-.5h" height="-3.0h" width="30%" align="right" color="invisible" watch="EndGameInterfaceDisplay" ontrigger="Fade(1, 1, 0);">
+				<panel height="-.5h" width="100%" align="left" color="invisible" noclick="1">
+					<panel y=".5h" width="100%" height="7.5h" valign="top" align="left" color="invisible" noclick="1">
+						<frame texture="/ui/frames/inset.tga" borderthickness="2">
+							<textbuffer name="match_comments" x="3" width="-6" y="3" height="-6" maxlength="250" usescrollbar="false" textalign="left" font="dyn_9" textcolor="white" shadow="false" color="#0e121b" wrap="true" editable="true" />
+						</frame>
+					</panel>
+					<label y="-.3h" height="100%" width="38%" textvalign="bottom" font="dyn_9" color="#f6cd6d">endstats_label_match_comments</label>
+					<instance
+						name="button2"
+						width="38%" height="2.2h"
+						align="right" valign="bottom"
+						font="dyn_9"
+						color="white" shadow="1"
+						label="endstats_button_submit_comment"
+						onclick="
+							If(!StringEmpty(match_comments), SetEnabled(false));
+							If(!StringEmpty(match_comments), Call('match_comment_panel', 'FadeOut(250);'));
+							If(!StringEmpty(match_comments), SubmitMatchComment(match_comments));
+							"
+						watch="EndGameInterfaceDisplay"
+						ontrigger="SetEnabled(true);"
+					/>
+				</panel>
+			</panel>
+
+		</panel>
+
+		<!-- Team Lists -->
+		<panel y="22.0h" height="19.5h" width="-25.0h" align="center" float="right" color="invisible" noclick="1">
+			<instance name="team_list" align="right" x="-2.0h" title="endstats_header_legion_players" header_bar_color="white" player_list_hd_color="invisible" HLcolor="#4491b7" LLcolor="#636363" team="legion"/>
+			<instance name="team_list" align="left" x="2.0h" title="endstats_header_hellbourne_players" header_bar_color="#ff2828" player_list_hd_color="red" HLcolor="#f33434" LLcolor="#c71212" team="hellbourne" a="5" b="6" c="7" d="8" e="9"/>
+		</panel>
+
+		<!-- Detailed Team Stats -->
+		<panel y="44.0h" height="49.5h" width="-25.0h" align="center" color="invisible" noclick="1">
+			<panel name="detailed_teams" float="right">
+				<!-- Team 1 -->
+				<panel width="50%" color="invisible" noclick="1">
+					<panel x="-2.0h" height="100%" width="-2.0h" align="right" color="invisible" >
+						<frame color="0 0 0 1" bordercolor="#666666" borderthickness="1" noclick="1" />
+						<panel float="bottom" padding="0.5h">
+							<instance
+								name="header_bar"
+								lbl_color="white"
+								lbl_font="dyn_10"
+								lbl="endstats_header_legion_statistics"
+								show_close="0"
+								height="2.6h" width="-4"
+								y="2"
+								align="center"
+								color="white"
+							/>
+							<instance name="detail_stats" text_color="#59c3f8" category_bar_color="invisible" type="Team" team="legion" index="1"/>
+						</panel>
+					</panel>
+				</panel>
+
+				<!-- Team 2 -->
+				<panel width="50%" color="invisible" noclick="1">
+					<panel x="2.0h" height="100%" width="-2.0h" align="left" color="invisible" >
+						<frame color="0 0 0 1" bordercolor="#666666" borderthickness="1" noclick="1" />
+						<panel float="bottom" padding="0.5h">
+							<instance
+								name="header_bar"
+								lbl_color="white"
+								lbl_font="dyn_10"
+								lbl="endstats_header_hellbourne_statistics"
+								show_close="0"
+								height="2.6h" width="-4"
+								y="2"
+								align="center"
+								color="#ff2828"
+							/>
+							<instance name="detail_stats" text_color="#ed5353" category_bar_color="red" type="Team" team="hellbourne" index="2"/>
+						</panel>
+					</panel>
+				</panel>
+
+			</panel>
+			<!-- Detailed Player Stats -->
+			<panel x="0" name="detailed_player" visible="false" onload="Fade(0, 0, 0);">
+				<instance name="player_stats"/>
+			</panel>
+		</panel>
+	</panel>
+
+	<!-- Minimized panel -->
+	<panel y="5.5h" height="2.6h" width="-25.0h" align="center" valign="top" color="invisible" noclick="1" visible="false" watch="ToggleStatsVisible" ontrigger="If(param, FadeOut(250), FadeIn(250));">
+		<frame height="118%" color="0 0 0 1" bordercolor="#666666" borderthickness="1" noclick="1" />
+		<instance name="match_info_header" onclick="Trigger('ToggleStatsVisible', true);"/>
+	</panel>
+</interface>

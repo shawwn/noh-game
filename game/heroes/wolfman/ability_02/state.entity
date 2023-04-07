@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WolfMan_Ability2"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	
+	damage="11,22,33,44"
+	
+	effecttype="StatusBuff"
+>
+</state>

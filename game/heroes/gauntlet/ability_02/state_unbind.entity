@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gauntlet_Ability2_Unbind"
+
+	icon="icon.tga"
+	impactinterval="1000"
+	ishidden="true"
+
+	effecttype=""
+>
+	<onimpact>
+		<expire entity="proxy_entity" />
+		<unbind target="target_entity" />
+	</onimpact>
+</state>

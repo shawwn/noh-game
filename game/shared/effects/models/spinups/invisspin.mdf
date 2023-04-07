@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="birdskeletonproj.max" file="invisspin.model" type="K2" >
+<anim name="idle" clip="invisspin.clip" loop="false" fps="100"/>
+</model>

@@ -1,0 +1,44 @@
+start_game				/shared/sounds/announcer/prepare_for_battle.wav
+
+first_blood				/shared/sounds/announcer/first_blood.wav
+
+killstreak0				/shared/sounds/announcer/3_kills.wav
+killstreak1				/shared/sounds/announcer/4_kills.wav
+killstreak2				/shared/sounds/announcer/5_kills.wav
+killstreak3				/shared/sounds/announcer/6_kills.wav
+killstreak4				/shared/sounds/announcer/7_kills.wav
+killstreak5				/shared/sounds/announcer/8_kills.wav
+killstreak6				/shared/sounds/announcer/9_kills.wav
+killstreak7				/shared/sounds/announcer/10_kills.wav
+
+team_killstreak			/shared/sounds/announcer/massacre.wav
+team_wipe				/shared/sounds/announcer/genocide.wav
+
+multikill0				/shared/sounds/announcer/double_kill.wav
+multikill1				/shared/sounds/announcer/triple_kill.wav
+
+select_unit				/shared/sounds/symbolic/select_unit.wav
+select_item				/shared/sounds/ui/button_rightclick_01.wav
+pickup_item				/shared/sounds/symbolic/item_pickup.wav
+place_item				/shared/sounds/ui/button_rightclick_01.wav
+ability_activate_error	/shared/sounds/ui/error.wav
+ability_target_error	/shared/sounds/ui/ability_error.wav
+
+denied					/shared/sounds/announcer/denied.wav
+
+get_it_on				/shared/sounds/announcer/get_it_on.wav
+
+hellbourne_wins			/shared/sounds/announcer/hellbourne_wins.wav
+legion_wins				/shared/sounds/announcer/legion_wins.wav
+victory					/shared/sounds/announcer/victory.wav
+defeat					/shared/sounds/announcer/defeat.wav
+
+nemesis					/shared/sounds/announcer/nemesis.wav
+retribution				/shared/sounds/announcer/retribution.wav
+
+smackdown				/shared/sounds/announcer/smackdown.wav
+humilation				/shared/sounds/announcer/humilation.wav
+
+immortal				/shared/sounds/announcer/immortal.wav		
+
+// END

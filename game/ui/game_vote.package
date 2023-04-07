@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<style name="vote_button" y="-.6h" width="4h" height="4h" align="center" valign="bottom" />
+	<template name="vote_panel">
+		<panel x="{x}" y="{y}" align="{align}" valign="{valign}" width="20h" height="8h" visible="false" watch="VoteType" ontrigger="SetVisible(!StringEmpty(param));">
+			<frame texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .8" borderthickness=".6h" align="left" valign="top" noclick="1"/>
+			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" noclick="1"/>
+			
+			<label
+				color="white"
+				font="dyn_14"
+				textalign="center"
+				watch="VoteType"
+				ontrigger="SetText(Translate(param0, 'target', param1));"
+			/>
+			
+			<panel color="invisible" watch="Voted" ontrigger="SetVisible(!param);">
+				<button x="-15%" style="vote_button" texture="/ui/icons/thumbsup.tga" onclick="Vote(1);"/>
+				<button x="15%" style="vote_button" texture="/ui/icons/thumbsdown.tga"  onclick="Vote(0);"/>
+			</panel>
+
+			<!-- Timer -->
+			<label
+				x="-0.4h" y="-0.1h"
+				fitx="true" fity="true"
+				align="right" valign="bottom"
+				textvalign="center"
+				color="white"
+				font="dyn_10"
+				watch="VoteTime"
+				ontrigger="SetText(FtoT(param));"
+			/>
+
+			<!-- Tally -->
+			<label
+				x="0.4h" y="-0.1h"
+				fitx="true" fity="true"
+				align="left" valign="bottom"
+				textvalign="center"
+				color="white"
+				font="dyn_10"
+				watch="VoteProgress"
+				ontrigger="SetText('^g' # Round(param0) # '^*/^r' # Round(param1));"
+			/>
+		</panel>
+	</template>
+</package>

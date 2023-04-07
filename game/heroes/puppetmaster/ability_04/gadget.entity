@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_PuppetMaster_Ability4"
+	
+	
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="ragdoll/ragdoll.mdf"
+	skin=""
+	
+	passiveeffect="effects/impact.effect"
+	spawneffect=""
+	respawneffect=""
+	isselectable="true"
+	iscontrollable="false"
+	invulnerable="false"
+	selectsound=""
+	orderconfirmedsound=""
+	spawnanim="spawn_1"
+	
+	maxhealth="450,700,950"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	
+	preglobalscale="1.5"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="64"
+	boundsradius="40"
+	selectionradius="48"
+	targetoffset="0 0 0"
+	deniable="true"
+	magicarmor="5.5"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="false"
+	drawonmap="false"
+	
+	deathnumanims="1"
+	deathanim="death_%"
+	
+	expirenumanims="1"
+	expireanim="death_%"
+	
+	attacktype="none"
+	
+	corpsetime="0"
+	corpsefadetime="0"
+	deathtime="0"
+>
+
+	<onframe>
+		<condition test="distance gt 1000" source="this_entity" target="proxy_entity">
+			<kill target="this_entity" source="" />
+			<expirestate name="State_PuppetMaster_Ability4" target="proxy_entity" />
+		</condition>
+	</onframe>
+	
+	<onspawn>
+		<playeffect effect="effects/link.effect" source="this_entity" target="proxy_entity"/>
+	</onspawn>
+
+	<ondamaged>
+		<scaledamage scale="1.6,1.8,2.1" />
+		<damage effecttype="Magic" amount="1" b="source_damage" op="mult" target="proxy_entity" />
+	</ondamaged>
+	<ondeath>
+		<playeffect effect="/heroes/puppetmaster/ability_04/ragdoll/death/death.effect" source="proxy_entity"/>
+		<expirestate name="State_PuppetMaster_Ability4" target="proxy_entity" />
+		
+	</ondeath>
+	<onexpired>
+		<playeffect effect="/heroes/puppetmaster/ability_04/ragdoll/death/death.effect" source="proxy_entity"/>
+		<expirestate name="State_PuppetMaster_Ability4" target="proxy_entity" />
+		<kill target="this_entity" source="" />
+	</onexpired>
+</gadget>

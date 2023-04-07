@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale="3">
+			<light
+				delay="800"
+				life="500"
+				bone="_bone_shine"
+				startcolor="3 3 2"
+				endcolor="0 0 0"
+				falloffstart="600"
+				falloffend="1280"			
+			/>			
+			<light
+				bone="_bone_light"
+				color="1.5 4 4"
+				falloffstart="10"
+				falloffend="1000"			
+			/>	
+				
+
+				
+			<billboard
+				delay="1420"
+				life="160"
+				position="0 100 10"
+				startscale="0"
+				midscale="1"
+				endscale="0"
+				midscalepos=".1"
+				height="100"
+				width="500"
+				
+				color="1 1 1"
+				material="/shared/effects/materials/spike_01.material"
+			/>
+			
+			<billboard
+				delay="1420"
+				life="120"
+				position="0 100 10"
+				startscale="0"
+				midscale=".4"
+				endscale="0"
+				midscalepos=".1"
+				height="100"
+				width="500"
+				
+				color="2 .4 .2"
+				material="/shared/effects/materials/blink.material"
+			/>			
+			
+			
+			<template name="glow">
+				<billboard
+					delay="{delay}"
+					bone="{bone}"
+					life="800"
+					position="0 0 0"
+					startscale="2"
+					
+					endscale="1"
+					midscalepos=".1"
+					
+					startcolor="0 0 0"
+					midcolor=".45 .1 0 "
+					endcolor="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+			</template>
+			
+			<instance name="glow" bone="_bone_01" delay="0" />
+			<instance name="glow" bone="_bone_02" delay="50" />
+			<instance name="glow" bone="_bone_03" delay="100" />
+			<instance name="glow" bone="_bone_04" delay="150" />
+			<instance name="glow" bone="_bone_05" delay="200" />
+			<instance name="glow" bone="_bone_06" delay="250"  />
+			<instance name="glow" bone="_bone_07" delay="300" />
+			<instance name="glow" bone="_bone_08" delay="350" />
+			<instance name="glow" bone="_bone_09" delay="400" />		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+

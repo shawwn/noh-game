@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_FlyingCourier_Ability1"
+	
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	
+	movespeedmultiplier="100.0"
+	
+	effecttype="StatusBuff"
+>
+	<onframe />
+</state>

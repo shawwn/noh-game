@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Electrician_Ability2_Areadamage"
+
+	icon="icon.tga"
+	passiveeffect="effects/aoe.effect"
+>
+	<onframe >
+		<damage effecttype="Magic Splash DOT" amount="12,24,36,48" b="frametime" op="mult"/>
+	</onframe>
+</state>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale="0.1" color="1.2 1.2 1.2">
+		
+			<sound
+				sound2d="true"
+				sample="/shared/sounds/symbolic/ping.wav"
+			/>
+
+			<billboard
+				life="5000"
+				material="/shared/effects/materials/whitedot.material"
+				startsize="12"
+				midsize="12"
+				midsizepos="0.95"
+				endsize="0"
+			/>	
+				
+			<billboard
+				life="300"
+				material="/shared/effects/materials/corona_07.material"
+				startsize="100"
+				endsize="0"
+			/>	
+			<billboard
+				life="300"
+				material="/shared/effects/materials/arrows.material"
+				startsize="80"
+				endsize="0"
+			/>	
+			
+			
+			<billboard
+				delay="300"
+				life="1000"
+				material="/shared/effects/materials/corona_07.material"
+				startsize="0"
+				endsize="130"
+				startcolor="1 1 1"
+				midcolor="1 1 1 "
+				endcolor="0 0 0"
+			/>	
+			
+			<billboard
+				delay="300"
+				life="1000"
+				material="/shared/effects/materials/starlight.material"
+				startsize="44"
+				endsize="130"
+				startcolor=".3"
+				midcolor=".3"
+				endcolor="0 0 0"
+			/>		
+			
+			
+			
+			<simpleemitter
+				delay="0"
+				count="4"
+				spawnrate="1"
+				particlelife="2000"	
+			>
+				<particle>
+					<billboard
+						life="500"
+						material="/shared/effects/materials/whitedot.material"
+						startsize="0"
+						midsize="25"
+						midsizepos=".8"
+						endsize="0"
+						color=".3"
+					/>	
+					
+					<billboard
+						life="1000"
+						material="/shared/effects/materials/corona_06.material"
+						startsize="0"
+						endsize="50"
+						startcolor="1 1 1"
+						midcolor="1 1 1 "
+						endcolor="0 0 0"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="200"
+				count="4"
+				spawnrate="1"
+				particlelife="2000"	
+			>
+				<particle>
+					<billboard
+						life="1000"
+						material="/shared/effects/materials/corona_07.material"
+						startsize="0"
+						endsize="50"
+						startcolor="1 1 1"
+						midcolor="1 1 1 "
+						endcolor="0 0 0"
+					/>
+				</particle>
+			</simpleemitter>	
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

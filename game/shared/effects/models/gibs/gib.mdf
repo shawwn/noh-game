@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="Gib_final_reactor_GRABTHISONE.max" file="gib.model" type="K2" >
+
+<anim name="death" clip="gib.clip" startframe="0" numframes="100" loop="false" fps="40"/>
+		
+
+</model>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Gladiator4"
+	
+	icon="icon.tga"
+	
+	statuseffecttooltip="State_Gladiator_Ability4"
+	statuseffectheader="true"
+	anim="ability_4"
+	casttime="910"
+	castactiontime="500"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	manacost="150,200,250"
+	cooldowntime="100000"
+
+	range="1000"
+	forcerange="900"
+	allowoutofboundscast="true"
+>
+	<onimpact>
+		<spawnunit name="Gadget_Gladiator_Ability4" target="source_entity" pushentity="true" offset="0 -750" facing="source_entity" />
+		<spawnprojectile name="Projectile_Gladiator_Ability4" source="stack_entity" target="target_position" offset="" bind="stack_entity" proxy="stack_entity" noresponse="true" param="owner_counter" />
+		<spawnprojectile name="Projectile2_Gladiator_Ability4" source="stack_entity" target="target_position" offset="" bind="stack_entity" proxy="stack_entity" noresponse="true" param="owner_counter" />
+		<spawnprojectile name="Projectile3_Gladiator_Ability4" source="stack_entity" target="target_position" offset="" bind="stack_entity" proxy="stack_entity" noresponse="true" param="owner_counter" />
+
+	</onimpact>
+</ability>

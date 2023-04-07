@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_WitchSlayer4"
+
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="850"
+	castactiontime="300"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	
+	manacost="200,420,650"
+	cooldowntime="150000,90000,55000"
+	casteffect="effects/sound.effect"
+	range="700"
+>
+	<onimpact>
+		<spawnprojectile name="Projectile_WitchSlayer_Ability4" source="source_entity" target="target_entity" pushentity="true" offset="-20 100 100" />
+		<setproxy entity="stack_entity" target="target_entity" />
+	</onimpact>
+
+	<onaction>
+		<playeffect effect="effects/cast.effect" target="source_entity" source="source_entity"/>
+	</onaction>
+	<modifier key="ult_boost" modpriority="100"
+		displayname="true"
+		manacost="200,420,625"
+		cooldowntime="150000,90000,50000"
+	>
+		<onimpact>
+			<spawnprojectile name="Projectile_WitchSlayer_Ability4" source="source_entity" target="target_entity" pushentity="true" offset="-20 100 100" />
+			<setproxy entity="stack_entity" target="target_entity" />
+		</onimpact>
+	</modifier>
+</ability>

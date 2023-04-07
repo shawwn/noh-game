@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Item5G"
+	
+	
+	
+	icon=""
+	portrait=""
+	model="stone.mdf"
+	passiveeffect="ground.effect"
+	
+	preglobalscale="0.45"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="0"
+	boundsradius="0"
+	isselectable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+
+	sightrangeday="1800"
+	sightrangenight="1800"
+
+	deathtime="0"
+	corpsetime="0"
+	
+	invulnerable="true"
+	drawonmap="true"
+	unitwalking="true"
+	relayexperience="true"
+>
+	<onownerrespawn>
+		<kill source="" target="source_entity" />
+	</onownerrespawn>
+</gadget>

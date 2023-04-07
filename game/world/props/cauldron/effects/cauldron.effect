@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="bonfire" pausable="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<simpleemitter
+				spawnrate="10"
+				particlelife="1000"
+				gravity="-10"
+				speed="1"
+				drag=".2"
+				acceleration=".5"
+				position="0 0 -10"
+				material="/shared/effects/materials/smoke_01.material"
+				offsetsphere="10 10 10"
+				minangle=".001"
+				maxangle="100"
+				direction="0 1 0"
+			>
+				<particle
+					minangle="10"
+					maxangle="360"
+					minanglespeed="1"
+					maxanglespeed="20"
+					startcolor="0 0 0"
+					midcolor="0 0 0"
+					endcolor="0 0 0"
+					midcolorpos="1"
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					midsize="55"
+					endsize="60"
+					startalpha=".2"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".7"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="Box02"
+				spawnrate="25"
+				minparticlelife="500"
+				maxparticlelife="1200"
+				gravity="-5"
+				speed="1"
+				drag="0"
+				acceleration="0"
+				position="0 0 -40"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="10 10 0"
+				minangle="30"
+				maxangle="0"
+				direction="0 0 1"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+				<particle
+					minangle="0"
+					maxangle="0"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startcolor=".5 .5 .4"
+					midcolor=".5 .5 .4"
+					endcolor=".5 .5 .4"
+					midcolorpos=".5"
+					startframe="0"
+					endframe="1"
+					startsize="70"
+					midsize="70"
+					endsize="120"
+					midsizepos=".3"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".4"
+					startstickiness="0"
+					endstickiness="0"
+					weight=".5"
+				/>
+			</simpleemitter>
+
+			<simpleemitter			
+				bone="Box02"
+				spawnrate="35"
+				minparticlelife="500"
+				maxparticlelife="1500"
+				gravity="-2"
+				speed="1"
+				drag="0"
+				acceleration="0"
+				position="0 0 10"
+				material="/shared/effects/materials/blood_08.material"
+				offsetsphere="25 25 25"
+				minangle="30"
+				maxangle="0"
+				direction="0 0 1"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+				<particle
+					minangle="0"
+					maxangle="0"
+					minanglespeed="0"
+					maxanglespeed="0"
+					midcolorpos=".5"
+					startsize="15"
+					midsize="60"
+					endsize="100"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".5"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="40"
+				particlelife="600"
+				gravity="-10"
+				speed="10"
+				drag=".003"
+				acceleration="00"
+				position="0 0 2"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="10 10 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle
+					minangle="0"
+					maxangle="180"
+					minanglespeed="50"
+					startcolor=".4 .2 .2"
+					midcolor=".4 .2 .2"
+					endcolor=".4 .2 .2"
+					midcolorpos="1"
+					maxanglespeed="0"
+					startsize="30"
+					midsize="50"
+					endsize="20"
+					startalpha=".1"
+					midalpha=".3"
+					endalpha="0"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="Box02"
+				spawnrate="20"
+				particlelife="1000"
+				gravity="-5"
+				speed="10"
+				drag=".003"
+				position="0 0 0"
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="25 25 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".5 .1 .1"
+					endcolor="0 0 0"
+					alpha="1.0"
+					startsize="35"
+					endsize="5"
+					lockup="false"
+					lockright="false"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+<thread>
+<spawnparticlesystem instance="instance0" particlesystem="system0" />
+<waitfordeath instance="instance0" />
+</thread>
+</effect>

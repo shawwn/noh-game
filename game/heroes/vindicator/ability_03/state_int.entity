@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vindicator_Ability3_Int"
+
+	ishidden="true"
+>
+	<onframe />
+
+	<onkilled>
+		<condition target="source_entity" test="not_target_type illusion">
+			<popup name="gainint" a="1" source="target_entity" target="target_entity" />
+			<popup name="loseint" a="1" source="source_entity" target="source_entity" />
+			<applystate name="State_Vindicator_Ability3_Negative_Int" target="this_owner_entity" continuous="true" />
+			<addcharges entity="this_spawner_entity" />
+		</condition>
+	</onkilled>
+</state>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="portee" deferred="1" useentityeffectscale="1">
+
+<definitions>
+	<particlesystem name="system0" space="world" scale="2">
+	
+
+		<sound			
+			linearfalloff="true" 
+			falloffstart="1000"
+			falloffend="2500"
+			volume=".8" 
+			sample="/shared/sounds/teleport.wav"
+		/>	
+
+<!-- start impact here everythign should pretty much have a 3000 ms delay unless ability changes -->
+	
+			
+			
+			
+			
+			<simpleemitter
+				life="3000"	
+				count="1"		
+				spawnrate="222"		
+				particlelife="1300"			
+				direction="0 0 1"		
+				speed="1600"		
+				minangle="0"
+				maxangle="0"
+				position="0 0 0"					
+				
+			>
+				<particle>		
+					<billboard
+						spawnrate="50"
+						particlelife="400"
+						
+						life="4000"				
+						material="/shared/effects/materials/flare2.material"
+						size="200"
+					
+						midheightpos=".75"
+						
+						width="40"
+						lockup="1"
+						color="1 .7 1"				
+					/>	
+
+					<billboard
+						spawnrate="50"
+						particlelife="400"
+						
+						life="200"				
+						material="/shared/effects/materials/flare2.material"
+						startheight="0"
+						endheight="500"
+						width="10"
+						roll="90"
+					
+						midheightpos=".75"				
+						
+						lockup="1"
+						color="0 .7 .7"				
+					/>	
+				
+				</particle>	
+			</simpleemitter>
+
+			
+			
+			
+				<light
+					
+					life="1150"			
+					startcolor="0 6 8"			
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					falloffstart="100"
+					falloffend="200"
+					position="0 0 50"	
+				/>
+				
+				<groundsprite		
+							
+					material="/shared/effects/materials/z_teleportring01.material"
+					startsize="30"
+					endsize="120"
+					startcolor="1 1 1"
+					endcolor="0 0 0"
+					life="500"
+					yawspeed="-40"			
+				/>	
+
+				<billboard
+					life="400"
+					
+					color="1.0 1.0 1.0"
+					startalpha="1.0"
+					midalpha="1.0"
+					endalpha="0.0"
+					midalphapos="0.75"
+					startparam=".5"
+					endparam="0.0"
+					startsize="128"
+					endsize="568"
+					depthbias="0"
+					position="0 0 20"
+					material="/shared/effects/materials/refract_ring.material"
+					lockup="true"
+					pitch="90"
+				/>				
+
+				
+				<billboard
+					
+					life="1500"
+					startcolor="0 .8 1"
+					endcolor="0 0 0"
+					startalpha="1.0"
+					midalpha="1.0"
+					endalpha="0.0"
+					midalphapos="0.75"
+					startparam="0.05"
+					endparam="0.0"			
+					
+					startsize="100"		
+					endsize="300"
+					midsizepos=".4"			
+					
+					depthbias="0"
+					position="0 0 20"
+					material="/shared/effects/materials/blink.material"
+					lockup="true"
+					pitch="90"
+				/>		
+				
+				
+				<billboard
+					
+					life="500"
+					startcolor="0 .8 1"
+					endcolor="0 0 0"
+					startalpha="1.0"
+					midalpha="1.0"
+					endalpha="0.0"
+					midalphapos="0.75"
+					startparam="0.05"
+					endparam="0.0"
+					
+					
+					startsize="100"
+					midsize="200"
+					endsize="300"
+					midsizepos=".4"
+					
+					
+					depthbias="0"
+					position="0 0 20"
+					material="/shared/effects/materials/stomp_02.material"
+					lockup="true"
+					pitch="90"
+				/>
+				
+				<groundsprite	
+					
+					life="3000"
+					material="/shared/effects/materials/ground_smash_overlay.material"
+					size="70"			
+					color="1.0 1.0 1.0"
+					startalpha=".5"
+					endalpha="0"
+				/>	
+
+	</particlesystem>
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	
+	 <camerashake2 scale="11.0" radius="1200" duration="400" frequency="22" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

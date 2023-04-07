@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_BehemothsHeartAgility_Aura"
+
+	icon="icon.tga"
+	ishidden="true"
+	
+	effecttype=""
+>
+	<aura state="State_BehemothsHeartAgility" radius="9999" targetscheme="my_pseudo_pets"/>
+</state>

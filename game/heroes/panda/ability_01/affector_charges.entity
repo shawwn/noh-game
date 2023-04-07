@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Panda_Ability1_Charge"
+
+	ishidden="true"
+	impactinterval="4000"
+	maxcharges="2,2,3,4"
+	lifetime="4000"
+	
+>
+	<onspawn>
+		
+		<setcharges entity="proxy_entity" a="4" />
+	</onspawn>
+	<onframe>
+		
+	</onframe>
+	
+</affector>

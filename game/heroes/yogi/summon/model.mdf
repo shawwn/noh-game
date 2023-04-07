@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model_high.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model">
+
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true">
+	</anim>	
+
+	<anim name="portrait" clip="clips/portrait.clip" loop="true"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="100" loop="false">
+		<frameevent frame="123" cmd="PlaySoundLinear /heroes/yogi/morph/sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="7" cmd="PlaySoundLinear /heroes/yogi/morph/sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 1800 0.55"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="100" loop="false">
+		<frameevent frame="7" cmd="PlaySoundLinear /heroes/yogi/morph/sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="133" cmd="PlaySoundLinear /heroes/yogi/morph/sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="2" cmd="PlaySoundLinear /heroes/yogi/summon/sounds/attack_grunt_%.wav 500 2000 0.75"/>
+		<frameevent frame="7" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 1800 0.55"/>
+	</anim>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true" blendtime="150">
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="12" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="18" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="2" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .15"/>
+		<frameevent frame="7" cmd="PlaySoundLinear /heroes/yogi/morph/sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="2" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="9" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.mp3 0 2400 .15"/>	
+		<frameevent frame="9" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30" loop="false"/>
+	<anim name="spawn_1" clip="clips/spawn_1.clip" fps="30" loop="false"/>
+	<anim name="respawn_1" clip="clips/spawn_1.clip" fps="30" loop="false"/>
+
+	<anim name="death_1" clip="clips/death_1.clip" fps="24" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/yogi/morph/sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="20" cmd="PlaySoundLinear /heroes/yogi/morph/sounds/move_%.wav 0 800 .2"/>
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/yogi/summon/sounds/death.wav 800 1500"/>
+	</anim>
+
+</model>

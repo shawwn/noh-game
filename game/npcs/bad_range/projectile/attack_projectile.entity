@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_EvilCreepAttack"
+
+	speed="900"
+	gravity="2000"
+
+	modelscale="0.5"
+	model="/shared/models/invis.mdf"
+
+	traileffect="effects/reaper_starbolt_01.effect"
+	impacteffect="effects/impact2.effect"
+	deatheffect="/npcs/good_ranged/projectile/effects/rocket_explosion.effect"
+	
+	canturn="false"
+>
+</projectile>

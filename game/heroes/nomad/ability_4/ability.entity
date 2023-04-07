@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Nomad4"
+
+	
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_Nomad_Ability4"
+	statuseffectheader="true"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="passive"
+	targetscheme="enemy_units"
+	
+>
+	<onattackimpact >
+		<cantarget targetscheme="enemy_units">
+			<applystate name="State_Nomad_Ability4" duration="5000" />
+		</cantarget>
+	</onattackimpact>
+</ability>

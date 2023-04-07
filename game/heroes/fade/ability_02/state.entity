@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Fade_Ability1"
+
+	icon="icon.tga"
+
+	impactinterval="1000"
+	passiveeffect="effects/gush.effect"
+	effecttype="StatusDebuff"
+>
+	<onframe >
+	</onframe>
+
+	<onimpact>
+		<damage effecttype="Magic" amount="20,30,45,55" />
+	</onimpact>
+</state>

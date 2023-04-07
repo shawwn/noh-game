@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			startcolor="25"
+			endcolor="1"
+			life="800"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1.75">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="0.8" 
+				sample="/shared/sounds/hero_spawn.wav"
+			/>
+
+			<simpleemitter
+				life="800"
+				spawnrate="15"
+				particlelife="700"
+				gravity="-5"
+				speed="50"
+				acceleration="15"
+				material="/shared/effects/materials/twirl_05.material"
+				angle="3"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					maxanglespeed="150"
+					startcolor="0"
+					midcolorpos="0.3"
+					midcolor=".4 .45 .5"
+					endcolor="0"
+					startsize="20"
+					midsize="65"
+					endsize="10"
+					midsizepos="0.4"
+					lockup="true"
+					lockright="false"
+					pitch="90"
+					yaw="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+			<billboard 
+				life="1000"
+				material="/shared/effects/materials/flare2.material" 
+				width="50"				
+				height="800"				
+				lockup="true"
+				startcolor="0"
+				midcolorpos="0.3"
+				midcolor=".4 .45 .5"
+				endcolor="0"
+				anchor="1"
+			/>
+
+			<billboard	
+				depthbias="-60"
+				startsize="250"
+				endsize="80"
+				position="0 0 20"
+				life="600"
+				material="/shared/effects/materials/flare_01.material"
+				startcolor="1"
+				endcolor="0 0 0"
+				startalpha="1"			
+				midalpha="1"
+				endalpha="0"
+				anchor="1"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Predator_Ability4_Debuff"
+
+	
+
+	icon="icon.tga"
+	targetscheme="enemy_units"
+	armor="-2,-4,-6"
+
+	effecttype="StatusDebuff"
+	
+	passiveeffect="effects/state_enemy.effect"
+	
+
+>
+
+</state>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="idle.max" file="high.model" type="K2">
+
+	<anim name="ability_3" clip="clips/default_01.clip" fps="5" loop="true"/>
+
+	<anim name="idle" clip="clips/default_01.clip" loop="true"/>
+
+	<anim name="portrait" clip="clips/portrait.clip" loop="true"/>
+	
+	<anim name="walk_1" clip="clips/walk_01.clip" loop="true"/>
+	
+	<anim name="death_1" clip="clips/death_01.clip" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="StartEffect effects/death.effect"/>	
+		<frameevent frame="13" cmd="StartEffect effects/death_fade.effect"/>	
+	</anim>
+	
+	
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+</model>
+

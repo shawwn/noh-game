@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tundra_Ability1"
+
+	icon=""
+	passiveeffect=""
+	ishidden="true"
+>
+	<playeffect effect="effects/impact.effect" source="target_entity" target=""/>
+</state>

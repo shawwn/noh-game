@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vindicator_Ability3_Negative_Int"
+
+	ishidden="true"
+	
+	intelligencepercharge="-1"
+	maxcharges="99"
+	
+	deathpersist="true"
+>
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1" />
+	</onrefresh>
+</state>

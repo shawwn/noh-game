@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Weapon3"
+		
+	icon="icon.tga"
+	
+	cost="0"
+	components="Item_Halberd Item_Halberd Item_Voulge"
+	autoassemble="true"
+	allowdisassemble="true"
+	
+	actiontype="passive"
+	
+	damage="88"
+	attackspeed="0.15"
+	truestrike="true"
+>
+	<onattackimpact>
+		<chance threshold="0.35">
+			<condition test="not_target_type building">
+				<damage effecttype="Physical" amount="100" />
+				<popup name="bonus_damage" a="result" />
+				<applystate name="State_Stunned" duration="100"/>
+			</condition>
+		</chance>
+	</onattackimpact>
+</item>

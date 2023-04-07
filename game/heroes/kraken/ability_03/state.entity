@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kraken_Ability3"
+
+	
+	
+	icon="icon.tga"
+	displaylevel="true"
+	movespeedslow="0.07,0.14,0.21,0.28"
+>
+	<modifier key="kraken_tidalpull" condition="hero" modpriority="100"
+		passiveeffect="state.effect"
+	/>
+	
+</state>

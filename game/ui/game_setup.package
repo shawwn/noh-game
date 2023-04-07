@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+
+	<template name="game_option">
+		<button
+			height="1.5h"
+			valign="center"
+			onload="CreateString('_game_option_{option}', '{option}:false');"
+			numstates="2"
+			color="invisible"
+			onclick="If(this, Set(_game_option_{option}, '{option}:true'), Set(_game_option_{option},'{option}:false'));"
+		>
+			<widgetstate statename="up1" float="right" padding="0.3h">				
+				<panel width="1.5h" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+				</panel>
+				<label width="-1.5h" height="100%" textvalign="center" font="{font=dyn_9}" color="white" shadow="true">{display_label}</label>				
+			</widgetstate>			
+			<widgetstate statename="over1" float="right" padding="0.3h">
+				<panel width="1.5h" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+				</panel>
+				<label width="-1.5h" height="100%" textvalign="center" font="{font=dyn_9}" color="#3abde7" shadow="true">{display_label}</label>
+			</widgetstate>			
+			<widgetstate statename="down1" float="right" padding="0.3h">
+				<panel width="1.5h" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+				</panel>
+				<label width="-1.5h" height="100%" textvalign="center" font="{font=dyn_9}" color="#3abde7" shadow="true">{display_label}</label>	
+			</widgetstate>			
+			<widgetstate statename="up2" float="right" padding="0.3h">
+				<panel width="1.5h" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+					<image x="0.15h" y="0.15h" width="-0.3h" height="-0.3h" texture="/ui/elements/check.tga"/>
+				</panel>
+				<label width="-1.5h" height="100%" textvalign="center" font="{font=dyn_9}" color="#ffaa00" shadow="true">{display_label}</label>
+			</widgetstate>			
+			<widgetstate statename="over2" float="right" padding="0.3h">
+				<panel width="1.5h" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+					<image x="0.15h" y="0.15h" width="-0.3h" height="-0.3h" texture="/ui/elements/check.tga"/>
+				</panel>
+				<label width="-1.5h" height="100%" textvalign="center" font="{font=dyn_9}" color="#3abde7" shadow="true">{display_label}</label>
+			</widgetstate>			
+			<widgetstate statename="down2" float="right" padding="0.3h">
+				<panel width="1.5h" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+					<image x="0.15h" y="0.15h" width="-0.3h" height="-0.3h" texture="/ui/elements/check.tga"/>
+				</panel>
+				<label width="-1.5h" height="100%" textvalign="center" font="{font=dyn_9}" color="#3abde7" shadow="true">{display_label}</label>
+			</widgetstate>			
+		</button>
+	</template>
+	
+	<template name="icon_game_option">
+		<button
+			height="2.3h"
+			valign="center"
+			onload="CreateString('_game_option_{option}', '{option}:false');"
+			numstates="2"
+			color="invisible"
+			onclick="If(this, Set(_game_option_{option}, '{option}:true'), Set(_game_option_{option},'{option}:false'));"
+		>
+			<widgetstate statename="up1" float="right" padding="0.3h">				
+				<image width="100@" valign="center" texture="/ui/icons/{icon}"/>
+				<panel width="1.5h" height="1.5h" valign="center" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+				</panel>				
+				<label width="-1.5h" valign="center" height="100%" textvalign="center" font="{font=dyn_9}" color="white" shadow="true">{display_label}</label>
+			</widgetstate>			
+			<widgetstate statename="over1" float="right" padding="0.3h">
+				<image width="100@" valign="center" texture="/ui/icons/{icon}"/>
+				<panel width="1.5h" height="1.5h" valign="center" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+				</panel>
+				<label width="-1.5h" valign="center" height="100%" textvalign="center" font="{font=dyn_9}" color="#3abde7" shadow="true">{display_label}</label>
+			</widgetstate>			
+			<widgetstate statename="down1" float="right" padding="0.3h">
+				<image width="100@" valign="center" texture="/ui/icons/{icon}"/>
+				<panel width="1.5h" height="1.5h" valign="center" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+				</panel>
+				<label width="-1.5h" valign="center" height="100%" textvalign="center" font="{font=dyn_9}" color="#3abde7" shadow="true">{display_label}</label>	
+			</widgetstate>			
+			<widgetstate statename="up2" float="right" padding="0.3h">
+				<image width="100@" valign="center" texture="/ui/icons/{icon}"/>
+				<panel width="1.5h" height="1.5h" valign="center" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+					<image x="0.15h" y="0.15h" width="-0.3h" height="-0.3h" texture="/ui/elements/check.tga"/>
+				</panel>
+				<label width="-1.5h" valign="center" height="100%" textvalign="center" font="{font=dyn_9}" color="#ffaa00" shadow="true">{display_label}</label>
+			</widgetstate>			
+			<widgetstate statename="over2" float="right" padding="0.3h">
+				<image width="100@" valign="center" texture="/ui/icons/{icon}"/>
+				<panel width="1.5h" height="1.5h" valign="center" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+					<image x="0.15h" y="0.15h" width="-0.3h" height="-0.3h" texture="/ui/elements/check.tga"/>
+				</panel>
+				<label width="-1.5h" valign="center" height="100%" textvalign="center" font="{font=dyn_9}" color="#3abde7" shadow="true">{display_label}</label>
+			</widgetstate>			
+			<widgetstate statename="down2" float="right" padding="0.3h">
+				<image width="100@" valign="center" texture="/ui/icons/{icon}"/>
+				<panel width="1.5h" height="1.5h" valign="center" color="invisible">
+					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="white"/>
+					<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="0.5h"/>
+					<image x="0.15h" y="0.15h" width="-0.3h" height="-0.3h" texture="/ui/elements/check.tga"/>
+				</panel>
+				<label width="-1.5h" valign="center" height="100%" textvalign="center" font="{font=dyn_9}" color="#3abde7" shadow="true">{display_label}</label>
+			</widgetstate>			
+		</button>
+	</template>
+		
+	<template name="server_combobox_local">
+		<instance
+			name="Noptions_combobox"
+			id="select_local_server_idle_{id}"
+			align="left"
+			x="0"
+			width="-1.8h"
+			itemwidth="100%"
+			maxlistheight="3"
+			listbgheight="8.7h"
+			cvar=""
+			data=""
+			populate="
+				AddTemplateListItem('combobox_item_icon', 'local', 'label', 'game_setup_local', 'texture', '/ui/icons/local.tga');
+				AddTemplateListItem('combobox_item_icon', 'local_automatic', 'label', 'game_setup_automatic', 'texture', '/ui/icons/automatic.tga');
+				AddTemplateListItem('Ncombobox_item', 'browse', 'label', 'game_setup_browse', 'onselect', 'Call(\'local_server_browser\', \'FadeIn(250);\');', 'command', 'true');"
+			onload="CreateString('_game_server_type', ''); CreateString('_game_local_server_type', 'local'); SetSelectedItemByValue(_game_local_server_type, false);"
+			onselect="_game_local_server_type = this; _game_server_type = this;"
+			watch="ConnectionStatus"
+			ontrigger="SetVisible(!param0);"
+			onshow="_game_server_type = _game_local_server_type;"
+		/>
+		
+		<instance
+			name="Noptions_combobox"
+			id="select_local_server_connected_{id}"
+			align="left"
+			x="0"
+			width="-1.8h"
+			itemwidth="100%"
+			maxlistheight="4"
+			listbgheight="10.7h"
+			cvar=""
+			data=""
+			populate=""
+			onselect="Call('select_local_server_idle_{id=unset}', 'SetSelectedItemByValue(\'' # this # '\', false);');"
+			watch="ConnectionStatus"
+			ontrigger="
+				Clear();
+				AddTemplateListItem('Ncombobox_item', 'selected', 'label', param1);
+				AddTemplateListItem('combobox_item_icon', 'local', 'label', 'game_setup_local', 'texture', '/ui/icons/local.tga', 'onselect', 'Disconnect();');
+				AddTemplateListItem('combobox_item_icon', 'local_automatic', 'label', 'game_setup_automatic', 'texture', '/ui/icons/automatic.tga', 'onselect', 'Disconnect();');
+				AddTemplateListItem('Ncombobox_item', 'browse', 'label', 'game_setup_browse', 'onselect', 'ShowWidget(\'local_server_browser\');', 'command', 'true');
+				SetSelectedItemByValue('selected', false);
+				SetVisible(param0);"
+			visible="false"
+		/>
+	</template>
+	
+	<template name="server_combobox_main">
+		<instance
+			name="Noptions_combobox"
+			id="select_server_idle_{id}"
+			align="left"
+			x="0"
+			width="-1.8h"
+			itemwidth="100%"
+			maxlistheight="2"
+			listbgheight="6.7h"
+			cvar=""
+			data=""
+			populate="
+				AddTemplateListItem('combobox_item_icon', 'remote_automatic', 'label', 'game_setup_automatic', 'texture', '/ui/icons/automatic.tga');
+				AddTemplateListItem('Ncombobox_item', 'browse', 'label', 'game_setup_browse', 'onselect', 'Call(\'server_browser\', \'FadeIn(500);\');', 'command', 'true');"
+			onload="CreateString('_game_server_type', ''); CreateString('_game_remote_server_type', 'remote_automatic'); SetSelectedItemByValue(_game_remote_server_type, false);"
+			onselect="_game_remote_server_type = this; _game_server_type = this;"
+			watch="ConnectionStatus"
+			ontrigger="SetVisible(!param0);"
+			onshow="_game_server_type = _game_remote_server_type;"
+		/>
+		
+		<instance
+			name="Noptions_combobox"
+			id="select_server_connected_{id}"
+			align="left"
+			x="0"
+			width="-1.8h"
+			itemwidth="100%"
+			maxlistheight="3"
+			listbgheight="8.7h"
+			cvar=""
+			data=""
+			populate=""
+			onselect="Call('select_server_idle_{id}', 'SetSelectedItemByValue(\'' # this # '\', false);');"
+			watch="ConnectionStatus"
+			ontrigger="
+				Clear();
+				AddTemplateListItem('Ncombobox_item', 'selected', 'label', param1);
+				AddTemplateListItem('combobox_item_icon', 'remote_automatic', 'label', 'game_setup_automatic', 'texture', '/ui/icons/automatic.tga', 'onselect', 'Disconnect();');
+				AddTemplateListItem('Ncombobox_item', 'browse', 'label', 'game_setup_browse', 'onselect', 'ShowWidget(\'server_browser\');', 'command', 'true');
+				SetSelectedItemByValue('selected', false);
+				SetVisible(param0);"
+			visible="false"
+		/>
+	</template>
+	
+	<!-- Additional Options Empty -->
+	<template name="game_options_advanced_empty">
+		<panel name="game_options_advanced_empty" y="{y=0.5h}" width="-2%" align="center" height="10.2h" color="0 0 0 1" visible="1">
+			<frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 .5" noclick="1" />
+			<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />		
+			<image texture="/ui/elements/logo.tga" width="100@" height="100%" align="center" valign="center" color="1 1 1 .3" noclick="1" />
+			
+			<panel y="-0.4h" height="2.4h" width="50%" valign="center" align="center" color="invisible">
+				<instance name="more_options" display_label="game_setup_advanced_options" id="{id}"/>
+			</panel>
+					
+		</panel>	
+	</template>
+		
+	<!-- Additional Options -->
+	<template name="game_options_advanced">
+		<panel name="game_options_advanced" y="{y=0.5h}" width="-2%" align="center" height="10.2h" color="0 0 0 1" noclick="1" visible="1">
+			<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+			<panel y="0.4h" width="-2.0h" align="center" float="bottom" padding="0.2h" noclick="1">
+				<panel height="2.2h" color="invisible" noclick="1" float="right">
+					<panel width="36%" valign="center" color="invisible" noclick="1">
+						<instance name="game_option" option="norepick" display_label="general_mode_no_hero_repick"/>
+					</panel>
+					<panel width="32%" valign="center" color="invisible" noclick="1">
+						<instance name="game_option" option="noswap" display_label="general_mode_no_hero_swap"/>
+					</panel>
+					<panel width="31%" valign="center" color="invisible" noclick="1">
+						<instance name="game_option" option="allowveto" display_label="general_mode_allow_veto"/>
+					</panel>
+				</panel>
+				<panel height="2.2h" color="invisible" noclick="1" float="right">
+					<panel width="36%" valign="center" color="invisible" noclick="1">
+						<instance name="game_option" option="noagility" display_label="general_mode_no_agi_heroes"/>
+					</panel>
+					<panel width="32%" valign="center" color="invisible" noclick="1">
+						<instance name="game_option" option="nointelligence" display_label="general_mode_no_intel_heroes"/>
+					</panel>
+					<panel width="31%" valign="center" color="invisible" noclick="1">
+						<instance name="game_option" option="nostrength" display_label="general_mode_no_str_heroes"/>
+					</panel>
+				</panel>
+				<panel height="2.2h" color="invisible" noclick="1" float="right">
+					<panel width="36%" valign="center" color="invisible" noclick="1">
+						<instance name="game_option" option="dropitems" display_label="general_mode_drop_items"/>
+					</panel>
+					<panel width="32%" valign="center" color="invisible" noclick="1">
+						<instance name="game_option" option="nopowerups" display_label="general_mode_no_runes"/>
+					</panel>
+					<panel width="31%" valign="center" color="invisible" noclick="1">
+						<instance name="game_option" option="norespawntimer" display_label="general_mode_no_respawn_timer"/>
+					</panel>
+				</panel>
+				<panel height="2.2h" color="invisible" noclick="1" float="right">
+					<panel width="36%" valign="center" color="invisible" noclick="1">
+						<instance name="game_option" option="reverseselect" display_label="general_mode_reverse_hero_select"/>
+					</panel>
+					<panel width="32%" valign="center" color="invisible" noclick="1">
+						<instance name="game_option" option="allowduplicate" display_label="general_mode_duplicate_heroes"/>
+					</panel>
+					<panel width="31%" valign="center" color="invisible" noclick="1">
+						<instance name="game_option" option="alternatepicks" display_label="general_mode_alt_hero_pick"/>
+					</panel>
+				</panel>
+			</panel>
+
+			<!-- Dev Hero -->
+			<panel x="-1" y="1" height="2.0h" width="3.9h" valign="top" align="right" color="1 1 0 .2" noclick="1" watch="Dev" ontrigger="SetVisible(param);">
+				<instance name="game_option" option="devheroes" display_label="dh"/>
+			</panel>
+
+		</panel>
+	</template>
+	
+	<template name="local_options">
+		<instance name="game_options_advanced_empty" y="27.8h" />
+		
+		<panel name="{id}_options" color="invisible" noclick="1" visible="0">
+			<instance name="game_options_advanced" y="27.8h" />
+		</panel>
+	</template>
+	
+	<template name="remote_options">
+		<instance name="game_options_advanced_empty" y="27.8h" />
+		
+		<panel name="{id}_options" color="invisible" noclick="1" visible="0">
+			<instance name="game_options_advanced" y="27.8h" />
+		</panel>
+	</template>
+	
+	<!-- Game Setup Options -->
+	<template name="game_settings_panel">
+		<panel onload="CreateString('_game_options');" y="{y=3.5h}" color="invisible" noclick="1">
+		
+			<panel y="{button_y=38.6h}" width="-2.0h" align="center" height="2.5h" noclick="1" visible="1" color="invisible">
+			
+				<panel width="6.4h" color="invisible" noclick="1" visible="{customstatspost_visible=0}">
+					<button
+						color="imvisible"
+						onclick="Call('custom_url_post', 'FadeIn(250);');"
+						onmouseover="ShowWidget('custom_post_tip');"
+						onmouseout="HideWidget('custom_post_tip');"
+					>
+						<widgetstate statename="up">
+							<frame texture="/ui/info/button.tga" borderthickness="0.8h" color="1 1 1 1"/>				
+							<image width="108%" height="27@" align="center" valign="center" texture="/ui/elements/custom_post.tga" noclick="1"/>
+						</widgetstate>					
+						<widgetstate statename="over">
+							<frame texture="/ui/info/button_over.tga" borderthickness="0.8h" />				
+							<image width="108%" height="27@" align="center" valign="center" texture="/ui/elements/custom_post.tga" noclick="1"/>
+						</widgetstate>						
+						<widgetstate statename="down" x="1" y="1">
+							<frame texture="/ui/info/button_down.tga" borderthickness="0.8h" color="white"/>					
+							<image width="108%" height="27@" align="center" valign="center" texture="/ui/elements/custom_post.tga" noclick="1"/>
+						</widgetstate>
+					</button>					
+				</panel>
+								
+				<panel x="10.0h" color="invisible" noclick="1" visible="{private_visible=0}">
+					<instance name="game_option" option="private" display_label="general_private_game" />
+				</panel>
+						
+				<instance
+					name="button2"
+					align="right"
+					x="-13.0h"
+					id="game_options_cancel_button_{id}"
+					width="8.6h"
+					font="dyn_10"
+					label="general_cancel"
+					borderthickness=".8h"
+					onclick="PlaySound('/shared/sounds/ui/slide2.wav'); {cancel_command}"
+					onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+				/>
+				
+				<instance
+					name="button2"
+					id="game_options_local_start_button2_{id}"
+					align="right" width="12.0h" 
+					font="dyn_10"
+					label="general_create_game"
+					borderthickness=".8h"
+					onclick="
+						_game_options =
+							'map:' # _game_map_name # ' ' #
+							'mode:' # _game_mode # ' ' #
+							'teamsize:' # _game_num_players # ' ' #
+							'spectators:' # _game_num_spectators # ' ' #
+							'referees:' # _game_num_spectators # ' ' #
+							'tier:' # _game_tier # ' ' #
+							_game_option_private # ' ' #
+							_game_option_noleaver # ' ' #
+							_game_option_nostats # ' ' #
+							_game_option_allheroes # ' ' #
+							_game_option_forcerandom # ' ' #
+							_game_option_alternatepicks # ' ' #
+							_game_option_norepick # ' ' #
+							_game_option_noswap # ' ' #
+							_game_option_noagility # ' ' #
+							_game_option_nointelligence # ' ' #
+							_game_option_nostrength # ' ' #
+							_game_option_norespawntimer # ' ' #
+							_game_option_dropitems # ' ' #
+							_game_option_nopowerups # ' ' #
+							_game_option_easymode # ' ' #
+							_game_option_allowduplicate # ' ' #
+							_game_option_reverseselect # ' ' #
+							_game_option_notop # ' ' #
+							_game_option_nomiddle # ' ' #
+							_game_option_nobottom # ' ' #
+							_game_option_allowveto # ' ' #
+							_game_option_shuffleteams # ' ' #
+							_game_option_autobalance # ' ' #
+							_game_option_devheroes # ' ' #
+							_game_option_cheats;
+						StartGame(_game_server_type, gamename_textbox_{id}, _game_options);
+						"
+					onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+					watch="ConnectionStatus"
+					ontrigger="SetVisible(!param0);"
+				/>
+				
+				<instance
+					name="button2"
+					id="game_options_connected_start_button2_{id}"
+					align="right" width="12.0h" 
+					font="dyn_10"
+					label="general_create_game"
+					borderthickness=".8h"
+					onclick="
+						_game_options =
+							'map:' # _game_map_name # ' ' #
+							'mode:' # _game_mode # ' ' #
+							'teamsize:' # _game_num_players # ' ' #
+							'spectators:' # _game_num_spectators # ' ' #
+							'referees:' # _game_num_spectators # ' ' #
+							'tier:' # _game_tier # ' ' #
+							_game_option_private # ' ' #
+							_game_option_noleaver # ' ' #
+							_game_option_allheroes # ' ' #
+							_game_option_forcerandom # ' ' #
+							_game_option_alternatepicks # ' ' #
+							_game_option_norepick # ' ' #
+							_game_option_noswap # ' ' #
+							_game_option_noagility # ' ' #
+							_game_option_nointelligence # ' ' #
+							_game_option_nostrength # ' ' #
+							_game_option_norespawntimer # ' ' #
+							_game_option_dropitems # ' ' #
+							_game_option_nopowerups # ' ' #
+							_game_option_easymode # ' ' #
+							_game_option_allowduplicate # ' ' #
+							_game_option_reverseselect # ' ' #
+							_game_option_notop # ' ' #
+							_game_option_nomiddle # ' ' #
+							_game_option_nobottom # ' ' #
+							_game_option_allowveto # ' ' #
+							_game_option_shuffleteams # ' ' #
+							_game_option_devheroes # ' ' #
+							_game_option_cheats;
+						SendCreateGameRequest(gamename_textbox_{id}, _game_options);
+						"
+					onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+					watch="ConnectionStatus"
+					ontrigger="SetVisible(param0);"
+				/>
+			</panel>
+			
+			<instance name="{id}_options"/>
+			
+			<!-- Basic Options -->
+			<panel y="21.6h" width="-2%" align="center" height="6.1h" color="0 0 0 .5" noclick="1" visible="1">
+				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+				<panel x="0.5h" y="0.4h" width="-2.0h" align="center" float="bottom" padding="0" noclick="1">					
+					<panel height="2.5h" color="invisible" noclick="1" float="right">
+						<panel width="33%" valign="center" color="invisible" noclick="1">
+							<instance name="icon_game_option" option="allheroes" display_label="general_mode_all_heroes" icon="allheroes.tga"/>
+						</panel>
+						<panel width="33%" valign="center" color="invisible" noclick="1">
+							<instance name="icon_game_option" option="easymode" display_label="general_mode_easy_mode" icon="easymode.tga"/>
+						</panel>	
+						<panel width="33%" valign="center" color="invisible" noclick="1">
+							<instance name="icon_game_option" option="forcerandom" display_label="general_mode_random" icon="forcerandom.tga"/>
+						</panel>
+					</panel>
+					<panel height="2.5h" color="invisible" noclick="1" float="right">
+						<panel width="33%" valign="center" color="invisible" noclick="1">
+							<instance name="icon_game_option" option="shuffleteams" display_label="general_mode_shuffle" icon="shuffleteams.tga"/>
+						</panel>	
+						<panel width="33%" valign="center" color="invisible" noclick="1">
+							<instance name="icon_game_option" option="devheroes" display_label="Custom Heroes" icon="official.tga"/>
+						</panel>				
+					</panel>
+				</panel>			
+			</panel>
+					
+			<panel y="0" width="-2%" align="center" height="21.4h" color="0 0 0 .5" noclick="1">
+				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+				
+			
+				<!-- Spectators -->
+				<panel y="18.4h" height="2.0h" color="invisible" align="center" width="-2.0h" noclick="1" float="right" padding="1.0%">				
+					<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="#bfbfbf" shadow="true" shadowcolor="black" noclick="1" content="game_setup_spcectators_label"/>
+					<image x="-25%" width="1.1h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />				
+					<panel align="right" x="0" width="50%" color="invisible" noclick="1">
+						<instance
+							name="Noptions_combobox"
+							align="right"
+							x="-1.8h"
+							width="8.0h"
+							itemwidth="100%"
+							maxlistheight="6"
+							listbgheight="12.7h"
+							cvar=""
+							data=""
+							populate="
+								AddTemplateListItem('Ncombobox_item', '0', 'label', '0');
+								AddTemplateListItem('Ncombobox_item', '1', 'label', '1');
+								AddTemplateListItem('Ncombobox_item', '2', 'label', '2');
+								AddTemplateListItem('Ncombobox_item', '3', 'label', '3');
+								AddTemplateListItem('Ncombobox_item', '4', 'label', '4');
+								AddTemplateListItem('Ncombobox_item', '5', 'label', '5');"
+							onload="CreateInt('_game_num_spectators', 0);"
+							onselect="_game_num_spectators = this;"
+							onshow="SetSelectedItemByValue(_game_num_spectators, false);"
+						/>
+						<instance name="tip_mark" tip_id="spec_tip" width="1.8h" height="1.8h" valign="center" align="right" />
+						<instance name="generic_tooltip" x="-2.0h" y="0.2h" width="24.8h" height="8.5h" align="right" valign="top" tip_id="spec_tip" title="game_setup_spcectators_label" label="game_setup_spectators_tip" />
+					</panel>				
+				</panel>
+				
+				<!-- Referees -->
+				<panel y="16.0h" height="2.0h" color="invisible" align="center" width="-2.0h" noclick="1" float="right" padding="1.0%">				
+					<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="#bfbfbf" shadow="true" shadowcolor="black" noclick="1" content="game_setup_referees_label"/>
+					<image x="-25%" width="1.1h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />				
+					<panel align="right" x="0" width="50%" color="invisible" noclick="1">
+						<instance
+							name="Noptions_combobox"
+							align="right"
+							x="-1.8h"
+							width="8.0h"
+							itemwidth="100%"
+							maxlistheight="3"
+							listbgheight="12.7h"
+							cvar=""
+							data=""
+							populate="
+								AddTemplateListItem('Ncombobox_item', '0', 'label', '0');
+								AddTemplateListItem('Ncombobox_item', '1', 'label', '1');
+								AddTemplateListItem('Ncombobox_item', '2', 'label', '2');"
+							onload="CreateInt('_game_num_referees', 0);"
+							onselect="_game_num_referees = this;"
+							onshow="SetSelectedItemByValue(_game_num_referees, false);"
+						/>
+						<instance name="tip_mark" tip_id="ref_tip" width="1.8h" height="1.8h" valign="center" align="right" />
+						<instance name="generic_tooltip" x="-2.0h" y="0.2h" width="24.8h" height="7.3h" align="right" valign="top" tip_id="ref_tip" title="game_setup_referees_label" label="game_setup_referees_tip" />
+					</panel>				
+				</panel>
+				
+				<!-- Team Size -->
+				<panel y="12.8h" height="2.0h" color="invisible" align="center" width="-2.0h" noclick="1" float="right" padding="1.0%">				
+					<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="game_setup_team_size_label"/>
+					<image x="-52%" width="1.1h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />				
+					<panel align="right" x="0" width="50%" color="invisible" noclick="1">
+						<instance
+							name="Noptions_combobox"
+							align="left"
+							x="0"
+							width="-1.8h"
+							itemwidth="100%"
+							maxlistheight="5"
+							listbgheight="12.7h"
+							cvar=""
+							data=""
+							populate="
+								AddTemplateListItem('Ncombobox_item', '1', 'label', 'game_setup_one_v_one');
+								AddTemplateListItem('Ncombobox_item', '2', 'label', 'game_setup_two_v_two');
+								AddTemplateListItem('Ncombobox_item', '3', 'label', 'game_setup_three_v_three');
+								AddTemplateListItem('Ncombobox_item', '4', 'label', 'game_setup_four_v_four');
+								AddTemplateListItem('Ncombobox_item', '5', 'label', 'game_setup_five_v_five');"
+							onload="CreateInt('_game_num_players', 5);"
+							onselect="_game_num_players = this;"
+							onshow="SetSelectedItemByValue(_game_num_players, false);"
+						/>
+						<instance name="tip_mark" tip_id="teamsize_tip" width="1.8h" height="1.8h" valign="center" align="right" />
+						<instance name="generic_tooltip" x="-2.0h" y="0.2h" width="19.8h" height="5.8h" align="right" valign="top" tip_id="teamsize_tip" title="game_setup_team_size_label" label="game_setup_team_size_tip" />
+					</panel>				
+				</panel>
+				
+				<!-- Tier -->
+				<panel y="10.4h" height="2.0h" color="invisible" align="center" width="-2.0h" noclick="1" float="right" padding="1.0%">				
+					<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="game_setup_tier_label"/>
+					<image x="-52%" width="1.1h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />				
+					<panel align="right" x="0" width="50%" color="invisible" noclick="1">
+						<instance
+							name="Noptions_combobox"
+							align="left"
+							x="0"
+							width="-1.8h"
+							itemwidth="100%"
+							maxlistheight="5"
+							listbgheight="12.7h"
+							cvar=""
+							data="AddTiers" 
+							populate=""
+							onload="CreateString('_game_tier', '1');"
+							onselect="_game_tier = this;"
+							onshow="ComboBoxCmd('clear'); AddTiers('combobox_item_icon'); SetSelectedItemByValue(_game_tier, false);"
+							itemtemplate="combobox_item_icon"
+						/>
+						<instance name="tip_mark" tip_id="Lmap_tip" width="1.8h" height="1.8h" valign="center" align="right" />
+						<instance name="generic_tooltip" x="-2.0h" y="0.2h" width="35.8h" height="15.3h" align="right" valign="top" tip_id="Lmap_tip" title="game_setup_tier_label" label="game_setup_tier_tip" />
+					</panel>				
+				</panel>
+
+				<!-- Map -->
+				<panel y="8.0h" height="2.0h" color="invisible" align="center" width="-2.0h" noclick="1" float="right" padding="1.0%">
+					<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="game_setup_map_label"/>
+					<image x="-52%" width="1.1h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />				
+					<panel align="right" x="0" width="50%" color="invisible" noclick="1">
+						<instance
+							name="Noptions_combobox"
+							align="left"
+							x="0"
+							width="-1.8h"
+							itemwidth="100%"
+							maxlistheight="5"
+							listbgheight="12.7h"
+							cvar=""
+							data="AddMaps"
+							populate=""
+							onload="CreateString('_game_map_name', 'caldavar');"
+							onselect="_game_map_name = this;"
+							onshow="SetSelectedItemByValue(_game_map_name, false);"
+						/>
+						<instance name="tip_mark" tip_id="gamemap_tip" width="1.8h" height="1.8h" valign="center" align="right" />
+						<instance name="generic_tooltip" x="-2.0h" y="0.2h" width="19.8h" height="4.3h" align="right" valign="top" tip_id="gamemap_tip" title="game_setup_map_label" label="game_setup_map_tip" />
+					</panel>	
+				</panel>
+				
+				<!-- Game type -->
+				<panel y="5.6h" height="2.0h" color="invisible" align="center" width="-2.0h" noclick="1" float="right" padding="1.0%">
+					<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="game_setup_type_label"/>
+					<image x="-52%" width="1.1h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />				
+					<panel align="right" x="0" width="50%" color="invisible" noclick="1">
+						<instance
+							name="Noptions_combobox"
+							align="left"
+							x="0"
+							width="-1.8h"
+							itemwidth="100%"
+							maxlistheight="6"
+							listbgheight="14.7h"
+							cvar=""
+							data=""
+							populate="
+								AddTemplateListItem('combobox_item_icon', 'normal', 'label', 'game_setup_normal', 'texture', '/ui/icons/normal.tga');
+								AddTemplateListItem('combobox_item_icon', 'randomdraft', 'label', 'game_setup_random_draft', 'texture', '/ui/icons/randomdraft.tga');
+								AddTemplateListItem('combobox_item_icon', 'singledraft', 'label', 'game_setup_single_draft', 'texture', '/ui/icons/singledraft.tga');
+								AddTemplateListItem('combobox_item_icon', 'deathmatch', 'label', 'game_setup_deathmatch', 'texture', '/ui/icons/deathmatch.tga');"
+							onload="CreateString('_game_mode', 'normal');"
+							onselect="_game_mode = this;"
+							onshow="SetSelectedItemByValue(_game_mode, false);"
+						/>
+						<instance name="tip_mark" tip_id="Lgametype_tip" width="1.8h" height="1.8h" valign="center" align="right" />
+						<instance name="generic_tooltip" x="-2.0h" y="0.2h" width="35.8h" height="17.9h" align="right" valign="top" tip_id="Lgametype_tip" title="game_setup_type_label" label="game_setup_type_tip" />
+					</panel>	
+				</panel>
+				
+				<!-- Server -->
+				<panel y="3.2h" height="2.0h" color="invisible" align="center" width="-2.0h" noclick="1">
+					<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="game_setup_select_server_label"/>
+					<image x="-52%" width="1.1h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />				
+					<panel align="right" x="0" width="50%" color="invisible" noclick="1">
+						<instance name="{server_selector_combobox}" id="{id}" />
+						<instance name="tip_mark" tip_id="Lserver_tip" width="1.8h" height="1.8h" valign="center" align="right" />
+						<instance name="generic_tooltip" x="-2.0h" y="0.2h" width="19.8h" height="11.8h" align="right" valign="top" tip_id="Lserver_tip" title="game_setup_select_server_label" label="game_setup_select_server_tip" />
+					</panel>
+				</panel>
+
+				<panel y="0.2h" height="3.0h" color="invisible" align="center" width="-2.0h" noclick="1">
+					<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="game_setup_name_label"/>
+					<image x="-52%" width="1.1h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />
+					<panel width="50%" align="right">
+						<panel width="100%" height="74%" valign="center" align="left" color="0 0 0 1">
+							<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="#171a28"/>
+							<frame texture="/ui/frames/roundframe.tga" color="#bbdefa" borderthickness="0.5h"/>
+							<textbox
+								name="gamename_textbox_{id}"
+								y="0.3h"
+								width="-1.0h"
+								align="center"
+								color="invisible"
+								font="dyn_9"
+								textcolor="white"
+								shadow="true"
+								onload="CreateString('_game_name', GetNetName() # '\'s Game'); SetInputLine(_game_name);"
+								onenter="_game_name = this; SetFocus(false);"
+								onesc="SetInputLine(_game_name);"
+								onshow="_game_name = GetNetName() # '\'s Game'; SetInputLine(_game_name);"
+							/>
+						</panel>
+					</panel>
+				</panel>
+			</panel>		
+		</panel>
+		
+		
+		<panel name="custom_url_post" color="0 0 0 .7" visible="0">
+
+			<panel y="0.4h" height="19.0h" width="-2.0h" align="center">
+				<frame texture="/ui/frames/tooltip_bg.tga" color="#0c1b3bc9" borderthickness=".6h" align="left" valign="top"/>
+				<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
+				
+				
+				<instance name="header_bar" height="3.0h" lbl="game_setup_custom_post" show_close="1" onclick="Call('custom_url_post', 'FadeOut(250);');"/>
+				
+				<panel y="-0.8h" width="-2.0h" align="center" valign="bottom" height="2.5h" noclick="1" visible="1" color="invisible">
+					<instance
+						name="button2"
+						align="left"
+						width="8h"
+						font="dyn_10"
+						label="general_cancel"
+						borderthickness=".8h"
+						onclick="Call('custom_url_post', 'FadeOut(250);');"
+						onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+					/>
+					<instance
+						name="button2"
+						align="right"
+						width="12h"
+						font="dyn_10"
+						label="game_setup_custom_post_save_btn"
+						borderthickness=".8h"
+						onclick=""
+						onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+					/>
+				</panel>
+
+				<panel y="12.0h" height="3.0h" color="invisible" align="center" width="-2.0h" noclick="1">
+					<panel width="100%" height="3.0h" valign="center" align="left" color="0 0 0 .5">
+
+						<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_9" color="white" shadow="true" shadowcolor="black" noclick="1" content="game_setup_custom_post_URL"/>
+						<image x="-62%" width="0.8h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />
+						<panel width="60%" align="right">
+							<panel height="74%" valign="center" align="left" color="0 0 0 1">
+								<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="#171a28"/>
+								<frame texture="/ui/frames/roundframe.tga" color="#bbdefa" borderthickness="0.5h"/>
+								<textbox
+									name=""
+									y="0.3h"
+									width="-1.0h"
+									align="center"
+									color="invisible"
+									font="dyn_9"
+									textcolor="white"
+									shadow="true"
+									onload=""
+									onenter=""
+									onesc=""
+									onshow=""
+								/>
+							</panel>
+						</panel>
+
+					</panel>
+				</panel>
+				
+				<panel y="3.2h" color="invisible" align="center" width="-2.0h" noclick="1">
+					<label width="100%" height="100%" textvalign="top" textalign="left" valign="center" align="center" wrap="1" font="dyn_9" color="white" shadow="true" shadowcolor="black" noclick="1" content="game_setup_custom_post_description"/>				
+				</panel>
+				
+			</panel>
+
+		</panel>
+		
+		
+		<instance name="generic_tooltip" x="-0.5h" y="-11.0h" width="39.0h" height="8.8h" align="right" valign="bottom" tip_id="privategame_tip" title="game_setup_private" label="game_setup_private_tip" />
+		<instance name="generic_tooltip" x="0.5h" y="-14.0h" width="25.0h" height="5.8h" align="left" valign="bottom" tip_id="noleaver_tip" title="game_setup_no_leavers" label="game_setup_no_leavers_tip" />
+		<instance name="generic_tooltip" x="0" y="-15.5h" width="25.0h" height="4.3h" align="center" valign="bottom" tip_id="recordstats_tip" title="game_setup_record_stats" label="game_setup_record_stats_tip" />
+		<instance name="generic_tooltip" x="0.8h" y="-3.8h" width="25.0h" height="5.8h" align="left" valign="bottom" tip_id="custom_post_tip" title="game_setup_custom_post" label="game_setup_custom_post_tip" />
+		
+		
+	</template>
+
+	<template name="local_game_settings_panel">
+		<instance
+			name="game_settings_panel"
+			private_offset="9.0h"
+			id="local"
+			y="{y}"
+			button_y="38.8h"
+			cancel_command="
+				Disconnect();
+				PlaySound('/shared/sounds/ui/menu/slide_top.wav');
+				Call('main_local_game_button', 'SetEnabled(true);');
+				Call('left_widgets', 'SlideX(\'-72%\', 500);');
+				_main_local_open = 0;
+				HideGroup('main_button_effects');
+				"
+			server_selector_combobox="server_combobox_local"
+		/>
+	</template>
+
+	<template name="remote_game_settings_panel">
+		<instance
+			name="game_settings_panel"
+			private_visible="1"
+			customstatspost_visible="1"
+			official_visible="1"
+			noleavers_visible="1"
+			id="remote"
+			y="{y}"
+			button_y="38.8h"
+			cancel_command="Disconnect(); Call('create_game', 'SlideY(\'-54.0%\', 300);'); HideGroup('lobby_button_effects'); _lobbyCreateOpen = 0;"
+			server_selector_combobox="server_combobox_main"
+		/>
+	</template>
+		
+		
+</package>

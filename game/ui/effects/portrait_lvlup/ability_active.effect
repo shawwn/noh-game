@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world">
+			
+			<meshemitter
+				mesh="_invis_emitter"
+				spawnrate="70"
+				minparticlelife="2000"
+				maxparticlelife="3500"			
+				gravity="0"
+				minspeed="6"
+				maxspeed="12"
+				drag="0.015"
+				material="/shared/effects/materials/neb_orange_add.material"
+				angle="0"
+			>
+				<particle
+					minagle="-360" 
+					maxangle="360"
+					minanglespeed="130"
+					startcolor="0 0 0"
+					midcolor=".5 .4 .0"
+					midcolorpos="0.8"
+					endcolor="0 0 0"
+					startsize="22"
+			
+					minendsize="40"
+					maxendsize="60"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos="0.3"
+					startanchor="1.0"
+					endanchor="1.0"
+				/>
+
+			</meshemitter>
+			
+			<meshemitter
+				mesh="_invis_emitter"
+				spawnrate="1000"
+				minparticlelife="300"
+				maxparticlelife="600"			
+				gravity="0"
+				minspeed="14"
+				maxspeed="40"
+				drag="0.015"
+				material="/shared/effects/materials/whitedot.material"
+				angle="0"
+			>
+				<particle
+					minstartsize="9"
+					maxstartsize="12"
+					endsize="1"
+					minanglespeed="130"
+					startcolor="0 0 0"
+					endcolor="1 1 0"
+				/>
+			</meshemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

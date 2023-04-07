@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_GuardianRing"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="175"
+	
+	actiontype="passive"
+	
+	armor="2"
+>
+</item>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Jedi_Ability2_Buff"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	attackspeed="0.04,0.08,0.12,0.16"
+	movespeedmultiplier="0.04,0.08,0.12,0.16"
+	effecttype="StatusBuff"
+>
+
+</state>

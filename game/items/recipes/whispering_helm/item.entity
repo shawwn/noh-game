@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_WhisperingHelm"
+	
+	icon="icon.tga"
+	impacteffect="effects/impact.effect"
+	
+	cost="0"
+	components="Item_HelmOfTheVictim Item_HungrySpirit"
+	autoassemble="true"
+	allowdisassemble="true"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_nonboss_npc_units"
+	casteffecttype="Magic Dominate"
+	cooldowntime="300000"
+	cooldowntype="whisperinghelm"
+	manacost="75"
+	range="700"
+	casteffect="effects/cast.effect"
+
+	armor="5"
+	damage="20"
+>
+	<onattackimpact>
+		<playeffect effect="lifesteal.effect" source="source_entity" target="target_entity"/>
+	</onattackimpact>
+	
+	<onimpact effectdescription="true">
+		<takecontrol/>
+		<lockbackpack entity="target_entity" />
+		<order command="stop" force="true" source="target_entity" target="target_entity" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+	
+	<modifier key="attack" modpriority="75" exclusive="true"
+		lifesteal="0.15"
+	/>
+</item>

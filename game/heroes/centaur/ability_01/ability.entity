@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Centaur1"
+
+	
+	
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="1010"
+	castactiontime="500"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	targetradius="315"
+	casteffecttype="Magic"
+	
+	manacost="85,100,115,130"
+	cooldowntime="15000"
+>
+	<onimpact >
+		<spawnaffector name="Affector_Centaur_Ability1" target="source_entity"/>
+		<playeffect effect="../../../heroes/rocky/ability_02/effects/impact.effect" target="target_position" source="target_position"/>
+		<playeffect effect="../../../heroes/behemoth/ability_04/effects/mainripple.effect" target="target_position" source="target_position"/>
+	</onimpact>
+</ability>

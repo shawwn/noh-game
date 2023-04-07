@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Warhammer"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="1600"
+	
+	actiontype="passive"
+	
+	damage="24"
+>
+</item>

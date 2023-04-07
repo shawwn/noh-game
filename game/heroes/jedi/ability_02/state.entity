@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Jedi_Ability2"
+	
+	icon="icon.tga"
+	passiveeffect="effects/trail.effect"
+
+	silenced="true"
+	disarmed="true"
+	immobilized="true"
+	perplexed="true"
+
+	ishidden="true"
+
+	unitwalking="true"
+	effecttype=""
+>
+</state>

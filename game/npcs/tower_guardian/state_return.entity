@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_TowerGuardian_Return"
+
+	ishidden="true"
+	
+	invulnerable="true"
+	impactinterval="500"
+	unitwalking="true"
+>
+	<oninflict>
+		<dispel type="StatusDebuff" target="this_owner_entity" />
+	</oninflict>
+	<onimpact>
+		<order command="move" force="true" source="this_owner_entity" target="proxy_position" />
+		<dispel type="StatusDebuff" target="this_owner_entity" />
+	</onimpact>
+</state>

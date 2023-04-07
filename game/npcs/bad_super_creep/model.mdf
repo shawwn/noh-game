@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" >
+
+	<anim name="idle" clip="clips/default_1.clip" fps="35" loop="true" numframes="70" minstartframe="0" maxstartframe="-1"/>
+
+	<anim name="portrait" clip="clips/portrait.clip" fps="35" loop="true" numframes="70" minstartframe="0" maxstartframe="-1"/>
+		
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="34" loop="false">
+		<frameevent frame="12" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 0 1200 .2"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="34" loop="false">
+		<frameevent frame="14" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 0 1200 .2"/>
+	</anim>
+
+	<anim name="attack_3" clip="clips/attack_3.clip" fps="34" loop="false">
+		<frameevent frame="14" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 0 1200 .2"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="36" loop="true" minstartframe="0" maxstartframe="-1">
+		<frameevent frame="13" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="13" cmd="StartEffect /shared/effects/creeps/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/creeps/footstep_r_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="death_gib_1" clip="clips/death_d.clip" fps="50" loop="true" blendtime="100" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear /shared/sounds/effects/gib_explode.wav 0 1800 1"/>
+		<frameevent frame="1" cmd="StartEffect effects/lasthit.effect"/>
+	</anim>
+
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear /npcs/bad_melee/sounds/death_%.wav 0 1800 .55"/>
+	</anim>	
+
+	<anim name="death_deny_1" clip="clips/death_d.clip" fps="50" loop="true" blendtime="100" loopbackframe="-1">
+		<frameevent frame="10" cmd="StartEffect effects/deny.effect"/>
+	</anim>	
+
+	<anim name="defeat_1" clip="clips/defeat_1.clip" loop="true" loopbackframe="23"/>
+	
+	<anim name="victory_1" clip="clips/victory_1.clip" loop="true"/>
+	
+	<anim name="fly_1" clip="clips/fly_1.clip" loop="true"/>
+
+</model>

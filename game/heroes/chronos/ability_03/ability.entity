@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Chronos3"
+	
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	cooldowntime="1000"
+  	cooldowntype="bashing"
+	
+	maxcharges="5"
+	initialcharges="5"
+	
+>
+	<onlearn>
+		<setcharges target="this_entity" a="5" />
+	</onlearn>	
+
+	<onattack>
+		<removecharge />
+		<condition test="charges eq 0">
+			<setcharges target="this_entity" a="5" />
+		</condition>
+		<setaccumulator entity="stack_entity" value="charges" />
+	</onattack>
+
+	<onattackimpact>
+		<applystate name="State_Chronos_Ability3" duration="10000" target="target_entity" />
+		<applystate name="State_Chronos_Ability3_Self" duration="10000" target="source_entity" />
+		
+		<condition test="charges eq 5">
+			<applystate name="State_Chronos_Ability3_Timelock" duration="250,500,750,1000" target="target_entity" />
+		</condition>
+	</onattackimpact>
+
+	<ondeath>
+		<setcharges target="this_entity" a="5" />
+	</ondeath>
+
+</ability>

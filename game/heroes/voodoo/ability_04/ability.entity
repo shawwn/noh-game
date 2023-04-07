@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Voodoo4"
+
+	
+	
+	icon="icon.tga"
+	
+	anim="ability_4_channel"
+	casttime="8000"
+	castactiontime="200"
+
+	maxlevel="3"
+
+	requiredlevel="6,11,16"
+	ischanneling="true"
+	actiontype="target_position"
+	casteffecttype="Magic"
+	
+	manacost="200,200,300"
+	cooldowntime="90000"
+	
+	range="300,350,400"
+>
+	<onchannelstart>
+		<spawnunit name="Gadget_Voodoo_Ability4" count="1" target="target_position" ischannel="true"/>
+	</onchannelstart>
+	<onimpact />
+	<modifier key="ult_boost" modpriority="100"
+		displayname="true"
+	>
+	<onimpact />
+	</modifier>
+</ability>

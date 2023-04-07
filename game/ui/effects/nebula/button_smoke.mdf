@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="" file="button_smoke.model" type="K2">
+	<anim name="start" clip="button_smoke.clip" loop="true">
+		
+	</anim>
+</model>

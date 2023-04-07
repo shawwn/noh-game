@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_ManaBurn2"
+	
+	icon="icon.tga"
+	
+	cost="500"
+	components="Item_Confluence Item_Sicarius"
+	allowdisassemble="true"
+
+	actiontype="no_target"
+	casttime="100"
+	castactiontime="100"
+	casteffect="cast.effect"
+	cooldowntime="50000"
+	cooldowntype="geometersbane"
+	manacost="165"
+	
+	strength="15"
+	agility="30"
+	intelligence="10"
+	attackspeed=".15"
+	movementspeed=".1"
+>
+	<onimpact>
+		<dispel type="StatusBuff" />
+		<dispel type="StatusDebuff" />
+		<disjoint target="this_owner_entity" />
+		<spawnillusion target="this_owner_entity" count="2" lifetime="20000" receivedamagemultiplier="3.5" inflictdamagemultiplier="0.33" spawneffect="multiple_images.effect" deatheffect="multiple_images_death.effect" />
+	</onimpact>
+	
+	<modifier key="speed_multiplier" modpriority="10" exclusive="true"
+		movespeedmultiplier="0.10"
+	/>
+</item>

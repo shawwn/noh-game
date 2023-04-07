@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="chatteringteethrig.max" file="halloween.model" type="K2" >
+<anim name="idle" clip="clips/halloween.clip" loop="true" fps="45"/>
+</model>

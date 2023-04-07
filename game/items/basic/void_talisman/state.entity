@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_VoidTalisman"
+
+	icon="icon.tga"
+
+	effecttype="StatusDebuff"
+	
+	immunitytype="PhysicalImmunity"
+	disarmed="true"
+	nothreat="true"
+	passiveeffect="effects/state.effect"
+>
+</state>

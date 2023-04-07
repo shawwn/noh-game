@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Lightning2"
+	
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_Item5C" 
+	statuseffectheader="true" 
+	
+	cost="400"
+	components="Item_Warpcleft Item_Lightning1"
+	allowdisassemble="true"
+		
+	actiontype="target_entity"
+	targetscheme="ally_units"
+	casteffecttype="Magic"
+	range="600"
+	manacost="50"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="35000"
+	cooldowntype="lightning2"
+	
+	attackspeed="0.70"
+	damage="24"
+>
+  <onimpact effectdescription="true">
+    <applystate name="State_Item5C" duration="20000"/>
+	<playanim name="item_1" target="source_entity" />
+  </onimpact>
+  
+	<modifier key="chainlightningproc" modpriority="100" exclusive="true" >
+		<onattack effectdescription="true" propagatetoillusions="false">
+			<condition test="not_target_type building">
+				<chance threshold="0.2">
+					<spawnaffector name="Affector_Item5C"/>
+				</chance>
+			</condition>
+		</onattack>
+	</modifier>
+	
+
+</item>

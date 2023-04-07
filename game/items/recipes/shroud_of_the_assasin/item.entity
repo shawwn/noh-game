@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Stealth"
+		
+	statuseffecttooltip="State_Item3G"
+	icon="icon.tga"
+	
+	cost="1100"
+	components="Item_BastardSword Item_Steamstaff"
+	
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="18000"
+	cooldowntype="stealth"
+	manacost="75"
+	casteffect="cast.effect"
+	
+	damage="38"
+	attackspeed="0.10"
+>
+	<onimpact>
+		<applystate name="State_Item3G" duration="9000" />
+	</onimpact>
+</item>

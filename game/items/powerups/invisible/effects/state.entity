@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Item3G"
+
+	
+	passiveeffect="state.effect"
+	icon="icon.tga"
+	
+	stealthtype="hero"
+	fadetime="500"
+	unitwalking="true"
+	movespeedmultiplier="0.2"
+	
+	effecttype="StatusBuff"
+>
+	<oninflict>
+		<forgetattacks />
+		<startfade />
+	</oninflict>
+	
+	<onattackstart>
+		<expire />
+	</onattackstart>
+	
+	<onactivatestart>
+		<expire />
+	</onactivatestart>
+</state>

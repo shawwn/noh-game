@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Xalynx4"
+
+	icon="icon.tga"
+	
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	casteffect=""
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="toggle"
+	frontqueue="true"
+	inheritmovement="true"
+	manacost="110"
+	activemanacost="20,40,60"
+	toggleoffmanacost="0"
+	cooldowntime="750"
+	targetradius="300,350,400"
+>
+	<onimpact effectdescription="true"/>
+	<ontoggleon>
+		<spawnaffector name="Affector_Xalynx_Ability4" target="source_entity" istoggle="true" />	
+	</ontoggleon>
+
+	<modifier key="ult_boost" modpriority="100"
+		displayname="true"
+		description="true"
+	>
+		<onimpact />
+	</modifier>
+</ability>

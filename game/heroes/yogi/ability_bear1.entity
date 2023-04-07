@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bear1"
+	
+	icon="summon/icons/ability_1.tga"
+	casttime="0"
+	castactiontime="0"
+
+	actiontype="no_target"
+	
+	cooldowntime="5000"
+>
+	<onimpact>
+		<playeffect effect="summon/effects/return/return.effect" source="target_position" target="" />
+		<teleport target="source_owner_position" interpolate="false" />
+		<disjoint target="source_entity" />
+		<playeffect effect="summon/effects/return/return.effect" source="target_position" target="" />
+	</onimpact>
+	
+	<onframe>
+		<condition test="distance gt 925" target="source_owner_entity">
+			<applystate name="State_Yogi_Pet" continuous="true" timeout="frametime" />
+		</condition>
+	</onframe>
+</ability>

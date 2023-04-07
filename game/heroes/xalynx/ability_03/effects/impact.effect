@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="0.65">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".45"
+				sample="../../sounds/impact_%.wav"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="2000"
+				count="15"
+				minparticlelife="800"
+				maxparticlelife="1400"
+				gravity="10"
+				minspeed="450"
+				maxspeed="550"
+				drag=".05"
+				offsetsphere="10"
+				material="/shared/effects/materials/blood1.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color=".7"
+					maxanglespeed="20"
+					minanglespeed="-20"
+					startsize="10"
+					minendsize="35"
+					maxendsize="85"			
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+  	
+			</simpleemitter>
+			
+			<model		
+				model="/heroes/xalynx/ability_01/effects/spire/spin.mdf"
+				anim="idle"
+				scale="1.5"
+				position="0.0 0.0 0.0"				
+				color="1 1 1"
+				life="2000"
+				
+			>
+		
+				<model
+					delay="0"
+					model="/heroes/xalynx/projectile/effects/model.mdf"
+					bone="_bone_1"
+					anim=""
+					
+					position="0.0 0.0 0.0"
+					pitch="0"
+					yaw="-90"
+					life="1500"
+					startalpha="1"
+					scale="0.1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					color="1 1 .8"					
+				/>
+				
+				
+				<model					
+					model="/heroes/xalynx/ability_01/effects/spire/projectile.mdf"
+					bone="_bone_1"
+					anim="idle"
+					scale="1.25"
+					position="0.0 0.0 0.0"
+					directionalspace="local"
+					startalpha="1.0"
+					endalpha="0"
+					minyaw="-360"
+					maxyaw="360"
+					color="1 1 .8"
+					life="1200"
+					
+				>
+					
+					<twopointtrailemitter
+							
+							bone_a="_bone_fx_1"
+							bone_b="_bone_fx_2"
+							spawnrate="60"
+							particlelife="550"
+							position="0 0 0"
+							texpostime="950"
+							texposscale="0"
+							texstretchscale="2.5"
+							subframepose="1"				
+							material="/shared/effects/materials/chainlinkconnect.material"
+							
+						>
+							<particle 				
+								color="1 1 .8"
+								
+								startalpha="1"
+								endalpha="0"
+								
+							/>
+					</twopointtrailemitter>	
+					<twopointtrailemitter		
+							
+							bone_a="_bone_fx_3"
+							bone_b="_bone_fx_4"
+							spawnrate="60"
+							particlelife="550"
+							position="10 0 0"
+							texpostime="950"
+							texposscale="0"
+							texstretchscale="2.5"
+							subframepose="1"				
+							material="/shared/effects/materials/chainlinkconnect.material"
+							
+						>
+							<particle 				
+								color="1 1 .8"
+								
+								startalpha="1"
+								endalpha="0"
+								
+							/>
+					</twopointtrailemitter>	
+				</model>				
+			</model>
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

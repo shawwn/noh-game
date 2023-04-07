@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Valmont2"
+
+	
+	
+	statuseffecttooltip="State_Valmont_Ability2"
+	icon="magia1.tga"
+	
+	casttime="1700,2500,3700"
+	castactiontime="300"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="visible_enemy_units"
+	casteffecttype="Physical"
+	
+	manacost="100,115,130,145"
+	cooldowntime="21000,18000,15000,12000"
+
+	range="450"
+>
+	<onimpact >
+		<applystate name="State_Valmont_Ability2" duration="400" target="source_entity"/>
+		<teleport interpolate="true" facetarget="true"/>
+		<print text="omni impact" />
+		<damage effecttype="Physical" min="100" max="150"/>
+		<popup name="bonus_damage" target="source_entity" a="result"/>
+		<playanim name="attack_1" variations="4" length="400" target="source_entity"/>
+		<order command="attack"/>
+		<spawnaffector name="Affector_Valmont_Ability2" attach="true"/>
+	</onimpact>
+</ability>

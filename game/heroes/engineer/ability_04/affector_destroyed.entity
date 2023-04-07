@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Engineer_Ability4_Destroyed"
+
+	radius="9999999"	
+	
+	lifetime="200"
+	targetselection="all"
+	targetscheme="enemy_nonboss_units"
+	effecttype=""
+>
+	<onimpact>
+		<applystate name="State_Engineer_Ability4_Immunity" duration="10000" />
+	</onimpact>
+</affector>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Tundra_Ability1"
+
+	radius="150"
+	arc="180"
+	
+	speed="1600"
+	
+	lifetime="500"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="organic_enemy_units"
+	effecttype="Magic"
+	persist="true"
+	destroytrees="true"
+	effect="effects/trail.effect"	
+>
+	<onimpact>
+		<applystate name="State_Tundra_Ability1" duration="3000" />
+		<damage effecttype="SuperiorMagic SuperiorPhysical" amount="90,120,150,180" />
+		<spawnprojectile name="Projectile_Tundra_Ability1" source="target_entity" target="target_entity" bind="target_entity" ignoretargetoffset="true" noresponse="true" />
+	</onimpact>
+</affector>

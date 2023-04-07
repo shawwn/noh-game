@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Accursed4"
+	anim="ability_4"
+	
+	
+	statuseffecttooltip="State_Accursed_Ability4"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_self"
+	manacost="0"
+	cooldowntime="60000"
+>
+	<onimpact >
+		<disjoint target="source_entity" />
+		<dispel type="StatusDebuff" />
+		<applystate name="State_Accursed_Ability4" duration="3000,4000,5000" target="source_entity" />
+	</onimpact>
+	
+	<ondamaged>
+		<condition test="source_health lt 400">
+			<condition test="isready">
+				<disjoint target="source_entity" />
+				<dispel type="StatusDebuff" />
+				<applystate name="State_Accursed_Ability4" duration="3000,4000,5000" target="source_entity" />
+				<startcooldown />
+			</condition>
+		</condition>
+	</ondamaged>
+</ability>

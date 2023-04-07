@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Yogi6"
+
+	
+	
+	icon="icons/ability_6.tga"
+	
+	anim=""
+	casttime="1000"
+	castactiontime="500"
+	statuseffecttooltip="State_Yogi_Ability6"
+
+	actiontype="target_entity"
+	targetscheme="my_other_units"
+	casteffecttype="Magic"
+	
+	manacost="80"
+	cooldowntime="12000"
+
+	range="600"
+>
+	<onimpact>
+		<soullink/>
+		<applystate name="State_Yogi_Ability6" duration="35000"/>
+		<applystate name="State_Yogi_Ability6" duration="35000" source="target_entity" target="source_entity"/>
+	</onimpact>
+</ability>

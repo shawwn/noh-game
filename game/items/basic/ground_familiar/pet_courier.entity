@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_GroundFamiliar"
+	
+	
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	mapicon="/shared/icons/minimap_courier.tga"
+	mapiconsize="0.05"
+	mapiconcolor="1 1 1 1"
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	partialcontrolshare="true"
+	
+	preglobalscale="1.395"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="26"
+	targetoffset="0 0 0"
+	immunity="CourierImmunity"
+
+	movespeed="300"
+	turnrate="320"
+
+	maxhealth="45"
+	healthregen="0.5"
+	maxmana="0"
+	manaregen="0"
+
+	armor="0"
+	magicarmor="0"
+
+	cancarryitems="true"
+	dropitemsondeath="true"
+	inventory0="Ability_GroundFamiliar1"
+	inventory1=""
+	inventory2="Ability_GroundFamiliar3"
+	inventory3="Ability_GroundFamiliar4"
+	
+	canattack="false"
+
+	attacktype="none"
+	combattype="Melee"
+	attacktargetscheme="nothing"
+	
+	aggrorange="0"
+	sightrangeday="350"
+	sightrangenight="350"
+	
+	goldbountymin="15"
+	goldbountymax="15"
+	
+	tiltfactor="1.0"
+	tiltspeed="90.0"
+	nothreat="true"
+	unittype="Courier"
+	unitwalking="true"
+	noglobalselect="true"
+>
+</pet>

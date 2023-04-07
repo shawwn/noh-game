@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Predator_Ability4"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	
+	effecttype="StatusBuff"
+	
+>
+	<onattackimpact >
+		<applystate name="State_Predator_Ability4_Buff" duration="4000" target="source_entity"/>
+		<applystate name="State_Predator_Ability4_Debuff" duration="4000"/>
+	</onattackimpact>
+
+</state>

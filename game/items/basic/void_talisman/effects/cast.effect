@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="entity" scale="3">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="0.8"
+				sample="../sounds/cast.wav"
+			/>			
+		
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				startcolor="0 1 .4"
+				endcolor="0 0 0"
+				startsize="0"
+				endsize="100"
+				material="/shared/effects/materials/starlight.material"
+				maxroll="360"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				startcolor="0 1 .4"
+				endcolor="0 0 0"
+				startsize="50"
+				endsize="150"
+				material="/shared/effects/materials/star_03.material"
+				maxroll="360"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				startcolor="0 3 .2"
+				endcolor="0 0 0"
+				startsize="110"
+				endsize="30"
+				material="/shared/effects/materials/blink.material"
+				maxroll="360"
+			/>
+	
+			<billboard
+				bone="_bone_centerofchest"
+				life="300"
+				startcolor="0 .8 .3"
+				endcolor="0 0 0"
+				startsize="100"
+				endsize="30"
+				depthbias="0"
+				material="/shared/effects/materials/stomp_02.material"
+			/>		
+	
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

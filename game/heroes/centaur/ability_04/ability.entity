@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Centaur4"	
+	
+	icon="icon.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="passive"
+	
+	strength="12,24,36"
+>
+</ability>

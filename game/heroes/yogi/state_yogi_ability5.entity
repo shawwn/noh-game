@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Yogi_Ability5"
+
+	
+	
+	icon="icons/ability_5.tga"
+	passiveeffect=""
+	
+	damage="20"
+	armor="2"
+	
+	effecttype="StatusBuff"
+>
+</state>

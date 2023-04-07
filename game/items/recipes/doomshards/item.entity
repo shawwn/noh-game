@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Critical1"
+
+	icon="icon.tga"
+	
+	cost="950"
+	components="Item_Punchdagger Item_Broadsword"
+	maxlevel="4"
+
+	actiontype="passive"
+
+	damage="45,55,65,75"
+	criticalchance="0.10,0.13,0.16,0.20"
+	criticalmultiplier="1.8,2,2.2,2.4"
+>
+</item>

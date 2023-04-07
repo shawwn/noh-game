@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Broadsword"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="1200"
+	
+	actiontype="passive"
+	
+	damage="18"
+>
+</item>

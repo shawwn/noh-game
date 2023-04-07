@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="spikes" useentityeffectscale="true" >
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			life="750"
+			startcolor="1 1 1"
+			midcolor=".5 0 0"
+			endcolor="1 1 1"
+			midcolorpos=".75"
+		/>
+	
+		<particlesystem name="system0" space="world" scale="1.25">
+		
+			<simpleemitter
+				life="500"
+				bone="_bone_back"
+				spawnrate="30"
+				particlelife="550"
+				gravity="0"
+				speed="150"
+				drag=".01"
+				acceleration="0.0"
+				position="0 0 0"
+				offsetsphere="15 15 0"
+				material="/shared/effects/materials/blood1.material"
+				direction="0 0 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+				particledirectionalspace="local"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					angle="180"
+					color=".5 .5 .5"
+					startsize="100"
+					midsize="50"
+					minendsize="40"
+					maxendsize="60"
+					startalpha="0"
+					midalpha=".6"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+			
+			<model
+				bone="_bone_centerofchest"
+				life="300"
+				model="blade.mdf"
+				startscale="0"
+				scale="0.5"
+				startcolor=" .5 .1 0 "
+				midcolor="1 0 0"
+				endcolor=".5 .1 0"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnmodifier instance="instance0" modifier="modifier0"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

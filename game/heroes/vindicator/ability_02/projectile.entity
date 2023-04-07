@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Vindicator_Ability1"
+
+	speed="1000"
+	gravity="0"
+	modelscale="0.6"
+	model="../projectile/effects/projectile_glave.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+</projectile>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chipper_Ability1"
+	
+	icon=""
+	ishidden="true"
+	passiveeffect="effects/state.effect"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" amount="20,30,40,50" b="frametime" op="mult"/>
+	</onframe>
+</state>

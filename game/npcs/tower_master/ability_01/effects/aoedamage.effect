@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="poslego" deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="2.5">
+
+			
+			<simpleemitter
+				spawnrate="4"
+				particlelife="820"
+				gravity="-.2"
+				speed="10"
+				drag="0.07"
+				acceleration="0.0"		
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 40"
+				material="/shared/effects/materials/refract_wave2.material"
+				offsetsphere="22 22 0"
+				inheritvelocity="0"
+			>
+				<particle 	
+				
+				
+				pitch="-45"
+				
+					minyaw="-360"
+					maxyaw="360"
+					
+					
+					startsize="50"
+					endsize="600"
+					param="0.015"
+					startalpha="1"
+					endalpha="0"
+					lockright="1"
+					lockup="1"
+					anchor="`"					
+				 />				 
+			</simpleemitter>			
+			
+			<simpleemitter
+				spawnrate="30"
+				particlelife="320"
+				gravity="0"
+				
+				drag="0.07"
+				acceleration="0.0"		
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 40"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				offsetsphere="100 100 0"
+				inheritvelocity="0"
+			
+			>
+				<particle 	
+					startframe=".6"
+					framespeed="3"
+					pitch="90"
+					roll="90"
+					minyaw="-360"
+					maxyaw="360"
+					color="2 .0 .0"
+					startwidth="45"
+					endwidth="55"
+					startheight="15"
+					endheight="25"
+					param="0.015"
+					startalpha=".8"
+					endalpha="0"
+					lockright="1"
+					lockup="1"
+					anchor="`"					
+				 />				 
+			</simpleemitter>
+			
+			
+			<simpleemitter
+				spawnrate="30"
+				particlelife="320"
+				gravity="0"
+				
+				drag="0.07"
+				acceleration="0.0"		
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 100"
+				material="/shared/effects/materials/femme_lightning_06.material"
+				offsetsphere="150 100 0"
+				inheritvelocity="0"
+			
+			>
+				<particle 	
+					startframe=".6"
+					framespeed="3"
+					pitch="90"
+					roll="90"
+					minyaw="-360"
+					maxyaw="360"
+					color="2 .0 .0"
+					startwidth="30"
+					endwidth="40"
+					startheight="20"
+					endheight="30"
+					param="0.015"
+					startalpha=".8"
+					endalpha="0"
+					lockright="1"
+					lockup="1"
+					anchor="`"					
+				 />				 
+			</simpleemitter>
+			
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

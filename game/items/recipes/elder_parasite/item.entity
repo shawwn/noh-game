@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_ElderParasite"
+	
+	statuseffecttooltip="State_ElderParasite"
+	statuseffectheader="true"
+	icon="icon.tga"
+	
+	cost="1000"
+	components="Item_HungrySpirit"
+	
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="25000"
+	cooldowntype="elderparasite"
+	manacost="25"
+>
+
+	<onimpact effectdescription="true">
+		<applystate name="State_ElderParasite" duration="12000"/>
+	</onimpact>
+	
+	<onattackimpact>
+		<playeffect effect="lifesteal.effect" source="source_entity" target="target_entity"/>
+	</onattackimpact>
+	
+	<modifier key="attack" modpriority="90" exclusive="true"
+		lifesteal="0.17"
+	/>
+</item>

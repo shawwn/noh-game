@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Gauntlet_Ability4"
+
+	radius="150"
+	lifetime="-1"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Physical"
+>
+	<onimpact>
+		<hasmodifier name="gauntlet_slowfist">
+			<applystate name="State_Gauntlet_Ability3" owner="this_owner_entity" duration="10000" />
+		</hasmodifier>
+			<areaofeffect
+				radius="250"
+				targetselection="all"
+				targetscheme="organic_enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="100,200,300,400" />
+			
+			</areaofeffect>
+			<expirestate name="State_Gauntlet_Ability1" target="this_owner_entity" />
+		<damage effecttype="" amount="200,300,400" />
+		<dispel type="StatusBuff" />
+		<playeffect effect="effects/link.effect" source="proxy_entity" target="target_entity"  />
+		<applystate name="State_Gauntlet_Ability4" source="proxy_entity" target="target_entity" duration="4000" />
+	</onimpact>
+</affector>

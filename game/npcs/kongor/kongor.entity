@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neutral
+	name="Neutral_Kongor"
+	
+	
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="2.8"
+	modelscale="1.0"
+	effectscale="2.0"
+	boundsheight="198"
+	boundsradius="48"
+	selectionradius="96"
+	targetoffset="0 0 100"
+
+	movespeed="270"
+	turnrate="320"
+
+	maxhealth="7500"
+	maxhealthperlevel="0"
+	healthregen="20"
+	maxmana="2000"
+	manaregen="10"
+
+	armor="3.5"
+	magicarmor="5.5"
+	immunity="BossImmunity"
+
+	cancarryitems="false"
+	inventory0="Ability_Kongor1"
+	inventory1="Ability_Kongor2"
+	inventory2=""
+	inventory3=""
+	inventory4=""
+	inventory5=""
+	inventory6=""
+	inventory7=""
+
+	attackduration="1000"
+	attackactiontime="300"
+	attackcooldown="1000"
+	attackdamagemin="65"
+	attackdamagemax="65"
+	attacknumanims="4"
+	attackoffset="0 30 100"
+	attackprojectile=""
+	attackrange="100"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="/shared/sounds/impacts/impact_heavy.effect"
+	attacktype="melee"
+	combattype="Hero"
+
+	aggrorange="150"
+	sightrangeday="1400"
+	sightrangenight="1400"
+	
+	experiencebounty="1789"
+	goldbountymin="105"
+	goldbountymax="600"
+	goldbountyteam="200"
+	
+	corpsetime="10000"
+	corpsefadetime="10000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	unittype="Kongor Boss"
+>
+	<onkilled>
+		<spawnitem name="Item_Revive" target="source_entity" offset="50 0" />
+		<spawnitem name=",,Item_Cheese" target="source_entity" offset="-50 0" />
+		<delete target="proxy_entity" />
+	</onkilled>
+	
+	<onattackedpreimpact>
+		<killillusions/>
+	</onattackedpreimpact>
+	
+	<onspawn>
+		<applystate name="State_Kongor" duration="-1"/>
+		<spawnunit name="Gadget_Kongor_SpawnZone" target="this_entity" pushentity="true" duration="-1" />
+		<setproxy entity="this_entity" target="stack_entity" />
+	</onspawn>
+
+</neutral>

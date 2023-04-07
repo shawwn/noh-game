@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chipper_Ability3_Buff"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+>
+	<onframe />
+
+	<onattackeddamageevent>
+		<damagesupertype supertype="spell">
+			<damageeffecttype effecttype="Magic">
+				<currentdamageeffecttype effecttype="Returned" />
+				<else>
+					<setvar0 a="damage_attempted" b="0.11,0.14,0.17,0.20" op="mult" />
+					<areaofeffect
+						radius="600"
+						targetselection="all"
+						targetscheme="enemy_heroes"
+						effecttype=""
+					>
+					</areaofeffect>
+					<condition test="result ge 1">
+						<setvar0 a="var0" b="result" op="div" />
+					</condition>
+					<areaofeffect
+						radius="600"
+						targetselection="all"
+						targetscheme="enemy_nonboss_units"
+						effecttype=""
+					>
+						<damage effecttype="Magic Splash Returned" amount="1" b="var0" op="mult" />
+					</areaofeffect>
+					<setvalue name="damage_attempted" a="damage_attempted" b="0.89,0.86,0.83,0.80" op="mult" />
+				</else>
+			</damageeffecttype>
+		</damagesupertype>
+	</onattackeddamageevent>
+
+</state>

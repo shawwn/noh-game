@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PlatedGreaves"
+
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	
+	armor="2"
+	deflectionchance="1"
+	deflection="10"
+	
+	effecttype="StatusBuff"
+>
+	<onframe />
+</state>

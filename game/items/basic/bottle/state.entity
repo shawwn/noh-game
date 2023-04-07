@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bottle"
+
+	
+	
+	icon="icon_3.tga"
+	passiveeffect="state.effect"
+	
+	healthregen="45"
+	manaregen="23.3333"
+	
+	dispelondamage="true"
+	
+	effecttype="StatusBuff"
+>
+</state>

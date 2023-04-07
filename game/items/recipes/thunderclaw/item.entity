@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Lightning1"
+	
+	icon="icon.tga"
+	
+	cost="900"
+	components="Item_GlovesOfHaste Item_Warhammer"
+	
+	actiontype="passive"
+	
+	attackspeed=".15"
+	damage="24"
+>
+	<modifier key="chainlightningproc" modpriority="75" exclusive="true"  >
+		<onattack effectdescription="true" propagatetoillusions="false">
+			<condition test="not_target_type building">
+				<chance threshold="0.20">
+					<spawnaffector name="Affector_Item2E"/>
+				</chance>
+			</condition>
+		</onattack>
+	</modifier>
+</item>

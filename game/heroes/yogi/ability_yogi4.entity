@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Yogi4"
+
+	statuseffecttooltip="State_Yogi_Ability4"
+	icon="icons/ability_4.tga"
+	
+	anim="ability_4"
+	casttime="800"
+	castactiontime="800"
+	casteffect="effects/ability_04/effects/transformation.effect"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="toggle"
+	frontqueue="true"
+	
+	manacost="25"
+	toggleoffmanacost="25"
+	cooldowntime="0"
+>
+	<ontoggleon>
+		<applystate name="State_Yogi_Ability4" istoggle="true"/>		
+	</ontoggleon>
+	<onimpact />
+	
+	<modifier key="yogi4_toggle_active" condition="toggle_active" modpriority="100"
+		icon="icons/hero.tga"
+		statuseffecttooltip=""
+		anim="ability_4_back"
+		casttime="600"
+		castactiontime="500"	
+		casteffect="effects/ability_04/effects/transformation_back.effect"
+		interface="single,single_plus_one,single_plus_two"
+	>
+		<onimpact />
+	</modifier>
+</ability>

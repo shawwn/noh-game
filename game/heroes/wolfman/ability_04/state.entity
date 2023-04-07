@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WolfMan_Ability4"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_1.effect"
+	
+	criticalchance="0.3"
+	criticalmultiplier="1.5"
+	maxhealth="100,200,300"
+	morphpreglobalscale="1.6"
+	morphpriority="90"
+	morphmodel="morph/model.mdf"
+	morphattackcooldown="1400"
+
+>
+	<onframe />
+	<aura state="State_WolfMan_Ability4_Aura" radius="9999" targetscheme="my_units"/>
+	<onexpired>
+		<playeffect effect="effects/bridge.effect" source="target_position" target="target_position" />
+	</onexpired>
+</state>

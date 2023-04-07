@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true" deferred="true">
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			startcolor="1 2 3"
+			endcolor="1 1 1"
+			
+			expirelife="500"
+		/>
+		
+	</definitions>
+	<thread>
+		<spawnmodifier instance="instance0" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" /> 
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

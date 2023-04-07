@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_FlyngCourier"
+		
+	icon="../winged_familiar/icon.tga"
+	portrait="../winged_familiar/icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	partialcontrolshare="true"
+	
+	preglobalscale="1.3"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="128"
+	boundsradius="16"
+	selectionradius="32"
+	targetoffset="0 0 0"
+
+	movespeed="350"
+	turnrate="320"
+
+	maxhealth="150"
+	healthregen="0.5"
+	maxmana="0"
+	manaregen="0"
+
+	armor="10"
+	magicarmor="0"
+	nothreat="true"
+	immunity="CourierImmunity"
+
+	cancarryitems="true"
+	dropitemsondeath="true"
+	inventory0="Ability_FlyingCourier1"
+	inventory1="Ability_FlyingCourier2"
+	inventory2="Ability_FlyingCourier3"
+	inventory3="Ability_FlyingCourier4"
+
+	mapicon="/shared/icons/minimap_courier.tga"
+	mapiconsize="0.05"
+	mapiconcolor="1 1 0 1"
+	canattack="false"
+	attacktargetscheme="nothing"
+	
+	attacktype="none"
+	combattype="Melee"
+
+	aggrorange="0"
+	sightrangeday="400"
+	sightrangenight="400"
+	
+	goldbountymin="300"
+	goldbountymax="300"
+	
+	flying="true"
+	
+	unittype="Courier"
+	noglobalselect="true"
+>
+</pet>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Pestilence_Ability2_Stun"
+	
+	radius="350"
+	impacteffect="effects/impact.effect"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="50,100,150,200"/>
+		<applystate name="State_Stunned" duration="1000,1500,2000,2500"/>
+	</onimpact>
+</affector>

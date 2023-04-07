@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ManaPotion"
+
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	
+	manaregen="3.3333"
+	
+	effecttype="StatusBuff"
+>
+
+	<ondamaged>
+		<condition test="target_type enemy">
+			<expire />
+		</condition>
+	</ondamaged>
+</state>

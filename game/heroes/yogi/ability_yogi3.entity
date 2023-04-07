@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Yogi3"
+
+	icon="icons/ability_3.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	
+	modifierkey="synergy1,synergy2,synergy3,synergy4"
+>
+</ability>

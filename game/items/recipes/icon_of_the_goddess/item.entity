@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_HealthMana2"
+	
+	
+	
+	
+	icon="icon.tga"
+	
+	cost="0"
+	components="Item_Beastheart Item_BrainOfMaliken Item_Glowstone"
+	autoassemble="true"
+	allowdisassemble="true"
+	
+	actiontype="passive"
+	
+	maxhealth="450"
+	maxmana="400"
+	manaregenmultiplier="0.1"
+	healthregen="1"
+>
+</item>

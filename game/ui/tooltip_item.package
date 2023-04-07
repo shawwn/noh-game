@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<template name="item_tooltip">
+		<frame
+			name="{id}"
+			texture="/ui/frames/tooltip_bg.tga"
+			color="#00000070"
+			borderthickness="0.5h"
+			visible="false"
+			x="-1h"
+			y="-18h"
+			align="right"
+			valign="bottom"
+			width="27h"
+			height="5.0h"
+			float="bottom"
+		>
+			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness="0.5h"/>
+			<anchor x="1.0h" y="0.6h" />
+
+			<!-- Name and value -->
+			<panel
+				width="-2.0h"
+				height="1.8h"
+			>
+				<label
+					textalign="left"
+					font="dyn_10"
+					color="white"
+					watch="{watch}"
+					ontrigger="SetText(param0);"
+				/>
+				<label
+					textalign="right"
+					font="dyn_10"
+					color="gray"
+					watch="{watch}"
+					ontrigger="If(param1 gt 0, SetText(Translate('tooltip_value') # param1), ClearText());"
+				/>
+			</panel>
+
+			<!-- Level-->
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="{watch}"
+				ontrigger="If(param2 != 0 and param3 != 0, SetText(Translate('toolitp_level', 'level', param2))); SetVisible(param2 != 0 and param3 != 0);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(!StringEmpty(param4));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Description text -->
+			<label
+				width="-2.0h"
+				height="0.0h"
+				font="dyn_9"
+				wrap="true"
+				color="white"
+				watch="{watch}"
+				ontrigger="SetText(param4); SetVisible(!StringEmpty(param4)); SetHeight(GetStringWrapHeight('dyn_9', param4, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+			
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(!StringEmpty(param34));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Description text2 -->
+			<label
+				width="-2.0h"
+				height="0.0h"
+				font="dyn_9"
+				wrap="true"
+				color="white"
+				watch="{watch}"
+				ontrigger="SetText(param34); SetVisible(!StringEmpty(param34)); SetHeight(GetStringWrapHeight('dyn_9', param34, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Passive block -->
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(param6 gt 0);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<panel
+				width="-2.0h"
+				height="2.4h"
+				watch="{watch}"
+				ontrigger="SetVisible(param6 gt 0);"
+				float="bottom"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			>
+				<label
+					height="1.8h"
+					font="dyn_10"
+					color="white"
+					content="tooltip_passive_bonuses"
+				/>
+
+				<panel width="10.5h" height="0.2h" color="gray" />
+				<panel height="0.4h" sticky="true" />
+			</panel>
+
+			<!-- Passive bonuses -->
+			<label
+				width="-2.0h"
+				height="0.0h"
+				font="dyn_10"
+				wrap="true"
+				color="white"
+				watch="{watch}"
+				ontrigger="SetText(param5); SetHeight(GetStringWrapHeight('dyn_10', param5, GetWidthFromString('-2.0h')) + GetYFromString('0.4h')); SetVisible(param6 gt 0);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Activation block -->
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(param7);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<panel
+				width="-2.0h"
+				height="2.4h"
+				watch="{watch}"
+				ontrigger="SetVisible(param7);"
+				float="bottom"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			>
+				<label
+					width="-2.0h"
+					height="1.8h"
+					font="dyn_10"
+					color="white"
+					content="tooltip_activation"
+				/>
+
+				<panel width="10.5h" height="0.2h" color="gray" sticky="true" />
+				<panel width="-2.0h" height="0.4h" sticky="true" />
+			</panel>
+
+			<!-- Action type and Target scheme -->
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(!StringEmpty(param8) and param7);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			>
+				<label
+					textalign="left"
+					font="dyn_10"
+					color="white"
+					watch="{watch}"
+					ontrigger="SetText(param8);"
+				/>
+				<label
+					textalign="right"
+					font="dyn_10"
+					color="white"
+					watch="{watch}"
+					ontrigger="SetText(param9);"
+				/>
+			</panel>
+
+			<!-- Cast effect type -->
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_10"
+				color="white"
+				watch="{watch}"
+				ontrigger="SetText(Translate('tooltip_type') # param10); SetVisible(!StringEmpty(param10) and param7);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Range -->
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_10"
+				color="white"
+				watch="{watch}"
+				ontrigger="SetText(Translate('tooltip_range') # param11); SetVisible(!StringEmpty(param11) and param7);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Radius -->
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_10"
+				color="white"
+				watch="{watch}"
+				ontrigger="SetText(Translate('tooltip_radius') # param12); SetVisible(!StringEmpty(param12) and param7);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+			
+			<!-- Channeling time -->
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_10"
+				color="green"
+				watch="{watch}"
+				ontrigger="If(!StringEmpty(param35), SetText(Translate('tooltip_channeling_time', 'time', param35))); SetVisible(!StringEmpty(param35));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Mana cost -->
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_10"
+				color="aqua"
+				watch="{watch}"
+				ontrigger="SetText(Translate('tooltip_mana_cost') # param13); SetVisible(!StringEmpty(param13) and param7);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+			
+			<!-- Mana Upkeep -->
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_10"
+				color="yellow"
+				watch="{watch}"
+				ontrigger="SetText(Translate('tooltip_mana_upkeep', 'value', param36)); SetVisible(!StringEmpty(param36) and param7);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Cooldown -->
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_10"
+				color="#F0E68C"
+				watch="{watch}"
+				ontrigger="SetText(Translate('tooltip_cooldown', 'time', param14)); SetVisible(!StringEmpty(param14));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(!StringEmpty(param15) and param7);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Effect -->
+			<label
+				width="-2.0h"
+				height="0.0h"
+				font="dyn_9"
+				wrap="true"
+				color="white"
+				watch="{watch}"
+				ontrigger="SetText(param15); SetVisible(!StringEmpty(param15) and param7); SetHeight(GetStringWrapHeight('dyn_9', param15, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Triggered effect -->
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(param16);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<panel
+				width="-2.0h"
+				height="2.4h"
+				watch="{watch}"
+				ontrigger="SetVisible(param16);"
+				float="bottom"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			>
+				<label
+					width="-2.0h"
+					height="1.8h"
+					font="dyn_10"
+					color="white"
+					watch="{watch}"
+					ontrigger="SetText(param17);"
+				/>
+
+				<panel width="10.5h" height="0.2h" color="gray" sticky="true" />
+				<panel width="-2.0h" height="0.4h" sticky="true" />
+			</panel>
+
+			<label
+				width="-2.0h"
+				height="0.0h"
+				font="dyn_9"
+				wrap="true"
+				color="white"
+				watch="{watch}"
+				ontrigger="SetText(param18); SetVisible(!StringEmpty(param18) and param16); SetHeight(GetStringWrapHeight('dyn_9', param18, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Status effect -->
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(!StringEmpty(param19));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<panel
+				width="-2.0h"
+				height="2.4h"
+				watch="{watch}"
+				ontrigger="SetVisible(!StringEmpty(param19));"
+				float="bottom"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			>
+				<label
+					height="1.8h"
+					font="dyn_10"
+					color="white"
+					watch="{watch}"
+					ontrigger="SetText(param19);"
+				/>
+
+				<panel width="10.5h" height="0.2h" color="gray" />
+				<panel height="0.4h" sticky="true" />
+			</panel>
+
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_10"
+				wrap="true"
+				color="white"
+				watch="{watch}"
+				ontrigger="SetText(param20); SetHeight(GetStringWrapHeight('dyn_10', param20, GetWidthFromString('-2.0h')) + GetYFromString('0.4h')); SetVisible(param21 gt 0 and !StringEmpty(param19));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+			
+			<!-- Status effect 2 -->
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(!StringEmpty(param31));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<panel
+				width="-2.0h"
+				height="2.4h"
+				watch="{watch}"
+				ontrigger="SetVisible(!StringEmpty(param31));"
+				float="bottom"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			>
+				<label
+					height="1.8h"
+					font="dyn_10"
+					color="white"
+					watch="{watch}"
+					ontrigger="SetText(param19);"
+				/>
+
+				<panel width="10.5h" height="0.2h" color="gray" />
+				<panel height="0.4h" sticky="true" />
+			</panel>
+
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_10"
+				wrap="true"
+				color="white"
+				watch="{watch}"
+				ontrigger="SetText(param32); SetHeight(GetStringWrapHeight('dyn_10', param32, GetWidthFromString('-2.0h')) + GetYFromString('0.4h')); SetVisible(param33 gt 0 and !StringEmpty(param31));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Aura block -->
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(param22);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<panel
+				width="-2.0h"
+				height="2.4h"
+				watch="{watch}"
+				ontrigger="SetVisible(param22);"
+				float="bottom"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			>
+				<label
+					width="-2.0h"
+					height="1.8h"
+					font="dyn_10"
+					color="white"
+					content="tooltip_aura"
+				/>
+
+				<panel width="10.5h" height="0.2h" color="gray" sticky="true" />
+				<panel width="-2.0h" height="0.4h" sticky="true" />
+			</panel>
+
+			<!-- Radius and Target scheme -->
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(param22);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			>
+				<label
+					textalign="left"
+					font="dyn_10"
+					color="white"
+					watch="{watch}"
+					ontrigger="SetText(Translate('tooltip_radius') # param28); SetVisible(param22);"
+				/>
+				<label
+					textalign="right"
+					font="dyn_10"
+					color="white"
+					watch="{watch}"
+					ontrigger="SetText(param26);"
+				/>
+			</panel>
+
+			<!-- Aura effect type -->
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_10"
+				color="white"
+				watch="{watch}"
+				ontrigger="SetText(Translate('tooltip_type') # param27); SetVisible(!StringEmpty(param27) and param22);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(param22);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Aura bonuses -->
+			<panel
+				width="-2.0h"
+				height="2.4h"
+				watch="{watch}"
+				ontrigger="SetVisible(param22);"
+				float="bottom"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			>
+				<label
+					height="1.8h"
+					font="dyn_10"
+					color="white"
+					content="tooltip_aura_effects"
+				/>
+
+				<panel width="10.5h" height="0.2h" color="gray" />
+				<panel height="0.4h" sticky="true" />
+			</panel>
+
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_10"
+				wrap="true"
+				color="white"
+				watch="{watch}"
+				ontrigger="SetText(param23); SetHeight(GetStringWrapHeight('dyn_10', param23, GetWidthFromString('-2.0h')) + GetYFromString('0.4h')); SetVisible(param24 gt 0);"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Flavor text -->
+			<panel
+				width="-2.0h"
+				height="1.8h"
+				watch="{watch}"
+				ontrigger="SetVisible(!StringEmpty(param29));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_9"
+				wrap="true"
+				color="gray"
+				watch="{watch}"
+				ontrigger="SetText(param29); SetVisible(!StringEmpty(param29)); SetHeight(GetStringWrapHeight('dyn_9', param29, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<panel
+				width="-2.0h"
+				height="1.5h"
+				watch="{watch}"
+				ontrigger="SetVisible({help} and !StringEmpty(param30));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<!-- Help -->
+			<label
+				width="-2.0h"
+				height="1.8h"
+				font="dyn_10"
+				wrap="true"
+				color="yellow"
+				watch="{watch}"
+				ontrigger="SetText(param30); SetVisible({help} and !StringEmpty(param30));"
+				sticky="true"
+				stickytoinvis="false"
+				visible="false"
+			/>
+
+			<panel width="-2.0h" height="0.0h"
+				onframe="If(IsVisible(), Call('{id}', 'SetHeight(' # GetY() # ' + GetYFromString(\'0.55h\'));'));"
+				sticky="true"
+				stickytoinvis="false"
+			/>
+		</frame>
+	</template>
+</package>

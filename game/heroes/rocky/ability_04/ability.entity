@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Rocky4"
+
+	
+	
+	
+	icon="icon.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="passive"
+	casteffect="ability.effect"
+	
+	modifierkey="Rocky_Grow1,Rocky_Grow2,Rocky_Grow3"
+>
+	<onframe />
+</ability>

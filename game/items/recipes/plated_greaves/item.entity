@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_PlatedGreaves"
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_PlatedGreaves"
+	
+	cost="200"
+	components="Item_Marchers Item_ShieldOfTheFive"
+
+	actiontype="self_position"
+	targetscheme="ally_units"
+	targetradius="450"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="25000"
+	cooldowntype="shieldofthefive"
+	
+	new="true"
+	
+	manacost="25"
+
+	armor="5"
+	strength="3"
+	agility="3"
+	intelligence="3"
+>
+	<onimpact>
+		<areaofeffect
+			radius="450"
+			targetselection="all"
+			targetscheme="ally_units"		
+		>
+			<applystate name="State_PlatedGreaves" duration="30000"/>
+		</areaofeffect>
+		<playanim name="item_1" target="source_entity" />
+		<spawnaffector name="Affector_PlatedGreaves"/>
+	</onimpact>
+
+	<onaction>
+		<playeffect effect="cast.effect" />
+	</onaction>	
+
+	<modifier key="movespeed" modpriority="70" exclusive="true"
+		movespeed="70"
+	/>
+</item>

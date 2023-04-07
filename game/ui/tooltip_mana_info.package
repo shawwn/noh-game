@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<template name="mana_tooltip_info">
+		<frame
+			name="mana_tooltip_info"
+			texture="/ui/frames/tooltip_bg.tga"
+			color="#00000070"
+			borderthickness="0.5h"
+			visible="false"
+			x="-1h"
+			y="-18h"
+			align="right"
+			valign="bottom"
+			width="27h"
+			height="5.0h"
+			float="bottom"
+		>
+			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness="0.5h"/>
+			<anchor x="1.0h" y="0.6h" />
+
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="SelectedMana0"
+				ontrigger="SetText(Translate('tooltip_mana') # Floor(param0) # '/' # Floor(param1));"
+			/>
+
+			<label
+				width="-2.0h"
+				height="1.8h"
+				textalign="left"
+				font="dyn_10"
+				color="white"
+				watch="SelectedManaRegen"
+				ontrigger="
+					If(param1 - param0 == 0.0,
+						SetText('Mana Regeneration: ' # FtoA2(param0, 0, 2)),
+						If(param1 - param0 > 0.0,
+							SetText(Translate('tooltip_mana_regen') # FtoA2(param0, 0, 2) # ' ^g+' # FtoA2(param1 - param0, 0, 2) # '^* = ^y' # FtoA2(param1, 0, 2)),
+							SetText(Translate('tooltip_mana_regen') # FtoA2(param0, 0, 2) # ' ^r' # FtoA2(param1 - param0, 0, 2) # '^* = ^y' # FtoA2(param1, 0, 2))
+						)
+					);
+				"
+			/>
+
+			<panel width="-2.0h" height="0.0h"
+				onframe="If(IsVisible(), Call('mana_tooltip_info', 'SetHeight(' # GetY() # ' + GetYFromString(\'0.55h\'));'));"
+				sticky="true"
+				stickytoinvis="false"
+			/>
+		</frame>
+	</template>
+</package>

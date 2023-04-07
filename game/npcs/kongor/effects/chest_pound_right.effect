@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_02">
+
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+		
+		<simpleemitter
+			spawnrate="200"
+			count="1"
+			bone="_bone_righthand"
+			particlelife="4000"
+			position="0 0 13"
+		>		
+			<particle>
+				
+				<simpleemitter
+					delay="0"
+					offsetsphere="0 0 0"
+					spawnrate="222"			
+					count="3"
+					gravity="4"
+					particlelife="1000"			
+									
+					acceleration="0"
+					speed="20"
+					position="0 0 0-10"
+					material="/shared/effects/materials/pyroclast_01.material"	
+				>
+					<particle
+							minangle="-360"
+							maxangle="360"
+							color=".3 .3 .3"
+							startsize="10"
+							endsize="50"
+							minanglespeed="-30"
+							maxanglespeed="33"
+							
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+				
+							frame="1"
+							framespeed="1"
+
+						
+							anchor="1"
+			
+							lockup="0"
+							lockright="false"
+
+							
+							turn="false"
+					/>
+
+				</simpleemitter>					
+				
+				</particle>
+
+		</simpleemitter>
+
+
+
+	
+			
+			
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	 <camerashake2 scale="11.0" radius="1200" duration="400" frequency="22" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

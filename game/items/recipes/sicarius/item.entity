@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Sicarius"
+
+	icon="icon.tga"
+	
+	cost="750"
+	components="Item_Fleetfeet Item_Quickblade"
+	
+	actiontype="passive"
+	
+	agility="16"
+	attackspeed="0.15"
+>
+	<modifier key="speed_multiplier" modpriority="10" exclusive="true"
+		movespeedmultiplier="0.10"
+	/>
+</item>

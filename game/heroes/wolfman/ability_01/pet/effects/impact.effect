@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectsscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="0.8">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1"
+				sample="/shared/sounds/impacts/impact_flesh_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".65"
+				sample="/shared/sounds/impacts/impact_body_%.wav"
+			/>
+		
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="1000"
+				count="10"
+				particlelife="300"
+				depthbias="-50"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				life="200"
+				offsetsphere="5"
+			>
+				<particle
+					startcolor="1 0 1"
+					midcolor=".7 .1 0"
+					midcolorpos="0.3"
+					endcolor="0"
+					minangle="-360"
+					maxangle="360"
+					flare="true"
+					endsize="250"
+					height="35"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_back"
+				spawnrate="1000"
+				count="12"
+				minparticlelife="0"
+				maxparticlelife="1000"
+				offsetsphere="30 50 30"
+				gravity="-1"
+				minspeed="75"
+				maxspeed="150"							
+				direction="0 0 1"
+				material="/shared/effects/materials/spark_10.material"
+			>			
+				<particle
+					startcolor="1 .2 0"
+					endcolor="0 0 0"
+					minsize="6"
+					maxsize="18"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+				/>
+			</simpleemitter>
+
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/splatter_add.material"
+				startcolor=".8 .1 0"
+				endcolor="0"	
+				startsize="10"	
+				endsize="120"			
+				maxangle="360"
+				life="400"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+     	 	<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vanya_Ability3_Attackspeed"
+
+	
+	passiveeffect="effects/state.effect"
+	icon="icon.tga"
+	attackspeed="0.3,0.45,0.60,0.75"
+	effecttype="StatusBuff"
+>
+</state>

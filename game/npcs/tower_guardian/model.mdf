@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" >
+	
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="22" loop="false">
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="25" loop="false">
+	</anim>
+	
+	<anim name="attack_3" clip="clips/attack_3.clip" fps="25" loop="false">
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="32" loop="true">
+	</anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+	</anim>
+	
+	<anim name="portrait" clip="clips/portrait.clip" fps="30" loop="true"/>
+	
+	
+</model>

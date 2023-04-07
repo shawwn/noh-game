@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Item5B"
+
+	radius="400"
+	
+	targetselection="all"
+	targetscheme="ally_units"
+	effecttype=""
+	persist="false"
+	effect="cast.effect"
+	impacteffect="impact.effect"
+>
+	<onimpact>
+		<givemana amount="135"/>
+	</onimpact>
+</affector>

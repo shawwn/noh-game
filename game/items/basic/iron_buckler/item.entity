@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_IronBuckler"
+
+	icon="icon.tga"
+	
+	cost="250"
+	
+	actiontype="passive"
+	
+	deflectionchance="0.6"
+	deflection="20"
+>
+	<onframe />
+	<modifier key="buckler_melee" condition="melee" modpriority="100"
+	deflection="20"
+	>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="100"
+	deflection="10"
+	>
+	</modifier>
+</item>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="attack_impact">
+	<definitions>
+		<particlesystem name="system0" space="entity">
+
+
+		<simpleemitter
+		
+			spawnrate="500"
+			bone="_bone_centerofchest"
+			timenudge="300"
+			count="12"
+			particlelife="450"			
+			gravity="0"
+			speed="60"
+			drag="0"
+			acceleration="0"
+			position="0 0 0"
+
+
+			material="/shared/effects/materials/bad_healing_smoke_07.material"
+			offsetsphere="6 6 6"
+			minangle="0"
+			maxangle="360"
+			direction="1 0 0"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="-50"
+				maxanglespeed="-150"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".2"
+
+				startframe="0"
+				endframe="1"
+				startsize="5"
+				midsize="30"
+				endsize="60"
+				startalpha="0"
+				midalpha=".6"
+				endalpha="0"
+				midalphapos=".5"
+				startstickiness="0"
+				endstickiness="0"
+			/>
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="50"
+				maxanglespeed="150"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".2"
+
+				startframe="0"
+				endframe="1"
+				startsize="5"
+				midsize="17.5"
+				endsize="35"
+				startalpha="0"
+				midalpha=".6"
+				endalpha="0"
+				midalphapos=".5"
+				startstickiness="0"
+				endstickiness="0"
+			/>
+		</simpleemitter>
+
+<!--	<simpleemitter
+		
+			spawnrate="500"
+			bone="_bone_centerofchest"
+			count="6"
+			particlelife="450"			
+			gravity="2"
+			speed="155"
+			drag=".01"
+			acceleration="0"
+			position="0 0 0"
+
+
+			material="/shared/effects/materials/starbolt_01.material"
+			offsetsphere="15 15 15"
+			minangle="0"
+			maxangle="360"
+			direction="0 0 1"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="-50"
+				maxanglespeed="-150"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".2"
+
+				startframe="0"
+				endframe="1"
+				startsize="18"
+				midsize="18"
+				endsize=".1"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".3"
+				startstickiness=".4"
+				endstickiness="0"
+
+				weight=".10"
+
+			/>
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="50"
+				maxanglespeed="150"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".2"
+
+				startframe="0"
+				endframe="1"
+				startsize="20"
+				midsize="30"
+				endsize=".1"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".3"
+				startstickiness=".4"
+				endstickiness="0"
+
+				weight=".30"
+			/>
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="50"
+				maxanglespeed="150"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".2"
+
+				startframe="0"
+				endframe="1"
+				startsize="10"
+				midsize="20"
+				endsize=".1"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".3"
+				startstickiness=".4"
+				endstickiness="0"
+
+				weight=".4"
+			/>
+
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="50"
+				maxanglespeed="150"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".2"
+
+				startframe="0"
+				endframe="1"
+				startsize="17.5"
+				midsize="35"
+				endsize=".1"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".3"
+				startstickiness=".4"
+				endstickiness="0"
+
+				weight=".2"
+			/>
+
+		</simpleemitter>
+
+-->
+
+		
+
+        
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

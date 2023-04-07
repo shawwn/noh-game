@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="arrow.max" file="arrow.model" type="K2">
+	<anim name="idle" startframe="4" numframes="15" clip="arrow.clip" loopbackframe="-1" loop="1" fps="40" blendtime="0"/>
+</model>

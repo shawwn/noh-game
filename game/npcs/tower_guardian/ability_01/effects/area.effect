@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2000" 
+				volume="0.7" 
+				sample="../sounds/cast.wav"
+			/>
+		
+			<simpleemitter
+				count="1"
+				spawnrate="1111"
+				life="3000"
+				particlelife="4000"
+			>
+				<particle>
+			
+
+					
+					<simpleemitter
+						spawnrate="30"
+						
+						count="4"
+						startparticlecolor="1 1 1"
+						endparticlecolor="1 1 1"
+						
+						particlelife="300"
+					
+									
+						minspeed="-50"
+						maxspeed="51"
+						
+						acceleration="1"
+						position="0 0 0"
+						minangle="0"
+						maxangle="0"
+						material="/shared/effects/materials/electric_impact_add.material"
+						offsetsphere=" 0 0 50"
+						direction="0 0 1"
+					>
+					
+					
+						<particle
+							endsize="400"
+							startsize="0"
+							
+							position="0 0 50"
+							startcolor=".3 .9 .8"
+							endcolor="00 0 0"
+							lockup="1"
+							pitch="90"
+							depthbias="-100"						
+						>
+							
+						</particle>
+					</simpleemitter>
+					
+					<groundsprite	
+						life="1000"
+						loop="false"			
+						material="/shared/effects/materials/starlight.material"
+						
+						size="210"
+						
+						midsizepos=".5"
+						startcolor=".2 .5 .5"
+						endcolor="0 0 0"				
+						
+						minangle="55"
+						maxangle="55"			
+						angles="0 0 0"
+					/>		
+					
+					<billboard
+						name="refract"
+						life="200"
+						color="1.0 1.0 1.0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="205"
+						endparam="0.0"
+						startsize="88"
+						endsize="568"
+						depthbias="-100"
+						position="0 0 0"
+						material="/shared/effects/materials/refract_ring.material"
+						lockup="true"
+						pitch="90"				
+					/>		
+				
+				
+					<billboard
+						material="/shared/effects/materials/fresnel_blend.material"
+						bone="_bone_centerofchest"
+						color=".2 1 1"
+						
+						life="322"
+						startalpha="1"
+						midalpha=".7"
+						endalpha="0"
+						position="0 0 10"
+						startsize="40"
+						endsize="350"
+						depthbias="-150"			
+					/>
+					<billboard
+						material="/shared/effects/materials/corona_07.material"
+						bone="_bone_centerofchest"
+						startcolor="1 .2 .0"
+						endcolor="0 0 0"
+					
+						life="322"
+						startalpha="1"
+						midalpha=".7"
+						endalpha=".2"
+						position="0 0 10"
+						startsize="40"
+						endsize="350"
+						depthbias="-150"			
+					/>			
+
+						
+				
+				</particle>
+				
+				
+			</simpleemitter>
+			
+			<model
+						life="200"
+						model="/heroes/zephyr/ability_03/effects/orb2.mdf"
+						startscale=".2"
+						
+						endscale="3"
+						position="0.0 0.0 30.0"
+						directionalspace="local"
+						startalpha="1.0"
+						endalpha="0.0"
+						
+						yawspeed="180"
+						startcolor="1.0 1.5 3"
+						endcolor="0 0 0"
+				/>
+				<model
+						delay="100"
+						life="200"
+						model="/heroes/zephyr/ability_03/effects/orb2.mdf"
+						startscale=".2"
+						
+						endscale="3"
+						position="0.0 0.0 30.0"
+						directionalspace="local"
+						startalpha="1.0"
+						endalpha="0.0"
+						
+						yawspeed="180"
+						startcolor="2.0 2.5 3"
+						endcolor="0 0 0"
+				/>
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+

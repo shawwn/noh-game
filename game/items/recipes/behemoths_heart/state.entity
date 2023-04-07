@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_BehemothsHeartAgility"
+
+	icon="icon.tga"
+	ishidden="true"
+	
+	effecttype=""
+>
+	<onattackingdamageevent>
+		<setvalue name="damage_attempted" a="damage_attempted" b="1.10" op="mult" />
+	</onattackingdamageevent>
+</state>

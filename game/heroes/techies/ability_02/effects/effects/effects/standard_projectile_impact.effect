@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="standard_projectile_impact">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+
+		<sound
+			linearfalloff="true" 
+			falloffstart="0"
+			falloffend="1500"
+			volume=".4" 
+			sample="/heroes/pollywogpriest/ability_04/sounds/ability_04_impact_%.wav"
+		/>
+
+		<simpleemitter
+		
+			spawnrate="500"
+			bone="_bone_centerofchest"
+			timenudge="300"
+			count="25"
+			minparticlelife="300"
+			maxparticlelife="400"			
+			gravity="0"
+			speed="100"
+			drag="0"
+			acceleration="0"
+			position="0 0 0"
+
+
+			material="/shared/effects/materials/smoke_30.material"
+			offsetsphere="1 1 1"
+			minangle="360"
+			maxangle="180"
+			direction="1 0 0"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="-50"
+				maxanglespeed="-150"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".2"
+
+				startframe="0"
+				endframe="1"
+				startsize="5"
+				midsize="20"
+				endsize="40"
+				startalpha="0"
+				midalpha=".8"
+				endalpha="0"
+				midalphapos=".5"
+				startstickiness="0"
+				endstickiness="0"
+			/>
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="50"
+				maxanglespeed="150"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".2"
+
+				startframe="0"
+				endframe="1"
+				startsize="5"
+				midsize="10"
+				endsize="25"
+				startalpha="0"
+				midalpha=".8"
+				endalpha="0"
+				midalphapos=".5"
+				startstickiness="0"
+				endstickiness="0"
+			/>
+		</simpleemitter>
+
+
+		<simpleemitter
+		
+			spawnrate="950"
+			count="30"
+			bone="_bone_centerofchest"
+			minparticlelife="150"	
+			maxparticlelife="400"			
+			gravity="2"
+			minspeed="15"
+			maxspeed="35"
+			drag=".005"
+			acceleration="0"
+			position="0 0 0"
+			
+			material="/shared/effects/materials/voodoo_02.material"
+			offsetsphere="0 0 0"
+			minangle="0"
+			maxangle="360"
+			directionalspace="global"
+			direction="0 0 1"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+
+			<particle 
+				minangle="0"
+				maxangle="0"
+				minanglespeed="0"
+				maxanglespeed="0"
+				startcolor="1 1 1"
+				midcolor="1 1 1"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+
+				startframe="0"
+				endframe="1"
+				startsize="1"
+				midsize="20"
+				endsize="40"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+
+				startstickiness=".1"
+				endstickiness="0"
+
+				flare="true"
+				turn="true"
+
+			/>
+
+		</simpleemitter>
+
+
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

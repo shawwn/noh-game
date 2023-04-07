@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_NecroMelee_1"	
+	
+	
+	icon="icon.tga"	
+	anim="ability_1"
+
+	actiontype="passive"	
+>
+	<onattackimpact effectdescription="true" propagatetoillusions="true">
+		<cantarget targetscheme="enemy_units" effecttype="Magic">
+			<takemana amount="25,50,75" />
+			<condition test="result gt 0">
+				<playeffect effect="effects/mana_drain.effect" source="source_entity" target="target_entity"/>			
+				<popup name="manaburn" source="target_entity" target="source_entity" a="result"/>
+				<damage effecttype="Physical" amount="0.8" b="result" op="mult" />
+			</condition>
+		</cantarget>
+	</onattackimpact>
+</ability>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityscale="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1">
+			<model
+				name="shakingBones"
+				position="0 0 50"
+				life="2000"
+				model="model.mdf"
+				anim="idle"
+				yaw="0"
+				pitch="0"
+				scale=".5"
+			>
+			
+				<!--purpleSmoke-->
+				<simpleemitter
+					timenudge="500"
+					life="500"
+					bone="_bone_fx_01"
+					spawnrate="15"
+					minparticlelife="750"
+					maxparticlelife="1250"
+					gravity="0"
+					position="0 0 0"
+					offsetsphere="35 35 0"
+					material="/shared/effects/materials/phantom_smoke_16.material"
+				>
+					<particle 
+						maxangle="360"
+						minanglespeed="-6"
+						maxanglespeed="6"
+						startcolor="0 0 0"
+						midcolor=".25 1 .25"
+						endcolor="0 0 0"
+						startalpha="1 1 1"
+						endalpha="0 0 0"
+						startsize="0"
+						endsize="250"
+						endanchor="0"
+					/>
+				</simpleemitter>
+				
+				<!--purpleSmoke-->
+				<simpleemitter
+					timenudge="500"
+					life="500"
+					bone="_bone_fx_01"
+					spawnrate="50"
+					minparticlelife="750"
+					maxparticlelife="1250"
+					gravity="0"
+					position="0 0 0"
+					offsetsphere="50 50 0"
+					material="/shared/effects/materials/femme_lightning_01.material"
+				>
+					<particle 
+						maxangle="360"
+						minanglespeed="-6"
+						maxanglespeed="6"
+						startcolor="0 0 0"
+						midcolor=".5 .4 1"
+						endcolor="0 0 0"
+						startalpha="1 1 1"
+						endalpha="0 0 0"
+						startsize="0"
+						endsize="50"
+						endanchor="0"
+					/>
+				</simpleemitter>
+				
+				
+				
+				<!--blowOut-->
+				<simpleemitter
+					timenudge="500"
+					life="250"
+					bone="_bone_fx_01"
+					spawnrate="15"
+					minparticlelife="750"
+					maxparticlelife="1250"
+					gravity="0"
+					position="0 0 0"
+					offsetsphere="25 25 0"
+					material="/shared/effects/materials/stomp_02.material"
+				>
+					<particle 
+						maxangle="360"
+						minanglespeed="-6"
+						maxanglespeed="6"
+						startcolor="0 0 0"
+						midcolor=".5 0 .75"
+						endcolor="0 0 0"
+						startalpha="1 1 1"
+						endalpha="0 0 0"
+						startsize="0"
+						endsize="125"
+						endanchor="0"
+					/>
+				</simpleemitter>
+			
+				<template name="ripples">
+					<billboard
+						bone="{bone}"
+						life="1750"
+						startcolor=".5 0 2"
+						endcolor=".5 0 2"
+						startalpha=".6"
+						midalpha="0"
+						endalpha="0"
+						midalphapos=".85"
+						startsize="75"
+						midsize="75"
+						endsize="75"
+						depthbias="0"
+						position="0 0 0"
+						material="/shared/effects/materials/ripple_01.material"
+						lockup="true"
+						pitch="90"
+					/>
+				</template>
+				<instance name="ripples" bone="_bone_fx_01"/>
+				<instance name="ripples" bone="_bone_fx_02"/>
+				<instance name="ripples" bone="_bone_fx_03"/>
+				<template name="refraction">
+					<billboard
+						bone="{bone01}"
+						life="1500"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.75"
+						startparam=".01"
+						endparam="0"
+						startsize="80"
+						endsize="100"
+						depthbias="0"
+						position="0 0 0"
+						material="/shared/effects/materials/refract_swirl.material"
+						lockup="true"
+						pitch="90"
+					/>
+				</template>
+				<instance name="refraction" bone01="_bone_fx_01"/>
+				<instance name="refraction" bone01="_bone_fx_02"/>
+				<instance name="refraction" bone01="_bone_fx_03"/>
+				
+			</model>
+
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

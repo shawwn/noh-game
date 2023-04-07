@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_HomecomingStone_Source"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/source.effect"
+	
+	effecttype=""
+>
+</state>

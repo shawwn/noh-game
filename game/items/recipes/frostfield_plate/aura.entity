@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_FrostfieldPlate_Aura"
+
+	
+	
+	icon="icon.tga"
+	
+	attackspeed="-0.25"
+	
+	effecttype="StatusDebuff"
+>
+</state>

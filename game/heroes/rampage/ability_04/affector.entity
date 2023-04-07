@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Rampage_Ability4"
+
+	impactdelay="900"
+	persist="true"
+>
+	<onimpact>
+		<playeffect effect="effects/impact.effect" source="target_entity"/>
+		<playeffect effect="effects/impact_self.effect" target="source_entity"/>
+		<teleport interpolate="false" facetarget="true" specifyangle="true" angle="180"/>
+		<spawnaffector name="Affector_Rampage_Ability4_damage" target="target_entity" />
+		<playanim name="ability_3" speed="source_attackspeed" target="source_entity" />
+	</onimpact>
+</affector>

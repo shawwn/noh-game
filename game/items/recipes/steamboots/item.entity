@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Steamboots"
+	
+	icon="icon_int.tga"
+	
+	cost="0"
+	components="Item_Marchers Item_BlessedArmband Item_GlovesOfHaste,Item_Marchers Item_Fleetfeet Item_GlovesOfHaste,Item_Marchers Item_ApprenticesRobe Item_GlovesOfHaste"
+	
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	
+	attackspeed="0.3"
+	
+	defaultactivemodifierkey="str"
+>
+	<onframe/>
+	<onimpact/>
+
+
+	<modifier key="movespeed" modpriority="65" exclusive="true"
+		movespeed="65"
+	/>
+	
+	<modifier key="str" modpriority="100"
+		strength="10"
+		icon="icon_str.tga"
+	>
+		<onframe/>
+		<onimpact>
+			<playeffect effect="cast.effect"/>
+			<setactivemodifierkey name="agi" />
+		</onimpact>
+	</modifier>
+
+	<modifier key="agi" modpriority="100"
+		agility="10"
+		icon="icon_agi.tga"
+	>
+		<onframe/>
+		<onimpact>
+			<playeffect effect="cast.effect"/>
+			<setactivemodifierkey name="int" />
+		</onimpact>
+	</modifier>
+
+	<modifier key="int" modpriority="100"
+		intelligence="10"
+		icon="icon_int.tga"
+	>
+		<onframe/>
+		<onimpact>
+			<playeffect effect="cast.effect"/>
+			<setactivemodifierkey name="str" />
+		</onimpact>
+	</modifier>
+</item>

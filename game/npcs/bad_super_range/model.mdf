@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" >
+
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" minstartframe="0" maxstartframe="-1"/>
+
+	<anim name="portrait" clip="clips/portrait.clip" fps="30" loop="true" minstartframe="0" maxstartframe="-1"/>
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="100" loop="false">
+		<frameevent frame="50" fps="40" cmd="PlaySoundLinear /npcs/bad_range/sounds/attack_1.wav 0 1200 .2"/>
+		<frameevent frame="47" cmd="StartEffect effects/attack_swoosh.effect" />
+	</anim>
+
+	<anim name="attack_2"  clip="clips/attack_2.clip" fps="100" loop="false">
+		<frameevent frame="55" cmd="PlaySoundLinear /npcs/bad_range/sounds/attack_2.wav 0 1200 .2"/>
+		<frameevent frame="45" cmd="StartEffect effects/attack_swoosh.effect" />
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true" minstartframe="0" maxstartframe="-1">
+		<frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="3" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+		<frameevent frame="8" cmd="PlaySound /npcs/bad_range/sounds/death.wav 0 1800 .45"/>
+		<frameevent frame="3" cmd="StartEffect effects/death.effect" />
+	</anim>
+
+	
+	<anim name="death_gib_1" clip="clips/death_d.clip" fps="50" loop="true" blendtime="100" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear /shared/sounds/effects/gib_explode.wav 0 1800 1"/>
+		<frameevent frame="1" cmd="StartEffect effects/lasthit.effect"/>
+	</anim>		
+	
+	<anim name="death_deny_1" clip="clips/death_d.clip" fps="50" loop="true" blendtime="100" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear /npcs/bad_melee/sounds/death.wav 0 1800 .35"/>
+		<frameevent frame="10" cmd="StartEffect effects/deny.effect"/>
+	</anim>		
+	
+	<anim name="defeat_1" clip="clips/defeat_1.clip" loop="true" loopbackframe="18"/>
+	
+	<anim name="victory_1" clip="clips/victory_1.clip" loop="true"/>
+	
+	<anim name="fly_1" clip="clips/fly_1.clip" loop="true"/>
+	
+</model>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vindicator_Ability1"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	deniable="true"
+	
+	effecttype="StatusDebuff"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" amount="20,30,40,50" b="frametime" op="mult" />
+		<takemana amount="10,15,20,25" b="frametime" op="mult" />
+	</onframe>
+	
+	<onabilityimpact>
+		<casteffecttype entity="inflictor_entity" effecttype="Attack" />
+		<else>
+			<expire />
+		</else>
+	</onabilityimpact>
+</state>

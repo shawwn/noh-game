@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_horns"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="blade.effect"
+	
+	effecttype="StatusBuff"
+	movespeedmultiplier="0.02,0.03,0.04,0,05"
+
+>
+
+	<ondamaged>
+		<condition test="enemy" source="source_entity" target="target_entity">
+			<playeffect effect="impact_self.effect" source="source_entity" />
+			<playeffect effect="impact_enemy.effect" source="target_entity" target="" />
+			<condition test="source_damage gt 0.1" >
+				<damage target="target_entity" effecttype="Magic" amount="0.20,0.24,0.28,0.32" b="source_damage" op="mult" />
+			</condition>
+		</condition>
+	</ondamaged>
+	
+	<onframe />
+</state>

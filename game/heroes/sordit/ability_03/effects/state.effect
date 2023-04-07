@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" useentityeffectscale="1" deferred="true">
+
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+			<billboard
+				bone="_bone_overhead"
+				loop="true"
+				life="2500"
+				startcolor=".5 0 1"
+				midcolor="1 0 2"
+				endcolor=".5 0 1"
+				material="/shared/effects/materials/twirl_02.material"
+				startsize="30"
+				midsize="104"
+				endsize="30"
+				depthbias="-30"
+				startframe="0.0"
+				endframe="1.0"
+				rollspeed="360"
+			/>
+
+			<billboard
+				bone="_bone_overhead"
+				loop="true"
+				life="2500"
+				startcolor=".5 0 0"
+				midcolor="1 0 0"
+				endcolor=".5 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				startsize="62"
+				midsize="62"
+				endsize="62"
+				depthbias="-30"
+				startframe="0.0"
+				endframe="1.0"
+				rollspeed="360"
+			/>
+
+			<billboard
+				bone="_bone_overhead"
+				loop="true"
+				life="2500"
+				color="0 0 0"
+				material="/shared/effects/materials/twirl_blend.material"
+				startalpha=".15"
+				midalpha=".5"
+				endalpha=".15"
+				startsize="30"
+				midsize="104"
+				endsize="30"
+				depthbias="-30"
+				startframe="0.0"
+				endframe="1.0"
+				rollspeed="360"
+			/>
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnparticlesystem instance="instance1" particlesystem="system1" />
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+
+</effect>

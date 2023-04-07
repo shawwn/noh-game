@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_LifeSteal4"
+	
+	
+	statuseffecttooltip="State_Item4F"
+	icon="icon.tga"
+	
+	cost="1100"
+	components="Item_AxeOfTheMalphai Item_WhisperingHelm"
+	
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="35000"
+	cooldowntype="lifesteal4"
+	manacost="0"
+	noninterrupting="true"
+	
+	damage="20"
+	strength="25"
+	armor="5"
+>
+	<onimpact effectdescription="true">
+		<applystate name="State_Item4F" duration="3500"/>
+		<playeffect effect="cast.effect"/>
+	</onimpact>
+
+	<onattackimpact>
+		<playeffect effect="lifesteal.effect" source="source_entity" target="target_entity"/>
+	</onattackimpact>
+	
+	<modifier key="attack" modpriority="125" exclusive="true"
+		lifesteal="0.25"
+	/>
+</item>

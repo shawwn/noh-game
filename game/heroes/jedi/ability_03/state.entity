@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Jedi_Ability3"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	magicarmor="1,2,3,4"
+>
+	<onframe />
+	<onattackedpostimpact>
+		<playeffect effect="effects/impact.effect" source="source_entity"/>
+	</onattackedpostimpact>
+	<ondamaged>
+		<accumulatedamage scale="0.3" />
+		<pushstack a="source_damage" b="0.3" op="mult" />
+		<evaluate a="0.5,0.60,0.8,1.33" b="source_mana" op="mult" />
+		<evaluate a="accumulator" b="result" op="sub" />
+		<evaluate a="result" b="0" op="max" />
+		<changedamage b="result" op="min" />
+		<peekstack />
+		<changedamage b="result" op="add" />
+		<evaluate a="1.5,1.30,1.10,0.75" b="accumulator" op="mult" />
+		<takemana target="this_owner_entity" amount="result" />
+		<setaccumulator value="0" />		
+	</ondamaged>
+	<onexpired>
+		<playeffect effect="effects/state_expire.effect" source="source_entity"/>
+	</onexpired>
+	
+</state>

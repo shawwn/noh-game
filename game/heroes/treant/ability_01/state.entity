@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Treant_Ability1"
+
+	
+	
+	icon="icon.tga"
+	
+	passiveeffect=""
+	
+	stealthtype="hero"
+	fadetime="0"
+	
+	effecttype="StatusBuff"
+>
+	<onframe />
+	<oninflict>
+		<forgetattacks />
+		<playeffect effect="effects/state.effect"  source="target_position" target="target_position" />
+		<startfade />
+	</oninflict>
+	
+	<onattackstart>
+		<expire />
+	</onattackstart>
+	
+	<onabilitystart>
+		<expire />
+	</onabilitystart>
+
+	<onframe>
+		<condition test="no_proximity trees 375">
+			<expire />
+		</condition>
+	</onframe>
+</state>

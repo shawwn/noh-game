@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Xalynx_Ability2"
+
+	radius="500"
+	
+	lifetime="8000"
+	impactinterval="250"
+	maximpactsperinterval="1"
+	targetselection="random"
+	targetscheme="enemy_units_and_structures"
+	effecttype="Physical Splash"
+
+	effect="effects/area.effect"
+	canturn="false"
+	persist="true"
+	
+>
+	<onimpact>
+		<damage effecttype="Physical Splash" amount="9.375,18.75,28.125,37.5" />
+		<playeffect effect="effects/impact.effect" source="target_position" target="target_entity" />
+		<playeffect effect="effects/impact_character.effect" source="target_entity" target="target_entity" />
+	</onimpact>
+</affector>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_TowerGuardian1"
+
+	
+	
+	icon="icon.tga"
+	actiontype="passive"
+
+	
+>
+	<aura state="State_TowerGuardian_Ability1_Logic" radius="0" targetscheme="self" />
+
+</ability>

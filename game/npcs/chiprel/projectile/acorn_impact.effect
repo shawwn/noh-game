@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="acorn_impact" deferred="true">
+
+<definitions>
+
+	<particlesystem name="system0" space="entity">
+	
+	<simpleemitter
+			
+				spawnrate="270"
+				
+				particlelife="500"	
+				count="32"			
+				gravity="0.0"
+				speed="0"
+				acceleration="0.0"				
+				position="0 0 0"
+				offsetsphere="0 0 0"			
+				material="/shared/effects/materials/dust.material"
+			>
+				<particle
+					startcolor="1 1.0 0.0"
+					endcolor="0.0 0.0 0.0"
+					midcolor="1 .6 .2"
+					midcolorpos="0.5"
+					startalpha="0.8"
+					endalpha="0.0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					anchor="1"
+				
+					startwidth="20.0"
+					endwidth="0"
+					startheight="0.0"
+					endheight="60.0"
+					flare="true"
+					turn="true"
+				/>
+			</simpleemitter>
+			
+			
+
+
+		
+
+		
+
+
+
+	</particlesystem>
+</definitions>
+<thread>
+
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+

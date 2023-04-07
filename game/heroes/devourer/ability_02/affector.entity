@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Devourer_Ability2"
+
+	radius="250"
+	lifetime="-1"
+	
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	persist="false"
+	
+	effect="effects/decay.effect"
+>
+	<onframe>
+		<applystate name="State_Devourer_Ability2_Other" duration="100"/>
+	</onframe>
+</affector>

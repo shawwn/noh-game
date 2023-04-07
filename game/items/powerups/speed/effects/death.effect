@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<modifier 
+			life="300"
+			name="modifier0"
+			startalpha="1"
+			endalpha="0"
+		/>
+
+		<particlesystem name="system0" space="world" scale=".8">
+
+			<model
+				life="500"
+				expirelife="300"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="1 0 0"
+				endcolor="0"
+				startalpha="10"
+				endalpha="0"
+				material="/shared/effects/materials/shell2.material"
+			/>
+
+			<simpleemitter
+				life="200"
+				bone="_bone_root"
+				spawnrate="45"
+				speed="50"
+				offsetsphere="15"
+				particlelife="500"
+				depthbias="-20"
+				material="/shared/effects/materials/whitewater_01.material"
+			>
+				<particle
+					maxangle="360"
+					startcolor=".5 0 0"
+					endcolor="0"	
+					startsize="10"
+					endsize="120"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="200"
+				bone="_bone_root"
+				spawnrate="45"
+				speed="120"
+				offsetsphere="30"
+				particlelife="700"
+				depthbias="-20"
+				material="/shared/effects/materials/star_03.material"
+			>
+				<particle 
+					maxangle="360"
+					startcolor=".5 .1 .1"
+					endcolor="0"	
+					startsize="20"
+					endsize="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<billboard 
+				bone="_bone_root"
+				depthbias="-20"
+				life="500"
+				startcolor=".5 .1 .1"
+				endcolor="0"	
+				startsize="20"
+				endsize="120"
+				material="/shared/effects/materials/corona_07.material"
+			/>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+      		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+
+	</thread>
+
+</effect>

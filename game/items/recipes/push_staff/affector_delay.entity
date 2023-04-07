@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_PushStaff_Delay"
+
+	radius=""
+	lifetime=""
+
+	impactdelay="100"
+>
+	<onimpact>
+		<spawnaffector name="Affector_PushStaff" target="target_entity" />
+		
+		<spawnunit name="Gadget_PushStaff" target="target_entity" offset="0 500" pushentity="true" />
+		<spawnprojectile name="Projectile_PushStaff" source="target_entity" target="stack_position" bind="target_entity" bindturn="true" bindstate="State_PushStaff" />
+		
+	</onimpact>	
+</affector>

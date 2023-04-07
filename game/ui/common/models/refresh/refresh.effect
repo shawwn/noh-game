@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world">
+			
+			
+			<simpleemitter				
+				bone="_invis"
+				spawnrate="100"
+				count="1"
+				particlelife="1000"			
+				gravity="0"
+				offsetsphere="0"				
+				material="/shared/effects/materials/blink.material"
+				angle="0"				
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolor="0 1 .2"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+					startsize="275"
+					endsize="2"
+				/>
+			</simpleemitter>
+
+			
+			<twopointemitter
+				life="333"
+				bone_a="_bone_1"
+				bone_b="_bone_2"
+				spawnrate="1000"
+				particlelife="300"
+				
+				gravity="0"
+				offsetsphere="0"
+				drag="0.02"
+				material="/shared/effects/materials/blink.material"
+				angle="0"
+				
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolor=".5 1 0"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+					startsize="21"
+					endsize="1"
+				/>				
+			</twopointemitter>
+			
+			<simpleemitter				
+				bone="_bone_2"				
+				spawnrate="100"
+				particlelife="500"				
+				life="333"
+				gravity="0"
+				offsetsphere="0"
+				drag="0.02"
+				material="/shared/effects/materials/whitedot.material"
+				angle="0"
+				
+			>
+				<particle
+					startcolor=".5 1 0"
+					
+					endcolor="0 0 0"
+					midcolorpos=".1"
+					startsize="42"
+					endsize="7"
+				/>	
+				
+			</simpleemitter>	
+
+		
+
+
+	
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

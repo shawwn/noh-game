@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chronos_Ability3_Self"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	effecttype="StatusBuff"
+	
+	agilitypercharge="1,1,2,3"
+>
+	<oninflict>
+		<addcharges count="1" timed="true" />
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" timed="true" />
+	</onrefresh>
+</state>

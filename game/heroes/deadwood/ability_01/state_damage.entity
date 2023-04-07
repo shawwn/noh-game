@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Damage_Deadwood_Ability1"
+
+	icon="icon.tga"
+	passiveeffect="effects/impact.effect"
+	effecttype="StatusDebuff"
+>
+	
+	<onframe>
+		<damage effecttype="Magic DOT" amount="100" b="frametime" op="mult"/>
+	</onframe>
+</state>

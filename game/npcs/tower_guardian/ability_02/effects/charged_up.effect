@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="chain_lightning" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<sound
+				sample="/heroes/kunas/sounds/ability_1.wav"
+				
+				volume="1"
+				falloff="150"
+
+			/>
+
+		<template name="glow">
+			<simpleemitter
+				bone="{bone1}"
+				spawnrate="50"
+				particlelife="350"
+				gravity="0"
+				directionalspace="local"
+				drag="0.07"
+				acceleration="0.0"		
+			
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="0 0 0"
+				inheritvelocity="0"
+			
+			>
+				<particle 	
+					
+					pitch="90"
+					roll="90"
+					minyaw="-360"
+					maxyaw="360"
+					color=".0 .2 .3"
+					startsize="64"
+					endsize="128"
+					depthbias="-30"
+					startalpha=".5"
+					endalpha="0"
+					
+					lockup="1"
+					anchor="1"					
+				 />				 
+			</simpleemitter>
+			</template>
+			<instance name="glow" bone1="_bone_fx_16"/>
+			<instance name="glow" bone1="_bone_fx_25"/>
+			
+		<template name="beams">
+			<beam
+
+				owner_a="target"
+				owner_b="target"
+
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weapon1"
+				size="60"
+				color=".2 .4 .2"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_06.material"
+
+				framespeed="1.75"
+			/>
+			
+
+				
+
+
+			<beam
+
+				owner_a="{owner1}"
+				owner_b="{owner1}"
+
+				bone_a="{bone1}"
+				bone_b="{bone2}"
+				minsize="20"
+				maxsize="35"
+				color=".2 .7 1"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_06.material"
+
+				framespeed="1.75"
+			/>
+			<beam
+				life="1200"
+				loop="true"
+				owner_a="{owner1}"
+				owner_b="{owner1}"
+
+				bone_a="{bone1}"
+				bone_b="{bone2}"
+				minsize="5"
+				maxsize="20"
+				startcolor=".2 .7 1"
+				midcolor="0"
+				endcolor=".2 .7 1"
+				alpha="1.0"
+				material="/shared/effects/materials/whitedot.material"
+
+				framespeed="1.75"
+			/>
+			
+			</template>
+			<instance name="beams" bone1="_bone_fx_03" bone2="_bone_fx_06" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_04" bone2="_bone_fx_05" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_02" bone2="_bone_fx_04" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_03" bone2="_bone_fx_04" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_02" bone2="_bone_fx_03" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_01" bone2="_bone_fx_03" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_01" bone2="_bone_fx_02" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_10" bone2="_bone_fx_09" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_11" bone2="_bone_fx_09" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_01" bone2="_bone_fx_02" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_10" bone2="_bone_fx_11" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_11" bone2="_bone_fx_06" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_10" bone2="_bone_fx_13" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_14" bone2="_bone_fx_13" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_fx_14" bone2="_bone_fx_10" owner1="source" owner2="source"/>
+			<instance name="beams" bone1="_bone_weapon1" bone2="_bone_weapon3" owner1="target" owner2="target"/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

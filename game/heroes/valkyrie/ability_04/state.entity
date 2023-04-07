@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Valkyrie_Ability4"
+
+	
+	icon="icon.tga"
+	
+	passiveeffect="effects/state.effect"
+	
+	stealthtype="hero"
+	fadetime="2500,2000,1500"
+	
+	effecttype="StatusStealth"
+>
+	<onframe />
+	<oninflict>
+		<startfade />
+	</oninflict>
+
+	<onattackstart>
+		<startfade a="source_attackduration" />
+	</onattackstart>
+	
+	<onactivatestart>
+		<startfade a="castduration" />
+	</onactivatestart>
+</state>

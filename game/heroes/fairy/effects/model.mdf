@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="flowers.max" file="model.model" type="K2" >
+	<anim name="default_1" clip="default_1.clip" fps="90" loop="false"/>
+	<anim name="default_2" clip="default_2.clip" fps="75" loop="false"/>
+	
+	
+		
+</model>
