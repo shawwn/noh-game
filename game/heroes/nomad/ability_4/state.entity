@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Nomad_Ability4"
+    name="State_Nomad_Ability4"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="state.effect"
-	effecttype="StatusDebuff"
-	norefresh="true"
+    
+    
+    icon="icon.tga"
+    passiveeffect="state.effect"
+    effecttype="StatusDebuff"
+    norefresh="true"
 >
-	<onframe />
-	
-	<onattackedpostimpact>
-		<changeduration b="5000" op="max" />
-		<changetotalduration b="30000" op="min" />
-		<damage effecttype="Physical" target="source_entity" source="this_inflictor_entity" amount="0.04,0.05,0.06" b="accumulator" op="mult" />
-		<condition test="result gt 0">
-			<popup name="bonus_damage" a="result" source="source_entity" target="target_entity" />
-		</condition>
-	</onattackedpostimpact>
-	
-	<ondamaged>
-		<condition test="inflictor">
-			<accumulatedamage scale="1.0" />
-		</condition>
-	</ondamaged>
+    <onframe />
+    
+    <onattackedpostimpact>
+        <changeduration b="5000" op="max" />
+        <changetotalduration b="30000" op="min" />
+        <damage effecttype="Physical" target="source_entity" source="this_inflictor_entity" amount="0.04,0.05,0.06" b="accumulator" op="mult" />
+        <condition test="result gt 0">
+            <popup name="bonus_damage" a="result" source="source_entity" target="target_entity" />
+        </condition>
+    </onattackedpostimpact>
+    
+    <ondamaged>
+        <condition test="inflictor">
+            <accumulatedamage scale="1.0" />
+        </condition>
+    </ondamaged>
 </state>

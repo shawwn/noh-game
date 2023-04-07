@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Engineer_Ability3_Turret_damage"
-	
-	icon="icon.tga"
-	passiveeffect="effects/state_turret.effect"
-	
-	ishidden="true"
-	deathpersist="true"
-	
-	totaldamagemultiplier="-0.8"
+    name="State_Engineer_Ability3_Turret_damage"
+    
+    icon="icon.tga"
+    passiveeffect="effects/state_turret.effect"
+    
+    ishidden="true"
+    deathpersist="true"
+    
+    totaldamagemultiplier="-0.8"
 
-	effecttype=""
+    effecttype=""
 >
 </state>

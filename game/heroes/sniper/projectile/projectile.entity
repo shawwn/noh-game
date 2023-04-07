@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Sniper_Attack"
+    name="Projectile_Sniper_Attack"
 
-	speed="3000"
-	gravity="100"
+    speed="3000"
+    gravity="100"
 
-	modelscale=".25"
-	model="../../../heroes/engineer/projectile/effects/bullet.mdf"
+    modelscale=".25"
+    model="../../../heroes/engineer/projectile/effects/bullet.mdf"
 
-	traileffect="../../../heroes/engineer/projectile/effects/trail.effect"
-	impacteffect="../../../heroes/engineer/projectile/effects/impact.effect"
+    traileffect="../../../heroes/engineer/projectile/effects/trail.effect"
+    impacteffect="../../../heroes/engineer/projectile/effects/impact.effect"
 >
 </projectile>

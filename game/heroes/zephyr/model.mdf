@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model">
 
-	<anim name="idle" clip="clips/default_1.clip" loop="true"/>
-	
-	<anim name="portrait" clip="clips/portrait.clip" loop="true"/>
-	
-	<anim name="bored_1" clip="clips/bored_1.clip"/>
-	
-	<anim name="taunt_1" clip="clips/taunt_1.clip"/>
-	
-	<anim name="item_1" clip="clips/item_1.clip"/>
-	
-	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1">
-		<frameevent frame="6" cmd="StartEffect effects/feather.effect 1"/>
-		<endevent cmd="StopEffect 1" />
-	</anim>
-	
-	<anim name="attack_1" clip="clips/attack_1.clip" fps="100">
-		<frameevent frame="31" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .75"/>
-	</anim>
-	
-	<anim name="attack_2" clip="clips/attack_2.clip" fps="100">
-		<frameevent frame="31" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .75"/>
-	</anim>
-	
-	<anim name="ability_1" clip="clips/ability_1.clip" fps="40"/>
-	
-	<anim name="ability_2" clip="clips/ability_2.clip">
-		<frameevent frame="5" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .75"/>
-	</anim>
-	
-	<anim name="ability_3" clip="clips/ability_3.clip">
-		<frameevent frame="5" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .75"/>
-	</anim>
-	
-	<anim name="ability_4" clip="clips/ability_4.clip"/>      
-	
-	<anim name="walk_1" clip="clips/walk_1.clip" loop="true" loopbackframe="20" fps="22">
-		<frameevent frame="5" cmd="PlaySoundLinear sounds/move.wav 0 1800 .25"/>
-		<frameevent frame="31" cmd="PlaySoundLinear sounds/move.wav 0 1800 .25"/>
-		<frameevent frame="47" cmd="PlaySoundLinear sounds/move.wav 0 1800 .25"/>
-	</anim>
+    <anim name="idle" clip="clips/default_1.clip" loop="true"/>
+    
+    <anim name="portrait" clip="clips/portrait.clip" loop="true"/>
+    
+    <anim name="bored_1" clip="clips/bored_1.clip"/>
+    
+    <anim name="taunt_1" clip="clips/taunt_1.clip"/>
+    
+    <anim name="item_1" clip="clips/item_1.clip"/>
+    
+    <anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1">
+        <frameevent frame="6" cmd="StartEffect effects/feather.effect 1"/>
+        <endevent cmd="StopEffect 1" />
+    </anim>
+    
+    <anim name="attack_1" clip="clips/attack_1.clip" fps="100">
+        <frameevent frame="31" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .75"/>
+    </anim>
+    
+    <anim name="attack_2" clip="clips/attack_2.clip" fps="100">
+        <frameevent frame="31" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .75"/>
+    </anim>
+    
+    <anim name="ability_1" clip="clips/ability_1.clip" fps="40"/>
+    
+    <anim name="ability_2" clip="clips/ability_2.clip">
+        <frameevent frame="5" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .75"/>
+    </anim>
+    
+    <anim name="ability_3" clip="clips/ability_3.clip">
+        <frameevent frame="5" cmd="PlaySoundLinear sounds/attack_%.wav 400 1800 .75"/>
+    </anim>
+    
+    <anim name="ability_4" clip="clips/ability_4.clip"/>      
+    
+    <anim name="walk_1" clip="clips/walk_1.clip" loop="true" loopbackframe="20" fps="22">
+        <frameevent frame="5" cmd="PlaySoundLinear sounds/move.wav 0 1800 .25"/>
+        <frameevent frame="31" cmd="PlaySoundLinear sounds/move.wav 0 1800 .25"/>
+        <frameevent frame="47" cmd="PlaySoundLinear sounds/move.wav 0 1800 .25"/>
+    </anim>
 
 </model>

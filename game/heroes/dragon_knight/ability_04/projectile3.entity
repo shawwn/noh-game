@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_DragonKnight_Attack_3"
+    name="Projectile_DragonKnight_Attack_3"
 
-	speed="1200"
-	gravity="0"
-	modelscale="1.25"
-	model="../../../heroes/helldemon/ability_04/effects/spirit_rig/model.mdf"
-	
-	traileffect="../../../heroes/maliken/projectile/effects/trail.effect"
-	impacteffect="../../../heroes/maliken/projectile/effects/impact.effect"
+    speed="1200"
+    gravity="0"
+    modelscale="1.25"
+    model="../../../heroes/helldemon/ability_04/effects/spirit_rig/model.mdf"
+    
+    traileffect="../../../heroes/maliken/projectile/effects/trail.effect"
+    impacteffect="../../../heroes/maliken/projectile/effects/impact.effect"
 >
-	<onimpact>
-		<areaofeffect
-			radius="250"
-			targetselection="all"
-			targetscheme="enemy_units"
-			effecttype="Magic"
-		>
-			<applystate name="State_DragonKnight_Ability4_Frost" duration="3000" />
-		</areaofeffect>
-		<applystate name="State_DragonKnight_Ability4_Frost" duration="3000" />
-	</onimpact>
+    <onimpact>
+        <areaofeffect
+            radius="250"
+            targetselection="all"
+            targetscheme="enemy_units"
+            effecttype="Magic"
+        >
+            <applystate name="State_DragonKnight_Ability4_Frost" duration="3000" />
+        </areaofeffect>
+        <applystate name="State_DragonKnight_Ability4_Frost" duration="3000" />
+    </onimpact>
 </projectile>

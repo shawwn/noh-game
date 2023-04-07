@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Leechking_Ability4_Aura"
-	ishidden="true"
+    name="State_Leechking_Ability4_Aura"
+    ishidden="true"
 
-	displaylevel="true"
+    displaylevel="true"
 >
-	<aura
-		state="State_Leechking_Ability4"
-		radius="200"
-		targetscheme="self"
-		duration="900,1200,1500"
-	/>
+    <aura
+        state="State_Leechking_Ability4"
+        radius="200"
+        targetscheme="self"
+        duration="900,1200,1500"
+    />
 </state>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Armadon_Ability2"
+    name="State_Armadon_Ability2"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect=""
-	effecttype=""
-	maxcharges="6"
+    
+    
+    icon="icon.tga"
+    passiveeffect=""
+    effecttype=""
+    maxcharges="6"
 >
-	<onframe />
+    <onframe />
 
-	<oninflict>
-		<addcharges count="1" timed="true" />
-	</oninflict>
+    <oninflict>
+        <addcharges count="1" timed="true" />
+    </oninflict>
 
-	<onrefresh>
-		<damage effecttype="Physical" amount="30" b="charges" op="mult"/>
-		<addcharges count="1" timed="true" />
-	</onrefresh>
+    <onrefresh>
+        <damage effecttype="Physical" amount="30" b="charges" op="mult"/>
+        <addcharges count="1" timed="true" />
+    </onrefresh>
 </state>

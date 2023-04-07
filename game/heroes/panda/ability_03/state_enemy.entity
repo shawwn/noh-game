@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Panda_Ability3_Enemy"
+    name="State_Panda_Ability3_Enemy"
 >
-	
-	<onexpired>
-		
-	</onexpired>
-	<oninflict>
-		<applystate name="State_Stunned" duration="750,1250,1750,2250" />
-		<applystate name="State_Panda_Ability3_Hit" target="source_entity" duration="2000" />
-	</oninflict>
+    
+    <onexpired>
+        
+    </onexpired>
+    <oninflict>
+        <applystate name="State_Stunned" duration="750,1250,1750,2250" />
+        <applystate name="State_Panda_Ability3_Hit" target="source_entity" duration="2000" />
+    </oninflict>
 </state>

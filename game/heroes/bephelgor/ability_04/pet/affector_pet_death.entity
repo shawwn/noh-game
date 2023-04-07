@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Bephelgor_Ability4_Pet_Explode"
+    name="Affector_Bephelgor_Ability4_Pet_Explode"
 
-	radius="200"
-	targetselection="all"
-	targetscheme="enemy_units"
-	effecttype=""
-	persist="true"
->	
-	<onimpact>
-		<damage effecttype="Magic" amount="150,225,300" />
-	</onimpact>
+    radius="200"
+    targetselection="all"
+    targetscheme="enemy_units"
+    effecttype=""
+    persist="true"
+>   
+    <onimpact>
+        <damage effecttype="Magic" amount="150,225,300" />
+    </onimpact>
 </affector>

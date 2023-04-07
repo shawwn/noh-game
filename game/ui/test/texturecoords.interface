@@ -1,120 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface name="texturecoords">
-	<template name="texture_demo">
-		<panel width="{width=100}" height="{height=100}" adhere="{adhere=right}" spacing="25">
-			<panel
-				texture="testboxes.tga"
-				uscale="{uscale=1}"
-				vscale="{vscale=1}"
-				uoffset="{uoffset=0}"
-				voffset="{voffset=0}"
-				utile="{utile=false}"
-				vtile="{vtile=false}"
-				uspeed="{uspeed=0}"
-				vspeed="{vspeed=0}"
-			/>
-			<label adhere="bottom" color="white" shadow="true" wrap="true">{label}</label>
-		</panel>
-	</template>
-	
-	<panel float="bottom" padding="45" color="black">
-		<panel name="percent_bg" x="0" y="0" color=".3 .3 .3 1" texture="testboxes.tga" visible="false"/>
-		<panel name="comp_percent_bg" x="0" y="0" width="100@" color=".3 .3 .3 1" texture="testboxes.tga" visible="false"/>
-		<panel name="scale_percent_bg" x="0" y="0" color=".3 .3 .3 1" texture="testboxes.tga" visible="false" uscale=".5" vscale=".5" utile="true" vtile="true"/>
-			
-		<anchor x="10" y="20"/>
-		<instance name="texture_demo" adhere="none" label="normal"/>
-		<instance name="texture_demo" uscale="2" label="uscale = 2"/>
-		<instance name="texture_demo" uscale=".5" label="uscale = .5"/>
-		<instance name="texture_demo" uscale=".5" utile="true" label="uscale = .5 utile = true"/>
-		<instance name="texture_demo" uoffset=".25" label="uoffset = .25"/>
-		<instance name="texture_demo" uoffset=".25" utile="true" label="uoffset = .25 utile = true"/>
-		<instance name="texture_demo" uoffset=".25" uscale="2" label="uoffset = .25 uscale = 2"/>
-		<instance name="texture_demo" uspeed=".5" label="uspeed = .5"/>
-		
-		<instance name="texture_demo" adhere="none" uspeed=".5" utile="true" label="uspeed = .5 utile = true"/>
-		<instance name="texture_demo" uspeed="-.5" label="uspeed = -.5"/>
-		<instance name="texture_demo" uspeed="-.5" utile="true" label="uspeed = -.5 utile = true"/>
-		<instance name="texture_demo" uscale="50p" label="uscale = 50p"/>
-		<instance name="texture_demo" uoffset="25p" label="uoffset = 25p"/>
-		<instance name="texture_demo" uscale="64p" utile="true" label="uscale = 64p utile = true"/>
-		<instance name="texture_demo" width="220" uscale="64p" utile="true" label="uscale = 64p, utile = true"/>
-		
-		<instance name="texture_demo" adhere="none" label="normal"/>
-		<instance name="texture_demo" vscale="2" label="vscale = 2"/>
-		<instance name="texture_demo" vscale=".5" label="vscale = .5"/>
-		<instance name="texture_demo" vscale=".5" vtile="true" label="vscale = .5 vtile = true"/>
-		<instance name="texture_demo" voffset=".25" label="voffset = .25"/>
-		<instance name="texture_demo" voffset=".25" vtile="true" label="voffset = .25 vtile = true"/>
-		<instance name="texture_demo" voffset=".25" vscale="2" label="voffset = .25 vscale = 2"/>
-		<instance name="texture_demo" height="245" vscale="64p" vtile="true" label="vscale = 64p, vtile = true"/>
-		
-		<instance name="texture_demo" adhere="none" vspeed=".5" label="vspeed = .5"/>
-		<instance name="texture_demo" vspeed=".5" vtile="true" label="vspeed = .5 vtile = true"/>
-		<instance name="texture_demo" vspeed="-.5" label="vspeed = -.5"/>
-		<instance name="texture_demo" vspeed="-.5" vtile="true" label="vspeed = -.5 vtile = true"/>
-		<instance name="texture_demo" vscale="50p" label="vscale = 50p"/>
-		<instance name="texture_demo" voffset="25p" label="voffset = 25p"/>
-		<instance name="texture_demo" vscale="64p" vtile="true" label="vscale = 64p vtile = true"/>
-		
-		<panel width="100" height="100">
-			<panel
-				cangrab="true" 
-				texture="testboxes.tga"
-				utile="true"
-				vtile="true"
-				onframe="
-					SetUOffset('100%');
-					SetUScale('100%');
-					SetVOffset('100%');
-					SetVScale('100%');
-				"
-				onstartdrag="ShowWidget('percent_bg');"
-				onenddrag="HideWidget('percent_bg');"
-			>
-				<label adhere="bottom" color="white" shadow="true" textalign="center" textvalign="center" noclick="true">Grab me!</label>
-			</panel>
-			<label adhere="bottom" color="white" shadow="true" wrap="true">uoffset = 100%% uscale = 100%% voffset = 100%% vscale = 100%%</label>
-		</panel>
+    <template name="texture_demo">
+        <panel width="{width=100}" height="{height=100}" adhere="{adhere=right}" spacing="25">
+            <panel
+                texture="testboxes.tga"
+                uscale="{uscale=1}"
+                vscale="{vscale=1}"
+                uoffset="{uoffset=0}"
+                voffset="{voffset=0}"
+                utile="{utile=false}"
+                vtile="{vtile=false}"
+                uspeed="{uspeed=0}"
+                vspeed="{vspeed=0}"
+            />
+            <label adhere="bottom" color="white" shadow="true" wrap="true">{label}</label>
+        </panel>
+    </template>
+    
+    <panel float="bottom" padding="45" color="black">
+        <panel name="percent_bg" x="0" y="0" color=".3 .3 .3 1" texture="testboxes.tga" visible="false"/>
+        <panel name="comp_percent_bg" x="0" y="0" width="100@" color=".3 .3 .3 1" texture="testboxes.tga" visible="false"/>
+        <panel name="scale_percent_bg" x="0" y="0" color=".3 .3 .3 1" texture="testboxes.tga" visible="false" uscale=".5" vscale=".5" utile="true" vtile="true"/>
+            
+        <anchor x="10" y="20"/>
+        <instance name="texture_demo" adhere="none" label="normal"/>
+        <instance name="texture_demo" uscale="2" label="uscale = 2"/>
+        <instance name="texture_demo" uscale=".5" label="uscale = .5"/>
+        <instance name="texture_demo" uscale=".5" utile="true" label="uscale = .5 utile = true"/>
+        <instance name="texture_demo" uoffset=".25" label="uoffset = .25"/>
+        <instance name="texture_demo" uoffset=".25" utile="true" label="uoffset = .25 utile = true"/>
+        <instance name="texture_demo" uoffset=".25" uscale="2" label="uoffset = .25 uscale = 2"/>
+        <instance name="texture_demo" uspeed=".5" label="uspeed = .5"/>
+        
+        <instance name="texture_demo" adhere="none" uspeed=".5" utile="true" label="uspeed = .5 utile = true"/>
+        <instance name="texture_demo" uspeed="-.5" label="uspeed = -.5"/>
+        <instance name="texture_demo" uspeed="-.5" utile="true" label="uspeed = -.5 utile = true"/>
+        <instance name="texture_demo" uscale="50p" label="uscale = 50p"/>
+        <instance name="texture_demo" uoffset="25p" label="uoffset = 25p"/>
+        <instance name="texture_demo" uscale="64p" utile="true" label="uscale = 64p utile = true"/>
+        <instance name="texture_demo" width="220" uscale="64p" utile="true" label="uscale = 64p, utile = true"/>
+        
+        <instance name="texture_demo" adhere="none" label="normal"/>
+        <instance name="texture_demo" vscale="2" label="vscale = 2"/>
+        <instance name="texture_demo" vscale=".5" label="vscale = .5"/>
+        <instance name="texture_demo" vscale=".5" vtile="true" label="vscale = .5 vtile = true"/>
+        <instance name="texture_demo" voffset=".25" label="voffset = .25"/>
+        <instance name="texture_demo" voffset=".25" vtile="true" label="voffset = .25 vtile = true"/>
+        <instance name="texture_demo" voffset=".25" vscale="2" label="voffset = .25 vscale = 2"/>
+        <instance name="texture_demo" height="245" vscale="64p" vtile="true" label="vscale = 64p, vtile = true"/>
+        
+        <instance name="texture_demo" adhere="none" vspeed=".5" label="vspeed = .5"/>
+        <instance name="texture_demo" vspeed=".5" vtile="true" label="vspeed = .5 vtile = true"/>
+        <instance name="texture_demo" vspeed="-.5" label="vspeed = -.5"/>
+        <instance name="texture_demo" vspeed="-.5" vtile="true" label="vspeed = -.5 vtile = true"/>
+        <instance name="texture_demo" vscale="50p" label="vscale = 50p"/>
+        <instance name="texture_demo" voffset="25p" label="voffset = 25p"/>
+        <instance name="texture_demo" vscale="64p" vtile="true" label="vscale = 64p vtile = true"/>
+        
+        <panel width="100" height="100">
+            <panel
+                cangrab="true" 
+                texture="testboxes.tga"
+                utile="true"
+                vtile="true"
+                onframe="
+                    SetUOffset('100%');
+                    SetUScale('100%');
+                    SetVOffset('100%');
+                    SetVScale('100%');
+                "
+                onstartdrag="ShowWidget('percent_bg');"
+                onenddrag="HideWidget('percent_bg');"
+            >
+                <label adhere="bottom" color="white" shadow="true" textalign="center" textvalign="center" noclick="true">Grab me!</label>
+            </panel>
+            <label adhere="bottom" color="white" shadow="true" wrap="true">uoffset = 100%% uscale = 100%% voffset = 100%% vscale = 100%%</label>
+        </panel>
 
-		<panel width="100" height="100" adhere="right" spacing="25">
-			<panel
-				cangrab="true" 
-				texture="testboxes.tga"
-				utile="true"
-				vtile="true"
-				onframe="
-					SetUOffset('100@');
-					SetUScale('100@');
-					SetVOffset('100%');
-					SetVScale('100%');
-				"
-				onstartdrag="ShowWidget('comp_percent_bg');"
-				onenddrag="HideWidget('comp_percent_bg');"
-			>
-				<label adhere="bottom" color="white" shadow="true" textalign="center" textvalign="center" noclick="true">Grab me!</label>
-			</panel>
-			<label adhere="bottom" color="white" shadow="true" wrap="true">uoffset = 100@ uscale = 100@ voffset = 100%% vscale = 100%%</label>
-		</panel>
+        <panel width="100" height="100" adhere="right" spacing="25">
+            <panel
+                cangrab="true" 
+                texture="testboxes.tga"
+                utile="true"
+                vtile="true"
+                onframe="
+                    SetUOffset('100@');
+                    SetUScale('100@');
+                    SetVOffset('100%');
+                    SetVScale('100%');
+                "
+                onstartdrag="ShowWidget('comp_percent_bg');"
+                onenddrag="HideWidget('comp_percent_bg');"
+            >
+                <label adhere="bottom" color="white" shadow="true" textalign="center" textvalign="center" noclick="true">Grab me!</label>
+            </panel>
+            <label adhere="bottom" color="white" shadow="true" wrap="true">uoffset = 100@ uscale = 100@ voffset = 100%% vscale = 100%%</label>
+        </panel>
 
-		<panel width="100" height="100" adhere="right" spacing="25">
-			<panel
-				cangrab="true" 
-				texture="testboxes.tga"
-				utile="true"
-				vtile="true"
-				onframe="
-					SetUOffset('200%');
-					SetUScale('200%');
-					SetVOffset('200%');
-					SetVScale('200%');
-				"
-				onstartdrag="ShowWidget('scale_percent_bg');"
-				onenddrag="HideWidget('scale_percent_bg');"
-			>
-				<label adhere="bottom" color="white" shadow="true" textalign="center" textvalign="center" noclick="true">Grab me!</label>
-			</panel>
-			<label adhere="bottom" color="white" shadow="true" wrap="true">uoffset = 200%% uscale = 200%% voffset = 200%% vscale = 200%%</label>
-		</panel>
-	</panel>
+        <panel width="100" height="100" adhere="right" spacing="25">
+            <panel
+                cangrab="true" 
+                texture="testboxes.tga"
+                utile="true"
+                vtile="true"
+                onframe="
+                    SetUOffset('200%');
+                    SetUScale('200%');
+                    SetVOffset('200%');
+                    SetVScale('200%');
+                "
+                onstartdrag="ShowWidget('scale_percent_bg');"
+                onenddrag="HideWidget('scale_percent_bg');"
+            >
+                <label adhere="bottom" color="white" shadow="true" textalign="center" textvalign="center" noclick="true">Grab me!</label>
+            </panel>
+            <label adhere="bottom" color="white" shadow="true" wrap="true">uoffset = 200%% uscale = 200%% voffset = 200%% vscale = 200%%</label>
+        </panel>
+    </panel>
 </interface>

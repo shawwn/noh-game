@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Windrunner_Ability2"
+    name="State_Windrunner_Ability2"
 
-	icon="/heroes/forsaken_archer/ability_04/icon.tga"
-	
-	impactinterval="500"
-	
-	effecttype=""
+    icon="/heroes/forsaken_archer/ability_04/icon.tga"
+    
+    impactinterval="500"
+    
+    effecttype=""
 >
-	<onimpact>
-		<spawnaffector name="Affector_Windrunner_Ability2" target="source_position" distance="175" param="1"/>
-	</onimpact>
+    <onimpact>
+        <spawnaffector name="Affector_Windrunner_Ability2" target="source_position" distance="175" param="1"/>
+    </onimpact>
 
 </state>

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gadget
-	name="Gadget_Electrician_Ability1"
+    name="Gadget_Electrician_Ability1"
 
-	boundsheight="0"
-	boundsradius="0"
-	isselectable="false"
-	canrotate="false"
-	ismobile="false"
+    boundsheight="0"
+    boundsradius="0"
+    isselectable="false"
+    canrotate="false"
+    ismobile="false"
 
-	attacktype="none"
+    attacktype="none"
 
 
-	deathtime="0"
-	corpsetime="0"
-	
-	invulnerable="true"
-	flying="true"
-	drawonmap="false"
+    deathtime="0"
+    corpsetime="0"
+    
+    invulnerable="true"
+    flying="true"
+    drawonmap="false"
 >
-	<ondeath>
-		<delete target="proxy_entity" />
-	</ondeath>
+    <ondeath>
+        <delete target="proxy_entity" />
+    </ondeath>
 </gadget>

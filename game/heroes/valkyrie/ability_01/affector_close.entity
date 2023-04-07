@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Valkyrie_Ability1_Close"
+    name="Affector_Valkyrie_Ability1_Close"
 
-	radius="200"
-	
-	lifetime="500"
-	impactdelay="500"
-	maximpactspertarget="1"
-	targetselection="random"
-	maxtotalimpacts="1"
-	targetscheme="visible_enemy_units"
-	effecttype="Magic"
-	impacteffect="effects/impact.effect"
-	persist="true"
+    radius="200"
+    
+    lifetime="500"
+    impactdelay="500"
+    maximpactspertarget="1"
+    targetselection="random"
+    maxtotalimpacts="1"
+    targetscheme="visible_enemy_units"
+    effecttype="Magic"
+    impacteffect="effects/impact.effect"
+    persist="true"
 
 >
-	<onimpact>
-		<applystate name="State_Valkyrie_Ability1_Half" duration="500" />
-		<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
-	</onimpact>
+    <onimpact>
+        <applystate name="State_Valkyrie_Ability1_Half" duration="500" />
+        <playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
+    </onimpact>
 </affector>

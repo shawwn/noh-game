@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Critical2"
+    name="Item_Critical2"
 
-	icon="icon.tga"
-	
-	cost="1200"
-	components=""
-	
-	actiontype="passive"
-	
-	damage="75"
-	criticalchance="0.2"
-	criticalmultiplier="2.4"
+    icon="icon.tga"
+    
+    cost="1200"
+    components=""
+    
+    actiontype="passive"
+    
+    damage="75"
+    criticalchance="0.2"
+    criticalmultiplier="2.4"
 >
 </item>

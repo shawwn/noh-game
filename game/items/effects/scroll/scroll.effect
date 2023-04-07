@@ -1,266 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="lifeStealEffectForDominatingCreep" useentityeffectscale="1">
-	<definitions>
+    <definitions>
 <template name="trail">
-			<trailemitter
-				
-				bone="{bone}"
-				spawnrate="50"
-				startminparticlelife="800"
-				startmaxparticlelife="800"		
-				
-				endminparticlelife="1"
-				endmaxparticlelife="1" 
-				texpostime="800"
-			 	texposscale="1"
-			 	texstretchscale="0"
-				position="10 0 0"
-				material="/shared/effects/materials/arrow_trail.material"
-				inheritvelocity=".1"	
-			>
-				<particle
-					startcolor=".8 .0 .8"
-					midcolor=".7 .4 0"
-					endcolor="0 0 0"
-					startsize="0"
-					midsize="10"
-					endsize=".5"	
-				
-				/>
-			</trailemitter>	
+            <trailemitter
+                
+                bone="{bone}"
+                spawnrate="50"
+                startminparticlelife="800"
+                startmaxparticlelife="800"      
+                
+                endminparticlelife="1"
+                endmaxparticlelife="1" 
+                texpostime="800"
+                texposscale="1"
+                texstretchscale="0"
+                position="10 0 0"
+                material="/shared/effects/materials/arrow_trail.material"
+                inheritvelocity=".1"    
+            >
+                <particle
+                    startcolor=".8 .0 .8"
+                    midcolor=".7 .4 0"
+                    endcolor="0 0 0"
+                    startsize="0"
+                    midsize="10"
+                    endsize=".5"    
+                
+                />
+            </trailemitter> 
 
-			
-				<simpleemitter	
-					bone="{bone}"				
-					count="1"
-					particlelife="1000"			
-					speed="0"
-					drag="0"
-					position="0 0 3"					
-					acceleration="0"
-					material="/shared/effects/materials/whitedot.material"
-				>
+            
+                <simpleemitter  
+                    bone="{bone}"               
+                    count="1"
+                    particlelife="1000"         
+                    speed="0"
+                    drag="0"
+                    position="0 0 3"                    
+                    acceleration="0"
+                    material="/shared/effects/materials/whitedot.material"
+                >
 
-					<particle
-						startcolor="1 0 1"						
-						endcolor="0 0 0"
-						
-						midalphapos="0.9"
-						anchor="1"
-						startsize="30"
-						endsize="10"
-						depthbias="0"
-						
-				
-					/>
-				</simpleemitter>				
-			
-			
-	</template>
-	
+                    <particle
+                        startcolor="1 0 1"                      
+                        endcolor="0 0 0"
+                        
+                        midalphapos="0.9"
+                        anchor="1"
+                        startsize="30"
+                        endsize="10"
+                        depthbias="0"
+                        
+                
+                    />
+                </simpleemitter>                
+            
+            
+    </template>
+    
 
-		<particlesystem name="system0" space="entity" scale="1">
+        <particlesystem name="system0" space="entity" scale="1">
 
-		<sound
-			linearfalloff="true" 
-			falloffstart="0"
-			falloffend="1800"
-			volume="0.8" 
-			sample="/shared/sounds/symbolic/recipe_complete.wav"
-		/>
+        <sound
+            linearfalloff="true" 
+            falloffstart="0"
+            falloffend="1800"
+            volume="0.8" 
+            sample="/shared/sounds/symbolic/recipe_complete.wav"
+        />
 
-			
-			<light
-				 startcolor="4 3 0"
-				 endcolor="0 0 0"
-				 life="500"
-				 position="0 0 40"
-			/>
-			
-			<simpleemitter
-				life="1000"
-				
-         		spawnrate="35"
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="0"
-          		drag="0"
-				position="0 0 40"
-				offsetsphere="10 10 80"
-				material="/shared/effects/materials/phantom_smoke_03.material"
-			>
-  				<particle 
-					maxangle="360"
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor=".5 .5 .0"
-					endcolor="0 0 0"
-					startsize="55"
-					endsize="165"
-					endanchor="0"
-				/>
-        	</simpleemitter>	
+            
+            <light
+                 startcolor="4 3 0"
+                 endcolor="0 0 0"
+                 life="500"
+                 position="0 0 40"
+            />
+            
+            <simpleemitter
+                life="1000"
+                
+                spawnrate="35"
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="0"
+                drag="0"
+                position="0 0 40"
+                offsetsphere="10 10 80"
+                material="/shared/effects/materials/phantom_smoke_03.material"
+            >
+                <particle 
+                    maxangle="360"
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor=".5 .5 .0"
+                    endcolor="0 0 0"
+                    startsize="55"
+                    endsize="165"
+                    endanchor="0"
+                />
+            </simpleemitter>    
 
-			
-			
-			<simpleemitter
-				life="400"
-				bone="_bone_overhead"
-         		spawnrate="25"
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="0"
-          		drag="0"
-				position="0 0 25"
-				offsetsphere="10 10 30"
-				material="/shared/effects/materials/phantom_smoke_03.material"
-			>
-  				<particle 
-					maxangle="360"
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor=".5 .5 .0"
-					endcolor="0 0 0"
-					startsize="55"
-					endsize="165"
-					endanchor="0"
-				/>
-        	</simpleemitter>
-		
-			<model			
-				color="1 1 1"
-				delay="0"
-				scale=".4"
-				bone="_bone_overhead"
-				life="1200"
-				model="scroll.mdf"
-				anim="idle"
-				yaw="180"
-				alpha="1"
-			
-			>
-				
-			</model>
-			
-	
-			<billboard	
-				delay="000"			
-				width="400"				
-				height="10"				
-				position="0 0 20"
-				bone="_bone_overhead"
-				life="510"
-				material="/shared/effects/materials/whitedot.material"				
-				startcolor=".8 .5 .2"
-				endcolor="0  0 0"
-			>		
-			</billboard>
-			
-			<billboard	
-				delay="1000"			
-				startwidth="400"				
-				endwidth="000"				
-				height="10"				
-				position="0 0 20"
-				bone="_bone_overhead"
-				life="210"
-				material="/shared/effects/materials/whitedot.material"				
-				startcolor="0  0 0"
-				endcolor=".8 .5 .2"
-				
-			>		
-			</billboard>			
-			
-			<simpleemitter	
-				bone="_bone_overhead"			
-				count="1"
-				particlelife="300"			
-				speed="0"
-				drag="0"
-				position="0 0 3"					
-				acceleration="0"
-				material="/shared/effects/materials/whitedot.material"
-			>
+            
+            
+            <simpleemitter
+                life="400"
+                bone="_bone_overhead"
+                spawnrate="25"
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="0"
+                drag="0"
+                position="0 0 25"
+                offsetsphere="10 10 30"
+                material="/shared/effects/materials/phantom_smoke_03.material"
+            >
+                <particle 
+                    maxangle="360"
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor=".5 .5 .0"
+                    endcolor="0 0 0"
+                    startsize="55"
+                    endsize="165"
+                    endanchor="0"
+                />
+            </simpleemitter>
+        
+            <model          
+                color="1 1 1"
+                delay="0"
+                scale=".4"
+                bone="_bone_overhead"
+                life="1200"
+                model="scroll.mdf"
+                anim="idle"
+                yaw="180"
+                alpha="1"
+            
+            >
+                
+            </model>
+            
+    
+            <billboard  
+                delay="000"         
+                width="400"             
+                height="10"             
+                position="0 0 20"
+                bone="_bone_overhead"
+                life="510"
+                material="/shared/effects/materials/whitedot.material"              
+                startcolor=".8 .5 .2"
+                endcolor="0  0 0"
+            >       
+            </billboard>
+            
+            <billboard  
+                delay="1000"            
+                startwidth="400"                
+                endwidth="000"              
+                height="10"             
+                position="0 0 20"
+                bone="_bone_overhead"
+                life="210"
+                material="/shared/effects/materials/whitedot.material"              
+                startcolor="0  0 0"
+                endcolor=".8 .5 .2"
+                
+            >       
+            </billboard>            
+            
+            <simpleemitter  
+                bone="_bone_overhead"           
+                count="1"
+                particlelife="300"          
+                speed="0"
+                drag="0"
+                position="0 0 3"                    
+                acceleration="0"
+                material="/shared/effects/materials/whitedot.material"
+            >
 
-				<particle
-					startcolor="1 0 1"						
-					endcolor="0 0 0"						
-					midalphapos="0.9"
-					
-					startsize="200"
-					endsize="0"
-					depthbias="0"
-					
-			
-				/>
-			</simpleemitter>	
+                <particle
+                    startcolor="1 0 1"                      
+                    endcolor="0 0 0"                        
+                    midalphapos="0.9"
+                    
+                    startsize="200"
+                    endsize="0"
+                    depthbias="0"
+                    
+            
+                />
+            </simpleemitter>    
 
-			<!--
-			<model
-				life="1500"
-				model="/shared/effects/models/twirl_bones/twirl_bones.mdf"
-				anim="idle"
-			>
-				<instance name="trail" bone="_bone_effect_01"/>
-				<instance name="trail" bone="_bone_effect_02"/>
-				<instance name="trail" bone="_bone_effect_03"/>
-				<instance name="trail" bone="_bone_effect_04"/>
-			</model>
-			-->
-			
-			<simpleemitter
-			    delay="200"
-				spawnrate="1000"
-				particlelife="400"
-				count="1"
-				life="1000"
-				gravity="0.0"
-				speed="15"
-				acceleration="0.0"
-				
-				position="0 0 0"
-				offestsphere="10 10 0"
-				depthbias="0"
-				
-				
-				material="/shared/effects/materials/flare2.material"
-			>
-				<particle
-					startcolor="1 .5 0"
-					endcolor="0.0 0.0 0.5"
-					startalpha="1.0"
-					endalpha="0.0"
-					width="55.0"
-					startheight="0.0"
-					midheight="1500"
-					endheight="0.0"
-					lockup="true"
-					
-					
-				/>
-			</simpleemitter>
-		
-			<groundsprite
-				life="1200"
-				material="/shared/effects/materials/starlight.material"
-				startsize="100"
-				midsize="80"
-				endsize="10"
-				midsizepos=".9"				
-						
-				startcolor="0 0 0"			
-				midcolor="1 .5 0"
-				endcolor="0 0 0"			
-				yawspeed="100"			
-			/>					
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<spawnparticlesystem instance="instance1" particlesystem="system1" />
-		<waitfordeath instance="instance0" />
-		<waitfordeath instance="instance1" />
-	</thread>
+            <!--
+            <model
+                life="1500"
+                model="/shared/effects/models/twirl_bones/twirl_bones.mdf"
+                anim="idle"
+            >
+                <instance name="trail" bone="_bone_effect_01"/>
+                <instance name="trail" bone="_bone_effect_02"/>
+                <instance name="trail" bone="_bone_effect_03"/>
+                <instance name="trail" bone="_bone_effect_04"/>
+            </model>
+            -->
+            
+            <simpleemitter
+                delay="200"
+                spawnrate="1000"
+                particlelife="400"
+                count="1"
+                life="1000"
+                gravity="0.0"
+                speed="15"
+                acceleration="0.0"
+                
+                position="0 0 0"
+                offestsphere="10 10 0"
+                depthbias="0"
+                
+                
+                material="/shared/effects/materials/flare2.material"
+            >
+                <particle
+                    startcolor="1 .5 0"
+                    endcolor="0.0 0.0 0.5"
+                    startalpha="1.0"
+                    endalpha="0.0"
+                    width="55.0"
+                    startheight="0.0"
+                    midheight="1500"
+                    endheight="0.0"
+                    lockup="true"
+                    
+                    
+                />
+            </simpleemitter>
+        
+            <groundsprite
+                life="1200"
+                material="/shared/effects/materials/starlight.material"
+                startsize="100"
+                midsize="80"
+                endsize="10"
+                midsizepos=".9"             
+                        
+                startcolor="0 0 0"          
+                midcolor="1 .5 0"
+                endcolor="0 0 0"            
+                yawspeed="100"          
+            />                  
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <spawnparticlesystem instance="instance1" particlesystem="system1" />
+        <waitfordeath instance="instance0" />
+        <waitfordeath instance="instance1" />
+    </thread>
 </effect>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Rocky_Ability2"
+    name="State_Rocky_Ability2"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/trail.effect"
-	ishidden="true"
-	
-	silenced="true"
-	perplexed="true"
-	disarmed="true"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/trail.effect"
+    ishidden="true"
+    
+    silenced="true"
+    perplexed="true"
+    disarmed="true"
 >
 
 </state>

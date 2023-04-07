@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Astrolabe"
+    name="Affector_Astrolabe"
 
-	radius="450"
-	
-	targetselection="all"
-	targetscheme="ally_units"
-	effecttype="Astrolabe"
-	persist="false"
+    radius="450"
+    
+    targetselection="all"
+    targetscheme="ally_units"
+    effecttype="Astrolabe"
+    persist="false"
 >
-	<onimpact>
-		<applystate name="State_Astrolabe_Active" duration="25000"/>
-	</onimpact>
+    <onimpact>
+        <applystate name="State_Astrolabe_Active" duration="25000"/>
+    </onimpact>
 </affector>

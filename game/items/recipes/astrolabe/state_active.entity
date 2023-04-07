@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Astrolabe_Active"
+    name="State_Astrolabe_Active"
 
-	icon="icon.tga"
-	passiveeffect="active.effect"
-	immunitytype="AstrolabeImmunity"
-	
-	armor="2"
-	
-	effecttype="StatusBuff"
+    icon="icon.tga"
+    passiveeffect="active.effect"
+    immunitytype="AstrolabeImmunity"
+    
+    armor="2"
+    
+    effecttype="StatusBuff"
 >
-	<oninflict>
-		<heal a="250"/>
-	</oninflict>
+    <oninflict>
+        <heal a="250"/>
+    </oninflict>
 </state>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Hellbringer_Ability4"
+    name="Affector_Hellbringer_Ability4"
 
-	radius="600"
-	
-	lifetime="0"
-	targetselection="all"
-	targetscheme="enemy_units"
-	effecttype="Magic"
-	destroytrees="true"
+    radius="600"
+    
+    lifetime="0"
+    targetselection="all"
+    targetscheme="enemy_units"
+    effecttype="Magic"
+    destroytrees="true"
 >
-	<onimpact>
-		<damage effecttype="Magic" amount="100"/>
-		<applystate name="State_Stunned" duration="1000"/>
-	</onimpact>
+    <onimpact>
+        <damage effecttype="Magic" amount="100"/>
+        <applystate name="State_Stunned" duration="1000"/>
+    </onimpact>
 </affector>

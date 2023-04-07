@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="" deferred="true" useentityeffectscale="true">
 
-	<definitions>
-	
-		<particlesystem name="system0" space="world" scale="1.5">
+    <definitions>
+    
+        <particlesystem name="system0" space="world" scale="1.5">
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="0"
-				falloffend="2000"
-				volume=".5"
-				sample="../../sounds/impact_%.wav"
-			/>
+            <sound
+                linearfalloff="true" 
+                falloffstart="0"
+                falloffend="2000"
+                volume=".5"
+                sample="../../sounds/impact_%.wav"
+            />
 
-			<simpleemitter
-				bone="_bone_center"
-				count="35"
-				particlelife="450"
-				spawnrate="20"
-				speed="180"
-				gravity="22"
-				minangle="0"
-				maxangle="30"
-				material="/shared/effects/materials/blood1.material"
-				offsetsphere="15 15 15"
-				position="0 0 0"
-				inheritvelocity=".75"
-			>
-				<particle 
-					minanglespeed="-100"
-					maxanglespeed="100"
-					minangle="-60"
-					maxangle="60"
-					color=".4 0 0"
-					startsize="30"
-					endsize="80"
-					startalpha=".75"
-					endalpha="0"
-			/>
-			</simpleemitter>
+            <simpleemitter
+                bone="_bone_center"
+                count="35"
+                particlelife="450"
+                spawnrate="20"
+                speed="180"
+                gravity="22"
+                minangle="0"
+                maxangle="30"
+                material="/shared/effects/materials/blood1.material"
+                offsetsphere="15 15 15"
+                position="0 0 0"
+                inheritvelocity=".75"
+            >
+                <particle 
+                    minanglespeed="-100"
+                    maxanglespeed="100"
+                    minangle="-60"
+                    maxangle="60"
+                    color=".4 0 0"
+                    startsize="30"
+                    endsize="80"
+                    startalpha=".75"
+                    endalpha="0"
+            />
+            </simpleemitter>
 
-		</particlesystem>
+        </particlesystem>
 
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-	</thread>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+    </thread>
 
 </effect>

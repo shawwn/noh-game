@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_EbulusAttack"
+    name="Projectile_EbulusAttack"
 
-	speed="900"
-	gravity="2000"
+    speed="900"
+    gravity="2000"
 
-	model="/shared/models/invis.mdf"
+    model="/shared/models/invis.mdf"
 
-	impacteffect="impact.effect"
-	traileffect="trail.effect"
+    impacteffect="impact.effect"
+    traileffect="trail.effect"
 >
 </projectile>

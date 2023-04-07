@@ -1,153 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true" useentityeffectscale="1">
 
-	<definitions>
-	
-		<modifier 
-			name="modifier0"
-			alpha=".65"
-		/>
+    <definitions>
+    
+        <modifier 
+            name="modifier0"
+            alpha=".65"
+        />
 
-		<particlesystem name="system0" space="global">
+        <particlesystem name="system0" space="global">
 
-			<model
-				parentmodel="true"
-				parentskeleton="true"
-				loop="true"
-				alpha="5"
-				startcolor="0 .6 1"
-				midcolor="0"
-				endcolor="0 .6 1"
-				life="2500"
-				material="/shared/effects/materials/shell4.material"
-				expirelife="300"
-			/>
+            <model
+                parentmodel="true"
+                parentskeleton="true"
+                loop="true"
+                alpha="5"
+                startcolor="0 .6 1"
+                midcolor="0"
+                endcolor="0 .6 1"
+                life="2500"
+                material="/shared/effects/materials/shell4.material"
+                expirelife="300"
+            />
 
-			<!-- turn off till i figure out how to rotate it with the model
+            <!-- turn off till i figure out how to rotate it with the model
 
-			<simpleemitter
-				spawnrate="5"
-				offsetsphere="20 20 0"
-				particlelife="1500"
-			>
-				<particle turn="true">
-					<groundsprite
-						material="/shared/effects/materials/marcher_prints.material"
-						life="1500"
-						size="20"
-						startcolor=".75 .75 .75"
-						endcolor="0 0 0"
-						startalpha="1"
-						endalpha="0"
-						directionalspace="local"
-					/>
-				</particle>
-			</simpleemitter>
+            <simpleemitter
+                spawnrate="5"
+                offsetsphere="20 20 0"
+                particlelife="1500"
+            >
+                <particle turn="true">
+                    <groundsprite
+                        material="/shared/effects/materials/marcher_prints.material"
+                        life="1500"
+                        size="20"
+                        startcolor=".75 .75 .75"
+                        endcolor="0 0 0"
+                        startalpha="1"
+                        endalpha="0"
+                        directionalspace="local"
+                    />
+                </particle>
+            </simpleemitter>
 
-			-->
-		
-			<twopointtrailemitter
-				bone_a="Bip01 R Foot"
-				bone_b="Bip01 R Thigh"
-				spawnrate="100"
-				particlelife="600"
-				texpostime="500"
-				texposscale="0.0"
-				texstretchscale="1.0"
-				material="/shared/effects/materials/swoosh_add.material"
-				subframepos="true"
-			>
-				<particle
-					startcolor="0 .3 1.25"
-					endcolor="0 0 0" 
-				/>
-			</twopointtrailemitter>
+            -->
+        
+            <twopointtrailemitter
+                bone_a="Bip01 R Foot"
+                bone_b="Bip01 R Thigh"
+                spawnrate="100"
+                particlelife="600"
+                texpostime="500"
+                texposscale="0.0"
+                texstretchscale="1.0"
+                material="/shared/effects/materials/swoosh_add.material"
+                subframepos="true"
+            >
+                <particle
+                    startcolor="0 .3 1.25"
+                    endcolor="0 0 0" 
+                />
+            </twopointtrailemitter>
 
-			<twopointtrailemitter
-				bone_a="Bip01 L Foot"
-				bone_b="Bip01 L Thigh"
-				spawnrate="100"
-				particlelife="600"
-				texpostime="500"
-				texposscale="0.0"
-				texstretchscale="1.0"
-				material="/shared/effects/materials/swoosh_add.material"
-				subframepos="true"
-			>
-				<particle
-					startcolor="0 .3 1.25"
-					endcolor="0 0 0" 
-				/>
-			</twopointtrailemitter>
+            <twopointtrailemitter
+                bone_a="Bip01 L Foot"
+                bone_b="Bip01 L Thigh"
+                spawnrate="100"
+                particlelife="600"
+                texpostime="500"
+                texposscale="0.0"
+                texstretchscale="1.0"
+                material="/shared/effects/materials/swoosh_add.material"
+                subframepos="true"
+            >
+                <particle
+                    startcolor="0 .3 1.25"
+                    endcolor="0 0 0" 
+                />
+            </twopointtrailemitter>
 
-			<simpleemitter
-				bone="_bone_centerofchest"	
-				spawnrate="80"
-				particlelife="1050"
-				gravity="-3"
-				acceleration="0.10"		
-				expirelife="300"
-				material="/shared/effects/materials/mysticenergy.material"
-				offsetsphere="60 60 0"
-				yawspeed="360"
-			>
-				<particle 
-					minangle="0"
-					maxangle="360"
-					minanglespeed="20"
-					maxanglespeed="150"
+            <simpleemitter
+                bone="_bone_centerofchest"  
+                spawnrate="80"
+                particlelife="1050"
+                gravity="-3"
+                acceleration="0.10"     
+                expirelife="300"
+                material="/shared/effects/materials/mysticenergy.material"
+                offsetsphere="60 60 0"
+                yawspeed="360"
+            >
+                <particle 
+                    minangle="0"
+                    maxangle="360"
+                    minanglespeed="20"
+                    maxanglespeed="150"
 
-					startcolor=".5 .5 .5"
-					midcolor=".1 .2 .7"
-					endcolor="0 0 0"
-					midcolorpos=".4"
+                    startcolor=".5 .5 .5"
+                    midcolor=".1 .2 .7"
+                    endcolor="0 0 0"
+                    midcolorpos=".4"
 
-					startsize="10"
-					midsize="30"
-					endsize="10"
-					midsizepos=".3"	
+                    startsize="10"
+                    midsize="30"
+                    endsize="10"
+                    midsizepos=".3" 
 
-					startalpha="0"
-					midalpha=".45"
-					endalpha="0"
-					midalphapos=".01"
+                    startalpha="0"
+                    midalpha=".45"
+                    endalpha="0"
+                    midalphapos=".01"
 
-					startstickiness=".95"
-					endstickiness=".5"
-				/>
+                    startstickiness=".95"
+                    endstickiness=".5"
+                />
 
-			</simpleemitter>
+            </simpleemitter>
 
-			<!-- Too much
-			<simpleemitter
-				bone="_bone_centerofchest"
-				spawnrate="5"
-				offsetsphere="40 40 0"
-				particlelife="500"
-				depthbias="-20"
-				material="/shared/effects/materials/refract_pinch.material"
-			>
-				<particle 
-					param="0.02"	
-					startsize="120"
-					endsize="250"
-					startalpha="0"
-					midalpha="1"
-					endalpha="0"
-					anchor="1"				
-				/>
-			</simpleemitter>
-			-->
+            <!-- Too much
+            <simpleemitter
+                bone="_bone_centerofchest"
+                spawnrate="5"
+                offsetsphere="40 40 0"
+                particlelife="500"
+                depthbias="-20"
+                material="/shared/effects/materials/refract_pinch.material"
+            >
+                <particle 
+                    param="0.02"    
+                    startsize="120"
+                    endsize="250"
+                    startalpha="0"
+                    midalpha="1"
+                    endalpha="0"
+                    anchor="1"              
+                />
+            </simpleemitter>
+            -->
 
-		</particlesystem>
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<spawnmodifier instance="instance1" modifier="modifier0"/>
-      		<waitfordeath instance="instance0" />
-		<waitfordeath instance="instance1" />
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <spawnmodifier instance="instance1" modifier="modifier0"/>
+            <waitfordeath instance="instance0" />
+        <waitfordeath instance="instance1" />
+    </thread>
 
 </effect>

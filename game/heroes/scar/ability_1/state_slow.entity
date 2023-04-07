@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Scar_Ability1_Slow"
+    name="State_Scar_Ability1_Slow"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/state_slow.effect"
-	movespeedslowstart="0.3,0.37,0.44,0.5"
-	movespeedslowmid="0.3,0.37,0.44,0.5"
-	movespeedslowend="0.0"
-	movespeedslowduration="4500"
-	movespeedslowmidpos="0.33"
-	
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/state_slow.effect"
+    movespeedslowstart="0.3,0.37,0.44,0.5"
+    movespeedslowmid="0.3,0.37,0.44,0.5"
+    movespeedslowend="0.0"
+    movespeedslowduration="4500"
+    movespeedslowmidpos="0.33"
+    
 
-	
-	effecttype="StatusDebuff"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe />
+    <onframe />
 </state>

@@ -1,260 +1,284 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="cyclone" deferred="true">
-	<definitions>
-				
-		<particlesystem name="system0" space="world" scale="1">	
-			
-			<simpleemitter
-				bone="_bone_head"
-				spawnrate="55"
-				particlelife="550"
-				gravity="-10"
-				speed="5"
-				drag="0"
-				acceleration="0.10"		
-				expirelife="300"
-				material="/shared/effects/materials/mysticenergy2.material"
-				offsetsphere="30 30 0"
-				direction="0 0 -2"
-				position="0 5 -5"
-				yawspeed="-360"
-			>
+    <definitions>
+                
+        <particlesystem name="system0" space="world" scale="1"> 
+            
+            <simpleemitter
+                bone="_bone_head"
+                spawnrate="55"
+                particlelife="550"
+                gravity="-10"
+                speed="5"
+                drag="0"
+                acceleration="0.10"     
+                expirelife="300"
+                material="/shared/effects/materials/mysticenergy2.material"
+                offsetsphere="30 30 0"
+                direction="0 0 -2"
+                position="0 5 -5"
+                yawspeed="-360"
+            >
 
-			<particle 
-				minangle="0"
-				maxangle="360"
-				minanglespeed="20"
-				maxanglespeed="150"
-				startcolor=".5 .2 .2"
-				midcolor=".1 .2 .7"
-				endcolor="0 0 0"
-				midcolorpos=".4"
-				startframe="0"
-				endframe="1"
-				startsize="10"
-				midsize="10"
-				endsize="10"
-				midsizepos=".3"	
-				startalpha="0"
-				midalpha=".45"
-				endalpha="0"
-				midalphapos=".01"
-				startstickiness=".95"
-				endstickiness=".75"
+            <particle 
+                minangle="0"
+                maxangle="360"
+                minanglespeed="20"
+                maxanglespeed="150"
+                startcolor=".5 .2 .2"
+                midcolor=".1 .2 .7"
+                endcolor="0 0 0"
+                midcolorpos=".4"
+                startframe="0"
+                endframe="1"
+                startsize="10"
+                midsize="10"
+                endsize="10"
+                midsizepos=".3" 
+                startalpha="0"
+                midalpha=".45"
+                endalpha="0"
+                midalphapos=".01"
+                startstickiness=".95"
+                endstickiness=".75"
 
-			/>
-		
-			
-			
-		</simpleemitter>
-		
-		<simpleemitter
-				
-			spawnrate="80"
-			particlelife="1050"
-			gravity="-3"
-			speed="5"
-			drag="0"
-			acceleration="0.10"		
-			expirelife="300"
-			material="/shared/effects/materials/mysticenergy.material"
-			offsetsphere="160 160 0"
-			position="0 0 0"
-			yawspeed="360"
-		>
+            />
+        
+            
+            
+        </simpleemitter>
+        
+        <simpleemitter
+                
+            spawnrate="80"
+            particlelife="1050"
+            gravity="-3"
+            speed="5"
+            drag="0"
+            acceleration="0.10"     
+            expirelife="300"
+            material="/shared/effects/materials/mysticenergy.material"
+            offsetsphere="160 160 0"
+            position="0 0 0"
+            yawspeed="360"
+        >
 
-			<particle 
-				minangle="0"
-				maxangle="360"
-				minanglespeed="20"
-				maxanglespeed="150"
+            <particle 
+                minangle="0"
+                maxangle="360"
+                minanglespeed="20"
+                maxanglespeed="150"
 
-				startcolor=".5 .5 .5"
-				midcolor=".1 .2 .7"
-				endcolor="0 0 0"
-				midcolorpos=".4"
+                startcolor=".5 .5 .5"
+                midcolor=".1 .2 .7"
+                endcolor="0 0 0"
+                midcolorpos=".4"
 
-				startframe="0"
-				endframe="1"
-				startsize="10"
-				midsize="30"
-				endsize="10"
-				midsizepos=".3"	
-				
-				
-				startalpha="0"
-				midalpha=".45"
-				endalpha="0"
-				midalphapos=".01"
-
-
-				startstickiness=".95"
-				endstickiness=".5"
-
-			/>
-
-			
-		</simpleemitter>
-		<simpleemitter
-			
-			spawnrate="80"
-			particlelife="1050"
-			gravity="-10"
-			speed="5"
-			drag="0"
-			acceleration="0.10"		
-			expirelife="300"
-			material="/shared/effects/materials/mysticenergy2.material"
-			offsetsphere="140 140 80"
-			direction="0 0 -2"
-			position="0 0 20"
-			yawspeed="-360"
-		>
-
-			<particle 
-				minangle="0"
-				maxangle="360"
-				minanglespeed="20"
-				maxanglespeed="150"
-				startcolor=".5 .2 .2"
-				midcolor=".1 .2 .7"
-				endcolor="0 0 0"
-				midcolorpos=".4"
-				startframe="0"
-				endframe="1"
-				startsize="10"
-				midsize="20"
-				endsize="10"
-				midsizepos=".3"	
-				startalpha="0"
-				midalpha=".45"
-				endalpha="0"
-				midalphapos=".01"
-				startstickiness=".95"
-				endstickiness=".5"
-			/>
-			
-		</simpleemitter>
-		
-	<simpleemitter
-				
-			spawnrate="80"
-			particlelife="1050"
-			gravity="-3"
-			speed="5"
-			drag="0"
-			acceleration="0.10"		
-			expirelife="300"
-			material="/shared/effects/materials/mysticenergy.material"
-			offsetsphere="160 160 0"
-			position="0 0 20"
-			yawspeed="360"
-		>
-
-			<particle 
-				minangle="0"
-				maxangle="360"
-				minanglespeed="20"
-				maxanglespeed="150"
-
-				startcolor=".5 .5 .5"
-				midcolor=".1 .2 .7"
-				endcolor="0 0 0"
-				midcolorpos=".4"
-
-				startframe="0"
-				endframe="1"
-				startsize="10"
-				midsize="20"
-				endsize="10"
-				midsizepos=".3"	
-				
-				
-				startalpha="0"
-				midalpha=".45"
-				endalpha="0"
-				midalphapos=".01"
+                startframe="0"
+                endframe="1"
+                startsize="10"
+                midsize="30"
+                endsize="10"
+                midsizepos=".3" 
+                
+                
+                startalpha="0"
+                midalpha=".45"
+                endalpha="0"
+                midalphapos=".01"
 
 
-				startstickiness=".95"
-				endstickiness=".5"
+                startstickiness=".95"
+                endstickiness=".5"
 
-			/>
+            />
 
-			
-		</simpleemitter>
-		<simpleemitter
-			
-			spawnrate="80"
-			particlelife="1050"
-			gravity="-10"
-			speed="2"
-			drag="0"
-			acceleration="0.10"		
-			expirelife="300"
-			material="/shared/effects/materials/mysticenergy2.material"
-			offsetsphere="140 140 80"
-			direction="0 0 -2"
-			position="0 0 50"
-			yawspeed="-360"
-		>
+            
+        </simpleemitter>
+        <simpleemitter
+            
+            spawnrate="80"
+            particlelife="1050"
+            gravity="-10"
+            speed="5"
+            drag="0"
+            acceleration="0.10"     
+            expirelife="300"
+            material="/shared/effects/materials/mysticenergy2.material"
+            offsetsphere="140 140 80"
+            direction="0 0 -2"
+            position="0 0 20"
+            yawspeed="-360"
+        >
 
-			<particle 
-				minangle="0"
-				maxangle="360"
-				minanglespeed="20"
-				maxanglespeed="150"
-				startcolor=".5 .2 .2"
-				midcolor=".1 .2 .7"
-				endcolor="0 0 0"
-				midcolorpos=".4"
-				startframe="0"
-				endframe="1"
-				startsize="10"
-				midsize="20"
-				endsize="10"
-				midsizepos=".3"	
-				startalpha="0"
-				midalpha=".45"
-				endalpha="0"
-				midalphapos=".01"
-				startstickiness=".95"
-				endstickiness=".5"
-			/>
-			
-		</simpleemitter>
+            <particle 
+                minangle="0"
+                maxangle="360"
+                minanglespeed="20"
+                maxanglespeed="150"
+                startcolor=".5 .2 .2"
+                midcolor=".1 .2 .7"
+                endcolor="0 0 0"
+                midcolorpos=".4"
+                startframe="0"
+                endframe="1"
+                startsize="10"
+                midsize="20"
+                endsize="10"
+                midsizepos=".3" 
+                startalpha="0"
+                midalpha=".45"
+                endalpha="0"
+                midalphapos=".01"
+                startstickiness=".95"
+                endstickiness=".5"
+            />
+            
+        </simpleemitter>
+        
+    <simpleemitter
+                
+            spawnrate="80"
+            particlelife="1050"
+            gravity="-3"
+            speed="5"
+            drag="0"
+            acceleration="0.10"     
+            expirelife="300"
+            material="/shared/effects/materials/mysticenergy.material"
+            offsetsphere="160 160 0"
+            position="0 0 20"
+            yawspeed="360"
+        >
+
+            <particle 
+                minangle="0"
+                maxangle="360"
+                minanglespeed="20"
+                maxanglespeed="150"
+
+                startcolor=".5 .5 .5"
+                midcolor=".1 .2 .7"
+                endcolor="0 0 0"
+                midcolorpos=".4"
+
+                startframe="0"
+                endframe="1"
+                startsize="10"
+                midsize="20"
+                endsize="10"
+                midsizepos=".3" 
+                
+                
+                startalpha="0"
+                midalpha=".45"
+                endalpha="0"
+                midalphapos=".01"
 
 
-		
-		<model
-						
-						model="head/model.mdf"
-						scale="1.0"
-						bone="_bone_head"
-						life="2530"
-						loop="1"
-						position="0.0 5.0 -15.0"
-						directionalspace="local"
-						alpha="1.0"
-						startyaw="90"
-						midyaw="270"
-						endyaw="90"
-						expirelife="2500"
-						yawspeed="0"
-						color="1 1 1"
-						
-				/>		
+                startstickiness=".95"
+                endstickiness=".5"
 
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		
-      		<waitfordeath instance="instance0" />
-		
-		<!-- <die /> -->
-	</thread>
+            />
+
+            
+        </simpleemitter>
+        <simpleemitter
+            
+            spawnrate="80"
+            particlelife="1050"
+            gravity="-10"
+            speed="2"
+            drag="0"
+            acceleration="0.10"     
+            expirelife="300"
+            material="/shared/effects/materials/mysticenergy2.material"
+            offsetsphere="140 140 80"
+            direction="0 0 -2"
+            position="0 0 50"
+            yawspeed="-360"
+        >
+
+            <particle 
+                minangle="0"
+                maxangle="360"
+                minanglespeed="20"
+                maxanglespeed="150"
+                startcolor=".5 .2 .2"
+                midcolor=".1 .2 .7"
+                endcolor="0 0 0"
+                midcolorpos=".4"
+                startframe="0"
+                endframe="1"
+                startsize="10"
+                midsize="20"
+                endsize="10"
+                midsizepos=".3" 
+                startalpha="0"
+                midalpha=".45"
+                endalpha="0"
+                midalphapos=".01"
+                startstickiness=".95"
+                endstickiness=".5"
+            />
+            
+        </simpleemitter>
+
+
+        
+        <model
+                        
+                        model="head/model.mdf"
+                        scale="1.0"
+                        bone="_bone_head"
+                        life="2530"
+                        loop="1"
+                        position="0.0 5.0 -15.0"
+                        directionalspace="local"
+                        alpha="1.0"
+                        startyaw="90"
+                        midyaw="270"
+                        endyaw="90"
+                        expirelife="2500"
+                        yawspeed="0"
+                        color="1 1 1"
+                        
+                />      
+
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        
+            <waitfordeath instance="instance0" />
+        
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][position] -->
 
+
+Error: args-out-of-range (#<buffer  *temp*> 1 41)
+  mapbacktrace(#f(compiled-function (evald func args flags) #<bytecode -0xcda8f858c512f81>))
+  debug-early-backtrace()
+  debug-early(error (args-out-of-range #<buffer  *temp*> 1 41))
+  buffer-substring-no-properties(1 41)
+  vc-git--rev-parse("HEAD")
+  vc-git-working-revision("/Users/shawn/ml/noh5/Heroes of Newerth/game/heroes/xalynx/effects/body.effect")
+  apply(vc-git-working-revision "/Users/shawn/ml/noh5/Heroes of Newerth/game/heroes/xalynx/effects/body.effect")
+  vc-call-backend(Git working-revision "/Users/shawn/ml/noh5/Heroes of Newerth/game/heroes/xalynx/effects/body.effect")
+  vc-working-revision("/Users/shawn/ml/noh5/Heroes of Newerth/game/heroes/xalynx/effects/body.effect" Git)
+  vc-git-mode-line-string("/Users/shawn/ml/noh5/Heroes of Newerth/game/heroes/xalynx/effects/body.effect")
+  apply(vc-git-mode-line-string "/Users/shawn/ml/noh5/Heroes of Newerth/game/heroes/xalynx/effects/body.effect")
+  vc-call-backend(Git mode-line-string "/Users/shawn/ml/noh5/Heroes of Newerth/game/heroes/xalynx/effects/body.effect")
+  vc-mode-line("/Users/shawn/ml/noh5/Heroes of Newerth/game/heroes/xalynx/effects/body.effect" Git)
+  vc-refresh-state()
+  run-hooks(find-file-hook)
+  after-find-file(nil t)
+  find-file-noselect-1(#<buffer body.effect> "~/ml/noh5/Heroes of Newerth/game/heroes/xalynx/effects/body.effect" nil nil "~/ml/noh5/Heroes of Newerth/game/heroes/xalynx/effects/body.effect" (12860085 16777230))
+  find-file-noselect("/Users/shawn/ml/noh5/Heroes of Newerth/game/heroes/xalynx/effects/body.effect")
+  #f(compiled-function (displayable-buffers dir line column name) #<bytecode 0x1f8ccb9be2721704>)(((#<buffer untabify>)) "~/ml/noh5/Heroes of Newerth/" (0) (0) "./game/heroes/xalynx/effects/body.effect")
+  command-line-1(("-l" "/Users/shawn/ml/y/bin/y.el" "--" "/Users/shawn/scrap/untabify" "./game/heroes/xalynx/effects/body.effect"))
+  command-line()
+  normal-top-level()

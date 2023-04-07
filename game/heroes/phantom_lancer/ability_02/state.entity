@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_PhantomLancer_Ability2"
+    name="State_PhantomLancer_Ability2"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="../../../heroes/scar/ability_01/effects/state.effect"
-	
-	movespeedmultiplier="0.1"
-	unitwalking="true"
-	
-	stealthtype="hero"
-	fadetime="0"
+    
+    
+    icon="icon.tga"
+    passiveeffect="../../../heroes/scar/ability_01/effects/state.effect"
+    
+    movespeedmultiplier="0.1"
+    unitwalking="true"
+    
+    stealthtype="hero"
+    fadetime="0"
 
-		
-	effecttype="StatusBuff"
+        
+    effecttype="StatusBuff"
 >
-	<oninflict>
-		<forgetattacks />
-		<startfade />
-	</oninflict>
-	
-	<onattackimpact>
-		<expire />
-	</onattackimpact>
-	
-	<onactivatepreimpact>
-		<expire />
-	</onactivatepreimpact>
+    <oninflict>
+        <forgetattacks />
+        <startfade />
+    </oninflict>
+    
+    <onattackimpact>
+        <expire />
+    </onattackimpact>
+    
+    <onactivatepreimpact>
+        <expire />
+    </onactivatepreimpact>
 </state>

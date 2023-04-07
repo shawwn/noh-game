@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Arachna_Ability4_ExpirePet"
+    name="State_Arachna_Ability4_ExpirePet"
 
-	
-	ishidden="true"
-	icon="icon.tga"
-	passiveeffect="effects/ability_01_state.effect"
-	
-	
-	effecttype=""
+    
+    ishidden="true"
+    icon="icon.tga"
+    passiveeffect="effects/ability_01_state.effect"
+    
+    
+    effecttype=""
 >
 
 
-	<onexpired>
-		<kill target="proxy_entity" source="" />
-	</onexpired>
-	<ondeath>
-		<kill target="proxy_entity" source="" />
-	</ondeath>
+    <onexpired>
+        <kill target="proxy_entity" source="" />
+    </onexpired>
+    <ondeath>
+        <kill target="proxy_entity" source="" />
+    </ondeath>
 </state>

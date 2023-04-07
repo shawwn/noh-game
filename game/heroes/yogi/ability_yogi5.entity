@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Yogi5"
+    name="Ability_Yogi5"
 
-	
-	
-	icon="icons/ability_5.tga"
-	
-	casttime="1000"
-	castactiontime="500"
-	statuseffecttooltip="State_Yogi_Ability5"
+    
+    
+    icon="icons/ability_5.tga"
+    
+    casttime="1000"
+    castactiontime="500"
+    statuseffecttooltip="State_Yogi_Ability5"
 
-	actiontype="target_self"
-	targetradius="900"
-	targetscheme="player_controlled_ally_units"
-	
-	manacost="50"
-	cooldowntime="30000"
+    actiontype="target_self"
+    targetradius="900"
+    targetscheme="player_controlled_ally_units"
+    
+    manacost="50"
+    cooldowntime="30000"
 >
-	<onimpact>
-		<spawnaffector name="Affector_Yogi_Ability5"/>
-	</onimpact>
+    <onimpact>
+        <spawnaffector name="Affector_Yogi_Ability5"/>
+    </onimpact>
 </ability>

@@ -15,8 +15,8 @@
 //=============================================================================
 struct VS_OUTPUT
 {
-	float4 Position      : POSITION;
-	float4 Color0        : COLOR0;
+    float4 Position      : POSITION;
+    float4 Color0        : COLOR0;
 };
 
 
@@ -25,7 +25,7 @@ struct VS_OUTPUT
 //=============================================================================
 struct PS_OUTPUT
 {
-	float4 Color : COLOR;
+    float4 Color : COLOR;
 };
 
 //=============================================================================
@@ -33,10 +33,10 @@ struct PS_OUTPUT
 //=============================================================================
 PS_OUTPUT PS( VS_OUTPUT In )
 {
-	PS_OUTPUT Out;
-	
-	Out.Color = In.Color0;
+    PS_OUTPUT Out;
+    
+    Out.Color = In.Color0;
 
-	return Out;
+    return Out;
 }
 

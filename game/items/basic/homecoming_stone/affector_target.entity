@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_HomecomingStone_Target"
-	
-	destroytrees="true"
-	radius="150"
-	impactinterval="250"
-	maxintervals="15"
-	
-	effect="effects/target_affector.effect"
+    name="Affector_HomecomingStone_Target"
+    
+    destroytrees="true"
+    radius="150"
+    impactinterval="250"
+    maxintervals="15"
+    
+    effect="effects/target_affector.effect"
 >
-	<onchannelend>
-		<playeffect effect="effects/source_impact.effect" source="proxy_position" target="" occlude="true" />
-		<teleport source="proxy_entity" target="this_position"/>
-		<disjoint target="proxy_entity" />
-		<playeffect effect="effects/target_impact.effect" source="proxy_position" target="" occlude="true" />
-		<playanim name="idle" target="proxy_entity" />
-	</onchannelend>
+    <onchannelend>
+        <playeffect effect="effects/source_impact.effect" source="proxy_position" target="" occlude="true" />
+        <teleport source="proxy_entity" target="this_position"/>
+        <disjoint target="proxy_entity" />
+        <playeffect effect="effects/target_impact.effect" source="proxy_position" target="" occlude="true" />
+        <playanim name="idle" target="proxy_entity" />
+    </onchannelend>
 </affector>

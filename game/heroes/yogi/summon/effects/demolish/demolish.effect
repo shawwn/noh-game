@@ -1,427 +1,427 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="demolish">
-	<definitions>
-		<particlesystem name="system0" space="entity">
+    <definitions>
+        <particlesystem name="system0" space="entity">
 
-		<simpleemitter
-			life="1000"
-			delay="250"
-			spawnrate="35"
-			count="1"
-			
-			particlelife="900"			
-			gravity="0"
-			speed="25"
-			drag="0"
-			acceleration="0"
-			position="0 60 40"
+        <simpleemitter
+            life="1000"
+            delay="250"
+            spawnrate="35"
+            count="1"
+            
+            particlelife="900"          
+            gravity="0"
+            speed="25"
+            drag="0"
+            acceleration="0"
+            position="0 60 40"
 
-			material="/shared/effects/materials/wisp_06.material"
-			offsetsphere="4 4 4"
-			minangle="0"
-			maxangle="0"
-			direction="0 0 0"
-			offsetdirection="0 0 0"
-			offsetradial="0 0 0"
-		>
-			<particle 
-				minangle="0"
-				maxangle="360"
-				minanglespeed="50"
-				maxanglespeed="50"
-				startcolor="0 0 0"
-				midcolor=".2 .2 .2"
-				endcolor="0 0 0"
-				midcolorpos=".5"
+            material="/shared/effects/materials/wisp_06.material"
+            offsetsphere="4 4 4"
+            minangle="0"
+            maxangle="0"
+            direction="0 0 0"
+            offsetdirection="0 0 0"
+            offsetradial="0 0 0"
+        >
+            <particle 
+                minangle="0"
+                maxangle="360"
+                minanglespeed="50"
+                maxanglespeed="50"
+                startcolor="0 0 0"
+                midcolor=".2 .2 .2"
+                endcolor="0 0 0"
+                midcolorpos=".5"
 
-				startframe="0"
-				endframe="0"
-				startsize="1"
-				midsize="125"
-				endsize="250"
-				midsizepos=".5"
+                startframe="0"
+                endframe="0"
+                startsize="1"
+                midsize="125"
+                endsize="250"
+                midsizepos=".5"
 
-				startalpha="0"
-				midalpha=".2"
-				endalpha="0"
-				midalphapos=".5"
-				startstickiness="0"
-				endstickiness="0"
-				lockup="true"
-				lockright="true"
-				pitch="90"
-				yaw="0"
-				/>
-			</simpleemitter>
-
-
-
-		<simpleemitter
-		
-			spawnrate="500"
-			count="60"
-			particlelife="850"			
-			gravity="0"
-			minspeed="30"
-			maxspeed="80"
-			drag="0"
-			acceleration="0"
-			position="0 60 40"
+                startalpha="0"
+                midalpha=".2"
+                endalpha="0"
+                midalphapos=".5"
+                startstickiness="0"
+                endstickiness="0"
+                lockup="true"
+                lockright="true"
+                pitch="90"
+                yaw="0"
+                />
+            </simpleemitter>
 
 
-			material="/shared/effects/materials/dust_smoke_05.material"
-			offsetsphere="4 4 4"
-			minangle="360"
-			maxangle="180"
-			direction="1 0 0"
-			offsetdirection="0 0 0"
-			offsetradial="0 0 0"
-		>
 
-			<particle 
-				minangle="0"
-				maxangle="0"
-				minanglespeed="-50"
-				maxanglespeed="-150"
-				startcolor="1 1 1"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".2"
+        <simpleemitter
+        
+            spawnrate="500"
+            count="60"
+            particlelife="850"          
+            gravity="0"
+            minspeed="30"
+            maxspeed="80"
+            drag="0"
+            acceleration="0"
+            position="0 60 40"
 
-				startframe="0"
-				endframe="1"
-				startsize="10"
-				midsize="30"
-				endsize="60"
-				startalpha="0"
-				midalpha=".3"
-				endalpha="0"
-				midalphapos=".3"
-				startstickiness="0"
-				endstickiness="0"
-			/>
 
-			<particle 
-				minangle="0"
-				maxangle="0"
-				minanglespeed="-50"
-				maxanglespeed="-150"
-				startcolor="1 1 1"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".2"
+            material="/shared/effects/materials/dust_smoke_05.material"
+            offsetsphere="4 4 4"
+            minangle="360"
+            maxangle="180"
+            direction="1 0 0"
+            offsetdirection="0 0 0"
+            offsetradial="0 0 0"
+        >
 
-				startframe="0"
-				endframe="1"
-				startsize="10"
-				midsize="25"
-				endsize="50"
-				startalpha="0"
-				midalpha=".3"
-				endalpha="0"
-				midalphapos=".3"
-				startstickiness="0"
-				endstickiness="0"
-			/>
+            <particle 
+                minangle="0"
+                maxangle="0"
+                minanglespeed="-50"
+                maxanglespeed="-150"
+                startcolor="1 1 1"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".2"
 
-		</simpleemitter>
+                startframe="0"
+                endframe="1"
+                startsize="10"
+                midsize="30"
+                endsize="60"
+                startalpha="0"
+                midalpha=".3"
+                endalpha="0"
+                midalphapos=".3"
+                startstickiness="0"
+                endstickiness="0"
+            />
+
+            <particle 
+                minangle="0"
+                maxangle="0"
+                minanglespeed="-50"
+                maxanglespeed="-150"
+                startcolor="1 1 1"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".2"
+
+                startframe="0"
+                endframe="1"
+                startsize="10"
+                midsize="25"
+                endsize="50"
+                startalpha="0"
+                midalpha=".3"
+                endalpha="0"
+                midalphapos=".3"
+                startstickiness="0"
+                endstickiness="0"
+            />
+
+        </simpleemitter>
 
 
 <!-- ROCKS  -->
 
-		<simpleemitter
-		
-			spawnrate="128"
-			count="10"
-			
-			particlelife="1000"			
-			gravity="8"
-			minspeed="100"
-			maxspeed="160"
-			drag="0"
-			acceleration="3"
-			position="0 60 40"
+        <simpleemitter
+        
+            spawnrate="128"
+            count="10"
+            
+            particlelife="1000"         
+            gravity="8"
+            minspeed="100"
+            maxspeed="160"
+            drag="0"
+            acceleration="3"
+            position="0 60 40"
 
 
-			material="/shared/effects/materials/dust_rock.material"
-			offsetsphere="4 4 4"
-			minangle="-90"
-			maxangle="90"
-			direction="0 0 1"
-			offsetdirection="0 0 0"
-			offsetradial="0 0 0"
-		>
+            material="/shared/effects/materials/dust_rock.material"
+            offsetsphere="4 4 4"
+            minangle="-90"
+            maxangle="90"
+            direction="0 0 1"
+            offsetdirection="0 0 0"
+            offsetradial="0 0 0"
+        >
 
-			<particle 
-				minangle="90"
-				maxangle="360"
-				minanglespeed="60"
-				maxanglespeed="100"
-				startcolor="1 1 1"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".5"
+            <particle 
+                minangle="90"
+                maxangle="360"
+                minanglespeed="60"
+                maxanglespeed="100"
+                startcolor="1 1 1"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".5"
 
-				startframe="0"
-				endframe="1"
-				startsize="10"
-				midsize="20"
-				endsize="10"
-				startalpha="1"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".3"
-				startstickiness="0"
-				endstickiness="0"
-			/>
+                startframe="0"
+                endframe="1"
+                startsize="10"
+                midsize="20"
+                endsize="10"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".3"
+                startstickiness="0"
+                endstickiness="0"
+            />
 
-			<particle 
-				minangle="90"
-				maxangle="360"
-				minanglespeed="60"
-				maxanglespeed="100"
-				startcolor="1 1 1"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".5"
+            <particle 
+                minangle="90"
+                maxangle="360"
+                minanglespeed="60"
+                maxanglespeed="100"
+                startcolor="1 1 1"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".5"
 
-				startframe="0"
-				endframe="1"
-				startsize="5"
-				midsize="15"
-				endsize="5"
-				startalpha="1"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".3"
-				startstickiness="0"
-				endstickiness="0"
-			/>
+                startframe="0"
+                endframe="1"
+                startsize="5"
+                midsize="15"
+                endsize="5"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".3"
+                startstickiness="0"
+                endstickiness="0"
+            />
 
-			<particle 
-				minangle="90"
-				maxangle="360"
-				minanglespeed="60"
-				maxanglespeed="100"
-				startcolor="1 1 1"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".5"
+            <particle 
+                minangle="90"
+                maxangle="360"
+                minanglespeed="60"
+                maxanglespeed="100"
+                startcolor="1 1 1"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".5"
 
-				startframe="0"
-				endframe="1"
-				startsize="1"
-				midsize="8"
-				endsize="1"
-				startalpha="1"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".3"
-				startstickiness="0"
-				endstickiness="0"
-			/>
-
-
-
-		</simpleemitter>
-
-
-		<simpleemitter
-		
-			spawnrate="128"
-			count="20"
-			
-			minparticlelife="900"
-			maxparticlelife="1300"
-						
-			mingravity="6"
-			maxgravity="8"
-			minspeed="80"
-			maxspeed="120"
-			drag="0"
-			acceleration="3"
-			position="0 60 40"
-
-
-			material="/shared/effects/materials/dust_rock.material"
-			offsetsphere="4 4 4"
-			minangle="-90"
-			maxangle="90"
-			direction="0 0 1"
-			offsetdirection="0 0 0"
-			offsetradial="0 0 0"
-		>
-
-			<particle 
-				minangle="90"
-				maxangle="360"
-				minanglespeed="60"
-				maxanglespeed="100"
-				startcolor="1 1 1"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".5"
-
-				startframe="0"
-				endframe="1"
-				startsize="1"
-				midsize="7"
-				endsize="1"
-				startalpha="1"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".3"
-				startstickiness="0"
-				endstickiness="0"
-			/>
-
-			<particle 
-				minangle="90"
-				maxangle="360"
-				minanglespeed="60"
-				maxanglespeed="100"
-				startcolor="1 1 1"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".5"
-
-				startframe="0"
-				endframe="1"
-				startsize="2"
-				midsize="12"
-				endsize="2"
-				startalpha="1"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".3"
-				startstickiness="0"
-				endstickiness="0"
-			/>
-
-			<particle 
-				minangle="90"
-				maxangle="360"
-				minanglespeed="60"
-				maxanglespeed="100"
-				startcolor="1 1 1"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".5"
-
-				startframe="0"
-				endframe="1"
-				startsize="1"
-				midsize="9"
-				endsize="1"
-				startalpha="1"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".3"
-				startstickiness="0"
-				endstickiness="0"
-			/>
+                startframe="0"
+                endframe="1"
+                startsize="1"
+                midsize="8"
+                endsize="1"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".3"
+                startstickiness="0"
+                endstickiness="0"
+            />
 
 
 
-		</simpleemitter>
-
-		<simpleemitter
-		
-			spawnrate="350"
-			count="25"
-			minparticlelife="800"
-			maxparticlelife="1200"
-						
-			mingravity="6"
-			maxgravity="8"
-			minspeed="70"
-			maxspeed="90"
-			drag="0"
-			acceleration="3"
-			position="0 60 40"
+        </simpleemitter>
 
 
-			material="/shared/effects/materials/dust_puff.material"
-			offsetsphere="4 4 4"
-			minangle="-90"
-			maxangle="90"
-			direction="0 0 1"
-			offsetdirection="0 0 0"
-			offsetradial="0 0 0"
-		>
-
-			<particle 
-				minangle="0"
-				maxangle="0"
-				minanglespeed="0"
-				maxanglespeed="0"
-				startcolor="1 1 1"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".5"
-
-				startframe="0"
-				endframe="1"
-				startsize="10"
-				midsize="30"
-				endsize="10"
-				startalpha="0"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".2"
-				startstickiness="0"
-				endstickiness="0"
-			/>
-
-			<particle 
-				minangle="90"
-				maxangle="360"
-				minanglespeed="60"
-				maxanglespeed="100"
-				startcolor="1 1 1"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".5"
-
-				startframe="0"
-				endframe="1"
-				startsize="5"
-				midsize="15"
-				endsize="5"
-				startalpha="1"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".3"
-				startstickiness="0"
-				endstickiness="0"
-			/>
-
-			<particle 
-				minangle="90"
-				maxangle="360"
-				minanglespeed="60"
-				maxanglespeed="100"
-				startcolor="1 1 1"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".5"
-
-				startframe="0"
-				endframe="1"
-				startsize="1"
-				midsize="8"
-				endsize="1"
-				startalpha="1"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".3"
-				startstickiness="0"
-				endstickiness="0"
-			/>
+        <simpleemitter
+        
+            spawnrate="128"
+            count="20"
+            
+            minparticlelife="900"
+            maxparticlelife="1300"
+                        
+            mingravity="6"
+            maxgravity="8"
+            minspeed="80"
+            maxspeed="120"
+            drag="0"
+            acceleration="3"
+            position="0 60 40"
 
 
+            material="/shared/effects/materials/dust_rock.material"
+            offsetsphere="4 4 4"
+            minangle="-90"
+            maxangle="90"
+            direction="0 0 1"
+            offsetdirection="0 0 0"
+            offsetradial="0 0 0"
+        >
 
-		</simpleemitter>
+            <particle 
+                minangle="90"
+                maxangle="360"
+                minanglespeed="60"
+                maxanglespeed="100"
+                startcolor="1 1 1"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".5"
+
+                startframe="0"
+                endframe="1"
+                startsize="1"
+                midsize="7"
+                endsize="1"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".3"
+                startstickiness="0"
+                endstickiness="0"
+            />
+
+            <particle 
+                minangle="90"
+                maxangle="360"
+                minanglespeed="60"
+                maxanglespeed="100"
+                startcolor="1 1 1"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".5"
+
+                startframe="0"
+                endframe="1"
+                startsize="2"
+                midsize="12"
+                endsize="2"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".3"
+                startstickiness="0"
+                endstickiness="0"
+            />
+
+            <particle 
+                minangle="90"
+                maxangle="360"
+                minanglespeed="60"
+                maxanglespeed="100"
+                startcolor="1 1 1"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".5"
+
+                startframe="0"
+                endframe="1"
+                startsize="1"
+                midsize="9"
+                endsize="1"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".3"
+                startstickiness="0"
+                endstickiness="0"
+            />
+
+
+
+        </simpleemitter>
+
+        <simpleemitter
+        
+            spawnrate="350"
+            count="25"
+            minparticlelife="800"
+            maxparticlelife="1200"
+                        
+            mingravity="6"
+            maxgravity="8"
+            minspeed="70"
+            maxspeed="90"
+            drag="0"
+            acceleration="3"
+            position="0 60 40"
+
+
+            material="/shared/effects/materials/dust_puff.material"
+            offsetsphere="4 4 4"
+            minangle="-90"
+            maxangle="90"
+            direction="0 0 1"
+            offsetdirection="0 0 0"
+            offsetradial="0 0 0"
+        >
+
+            <particle 
+                minangle="0"
+                maxangle="0"
+                minanglespeed="0"
+                maxanglespeed="0"
+                startcolor="1 1 1"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".5"
+
+                startframe="0"
+                endframe="1"
+                startsize="10"
+                midsize="30"
+                endsize="10"
+                startalpha="0"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".2"
+                startstickiness="0"
+                endstickiness="0"
+            />
+
+            <particle 
+                minangle="90"
+                maxangle="360"
+                minanglespeed="60"
+                maxanglespeed="100"
+                startcolor="1 1 1"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".5"
+
+                startframe="0"
+                endframe="1"
+                startsize="5"
+                midsize="15"
+                endsize="5"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".3"
+                startstickiness="0"
+                endstickiness="0"
+            />
+
+            <particle 
+                minangle="90"
+                maxangle="360"
+                minanglespeed="60"
+                maxanglespeed="100"
+                startcolor="1 1 1"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".5"
+
+                startframe="0"
+                endframe="1"
+                startsize="1"
+                midsize="8"
+                endsize="1"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".3"
+                startstickiness="0"
+                endstickiness="0"
+            />
+
+
+
+        </simpleemitter>
 
 
 

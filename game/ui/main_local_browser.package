@@ -1,473 +1,473 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
-	
-	<template name="local_game_settings">
-		<instance
-			name="header_bar"
-			height="2.5h"
-			lbl="local_header_local_game"
-			show_close="true"
-			onclick="
-				PlaySound('/shared/sounds/ui/menu/slide_off.wav');
-				Call('main_local_game_button', 'SetEnabled(true);');
-				Call('left_widgets', 'SlideX(\'-72%\', 500);');
-				_main_local_open = 0;
-				HideGroup('main_button_effects');
-				
-				"
-		/>
-		
-		<!-- Local Browser -->
-		<instance y="3.0h" name="header_bar" align="center" width="-2%" height="2.5h" lbl="local_header_join_local_game" show_close="0"/>
-		
-		<label
-			y="4.0h" x="-1.0h"
-			height="2.5h" width="-2%"
-			align="right"
-			textvalign="center"
-			textalign="right"
-			font="dyn_9"
-			color="white"
-			shadow="true"
-			watch="LocalGameListPlayers"
-			ontrigger="SetText(Translate('main_local_browser_header', 'players', param0, 'servers', param1));"
-		/>
-		
-		<panel height="18.0h" y="5.7h" width="-1.0h" name="Ngame_local_browser" color="invisible" align="center">
-			
-			<panel y="13.7h" width="100%" align="center" height="2.5h" noclick="1" visible="1" color="invisible">
-				<instance
-					name="button2"
-					align="left"
-					width="11.0h" 
-					font="dyn_10"
-					label="local_button_refresh_list"
-					borderthickness=".8h"
-					onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); GetLocalGameList(); _browser_last_selected_server = '';"
-					onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
-				/>
-				<instance
-					name="button2"
-					align="right"
-					width="13.0h"
-					x="-17.0h"
-					font="dyn_10"
-					label="local_button_connect_ip"
-					borderthickness=".8h"
-					onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); Call('connect_to_ip_local', 'FadeIn(250);');"
-					onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
-				/>
-				<instance
-					name="button2"
-					align="right"
-					width="16.0h" 
-					font="dyn_10"
-					label="local_button_join_selected"
-					borderthickness=".8h"
-					onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); If(!IsServerNumPassworded(_local_browser_last_selected_server), Split(HideWidget('local_browser_panel'), ConnectToServerNum(_local_browser_last_selected_server)), ShowWidget('connect_password_local'));"
-					onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
-				/>
-			</panel>
-			
-			<panel y="10.2h" height="3.0h" color="invisible" align="center" noclick="1">
-				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
-				
-				<panel align="center" width="-4%">
-					<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="local_label_your_name"/>
-					<image x="-52%" width="0.8h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />				
-					<panel align="right" x="0" width="50%" color="invisible" noclick="1">
+    
+    <template name="local_game_settings">
+        <instance
+            name="header_bar"
+            height="2.5h"
+            lbl="local_header_local_game"
+            show_close="true"
+            onclick="
+                PlaySound('/shared/sounds/ui/menu/slide_off.wav');
+                Call('main_local_game_button', 'SetEnabled(true);');
+                Call('left_widgets', 'SlideX(\'-72%\', 500);');
+                _main_local_open = 0;
+                HideGroup('main_button_effects');
+                
+                "
+        />
+        
+        <!-- Local Browser -->
+        <instance y="3.0h" name="header_bar" align="center" width="-2%" height="2.5h" lbl="local_header_join_local_game" show_close="0"/>
+        
+        <label
+            y="4.0h" x="-1.0h"
+            height="2.5h" width="-2%"
+            align="right"
+            textvalign="center"
+            textalign="right"
+            font="dyn_9"
+            color="white"
+            shadow="true"
+            watch="LocalGameListPlayers"
+            ontrigger="SetText(Translate('main_local_browser_header', 'players', param0, 'servers', param1));"
+        />
+        
+        <panel height="18.0h" y="5.7h" width="-1.0h" name="Ngame_local_browser" color="invisible" align="center">
+            
+            <panel y="13.7h" width="100%" align="center" height="2.5h" noclick="1" visible="1" color="invisible">
+                <instance
+                    name="button2"
+                    align="left"
+                    width="11.0h" 
+                    font="dyn_10"
+                    label="local_button_refresh_list"
+                    borderthickness=".8h"
+                    onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); GetLocalGameList(); _browser_last_selected_server = '';"
+                    onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+                />
+                <instance
+                    name="button2"
+                    align="right"
+                    width="13.0h"
+                    x="-17.0h"
+                    font="dyn_10"
+                    label="local_button_connect_ip"
+                    borderthickness=".8h"
+                    onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); Call('connect_to_ip_local', 'FadeIn(250);');"
+                    onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+                />
+                <instance
+                    name="button2"
+                    align="right"
+                    width="16.0h" 
+                    font="dyn_10"
+                    label="local_button_join_selected"
+                    borderthickness=".8h"
+                    onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); If(!IsServerNumPassworded(_local_browser_last_selected_server), Split(HideWidget('local_browser_panel'), ConnectToServerNum(_local_browser_last_selected_server)), ShowWidget('connect_password_local'));"
+                    onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+                />
+            </panel>
+            
+            <panel y="10.2h" height="3.0h" color="invisible" align="center" noclick="1">
+                <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+                
+                <panel align="center" width="-4%">
+                    <label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="local_label_your_name"/>
+                    <image x="-52%" width="0.8h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />                
+                    <panel align="right" x="0" width="50%" color="invisible" noclick="1">
 
-						<panel width="100%" height="74%" valign="center" align="left" color="0 0 0 1">
-							<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="#171a28"/>
-							<frame texture="/ui/frames/roundframe.tga" color="#bbdefa" borderthickness="0.5h"/>							
-							<textbox
-								y="0.3h"
-								width="-1.0h"
-								align="center"
-								color="invisible"
-								font="dyn_9"
-								textcolor="white"
-								shadow="true"
-								onchange="Set(net_name, this);"
-								onshow="SetInputLine(net_name); SetFocus(true);"
-							/>
-						</panel>
-					</panel>
-				</panel>
-			</panel>
+                        <panel width="100%" height="74%" valign="center" align="left" color="0 0 0 1">
+                            <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="#171a28"/>
+                            <frame texture="/ui/frames/roundframe.tga" color="#bbdefa" borderthickness="0.5h"/>                         
+                            <textbox
+                                y="0.3h"
+                                width="-1.0h"
+                                align="center"
+                                color="invisible"
+                                font="dyn_9"
+                                textcolor="white"
+                                shadow="true"
+                                onchange="Set(net_name, this);"
+                                onshow="SetInputLine(net_name); SetFocus(true);"
+                            />
+                        </panel>
+                    </panel>
+                </panel>
+            </panel>
 
-			<panel y="0" width="100%" align="center" height="10.0h" color="0 0 0 1" noclick="1">
-				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
-				<table
-					name="local_game_list"					
-					headingcolor="#0d151e"
-					altrowcolor="#152334"
-					color="#1f334a"
-					rows="5"
-					expandable="true"
-					rowheight="20%"
-					font="dyn_9"
-					bordercolor="invisible"
-					headings="general_game_name,general_ping,general_players,general_game_mode"
-					cols="33%,10%,16%,41%,2%"
-					headingid="head"
-					height="-2.0h"
-					width="-2.0h"
-					y="1.0h"
-					align="center"
-					usescrollbar="true"
-					exteriorscrollbars="1"
-					scrolltexture="/ui/info/combobox.tga"
-					scrollbarsize="2.0h"
-					handleheight="2.0h"
-					handlewidth="2.0h"
-					textalign="center"
-					textvalign="center"
-					watch="LocalGameList"
-					onload="CreateString('_browser_last_selected_server', ''); CreateString('_browser_last_selected_server_name', ''); CreateBool('_valid_server', false); CreateBool('_reverse_sort', false); CreateInt('_last_sorted', 0);"
-					onshow="GetLocalGameList();"
-					onclick="
-						_valid_server = !StringEquals(dataid, 'head');
-						If(_valid_server, Set(_valid_server, !StringEmpty(dataid)));
-						If(_valid_server, Set(_browser_last_selected_server, dataid));
-						If(_valid_server, Set(_browser_last_selected_server_name, GetData(0, row)));
-						If(_valid_server, Call('game_list_selected', 'SetVisible(true); SetY(\'' # GetCellPositionY(col, row) # '\');'));
-						If(StringEquals(dataid, 'head') and _last_sorted == col, Set(_reverse_sort, 1));
-						If(StringEquals(dataid, 'head') and _last_sorted != col, Set(_reverse_sort, 0));
-						If(_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNumReverse(col));
-						If(_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByColReverse(col));
-						If(_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, -1));
-						If(!_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNum(col));
-						If(!_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByCol(col));
-						If(!_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, col));"
-					ondoubleclick="
-						_valid_server = !StringEquals(dataid, 'head');
-						If(_valid_server, Set(_valid_server, !StringEmpty(dataid)));
-						If(_valid_server, Set(_browser_last_selected_server, dataid));
-						If(_valid_server, Set(_browser_last_selected_server_name, GetData(0, row)));
-						If(_valid_server, Call('game_list_selected', 'SetVisible(true); SetY(\'' # GetCellPositionY(col, row) # '\');'));
-						If(_valid_server, Disconnect());
-						If(_valid_server and !IsServerNumPassworded(dataid), Connect(dataid, _browser_last_selected_server));
-						If(_valid_server and IsServerNumPassworded(dataid), ShowWidget('connect_password'));
-						If(StringEquals(dataid, 'head') and _last_sorted == col, Set(_reverse_sort, 1));
-						If(StringEquals(dataid, 'head') and _last_sorted != col, Set(_reverse_sort, 0));
-						If(_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNumReverse(col));
-						If(_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByColReverse(col));
-						If(_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, -1));
-						If(!_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNum(col));
-						If(!_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByCol(col));
-						If(!_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, col));"
-					onclear="
-						_valid_server = false;
-						_browser_last_selected_server = '';
-						_browser_last_selected_server_name = '';"
-				/>
-			</panel>
-		
-		</panel>
-		
-		<!-- Game Setup Options -->
-		<instance name="header_bar" align="center" y="23.0h" width="-2%" height="2.5h" lbl="local_create_game_header" show_close="0"/>
-		<instance name="local_game_settings_panel" y="25.7h" />		
-		
-	</template>
-	
-	<template name="local_server_browser">
-		<instance name="header_bar" height="3.0h" lbl="local_select_server_header" show_close="1" onclick="HideWidget('local_server_browser');"/>
-		
-		<panel y="27h" width="-2%" align="center" height="2.5h" noclick="1" visible="1" color="invisible">
+            <panel y="0" width="100%" align="center" height="10.0h" color="0 0 0 1" noclick="1">
+                <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+                <table
+                    name="local_game_list"                  
+                    headingcolor="#0d151e"
+                    altrowcolor="#152334"
+                    color="#1f334a"
+                    rows="5"
+                    expandable="true"
+                    rowheight="20%"
+                    font="dyn_9"
+                    bordercolor="invisible"
+                    headings="general_game_name,general_ping,general_players,general_game_mode"
+                    cols="33%,10%,16%,41%,2%"
+                    headingid="head"
+                    height="-2.0h"
+                    width="-2.0h"
+                    y="1.0h"
+                    align="center"
+                    usescrollbar="true"
+                    exteriorscrollbars="1"
+                    scrolltexture="/ui/info/combobox.tga"
+                    scrollbarsize="2.0h"
+                    handleheight="2.0h"
+                    handlewidth="2.0h"
+                    textalign="center"
+                    textvalign="center"
+                    watch="LocalGameList"
+                    onload="CreateString('_browser_last_selected_server', ''); CreateString('_browser_last_selected_server_name', ''); CreateBool('_valid_server', false); CreateBool('_reverse_sort', false); CreateInt('_last_sorted', 0);"
+                    onshow="GetLocalGameList();"
+                    onclick="
+                        _valid_server = !StringEquals(dataid, 'head');
+                        If(_valid_server, Set(_valid_server, !StringEmpty(dataid)));
+                        If(_valid_server, Set(_browser_last_selected_server, dataid));
+                        If(_valid_server, Set(_browser_last_selected_server_name, GetData(0, row)));
+                        If(_valid_server, Call('game_list_selected', 'SetVisible(true); SetY(\'' # GetCellPositionY(col, row) # '\');'));
+                        If(StringEquals(dataid, 'head') and _last_sorted == col, Set(_reverse_sort, 1));
+                        If(StringEquals(dataid, 'head') and _last_sorted != col, Set(_reverse_sort, 0));
+                        If(_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNumReverse(col));
+                        If(_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByColReverse(col));
+                        If(_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, -1));
+                        If(!_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNum(col));
+                        If(!_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByCol(col));
+                        If(!_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, col));"
+                    ondoubleclick="
+                        _valid_server = !StringEquals(dataid, 'head');
+                        If(_valid_server, Set(_valid_server, !StringEmpty(dataid)));
+                        If(_valid_server, Set(_browser_last_selected_server, dataid));
+                        If(_valid_server, Set(_browser_last_selected_server_name, GetData(0, row)));
+                        If(_valid_server, Call('game_list_selected', 'SetVisible(true); SetY(\'' # GetCellPositionY(col, row) # '\');'));
+                        If(_valid_server, Disconnect());
+                        If(_valid_server and !IsServerNumPassworded(dataid), Connect(dataid, _browser_last_selected_server));
+                        If(_valid_server and IsServerNumPassworded(dataid), ShowWidget('connect_password'));
+                        If(StringEquals(dataid, 'head') and _last_sorted == col, Set(_reverse_sort, 1));
+                        If(StringEquals(dataid, 'head') and _last_sorted != col, Set(_reverse_sort, 0));
+                        If(_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNumReverse(col));
+                        If(_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByColReverse(col));
+                        If(_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, -1));
+                        If(!_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNum(col));
+                        If(!_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByCol(col));
+                        If(!_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, col));"
+                    onclear="
+                        _valid_server = false;
+                        _browser_last_selected_server = '';
+                        _browser_last_selected_server_name = '';"
+                />
+            </panel>
+        
+        </panel>
+        
+        <!-- Game Setup Options -->
+        <instance name="header_bar" align="center" y="23.0h" width="-2%" height="2.5h" lbl="local_create_game_header" show_close="0"/>
+        <instance name="local_game_settings_panel" y="25.7h" />     
+        
+    </template>
+    
+    <template name="local_server_browser">
+        <instance name="header_bar" height="3.0h" lbl="local_select_server_header" show_close="1" onclick="HideWidget('local_server_browser');"/>
+        
+        <panel y="27h" width="-2%" align="center" height="2.5h" noclick="1" visible="1" color="invisible">
 
-			<instance
-				name="button2"
-				align="left"
-				width="8h"
-				font="dyn_10"
-				label="general_cancel"
-				borderthickness=".8h"
-				onclick="hidewidget('local_server_browser');"
-				onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
-			/>
-			<instance
-				name="button2"
-				align="right"
-				x="-13h"
-				width="9h" 
-				font="dyn_10"
-				label="general_refresh"
-				borderthickness=".8h"
-				onclick="GetLocalServerList();"
-				onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
-			/>
-			<instance
-				name="button2"
-				align="right"
-				width="12h" 
-				font="dyn_10"
-				label="local_select_server_button"
-				borderthickness=".8h"
-				onclick="Connect(_browser_last_selected_server, _browser_last_selected_server_name, true);"
-				onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
-			/>
+            <instance
+                name="button2"
+                align="left"
+                width="8h"
+                font="dyn_10"
+                label="general_cancel"
+                borderthickness=".8h"
+                onclick="hidewidget('local_server_browser');"
+                onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+            />
+            <instance
+                name="button2"
+                align="right"
+                x="-13h"
+                width="9h" 
+                font="dyn_10"
+                label="general_refresh"
+                borderthickness=".8h"
+                onclick="GetLocalServerList();"
+                onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+            />
+            <instance
+                name="button2"
+                align="right"
+                width="12h" 
+                font="dyn_10"
+                label="local_select_server_button"
+                borderthickness=".8h"
+                onclick="Connect(_browser_last_selected_server, _browser_last_selected_server_name, true);"
+                onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+            />
 
-		</panel>
-		
-		<panel y="6.4h" width="-2%" align="center" height="20.0h" color="0 0 0 1" noclick="1">
-			<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
-			<table
-				name="local_server_list"
-				color="#081421"
-				rows="8"
-				expandable="true"
-				rowheight="12.5%"
-				cols="50%,50%"
-				font="dyn_9"
-				bordercolor="invisible"
-				headings="general_server_name,general_ping"
-				headingid="head"
-				headingcolor="#4a657b"
-				height="-2.0h"
-				width="-2.0h"
-				y="1.0h"
-				align="center"
-				altrowcolor="#12202f"
-				usescrollbar="true"
-				scrolltexture="/ui/info/combobox.tga"
-				scrollbarsize="2h"
-				handleheight="2h"
-				handlewidth="2h"
-				watch="LocalServerList"
-				onload="CreateString('_browser_last_selected_server', ''); CreateString('_browser_last_selected_server_name', ''); CreateBool('_valid_server', false); CreateBool('_reverse_sort', false); CreateInt('_last_sorted', 0);"
-				onshow="GetLocalServerList();"
-				onclick="
-					_valid_server = !StringEquals(dataid, 'head');
-					If(_valid_server, Set(_valid_server, !StringEmpty(dataid)));
-					If(_valid_server, Set(_browser_last_selected_server, dataid));
-					If(_valid_server, Set(_browser_last_selected_server_name, GetData(0, row)));
-					If(_valid_server, Call('game_list_selected', 'SetVisible(true); SetY(\'' # GetCellPositionY(col, row) # '\');'));
-					If(StringEquals(dataid, 'head') and _last_sorted == col, Set(_reverse_sort, 1));
-					If(StringEquals(dataid, 'head') and _last_sorted != col, Set(_reverse_sort, 0));
-					If(_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNumReverse(col));
-					If(_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByColReverse(col));
-					If(_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, -1));
-					If(!_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNum(col));
-					If(!_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByCol(col));
-					If(!_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, col));"
-				ondoubleclick="
-					_valid_server = !StringEquals(dataid, 'head');
-					If(_valid_server, Set(_valid_server, !StringEmpty(dataid)));
-					If(_valid_server, Set(_browser_last_selected_server, dataid));
-					If(_valid_server, Set(_browser_last_selected_server_name, GetData(0, row)));
-					If(_valid_server, Call('game_list_selected', 'SetVisible(true); SetY(\'' # GetCellPositionY(col, row) # '\');'));
-					If(_valid_server, Disconnect());
-					If(_valid_server and !IsServerNumPassworded(dataid), Connect(dataid, _browser_last_selected_server_name, true));
-					If(_valid_server and IsServerNumPassworded(dataid), ShowWidget('connect_password'));
-					If(StringEquals(dataid, 'head') and _last_sorted == col, Set(_reverse_sort, 1));
-					If(StringEquals(dataid, 'head') and _last_sorted != col, Set(_reverse_sort, 0));
-					If(_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNumReverse(col));
-					If(_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByColReverse(col));
-					If(_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, -1));
-					If(!_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNum(col));
-					If(!_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByCol(col));
-					If(!_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, col));"
-				onclear="
-					_valid_server = false;
-					_browser_last_selected_server = '';"
-				textalign="center"
-				textvalign="center"
-			/>
-		</panel>
+        </panel>
+        
+        <panel y="6.4h" width="-2%" align="center" height="20.0h" color="0 0 0 1" noclick="1">
+            <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+            <table
+                name="local_server_list"
+                color="#081421"
+                rows="8"
+                expandable="true"
+                rowheight="12.5%"
+                cols="50%,50%"
+                font="dyn_9"
+                bordercolor="invisible"
+                headings="general_server_name,general_ping"
+                headingid="head"
+                headingcolor="#4a657b"
+                height="-2.0h"
+                width="-2.0h"
+                y="1.0h"
+                align="center"
+                altrowcolor="#12202f"
+                usescrollbar="true"
+                scrolltexture="/ui/info/combobox.tga"
+                scrollbarsize="2h"
+                handleheight="2h"
+                handlewidth="2h"
+                watch="LocalServerList"
+                onload="CreateString('_browser_last_selected_server', ''); CreateString('_browser_last_selected_server_name', ''); CreateBool('_valid_server', false); CreateBool('_reverse_sort', false); CreateInt('_last_sorted', 0);"
+                onshow="GetLocalServerList();"
+                onclick="
+                    _valid_server = !StringEquals(dataid, 'head');
+                    If(_valid_server, Set(_valid_server, !StringEmpty(dataid)));
+                    If(_valid_server, Set(_browser_last_selected_server, dataid));
+                    If(_valid_server, Set(_browser_last_selected_server_name, GetData(0, row)));
+                    If(_valid_server, Call('game_list_selected', 'SetVisible(true); SetY(\'' # GetCellPositionY(col, row) # '\');'));
+                    If(StringEquals(dataid, 'head') and _last_sorted == col, Set(_reverse_sort, 1));
+                    If(StringEquals(dataid, 'head') and _last_sorted != col, Set(_reverse_sort, 0));
+                    If(_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNumReverse(col));
+                    If(_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByColReverse(col));
+                    If(_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, -1));
+                    If(!_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNum(col));
+                    If(!_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByCol(col));
+                    If(!_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, col));"
+                ondoubleclick="
+                    _valid_server = !StringEquals(dataid, 'head');
+                    If(_valid_server, Set(_valid_server, !StringEmpty(dataid)));
+                    If(_valid_server, Set(_browser_last_selected_server, dataid));
+                    If(_valid_server, Set(_browser_last_selected_server_name, GetData(0, row)));
+                    If(_valid_server, Call('game_list_selected', 'SetVisible(true); SetY(\'' # GetCellPositionY(col, row) # '\');'));
+                    If(_valid_server, Disconnect());
+                    If(_valid_server and !IsServerNumPassworded(dataid), Connect(dataid, _browser_last_selected_server_name, true));
+                    If(_valid_server and IsServerNumPassworded(dataid), ShowWidget('connect_password'));
+                    If(StringEquals(dataid, 'head') and _last_sorted == col, Set(_reverse_sort, 1));
+                    If(StringEquals(dataid, 'head') and _last_sorted != col, Set(_reverse_sort, 0));
+                    If(_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNumReverse(col));
+                    If(_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByColReverse(col));
+                    If(_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, -1));
+                    If(!_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNum(col));
+                    If(!_reverse_sort and StringEquals(dataid, 'head') and col != 4 and col != 5 and col != 6 and col != 7, SortByCol(col));
+                    If(!_reverse_sort and StringEquals(dataid, 'head'), Set(_last_sorted, col));"
+                onclear="
+                    _valid_server = false;
+                    _browser_last_selected_server = '';"
+                textalign="center"
+                textvalign="center"
+            />
+        </panel>
 
-		<panel y="3.2h" height="3.0h" color="invisible" align="center" width="-2.0h" noclick="1">
-			<panel width="-68@" height="74%" valign="center" align="left" color="0 0 0 .5">
-				<frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />
-				<textbox
-					name="lobby_chat_box"
-					y="0.3h"
-					width="-1.0h"
-					valign="center" align="center"
-					maxlength="250"
-					textalign="left" textvalign="center"
-					font="dyn_9"
-					textcolor="white"
-					shadow="false"
-					color="invisible"
-					onshow="SetFocus(true); SetInputLine(GetCurrentChatMessage());"
-					onenter="
-						PlaySound('/shared/sounds/ui/chat_send.wav');
-						AllChat(this);
-						EraseInputLine();"
-					onesc="EraseInputLine(); SetFocus(true);"
-					onchange="SetCurrentChatMessage(this);"
-				/>
-			</panel>
-			<instance name="tip_mark" tip_id="gamefilter_tip" width="1.8h" height="1.8h" valign="center" align="right" />
-			<instance name="generic_tooltip" x="-1.8h" y="0" width="25.0h" height="6.0h" align="right" valign="bottom" tip_id="gamefilter_tip" title="main_local_browser_filter_header" label="main_local_browser_filter_desc" />
-		</panel>
-		
-	</template>
-	
-	<panel name="main_local_game_panel" color="invisible" visible="0" noclick="1">	
-		<panel name="game_settings" noclick="1">
-			<instance name="local_game_settings"/>
-		</panel>
-		
-		<panel name="local_server_browser" color="#00000099" blockinput="true" visible="false" watch="ConnectionStatus" ontrigger="If(param0, SetVisible(false));">
-			<instance name="frame_stone_brown" width="50h" height="36.5h" valign="center" align="center" uscale=".25" vscale=".25" vis_ornate_top="0" body="local_server_browser"/>
-		</panel>
-	</panel>
+        <panel y="3.2h" height="3.0h" color="invisible" align="center" width="-2.0h" noclick="1">
+            <panel width="-68@" height="74%" valign="center" align="left" color="0 0 0 .5">
+                <frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />
+                <textbox
+                    name="lobby_chat_box"
+                    y="0.3h"
+                    width="-1.0h"
+                    valign="center" align="center"
+                    maxlength="250"
+                    textalign="left" textvalign="center"
+                    font="dyn_9"
+                    textcolor="white"
+                    shadow="false"
+                    color="invisible"
+                    onshow="SetFocus(true); SetInputLine(GetCurrentChatMessage());"
+                    onenter="
+                        PlaySound('/shared/sounds/ui/chat_send.wav');
+                        AllChat(this);
+                        EraseInputLine();"
+                    onesc="EraseInputLine(); SetFocus(true);"
+                    onchange="SetCurrentChatMessage(this);"
+                />
+            </panel>
+            <instance name="tip_mark" tip_id="gamefilter_tip" width="1.8h" height="1.8h" valign="center" align="right" />
+            <instance name="generic_tooltip" x="-1.8h" y="0" width="25.0h" height="6.0h" align="right" valign="bottom" tip_id="gamefilter_tip" title="main_local_browser_filter_header" label="main_local_browser_filter_desc" />
+        </panel>
+        
+    </template>
+    
+    <panel name="main_local_game_panel" color="invisible" visible="0" noclick="1">  
+        <panel name="game_settings" noclick="1">
+            <instance name="local_game_settings"/>
+        </panel>
+        
+        <panel name="local_server_browser" color="#00000099" blockinput="true" visible="false" watch="ConnectionStatus" ontrigger="If(param0, SetVisible(false));">
+            <instance name="frame_stone_brown" width="50h" height="36.5h" valign="center" align="center" uscale=".25" vscale=".25" vis_ornate_top="0" body="local_server_browser"/>
+        </panel>
+    </panel>
 
-	<!-- Specify IP -->
-	<template name="connect_to_ip_local_controls">
-	
-		<panel height="3.0h" width="-1.8h" align="center">
-			<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="main_local_browser_ip"/>
-			<image x="-60%" width="0.8h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />				
-			<panel align="right" x="0" width="58%" color="invisible" noclick="1">
+    <!-- Specify IP -->
+    <template name="connect_to_ip_local_controls">
+    
+        <panel height="3.0h" width="-1.8h" align="center">
+            <label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="main_local_browser_ip"/>
+            <image x="-60%" width="0.8h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />                
+            <panel align="right" x="0" width="58%" color="invisible" noclick="1">
 
-				<panel width="-68@" height="74%" valign="center" align="left" color="0 0 0 1">
-					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="#171a28"/>
-					<frame texture="/ui/frames/roundframe.tga" color="#bbdefa" borderthickness="0.5h"/>
-					<textbox
-						name="ip_box"
-						y="0.3h"
-						width="-1.0h"
-						align="center"
-						color="invisible"
-						font="dyn_9"
-						textcolor="white"
-						shadow="true"
-						onshow="SetFocus(true);" onchange="Set(_target_ip, this);" onenter="SetFocusName('pass_box');"
-					/>
-				</panel>
+                <panel width="-68@" height="74%" valign="center" align="left" color="0 0 0 1">
+                    <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="#171a28"/>
+                    <frame texture="/ui/frames/roundframe.tga" color="#bbdefa" borderthickness="0.5h"/>
+                    <textbox
+                        name="ip_box"
+                        y="0.3h"
+                        width="-1.0h"
+                        align="center"
+                        color="invisible"
+                        font="dyn_9"
+                        textcolor="white"
+                        shadow="true"
+                        onshow="SetFocus(true);" onchange="Set(_target_ip, this);" onenter="SetFocusName('pass_box');"
+                    />
+                </panel>
 
-				<instance name="tip_mark" tip_id="ip_tip" width="1.8h" height="1.8h" valign="center" align="right" />
-				<instance name="generic_tooltip" x="18h" y="1.4h" width="17h" height="7.3h" align="right" valign="center" tip_id="ip_tip" title="main_local_browser_ip" label="main_local_browser_ip_tip" />
-			</panel>
-		</panel>
-		
-		<panel y="2.5h" height="3.0h" width="-1.8h" align="center">
-			<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="main_local_broswer_password"/>
-			<image x="-60%" width="0.8h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />				
-			<panel align="right" x="0" width="58%" color="invisible" noclick="1">
+                <instance name="tip_mark" tip_id="ip_tip" width="1.8h" height="1.8h" valign="center" align="right" />
+                <instance name="generic_tooltip" x="18h" y="1.4h" width="17h" height="7.3h" align="right" valign="center" tip_id="ip_tip" title="main_local_browser_ip" label="main_local_browser_ip_tip" />
+            </panel>
+        </panel>
+        
+        <panel y="2.5h" height="3.0h" width="-1.8h" align="center">
+            <label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="main_local_broswer_password"/>
+            <image x="-60%" width="0.8h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />                
+            <panel align="right" x="0" width="58%" color="invisible" noclick="1">
 
-				<panel width="-68@" height="74%" valign="center" align="left" color="0 0 0 1">
-					<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="#171a28"/>
-					<frame texture="/ui/frames/roundframe.tga" color="#bbdefa" borderthickness="0.5h"/>														
+                <panel width="-68@" height="74%" valign="center" align="left" color="0 0 0 1">
+                    <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="#171a28"/>
+                    <frame texture="/ui/frames/roundframe.tga" color="#bbdefa" borderthickness="0.5h"/>                                                     
 
-					<textbox x="5" y="4"  textvalign="center"  valign="center" taborder="5"  font="chat_12" color="invisible" textcolor="black" shadow="true"  onchange="Set('cl_password', this);" onenter="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('connect_to_ip_local'); HideWidget('local_browser_panel'); Disconnect(); Connect(_target_ip, 'Unknown Game');"/>
-					
-					<textbox
-						name="pass_box"
-						passwordchar="*"
-						y="0.3h"
-						width="-1.0h"
-						align="center"
-						color="invisible"
-						font="dyn_9"
-						textcolor="white"
-						shadow="true"
-						onchange="Set('cl_password', this);"
-						onenter="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('connect_to_ip_local'); HideWidget('local_browser_panel'); Disconnect(); Connect(_target_ip, 'Unknown Game');"
-					/>
-				</panel>
+                    <textbox x="5" y="4"  textvalign="center"  valign="center" taborder="5"  font="chat_12" color="invisible" textcolor="black" shadow="true"  onchange="Set('cl_password', this);" onenter="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('connect_to_ip_local'); HideWidget('local_browser_panel'); Disconnect(); Connect(_target_ip, 'Unknown Game');"/>
+                    
+                    <textbox
+                        name="pass_box"
+                        passwordchar="*"
+                        y="0.3h"
+                        width="-1.0h"
+                        align="center"
+                        color="invisible"
+                        font="dyn_9"
+                        textcolor="white"
+                        shadow="true"
+                        onchange="Set('cl_password', this);"
+                        onenter="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('connect_to_ip_local'); HideWidget('local_browser_panel'); Disconnect(); Connect(_target_ip, 'Unknown Game');"
+                    />
+                </panel>
 
-				<instance name="tip_mark" tip_id="password2_tip" width="1.8h" height="1.8h" valign="center" align="right" />
-				<instance name="generic_tooltip" x="23h" y="0.8h" width="22h" height="4.3h" align="right" valign="center" tip_id="password2_tip" title="main_local_broswer_password" label="main_local_browser_password_tip" />
-			</panel>
-		</panel>
-		
-		<instance
-			name="button2"
-			y="6.0h" x="-2.9h"
-			height="2.4h"
-			width="10.0h"
-			align="right"
-			label="general_connect"
-			font="dyn_10"
-			onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('local_browser_panel'); HideWidget('connect_to_ip_local'); Disconnect(); Connect(_target_ip, 'Unknown Game');"
-		/>
-	
-	</template>
-	<panel name="connect_to_ip_local" color="#00000099" visible="0" blockinput="true" onload="CreateString('_target_ip');">		
-		<instance
-			name="alert_box"
-			width="26.0h"
-			height="13.2h"
-			align="center"
-			label="main_local_browser_connect_to_ip"
-			show_close="true"
-			closebtn_click="Call('connect_to_ip_local', 'FadeOut(250);');"
-			body="connect_to_ip_local_controls"
-		/>
-	</panel>
-	
-	<!-- Specify Password -->
-	<panel name="connect_password_local" color="#00000099" visible="0" blockinput="true">	
-		<panel y="33%" width="26.0h" height="9.4h" align="center" valign="top">
-			<frame  texture="/ui/frames/tooltip_bg.tga" color="#0c1b3bc9" borderthickness=".6h" align="left" valign="top">
-				<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
-				<instance name="header_bar" buttonsize="1.5h" height="2.2h" lbl="local_need_password_header" show_close="1" onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('connect_password_local');"/>				
-				<panel y="2.5h" height="3.0h" width="-1.8h" align="center">
-					<label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="main_local_broswer_password"/>
-					<image x="-60%" width="0.8h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />				
-					<panel align="right" x="0" width="58%" color="invisible" noclick="1">
+                <instance name="tip_mark" tip_id="password2_tip" width="1.8h" height="1.8h" valign="center" align="right" />
+                <instance name="generic_tooltip" x="23h" y="0.8h" width="22h" height="4.3h" align="right" valign="center" tip_id="password2_tip" title="main_local_broswer_password" label="main_local_browser_password_tip" />
+            </panel>
+        </panel>
+        
+        <instance
+            name="button2"
+            y="6.0h" x="-2.9h"
+            height="2.4h"
+            width="10.0h"
+            align="right"
+            label="general_connect"
+            font="dyn_10"
+            onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('local_browser_panel'); HideWidget('connect_to_ip_local'); Disconnect(); Connect(_target_ip, 'Unknown Game');"
+        />
+    
+    </template>
+    <panel name="connect_to_ip_local" color="#00000099" visible="0" blockinput="true" onload="CreateString('_target_ip');">     
+        <instance
+            name="alert_box"
+            width="26.0h"
+            height="13.2h"
+            align="center"
+            label="main_local_browser_connect_to_ip"
+            show_close="true"
+            closebtn_click="Call('connect_to_ip_local', 'FadeOut(250);');"
+            body="connect_to_ip_local_controls"
+        />
+    </panel>
+    
+    <!-- Specify Password -->
+    <panel name="connect_password_local" color="#00000099" visible="0" blockinput="true">   
+        <panel y="33%" width="26.0h" height="9.4h" align="center" valign="top">
+            <frame  texture="/ui/frames/tooltip_bg.tga" color="#0c1b3bc9" borderthickness=".6h" align="left" valign="top">
+                <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
+                <instance name="header_bar" buttonsize="1.5h" height="2.2h" lbl="local_need_password_header" show_close="1" onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('connect_password_local');"/>              
+                <panel y="2.5h" height="3.0h" width="-1.8h" align="center">
+                    <label width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="center" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="main_local_broswer_password"/>
+                    <image x="-60%" width="0.8h" height="0.8h" valign="center" align="right" texture="/ui/info/arrow.tga" />                
+                    <panel align="right" x="0" width="58%" color="invisible" noclick="1">
 
-						<panel width="-68@" height="74%" valign="center" align="left" color="0 0 0 1">
-							<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="#171a28"/>
-							<frame texture="/ui/frames/roundframe.tga" color="#bbdefa" borderthickness="0.5h"/>
-							<textbox
-								y="0.3h"
-								width="-1.0h"
-								align="center"
-								color="invisible"
-								font="dyn_9"
-								textcolor="white"
-								shadow="true"
-								onshow="SetFocus(true);" name="pass_box" passwordchar="*"
-								onchange="Set('cl_password', this);"
-								onenter="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('connect_password_local'); HideWidget('local_browser_panel'); Disconnect(); ConnectToServerNum(_local_browser_last_selected_server);"
-							/>
-						</panel>
+                        <panel width="-68@" height="74%" valign="center" align="left" color="0 0 0 1">
+                            <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.5h" color="#171a28"/>
+                            <frame texture="/ui/frames/roundframe.tga" color="#bbdefa" borderthickness="0.5h"/>
+                            <textbox
+                                y="0.3h"
+                                width="-1.0h"
+                                align="center"
+                                color="invisible"
+                                font="dyn_9"
+                                textcolor="white"
+                                shadow="true"
+                                onshow="SetFocus(true);" name="pass_box" passwordchar="*"
+                                onchange="Set('cl_password', this);"
+                                onenter="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('connect_password_local'); HideWidget('local_browser_panel'); Disconnect(); ConnectToServerNum(_local_browser_last_selected_server);"
+                            />
+                        </panel>
 
-						<instance name="tip_mark" tip_id="password_tip" width="1.8h" height="1.8h" valign="center" align="right" />
-						<instance name="generic_tooltip" x="23h" y="0" width="22h" height="7.3h" align="right" valign="center" tip_id="password_tip" title="local_need_password_header" label="main_local_browser_password_tip" />
-					</panel>
-				</panel>
-				<instance
-					name="button2"
-					y="6.0h" x="-2.9h"
-					height="2.4h"
-					width="10.0h"
-					align="right"
-					label="general_connect"
-					font="dyn_10"
-					onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('local_browser_panel'); HideWidget('connect_password_local'); Disconnect(); ConnectToServerNum(_local_browser_last_selected_server);"
-				/>				
-			</frame>			
-		</panel>
-	</panel>
-	
-	<panel name="remote_loading" color="#00000099" blockinput="true" watch="RemoteLoading" ontrigger="SetVisible(param);" visible="false">
-		<panel y="33%" width="24.0h" height="10.4h" align="center" valign="top">
-			<frame  texture="/ui/frames/tooltip_bg.tga" color="#0c1b3bc9" borderthickness=".6h" align="left" valign="top">
-				<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
-				<instance name="header_bar" buttonsize="1.5h" height="2.2h" lbl="local_server_header" show_close="1" onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); Disconnect(); HideWidget('remote_loading');"/>				
-				<panel y="2.5h" height="4.0h" width="-1.8h" align="center">
-					<image x="1.0h" width="3.0h" height="3.0h" valign="center" texture="/ui/elements/throbber_main.tga" watch="HostTime" ontrigger="SetRotation(param / 1000 * 360);" />
-					<image x="1.0h" width="3.0h" height="3.0h" valign="center" texture="/ui/elements/throbber_rim.tga" />
-					<label x="5.0h" width="-5.0h" height="100%" textvalign="center" textalign="center" valign="center" align="left" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="main_local_browser_starting"/>
-				</panel>
-				<instance
-					name="button2"
-					y="7.0h"
-					height="2.4h"
-					width="10.0h"
-					align="center"
-					label="general_disconnect"
-					font="dyn_10"
-					onclick="Disconnect(); HideWidget('remote_loading');"
-				/>				
-			</frame>			
-		</panel>
-	</panel>
+                        <instance name="tip_mark" tip_id="password_tip" width="1.8h" height="1.8h" valign="center" align="right" />
+                        <instance name="generic_tooltip" x="23h" y="0" width="22h" height="7.3h" align="right" valign="center" tip_id="password_tip" title="local_need_password_header" label="main_local_browser_password_tip" />
+                    </panel>
+                </panel>
+                <instance
+                    name="button2"
+                    y="6.0h" x="-2.9h"
+                    height="2.4h"
+                    width="10.0h"
+                    align="right"
+                    label="general_connect"
+                    font="dyn_10"
+                    onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); HideWidget('local_browser_panel'); HideWidget('connect_password_local'); Disconnect(); ConnectToServerNum(_local_browser_last_selected_server);"
+                />              
+            </frame>            
+        </panel>
+    </panel>
+    
+    <panel name="remote_loading" color="#00000099" blockinput="true" watch="RemoteLoading" ontrigger="SetVisible(param);" visible="false">
+        <panel y="33%" width="24.0h" height="10.4h" align="center" valign="top">
+            <frame  texture="/ui/frames/tooltip_bg.tga" color="#0c1b3bc9" borderthickness=".6h" align="left" valign="top">
+                <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
+                <instance name="header_bar" buttonsize="1.5h" height="2.2h" lbl="local_server_header" show_close="1" onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); Disconnect(); HideWidget('remote_loading');"/>               
+                <panel y="2.5h" height="4.0h" width="-1.8h" align="center">
+                    <image x="1.0h" width="3.0h" height="3.0h" valign="center" texture="/ui/elements/throbber_main.tga" watch="HostTime" ontrigger="SetRotation(param / 1000 * 360);" />
+                    <image x="1.0h" width="3.0h" height="3.0h" valign="center" texture="/ui/elements/throbber_rim.tga" />
+                    <label x="5.0h" width="-5.0h" height="100%" textvalign="center" textalign="center" valign="center" align="left" font="dyn_10" color="white" shadow="true" shadowcolor="black" noclick="1" content="main_local_browser_starting"/>
+                </panel>
+                <instance
+                    name="button2"
+                    y="7.0h"
+                    height="2.4h"
+                    width="10.0h"
+                    align="center"
+                    label="general_disconnect"
+                    font="dyn_10"
+                    onclick="Disconnect(); HideWidget('remote_loading');"
+                />              
+            </frame>            
+        </panel>
+    </panel>
 </package>

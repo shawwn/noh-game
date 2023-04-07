@@ -1,42 +1,42 @@
-default						grass
-		
-/world/terrain/textures/b1_roots_d.tga		evilstone
-/world/terrain/textures/b1_trail_d.tga		evilstone
-/world/terrain/textures/g1_base_d.tga	    	grass
-/world/terrain/textures/g1_building_d.tga	grass
-/world/terrain/textures/g1_cliff_d.tga		grass
-/world/terrain/textures/g1_curb2_d.tga		grass
-/world/terrain/textures/g1_ground_d.tga		grass
-/world/terrain/textures/g1_neutral2_d.tga	grass
-/world/terrain/textures/g1_neutral_d.tga	grass
-/world/terrain/textures/g1_pathedge_d.tga	grass
-/world/terrain/textures/g2_pathedge_d.tga	grass
-/world/terrain/textures/g2_pathfade_d.tga	grass
-/world/terrain/textures/g2_trailfade_d.tga	grass
-/world/terrain/textures/g2_trees_d.tga		grass
-/world/terrain/textures/g2_details_d.tga    	grass
+default                     grass
+        
+/world/terrain/textures/b1_roots_d.tga      evilstone
+/world/terrain/textures/b1_trail_d.tga      evilstone
+/world/terrain/textures/g1_base_d.tga           grass
+/world/terrain/textures/g1_building_d.tga   grass
+/world/terrain/textures/g1_cliff_d.tga      grass
+/world/terrain/textures/g1_curb2_d.tga      grass
+/world/terrain/textures/g1_ground_d.tga     grass
+/world/terrain/textures/g1_neutral2_d.tga   grass
+/world/terrain/textures/g1_neutral_d.tga    grass
+/world/terrain/textures/g1_pathedge_d.tga   grass
+/world/terrain/textures/g2_pathedge_d.tga   grass
+/world/terrain/textures/g2_pathfade_d.tga   grass
+/world/terrain/textures/g2_trailfade_d.tga  grass
+/world/terrain/textures/g2_trees_d.tga      grass
+/world/terrain/textures/g2_details_d.tga        grass
 
-/world/terrain/textures/b1_building_d.tga	evildirt
-/world/terrain/textures/b1_pathedge_d.tga	evildirt
-/world/terrain/textures/b2_pathedge_d.tga	evildirt
-/world/terrain/textures/b2_details_d.tga	evildirt
-/world/terrain/textures/g1_path_d.tga		stone
-/world/terrain/textures/river1_d.tga		stone
-/world/terrain/textures/river2_d.tga		stone
-/world/terrain/textures/b1_base_d.tga		evildirt
+/world/terrain/textures/b1_building_d.tga   evildirt
+/world/terrain/textures/b1_pathedge_d.tga   evildirt
+/world/terrain/textures/b2_pathedge_d.tga   evildirt
+/world/terrain/textures/b2_details_d.tga    evildirt
+/world/terrain/textures/g1_path_d.tga       stone
+/world/terrain/textures/river1_d.tga        stone
+/world/terrain/textures/river2_d.tga        stone
+/world/terrain/textures/b1_base_d.tga       evildirt
 
-/world/terrain/textures/b1_cliff_d.tga		evildirt
-/world/terrain/textures/b1_ground_d.tga		evildirt
-/world/terrain/textures/b1_neutral_d.tga	evildirt
-/world/terrain/textures/b1_neutral2_d.tga	evildirt
-/world/terrain/textures/b1_path_d.tga		evildirt
-/world/terrain/textures/g1_curb1_d.tga		stone
-/world/terrain/textures/g1_trail_d.tga		dirt
-/world/terrain/textures/g1_roots_d.tga		dirt
-/world/terrain/textures/g1_trail_d.tga		dirt
-/world/terrain/textures/b2_trees_d.tga	   	evilstone
+/world/terrain/textures/b1_cliff_d.tga      evildirt
+/world/terrain/textures/b1_ground_d.tga     evildirt
+/world/terrain/textures/b1_neutral_d.tga    evildirt
+/world/terrain/textures/b1_neutral2_d.tga   evildirt
+/world/terrain/textures/b1_path_d.tga       evildirt
+/world/terrain/textures/g1_curb1_d.tga      stone
+/world/terrain/textures/g1_trail_d.tga      dirt
+/world/terrain/textures/g1_roots_d.tga      dirt
+/world/terrain/textures/g1_trail_d.tga      dirt
+/world/terrain/textures/b2_trees_d.tga      evilstone
 
 
-/world/terrain/textures/well1_d.tga	        water
+/world/terrain/textures/well1_d.tga         water
 
-/world/terrain/textures/tarpit_d.tga		tarpit
+/world/terrain/textures/tarpit_d.tga        tarpit

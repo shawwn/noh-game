@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_WolfMan_Ability4_Aura"
+    name="State_WolfMan_Ability4_Aura"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect=""
-	movespeedmultiplier="1.0"
+    
+    
+    icon="icon.tga"
+    passiveeffect=""
+    movespeedmultiplier="1.0"
 
-	
-	effecttype="StatusBuff"
+    
+    effecttype="StatusBuff"
 >
 
 </state>

@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pet
-	name="Pet_Vulture_Ability1"
-	
-	
-	
-	icon="/npcs/n_vulture/ability_01/icon.tga"
-	portrait="/npcs/n_vulture/ability_01/icon.tga"
-	model="cyclone_bones.mdf"
-	passiveeffect="cyclone.effect"
-	spawneffect="spawn.effect"
-	respawneffect=""
-	selectsound=""
-	orderconfirmedsound=""
-	
-	preglobalscale="1.5"
-	modelscale="1.0"
-	effectscale="1.0"
-	boundsheight="64"
-	boundsradius="16"
-	isselectable="true"
-	selectionradius="36"
-	targetoffset="0 0 0"
+    name="Pet_Vulture_Ability1"
+    
+    
+    
+    icon="/npcs/n_vulture/ability_01/icon.tga"
+    portrait="/npcs/n_vulture/ability_01/icon.tga"
+    model="cyclone_bones.mdf"
+    passiveeffect="cyclone.effect"
+    spawneffect="spawn.effect"
+    respawneffect=""
+    selectsound=""
+    orderconfirmedsound=""
+    
+    preglobalscale="1.5"
+    modelscale="1.0"
+    effectscale="1.0"
+    boundsheight="64"
+    boundsradius="16"
+    isselectable="true"
+    selectionradius="36"
+    targetoffset="0 0 0"
 
-	movespeed="130"
-	turnrate="160"
+    movespeed="130"
+    turnrate="160"
 
-	cancarryitems="false"
-	inventory0="Ability_VultureSummon1"
-	inventory1=""
-	inventory2=""
-	inventory3=""
-	inventory4=""
-	inventory5=""
-	inventory6=""
-	inventory7=""
-	
-	invulnerable="true"
-	unitwalking="true"
-	
-	diewithowner="true"
-	
-	attackduration="1000"
-	attackactiontime="50"
-	attackcooldown="1000"
-	attackdamagemin="0"
-	attackdamagemax="0"
-	attacknumanims="2"
-	attackoffset="0 60 100"
-	attackprojectile=""
-	attackrange="100"
-	attackstarteffect=""
-	attackactioneffect=""
-	attackimpacteffect="impact.effect"
-	attacktype="melee"
-	combattype="Melee"
+    cancarryitems="false"
+    inventory0="Ability_VultureSummon1"
+    inventory1=""
+    inventory2=""
+    inventory3=""
+    inventory4=""
+    inventory5=""
+    inventory6=""
+    inventory7=""
+    
+    invulnerable="true"
+    unitwalking="true"
+    
+    diewithowner="true"
+    
+    attackduration="1000"
+    attackactiontime="50"
+    attackcooldown="1000"
+    attackdamagemin="0"
+    attackdamagemax="0"
+    attacknumanims="2"
+    attackoffset="0 60 100"
+    attackprojectile=""
+    attackrange="100"
+    attackstarteffect=""
+    attackactioneffect=""
+    attackimpacteffect="impact.effect"
+    attacktype="melee"
+    combattype="Melee"
 
-	aggrorange="300"
-	wanderrange="1400"
-	
-	lifetime="30000"
+    aggrorange="300"
+    wanderrange="1400"
+    
+    lifetime="30000"
 >
-	<onspawn>
-		<spawnaffector name="Affector_Vulture_Ability1_small" target="this_entity"/>
-		<spawnaffector name="Affector_Vulture_Ability1_large" target="this_entity"/>
-	</onspawn>
+    <onspawn>
+        <spawnaffector name="Affector_Vulture_Ability1_small" target="this_entity"/>
+        <spawnaffector name="Affector_Vulture_Ability1_large" target="this_entity"/>
+    </onspawn>
 </pet>

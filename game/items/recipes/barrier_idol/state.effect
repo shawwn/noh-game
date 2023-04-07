@@ -1,89 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true" useentityeffectscale="1">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="entity" scale="2.75">
+        <particlesystem name="system0" space="entity" scale="2.75">
 
-<!--			<sound
-				linearfalloff="true"
-				falloffstart="0"
-				falloffend="2200"
-				volume="0.4"
-				sample="sounds/cast.wav"
-			/> -->
-			
-			<billboard				
-				startsize="30"
-				midsize="26"
-				endsize="30"
-				bone="_bone_overhead"
-				life="2000"
-				loop="1"
-				material="/shared/effects/materials/magic_shield.material"
-				startalpha="1"			
-				midalpha=".8"
-				endalpha="1"
-				depthbias="-30"			    
-			/>
-			
-			<billboard		
-				expirelife="1000"
-				size="30"				
-				bone="_bone_overhead"			
-				material="/shared/effects/materials/magic_shield.material"
-				startalpha="0"			
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".001"
-				depthbias="-30"			    
-			/>
-			
-			<billboard				
-			   	size="50"
-				life="2000"
-				loop="1"
-				bone="_bone_overhead"
-				depthbias="-100"
-				material="/shared/effects/materials/whitedot.material"				
-				startcolor=".0 .1 .2"
-				midcolor="0 0 0"
-				endcolor=".0 .1 .2"
-			/>
-			
-			<billboard				
-				width="200"				
-				height="5"				
-				bone="_bone_overhead"
-				life="510"
-				material="/shared/effects/materials/whitedot.material"				
-				startcolor=".0 .5 .5"
-				endcolor="0  0 0"
-			/>
-			
-			<simpleemitter	
-				bone="_bone_overhead"			
-				count="1"
-				particlelife="300"			
-				position="0 0 3"					
-				material="/shared/effects/materials/whitedot.material"
-			>
-				<particle
-					startcolor="0 .5 1"						
-					endcolor="0 0 0"						
-					midalphapos="0.9"
-					startsize="100"
-					endsize="0"
-				/>
-			</simpleemitter>
-	
-		</particlesystem>
+<!--            <sound
+                linearfalloff="true"
+                falloffstart="0"
+                falloffend="2200"
+                volume="0.4"
+                sample="sounds/cast.wav"
+            /> -->
+            
+            <billboard              
+                startsize="30"
+                midsize="26"
+                endsize="30"
+                bone="_bone_overhead"
+                life="2000"
+                loop="1"
+                material="/shared/effects/materials/magic_shield.material"
+                startalpha="1"          
+                midalpha=".8"
+                endalpha="1"
+                depthbias="-30"             
+            />
+            
+            <billboard      
+                expirelife="1000"
+                size="30"               
+                bone="_bone_overhead"           
+                material="/shared/effects/materials/magic_shield.material"
+                startalpha="0"          
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".001"
+                depthbias="-30"             
+            />
+            
+            <billboard              
+                size="50"
+                life="2000"
+                loop="1"
+                bone="_bone_overhead"
+                depthbias="-100"
+                material="/shared/effects/materials/whitedot.material"              
+                startcolor=".0 .1 .2"
+                midcolor="0 0 0"
+                endcolor=".0 .1 .2"
+            />
+            
+            <billboard              
+                width="200"             
+                height="5"              
+                bone="_bone_overhead"
+                life="510"
+                material="/shared/effects/materials/whitedot.material"              
+                startcolor=".0 .5 .5"
+                endcolor="0  0 0"
+            />
+            
+            <simpleemitter  
+                bone="_bone_overhead"           
+                count="1"
+                particlelife="300"          
+                position="0 0 3"                    
+                material="/shared/effects/materials/whitedot.material"
+            >
+                <particle
+                    startcolor="0 .5 1"                     
+                    endcolor="0 0 0"                        
+                    midalphapos="0.9"
+                    startsize="100"
+                    endsize="0"
+                />
+            </simpleemitter>
+    
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+    </thread>
 
 </effect>

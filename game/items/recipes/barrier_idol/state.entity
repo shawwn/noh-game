@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_BarrierIdol"
+    name="State_BarrierIdol"
 
-	icon="icon.tga"
-	effecttype="StatusBuff"
-	passiveeffect="state.effect"
-	norefresh="true"
+    icon="icon.tga"
+    effecttype="StatusBuff"
+    passiveeffect="state.effect"
+    norefresh="true"
 >
-	<oninflict>
-		<setaccumulator entity="this_entity" value="400" />
-	</oninflict>
-	<onattackeddamageevent>
-		<damagesupertype supertype="spell">
-			<damageeffecttype effecttype="Magic">
-				<condition test="accumulator le damage_attempted">
-					<setvalue name="damage_attempted" a="damage_attempted" b="accumulator" op="sub" />
-					<expire />
-					<setaccumulator value="0" />
-				</condition>
-				<condition test="accumulator gt damage_attempted">
-					<evaluate a="accumulator" b="damage_attempted" op="sub" />
-					<setaccumulator value="result" />
-					<setvalue name="damage_attempted" a="damage_attempted" b="0" op="mult" />
-				</condition>
-			</damageeffecttype>
-		</damagesupertype>
-	</onattackeddamageevent>
-	<onframe/>
+    <oninflict>
+        <setaccumulator entity="this_entity" value="400" />
+    </oninflict>
+    <onattackeddamageevent>
+        <damagesupertype supertype="spell">
+            <damageeffecttype effecttype="Magic">
+                <condition test="accumulator le damage_attempted">
+                    <setvalue name="damage_attempted" a="damage_attempted" b="accumulator" op="sub" />
+                    <expire />
+                    <setaccumulator value="0" />
+                </condition>
+                <condition test="accumulator gt damage_attempted">
+                    <evaluate a="accumulator" b="damage_attempted" op="sub" />
+                    <setaccumulator value="result" />
+                    <setvalue name="damage_attempted" a="damage_attempted" b="0" op="mult" />
+                </condition>
+            </damageeffecttype>
+        </damagesupertype>
+    </onattackeddamageevent>
+    <onframe/>
 </state>

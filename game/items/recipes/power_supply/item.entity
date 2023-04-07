@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_PowerSupply"
-	
-	icon="icon.tga"
-	
-	cost="290"
-	components="Item_ManaBattery Item_MinorTotem Item_MinorTotem"
-	
-	actiontype="target_self"
-	frontqueue="true"
-	inheritmovement="true"
-	casttime="0"
-	castactiontime="0"
-	casteffect="cast.effect"
-	cooldowntime="17000"
-	cooldowntype="manabattery"
-	
-	maxcharges="15"
-	initialcharges="0"
-	
-	intelligence="3"
-	strength="3"
-	agility="3"
+    name="Item_PowerSupply"
+    
+    icon="icon.tga"
+    
+    cost="290"
+    components="Item_ManaBattery Item_MinorTotem Item_MinorTotem"
+    
+    actiontype="target_self"
+    frontqueue="true"
+    inheritmovement="true"
+    casttime="0"
+    castactiontime="0"
+    casteffect="cast.effect"
+    cooldowntime="17000"
+    cooldowntype="manabattery"
+    
+    maxcharges="15"
+    initialcharges="0"
+    
+    intelligence="3"
+    strength="3"
+    agility="3"
 >
-	<onimpact>
-		<heal a="charges" b="15" op="mult" />
-		<givemana amount="charges" b="15" op="mult" />
-		<multcharges value="0" />
-		<playanim name="item_1" target="source_entity" />
-	</onimpact>
-	
-	<modifier key="ManaBattery" modpriority="90" exclusive="true">
-		<aura state="State_PowerSupply" radius="1600" targetscheme="enemy_heroes" stack="true" />
-	</modifier>
+    <onimpact>
+        <heal a="charges" b="15" op="mult" />
+        <givemana amount="charges" b="15" op="mult" />
+        <multcharges value="0" />
+        <playanim name="item_1" target="source_entity" />
+    </onimpact>
+    
+    <modifier key="ManaBattery" modpriority="90" exclusive="true">
+        <aura state="State_PowerSupply" radius="1600" targetscheme="enemy_heroes" stack="true" />
+    </modifier>
 </item>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_KunasAttack"
+    name="Projectile_KunasAttack"
 
-	speed="1000"
-	gravity="2200"
+    speed="1000"
+    gravity="2200"
 
-	modelscale="2.0"
-	model="model.mdf"
+    modelscale="2.0"
+    model="model.mdf"
 
-	impacteffect="effects/projectile_impact.effect"
+    impacteffect="effects/projectile_impact.effect"
 >
 </projectile>

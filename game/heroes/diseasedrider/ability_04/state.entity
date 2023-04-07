@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_DiseasedRider_Ability4"
+    name="State_DiseasedRider_Ability4"
 
-	icon="icon.tga"
+    icon="icon.tga"
 
-	movespeedslow="0.3"
-	attackspeed="-.2"
+    movespeedslow="0.3"
+    attackspeed="-.2"
 
-	effecttype="StatusDebuff"
+    effecttype="StatusDebuff"
 >
 </state>

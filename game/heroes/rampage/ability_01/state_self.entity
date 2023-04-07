@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Rampage_Ability1_Self"
-	
-	icon="icon.tga"
-	passiveeffect="effects/charge.effect"
+    name="State_Rampage_Ability1_Self"
+    
+    icon="icon.tga"
+    passiveeffect="effects/charge.effect"
 
-	movespeedslowstart="-0.25,-0.35,-0.45,-0.55"
-	movespeedslowmid="-0.30,-0.45,-0.50,-0.65"
-	movespeedslowend="-0.45,-0.50,-0.65,-0.70"
-	movespeedslowduration="30000"
-	movespeedslowmidpos="0.50"
-	
-	impactinterval="1000"
-	deniable="true"
-	
-	unitwalking="true"
-	treewalking="true"
-	silenced="true"
-	perplexed="true"
+    movespeedslowstart="-0.25,-0.35,-0.45,-0.55"
+    movespeedslowmid="-0.30,-0.45,-0.50,-0.65"
+    movespeedslowend="-0.45,-0.50,-0.65,-0.70"
+    movespeedslowduration="30000"
+    movespeedslowmidpos="0.50"
+    
+    impactinterval="1000"
+    deniable="true"
+    
+    unitwalking="true"
+    treewalking="true"
+    silenced="true"
+    perplexed="true"
 
-	initialcharges="1,1,1,1"
-	effecttype="StatusBuff"
+    initialcharges="1,1,1,1"
+    effecttype="StatusBuff"
 >
-	<onexpired>
-		<playeffect effect="../../../heroes/predator/ability_02/state_out.effect" target="source_entity" />
-	</onexpired>
-	
-	<oninflict>
-		<setcharges a="1,1,1,1" />
-	</oninflict>
-	
-	<onattackimpact>	
-		<damage effecttype="Physical" amount="30,60,80,110" />
-		<popup name="poison" a="result" source="target_entity" target="source_entity" />
-		<applystate name="State_Stunned" duration="2500,2750,3000,3250"/>
-		<playeffect effect="effects/impact.effect" source="target_entity" target="" />
-		<removecharge />
-		<condition test="charges eq 0">
-			<expire />
-		</condition>
-	</onattackimpact>
+    <onexpired>
+        <playeffect effect="../../../heroes/predator/ability_02/state_out.effect" target="source_entity" />
+    </onexpired>
+    
+    <oninflict>
+        <setcharges a="1,1,1,1" />
+    </oninflict>
+    
+    <onattackimpact>    
+        <damage effecttype="Physical" amount="30,60,80,110" />
+        <popup name="poison" a="result" source="target_entity" target="source_entity" />
+        <applystate name="State_Stunned" duration="2500,2750,3000,3250"/>
+        <playeffect effect="effects/impact.effect" source="target_entity" target="" />
+        <removecharge />
+        <condition test="charges eq 0">
+            <expire />
+        </condition>
+    </onattackimpact>
 
-	<oncancel>
-		<expirestate name="State_Rampage_Ability1_Self" target="this_owner_entity" />
-	</oncancel>
+    <oncancel>
+        <expirestate name="State_Rampage_Ability1_Self" target="this_owner_entity" />
+    </oncancel>
 
 
-	<onimpact>
-	</onimpact>
+    <onimpact>
+    </onimpact>
 
 </state>

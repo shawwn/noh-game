@@ -6,10 +6,10 @@
 <anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true" />
 
 <anim name="death_1" clip="/npcs/critters/frog/effects/gib.clip" fps="30" loop="false" loopbackframe="-1">
-		<frameevent frame="1" cmd="PlaySoundLinear /shared/sounds/effects/critter_death.wav 0 1200 .4 1"/>
-		<frameevent frame="5" cmd="PlaySoundLinear /shared/sounds/effects/gib_explode.wav 0 1200 .4 2"/>
-		
-		<frameevent frame="1" cmd="StartEffect /npcs/critters/frog/effects/gib.effect "/>	
-		
-	</anim>
+        <frameevent frame="1" cmd="PlaySoundLinear /shared/sounds/effects/critter_death.wav 0 1200 .4 1"/>
+        <frameevent frame="5" cmd="PlaySoundLinear /shared/sounds/effects/gib_explode.wav 0 1200 .4 2"/>
+        
+        <frameevent frame="1" cmd="StartEffect /npcs/critters/frog/effects/gib.effect "/>   
+        
+    </anim>
 </model>

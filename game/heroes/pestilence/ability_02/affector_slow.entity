@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Pestilence_Ability2_Slow"
+    name="Affector_Pestilence_Ability2_Slow"
 
-	radius="360"
-	
-	targetselection="all"
-	targetscheme="enemy_units"
-	effecttype="Magic"
+    radius="360"
+    
+    targetselection="all"
+    targetscheme="enemy_units"
+    effecttype="Magic"
 >
-	<onimpact>
-		<applystate name="State_Pestilence_Ability2" duration="3000,3500,4000,4500"/>
-	</onimpact>
+    <onimpact>
+        <applystate name="State_Pestilence_Ability2" duration="3000,3500,4000,4500"/>
+    </onimpact>
 </affector>

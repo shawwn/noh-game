@@ -1,122 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="bolt_lightning_02_impact">
-	<definitions>
-		<particlesystem name="system0" space="entity">
-			
-			
-			
+    <definitions>
+        <particlesystem name="system0" space="entity">
+            
+            
+            
 
-			
+            
 
 <!-- FLARE  -->
 
 
-		<simpleemitter
+        <simpleemitter
 
-			life="300"
-			delay="75"
-			spawnrate="120"
-			bone="_bone_fx_08"
-			count="1"
-			particlelife="180"		
-			gravity="30"
-			speed="150"
-			drag="0"
-			acceleration="0"
-			position="0 0 0"
-			material="/shared/effects/materials/wisp_inner.material"
-			offsetsphere="0 0 0"
-			minangle="0"
-			maxangle="0"
-			direction="0 0 -1"
-			offsetdirection="0 0 0"
-			offsetradial="0 0 0"
-				
-			>
-				<particle
-					startcolor=".75 .75 .75"
-					midcolor=".75 .75 .75"
-					endcolor="0 0 0"
-					midcolorpos=".4"
+            life="300"
+            delay="75"
+            spawnrate="120"
+            bone="_bone_fx_08"
+            count="1"
+            particlelife="180"      
+            gravity="30"
+            speed="150"
+            drag="0"
+            acceleration="0"
+            position="0 0 0"
+            material="/shared/effects/materials/wisp_inner.material"
+            offsetsphere="0 0 0"
+            minangle="0"
+            maxangle="0"
+            direction="0 0 -1"
+            offsetdirection="0 0 0"
+            offsetradial="0 0 0"
+                
+            >
+                <particle
+                    startcolor=".75 .75 .75"
+                    midcolor=".75 .75 .75"
+                    endcolor="0 0 0"
+                    midcolorpos=".4"
 
-					startalpha="1.0"
-					endalpha="0.0"
+                    startalpha="1.0"
+                    endalpha="0.0"
 
-					minangle="0"
-					maxangle="0"
-					minanglespeed="0"
-					maxanglespeed="0"
+                    minangle="0"
+                    maxangle="0"
+                    minanglespeed="0"
+                    maxanglespeed="0"
 
-					startwidth="50"
-					midwidth="50"
-					endwidth="50"
-					midwidthpos=".5"
-
-
-					startheight="300"
-					endheight="300"
-
-					flare="false"
-					turn="false"
-				/>
-			</simpleemitter>
+                    startwidth="50"
+                    midwidth="50"
+                    endwidth="50"
+                    midwidthpos=".5"
 
 
-		<simpleemitter
+                    startheight="300"
+                    endheight="300"
 
-			life="300"
-			delay="50"
-			spawnrate="120"
-			bone="_bone_fx_08"
-			count="8"
-			particlelife="500"
-						
-			gravity="0"
-			speed="35"
-			drag="0"
-			acceleration="0"
-			position="0 0 0"
-
-			material="/shared/effects/materials/wisp_inner.material"
-			offsetsphere="0 0 0"
-			minangle="180"
-			maxangle="-180"
-			direction="1 1 1"
-			offsetdirection="0 0 0"
-			offsetradial="0 0 0"
-				
-			>
-				<particle
-					startcolor=".75 .75 .75"
-					midcolor=".75 .75 .75"
-					endcolor="0 0 0"
-					midcolorpos=".4"
-
-					startalpha="1.0"
-					endalpha="0.0"
-
-					minangle="-90"
-					maxangle="90"
-					minanglespeed="0"
-					maxanglespeed="0"
-
-					startwidth="50"
-					midwidth="50"
-					endwidth="1"
-					midwidthpos=".5"
+                    flare="false"
+                    turn="false"
+                />
+            </simpleemitter>
 
 
-					startheight="0"
-					endheight="80"
+        <simpleemitter
 
-					flare="true"
-					turn="false"
-				/>
-			</simpleemitter>
+            life="300"
+            delay="50"
+            spawnrate="120"
+            bone="_bone_fx_08"
+            count="8"
+            particlelife="500"
+                        
+            gravity="0"
+            speed="35"
+            drag="0"
+            acceleration="0"
+            position="0 0 0"
 
-				<!-- smokey shit  -->
+            material="/shared/effects/materials/wisp_inner.material"
+            offsetsphere="0 0 0"
+            minangle="180"
+            maxangle="-180"
+            direction="1 1 1"
+            offsetdirection="0 0 0"
+            offsetradial="0 0 0"
+                
+            >
+                <particle
+                    startcolor=".75 .75 .75"
+                    midcolor=".75 .75 .75"
+                    endcolor="0 0 0"
+                    midcolorpos=".4"
 
-	
+                    startalpha="1.0"
+                    endalpha="0.0"
+
+                    minangle="-90"
+                    maxangle="90"
+                    minanglespeed="0"
+                    maxanglespeed="0"
+
+                    startwidth="50"
+                    midwidth="50"
+                    endwidth="1"
+                    midwidthpos=".5"
+
+
+                    startheight="0"
+                    endheight="80"
+
+                    flare="true"
+                    turn="false"
+                />
+            </simpleemitter>
+
+                <!-- smokey shit  -->
+
+    
 
         
       </particlesystem>

@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Valmont4"
+    name="Ability_Valmont4"
 
-	icon="magia4.tga"
-	
-	anim="ability_4"
-	casttime="850"
-	castactiontime="300"
+    icon="magia4.tga"
+    
+    anim="ability_4"
+    casttime="850"
+    castactiontime="300"
 
-	maxlevel="3"
-	requiredlevel="6,11,16"
+    maxlevel="3"
+    requiredlevel="6,11,16"
 
-	actiontype="target_entity"
-	targetscheme="enemy_units"
-	casteffecttype="Magic"
-	
-	manacost="200,300,400"
-	cooldowntime="140000,90000,55000"
-	casteffect="effects/sound.effect"
-	range="700"
-	projectile="Projectile_Valmont_Ability4"
+    actiontype="target_entity"
+    targetscheme="enemy_units"
+    casteffecttype="Magic"
+    
+    manacost="200,300,400"
+    cooldowntime="140000,90000,55000"
+    casteffect="effects/sound.effect"
+    range="700"
+    projectile="Projectile_Valmont_Ability4"
 >
-	<onimpact>
-		<damage effecttype="Magic" amount="400,550,700"/>
-	</onimpact>
-	
-	<onaction>	
-		<playeffect effect="effects/cast.effect" target="source_entity" source="source_entity"/>
-	</onaction>	
-	<modifier key="ult_boost" modpriority="100"
-		displayname="true"
-		manacost="200,320,450"
-		cooldowntime="140000,90000,50000"
-	>
-		<onimpact>
-			<damage effecttype="Magic" amount="500,700,900"/>
-		</onimpact>
-	</modifier>
+    <onimpact>
+        <damage effecttype="Magic" amount="400,550,700"/>
+    </onimpact>
+    
+    <onaction>  
+        <playeffect effect="effects/cast.effect" target="source_entity" source="source_entity"/>
+    </onaction> 
+    <modifier key="ult_boost" modpriority="100"
+        displayname="true"
+        manacost="200,320,450"
+        cooldowntime="140000,90000,50000"
+    >
+        <onimpact>
+            <damage effecttype="Magic" amount="500,700,900"/>
+        </onimpact>
+    </modifier>
 </ability>

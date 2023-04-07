@@ -11,18 +11,18 @@
 //=============================================================================
 // Varying variables
 //=============================================================================
-varying vec4	v_vColor;
+varying vec4    v_vColor;
 
 //=============================================================================
 // Sampler
 //=============================================================================
-uniform sampler2D	diffuse0;
-uniform sampler2D	diffuse1;
+uniform sampler2D   diffuse0;
+uniform sampler2D   diffuse1;
 
 //=============================================================================
 // Pixel Shader
 //=============================================================================
 void main()
 {
-	gl_FragColor = mix(texture2D(diffuse0, gl_TexCoord[0].xy), texture2D(diffuse1, gl_TexCoord[0].xy), gl_TexCoord[0].z) * v_vColor;
+    gl_FragColor = mix(texture2D(diffuse0, gl_TexCoord[0].xy), texture2D(diffuse1, gl_TexCoord[0].xy), gl_TexCoord[0].z) * v_vColor;
 }

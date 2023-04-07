@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gadget
-	name="Gadget_PushStaff"
+    name="Gadget_PushStaff"
 
-	icon=""
-	portrait=""
-	model=""
-	
-	lifetime="1000"
-	preglobalscale="0.9"
-	modelscale="1.0"
-	effectscale="0.9"
-	boundsheight="0"
-	boundsradius="0"
-	isselectable="false"
-	selectionradius="0"
-	targetoffset="0 0 0"
+    icon=""
+    portrait=""
+    model=""
+    
+    lifetime="1000"
+    preglobalscale="0.9"
+    modelscale="1.0"
+    effectscale="0.9"
+    boundsheight="0"
+    boundsradius="0"
+    isselectable="false"
+    selectionradius="0"
+    targetoffset="0 0 0"
 
-	canrotate="false"
-	ismobile="false"
+    canrotate="false"
+    ismobile="false"
 
-	attacktype="none"
-	combattype="Ranged"
-	canattack="false"
+    attacktype="none"
+    combattype="Ranged"
+    canattack="false"
 
-	sightrangeday="0"
-	sightrangenight="0"
+    sightrangeday="0"
+    sightrangenight="0"
 
-	deathtime="0"
-	corpsetime="0"
-	
-	invulnerable="true"
-	drawonmap="false"
+    deathtime="0"
+    corpsetime="0"
+    
+    invulnerable="true"
+    drawonmap="false"
 >
 </gadget>

@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="impact" useentityeffectscale="true">
-	<definitions>
-		<particlesystem name="system0" space="world" scale="1.7">
+    <definitions>
+        <particlesystem name="system0" space="world" scale="1.7">
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="0"
-				falloffend="1800"
-				volume="0.15" 
-				sample="../sounds/impact.wav"
-			/>
+            <sound
+                linearfalloff="true" 
+                falloffstart="0"
+                falloffend="1800"
+                volume="0.15" 
+                sample="../sounds/impact.wav"
+            />
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2300"
-				volume="0.55" 
-				sample="../../sounds/impact_%.wav"
-			/>
-		
-			<billboard
-				bone="_bone_centerofchest"
-				material="/shared/effects/materials/whitedot.material"
-				startcolor=".0 .5 .8"
-				endcolor="0 0 0"
-				life="300"
-				startsize="50"
-				endsize="150"
-				depthbias="-50"
-				height="300	"
-				width="40"
-				lockup="1"
-				lockright="1"
-			/>
+            <sound
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2300"
+                volume="0.55" 
+                sample="../../sounds/impact_%.wav"
+            />
+        
+            <billboard
+                bone="_bone_centerofchest"
+                material="/shared/effects/materials/whitedot.material"
+                startcolor=".0 .5 .8"
+                endcolor="0 0 0"
+                life="300"
+                startsize="50"
+                endsize="150"
+                depthbias="-50"
+                height="300 "
+                width="40"
+                lockup="1"
+                lockright="1"
+            />
 
 
-			<billboard
-				bone="_bone_centerofchest"
-				material="/shared/effects/materials/whitedot.material"
-				startcolor=".0 .1 .2"
-				endcolor="0 0 0"
-				life="300"
-				startsize="50"
-				endsize="150"
-				depthbias="-50"
-			/>
-			
-			<billboard
-				bone="_bone_centerofchest"
-				material="/shared/effects/materials/corona_06.material"
-				startcolor=".0 .5 .8"
-				endcolor="0 0 0"
-				life="300"
-				startsize="0"
-				endsize="100"
-				lockup="1"
-				pitch="90"
-			/>			
+            <billboard
+                bone="_bone_centerofchest"
+                material="/shared/effects/materials/whitedot.material"
+                startcolor=".0 .1 .2"
+                endcolor="0 0 0"
+                life="300"
+                startsize="50"
+                endsize="150"
+                depthbias="-50"
+            />
+            
+            <billboard
+                bone="_bone_centerofchest"
+                material="/shared/effects/materials/corona_06.material"
+                startcolor=".0 .5 .8"
+                endcolor="0 0 0"
+                life="300"
+                startsize="0"
+                endsize="100"
+                lockup="1"
+                pitch="90"
+            />          
 
       </particlesystem>
    </definitions>

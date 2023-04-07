@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <shop
-	name="Shop_Recipes4"
-	
-	allowremoteaccess="true"
+    name="Shop_Recipes4"
+    
+    allowremoteaccess="true"
 
-	style="recipes"
-	header="/ui/elements/shop/shopkeeper_recipes.tga"
-	
-	icon="shop_recipes4.tga"
-	order="1"
-	slot="8"
+    style="recipes"
+    header="/ui/elements/shop/shopkeeper_recipes.tga"
+    
+    icon="shop_recipes4.tga"
+    order="1"
+    slot="8"
 >
-	<item name="Item_ElderParasite" />
-	<item name="Item_Critical1" />
-	<item name="Item_Nuke" />
-	<item name="Item_Insanitarius" />
-	<item name="Item_Intelligence7" />
-	<item name="Item_Splash" />
-	<item name="Item_ManaBurn2" />
-	
-	<item name="Item_Silence" />
-	<item name="Item_Damage10" />
-	<item name="Item_Weapon3" />
-	<item name="Item_Evasion" />
-	
-	<item name="Item_Damage9" />
+    <item name="Item_ElderParasite" />
+    <item name="Item_Critical1" />
+    <item name="Item_Nuke" />
+    <item name="Item_Insanitarius" />
+    <item name="Item_Intelligence7" />
+    <item name="Item_Splash" />
+    <item name="Item_ManaBurn2" />
+    
+    <item name="Item_Silence" />
+    <item name="Item_Damage10" />
+    <item name="Item_Weapon3" />
+    <item name="Item_Evasion" />
+    
+    <item name="Item_Damage9" />
 </shop>

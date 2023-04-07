@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Xalynx_Ability3"
+    name="State_Xalynx_Ability3"
 
-	ishidden="true"
-	immobilized2="true"	
+    ishidden="true"
+    immobilized2="true" 
 >
-	<onframe>
-		<push force="-730" frame="true" source="proxy_entity" />
-	</onframe>
+    <onframe>
+        <push force="-730" frame="true" source="proxy_entity" />
+    </onframe>
 </state>

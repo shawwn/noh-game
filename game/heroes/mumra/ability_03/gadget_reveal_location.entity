@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gadget
-	name="Gadget_Mumra_Ability3_LocationReveal"
-	
-	
-	
-	icon=""
-	portrait=""
-	model=""
-	
-	preglobalscale="1.0"
-	modelscale="1.0"
-	effectscale="1.0"
-	boundsheight="0"
-	boundsradius="0"
-	isselectable="false"
-	selectionradius="0"
-	targetoffset="0 0 0"
+    name="Gadget_Mumra_Ability3_LocationReveal"
+    
+    
+    
+    icon=""
+    portrait=""
+    model=""
+    
+    preglobalscale="1.0"
+    modelscale="1.0"
+    effectscale="1.0"
+    boundsheight="0"
+    boundsradius="0"
+    isselectable="false"
+    selectionradius="0"
+    targetoffset="0 0 0"
 
-	canrotate="false"
-	ismobile="false"
+    canrotate="false"
+    ismobile="false"
 
-	attacktype="none"
-	combattype="Ranged"
+    attacktype="none"
+    combattype="Ranged"
 
-	sightrangeday="600"
-	sightrangenight="600"
+    sightrangeday="600"
+    sightrangenight="600"
 
-	canattack="false"
-	lifetime="5000,10000,15000,20000"
-	deathtime="0"
-	corpsetime="0"
-	
-	invulnerable="true"
-	flying="true"
-	drawonmap="false"
+    canattack="false"
+    lifetime="5000,10000,15000,20000"
+    deathtime="0"
+    corpsetime="0"
+    
+    invulnerable="true"
+    flying="true"
+    drawonmap="false"
 >
 </gadget>

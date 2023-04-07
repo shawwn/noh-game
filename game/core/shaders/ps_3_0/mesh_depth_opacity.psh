@@ -13,8 +13,8 @@
 //=============================================================================
 struct VS_OUTPUT
 {
-	float2 Texcoord0 : TEXCOORD0;
-	float2 Depth     : TEXCOORD1;
+    float2 Texcoord0 : TEXCOORD0;
+    float2 Depth     : TEXCOORD1;
 };
 
 //=============================================================================
@@ -22,7 +22,7 @@ struct VS_OUTPUT
 //=============================================================================
 struct PS_OUTPUT
 {
-	float4 Color : COLOR;
+    float4 Color : COLOR;
 };
 
 sampler opacity;
@@ -32,15 +32,15 @@ sampler opacity;
 //=============================================================================
 PS_OUTPUT PS( VS_OUTPUT In )
 {
-	PS_OUTPUT Out;
+    PS_OUTPUT Out;
 
-	float fOpacity = tex2D(opacity, In.Texcoord0).a;
+    float fOpacity = tex2D(opacity, In.Texcoord0).a;
 
 #if (TEXKILL == 1)
-	clip(fOpacity - 91.0f / 255.0f);
+    clip(fOpacity - 91.0f / 255.0f);
 #endif
 
-	Out.Color = float4(0.0f, 0.0f, 0.0f, fOpacity);
-		
-	return Out;
+    Out.Color = float4(0.0f, 0.0f, 0.0f, fOpacity);
+        
+    return Out;
 }

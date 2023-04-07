@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Chipper_Ability4"
+    name="Projectile_Chipper_Ability4"
 
-	speed="1000"
-	gravity="0"
-	flying="true"
-	flyheight="100"
-	pitch="90"
-	modelscale="4.25"
-	model="effects/missile/model.mdf"
-	anim="fly"
-	deatheffect="effects/death.effect"
-	traileffect="effects/trail.effect"
+    speed="1000"
+    gravity="0"
+    flying="true"
+    flyheight="100"
+    pitch="90"
+    modelscale="4.25"
+    model="effects/missile/model.mdf"
+    anim="fly"
+    deatheffect="effects/death.effect"
+    traileffect="effects/trail.effect"
 >
-	<onimpact>
-		<spawnunit name="Gadget_Chipper_Ability4_Reveal" count="1" target="target_position" />
-		<spawnaffector name="Affector_Chipper_Ability4_Explosion" target="target_position" />
-		<kill source="" target="proxy_entity" />
-		
-	</onimpact>
+    <onimpact>
+        <spawnunit name="Gadget_Chipper_Ability4_Reveal" count="1" target="target_position" />
+        <spawnaffector name="Affector_Chipper_Ability4_Explosion" target="target_position" />
+        <kill source="" target="proxy_entity" />
+        
+    </onimpact>
 
 </projectile>

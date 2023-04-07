@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Predasaur2"
+    name="Ability_Predasaur2"
 
-	
-	
-	
-	icon="icon.tga"
-	evasion="0.15"
+    
+    
+    
+    icon="icon.tga"
+    evasion="0.15"
 
-	actiontype="passive"
+    actiontype="passive"
 >
-	
+    
 </ability>

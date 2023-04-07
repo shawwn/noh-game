@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Kraken3"
+    name="Ability_Kraken3"
 
-	
-	
-	
-	icon="icon.tga"
+    
+    
+    
+    icon="icon.tga"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
-	actiontype="passive"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
+    actiontype="passive"
 >
-	<onattackstart >
-		<chance threshold="0.20">
-			<addattackactions>
-				<spawnaffector name="Affector_Kraken_Ability3_Small" target="source_entity" />
-				<spawnaffector name="Affector_Kraken_Ability3_Large" target="source_entity" />
-			</addattackactions>
-			<playanim name="ability_3" speed="source_attackspeed" target="source_entity" />
-		</chance>
-	</onattackstart>
-	<onattackimpact />
+    <onattackstart >
+        <chance threshold="0.20">
+            <addattackactions>
+                <spawnaffector name="Affector_Kraken_Ability3_Small" target="source_entity" />
+                <spawnaffector name="Affector_Kraken_Ability3_Large" target="source_entity" />
+            </addattackactions>
+            <playanim name="ability_3" speed="source_attackspeed" target="source_entity" />
+        </chance>
+    </onattackstart>
+    <onattackimpact />
 </ability>

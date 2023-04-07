@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true">
 
-	<definitions>
+    <definitions>
 
-		<modifier 
-			name="modifier0"
-			startcolor="1"
-			midcolor=".5 .1 0"
-			midcolorpos="0.1"
-			endcolor="1"
-			life="6800"
-		/>
+        <modifier 
+            name="modifier0"
+            startcolor="1"
+            midcolor=".5 .1 0"
+            midcolorpos="0.1"
+            endcolor="1"
+            life="6800"
+        />
 
-		<particlesystem name="system0" space="world" scale="1">
+        <particlesystem name="system0" space="world" scale="1">
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="0"
-				falloffend="1200"
-				volume="0.4" 
-				soundloop="true"
-				fadein="20"
-				fadeout="400"
-				sample="/shared/sounds/effects/torch.wav"
-			/>
+            <sound
+                linearfalloff="true" 
+                falloffstart="0"
+                falloffend="1200"
+                volume="0.4" 
+                soundloop="true"
+                fadein="20"
+                fadeout="400"
+                sample="/shared/sounds/effects/torch.wav"
+            />
 
-			<groundsprite
-				timenudge="1400"	
-				position="-65 -60 20"
-				material="/shared/effects/materials/crater.material"
-				startsize="55"
-				midsize="55"
-				midsizepos="0.7"
-				endsize="0"		
-				color=".1"
-				startalpha="0"
-				midalpha="1"
-				midalphapos="0.05"
-				endalpha="1"
-				maxyaw="360"
-				life="6800"
-			/>
+            <groundsprite
+                timenudge="1400"    
+                position="-65 -60 20"
+                material="/shared/effects/materials/crater.material"
+                startsize="55"
+                midsize="55"
+                midsizepos="0.7"
+                endsize="0"     
+                color=".1"
+                startalpha="0"
+                midalpha="1"
+                midalphapos="0.05"
+                endalpha="1"
+                maxyaw="360"
+                life="6800"
+            />
 
-		</particlesystem>
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<spawnmodifier instance="instance1" modifier="modifier0"/>
-     	 	<waitfordeath instance="instance0" />
-		<waitfordeath instance="instance1" />
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <spawnmodifier instance="instance1" modifier="modifier0"/>
+            <waitfordeath instance="instance0" />
+        <waitfordeath instance="instance1" />
+    </thread>
 
 </effect>

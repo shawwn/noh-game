@@ -1,66 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pet
-	name="Pet_Zephyr_Ability2"
-	
-	
-	
-	icon="icon.tga"
-	portrait="icon.tga"
-	model="effects/cyclone_bones.mdf"
-	passiveeffect="effects/cyclone.effect"
-	spawneffect=""
-	respawneffect=""
-	selectsound=""
-	orderconfirmedsound=""
-	iscontrollable="false"
-	
-	preglobalscale=".5"
-	modelscale="1.0"
-	effectscale="1.0"
-	boundsheight="64"
-	boundsradius="16"
-	isselectable="false"
-	targetoffset="0 0 0"
+    name="Pet_Zephyr_Ability2"
+    
+    
+    
+    icon="icon.tga"
+    portrait="icon.tga"
+    model="effects/cyclone_bones.mdf"
+    passiveeffect="effects/cyclone.effect"
+    spawneffect=""
+    respawneffect=""
+    selectsound=""
+    orderconfirmedsound=""
+    iscontrollable="false"
+    
+    preglobalscale=".5"
+    modelscale="1.0"
+    effectscale="1.0"
+    boundsheight="64"
+    boundsradius="16"
+    isselectable="false"
+    targetoffset="0 0 0"
 
-	movespeed="400"
-	turnrate="160"
+    movespeed="400"
+    turnrate="160"
 
-	cancarryitems="false"
-	invulnerable="true"
-	unitwalking="true"
-	drawonmap="false"	
-	diewithowner="true"
-	
-	attackduration="1000"
-	attackactiontime="50"
-	attackcooldown="1000"
-	attackdamagemin="0"
-	attackdamagemax="0"
-	attacknumanims="2"
-	attackoffset="0 60 100"
-	attackprojectile=""
-	attackrange="100"
-	attackstarteffect=""
-	attackactioneffect=""
-	attackimpacteffect="effects/impact.effect"
-	attacktype="melee"
-	combattype="Melee"
+    cancarryitems="false"
+    invulnerable="true"
+    unitwalking="true"
+    drawonmap="false"   
+    diewithowner="true"
+    
+    attackduration="1000"
+    attackactiontime="50"
+    attackcooldown="1000"
+    attackdamagemin="0"
+    attackdamagemax="0"
+    attacknumanims="2"
+    attackoffset="0 60 100"
+    attackprojectile=""
+    attackrange="100"
+    attackstarteffect=""
+    attackactioneffect=""
+    attackimpacteffect="effects/impact.effect"
+    attacktype="melee"
+    combattype="Melee"
 
-	aggrorange="600"
-	wanderrange="250"
-	maxdistancefromowner="2000"
-	
-	lifetime="20000,30000,40000,50000"
+    aggrorange="600"
+    wanderrange="250"
+    maxdistancefromowner="2000"
+    
+    lifetime="20000,30000,40000,50000"
 >
-	<onspawn>
-		<spawnaffector name="Affector_Zephyr_Ability2" target="this_entity"/>
-		<order command="wander" source="this_entity" target="this_owner_entity"/>
-		<addcharges entity="proxy_entity" count="1"  />
-	</onspawn>
-	<onexpired>
-		<addcharges entity="proxy_entity" count="-1" />
-	</onexpired>
-	<ondeath>
-		<addcharges entity="proxy_entity" count="-1" />
-	</ondeath>
+    <onspawn>
+        <spawnaffector name="Affector_Zephyr_Ability2" target="this_entity"/>
+        <order command="wander" source="this_entity" target="this_owner_entity"/>
+        <addcharges entity="proxy_entity" count="1"  />
+    </onspawn>
+    <onexpired>
+        <addcharges entity="proxy_entity" count="-1" />
+    </onexpired>
+    <ondeath>
+        <addcharges entity="proxy_entity" count="-1" />
+    </ondeath>
 </pet>

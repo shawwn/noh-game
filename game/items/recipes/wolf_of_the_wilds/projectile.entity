@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Frost"
+    name="Projectile_Frost"
 
-	speed="900"
-	gravity="2500"
+    speed="900"
+    gravity="2500"
 
-	modelscale=".7"
-	model="spinner.mdf"
+    modelscale=".7"
+    model="spinner.mdf"
 
-	impacteffect="impact.effect"
+    impacteffect="impact.effect"
 >
 </projectile>

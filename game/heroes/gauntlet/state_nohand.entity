@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Gauntlet_NoHand"
+    name="State_Gauntlet_NoHand"
 
-	icon="icon.tga"
-	ishidden="false"
-	modifierkey="gauntlet_nohand"
+    icon="icon.tga"
+    ishidden="false"
+    modifierkey="gauntlet_nohand"
 
 >
-	
-	<onexpired>
-		<onexpired>
-			<playanim name="idle" target="source_entity" />
-		</onexpired>
-	</onexpired>
+    
+    <onexpired>
+        <onexpired>
+            <playanim name="idle" target="source_entity" />
+        </onexpired>
+    </onexpired>
 </state>

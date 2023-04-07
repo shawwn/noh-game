@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_WitchSlayer_Ability4"
+    name="Affector_WitchSlayer_Ability4"
 
-	radius="150"
-	arc="180"
-	
-	speed="1600"
-	
-	lifetime="500"
-	maximpactspertarget="1"
-	targetselection="all"
-	targetscheme="organic_enemy_units"
-	effecttype="Magic"
-	persist="true"
-	effect="effects/ability_01.effect"	
+    radius="150"
+    arc="180"
+    
+    speed="1600"
+    
+    lifetime="500"
+    maximpactspertarget="1"
+    targetselection="all"
+    targetscheme="organic_enemy_units"
+    effecttype="Magic"
+    persist="true"
+    effect="effects/ability_01.effect"  
 
 >
-	<onimpact>
-		<applystate name="State_WitchSlayer_Ability1_Enemy" duration="570"/>
-		<spawnprojectile name="Projectile_WitchSlayer_Ability1_Toss" source="target_entity" target="target_entity" bind="target_entity" ignoretargetoffset="true" noresponse="true" />
-	</onimpact>
+    <onimpact>
+        <applystate name="State_WitchSlayer_Ability1_Enemy" duration="570"/>
+        <spawnprojectile name="Projectile_WitchSlayer_Ability1_Toss" source="target_entity" target="target_entity" bind="target_entity" ignoretargetoffset="true" noresponse="true" />
+    </onimpact>
 </affector>

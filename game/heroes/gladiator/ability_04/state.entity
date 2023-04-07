@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Gladiator_Ability4"
+    name="State_Gladiator_Ability4"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect=""
-	movespeedmultiplier="0.1"
-	
-	effecttype="StatusBuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect=""
+    movespeedmultiplier="0.1"
+    
+    effecttype="StatusBuff"
 >
 
-	<oninflict>
-		<setaccumulator entity="this_entity" value="0" />
-	</oninflict>
-	<onattackeddamageevent>
-		<setvar0 a="damage_attempted" b="0.5" op="mult" />
-		<evaluate a="accumulator" b="var0" op="add" />
-		<setaccumulator value="result" />
-		<setvalue name="damage_attempted" a="damage_attempted" b="0.5" op="mult" />
-		<printdebuginfo />
-	</onattackeddamageevent>
-	<onexpired>
-		<setvar0 a="accumulator" />
-		<damage effecttype="Magic" amount="0" b="accumulator" op="add" target="target_entity" nonlethal="true" />
-		<printdebuginfo />
-	</onexpired>
+    <oninflict>
+        <setaccumulator entity="this_entity" value="0" />
+    </oninflict>
+    <onattackeddamageevent>
+        <setvar0 a="damage_attempted" b="0.5" op="mult" />
+        <evaluate a="accumulator" b="var0" op="add" />
+        <setaccumulator value="result" />
+        <setvalue name="damage_attempted" a="damage_attempted" b="0.5" op="mult" />
+        <printdebuginfo />
+    </onattackeddamageevent>
+    <onexpired>
+        <setvar0 a="accumulator" />
+        <damage effecttype="Magic" amount="0" b="accumulator" op="add" target="target_entity" nonlethal="true" />
+        <printdebuginfo />
+    </onexpired>
 </state>

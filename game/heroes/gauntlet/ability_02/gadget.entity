@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gadget
-	name="Gadget_Gauntlet_Ability2"
+    name="Gadget_Gauntlet_Ability2"
 
-	icon=""
-	portrait=""
-	model=""
-	
-	preglobalscale="1.0"
-	modelscale="2.45"
-	effectscale="1.0"
-	boundsheight="0"
-	boundsradius="0"
-	isselectable="false"
-	selectionradius="0"
-	targetoffset="0 0 0"
+    icon=""
+    portrait=""
+    model=""
+    
+    preglobalscale="1.0"
+    modelscale="2.45"
+    effectscale="1.0"
+    boundsheight="0"
+    boundsradius="0"
+    isselectable="false"
+    selectionradius="0"
+    targetoffset="0 0 0"
 
-	canrotate="false"
-	ismobile="false"
+    canrotate="false"
+    ismobile="false"
 
-	attacktype="none"
-	combattype="Ranged"
+    attacktype="none"
+    combattype="Ranged"
 
-	sightrangeday="0"
-	sightrangenight="0"
-	unitwalking="true"
-	canattack="false"
-	deathtime="0"
-	corpsetime="0"
-	invulnerable="true"
-	flying="false"
-	drawonmap="false"
-	
-	lifetime="2500"
+    sightrangeday="0"
+    sightrangenight="0"
+    unitwalking="true"
+    canattack="false"
+    deathtime="0"
+    corpsetime="0"
+    invulnerable="true"
+    flying="false"
+    drawonmap="false"
+    
+    lifetime="2500"
 >
 </gadget>

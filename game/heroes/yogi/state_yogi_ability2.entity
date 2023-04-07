@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Yogi_Ability2"
+    name="State_Yogi_Ability2"
 
-	
-	
-	icon="icons/ability_2.tga"
-	passiveeffect="effects/ability_02/buff.effect"
-	displaylevel="true"
-	
-	attackspeed="0.1,0.2,0.3,0.4"
-	movespeedmultiplier="0.05,0.10,0.15,0.20"
-	
-	effecttype="StatusBuff"
+    
+    
+    icon="icons/ability_2.tga"
+    passiveeffect="effects/ability_02/buff.effect"
+    displaylevel="true"
+    
+    attackspeed="0.1,0.2,0.3,0.4"
+    movespeedmultiplier="0.05,0.10,0.15,0.20"
+    
+    effecttype="StatusBuff"
 >
 </state>

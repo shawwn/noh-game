@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Sniper4"
+    name="Ability_Sniper4"
 
-	icon="icon.tga"
-	statuseffecttooltip=""
-	
-	anim="attack_4"
-	casttime="3000,2250,1700"
-	castactiontime="300"
+    icon="icon.tga"
+    statuseffecttooltip=""
+    
+    anim="attack_4"
+    casttime="3000,2250,1700"
+    castactiontime="300"
 
-	maxlevel="3"
-	requiredlevel="6,11,16"
+    maxlevel="3"
+    requiredlevel="6,11,16"
 
-	actiontype="target_entity"
-	targetscheme="visible_enemy_units"
-	casteffecttype="Magic"
-	ischanneling="true"
-	deferchannelcost="true"
-	deferchannelimpact="true"	
-	manacost="175,275,350"
-	cooldowntime="20000,16000,14000"
-	casteffect=""
-	range="1500,2000,2500"
+    actiontype="target_entity"
+    targetscheme="visible_enemy_units"
+    casteffecttype="Magic"
+    ischanneling="true"
+    deferchannelcost="true"
+    deferchannelimpact="true"   
+    manacost="175,275,350"
+    cooldowntime="20000,16000,14000"
+    casteffect=""
+    range="1500,2000,2500"
 >
-	<onchannelstart>
-		<applystate name="State_Sniper_Ability4" duration="3000,2250,1700" ischannel="true" />
-		<applystate name="Self_State_Sniper_Ability4"  target="source_entity" ischannel="true"/>
-	</onchannelstart>
+    <onchannelstart>
+        <applystate name="State_Sniper_Ability4" duration="3000,2250,1700" ischannel="true" />
+        <applystate name="Self_State_Sniper_Ability4"  target="source_entity" ischannel="true"/>
+    </onchannelstart>
 
-	<onchannelend>
-		<spawnprojectile name="Projectile_Sniper_Ability4" source="source_entity" target="target_entity" pushentity="true" offset="0 0 0" /> 
-		<playeffect effect="effects/cast.effect" source="source_entity"/>
-		<playeffect effect="effects/sound.effect" source="source_entity"/>
-		<expirestate name="State_Sniper_Ability4" target="source_entity" /> 
-	</onchannelend>
+    <onchannelend>
+        <spawnprojectile name="Projectile_Sniper_Ability4" source="source_entity" target="target_entity" pushentity="true" offset="0 0 0" /> 
+        <playeffect effect="effects/cast.effect" source="source_entity"/>
+        <playeffect effect="effects/sound.effect" source="source_entity"/>
+        <expirestate name="State_Sniper_Ability4" target="source_entity" /> 
+    </onchannelend>
 
-	<onimpact />
+    <onimpact />
 </ability>

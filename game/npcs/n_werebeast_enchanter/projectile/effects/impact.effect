@@ -1,199 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect useentityeffectscale="true">
-	<definitions>
-		<particlesystem name="system0" space="world" scale="1">
+    <definitions>
+        <particlesystem name="system0" space="world" scale="1">
 
 
-			<sound
-				sample="/npcs/n_werebeast_enchanter/sounds/impact_%.wav"
-				linearfalloff="true"
-				falloffstart="0"
-				falloffend="1500"
-				volume=".4"
-			/>
-			
-			<simpleemitter
-				spawnrate="500"
-				bone="_bone_centerofchest"
-				count="20"
-				particlelife="600"
-				gravity="4"
-				speed="75"
-				drag=".02"
-				acceleration="0"
-				position="0 0 10"
-				material="/shared/effects/materials/flare_01.material"
-				offsetsphere="0 0 1"
-				minangle="0"
-				maxangle="3600"
-				direction="0 0 1"
-				offsetdirection="0 0 0"
-				offsetradial="0 0 0"
-			>
-				<particle 
-					minangle="0"
-					maxangle="0"
-					minanglespeed="-50"
-					maxanglespeed="-150"
-					startcolor=".5 0 1"
-					midcolor="1 .5 0"
-					endcolor="1 .5 1"
-					midcolorpos=".2"
-					startframe="0"
-					endframe="1"
-					startsize="1"
-					midsize="15"
-					endsize=".1"
-					startalpha="0"
-					midalpha="1"
-					endalpha="0"
-					midalphapos=".3"
-					startstickiness=".4"
-					endstickiness="0"
-				/>
-				<particle
-					minangle="0"
-					maxangle="0"
-					minanglespeed="50"
-					maxanglespeed="150"
-					startcolor="0 .9 .9"
-					midcolor="0 .9 .9"
-					endcolor="0 .9 .9"
-					midcolorpos=".2"
-					startframe="0"
-					endframe="1"
-					startsize="1"
-					midsize="4"
-					endsize=".1"
-					startalpha="0"
-					midalpha="1"
-					endalpha="0"
-					midalphapos=".3"
-					startstickiness=".4"
-					endstickiness="0"
-				/>
-				<particle 
-					minangle="0"
-					maxangle="0"
-					minanglespeed="50"
-					maxanglespeed="150"
-					startcolor=".6 .8 .8"
-					midcolor=".6 .8 .8"
-					endcolor=".6 .8 .8"
-					midcolorpos=".2"
-					startframe="0"
-					endframe="1"
-					startsize="1"
-					midsize="3"
-					endsize=".1"
-					startalpha="0"
-					midalpha="1"
-					endalpha="0"
-					midalphapos=".3"
-					startstickiness=".4"
-					endstickiness="0"
-				/>
-			</simpleemitter>
-			
-			<simpleemitter
-				spawnrate="500"
-				bone="_bone_centerofchest"
-				count="10"
-				particlelife="600"
-				gravity="4"
-				speed="150"
-				drag=".02"
-				acceleration="0"
-				position="0 0 10"
-				material="/shared/effects/materials/reaper_starbolt_01.material"
-				offsetsphere="0 0 1"
-				minangle="0"
-				maxangle="3600"
-				direction="0 0 1"
-				offsetdirection="0 0 0"
-				offsetradial="0 0 0"
-			>
-				<particle 
-					minangle="0"
-					maxangle="0"
-					minanglespeed="-50"
-					maxanglespeed="-150"
-					startcolor="1 1 1"
-					midcolor="1 1 1"
-					endcolor="1 1 1"
-					midcolorpos=".2"
-					startframe="0"
-					endframe="1"
-					startsize="1"
-					midsize="20"
-					endsize=".1"
-					startalpha="0"
-					midalpha="1"
-					endalpha="0"
-					midalphapos=".3"
-					startstickiness=".4"
-					endstickiness="0"
-				/>
-			</simpleemitter>
-	
-			<simpleemitter
-				bone="_bone_centerofchest"
-				count="2"
-				particlelife="250"
-				gravity="-6"
-				speed="0.0"
-				acceleration="0.0"
-				timenudge="0"
-				position="0 0 0"
-				offsetsphere="0 0 0"
-				material="/shared/effects/materials/nova_05.material"
-			>
-				<particle
-					minangle="0"
-					maxangle="90"
-					anglespeed="-180"
-					startcolor="0 0 0"
-					midcolor=".5 .2 .5"
-					endcolor="0 0 0"
-					midcolorpos=".1"
-					startsize="90"
-					midsize="60"
-					endsize="0"
-					anchor="1"
-				/>
-			</simpleemitter>
-			
-			<simpleemitter
-				bone="_bone_centerofchest"
-				count="2"
-				particlelife="250"
-				gravity="-6"
-				speed="0.0"
-				acceleration="0.0"
-				timenudge="0"
-				position="0 0 0"
-				offsetsphere="15 15 0"
-				material="/shared/effects/materials/blink.material"
-			>
-				<particle
-					minangle="0"
-					maxangle="90"
-					anglespeed="180"
-					startcolor="0 0 0"
-					midcolor=".4 .4 .4"
-					endcolor="0 0 0"
-					midcolorpos=".1"
-					startsize="100"
-					midsize="75"
-					endsize="0"
-					anchor="1"
-				/>
-			</simpleemitter>
+            <sound
+                sample="/npcs/n_werebeast_enchanter/sounds/impact_%.wav"
+                linearfalloff="true"
+                falloffstart="0"
+                falloffend="1500"
+                volume=".4"
+            />
+            
+            <simpleemitter
+                spawnrate="500"
+                bone="_bone_centerofchest"
+                count="20"
+                particlelife="600"
+                gravity="4"
+                speed="75"
+                drag=".02"
+                acceleration="0"
+                position="0 0 10"
+                material="/shared/effects/materials/flare_01.material"
+                offsetsphere="0 0 1"
+                minangle="0"
+                maxangle="3600"
+                direction="0 0 1"
+                offsetdirection="0 0 0"
+                offsetradial="0 0 0"
+            >
+                <particle 
+                    minangle="0"
+                    maxangle="0"
+                    minanglespeed="-50"
+                    maxanglespeed="-150"
+                    startcolor=".5 0 1"
+                    midcolor="1 .5 0"
+                    endcolor="1 .5 1"
+                    midcolorpos=".2"
+                    startframe="0"
+                    endframe="1"
+                    startsize="1"
+                    midsize="15"
+                    endsize=".1"
+                    startalpha="0"
+                    midalpha="1"
+                    endalpha="0"
+                    midalphapos=".3"
+                    startstickiness=".4"
+                    endstickiness="0"
+                />
+                <particle
+                    minangle="0"
+                    maxangle="0"
+                    minanglespeed="50"
+                    maxanglespeed="150"
+                    startcolor="0 .9 .9"
+                    midcolor="0 .9 .9"
+                    endcolor="0 .9 .9"
+                    midcolorpos=".2"
+                    startframe="0"
+                    endframe="1"
+                    startsize="1"
+                    midsize="4"
+                    endsize=".1"
+                    startalpha="0"
+                    midalpha="1"
+                    endalpha="0"
+                    midalphapos=".3"
+                    startstickiness=".4"
+                    endstickiness="0"
+                />
+                <particle 
+                    minangle="0"
+                    maxangle="0"
+                    minanglespeed="50"
+                    maxanglespeed="150"
+                    startcolor=".6 .8 .8"
+                    midcolor=".6 .8 .8"
+                    endcolor=".6 .8 .8"
+                    midcolorpos=".2"
+                    startframe="0"
+                    endframe="1"
+                    startsize="1"
+                    midsize="3"
+                    endsize=".1"
+                    startalpha="0"
+                    midalpha="1"
+                    endalpha="0"
+                    midalphapos=".3"
+                    startstickiness=".4"
+                    endstickiness="0"
+                />
+            </simpleemitter>
+            
+            <simpleemitter
+                spawnrate="500"
+                bone="_bone_centerofchest"
+                count="10"
+                particlelife="600"
+                gravity="4"
+                speed="150"
+                drag=".02"
+                acceleration="0"
+                position="0 0 10"
+                material="/shared/effects/materials/reaper_starbolt_01.material"
+                offsetsphere="0 0 1"
+                minangle="0"
+                maxangle="3600"
+                direction="0 0 1"
+                offsetdirection="0 0 0"
+                offsetradial="0 0 0"
+            >
+                <particle 
+                    minangle="0"
+                    maxangle="0"
+                    minanglespeed="-50"
+                    maxanglespeed="-150"
+                    startcolor="1 1 1"
+                    midcolor="1 1 1"
+                    endcolor="1 1 1"
+                    midcolorpos=".2"
+                    startframe="0"
+                    endframe="1"
+                    startsize="1"
+                    midsize="20"
+                    endsize=".1"
+                    startalpha="0"
+                    midalpha="1"
+                    endalpha="0"
+                    midalphapos=".3"
+                    startstickiness=".4"
+                    endstickiness="0"
+                />
+            </simpleemitter>
+    
+            <simpleemitter
+                bone="_bone_centerofchest"
+                count="2"
+                particlelife="250"
+                gravity="-6"
+                speed="0.0"
+                acceleration="0.0"
+                timenudge="0"
+                position="0 0 0"
+                offsetsphere="0 0 0"
+                material="/shared/effects/materials/nova_05.material"
+            >
+                <particle
+                    minangle="0"
+                    maxangle="90"
+                    anglespeed="-180"
+                    startcolor="0 0 0"
+                    midcolor=".5 .2 .5"
+                    endcolor="0 0 0"
+                    midcolorpos=".1"
+                    startsize="90"
+                    midsize="60"
+                    endsize="0"
+                    anchor="1"
+                />
+            </simpleemitter>
+            
+            <simpleemitter
+                bone="_bone_centerofchest"
+                count="2"
+                particlelife="250"
+                gravity="-6"
+                speed="0.0"
+                acceleration="0.0"
+                timenudge="0"
+                position="0 0 0"
+                offsetsphere="15 15 0"
+                material="/shared/effects/materials/blink.material"
+            >
+                <particle
+                    minangle="0"
+                    maxangle="90"
+                    anglespeed="180"
+                    startcolor="0 0 0"
+                    midcolor=".4 .4 .4"
+                    endcolor="0 0 0"
+                    midcolorpos=".1"
+                    startsize="100"
+                    midsize="75"
+                    endsize="0"
+                    anchor="1"
+                />
+            </simpleemitter>
 
-		</particlesystem>
-	</definitions>
+        </particlesystem>
+    </definitions>
 <thread>
-	<spawnparticlesystem instance="instance0" particlesystem="system0"/>
-	<waitfordeath instance="instance0" />
+    <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+    <waitfordeath instance="instance0" />
 </thread>
 </effect>

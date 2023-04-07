@@ -1,290 +1,290 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="snowblind">
-	<definitions>
-		<particlesystem name="system0" space="world">
+    <definitions>
+        <particlesystem name="system0" space="world">
 
-		
-			<sound
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2500"
-				volume="1.0" 
-				sample="/heroes/yogi/ability_04/sounds/ability_04_cast.wav"
-			/>
+        
+            <sound
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2500"
+                volume="1.0" 
+                sample="/heroes/yogi/ability_04/sounds/ability_04_cast.wav"
+            />
 
-		
-		<model
-			bone="Bip01 R Forearm"
-			delay="100"
-			life="1800"
-			startalpha="0"
-			midalpha="1"
-			endalpha="0"
-			midalphapos=".1"
-			name="dragon" 
-			model="lhand.mdf"
-			anim="idle"
-			yawspeed="0"
-			
-			startscale=".4"
-			midscale="1.7"
-			endscale="1.7"
-			midscalepos=".2"
-			
-			color="1 1 1"
+        
+        <model
+            bone="Bip01 R Forearm"
+            delay="100"
+            life="1800"
+            startalpha="0"
+            midalpha="1"
+            endalpha="0"
+            midalphapos=".1"
+            name="dragon" 
+            model="lhand.mdf"
+            anim="idle"
+            yawspeed="0"
+            
+            startscale=".4"
+            midscale="1.7"
+            endscale="1.7"
+            midscalepos=".2"
+            
+            color="1 1 1"
 
-			position="0.0 0.0 0.0"
-			directionalspace="local"
-		/>	
-	
-		<model
-			bone="Bip01 L Forearm"
-			delay="300"
-			life="1500"
-			startalpha="0"
-			midalpha="1"
-			endalpha="0"
-			midalphapos=".1"
-			name="dragon" 
-			model="lhand.mdf"
-			anim="idle"
-			yawspeed="0"
-			
-			startscale=".4"
-			midscale="1.7"
-			endscale="1.7"
-			midscalepos=".2"
-			
-			color="1 1 1"
+            position="0.0 0.0 0.0"
+            directionalspace="local"
+        />  
+    
+        <model
+            bone="Bip01 L Forearm"
+            delay="300"
+            life="1500"
+            startalpha="0"
+            midalpha="1"
+            endalpha="0"
+            midalphapos=".1"
+            name="dragon" 
+            model="lhand.mdf"
+            anim="idle"
+            yawspeed="0"
+            
+            startscale=".4"
+            midscale="1.7"
+            endscale="1.7"
+            midscalepos=".2"
+            
+            color="1 1 1"
 
-			position="0.0 0.0 0.0"
-			directionalspace="local"
-		/>	
-	
+            position="0.0 0.0 0.0"
+            directionalspace="local"
+        />  
+    
 
-		
-		<model
-			bone="Bip01 Head"
-			delay="200"
-			life="1300"
-			startalpha="0"
-			midalpha="1"
-			endalpha="0"
-			midalphapos=".1"
-			name="dragon" 
-			model="head.mdf"
-			anim="idle"
-			yawspeed="0"
-		
-			startscale=".4"
-			midscale="1.7"
-			endscale="1.7"
-			midscalepos=".2"
-			
-			color="1 1 1"
-			
-			position="0.0 0.0 0.0"
-			directionalspace="local"
-		/>		
+        
+        <model
+            bone="Bip01 Head"
+            delay="200"
+            life="1300"
+            startalpha="0"
+            midalpha="1"
+            endalpha="0"
+            midalphapos=".1"
+            name="dragon" 
+            model="head.mdf"
+            anim="idle"
+            yawspeed="0"
+        
+            startscale=".4"
+            midscale="1.7"
+            endscale="1.7"
+            midscalepos=".2"
+            
+            color="1 1 1"
+            
+            position="0.0 0.0 0.0"
+            directionalspace="local"
+        />      
 
-		
-		<model
-			bone="Bip01 Spine2"
-			delay="600"
-			life="1100"
-			startalpha="0"
-			midalpha="1"
-			endalpha="0"
-			midalphapos=".1"
-			name="dragon" 
-			model="chest.mdf"
-			anim="idle"
-			yawspeed="0"
-			
-			startscale=".4"
-			midscale=".8"
-			endscale=".8"
-			midscalepos=".2"
-			
-			color="1 1 1"
+        
+        <model
+            bone="Bip01 Spine2"
+            delay="600"
+            life="1100"
+            startalpha="0"
+            midalpha="1"
+            endalpha="0"
+            midalphapos=".1"
+            name="dragon" 
+            model="chest.mdf"
+            anim="idle"
+            yawspeed="0"
+            
+            startscale=".4"
+            midscale=".8"
+            endscale=".8"
+            midscalepos=".2"
+            
+            color="1 1 1"
 
-			position="0.0 0.0 0.0"
-			directionalspace="local"
-		/>	
-
-
-	
+            position="0.0 0.0 0.0"
+            directionalspace="local"
+        />  
 
 
-
-
-			<simpleemitter 
-				delay="800"
-				bone="_bone_centerofchest"
-				count="15"
-         		spawnrate="222"				
-				minparticlelife="600"
-          		maxparticlelife="2200"
-          		gravity="0"
-          		drag="0"
-				speed="20"
-				position="0 0 0"
-				offsetsphere="60 60 60"
-          			material="/shared/effects/materials/neb_blend.material"
-      			  >
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-44"
-					maxanglespeed="44"
-					
-					scale="5"					
-					color=".2 .4 .2"	
-					startalpha=".5"
-					endalpha="0"
-					
-					startsize="15"
-					
-					endsize="38"				
-				/>
-        	</simpleemitter>		
-		
-
-
-
-			<skeletonemitter
-				delay="0"	
-				life="500"
-				
-				count="25"
-         		spawnrate="222"				
-				minparticlelife="600"
-          		maxparticlelife="2200"
-          		gravity="0"
-          		drag="0"
-				speed="20"
-				position="0 0 0"
-				
-          		material="/shared/effects/materials/neb_add.material"
-      		>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-44"
-					maxanglespeed="44"
-					inheritvelocity=".25"
-					scale="5"					
-					startcolor=".15 .5 .4"
-					endcolor="0 0 0"	
-					midcolorpos=".2"	
-					startsize="15"
-					endsize="20"
-										
-				/>
-        	</skeletonemitter>
+    
 
 
 
 
-		
-	
-			<simpleemitter
-				delay="700"			
-				bone="_bone_centerofchest"
-				count="15"
-         		spawnrate="222"				
-				minparticlelife="600"
-          		maxparticlelife="2200"
-          		gravity="0"
-          		drag="0"
-				speed="20"
-				position="0 0 0"
-				offsetsphere="40 40 60"
-          		material="/shared/effects/materials/neb_add.material"
-      		>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-44"
-					maxanglespeed="44"
-					
-					scale="5"					
-					startcolor=".15 .5 .4"
-					endcolor="0 0 0"	
-					midcolorpos=".2"
-					startanchor="-"
-					endanchor="1"
-					startsize="15"
-					
-					endsize="34"					
-				/>
-        	</simpleemitter>	
-			
-			
-			
+            <simpleemitter 
+                delay="800"
+                bone="_bone_centerofchest"
+                count="15"
+                spawnrate="222"             
+                minparticlelife="600"
+                maxparticlelife="2200"
+                gravity="0"
+                drag="0"
+                speed="20"
+                position="0 0 0"
+                offsetsphere="60 60 60"
+                    material="/shared/effects/materials/neb_blend.material"
+                  >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-44"
+                    maxanglespeed="44"
+                    
+                    scale="5"                   
+                    color=".2 .4 .2"    
+                    startalpha=".5"
+                    endalpha="0"
+                    
+                    startsize="15"
+                    
+                    endsize="38"                
+                />
+            </simpleemitter>        
+        
 
 
-			
-		
-			
 
-			<simpleemitter 
-				delay="750"
-				bone="_bone_centerofchest"
-				count="20"
-         		spawnrate="222"				
-				particlelife="400"
-          	
-          		gravity="0"
-          		drag="0"
-				speed="20"
-				position="0 0 0"
-				offsetsphere="40 40 60"          			
-      			  >
-				  
-				<particle>
-					<billboard
-						life="400"
-						color="1.0 1.0 1.0"						
-						midalphapos="0.25"
-						
-						param="0.01555"	
-						
-						startsize="60"
-						endsize="224"
-						startalpha="0"
-						midalpha=".9"
-						endalpha="0"				
-						
-						depthbias="-19"
-						position="0 0 0"
-						material="/shared/effects/materials/refract_ring.material"
-						lockup="0"
-						pitch="0"
-					/>						
-				</particle>			
-			</simpleemitter>			
-		
-		
-		
-				<billboard
-					life="2000"
-					color="1.0 1.0 1.0"						
-					midalphapos="0.25"
-					
-					param="0.00555"	
-					
-					startsize="60"
-					endsize="224"
-					startalpha="0"
-					midalpha=".9"
-					endalpha="0"				
-					
-					depthbias="-19"
-					position="0 0 71"
-					material="/shared/effects/materials/refract_swirl.material"
+            <skeletonemitter
+                delay="0"   
+                life="500"
+                
+                count="25"
+                spawnrate="222"             
+                minparticlelife="600"
+                maxparticlelife="2200"
+                gravity="0"
+                drag="0"
+                speed="20"
+                position="0 0 0"
+                
+                material="/shared/effects/materials/neb_add.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-44"
+                    maxanglespeed="44"
+                    inheritvelocity=".25"
+                    scale="5"                   
+                    startcolor=".15 .5 .4"
+                    endcolor="0 0 0"    
+                    midcolorpos=".2"    
+                    startsize="15"
+                    endsize="20"
+                                        
+                />
+            </skeletonemitter>
 
-					rollspeed="-90"
-				/>	
-				
-		
+
+
+
+        
+    
+            <simpleemitter
+                delay="700"         
+                bone="_bone_centerofchest"
+                count="15"
+                spawnrate="222"             
+                minparticlelife="600"
+                maxparticlelife="2200"
+                gravity="0"
+                drag="0"
+                speed="20"
+                position="0 0 0"
+                offsetsphere="40 40 60"
+                material="/shared/effects/materials/neb_add.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-44"
+                    maxanglespeed="44"
+                    
+                    scale="5"                   
+                    startcolor=".15 .5 .4"
+                    endcolor="0 0 0"    
+                    midcolorpos=".2"
+                    startanchor="-"
+                    endanchor="1"
+                    startsize="15"
+                    
+                    endsize="34"                    
+                />
+            </simpleemitter>    
+            
+            
+            
+
+
+            
+        
+            
+
+            <simpleemitter 
+                delay="750"
+                bone="_bone_centerofchest"
+                count="20"
+                spawnrate="222"             
+                particlelife="400"
+            
+                gravity="0"
+                drag="0"
+                speed="20"
+                position="0 0 0"
+                offsetsphere="40 40 60"                     
+                  >
+                  
+                <particle>
+                    <billboard
+                        life="400"
+                        color="1.0 1.0 1.0"                     
+                        midalphapos="0.25"
+                        
+                        param="0.01555" 
+                        
+                        startsize="60"
+                        endsize="224"
+                        startalpha="0"
+                        midalpha=".9"
+                        endalpha="0"                
+                        
+                        depthbias="-19"
+                        position="0 0 0"
+                        material="/shared/effects/materials/refract_ring.material"
+                        lockup="0"
+                        pitch="0"
+                    />                      
+                </particle>         
+            </simpleemitter>            
+        
+        
+        
+                <billboard
+                    life="2000"
+                    color="1.0 1.0 1.0"                     
+                    midalphapos="0.25"
+                    
+                    param="0.00555" 
+                    
+                    startsize="60"
+                    endsize="224"
+                    startalpha="0"
+                    midalpha=".9"
+                    endalpha="0"                
+                    
+                    depthbias="-19"
+                    position="0 0 71"
+                    material="/shared/effects/materials/refract_swirl.material"
+
+                    rollspeed="-90"
+                />  
+                
+        
 
 
       </particlesystem>

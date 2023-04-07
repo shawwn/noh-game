@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Jereziah_Ability4"
+    name="Affector_Jereziah_Ability4"
 
-	radius="600"
-	targetselection="all"
-	targetscheme="organic_ally_units"
+    radius="600"
+    targetselection="all"
+    targetscheme="organic_ally_units"
 >
-	<onimpact>
-		<condition test="target_type hero">
-			<playeffect effect="effects/impact.effect" source="target_entity"/>
-		</condition>
-		<applystate name="State_Jereziah_Ability4" duration="5000,6000,7000" />
-	</onimpact>
+    <onimpact>
+        <condition test="target_type hero">
+            <playeffect effect="effects/impact.effect" source="target_entity"/>
+        </condition>
+        <applystate name="State_Jereziah_Ability4" duration="5000,6000,7000" />
+    </onimpact>
 </affector>

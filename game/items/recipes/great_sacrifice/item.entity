@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_HealthMana3"
+    name="Item_HealthMana3"
 
-	icon="icon.tga"
-	
-	cost="0"
-	components="Item_HealthMana2 Item_Regen"
-	autoassemble="true"
-	allowdisassemble="true"
-	
-	actiontype="passive"
-	
-	maxhealth="450"
-	maxmana="400"
-	manaregenmultiplier="1.5"
-	healthregen="6"
-	maxcharges="99"
-	
-	manaregenpercharge="1"
-	maxhealthpercharge="25"
-	healthregenpercharge=".25"
+    icon="icon.tga"
+    
+    cost="0"
+    components="Item_HealthMana2 Item_Regen"
+    autoassemble="true"
+    allowdisassemble="true"
+    
+    actiontype="passive"
+    
+    maxhealth="450"
+    maxmana="400"
+    manaregenmultiplier="1.5"
+    healthregen="6"
+    maxcharges="99"
+    
+    manaregenpercharge="1"
+    maxhealthpercharge="25"
+    healthregenpercharge=".25"
 >
-	<onframe />
-	<onkill />
-	<modifier key="great_sacrifice" modpriority="100" exclusive="true">	
-		<aura state="State_SacrificialStone" radius="1000" targetscheme="enemy_heroes" stack="true" />
-		
-		<onkilled>
-			<condition test="not_target_type illusion" target="source_entity">
-				<condition test="target_type hero" target="source_entity">
-					<spawnaffector name="Affector_Item5G" target="source_position" param="charges" />
-					<spawnunit name="Gadget_Item5G" target="source_position" />
-					
-					<setvar0 a="3000" b="charges" op="mult" />
-					<setrespawntimebonus target="source_entity" value="var0" />
-					
-					<setvar0 a="25" b="charges" op="mult" />
-					<setgoldlossbonus target="source_entity" value="var0" />
-					
-					<setcharges a="charges" b=".5" op="mult" />
-				</condition>
-			</condition>
-		</onkilled>
-	</modifier>
+    <onframe />
+    <onkill />
+    <modifier key="great_sacrifice" modpriority="100" exclusive="true"> 
+        <aura state="State_SacrificialStone" radius="1000" targetscheme="enemy_heroes" stack="true" />
+        
+        <onkilled>
+            <condition test="not_target_type illusion" target="source_entity">
+                <condition test="target_type hero" target="source_entity">
+                    <spawnaffector name="Affector_Item5G" target="source_position" param="charges" />
+                    <spawnunit name="Gadget_Item5G" target="source_position" />
+                    
+                    <setvar0 a="3000" b="charges" op="mult" />
+                    <setrespawntimebonus target="source_entity" value="var0" />
+                    
+                    <setvar0 a="25" b="charges" op="mult" />
+                    <setgoldlossbonus target="source_entity" value="var0" />
+                    
+                    <setcharges a="charges" b=".5" op="mult" />
+                </condition>
+            </condition>
+        </onkilled>
+    </modifier>
 </item>

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Magmar_Ability1"
+    name="Projectile_Magmar_Ability1"
 
-	speed="3000"
-	gravity="0"
+    speed="3000"
+    gravity="0"
 
-	modelscale="1.0"
-	model=""
-	
-	canturn="false"
-	flying="true"
-	flyheight="11"
-	deatheffect="effects/appear.effect"
-	maxtouches="0"
-	maxtouchespertarget="1"
-	touchradius="145"
-	touchtargetscheme="enemy_units"
-	toucheffecttype="Magic"
+    modelscale="1.0"
+    model=""
+    
+    canturn="false"
+    flying="true"
+    flyheight="11"
+    deatheffect="effects/appear.effect"
+    maxtouches="0"
+    maxtouchespertarget="1"
+    touchradius="145"
+    touchtargetscheme="enemy_units"
+    toucheffecttype="Magic"
 >
-	<ontouch>
-		<applystate name="State_Magmar_Ability1_Enemy" duration="500"/>
-		<spawnprojectile name="Projectile_Magmar_Ability1_Toss" source="target_entity" target="target_entity" bind="target_entity" ignoretargetoffset="true" noresponse="true" />
-	</ontouch>
+    <ontouch>
+        <applystate name="State_Magmar_Ability1_Enemy" duration="500"/>
+        <spawnprojectile name="Projectile_Magmar_Ability1_Toss" source="target_entity" target="target_entity" bind="target_entity" ignoretargetoffset="true" noresponse="true" />
+    </ontouch>
 </projectile>

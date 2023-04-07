@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Deadwood_Ability2"
+    name="Projectile_Deadwood_Ability2"
 
-	speed="1200"
-	gravity="5000"
+    speed="1200"
+    gravity="5000"
 
-	model="effects/projectile.mdf"
-	modelscale="2"
-	traileffect="effects/trail.effect"
-	impacteffect=""
+    model="effects/projectile.mdf"
+    modelscale="2"
+    traileffect="effects/trail.effect"
+    impacteffect=""
 >
-	<onimpact>
-		<damage effecttype="Physical" amount="30,60,90,120" />
-		<cantarget effecttype="Magic">
-			<applystate name="State_Stunned" duration="100" target="target_entity" />
-			<applystate name="State_Deadwood_Ability2_Slow" duration="1500,2000,2500,3000" target="target_entity" />
-		</cantarget>
-		<playeffect effect="effects/impact.effect" source="target_position" target="" occlude="true" />	
-		<killtrees />
-	</onimpact>
+    <onimpact>
+        <damage effecttype="Physical" amount="30,60,90,120" />
+        <cantarget effecttype="Magic">
+            <applystate name="State_Stunned" duration="100" target="target_entity" />
+            <applystate name="State_Deadwood_Ability2_Slow" duration="1500,2000,2500,3000" target="target_entity" />
+        </cantarget>
+        <playeffect effect="effects/impact.effect" source="target_position" target="" occlude="true" /> 
+        <killtrees />
+    </onimpact>
 </projectile>

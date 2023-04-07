@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Magmar3"
-	
-	icon="icon.tga"
-	statuseffecttooltip="State_Magmar_Ability3"
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
-	actiontype="passive"
+    name="Ability_Magmar3"
+    
+    icon="icon.tga"
+    statuseffecttooltip="State_Magmar_Ability3"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
+    actiontype="passive"
 >
-	<onattackimpact />
-	<modifier key="attack" modpriority="60" exclusive="true"
-		statuseffecttooltip="State_Magmar_Ability3"
-	>
-		<onattackimpact>
-			<cantarget targetscheme="enemy_units" effecttype="Magic">
-				<applystate name="State_Magmar_Ability3" owner="this_owner_entity" duration="250" />
-			</cantarget>
-		</onattackimpact>
-	</modifier>
+    <onattackimpact />
+    <modifier key="attack" modpriority="60" exclusive="true"
+        statuseffecttooltip="State_Magmar_Ability3"
+    >
+        <onattackimpact>
+            <cantarget targetscheme="enemy_units" effecttype="Magic">
+                <applystate name="State_Magmar_Ability3" owner="this_owner_entity" duration="250" />
+            </cantarget>
+        </onattackimpact>
+    </modifier>
 </ability>

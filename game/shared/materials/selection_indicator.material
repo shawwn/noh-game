@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <material>
-	<parameters />
-	<phase
-		name="color"
-		vs="effect"
-		ps="effect"
-		srcblend="BLEND_SRC_ALPHA"
-		dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
-		cull="CULL_NONE"
-		translucent="true"
-		depthwrite="false"
-		depthbias="1"
-		depthslopebias="true"
-		alphawrite="false"
-		layer="1"
-	>
-		<sampler
-			name="diffuse"
-			texture="../textures/selection_indicator_a.tga"
-			repeat_u="false"
-			repeat_v="false"
-			mipmaps="true"
-			fullquality="true"
-			nocompress="false"
-			filtering="true"
-		/>
-	</phase>
+    <parameters />
+    <phase
+        name="color"
+        vs="effect"
+        ps="effect"
+        srcblend="BLEND_SRC_ALPHA"
+        dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
+        cull="CULL_NONE"
+        translucent="true"
+        depthwrite="false"
+        depthbias="1"
+        depthslopebias="true"
+        alphawrite="false"
+        layer="1"
+    >
+        <sampler
+            name="diffuse"
+            texture="../textures/selection_indicator_a.tga"
+            repeat_u="false"
+            repeat_v="false"
+            mipmaps="true"
+            fullquality="true"
+            nocompress="false"
+            filtering="true"
+        />
+    </phase>
 </material>

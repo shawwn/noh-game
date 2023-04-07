@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="model_Kongorprops01.max" file="shrine_high.model" type="K2" >
-	<spawnevent cmd="starteffect effects/shrine_fx.effect 0"/>
-	<anim name="idle" clip="clips/default_02.clip" fps="30" loop="true">
-	</anim>
+    <spawnevent cmd="starteffect effects/shrine_fx.effect 0"/>
+    <anim name="idle" clip="clips/default_02.clip" fps="30" loop="true">
+    </anim>
 </model>

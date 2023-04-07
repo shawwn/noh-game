@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Rampage_Ability1_Watch"
-	
-	icon=""
-	ishidden="true"
-	impactinterval="500"
+    name="State_Rampage_Ability1_Watch"
+    
+    icon=""
+    ishidden="true"
+    impactinterval="500"
 >
-	<onimpact>
-		<condition test="distance lt 2500" source="target_entity" target="source_entity">
-			<applystate name="State_Rampage_Ability1_Warning" duration="10000" />
-		</condition>
-	</onimpact>
+    <onimpact>
+        <condition test="distance lt 2500" source="target_entity" target="source_entity">
+            <applystate name="State_Rampage_Ability1_Warning" duration="10000" />
+        </condition>
+    </onimpact>
 </state>

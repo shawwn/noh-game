@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Gloves3"
-	
-	model="/core/null/invis.mdf"
-	speed="900"
-	gravity="1500"
-	
-	traileffect="trail.effect"
+    name="Projectile_Gloves3"
+    
+    model="/core/null/invis.mdf"
+    speed="900"
+    gravity="1500"
+    
+    traileffect="trail.effect"
 >
 </projectile>

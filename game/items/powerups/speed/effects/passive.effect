@@ -1,281 +1,281 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="world">
+        <particlesystem name="system0" space="world">
 
-			<model
-				expirelife="300"
-				parentmodel="true"
-				parentskeleton="true"
-				loop="true"
-				life="3000"
-				startcolor="1 0 0"
-				midcolor="1 .2 0"
-				endcolor="1 0 0"
-				material="/shared/effects/materials/shell2.material"
-			/>	
-			
-			<template name="flare">
-				<billboard
-					expirelife="300"
-					bone="{bone}"
-					life="650"
-					startcolor="1"
-					midcolor="1 .3 .2"
-					midcolorpos="0.3"
-					endcolor="0 0 0"
-					startsize="0"
-					endsize="35"
-					material="/shared/effects/materials/smash_add.material"
-					loop="true"			
-				/>
-			</template>
+            <model
+                expirelife="300"
+                parentmodel="true"
+                parentskeleton="true"
+                loop="true"
+                life="3000"
+                startcolor="1 0 0"
+                midcolor="1 .2 0"
+                endcolor="1 0 0"
+                material="/shared/effects/materials/shell2.material"
+            />  
+            
+            <template name="flare">
+                <billboard
+                    expirelife="300"
+                    bone="{bone}"
+                    life="650"
+                    startcolor="1"
+                    midcolor="1 .3 .2"
+                    midcolorpos="0.3"
+                    endcolor="0 0 0"
+                    startsize="0"
+                    endsize="35"
+                    material="/shared/effects/materials/smash_add.material"
+                    loop="true"         
+                />
+            </template>
 
-			<instance name="flare" bone="_bone_fx_1" />
-			<instance name="flare" bone="_bone_fx_2" />
-			<instance name="flare" bone="_bone_fx_3" />
-			<instance name="flare" bone="_bone_fx_4" />
-			<instance name="flare" bone="_bone_fx_5" />
-			<instance name="flare" bone="_bone_fx_6" />
-			<instance name="flare" bone="_bone_fx_7" />
-			<instance name="flare" bone="_bone_fx_8" />
-			<instance name="flare" bone="_bone_root" />
-			
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_4"
-				bone_b="_bone_fx_1"
-				loop="1"
-				size="20"
-				life="550"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
+            <instance name="flare" bone="_bone_fx_1" />
+            <instance name="flare" bone="_bone_fx_2" />
+            <instance name="flare" bone="_bone_fx_3" />
+            <instance name="flare" bone="_bone_fx_4" />
+            <instance name="flare" bone="_bone_fx_5" />
+            <instance name="flare" bone="_bone_fx_6" />
+            <instance name="flare" bone="_bone_fx_7" />
+            <instance name="flare" bone="_bone_fx_8" />
+            <instance name="flare" bone="_bone_root" />
+            
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_4"
+                bone_b="_bone_fx_1"
+                loop="1"
+                size="20"
+                life="550"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
 
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_2"
-				bone_b="_bone_fx_1"
-				loop="1"
-				size="20"
-				life="550"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_2"
+                bone_b="_bone_fx_1"
+                loop="1"
+                size="20"
+                life="550"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
 
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_3"
-				bone_b="_bone_fx_1"
-				loop="1"
-				size="20"
-				life="1000"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_3"
+                bone_b="_bone_fx_1"
+                loop="1"
+                size="20"
+                life="1000"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
 
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_8"
-				bone_b="_bone_fx_1"
-				loop="1"
-				size="20"
-				life="200"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
-				
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_1"
-				bone_b="_bone_fx_7"
-				loop="1"
-				size="20"
-				life="500"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_8"
+                bone_b="_bone_fx_1"
+                loop="1"
+                size="20"
+                life="200"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
+                
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_1"
+                bone_b="_bone_fx_7"
+                loop="1"
+                size="20"
+                life="500"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
 
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_1"
-				bone_b="_bone_fx_5"
-				loop="1"
-				size="20"
-				life="500"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
-			
-			<billboard
-				expirelife="300"
-				delay="1500"
-				startcolor="0.3 .0 0"
-				midcolor=".3 .1 0"
-				endcolor="0.3 0.0 0"
-				position="0 0 50"
-				material="/shared/effects/materials/glow_01.material"
-				size="80"
-				depthbias="-60"
-				loop="true"
-				life="3000"
-			/>
-			
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_6"
-				bone_b="_bone_fx_1"
-				loop="1"
-				size="20"
-				life="550"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
-			
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_6"
-				bone_b="_bone_fx_7"
-				loop="1"
-				size="20"
-				life="550"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_1"
+                bone_b="_bone_fx_5"
+                loop="1"
+                size="20"
+                life="500"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
+            
+            <billboard
+                expirelife="300"
+                delay="1500"
+                startcolor="0.3 .0 0"
+                midcolor=".3 .1 0"
+                endcolor="0.3 0.0 0"
+                position="0 0 50"
+                material="/shared/effects/materials/glow_01.material"
+                size="80"
+                depthbias="-60"
+                loop="true"
+                life="3000"
+            />
+            
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_6"
+                bone_b="_bone_fx_1"
+                loop="1"
+                size="20"
+                life="550"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
+            
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_6"
+                bone_b="_bone_fx_7"
+                loop="1"
+                size="20"
+                life="550"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
 
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_8"
-				bone_b="_bone_fx_7"
-				loop="1"
-				size="20"
-				life="550"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
-			
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_6"
-				bone_b="_bone_fx_5"
-				loop="1"
-				size="20"
-				life="550"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_8"
+                bone_b="_bone_fx_7"
+                loop="1"
+                size="20"
+                life="550"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
+            
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_6"
+                bone_b="_bone_fx_5"
+                loop="1"
+                size="20"
+                life="550"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
 
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_4"
-				bone_b="_bone_fx_5"
-				loop="1"
-				size="20"
-				life="550"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
-			
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_3"
-				bone_b="_bone_fx_4"
-				loop="1"
-				size="20"
-				life="550"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_4"
+                bone_b="_bone_fx_5"
+                loop="1"
+                size="20"
+                life="550"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
+            
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_3"
+                bone_b="_bone_fx_4"
+                loop="1"
+                size="20"
+                life="550"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
 
-			<beam
-				expirelife="300"
-				bone_a="_bone_fx_2"
-				bone_b="_bone_fx_3"
-				loop="1"
-				size="20"
-				life="550"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
+            <beam
+                expirelife="300"
+                bone_a="_bone_fx_2"
+                bone_b="_bone_fx_3"
+                loop="1"
+                size="20"
+                life="550"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
 
-			<beam	
-				expirelife="300"
-				bone_a="_bone_fx_2"
-				bone_b="_bone_fx_8"
-				loop="1"
-				size="20"
-				life="550"
-				startcolor="1 0 0"
-				endcolor="1 0 0"
-				delay="600"
-				alpha=".0001"
-				material="/shared/effects/materials/femme_lightning_06.material"
-				framespeed="1"
-			/>
+            <beam   
+                expirelife="300"
+                bone_a="_bone_fx_2"
+                bone_b="_bone_fx_8"
+                loop="1"
+                size="20"
+                life="550"
+                startcolor="1 0 0"
+                endcolor="1 0 0"
+                delay="600"
+                alpha=".0001"
+                material="/shared/effects/materials/femme_lightning_06.material"
+                framespeed="1"
+            />
 
-		</particlesystem>
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
+    <thread>
 
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
 
-	</thread>
+    </thread>
 
 </effect>

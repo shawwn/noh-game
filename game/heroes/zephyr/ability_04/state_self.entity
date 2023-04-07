@@ -1,65 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Zephyr_Ability4_Self"
+    name="State_Zephyr_Ability4_Self"
 
-	icon="icon.tga"
-	
-	impactinterval="1000"
-	
-	ishidden="true"
-	passiveeffect=""
-	effecttype=""
+    icon="icon.tga"
+    
+    impactinterval="1000"
+    
+    ishidden="true"
+    passiveeffect=""
+    effecttype=""
 >
-	<onframe >
-	</onframe>
+    <onframe >
+    </onframe>
 
-	<modifier key="Zephyr_Ability2_1" modpriority="50"
-		description="true"
-	>
-		<oninflict>
-			<spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="2"/>
-		</oninflict>
-	
-		<onimpact>
-			<spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="2"/>
-		</onimpact>
-	</modifier>
-	
-	<modifier key="Zephyr_Ability2_2" modpriority="50"
-		description="true"
-	>
-		<oninflict>
-			<spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="4"/>
-		</oninflict>
-		
-		<onimpact>
-			<spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="4"/>
-		</onimpact>
-	</modifier>
-	
-	<modifier key="Zephyr_Ability2_3" modpriority="50"
-		description="true"
-	>
-		<oninflict>
-			<spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="6"/>
-		</oninflict>
-		
-		<onimpact>
-			<spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="6"/>
-		</onimpact>
-	</modifier>
-	
-	<modifier key="Zephyr_Ability2_4" modpriority="50"
-		description="true"
-	>
-		<oninflict>
-			<spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="8"/>
-		</oninflict>
-		
-		<onimpact>
-			<spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="8" />
-		</onimpact>
-	</modifier>
+    <modifier key="Zephyr_Ability2_1" modpriority="50"
+        description="true"
+    >
+        <oninflict>
+            <spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="2"/>
+        </oninflict>
+    
+        <onimpact>
+            <spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="2"/>
+        </onimpact>
+    </modifier>
+    
+    <modifier key="Zephyr_Ability2_2" modpriority="50"
+        description="true"
+    >
+        <oninflict>
+            <spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="4"/>
+        </oninflict>
+        
+        <onimpact>
+            <spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="4"/>
+        </onimpact>
+    </modifier>
+    
+    <modifier key="Zephyr_Ability2_3" modpriority="50"
+        description="true"
+    >
+        <oninflict>
+            <spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="6"/>
+        </oninflict>
+        
+        <onimpact>
+            <spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="6"/>
+        </onimpact>
+    </modifier>
+    
+    <modifier key="Zephyr_Ability2_4" modpriority="50"
+        description="true"
+    >
+        <oninflict>
+            <spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="8"/>
+        </oninflict>
+        
+        <onimpact>
+            <spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="8" />
+        </onimpact>
+    </modifier>
 </state>
 
 

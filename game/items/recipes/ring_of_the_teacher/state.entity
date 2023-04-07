@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Item1D"
+    name="State_Item1D"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="aura.effect"
+    
+    
+    icon="icon.tga"
+    passiveeffect="aura.effect"
 
-	armor="3"
-	manaregen="0.65"
-	
-	effecttype="StatusBuff"
+    armor="3"
+    manaregen="0.65"
+    
+    effecttype="StatusBuff"
 >
 </state>

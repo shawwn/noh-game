@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Voodoo_Ability2_Buff_Aura"
+    name="State_Voodoo_Ability2_Buff_Aura"
 
-	
-	
-	icon="icon.tga"
-	
-	passiveeffect="state_ally_aura.effect"
-	
+    
+    
+    icon="icon.tga"
+    
+    passiveeffect="state_ally_aura.effect"
+    
 
-	effecttype="StatusBuff"
+    effecttype="StatusBuff"
 >
-	<onframe >
-		<heal a="10,20,30,40" b="frametime" op="mult" />
-	</onframe>
+    <onframe >
+        <heal a="10,20,30,40" b="frametime" op="mult" />
+    </onframe>
 </state>

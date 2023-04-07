@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_PretendersCrown"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="185"
-	
-	actiontype="passive"
-	
-	strength="2"
-	agility="2"
-	intelligence="2"
+    name="Item_PretendersCrown"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="185"
+    
+    actiontype="passive"
+    
+    strength="2"
+    agility="2"
+    intelligence="2"
 >
 </item>

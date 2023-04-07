@@ -1,788 +1,788 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="">
-	<definitions>
-
-		<template name="sparks">
-			<simpleemitter
-				name="{emitter}"
-				bone="{bone}"
-				delay="{delay}"
-				life="{life}"
-				spawnrate="500"
-				drag=".001"
-				particlelife="3000"
-				offsetsphere="20 20 20"
-				gravity="-2.0"
-				minspeed="20"
-				maxspeed="120.0"								
-				direction="0.0 0.0 1.0"
-				minangle="-40"
-				maxangle="40"
-				material="/shared/effects/materials/spark_10.material"
-				inheritvelocity=".35"				
-			>			
-				<particle
-					startcolor="1 .5 .2"
-					endcolor="0 0 0"
-					alpha="1.0"
-					width="12"
-					height="12"
-					lockup="false"
-					lockright="false"
-					minangle="-360"
-					maxangle="1"
-					minanglespeed="110"
-					maxanglespeed="-110"
-				/>
-			</simpleemitter>
-		</template>
-				
-	
-	
-		<modifier
-			name="modifier0"
-			life="30000"
-			color="1 1 1"
-			startalpha="1"
-			midalpha="0"
-			endalpha="0"
-			midalphapos=".1"			
-		/>
-		
-		<particlesystem name="system0" space="world" useentityscale="1">
-			
-			
-			<model
-				startcolor="1 1 1"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".5"
-				life="5000"			
-				anim="idle"
-				startalpha="0"
-				midalpha="1"
-				endalpha="0"
-				model="death/leaves.mdf"			
-				scale="1"					
-			>	
-	
-	
-				<simpleemitter
-					bone="_bone_fx_10"
-					spawnrate="5"
-					particlelife="1200"			
-					gravity="-6"
-					speed="00"
-
-					position="0 0 00"
-					direction="0 1 0"
-					
-
-					material="/shared/effects/materials/flame.material"
-					offsetsphere="25 25 5"
-			
-					
-				>
-
-					<particle 
-						minangle="0"
-						maxangle="0"
-						minanglespeed="-40"
-
-						startcolor="1 .5 .5"
-						midcolor="1 .8 .5"
-						endcolor="0 0 0"
-						midcolorpos=".3"
-
-						maxanglespeed="0"
-						startsize="22"
-						midsize="90"
-						endsize="5"
-						
-						
-						
-						startanchor="1"
-						midanchor=".8"
-						endachor=".4"
-					/>
-				</simpleemitter>
-	
-	
-	
-				<simpleemitter
-					
-					bone="_bone_fx_10"
-					delay="0"
-					life="3000"
-					startspawnrate="10"
-					endspawnrate="50"
-					drag=".001"
-					particlelife="3000"
-					offsetsphere="50	50 20"
-					gravity="-1.0"
-					minspeed="20"
-					maxspeed="120.0"								
-					direction="0.0 0.0 1.0"
-					minangle="-40"
-					maxangle="40"
-					material="/shared/effects/materials/spark_10.material"
-					inheritvelocity=".35"				
-				>			
-					<particle
-						startcolor="1 .5 .2"
-						endcolor="0 0 0"
-						alpha="1.0"
-						width="10"
-						height="10"
-						lockup="false"
-						lockright="false"
-						minangle="-360"
-						maxangle="1"
-						minanglespeed="110"
-						maxanglespeed="-110"
-					/>
-				</simpleemitter>
-
-				
-				
-				<simpleemitter
-					bone="_bone_fx_09"
-					spawnrate="5"
-					particlelife="1200"			
-					gravity="-6"
-					speed="00"
-
-					position="0 0 00"
-					direction="0 1 0"
-					
-
-					material="/shared/effects/materials/flame.material"
-					offsetsphere="25 25 5"
-			
-					
-				>
-
-					<particle 
-						minangle="0"
-						maxangle="0"
-						minanglespeed="-40"
-
-						startcolor="1 .5 .5"
-						midcolor="1 .8 .5"
-						endcolor="0 0 0"
-						midcolorpos=".3"
-
-						maxanglespeed="0"
-						startsize="22"
-						midsize="90"
-						endsize="5"
-						
-						
-						
-						startanchor="1"
-						midanchor=".8"
-						endachor=".4"
-					/>
-				</simpleemitter>					
-				
-				<simpleemitter
-					
-					bone="_bone_fx_09"
-					delay="0"
-					life="3000"
-					startspawnrate="10"
-					endspawnrate="50"
-					drag=".001"
-					particlelife="3000"
-					offsetsphere="40	40 20"
-					gravity="-1.0"
-					minspeed="20"
-					maxspeed="120.0"								
-					direction="0.0 0.0 1.0"
-					minangle="-40"
-					maxangle="40"
-					material="/shared/effects/materials/spark_10.material"
-					inheritvelocity=".35"				
-				>			
-					<particle
-						startcolor="1 .5 .2"
-						endcolor="0 0 0"
-						alpha="1.0"
-						width="10"
-						height="10"
-						lockup="false"
-						lockright="false"
-						minangle="-360"
-						maxangle="1"
-						minanglespeed="110"
-						maxanglespeed="-110"
-					/>
-				</simpleemitter>	
-
-			
-				<simpleemitter
-					bone="_bone_fx_08"
-					spawnrate="8"
-					particlelife="1200"			
-					gravity="-6"
-					speed="00"
-
-					position="0 0 10"
-					direction="0 1 0"
-					
-
-					material="/shared/effects/materials/flame.material"
-					offsetsphere="25 25 22"
-			
-					
-				>
-
-					<particle 
-						minangle="0"
-						maxangle="0"
-						minanglespeed="-40"
-
-						startcolor="1 .5 .5"
-						midcolor="1 .8 .5"
-						endcolor="0 0 0"
-						midcolorpos=".3"
-
-						maxanglespeed="0"
-						startsize="22"
-						midsize="90"
-						endsize="5"
-						
-						
-						
-						startanchor="1"
-						midanchor=".8"
-						endachor=".4"
-					/>
-				</simpleemitter>
-
-
-
-				<simpleemitter
-						
-						bone="_bone_fx_08"
-						delay="0"
-						life="3000"
-						startspawnrate="10"
-						endspawnrate="50"
-						drag=".001"
-						particlelife="3000"
-						offsetsphere="50	50 20"
-						gravity="-1.0"
-						minspeed="20"
-						maxspeed="120.0"								
-						direction="0.0 0.0 1.0"
-						minangle="-40"
-						maxangle="40"
-						material="/shared/effects/materials/spark_10.material"
-						inheritvelocity=".35"				
-					>			
-						<particle
-							startcolor="1 .5 .2"
-							endcolor="0 0 0"
-							alpha="1.0"
-							width="10"
-							height="10"
-							lockup="false"
-							lockright="false"
-							minangle="-360"
-							maxangle="1"
-							minanglespeed="110"
-							maxanglespeed="-110"
-						/>
-					</simpleemitter>				
-			
-			</model>
-			
-			
-			
-			<groundsprite
-				life="6900"
-				loop="false"			
-				material="/shared/effects/materials/coals_add.material"				
-				size="310"			
-				
-				startcolor="0 0 0"
-				midcolor="1 1 1"
-				endcolor="0 0 0"
-				midcolorpos=".9"				
-				minangle="55"
-				maxangle="55"			
-				angles="0 0 0"
-			/>	
-
-			<model
-				startcolor="0 0 0"
-				midcolor="1 1 1"
-				endcolor="1 1 1"
-				midcolorpos=".5"
-				life="9000"			
-				anim="death"
-				model="death/model.mdf"			
-				scale="1"					
-			>				  
-
-				 
-				<instance name="sparks" life="1000" bone="_bone_fx_02" delay="2900"/>
-				<instance name="sparks" life="1000" bone="_bone_fx_03" delay="3300"/>
-				<instance name="sparks" life="1500" bone="_bone_fx_04" delay="3600"/>
-				<instance name="sparks" life="1000" bone="_bone_fx_05" delay="3300"/>
-				<instance name="sparks" life="1000" bone="_bone_fx_06" delay="4800"/>
-				<instance name="sparks" life="1800" bone="_bone_fx_07" delay="3800"/>
-				<instance name="sparks" life="1800" bone="_bone_fx_02" delay="6500"/>
-
-				<model	
-					life="6900"
-					startalpha="1"
-					midalpha="1"
-					endalpha="1"
-					midalphapos=".1"
-					bone="_bone_fx_01"
-					model="/buildings/legion/main/effects/death/sphere.mdf"
-					anim="idle"
-					scale="2"
-					position="0 0 0"
-					directionalspace="global"
-					pitch="-43.5"
-					yawspeed="-440"					
-					pitchspeed="60"
-				 >
-		 
-				 
-				 
-				</model>
-				
-				
-				
-				<simpleemitter
-					life="6900"
-					endspawnrate="100"
-					startspawnrate="5"			
-					bone="_bone_fx_01"			
-					particlelife="1550"				
-					material="/shared/effects/materials/flare_07.material"			
-					depthbias="0"
-					directionalspace="local"
-				>
-					<particle 
-						minangle="0"
-						maxangle="360"
-						minanglespeed="0"
-						maxanglespeed="0"
-						startcolor="0 0 0"
-						midcolor="1 .5 .5"
-						endcolor="0 0 0"
-						startwidth="55"						
-						endwidth="777"
-						startheight="5"
-						midheight="10"
-						endheight="60"
-						endheightpos=".6"
-						startstickiness="1"
-						endstickiness="1"						
-						lockup="false"
-						lockright="false"
-						pitch="0"
-						yaw="0"
-					/>
-				</simpleemitter>
-
-
-				<simpleemitter
-					delay="3000"
-					life="3900"
-					endspawnrate="100"
-					startspawnrate="5"			
-					bone="_bone_fx_01"			
-					particlelife="1550"				
-					material="/shared/effects/materials/flare_07.material"			
-					depthbias="-100"
-					directionalspace="local"
-				>
-					<particle 
-						minangle="0"
-						maxangle="360"
-						minanglespeed="0"
-						maxanglespeed="0"
-						startcolor="0 0 0"
-						midcolor="1 .5 .5"
-						endcolor="0 0 0"			
-						startwidth="55"
-						endwidth="777"
-						startheight="5"
-						midheight="10"
-						endheight="60"
-						endheightpos=".6"
-						startstickiness="1"
-						endstickiness="1"
-						lockup="false"
-						lockright="false"
-						pitch="0"
-						yaw="0"
-					/>
-				</simpleemitter>	
-
-
-				<billboard
-					bone="_bone_fx_01"
-					delay="6900"
-					life="500"
-					loop="false"
-					color="1.0 1.0 1.0"
-					startalpha="1"
-					midalpha="1"
-					endalpha="0"
-				
-					startparam=".25"
-					endparam="0.0"
-					startsize="500"
-					endsize="1500"
-					depthbias="-65"
-					position="0 0 0"
-					material="/shared/effects/materials/refract_ring.material"
-					lockup="true"
-					pitch="90"		
-				/>	
-				<light
-					bone="_bone_fx_01"
-				
-					life="3900"
-					delay="3000"
-					startcolor="0 0 0"
-					endcolor="3 1.0 .2"
-					
-					midcolorpos="0.75"
-					falloffstart="500"
-					falloffend="2200"
-					position="0 0 0 "
-				/>		
-				
-				<light
-					bone="_bone_fx_01"
-				
-					life="1000"
-					delay="6900"
-					
-					startcolor="7 3.8 .2"
-					endcolor="0 0 0"
-					midcolorpos="0.75"
-					falloffstart="500"
-					falloffend="2200"
-					position="0 0 0 "
-				/>					
-			
-			</model>
-
-			
-		<simpleemitter
-			delay="6900"
-			bone="_bone_fx_01"
-			spawnrate="25"
-			
-			count="1"
-			particlelife="700"
-				
-			gravity="0"
-			speed="0"
-			drag="0"
-			acceleration="0"
-			position="0 0 0"
-			
-			material="/shared/effects/materials/shieldstarfish.material"
-			offsetsphere="0 0 0"
-			minangle="0"
-			maxangle="0"
-			direction="0 0 0"
-			directionalspace="global"
-		>
-
-
-			<particle 
-				minangle="0"
-				maxangle="10"
-				
-
-				startcolor="0 0 0"
-				midcolor="1 .5 0"
-				endcolor="0 0 0"
-				midcolorpos=".1"
-
-				maxanglespeed="10"
-				startframe="0"
-				endframe="0"
-				startsize="0"
-			
-				endsize="2250"
-				midsizepos=".5"
-
-				startalpha=".7"
-				midalpha=".7"
-				endalpha=".7"
-				midalphapos=".1"
-				startstickiness="1"
-				endstickiness="1"
-				
-				
-				lockup="true"
-				pitch="90"
-			/>
-
-		</simpleemitter>			
-			
-			
-			
-	
-			
-			
-			<simpleemitter			
-				life="6500"
-				directionalspace="global"
-				position="0 0 5"
-				spawnrate="25"
-				
-				particlelife="4500"
-				gravity="-3.0"
-				offsetsphere="120 120 30"
-				minangle="25"
-				maxangle="10"
-				direction="0 0 1"	
-          		material="/shared/effects/materials/smoke_particle.material"
-         	>
-				<particle
-					color=".15 .15 .15"
-					minangle="-180"
-					maxangle="180"
-					minanglespeed="0"
-					midcolorpos=".1"
-					maxanglespeed="0"
-					startsize="89"
-					
-					endsize="122"
-					
-					startalpha="0.0"
-					midalpha="1.0"
-					endalpha="0.0"
-					midalphapos="0.1"
-				/>
-			</simpleemitter>			
-			
-			
-			<simpleemitter
-				life="5000"
-				spawnrate="2"
-				particlelife="3000"
-				position="0 0 42"
-				gravity="-2.0"
-				offsetsphere="30 30 10"
-		
-				direction="0 0 1"	
-          		material="/shared/effects/materials/fireball_3d_32_split.material"
-				
-         	>
-				<particle 				
-					angle="0"
-					startcolor="1 1 1"					
-					endcolor="0 0 0"
-				
-					startframe="0.0"
-					endframe="1"
-					framespeed=".13"
-					size="220"
-
-
-
-				/>
-			</simpleemitter>
-			
-			<simpleemitter
-								
-				delay="1500"
-				life="5000"
-				spawnrate="500"
-				particlelife="3000"
-				drag=".001"
-				offsetsphere="80 80 200"
-				gravity="-2.0"
-				minspeed="20"
-				maxspeed="120.0"								
-				direction="0.0 0.0 1.0"
-				minangle="-40"
-				maxangle="40"
-				material="/shared/effects/materials/spark_10.material"
-			>			
-				<particle
-					startcolor="1 .5 .2"
-					endcolor="0 0 0"
-					alpha="1.0"
-					width="8"
-					height="8"
-					lockup="false"
-					lockright="false"
-					minangle="-360"
-					maxangle="1"
-					minanglespeed="110"
-					maxanglespeed="-110"
-				/>
-			</simpleemitter>
-			
-			
-			
-	
-
-			<simpleemitter								
-				delay="6900"
-				life="200"
-				spawnrate="3000"
-				particlelife="3000"
-				drag=".001"
-				offsetsphere="80 80 200"
-				gravity="4.0"
-				minspeed="220"
-				maxspeed="320.0"								
-				direction="0.0 0.0 1.0"
-				minangle="0"
-				maxangle="180"
-				material="/shared/effects/materials/spark_10.material"
-			>			
-				<particle
-					startcolor="1 .5 .2"
-					endcolor="0 0 0"
-					alpha="1.0"
-					startsize="20"
-					endsize="10"
-					lockup="false"
-					lockright="false"
-					minangle="-360"
-					maxangle="1"
-					minanglespeed="110"
-					maxanglespeed="-110"
-				/>
-			</simpleemitter>
-
-	
-		<simpleemitter
-			bone="_bone_fx_01"
-			delay="6900"
-			spawnrate="1000"			
-			count="20"
-			particlelife="800"			
-			gravity="-0.5"
-			speed="700"
-			
-			acceleration="0"
-			position="0 0 20"
-			material="/shared/effects/materials/fireball_03.material"
-			offsetsphere="15 15 15"
-			minangle="-90"
-			maxangle="-90"
-			direction="0 0 -1"
-			offsetdirection="0 0 0"
-			offsetradial="0 0 0"
-		>
-			<particle
-					startcolor=".6 .2 0.2"
-					midcolor=".6 0.2 0.2"
-					endcolor="0 0 0"
-					midcolorpos="0.0"
-					startframe="0"
-					endframe="1"
-
-					minangle="0"
-					maxangle="180"
-
-					minanglespeed="-180"
-					maxanglespeed="180"
-
-					startsize="68"
-				
-					endsize="260"
-					midsizepos=".3"
-
-					lockup="false"
-					lockright="false"
-
-					pitch="0"
-					turn="false"
-			/>
-		</simpleemitter>
-
-
-
-
-			<simpleemitter	
-				bone="_bone_fx_01"			
-				delay="6960"
-				count="1"
-				
-				particlelife="1000"
-				gravity="-2"
-				maxspeed="30"
-				position="0 0 0"
-				drag="0.05"
-				material="/shared/effects/materials/fireball_3d_32_split.material"
-				offsetsphere="150 150 100"
-
-			>
-				<particle
-				
-					startframe="0.0"
-					endframe="1"
-					framespeed=".13"
-					startcolor=".7 .7 .7"
-					endcolor="0 0 0"
-					startsize="0"
-					midsize="750"
-					endsize="800"
-
-				/>
-			</simpleemitter>				
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-		
-	
-			
-				
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<spawnmodifier instance="instance1" modifier="modifier0"/>  		
-		
-
-		<camerashake2 scale="12.0" radius="1000" duration="4000" frequency="22" />
-		<wait duration="4000"/>
-		<camerashake2 scale="22.0" radius="1000" duration="4000" frequency="22" />
-		<wait duration="4000"/>
-
-		
-			<!--	-->
-		<waitfordeath instance="instance0" />
-		<waitfordeath instance="instance1" /> 
-		<!-- <die /> -->
-	</thread>
+    <definitions>
+
+        <template name="sparks">
+            <simpleemitter
+                name="{emitter}"
+                bone="{bone}"
+                delay="{delay}"
+                life="{life}"
+                spawnrate="500"
+                drag=".001"
+                particlelife="3000"
+                offsetsphere="20 20 20"
+                gravity="-2.0"
+                minspeed="20"
+                maxspeed="120.0"                                
+                direction="0.0 0.0 1.0"
+                minangle="-40"
+                maxangle="40"
+                material="/shared/effects/materials/spark_10.material"
+                inheritvelocity=".35"               
+            >           
+                <particle
+                    startcolor="1 .5 .2"
+                    endcolor="0 0 0"
+                    alpha="1.0"
+                    width="12"
+                    height="12"
+                    lockup="false"
+                    lockright="false"
+                    minangle="-360"
+                    maxangle="1"
+                    minanglespeed="110"
+                    maxanglespeed="-110"
+                />
+            </simpleemitter>
+        </template>
+                
+    
+    
+        <modifier
+            name="modifier0"
+            life="30000"
+            color="1 1 1"
+            startalpha="1"
+            midalpha="0"
+            endalpha="0"
+            midalphapos=".1"            
+        />
+        
+        <particlesystem name="system0" space="world" useentityscale="1">
+            
+            
+            <model
+                startcolor="1 1 1"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".5"
+                life="5000"         
+                anim="idle"
+                startalpha="0"
+                midalpha="1"
+                endalpha="0"
+                model="death/leaves.mdf"            
+                scale="1"                   
+            >   
+    
+    
+                <simpleemitter
+                    bone="_bone_fx_10"
+                    spawnrate="5"
+                    particlelife="1200"         
+                    gravity="-6"
+                    speed="00"
+
+                    position="0 0 00"
+                    direction="0 1 0"
+                    
+
+                    material="/shared/effects/materials/flame.material"
+                    offsetsphere="25 25 5"
+            
+                    
+                >
+
+                    <particle 
+                        minangle="0"
+                        maxangle="0"
+                        minanglespeed="-40"
+
+                        startcolor="1 .5 .5"
+                        midcolor="1 .8 .5"
+                        endcolor="0 0 0"
+                        midcolorpos=".3"
+
+                        maxanglespeed="0"
+                        startsize="22"
+                        midsize="90"
+                        endsize="5"
+                        
+                        
+                        
+                        startanchor="1"
+                        midanchor=".8"
+                        endachor=".4"
+                    />
+                </simpleemitter>
+    
+    
+    
+                <simpleemitter
+                    
+                    bone="_bone_fx_10"
+                    delay="0"
+                    life="3000"
+                    startspawnrate="10"
+                    endspawnrate="50"
+                    drag=".001"
+                    particlelife="3000"
+                    offsetsphere="50    50 20"
+                    gravity="-1.0"
+                    minspeed="20"
+                    maxspeed="120.0"                                
+                    direction="0.0 0.0 1.0"
+                    minangle="-40"
+                    maxangle="40"
+                    material="/shared/effects/materials/spark_10.material"
+                    inheritvelocity=".35"               
+                >           
+                    <particle
+                        startcolor="1 .5 .2"
+                        endcolor="0 0 0"
+                        alpha="1.0"
+                        width="10"
+                        height="10"
+                        lockup="false"
+                        lockright="false"
+                        minangle="-360"
+                        maxangle="1"
+                        minanglespeed="110"
+                        maxanglespeed="-110"
+                    />
+                </simpleemitter>
+
+                
+                
+                <simpleemitter
+                    bone="_bone_fx_09"
+                    spawnrate="5"
+                    particlelife="1200"         
+                    gravity="-6"
+                    speed="00"
+
+                    position="0 0 00"
+                    direction="0 1 0"
+                    
+
+                    material="/shared/effects/materials/flame.material"
+                    offsetsphere="25 25 5"
+            
+                    
+                >
+
+                    <particle 
+                        minangle="0"
+                        maxangle="0"
+                        minanglespeed="-40"
+
+                        startcolor="1 .5 .5"
+                        midcolor="1 .8 .5"
+                        endcolor="0 0 0"
+                        midcolorpos=".3"
+
+                        maxanglespeed="0"
+                        startsize="22"
+                        midsize="90"
+                        endsize="5"
+                        
+                        
+                        
+                        startanchor="1"
+                        midanchor=".8"
+                        endachor=".4"
+                    />
+                </simpleemitter>                    
+                
+                <simpleemitter
+                    
+                    bone="_bone_fx_09"
+                    delay="0"
+                    life="3000"
+                    startspawnrate="10"
+                    endspawnrate="50"
+                    drag=".001"
+                    particlelife="3000"
+                    offsetsphere="40    40 20"
+                    gravity="-1.0"
+                    minspeed="20"
+                    maxspeed="120.0"                                
+                    direction="0.0 0.0 1.0"
+                    minangle="-40"
+                    maxangle="40"
+                    material="/shared/effects/materials/spark_10.material"
+                    inheritvelocity=".35"               
+                >           
+                    <particle
+                        startcolor="1 .5 .2"
+                        endcolor="0 0 0"
+                        alpha="1.0"
+                        width="10"
+                        height="10"
+                        lockup="false"
+                        lockright="false"
+                        minangle="-360"
+                        maxangle="1"
+                        minanglespeed="110"
+                        maxanglespeed="-110"
+                    />
+                </simpleemitter>    
+
+            
+                <simpleemitter
+                    bone="_bone_fx_08"
+                    spawnrate="8"
+                    particlelife="1200"         
+                    gravity="-6"
+                    speed="00"
+
+                    position="0 0 10"
+                    direction="0 1 0"
+                    
+
+                    material="/shared/effects/materials/flame.material"
+                    offsetsphere="25 25 22"
+            
+                    
+                >
+
+                    <particle 
+                        minangle="0"
+                        maxangle="0"
+                        minanglespeed="-40"
+
+                        startcolor="1 .5 .5"
+                        midcolor="1 .8 .5"
+                        endcolor="0 0 0"
+                        midcolorpos=".3"
+
+                        maxanglespeed="0"
+                        startsize="22"
+                        midsize="90"
+                        endsize="5"
+                        
+                        
+                        
+                        startanchor="1"
+                        midanchor=".8"
+                        endachor=".4"
+                    />
+                </simpleemitter>
+
+
+
+                <simpleemitter
+                        
+                        bone="_bone_fx_08"
+                        delay="0"
+                        life="3000"
+                        startspawnrate="10"
+                        endspawnrate="50"
+                        drag=".001"
+                        particlelife="3000"
+                        offsetsphere="50    50 20"
+                        gravity="-1.0"
+                        minspeed="20"
+                        maxspeed="120.0"                                
+                        direction="0.0 0.0 1.0"
+                        minangle="-40"
+                        maxangle="40"
+                        material="/shared/effects/materials/spark_10.material"
+                        inheritvelocity=".35"               
+                    >           
+                        <particle
+                            startcolor="1 .5 .2"
+                            endcolor="0 0 0"
+                            alpha="1.0"
+                            width="10"
+                            height="10"
+                            lockup="false"
+                            lockright="false"
+                            minangle="-360"
+                            maxangle="1"
+                            minanglespeed="110"
+                            maxanglespeed="-110"
+                        />
+                    </simpleemitter>                
+            
+            </model>
+            
+            
+            
+            <groundsprite
+                life="6900"
+                loop="false"            
+                material="/shared/effects/materials/coals_add.material"             
+                size="310"          
+                
+                startcolor="0 0 0"
+                midcolor="1 1 1"
+                endcolor="0 0 0"
+                midcolorpos=".9"                
+                minangle="55"
+                maxangle="55"           
+                angles="0 0 0"
+            />  
+
+            <model
+                startcolor="0 0 0"
+                midcolor="1 1 1"
+                endcolor="1 1 1"
+                midcolorpos=".5"
+                life="9000"         
+                anim="death"
+                model="death/model.mdf"         
+                scale="1"                   
+            >                 
+
+                 
+                <instance name="sparks" life="1000" bone="_bone_fx_02" delay="2900"/>
+                <instance name="sparks" life="1000" bone="_bone_fx_03" delay="3300"/>
+                <instance name="sparks" life="1500" bone="_bone_fx_04" delay="3600"/>
+                <instance name="sparks" life="1000" bone="_bone_fx_05" delay="3300"/>
+                <instance name="sparks" life="1000" bone="_bone_fx_06" delay="4800"/>
+                <instance name="sparks" life="1800" bone="_bone_fx_07" delay="3800"/>
+                <instance name="sparks" life="1800" bone="_bone_fx_02" delay="6500"/>
+
+                <model  
+                    life="6900"
+                    startalpha="1"
+                    midalpha="1"
+                    endalpha="1"
+                    midalphapos=".1"
+                    bone="_bone_fx_01"
+                    model="/buildings/legion/main/effects/death/sphere.mdf"
+                    anim="idle"
+                    scale="2"
+                    position="0 0 0"
+                    directionalspace="global"
+                    pitch="-43.5"
+                    yawspeed="-440"                 
+                    pitchspeed="60"
+                 >
+         
+                 
+                 
+                </model>
+                
+                
+                
+                <simpleemitter
+                    life="6900"
+                    endspawnrate="100"
+                    startspawnrate="5"          
+                    bone="_bone_fx_01"          
+                    particlelife="1550"             
+                    material="/shared/effects/materials/flare_07.material"          
+                    depthbias="0"
+                    directionalspace="local"
+                >
+                    <particle 
+                        minangle="0"
+                        maxangle="360"
+                        minanglespeed="0"
+                        maxanglespeed="0"
+                        startcolor="0 0 0"
+                        midcolor="1 .5 .5"
+                        endcolor="0 0 0"
+                        startwidth="55"                     
+                        endwidth="777"
+                        startheight="5"
+                        midheight="10"
+                        endheight="60"
+                        endheightpos=".6"
+                        startstickiness="1"
+                        endstickiness="1"                       
+                        lockup="false"
+                        lockright="false"
+                        pitch="0"
+                        yaw="0"
+                    />
+                </simpleemitter>
+
+
+                <simpleemitter
+                    delay="3000"
+                    life="3900"
+                    endspawnrate="100"
+                    startspawnrate="5"          
+                    bone="_bone_fx_01"          
+                    particlelife="1550"             
+                    material="/shared/effects/materials/flare_07.material"          
+                    depthbias="-100"
+                    directionalspace="local"
+                >
+                    <particle 
+                        minangle="0"
+                        maxangle="360"
+                        minanglespeed="0"
+                        maxanglespeed="0"
+                        startcolor="0 0 0"
+                        midcolor="1 .5 .5"
+                        endcolor="0 0 0"            
+                        startwidth="55"
+                        endwidth="777"
+                        startheight="5"
+                        midheight="10"
+                        endheight="60"
+                        endheightpos=".6"
+                        startstickiness="1"
+                        endstickiness="1"
+                        lockup="false"
+                        lockright="false"
+                        pitch="0"
+                        yaw="0"
+                    />
+                </simpleemitter>    
+
+
+                <billboard
+                    bone="_bone_fx_01"
+                    delay="6900"
+                    life="500"
+                    loop="false"
+                    color="1.0 1.0 1.0"
+                    startalpha="1"
+                    midalpha="1"
+                    endalpha="0"
+                
+                    startparam=".25"
+                    endparam="0.0"
+                    startsize="500"
+                    endsize="1500"
+                    depthbias="-65"
+                    position="0 0 0"
+                    material="/shared/effects/materials/refract_ring.material"
+                    lockup="true"
+                    pitch="90"      
+                />  
+                <light
+                    bone="_bone_fx_01"
+                
+                    life="3900"
+                    delay="3000"
+                    startcolor="0 0 0"
+                    endcolor="3 1.0 .2"
+                    
+                    midcolorpos="0.75"
+                    falloffstart="500"
+                    falloffend="2200"
+                    position="0 0 0 "
+                />      
+                
+                <light
+                    bone="_bone_fx_01"
+                
+                    life="1000"
+                    delay="6900"
+                    
+                    startcolor="7 3.8 .2"
+                    endcolor="0 0 0"
+                    midcolorpos="0.75"
+                    falloffstart="500"
+                    falloffend="2200"
+                    position="0 0 0 "
+                />                  
+            
+            </model>
+
+            
+        <simpleemitter
+            delay="6900"
+            bone="_bone_fx_01"
+            spawnrate="25"
+            
+            count="1"
+            particlelife="700"
+                
+            gravity="0"
+            speed="0"
+            drag="0"
+            acceleration="0"
+            position="0 0 0"
+            
+            material="/shared/effects/materials/shieldstarfish.material"
+            offsetsphere="0 0 0"
+            minangle="0"
+            maxangle="0"
+            direction="0 0 0"
+            directionalspace="global"
+        >
+
+
+            <particle 
+                minangle="0"
+                maxangle="10"
+                
+
+                startcolor="0 0 0"
+                midcolor="1 .5 0"
+                endcolor="0 0 0"
+                midcolorpos=".1"
+
+                maxanglespeed="10"
+                startframe="0"
+                endframe="0"
+                startsize="0"
+            
+                endsize="2250"
+                midsizepos=".5"
+
+                startalpha=".7"
+                midalpha=".7"
+                endalpha=".7"
+                midalphapos=".1"
+                startstickiness="1"
+                endstickiness="1"
+                
+                
+                lockup="true"
+                pitch="90"
+            />
+
+        </simpleemitter>            
+            
+            
+            
+    
+            
+            
+            <simpleemitter          
+                life="6500"
+                directionalspace="global"
+                position="0 0 5"
+                spawnrate="25"
+                
+                particlelife="4500"
+                gravity="-3.0"
+                offsetsphere="120 120 30"
+                minangle="25"
+                maxangle="10"
+                direction="0 0 1"   
+                material="/shared/effects/materials/smoke_particle.material"
+            >
+                <particle
+                    color=".15 .15 .15"
+                    minangle="-180"
+                    maxangle="180"
+                    minanglespeed="0"
+                    midcolorpos=".1"
+                    maxanglespeed="0"
+                    startsize="89"
+                    
+                    endsize="122"
+                    
+                    startalpha="0.0"
+                    midalpha="1.0"
+                    endalpha="0.0"
+                    midalphapos="0.1"
+                />
+            </simpleemitter>            
+            
+            
+            <simpleemitter
+                life="5000"
+                spawnrate="2"
+                particlelife="3000"
+                position="0 0 42"
+                gravity="-2.0"
+                offsetsphere="30 30 10"
+        
+                direction="0 0 1"   
+                material="/shared/effects/materials/fireball_3d_32_split.material"
+                
+            >
+                <particle               
+                    angle="0"
+                    startcolor="1 1 1"                  
+                    endcolor="0 0 0"
+                
+                    startframe="0.0"
+                    endframe="1"
+                    framespeed=".13"
+                    size="220"
+
+
+
+                />
+            </simpleemitter>
+            
+            <simpleemitter
+                                
+                delay="1500"
+                life="5000"
+                spawnrate="500"
+                particlelife="3000"
+                drag=".001"
+                offsetsphere="80 80 200"
+                gravity="-2.0"
+                minspeed="20"
+                maxspeed="120.0"                                
+                direction="0.0 0.0 1.0"
+                minangle="-40"
+                maxangle="40"
+                material="/shared/effects/materials/spark_10.material"
+            >           
+                <particle
+                    startcolor="1 .5 .2"
+                    endcolor="0 0 0"
+                    alpha="1.0"
+                    width="8"
+                    height="8"
+                    lockup="false"
+                    lockright="false"
+                    minangle="-360"
+                    maxangle="1"
+                    minanglespeed="110"
+                    maxanglespeed="-110"
+                />
+            </simpleemitter>
+            
+            
+            
+    
+
+            <simpleemitter                              
+                delay="6900"
+                life="200"
+                spawnrate="3000"
+                particlelife="3000"
+                drag=".001"
+                offsetsphere="80 80 200"
+                gravity="4.0"
+                minspeed="220"
+                maxspeed="320.0"                                
+                direction="0.0 0.0 1.0"
+                minangle="0"
+                maxangle="180"
+                material="/shared/effects/materials/spark_10.material"
+            >           
+                <particle
+                    startcolor="1 .5 .2"
+                    endcolor="0 0 0"
+                    alpha="1.0"
+                    startsize="20"
+                    endsize="10"
+                    lockup="false"
+                    lockright="false"
+                    minangle="-360"
+                    maxangle="1"
+                    minanglespeed="110"
+                    maxanglespeed="-110"
+                />
+            </simpleemitter>
+
+    
+        <simpleemitter
+            bone="_bone_fx_01"
+            delay="6900"
+            spawnrate="1000"            
+            count="20"
+            particlelife="800"          
+            gravity="-0.5"
+            speed="700"
+            
+            acceleration="0"
+            position="0 0 20"
+            material="/shared/effects/materials/fireball_03.material"
+            offsetsphere="15 15 15"
+            minangle="-90"
+            maxangle="-90"
+            direction="0 0 -1"
+            offsetdirection="0 0 0"
+            offsetradial="0 0 0"
+        >
+            <particle
+                    startcolor=".6 .2 0.2"
+                    midcolor=".6 0.2 0.2"
+                    endcolor="0 0 0"
+                    midcolorpos="0.0"
+                    startframe="0"
+                    endframe="1"
+
+                    minangle="0"
+                    maxangle="180"
+
+                    minanglespeed="-180"
+                    maxanglespeed="180"
+
+                    startsize="68"
+                
+                    endsize="260"
+                    midsizepos=".3"
+
+                    lockup="false"
+                    lockright="false"
+
+                    pitch="0"
+                    turn="false"
+            />
+        </simpleemitter>
+
+
+
+
+            <simpleemitter  
+                bone="_bone_fx_01"          
+                delay="6960"
+                count="1"
+                
+                particlelife="1000"
+                gravity="-2"
+                maxspeed="30"
+                position="0 0 0"
+                drag="0.05"
+                material="/shared/effects/materials/fireball_3d_32_split.material"
+                offsetsphere="150 150 100"
+
+            >
+                <particle
+                
+                    startframe="0.0"
+                    endframe="1"
+                    framespeed=".13"
+                    startcolor=".7 .7 .7"
+                    endcolor="0 0 0"
+                    startsize="0"
+                    midsize="750"
+                    endsize="800"
+
+                />
+            </simpleemitter>                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+    
+            
+                
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <spawnmodifier instance="instance1" modifier="modifier0"/>          
+        
+
+        <camerashake2 scale="12.0" radius="1000" duration="4000" frequency="22" />
+        <wait duration="4000"/>
+        <camerashake2 scale="22.0" radius="1000" duration="4000" frequency="22" />
+        <wait duration="4000"/>
+
+        
+            <!--    -->
+        <waitfordeath instance="instance0" />
+        <waitfordeath instance="instance1" /> 
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][position] -->

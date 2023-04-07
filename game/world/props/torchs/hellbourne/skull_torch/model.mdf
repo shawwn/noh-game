@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="model_torch_01_w_fx_bones.max" file="model.model" type="K2" >
 <anim name="idle" clip="clips/default_1.clip" fps="30" loop="true">
-		
-		<startevent cmd="starteffect environment/props/bad/torch_01/effects/bfx_torch_01_fire_01.effect"/>
-		
-	</anim>
+        
+        <startevent cmd="starteffect environment/props/bad/torch_01/effects/bfx_torch_01_fire_01.effect"/>
+        
+    </anim>
 </model>

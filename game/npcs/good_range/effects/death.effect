@@ -1,192 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="bloodimpact_small">
-	<definitions>
-		
-		
-	
-		
-		<groundsprite
-			name="emitter0" 
-			life="2500"
-			loop="false"			
-			material="/shared/effects/materials/blood_ground.material"
-						
-			minsize="10"
-			maxsize="40"
-						
-			minyaw="-360"
-			maxyaw="360"
-			startcolor=".2 .2 .2"
-			endcolor=".2 .2 .2"
-			startalpha="1"
-			midalpha="1"
-			endalpha="0"
+    <definitions>
+        
+        
+    
+        
+        <groundsprite
+            name="emitter0" 
+            life="2500"
+            loop="false"            
+            material="/shared/effects/materials/blood_ground.material"
+                        
+            minsize="10"
+            maxsize="40"
+                        
+            minyaw="-360"
+            maxyaw="360"
+            startcolor=".2 .2 .2"
+            endcolor=".2 .2 .2"
+            startalpha="1"
+            midalpha="1"
+            endalpha="0"
 
-		/>		
-		
-		<particlesystem name="system0" space="entity">
+        />      
+        
+        <particlesystem name="system0" space="entity">
 
 
-			<groundsprite
-				delay="1200"
-				name="emitter0" 
-				count="1"
-				loop="false"			
-				material="/shared/effects/materials/blood_pool.material"
-				
-				life="5000"
-				startsize="10"
-				endsize="40"				
-				position="-5 20 0"
-				
-				minyaw="-360"
-				maxyaw="360"
-				startcolor=".2 .2 .2"
-				endcolor=".2 .2 .2"
-				startalpha="1"
-				midalpha="1"
-				endalpha="0"
-			/>
-			
-			<groundsprite
-				delay="1400"
-				name="emitter0" 
-				count="1"
-				loop="false"			
-				material="/shared/effects/materials/blood_pool.material"
-				
-				life="5000"
-				startsize="10"
-				endsize="30"				
-				position="12 20 0"
-				
-				minyaw="-360"
-				maxyaw="360"
-				startcolor=".2 .2 .2"
-				endcolor=".2 .2 .2"
-				startalpha="1"
-				midalpha="1"
-				endalpha="0"
-			/>	
+            <groundsprite
+                delay="1200"
+                name="emitter0" 
+                count="1"
+                loop="false"            
+                material="/shared/effects/materials/blood_pool.material"
+                
+                life="5000"
+                startsize="10"
+                endsize="40"                
+                position="-5 20 0"
+                
+                minyaw="-360"
+                maxyaw="360"
+                startcolor=".2 .2 .2"
+                endcolor=".2 .2 .2"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+            />
+            
+            <groundsprite
+                delay="1400"
+                name="emitter0" 
+                count="1"
+                loop="false"            
+                material="/shared/effects/materials/blood_pool.material"
+                
+                life="5000"
+                startsize="10"
+                endsize="30"                
+                position="12 20 0"
+                
+                minyaw="-360"
+                maxyaw="360"
+                startcolor=".2 .2 .2"
+                endcolor=".2 .2 .2"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+            />  
 
-			<groundsprite
-				delay="1400"
-				name="emitter0" 
-				count="1"
-				loop="false"			
-				material="/shared/effects/materials/blood_pool.material"
-				
-				life="5000"
-				startsize="10"
-				endsize="30"				
-				position="12 30 0"
-				
-				minyaw="-360"
-				maxyaw="360"
-				startcolor=".2 .2 .2"
-				endcolor=".2 .2 .2"
-				startalpha="1"
-				midalpha="1"
-				endalpha="0"
-			/>	
+            <groundsprite
+                delay="1400"
+                name="emitter0" 
+                count="1"
+                loop="false"            
+                material="/shared/effects/materials/blood_pool.material"
+                
+                life="5000"
+                startsize="10"
+                endsize="30"                
+                position="12 30 0"
+                
+                minyaw="-360"
+                maxyaw="360"
+                startcolor=".2 .2 .2"
+                endcolor=".2 .2 .2"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+            />  
 
-		
-		
-				
-			<simpleemitter
-				delay="400"
-				bone="_bone_centerofchest"
-				life="600"
-				startspawnrate="10"
-				endspawnrate="70"
-				offsetsphere="20 20 0"
-				position="0 0 0"
-				particlelife="3000"
-			>
-				<particle
-					emitter="emitter0"
-				/>
-			</simpleemitter>	
+        
+        
+                
+            <simpleemitter
+                delay="400"
+                bone="_bone_centerofchest"
+                life="600"
+                startspawnrate="10"
+                endspawnrate="70"
+                offsetsphere="20 20 0"
+                position="0 0 0"
+                particlelife="3000"
+            >
+                <particle
+                    emitter="emitter0"
+                />
+            </simpleemitter>    
 
-			
-		
-			
-			
-			<simpleemitter
-				delay="100"
-		         	bone="_bone_centerofchest"
-		         	spawnrate="480"
-					life="80"
-		          	particlelife="1500"
-		          	gravity="10"
-		         	speed="110"
-		          	drag=".01"
-					direction="0 0 1"
-					minangle="0"
-					maxangle="30"
-		          	acceleration="0.0"
-					position="0 0 0"
-					offsetsphere="0 0 0"
-		          	material="/shared/effects/materials/splatter_blend.material"
+            
+        
+            
+            
+            <simpleemitter
+                delay="100"
+                    bone="_bone_centerofchest"
+                    spawnrate="480"
+                    life="80"
+                    particlelife="1500"
+                    gravity="10"
+                    speed="110"
+                    drag=".01"
+                    direction="0 0 1"
+                    minangle="0"
+                    maxangle="30"
+                    acceleration="0.0"
+                    position="0 0 0"
+                    offsetsphere="0 0 0"
+                    material="/shared/effects/materials/splatter_blend.material"
 
-		         	>
-		  		<particle 
-					minangle="-360"
-					maxangle="360"
-					angle="180"			
-					color=".33 0 0 "
-					anglespeed="20"
-					
-					frame=".5"
+                    >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    angle="180"         
+                    color=".33 0 0 "
+                    anglespeed="20"
+                    
+                    frame=".5"
 
-					startsize="20"							
-					maxendsize="80"			
+                    startsize="20"                          
+                    maxendsize="80"         
 
-					startalpha="1"
-					
-					endalpha="0"
-					
-				/>
-		    </simpleemitter>
-		
-		<!--
-			<simpleemitter
-				delay="100"
-		         	bone="_bone_centerofchest"
-		         	spawnrate="480"
-					life="80"
-		          	particlelife="1500"
-		          	gravity="0"
-		         	speed="110"
-		          	drag=".01"
-					direction="0 0 1"
-					minangle="0"
-					maxangle="30"
-		          	acceleration="0.0"
-					position="0 0 0"
-					offsetsphere="0 0 0"
-		          	material="/shared/effects/materials/splatter_blend.material"
+                    startalpha="1"
+                    
+                    endalpha="0"
+                    
+                />
+            </simpleemitter>
+        
+        <!--
+            <simpleemitter
+                delay="100"
+                    bone="_bone_centerofchest"
+                    spawnrate="480"
+                    life="80"
+                    particlelife="1500"
+                    gravity="0"
+                    speed="110"
+                    drag=".01"
+                    direction="0 0 1"
+                    minangle="0"
+                    maxangle="30"
+                    acceleration="0.0"
+                    position="0 0 0"
+                    offsetsphere="0 0 0"
+                    material="/shared/effects/materials/splatter_blend.material"
 
-		         	>
-		  		<particle 
-					minangle="-360"
-					maxangle="360"
-					angle="180"			
-					color=".2 .2 .2 "
-					anglespeed="20"
-					
-					frame=".5"
+                    >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    angle="180"         
+                    color=".2 .2 .2 "
+                    anglespeed="20"
+                    
+                    frame=".5"
 
-					startsize="20"							
-					maxendsize="80"			
+                    startsize="20"                          
+                    maxendsize="80"         
 
-					startalpha="1"
-					
-					endalpha="0"
-					
-				/>
-		    </simpleemitter>	
-	   -->
+                    startalpha="1"
+                    
+                    endalpha="0"
+                    
+                />
+            </simpleemitter>    
+       -->
         
       </particlesystem>
    </definitions>

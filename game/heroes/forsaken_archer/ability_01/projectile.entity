@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_ForsakenArcher_Ability1"
+    name="Projectile_ForsakenArcher_Ability1"
 
-	gravity="6000"
-	lifetime="700"
-	useexactlifetime="true"
-	deatheffect="effects/aoe1.effect"
-	modelscale="1"
-	model="/shared/models/invis.mdf"
-	traileffect="effects/trail.effect"
-	effectscale="1.0"
-	impacteffect=""
+    gravity="6000"
+    lifetime="700"
+    useexactlifetime="true"
+    deatheffect="effects/aoe1.effect"
+    modelscale="1"
+    model="/shared/models/invis.mdf"
+    traileffect="effects/trail.effect"
+    effectscale="1.0"
+    impacteffect=""
 >
-	<onimpact>
-		<areaofeffect
-			radius="225"
-			targetselection="all"
-			targetscheme="enemy_units"
-			effecttype="Magic"
-		>
-			<applystate name="State_ForsakenArcher_Ability1" duration="1750,2000,2250,2500" />
-			<applystate name="State_Stunned" duration="100" />
-			<damage effecttype="Magic" amount="85,140,195,250" />
-		</areaofeffect>
-	</onimpact>
+    <onimpact>
+        <areaofeffect
+            radius="225"
+            targetselection="all"
+            targetscheme="enemy_units"
+            effecttype="Magic"
+        >
+            <applystate name="State_ForsakenArcher_Ability1" duration="1750,2000,2250,2500" />
+            <applystate name="State_Stunned" duration="100" />
+            <damage effecttype="Magic" amount="85,140,195,250" />
+        </areaofeffect>
+    </onimpact>
 </projectile>

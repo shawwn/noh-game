@@ -1,352 +1,352 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="">
-	<definitions>
-		<particlesystem name="system0" space="entity" scale="1.35">
+    <definitions>
+        <particlesystem name="system0" space="entity" scale="1.35">
 
-			<simpleemitter
-				spawnrate="200"
-				count="15"
-				particlelife="500"
-				gravity="20"
-				speed="50"
-				drag=".01"
-				acceleration="0.0"
-				position="0 0 50"
-				offsetsphere="15 15 0"
-				material="/shared/effects/materials/blood1.material"
-				minangle="-30"
-				maxangle="30"
-				direction="0 0 -10"
-				offsetdirection="0 0 0"
-				offsetradial="0 0 0"
-				particledirectionalspace="local"
-			>
-		  		<particle 
-					minangle="-360"
-					maxangle="360"
-					angle="180"
-					color=".25 0 0"
-					startsize="30"
-					midsize="10"
-					minendsize="25"
-					maxendsize="60"
-					startalpha=".6"
-					midalpha=".3"
-					endalpha="0"
-				/>
-			</simpleemitter>
-			
-			<simpleemitter
-				spawnrate="200"
-				count="12"
-				particlelife="450"
-				gravity="10"
-				speed="0"
-				drag=".03"
-				acceleration="0.0"
-				position="-10 -8 50"
-				offsetsphere="5 5 0"
-				material="/shared/effects/materials/blood1.material"
-				minangle="-30"
-				maxangle="30"
-				direction="10 0 0"
-				offsetdirection="0 0 0"
-				offsetradial="0 0 0"
-				particledirectionalspace="local"
-		    >
-		  		<particle 
-					minangle="-360"
-					maxangle="360"
-					angle="180"
-					color=".25 0 0"
-					startsize="15"
-					midsize="10"
-					minendsize="25"
-					maxendsize="60"
-					startalpha=".6"
-					midalpha=".3"
-					endalpha="0"
-				/>
-			</simpleemitter>
-			
-			<simpleemitter
-				delay="300"
-				spawnrate="200"
-				count="20"
-				particlelife="450"
-				gravity="10"
-				speed="0"
-				drag=".03"
-				acceleration="0.0"
-				position="-10 -18 0"
-				offsetsphere="15 15 10"
-				material="/shared/effects/materials/blood1.material"
-				minangle="-30"
-				maxangle="30"
-				direction="10 0 0"
-				offsetdirection="0 0 0"
-				offsetradial="0 0 0"
-				particledirectionalspace="local"
-		    >
-		  		<particle 
-					minangle="-360"
-					maxangle="360"
-					angle="180"
-					color=".25 0 0"
-					startsize="15"
-					midsize="10"
-					minendsize="25"
-					maxendsize="60"
-					startalpha=".6"
-					midalpha=".1"
-					endalpha="0"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                spawnrate="200"
+                count="15"
+                particlelife="500"
+                gravity="20"
+                speed="50"
+                drag=".01"
+                acceleration="0.0"
+                position="0 0 50"
+                offsetsphere="15 15 0"
+                material="/shared/effects/materials/blood1.material"
+                minangle="-30"
+                maxangle="30"
+                direction="0 0 -10"
+                offsetdirection="0 0 0"
+                offsetradial="0 0 0"
+                particledirectionalspace="local"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    angle="180"
+                    color=".25 0 0"
+                    startsize="30"
+                    midsize="10"
+                    minendsize="25"
+                    maxendsize="60"
+                    startalpha=".6"
+                    midalpha=".3"
+                    endalpha="0"
+                />
+            </simpleemitter>
+            
+            <simpleemitter
+                spawnrate="200"
+                count="12"
+                particlelife="450"
+                gravity="10"
+                speed="0"
+                drag=".03"
+                acceleration="0.0"
+                position="-10 -8 50"
+                offsetsphere="5 5 0"
+                material="/shared/effects/materials/blood1.material"
+                minangle="-30"
+                maxangle="30"
+                direction="10 0 0"
+                offsetdirection="0 0 0"
+                offsetradial="0 0 0"
+                particledirectionalspace="local"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    angle="180"
+                    color=".25 0 0"
+                    startsize="15"
+                    midsize="10"
+                    minendsize="25"
+                    maxendsize="60"
+                    startalpha=".6"
+                    midalpha=".3"
+                    endalpha="0"
+                />
+            </simpleemitter>
+            
+            <simpleemitter
+                delay="300"
+                spawnrate="200"
+                count="20"
+                particlelife="450"
+                gravity="10"
+                speed="0"
+                drag=".03"
+                acceleration="0.0"
+                position="-10 -18 0"
+                offsetsphere="15 15 10"
+                material="/shared/effects/materials/blood1.material"
+                minangle="-30"
+                maxangle="30"
+                direction="10 0 0"
+                offsetdirection="0 0 0"
+                offsetradial="0 0 0"
+                particledirectionalspace="local"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    angle="180"
+                    color=".25 0 0"
+                    startsize="15"
+                    midsize="10"
+                    minendsize="25"
+                    maxendsize="60"
+                    startalpha=".6"
+                    midalpha=".1"
+                    endalpha="0"
+                />
+            </simpleemitter>
 
-			<simpleemitter
-				spawnrate="200"
-				count="15"
-				particlelife="500"
-				gravity="20"
-				speed="50"
-				drag=".01"
-				acceleration="0.0"
-				position="0 25 50"
-				offsetsphere="15 15 0"
-				material="/shared/effects/materials/blood1.material"
-				minangle="-30"
-				maxangle="30"
-				direction="0 0 -10"
-				offsetdirection="0 0 0"
-				offsetradial="0 0 0"
-				particledirectionalspace="local"
-			>
-		  		<particle 
-					minangle="-360"
-					maxangle="360"
-					angle="180"
-					color=".25 0 0"
-					startsize="30"
-					midsize="10"
-					minendsize="25"
-					maxendsize="60"
-					startalpha=".6"
-					midalpha=".3"
-					endalpha="0"
-				/>
-			</simpleemitter>
-			
-			<simpleemitter
-				delay="150"
-				spawnrate="200"
-				count="8"
-				particlelife="500"
-				gravity="20"
-				speed="50"
-				drag=".01"
-				acceleration="0.0"
-				position="-15 25 50"
-				offsetsphere="10 10 0"
-				material="/shared/effects/materials/blood1.material"
-				minangle="-30"
-				maxangle="30"
-				direction="0 0 -10"
-				offsetdirection="0 0 0"
-				offsetradial="0 0 0"
-				particledirectionalspace="local"
-			>
-		  		<particle 
-					minangle="-360"
-					maxangle="360"
-					angle="180"
-					color=".25 0 0"
-					startsize="30"
-					midsize="10"
-					minendsize="25"
-					maxendsize="60"
-					startalpha=".0"
-					midalpha=".7"
-					endalpha="0"
-				/>
-			</simpleemitter>
-			
-			<!-- feather poof -->
-			<simpleemitter
-				position="0 0 0"
-				life="500"
-				spawnrate="75"
-				particlelife="1850"
-				gravity=".5"
-				speed="150"
-				drag="0.25"
-				acceleration="0.0"
-				material="/shared/effects/materials/feather.material"
-				offsetsphere="25 25 50"
-				direction="0 0 0"
-				minangle="-180"
-				maxangle="180"
-				directionalspace="global"
-				collide="true"
-			>
-				<particle
-					minangle="0"
-					maxangle="360"
-					anglespeed="20"
-					minsize="8"
-					maxsize="12"
-					lockup="true"
-					lockright="true"
-					pitch="90"
-					color="1 1 .25"
-					startalpha=".75"
-					midalpha="1"
-					endalpha="0"
-					midalphapos=".75"
-				/>
-			</simpleemitter>
-			
-			<!-- blood splat from critter--> 
-			<simpleemitter
-				delay="0"
-				bone="gib06"
-				spawnrate="20"
-				life="1380"
-				particlelife="500"
-				gravity="0"
-				speed="0"
-				drag=".01"
-				acceleration="0.0"
-				position="0 0 0"
-				offsetsphere="0 0 0"
-				material="/shared/effects/materials/blood1.material"
-				mininheritvelocity=".00"
-				maxinheritvelocity=".4"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					angle="180"
-					color=".4 .2 .2 "
-					anglespeed="20"
-					frame=".5"
-					startsize="20"
-					maxendsize="80"
-					startalpha="1"
-					endalpha="0"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                spawnrate="200"
+                count="15"
+                particlelife="500"
+                gravity="20"
+                speed="50"
+                drag=".01"
+                acceleration="0.0"
+                position="0 25 50"
+                offsetsphere="15 15 0"
+                material="/shared/effects/materials/blood1.material"
+                minangle="-30"
+                maxangle="30"
+                direction="0 0 -10"
+                offsetdirection="0 0 0"
+                offsetradial="0 0 0"
+                particledirectionalspace="local"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    angle="180"
+                    color=".25 0 0"
+                    startsize="30"
+                    midsize="10"
+                    minendsize="25"
+                    maxendsize="60"
+                    startalpha=".6"
+                    midalpha=".3"
+                    endalpha="0"
+                />
+            </simpleemitter>
+            
+            <simpleemitter
+                delay="150"
+                spawnrate="200"
+                count="8"
+                particlelife="500"
+                gravity="20"
+                speed="50"
+                drag=".01"
+                acceleration="0.0"
+                position="-15 25 50"
+                offsetsphere="10 10 0"
+                material="/shared/effects/materials/blood1.material"
+                minangle="-30"
+                maxangle="30"
+                direction="0 0 -10"
+                offsetdirection="0 0 0"
+                offsetradial="0 0 0"
+                particledirectionalspace="local"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    angle="180"
+                    color=".25 0 0"
+                    startsize="30"
+                    midsize="10"
+                    minendsize="25"
+                    maxendsize="60"
+                    startalpha=".0"
+                    midalpha=".7"
+                    endalpha="0"
+                />
+            </simpleemitter>
+            
+            <!-- feather poof -->
+            <simpleemitter
+                position="0 0 0"
+                life="500"
+                spawnrate="75"
+                particlelife="1850"
+                gravity=".5"
+                speed="150"
+                drag="0.25"
+                acceleration="0.0"
+                material="/shared/effects/materials/feather.material"
+                offsetsphere="25 25 50"
+                direction="0 0 0"
+                minangle="-180"
+                maxangle="180"
+                directionalspace="global"
+                collide="true"
+            >
+                <particle
+                    minangle="0"
+                    maxangle="360"
+                    anglespeed="20"
+                    minsize="8"
+                    maxsize="12"
+                    lockup="true"
+                    lockright="true"
+                    pitch="90"
+                    color="1 1 .25"
+                    startalpha=".75"
+                    midalpha="1"
+                    endalpha="0"
+                    midalphapos=".75"
+                />
+            </simpleemitter>
+            
+            <!-- blood splat from critter--> 
+            <simpleemitter
+                delay="0"
+                bone="gib06"
+                spawnrate="20"
+                life="1380"
+                particlelife="500"
+                gravity="0"
+                speed="0"
+                drag=".01"
+                acceleration="0.0"
+                position="0 0 0"
+                offsetsphere="0 0 0"
+                material="/shared/effects/materials/blood1.material"
+                mininheritvelocity=".00"
+                maxinheritvelocity=".4"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    angle="180"
+                    color=".4 .2 .2 "
+                    anglespeed="20"
+                    frame=".5"
+                    startsize="20"
+                    maxendsize="80"
+                    startalpha="1"
+                    endalpha="0"
+                />
+            </simpleemitter>
 
-			<simpleemitter
-				spawnrate="20"
-				life="500"
-				particlelife="500"
-				gravity="0"
-				speed="0"
-				drag=".01"
-				acceleration="0.0"
-				position="0 0 0"
-				offsetsphere="15 15 0"
-				material="/shared/effects/materials/blood1.material"
-				mininheritvelocity=".00"
-				maxinheritvelocity=".4"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					angle="180"
-					color=".4 .2 .2 "
-					anglespeed="20"
-					frame=".5"
-					startsize="20"
-					maxendsize="80"
-					startalpha="1"
-					endalpha="0"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                spawnrate="20"
+                life="500"
+                particlelife="500"
+                gravity="0"
+                speed="0"
+                drag=".01"
+                acceleration="0.0"
+                position="0 0 0"
+                offsetsphere="15 15 0"
+                material="/shared/effects/materials/blood1.material"
+                mininheritvelocity=".00"
+                maxinheritvelocity=".4"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    angle="180"
+                    color=".4 .2 .2 "
+                    anglespeed="20"
+                    frame=".5"
+                    startsize="20"
+                    maxendsize="80"
+                    startalpha="1"
+                    endalpha="0"
+                />
+            </simpleemitter>
 
-			<simpleemitter
-				spawnrate="20"
-				life="500"
-				particlelife="500"
-				gravity="0"
-				speed="0"
-				drag=".01"
-				acceleration="0.0"
-				position="0 0 0"
-				offsetsphere="15 15 0"
-				material="/shared/effects/materials/blood1.material"
-				mininheritvelocity=".00"
-				maxinheritvelocity=".4"
-			>
-				<particle
-					minangle="-360"
-					maxangle="360"
-					angle="180"
-					color=".4 .2 .2 "
-					anglespeed="20"
-					frame=".5"
-					startsize="20"
-					maxendsize="80"
-					startalpha="1"
-					endalpha="0"
-				/>
-			</simpleemitter>
-			
-			<billboard
-				bone="_bone_centerofchest"
-				position="0 0 0"
-				life="200"
-				material="/shared/effects/materials/whitedot.material"
-				startcolor=".4 .2 .1"
-				endcolor="0"
-				size="200"
-			/>
-			
-			<template name="trail">
-				<twopointtrailemitter
-				life="250"
-					bone_a="{bone_a}"
-					bone_b="{bone_b}"
-					spawnrate="44"
-					particlelife="500"
-					texpostime="500"
-					texposscale="0.0"
-					texstretchscale="1.0"
-					material="/shared/effects/materials/swoosh_add.material"
-					subframepos="true"
-				>
-					<particle
-						startcolor=".25 .15 .05"
-						endcolor="0 0 0" 
-					/>
-				</twopointtrailemitter>
-			</template>
+            <simpleemitter
+                spawnrate="20"
+                life="500"
+                particlelife="500"
+                gravity="0"
+                speed="0"
+                drag=".01"
+                acceleration="0.0"
+                position="0 0 0"
+                offsetsphere="15 15 0"
+                material="/shared/effects/materials/blood1.material"
+                mininheritvelocity=".00"
+                maxinheritvelocity=".4"
+            >
+                <particle
+                    minangle="-360"
+                    maxangle="360"
+                    angle="180"
+                    color=".4 .2 .2 "
+                    anglespeed="20"
+                    frame=".5"
+                    startsize="20"
+                    maxendsize="80"
+                    startalpha="1"
+                    endalpha="0"
+                />
+            </simpleemitter>
+            
+            <billboard
+                bone="_bone_centerofchest"
+                position="0 0 0"
+                life="200"
+                material="/shared/effects/materials/whitedot.material"
+                startcolor=".4 .2 .1"
+                endcolor="0"
+                size="200"
+            />
+            
+            <template name="trail">
+                <twopointtrailemitter
+                life="250"
+                    bone_a="{bone_a}"
+                    bone_b="{bone_b}"
+                    spawnrate="44"
+                    particlelife="500"
+                    texpostime="500"
+                    texposscale="0.0"
+                    texstretchscale="1.0"
+                    material="/shared/effects/materials/swoosh_add.material"
+                    subframepos="true"
+                >
+                    <particle
+                        startcolor=".25 .15 .05"
+                        endcolor="0 0 0" 
+                    />
+                </twopointtrailemitter>
+            </template>
 
-			<instance name="trail" bone_a="Bip01 L Clavicle" bone_b="Bip01 L Hand"/>
+            <instance name="trail" bone_a="Bip01 L Clavicle" bone_b="Bip01 L Hand"/>
 
-			<instance name="trail" bone_a="Bip01 R Clavicle" bone_b="Bip01 R Hand"/>
-				
-			<instance name="trail" bone_a="Bip01 R Foot" bone_b="Bip01 R Thigh"/>
+            <instance name="trail" bone_a="Bip01 R Clavicle" bone_b="Bip01 R Hand"/>
+                
+            <instance name="trail" bone_a="Bip01 R Foot" bone_b="Bip01 R Thigh"/>
 
-			<instance name="trail" bone_a="Bip01 L Foot" bone_b="Bip01 L Thigh"/>
+            <instance name="trail" bone_a="Bip01 L Foot" bone_b="Bip01 L Thigh"/>
 
-			<instance name="trail" bone_a="Bip01 Pelvis" bone_b="Bip01 Head"/>
-			
-		</particlesystem>
-		
-	  	<modifier
-			color="1 1 1"
-			life="1500"
-			startalpha="1"
-			midalpha="0"
-			endalpha="0"
-		/>
-		
+            <instance name="trail" bone_a="Bip01 Pelvis" bone_b="Bip01 Head"/>
+            
+        </particlesystem>
+        
+        <modifier
+            color="1 1 1"
+            life="1500"
+            startalpha="1"
+            midalpha="0"
+            endalpha="0"
+        />
+        
    </definitions>
 <thread>
-	<spawnparticlesystem instance="instance1" particlesystem="system0" />
-	<spawnmodifier instance="instance0"/>
-	<waitfordeath  instance="instance0"/>
-	<waitfordeath  instance="instance1"/>
+    <spawnparticlesystem instance="instance1" particlesystem="system0" />
+    <spawnmodifier instance="instance0"/>
+    <waitfordeath  instance="instance0"/>
+    <waitfordeath  instance="instance1"/>
 </thread>
 </effect>

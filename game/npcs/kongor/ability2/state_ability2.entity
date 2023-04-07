@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Kongor_Ability2"
+    name="State_Kongor_Ability2"
 
-	
-	
-	icon="icon.tga"
+    
+    
+    icon="icon.tga"
 
-	effecttype="StatusDebuff"
-	
-	movespeedslow="0.5"
-	attackspeed="-0.5"
+    effecttype="StatusDebuff"
+    
+    movespeedslow="0.5"
+    attackspeed="-0.5"
 >
 </state>

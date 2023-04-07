@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_FrostfieldPlate"
-	
-	
-	
-	
-	icon="icon.tga"
-	statuseffecttooltip="State_FrostfieldPlate"
-	cost="600"
-	components="Item_Platemail Item_AcolytesStaff"
-	
-	actiontype="self_position"
-	targetscheme="enemy_units"
-	targetradius="620"
-	frontqueue="true"
-	inheritmovement="true"
-	noninterrupting="true" 
-	casttime="0"
-	castactiontime="0"
-	cooldowntime="30000"
-	cooldowntype="frostfieldplate"
-	manacost="100"
-	casteffect="t"
+    name="Item_FrostfieldPlate"
+    
+    
+    
+    
+    icon="icon.tga"
+    statuseffecttooltip="State_FrostfieldPlate"
+    cost="600"
+    components="Item_Platemail Item_AcolytesStaff"
+    
+    actiontype="self_position"
+    targetscheme="enemy_units"
+    targetradius="620"
+    frontqueue="true"
+    inheritmovement="true"
+    noninterrupting="true" 
+    casttime="0"
+    castactiontime="0"
+    cooldowntime="30000"
+    cooldowntype="frostfieldplate"
+    manacost="100"
+    casteffect="t"
 
-	armor="15"
-	intelligence="30"
+    armor="15"
+    intelligence="30"
 >
-	<aura state="State_FrostfieldPlate_Aura" radius="1000" targetscheme="enemy_units" effecttype="Magic" propagatecondition="not_stealthed" />
-	
-	<onimpact>
-		<spawnaffector name="Affector_FrostfieldPlate" target="source_entity"/>
-	</onimpact>
+    <aura state="State_FrostfieldPlate_Aura" radius="1000" targetscheme="enemy_units" effecttype="Magic" propagatecondition="not_stealthed" />
+    
+    <onimpact>
+        <spawnaffector name="Affector_FrostfieldPlate" target="source_entity"/>
+    </onimpact>
 </item>

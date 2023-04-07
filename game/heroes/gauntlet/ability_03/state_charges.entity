@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Gauntlet_Ability3_Charges"
-	
-	ishidden="true"
-	impactinterval="200"
-	deathpersist="true"
+    name="State_Gauntlet_Ability3_Charges"
+    
+    ishidden="true"
+    impactinterval="200"
+    deathpersist="true"
 >
-	<onimpact>
-		<addcharges entity="proxy_entity" count="1" />
-	</onimpact>
+    <onimpact>
+        <addcharges entity="proxy_entity" count="1" />
+    </onimpact>
 </state>

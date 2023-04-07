@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true" >
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="entity">
+        <particlesystem name="system0" space="entity">
 
-			<groundsprite
-				life="2000"
-				material="/shared/effects/materials/cuirass_aura_3.material"
-				startsize="40"
-				endsize="58"
-				startcolor="0"
-				midcolor=".0 .25 .45"
-				endcolor="0"
-				midcolorpos=".3"
-				loop="true"
-				expirelife="400"
-			/>
-	
-		</particlesystem>
+            <groundsprite
+                life="2000"
+                material="/shared/effects/materials/cuirass_aura_3.material"
+                startsize="40"
+                endsize="58"
+                startcolor="0"
+                midcolor=".0 .25 .45"
+                endcolor="0"
+                midcolorpos=".3"
+                loop="true"
+                expirelife="400"
+            />
+    
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+    </thread>
 
 </effect>

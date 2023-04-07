@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Pet_Turret1"
+    name="Affector_Pet_Turret1"
 
-	radius="50"
-	
-	lifetime="100"
-	targetselection="all"
-	targetscheme="all"
-	effecttype=""
+    radius="50"
+    
+    lifetime="100"
+    targetselection="all"
+    targetscheme="all"
+    effecttype=""
 >
-	<onframe>
-		<applystate name="State_Engineer_Ability2_Turret_No_Attack" duration="-1"/>
-	</onframe>
+    <onframe>
+        <applystate name="State_Engineer_Ability2_Turret_No_Attack" duration="-1"/>
+    </onframe>
 </affector>

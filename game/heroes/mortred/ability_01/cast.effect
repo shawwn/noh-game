@@ -2,16 +2,16 @@
 <effect name="" useentityeffectscale="1">
 
 <definitions>
-	<particlesystem name="system0" space="entity">
+    <particlesystem name="system0" space="entity">
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2500"
-				volume="1.0"
-				sample="sounds/impact.ogg"
-			/>
-		</effect>
+            <sound
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2500"
+                volume="1.0"
+                sample="sounds/impact.ogg"
+            />
+        </effect>
 
 <!-- [min|max][start|mid|end]property[speed][pos] -->
 

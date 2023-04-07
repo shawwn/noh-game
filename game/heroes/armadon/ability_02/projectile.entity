@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Armadon_Ability2"
+    name="Projectile_Armadon_Ability2"
 
-	speed="900"
-	gravity="2500"
+    speed="900"
+    gravity="2500"
 
-	modelscale=".4"
-	model="effects/spine_proj.mdf"
+    modelscale=".4"
+    model="effects/spine_proj.mdf"
 
-	impacteffect="effects/impact.effect"
+    impacteffect="effects/impact.effect"
 >
-	<onimpact>
-		<damage effecttype="Physical Splash" amount="20,40,60,80" target="target_entity" />
-		<applystate name="State_Armadon_Ability2" target="target_entity" duration="10000" />
-	</onimpact>
+    <onimpact>
+        <damage effecttype="Physical Splash" amount="20,40,60,80" target="target_entity" />
+        <applystate name="State_Armadon_Ability2" target="target_entity" duration="10000" />
+    </onimpact>
 </projectile>

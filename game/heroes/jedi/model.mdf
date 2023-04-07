@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="rig.max" file="high.model" type="K2" >
-	
-	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true"/>
-	
-	<anim name="portrait" clip="clips/portrait.clip" loop="true"/>
-	
-	<anim name="attack_1" clip="clips/attack_1.clip" fps="30" />
-	
-	<anim name="attack_2" clip="clips/attack_2.clip" fps="30" />
-	
-	<anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true">
-	</anim>
-	
-	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="120">
-	</anim>
-	
-	<anim name="ability_2" clip="clips/ability_2.clip" fps="30" loop="false">
-	</anim>
-	
-	<anim name="ability_3crescent" clip="clips/ability_3crescent.clip"/>
-	
-	<anim name="ability_3sun" clip="clips/ability_3sun.clip"/>
+    
+    <anim name="idle" clip="clips/default_1.clip" fps="30" loop="true"/>
+    
+    <anim name="portrait" clip="clips/portrait.clip" loop="true"/>
+    
+    <anim name="attack_1" clip="clips/attack_1.clip" fps="30" />
+    
+    <anim name="attack_2" clip="clips/attack_2.clip" fps="30" />
+    
+    <anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true">
+    </anim>
+    
+    <anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="120">
+    </anim>
+    
+    <anim name="ability_2" clip="clips/ability_2.clip" fps="30" loop="false">
+    </anim>
+    
+    <anim name="ability_3crescent" clip="clips/ability_3crescent.clip"/>
+    
+    <anim name="ability_3sun" clip="clips/ability_3sun.clip"/>
 
-	<anim name="taunt_1" clip="clips/taunt_1.clip" fps="30"/>
+    <anim name="taunt_1" clip="clips/taunt_1.clip" fps="30"/>
 
-	<anim name="bored_1" clip="clips/bored_1.clip"/>
-	
-	<anim name="item_1" clip="clips/attack_1.clip" fps="25"/>
+    <anim name="bored_1" clip="clips/bored_1.clip"/>
+    
+    <anim name="item_1" clip="clips/attack_1.clip" fps="25"/>
 </model>

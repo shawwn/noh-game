@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pet
-	name="Pet_Defiler_Ability4"
-	
-	
-	
-	icon="icon.tga"
-	portrait="icon.tga"
-	model="/shared/models/invis.mdf"
-	skin=""
-	
-	isunit="false"
-	
-	passiveeffect="effects/body.effect"
-	spawneffect=""
-	respawneffect=""
-	selectsound=""
-	orderconfirmedsound=""
-	
-	preglobalscale="1.3"
-	modelscale="1.0"
-	effectscale="1.0"
-	boundsheight="64"
-	boundsradius="0"
-	isselectable="false"
-	selectionradius="0"
-	targetoffset="0 0 0"
+    name="Pet_Defiler_Ability4"
+    
+    
+    
+    icon="icon.tga"
+    portrait="icon.tga"
+    model="/shared/models/invis.mdf"
+    skin=""
+    
+    isunit="false"
+    
+    passiveeffect="effects/body.effect"
+    spawneffect=""
+    respawneffect=""
+    selectsound=""
+    orderconfirmedsound=""
+    
+    preglobalscale="1.3"
+    modelscale="1.0"
+    effectscale="1.0"
+    boundsheight="64"
+    boundsradius="0"
+    isselectable="false"
+    selectionradius="0"
+    targetoffset="0 0 0"
 
-	movespeed="400"
-	turnrate="360"
+    movespeed="400"
+    turnrate="360"
 
-	cancarryitems="false"
-	invulnerable="true"
-	unitwalking="true"
-	
-	diewithowner="true"
-	deathtime="0"
-	corpsetime="0"
-	
-	attackduration="50"
-	attackactiontime="20"
-	attackcooldown="2000"
-	attackdamagemin="43"
-	attackdamagemax="48"
-	attacknumanims="2"
-	attackoffset="0 60 100"
-	attackprojectile=""
-	attackrange="10"
-	attackstarteffect=""
-	attackactioneffect=""
-	attackimpacteffect="effects/impact.effect"
-	attacktype="melee"
-	combattype="Hero"
-	drawonmap="false"
+    cancarryitems="false"
+    invulnerable="true"
+    unitwalking="true"
+    
+    diewithowner="true"
+    deathtime="0"
+    corpsetime="0"
+    
+    attackduration="50"
+    attackactiontime="20"
+    attackcooldown="2000"
+    attackdamagemin="43"
+    attackdamagemax="48"
+    attacknumanims="2"
+    attackoffset="0 60 100"
+    attackprojectile=""
+    attackrange="10"
+    attackstarteffect=""
+    attackactioneffect=""
+    attackimpacteffect="effects/impact.effect"
+    attacktype="melee"
+    combattype="Hero"
+    drawonmap="false"
 
-	aggrorange="600"
-	wanderrange="700"
-	maxdistancefromowner="2000"
-	
-	lifetime="30000"
+    aggrorange="600"
+    wanderrange="700"
+    maxdistancefromowner="2000"
+    
+    lifetime="30000"
 >
-	<onspawn>
-		<order command="wander" source="this_entity" target="this_owner_entity"/>
-		<applystate name="State_Defiler_Ability4" proxy="this_owner_entity" duration="1000" />
-	</onspawn>
-	
-	<ondamage>
-		<accumulatedamage scale="0.25" />
-	</ondamage>
-	
-	<onexpired>
-		<heal target="this_owner_entity" a="accumulator" />
-	</onexpired>
+    <onspawn>
+        <order command="wander" source="this_entity" target="this_owner_entity"/>
+        <applystate name="State_Defiler_Ability4" proxy="this_owner_entity" duration="1000" />
+    </onspawn>
+    
+    <ondamage>
+        <accumulatedamage scale="0.25" />
+    </ondamage>
+    
+    <onexpired>
+        <heal target="this_owner_entity" a="accumulator" />
+    </onexpired>
 </pet>

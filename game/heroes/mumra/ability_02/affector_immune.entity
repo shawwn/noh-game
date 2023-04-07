@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Mumra_Ability2_Immune"
+    name="Affector_Mumra_Ability2_Immune"
 
-	radius="125"
-	lifetime="3000,4000,5000,6000"
+    radius="125"
+    lifetime="3000,4000,5000,6000"
 
-	targetselection="all"
-	targetscheme="all_units"
+    targetselection="all"
+    targetscheme="all_units"
 >
-	<onimpact>
-		<applystate name="State_Mumra_Ability2_Immunity" duration="3000,4000,5000,6000"/>
-	</onimpact>
+    <onimpact>
+        <applystate name="State_Mumra_Ability2_Immunity" duration="3000,4000,5000,6000"/>
+    </onimpact>
 </affector>

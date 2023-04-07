@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Ophelia_Ability1"
+    name="Projectile_Ophelia_Ability1"
 
-	speed="3000"
-	gravity="2500"
-	canturn="false"
-	modelscale="1"
-	model="/shared/models/invis.mdf"
+    speed="3000"
+    gravity="2500"
+    canturn="false"
+    modelscale="1"
+    model="/shared/models/invis.mdf"
 
-	traileffect="projectile/trail.effect"
-	impacteffect="projectile/impact.effect"
+    traileffect="projectile/trail.effect"
+    impacteffect="projectile/impact.effect"
 >
-	<onimpact>
-		<spawnaffector name="Affector_Ophelia_Ability1" />
-		
-	</onimpact>
+    <onimpact>
+        <spawnaffector name="Affector_Ophelia_Ability1" />
+        
+    </onimpact>
 </projectile>

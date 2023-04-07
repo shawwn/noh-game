@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Fade_Ability2"
+    name="Affector_Fade_Ability2"
 
-	radius="150"
-	arc="180"
-	
-	speed="1600"
-	
-	lifetime="400"
-	maximpactspertarget="1"
-	targetselection="all"
-	targetscheme="enemy_heroes"
-	effecttype="Magic"
-	persist="true"
-	effect="effects/cast.effect"	
+    radius="150"
+    arc="180"
+    
+    speed="1600"
+    
+    lifetime="400"
+    maximpactspertarget="1"
+    targetselection="all"
+    targetscheme="enemy_heroes"
+    effecttype="Magic"
+    persist="true"
+    effect="effects/cast.effect"    
 
 >
 

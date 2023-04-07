@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Rampage_Ability1_Warning"
-	
-	icon="icon.tga"
-	passiveeffect=""
-	
-	revealed="true"
+    name="State_Rampage_Ability1_Warning"
+    
+    icon="icon.tga"
+    passiveeffect=""
+    
+    revealed="true"
 >
-	<onattacked>
-		<expire />
-	</onattacked>
+    <onattacked>
+        <expire />
+    </onattacked>
 </state>

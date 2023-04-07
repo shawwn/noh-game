@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Ursa_Ability1"
+    name="State_Ursa_Ability1"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect=""
-	
-	movespeedslow="0.25,0.35,0.45,0.55"
-	
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect=""
+    
+    movespeedslow="0.25,0.35,0.45,0.55"
+    
+    effecttype="StatusDebuff"
 >
 </state>

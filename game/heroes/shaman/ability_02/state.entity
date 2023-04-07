@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Shaman_Ability2"
+    name="State_Shaman_Ability2"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/state.effect"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/state.effect"
 
-	
-	displaylevel="true"
-	initialcharges="3,4,5,6"
-	effecttype="StatusBuff"
+    
+    displaylevel="true"
+    initialcharges="3,4,5,6"
+    effecttype="StatusBuff"
 >
-	<oninflict>
-		<setcharges a="3,4,5,6" />
-	</oninflict>
-	<onattackedpreimpact>
-		<print text="attacked" />
-		<combatsupertype supertype="attack">
-			<changecurrentcombatdamage b="0.5" op="mult" />
-			<removecharge />
-		</combatsupertype>
-		<condition test="charges eq 0">
-			<expire />
-		</condition>
-	</onattackedpreimpact>
-	
-	
-	<onframe />
-	
+    <oninflict>
+        <setcharges a="3,4,5,6" />
+    </oninflict>
+    <onattackedpreimpact>
+        <print text="attacked" />
+        <combatsupertype supertype="attack">
+            <changecurrentcombatdamage b="0.5" op="mult" />
+            <removecharge />
+        </combatsupertype>
+        <condition test="charges eq 0">
+            <expire />
+        </condition>
+    </onattackedpreimpact>
+    
+    
+    <onframe />
+    
 </state>

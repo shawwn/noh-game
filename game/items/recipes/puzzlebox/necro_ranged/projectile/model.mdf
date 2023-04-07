@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="gem.max" file="model.model" type="K2" >
 
-	<spawnevent cmd="StartEffect necro_projectile.effect"/>
+    <spawnevent cmd="StartEffect necro_projectile.effect"/>
 
-	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true"/>
-	
+    <anim name="idle" clip="clips/default_1.clip" fps="30" loop="true"/>
+    
 
-	
+    
 </model>

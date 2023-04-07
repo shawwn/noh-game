@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Item_HarkonsBlade_MagicArmor"
+    name="State_Item_HarkonsBlade_MagicArmor"
 
-	
-	
-	icon="icon.tga"
+    
+    
+    icon="icon.tga"
 
-	magicarmor="-5"
-	passiveeffect="effects/state.effect"
-	effecttype="StatusDebuff"
+    magicarmor="-5"
+    passiveeffect="effects/state.effect"
+    effecttype="StatusDebuff"
 >
-	<onexpired>
+    <onexpired>
 
-		<playeffect effect="effects/death.effect" source="target_entity"/>
+        <playeffect effect="effects/death.effect" source="target_entity"/>
 
-	</onexpired>
+    </onexpired>
 
 </state>

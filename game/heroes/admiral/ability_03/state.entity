@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Admiral_Ability3"
-	
-	icon="icon.tga"
-	ishidden="true"
-	passiveeffect=""
-	effecttype="StatusDebuff"
-	
-	modifierkey="return"
->	
-	<onexpired>
-		<kill target="proxy_entity" source="" />
-	</onexpired>
+    name="State_Admiral_Ability3"
+    
+    icon="icon.tga"
+    ishidden="true"
+    passiveeffect=""
+    effecttype="StatusDebuff"
+    
+    modifierkey="return"
+>   
+    <onexpired>
+        <kill target="proxy_entity" source="" />
+    </onexpired>
 </state>

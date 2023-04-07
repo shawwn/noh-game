@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_WitchSlayer_Ability3"
-	
-	icon="icon.tga"
-	passiveeffect="effects/link.effect"
-	
-	effecttype="StatusDebuff"
+    name="State_WitchSlayer_Ability3"
+    
+    icon="icon.tga"
+    passiveeffect="effects/link.effect"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe >
-		<condition test="target_mana gt 1">
-			<setvar0 a="20,40,60,100" b="frametime" op="mult" />
-			<takemana amount="var0" />
-			<condition test="result gt 0">
-				<setvar0 a="result" />
-				<givemana amount="var0" target="source_entity" />
-				
-			</condition>
-		</condition>
-		<condition test="target_mana le 1">
-			<order command="stop" source="source_entity" target="source_entity" />
-		</condition>
+    <onframe >
+        <condition test="target_mana gt 1">
+            <setvar0 a="20,40,60,100" b="frametime" op="mult" />
+            <takemana amount="var0" />
+            <condition test="result gt 0">
+                <setvar0 a="result" />
+                <givemana amount="var0" target="source_entity" />
+                
+            </condition>
+        </condition>
+        <condition test="target_mana le 1">
+            <order command="stop" source="source_entity" target="source_entity" />
+        </condition>
 
-	</onframe>
+    </onframe>
 </state>

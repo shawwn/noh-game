@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Pet_Engineer_Burstfire_Anim1"
-	
-	icon="icon.tga"
-	
-	ishidden="true"
-	
-	passiveeffect=""
-	effecttype=""
+    name="State_Pet_Engineer_Burstfire_Anim1"
+    
+    icon="icon.tga"
+    
+    ishidden="true"
+    
+    passiveeffect=""
+    effecttype=""
 >
-	<onexpired>
-		<condition test="distance lt 700" source="source_entity" target="proxy_entity">
-			<condition target="proxy_entity" test="not_target_type dead" >
-				<spawnprojectile name="Projectile_EngineerTurretAttackBurst" source="source_entity" target="proxy_entity" offset="0 0 70" />
-				<playeffect effect="effects/attack_impact.effect" source="source_entity" target="" />
-			</condition>
-		</condition>
-	</onexpired>
+    <onexpired>
+        <condition test="distance lt 700" source="source_entity" target="proxy_entity">
+            <condition target="proxy_entity" test="not_target_type dead" >
+                <spawnprojectile name="Projectile_EngineerTurretAttackBurst" source="source_entity" target="proxy_entity" offset="0 0 70" />
+                <playeffect effect="effects/attack_impact.effect" source="source_entity" target="" />
+            </condition>
+        </condition>
+    </onexpired>
 </state>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Gauntlet_Ability4"
+    name="Projectile_Gauntlet_Ability4"
 
-	speed="600"
-	gravity=""
+    speed="600"
+    gravity=""
 
 
-	
-	effectscale="1 "
-	impacteffect="effects/impact.effect"
-	canturn="true"
-	flying="true"
-	flyheight="80"
+    
+    effectscale="1 "
+    impacteffect="effects/impact.effect"
+    canturn="true"
+    flying="true"
+    flyheight="80"
 >
 
-	<onimpact>
-		<bind target="proxy_entity" vertical="true" turn="true" />
-			<kill target="proxy_entity" source="" />
-			<expirestate name="State_Gauntlet_Ability4_NoHand" target="this_owner_entity"/>
-	</onimpact>
+    <onimpact>
+        <bind target="proxy_entity" vertical="true" turn="true" />
+            <kill target="proxy_entity" source="" />
+            <expirestate name="State_Gauntlet_Ability4_NoHand" target="this_owner_entity"/>
+    </onimpact>
 </projectile>

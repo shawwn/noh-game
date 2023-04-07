@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Fade_Ability4"
+    name="State_Fade_Ability4"
 
-	icon=""
-	passiveeffect=""
-	ishidden="true"
-	
-	unitwalking="true"	
-	impactinterval="50"
-	
-	effecttype=""
+    icon=""
+    passiveeffect=""
+    ishidden="true"
+    
+    unitwalking="true"  
+    impactinterval="50"
+    
+    effecttype=""
 >
-	<onimpact>
-		<spawnillusion
-			owner="source_entity"
-			source="source_entity"
-			count="1"
-			lifetime="40000"
-			receivedamagemultiplier="3"
-			inflictdamagemultiplier="1"
-			fixedposition="true"
-			inheritactions="true"
-			pushentity="true" />
-		<disjoint target="source_entity" />
-		<givemana amount="150" target="stack_entity" />
-		<applystate name="State_Fade_Ability4_Stealth" duration="40000" target="source_entity" proxy="stack_entity" />
-		<applystate name="State_Fade_Ability4_RelayExp" duration="40000" target="stack_entity" />
-	</onimpact>
+    <onimpact>
+        <spawnillusion
+            owner="source_entity"
+            source="source_entity"
+            count="1"
+            lifetime="40000"
+            receivedamagemultiplier="3"
+            inflictdamagemultiplier="1"
+            fixedposition="true"
+            inheritactions="true"
+            pushentity="true" />
+        <disjoint target="source_entity" />
+        <givemana amount="150" target="stack_entity" />
+        <applystate name="State_Fade_Ability4_Stealth" duration="40000" target="source_entity" proxy="stack_entity" />
+        <applystate name="State_Fade_Ability4_RelayExp" duration="40000" target="stack_entity" />
+    </onimpact>
 </state>

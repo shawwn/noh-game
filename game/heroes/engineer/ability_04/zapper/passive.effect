@@ -1,120 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="1" useentityeffectscale="1">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="bridge" space="world" scale="0.75">
+        <particlesystem name="bridge" space="world" scale="0.75">
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2500"
-				volume="1"
-				sample="../sounds/cast.wav"
-			/>
+            <sound
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2500"
+                volume="1"
+                sample="../sounds/cast.wav"
+            />
 
-			<sound
-				delay="60"
-				soundloop="true"
-				fadein="300"
-				fadeout="200"
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2500"
-				volume=".65"
-				sample="../sounds/state.wav"
-			/>
-			
-			<model
-				model="shield.mdf"
-				scale="2"
-				color="1 1 1"
-			/>	
+            <sound
+                delay="60"
+                soundloop="true"
+                fadein="300"
+                fadeout="200"
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2500"
+                volume=".65"
+                sample="../sounds/state.wav"
+            />
+            
+            <model
+                model="shield.mdf"
+                scale="2"
+                color="1 1 1"
+            />  
 
-			<template name="beam">
-				<beam
-					delay="100"					
-					bone_a="_bone_{a}"
-					bone_b="_bone_{b}"
-					size="70"
-					startcolor="0 .5 1"
-					endcolor="0"
-					expirelife="200"	
-					material="/shared/effects/materials/femme_lightning_10.material"
-					startframe="{frame}"
-					framespeed="5"
-				/>
-				
-				<billboard
-					bone="_bone_{a}"
-					material="/shared/effects/materials/whitedot.material"
-					size="44"
-					startcolor="0 .1 .3"
-					endcolor="0"
-					expirelife="200"
-					depthbias="-40"
-				/>
+            <template name="beam">
+                <beam
+                    delay="100"                 
+                    bone_a="_bone_{a}"
+                    bone_b="_bone_{b}"
+                    size="70"
+                    startcolor="0 .5 1"
+                    endcolor="0"
+                    expirelife="200"    
+                    material="/shared/effects/materials/femme_lightning_10.material"
+                    startframe="{frame}"
+                    framespeed="5"
+                />
+                
+                <billboard
+                    bone="_bone_{a}"
+                    material="/shared/effects/materials/whitedot.material"
+                    size="44"
+                    startcolor="0 .1 .3"
+                    endcolor="0"
+                    expirelife="200"
+                    depthbias="-40"
+                />
 
-				<billboard
-					bone="_bone_{b}"
-					material="/shared/effects/materials/whitedot.material"
-					size="44"
-					startcolor="0 .1 .3"
-					endcolor="0"
-					expirelife="200"			
-				 	depthbias="-40"
-				/>		
-			</template>
-	
-			<instance name="beam" a="01" b="06" size="52" frame=".1"/>
-			<instance name="beam" a="02" b="04" size="55" frame=".2"/>
-			<instance name="beam" a="03" b="05" size="55" frame=".9"/>
+                <billboard
+                    bone="_bone_{b}"
+                    material="/shared/effects/materials/whitedot.material"
+                    size="44"
+                    startcolor="0 .1 .3"
+                    endcolor="0"
+                    expirelife="200"            
+                    depthbias="-40"
+                />      
+            </template>
+    
+            <instance name="beam" a="01" b="06" size="52" frame=".1"/>
+            <instance name="beam" a="02" b="04" size="55" frame=".2"/>
+            <instance name="beam" a="03" b="05" size="55" frame=".9"/>
 
-			<instance name="beam" a="09" b="06" size="52" frame=".9"/>
-			<instance name="beam" a="08" b="04" size="55" frame=".2"/>
-			<instance name="beam" a="07" b="05" size="55" frame=".5"/>	
+            <instance name="beam" a="09" b="06" size="52" frame=".9"/>
+            <instance name="beam" a="08" b="04" size="55" frame=".2"/>
+            <instance name="beam" a="07" b="05" size="55" frame=".5"/>  
 
-			<instance name="beam" a="09" b="12" size="52" frame=".1"/>
-			<instance name="beam" a="08" b="11" size="55" frame=".2"/>
-			<instance name="beam" a="07" b="10" size="55" frame=".5"/>	
+            <instance name="beam" a="09" b="12" size="52" frame=".1"/>
+            <instance name="beam" a="08" b="11" size="55" frame=".2"/>
+            <instance name="beam" a="07" b="10" size="55" frame=".5"/>  
 
-			<instance name="beam" a="15" b="12" size="52" frame=".1"/>
-			<instance name="beam" a="14" b="11" size="55" frame=".8"/>
-			<instance name="beam" a="13" b="10" size="55" frame=".5"/>	
+            <instance name="beam" a="15" b="12" size="52" frame=".1"/>
+            <instance name="beam" a="14" b="11" size="55" frame=".8"/>
+            <instance name="beam" a="13" b="10" size="55" frame=".5"/>  
 
-			<instance name="beam" a="15" b="18" size="52" frame=".1"/>
-			<instance name="beam" a="14" b="17" size="55" frame=".2"/>
-			<instance name="beam" a="13" b="16" size="55" frame=".5"/>	
+            <instance name="beam" a="15" b="18" size="52" frame=".1"/>
+            <instance name="beam" a="14" b="17" size="55" frame=".2"/>
+            <instance name="beam" a="13" b="16" size="55" frame=".5"/>  
 
-			<instance name="beam" a="21" b="18" size="52" frame=".1"/>
-			<instance name="beam" a="20" b="16" size="55" frame=".2"/>
-			<instance name="beam" a="19" b="17" size="55" frame=".5"/>	
+            <instance name="beam" a="21" b="18" size="52" frame=".1"/>
+            <instance name="beam" a="20" b="16" size="55" frame=".2"/>
+            <instance name="beam" a="19" b="17" size="55" frame=".5"/>  
 
-			<instance name="beam" a="21" b="24" size="52" frame=".9"/>
-			<instance name="beam" a="20" b="23" size="55" frame=".2"/>
-			<instance name="beam" a="19" b="22" size="55" frame=".5"/>
+            <instance name="beam" a="21" b="24" size="52" frame=".9"/>
+            <instance name="beam" a="20" b="23" size="55" frame=".2"/>
+            <instance name="beam" a="19" b="22" size="55" frame=".5"/>
 
-			<instance name="beam" a="01" b="24" size="52" frame=".2"/>
-			<instance name="beam" a="02" b="23" size="55" frame=".2"/>
-			<instance name="beam" a="03" b="22" size="55" frame=".8"/>			
-			
-			<groundsprite			
-				material="/shared/effects/materials/ring_ground.material"
-				size="850"
-				position="-15 5 0"
-				color=".0 .2 .5"
-				startalpha="1"	
-				endalpha="0"
-				expirelife="200"			
-			/>	
-			
-		</particlesystem>
+            <instance name="beam" a="01" b="24" size="52" frame=".2"/>
+            <instance name="beam" a="02" b="23" size="55" frame=".2"/>
+            <instance name="beam" a="03" b="22" size="55" frame=".8"/>          
+            
+            <groundsprite           
+                material="/shared/effects/materials/ring_ground.material"
+                size="850"
+                position="-15 5 0"
+                color=".0 .2 .5"
+                startalpha="1"  
+                endalpha="0"
+                expirelife="200"            
+            />  
+            
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="bridge" />
-		<waitfordeath instance="instance0" />
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="bridge" />
+        <waitfordeath instance="instance0" />
+    </thread>
 
 </effect>

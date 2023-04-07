@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_FlyingCourier_Ability2"
-	
-	icon="icon.tga"
-	passiveeffect="state.effect"
-	
-	effecttype="StatusBuff"
-	
-	invulnerable="true"
+    name="State_FlyingCourier_Ability2"
+    
+    icon="icon.tga"
+    passiveeffect="state.effect"
+    
+    effecttype="StatusBuff"
+    
+    invulnerable="true"
 >
 </state>

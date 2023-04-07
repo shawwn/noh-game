@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_BoundEye"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="700"
-	dropondeath="true"
-	nosell="true"
-	allowsharing="true"
-	
-	actiontype="passive"
+    name="Item_BoundEye"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="700"
+    dropondeath="true"
+    nosell="true"
+    allowsharing="true"
+    
+    actiontype="passive"
 
 >
-	<modifier key="bound_eye_reveal" condition="hero" modpriority="100"
-		revealtype="ward"
-		revealrange="1100"
-	>
-	</modifier>
+    <modifier key="bound_eye_reveal" condition="hero" modpriority="100"
+        revealtype="ward"
+        revealrange="1100"
+    >
+    </modifier>
 </item>

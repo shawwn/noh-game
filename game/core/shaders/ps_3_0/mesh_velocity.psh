@@ -18,10 +18,10 @@
 //=============================================================================
 struct VS_OUTPUT
 {
-	float2 Texcoord0     : TEXCOORD0;
-	float ViewDepth      : TEXCOORD1;
-	float4 Position0     : TEXCOORD2;
-	float4 Position1     : TEXCOORD3;
+    float2 Texcoord0     : TEXCOORD0;
+    float ViewDepth      : TEXCOORD1;
+    float4 Position0     : TEXCOORD2;
+    float4 Position1     : TEXCOORD3;
 };
 
 //=============================================================================
@@ -29,7 +29,7 @@ struct VS_OUTPUT
 //=============================================================================
 struct PS_OUTPUT
 {
-	float4 Color : COLOR;
+    float4 Color : COLOR;
 };
 
 sampler diffuse;
@@ -39,22 +39,22 @@ sampler diffuse;
 //=============================================================================
 PS_OUTPUT PS( VS_OUTPUT In )
 {
-	PS_OUTPUT Out;
-	
-	float4 cDiffuseColor = tex2D(diffuse, In.Texcoord0);
-	
+    PS_OUTPUT Out;
+    
+    float4 cDiffuseColor = tex2D(diffuse, In.Texcoord0);
+    
 #if (TEXKILL == 1)
-	clip(cDiffuseColor.a - 91.0f / 255.0f);
+    clip(cDiffuseColor.a - 91.0f / 255.0f);
 #endif
 
-	float2 vVelocity = In.Position1.xy / In.Position1.w - In.Position0.xy / In.Position0.w;
-	
-	vVelocity *= float2(2.0f, -2.0f);
-	
-	vVelocity = vVelocity * 0.5f + 0.5f;
+    float2 vVelocity = In.Position1.xy / In.Position1.w - In.Position0.xy / In.Position0.w;
+    
+    vVelocity *= float2(2.0f, -2.0f);
+    
+    vVelocity = vVelocity * 0.5f + 0.5f;
 
-	//Out.Color = float4(vVelocity.x, vVelocity.y, In.ViewDepth, cDiffuseColor.a);
-	Out.Color = float4(vVelocity.x, vVelocity.y, 1.0f, cDiffuseColor.a);
+    //Out.Color = float4(vVelocity.x, vVelocity.y, In.ViewDepth, cDiffuseColor.a);
+    Out.Color = float4(vVelocity.x, vVelocity.y, 1.0f, cDiffuseColor.a);
 
-	return Out;
+    return Out;
 }

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_WitchSlayer_Attack"
+    name="Projectile_WitchSlayer_Attack"
 
-	speed="900"
-	gravity="1000"
+    speed="900"
+    gravity="1000"
 
-	model="effects/model.mdf"
-	modelscale="1.75"
-	scale="1"
-	impacteffect="effects/impact.effect"
-	traileffect="effects/trail.effect"
+    model="effects/model.mdf"
+    modelscale="1.75"
+    scale="1"
+    impacteffect="effects/impact.effect"
+    traileffect="effects/trail.effect"
 >
 </projectile>

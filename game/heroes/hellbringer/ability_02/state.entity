@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Hellbringer_Ability2"
+    name="State_Hellbringer_Ability2"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="state.effect"
-	displaylevel="true"
-	
-	effecttype="StatusDebuff"
-	impactinterval="1000"
+    
+    
+    icon="icon.tga"
+    passiveeffect="state.effect"
+    displaylevel="true"
+    
+    effecttype="StatusDebuff"
+    impactinterval="1000"
 >
-	<onframe />
-	
-	<onimpact>
-		<addcharges />
-		<damage effecttype="Magic" amount="10" b="charges" op="mult" />
-		<popup name="poison" a="result" source="target_entity" target="source_entity" />
-	</onimpact>
+    <onframe />
+    
+    <onimpact>
+        <addcharges />
+        <damage effecttype="Magic" amount="10" b="charges" op="mult" />
+        <popup name="poison" a="result" source="target_entity" target="source_entity" />
+    </onimpact>
 </state>

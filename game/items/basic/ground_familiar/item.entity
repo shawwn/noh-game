@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_GroundFamiliar"
-	
-	icon="icon.tga"
-	
-	cost="200"
-	
-	
-	initialcharges="1"
-	chargecost="1"
-	rechargeable="true"
-	destroyonempty="true"
-	
-	actiontype="no_target"
-	
-	initialstock="1"
-	maxstock="1"
-	restockdelay="3000"
+    name="Item_GroundFamiliar"
+    
+    icon="icon.tga"
+    
+    cost="200"
+    
+    
+    initialcharges="1"
+    chargecost="1"
+    rechargeable="true"
+    destroyonempty="true"
+    
+    actiontype="no_target"
+    
+    initialstock="1"
+    maxstock="1"
+    restockdelay="3000"
 >
 
-	<onpurchase>
-		<broadcastmessage source="source_entity" type="walkingcourier" />
-	</onpurchase>
+    <onpurchase>
+        <broadcastmessage source="source_entity" type="walkingcourier" />
+    </onpurchase>
 
-	<onimpact>
-		<spawnunit name="Pet_GroundFamiliar" offset="0 64" />
-	</onimpact>
-	
+    <onimpact>
+        <spawnunit name="Pet_GroundFamiliar" offset="0 64" />
+    </onimpact>
+    
 </item>

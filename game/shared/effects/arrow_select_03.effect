@@ -1,136 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="select_target">
 
-	<definitions>
-		<particlesystem name="system0" space="world">
+    <definitions>
+        <particlesystem name="system0" space="world">
 
-		<groundsprite
-			life="300"
-			loop="false"
+        <groundsprite
+            life="300"
+            loop="false"
 
-			timenudge="0"
+            timenudge="0"
 
-			material="/shared/effects/materials/arrow_seq_00.material"
+            material="/shared/effects/materials/arrow_seq_00.material"
 
-			startsize="25"
+            startsize="25"
 
-			endsize="3"
-
-
-			startcolor="0 0 0"
-			midcolor="0 1 0"
-			endcolor="0 0 0"
-			midcolorpos=".2"
-
-			minangle="55"
-			maxangle="55"
-			angles="0 0 0"
+            endsize="3"
 
 
+            startcolor="0 0 0"
+            midcolor="0 1 0"
+            endcolor="0 0 0"
+            midcolorpos=".2"
 
-		/>
-
-
-		<groundsprite
-			life="300"
-			loop="false"
-
-			timenudge="0"
-
-			material="/shared/effects/materials/arrow_seq_00.material"
-
-			startsize="35"
-
-			endsize="3"
-
-
-			startcolor="0 0 0"
-			midcolor="0 1 0"
-			endcolor="0 0 0"
-			midcolorpos=".2"
-
-			minangle="55"
-			maxangle="55"
-			angles="0 0 0"
+            minangle="55"
+            maxangle="55"
+            angles="0 0 0"
 
 
 
-		/>
+        />
 
 
-		<groundsprite
-			life="350"
-			
-			timenudge="0"
-			material="/shared/effects/materials/arrow_seq_01.material"
+        <groundsprite
+            life="300"
+            loop="false"
 
-			startsize="45"
+            timenudge="0"
 
-			endsize="15"
+            material="/shared/effects/materials/arrow_seq_00.material"
 
+            startsize="35"
 
-			startcolor="0 0 0"
-			midcolor="0 1 0"
-			endcolor="0 0 0"
-			midcolorpos=".5"
-
-			minangle="55"
-			maxangle="55"
-			angles="0 0 0"
+            endsize="3"
 
 
-		/>
+            startcolor="0 0 0"
+            midcolor="0 1 0"
+            endcolor="0 0 0"
+            midcolorpos=".2"
 
-
-
-
-		<groundsprite
-			life="350"
-			
-			timenudge="-25"
-			material="/shared/effects/materials/arrow_seq_02.material"
-
-			startsize="45"
-
-			endsize="10"
-
-
-			startcolor="0 0 0"
-			midcolor="0 1 0"
-			endcolor="0 0 0"
-			midcolorpos=".5"
-
-			minangle="55"
-			maxangle="55"
-			angles="0 0 0"
-
-
-		/>
+            minangle="55"
+            maxangle="55"
+            angles="0 0 0"
 
 
 
-		<groundsprite
-			life="350"
-			
-			timenudge="-50"
-			material="/shared/effects/materials/1arrow_seq_03.material"
-
-			startsize="45"
-
-			endsize="5"
+        />
 
 
-			startcolor="0 0 0"
-			midcolor="0 1 0"
-			endcolor="0 0 0"
-			midcolorpos=".5"
+        <groundsprite
+            life="350"
+            
+            timenudge="0"
+            material="/shared/effects/materials/arrow_seq_01.material"
 
-			minangle="55"
-			maxangle="55"
-			angles="0 0 0"
+            startsize="45"
+
+            endsize="15"
 
 
-		/>
+            startcolor="0 0 0"
+            midcolor="0 1 0"
+            endcolor="0 0 0"
+            midcolorpos=".5"
+
+            minangle="55"
+            maxangle="55"
+            angles="0 0 0"
+
+
+        />
+
+
+
+
+        <groundsprite
+            life="350"
+            
+            timenudge="-25"
+            material="/shared/effects/materials/arrow_seq_02.material"
+
+            startsize="45"
+
+            endsize="10"
+
+
+            startcolor="0 0 0"
+            midcolor="0 1 0"
+            endcolor="0 0 0"
+            midcolorpos=".5"
+
+            minangle="55"
+            maxangle="55"
+            angles="0 0 0"
+
+
+        />
+
+
+
+        <groundsprite
+            life="350"
+            
+            timenudge="-50"
+            material="/shared/effects/materials/1arrow_seq_03.material"
+
+            startsize="45"
+
+            endsize="5"
+
+
+            startcolor="0 0 0"
+            midcolor="0 1 0"
+            endcolor="0 0 0"
+            midcolorpos=".5"
+
+            minangle="55"
+            maxangle="55"
+            angles="0 0 0"
+
+
+        />
 
 
 
@@ -139,7 +139,7 @@
 >
 
 
-	</particlesystem>
+    </particlesystem>
 
 
 
@@ -148,9 +148,9 @@
 </definitions>
 
 <thread>
-	<spawnparticlesystem instance="instance0" particlesystem="system0" />
-	<waitfordeath instance="instance0" />
-	<!-- <die /> -->
+    <spawnparticlesystem instance="instance0" particlesystem="system0" />
+    <waitfordeath instance="instance0" />
+    <!-- <die /> -->
 </thread>
 
 </effect>

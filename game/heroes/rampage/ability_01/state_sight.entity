@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Rampage_Ability1_Sight"
-	
-	icon=""
-	ishidden="true"
-	
-	sighted="true"
+    name="State_Rampage_Ability1_Sight"
+    
+    icon=""
+    ishidden="true"
+    
+    sighted="true"
 >
-	<aura
-		gadget="Gadget_Rampage_Ability1"
-		radius="0"
-		targetscheme="self"
-	/>
-	
-	<onexpired>
-		<startexpire entity="proxy_entity" />
-	</onexpired>
+    <aura
+        gadget="Gadget_Rampage_Ability1"
+        radius="0"
+        targetscheme="self"
+    />
+    
+    <onexpired>
+        <startexpire entity="proxy_entity" />
+    </onexpired>
 </state>

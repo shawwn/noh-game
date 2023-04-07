@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Xalynx_Ability4_Pulse"
+    name="Affector_Xalynx_Ability4_Pulse"
 
-	radiusstart="50"
-	radiusend="300,350,400"
-	
-	innerradiusoffset="75"
-	
-	lifetime="500"
-	maximpactspertarget="1"
-	targetselection="all"
-	targetscheme="enemy_units"
-	effecttype="Magic"
-	persist="true"
-	impacteffect=""
-	effect="effects/cast.effect"
-	canturn="false"
+    radiusstart="50"
+    radiusend="300,350,400"
+    
+    innerradiusoffset="75"
+    
+    lifetime="500"
+    maximpactspertarget="1"
+    targetselection="all"
+    targetscheme="enemy_units"
+    effecttype="Magic"
+    persist="true"
+    impacteffect=""
+    effect="effects/cast.effect"
+    canturn="false"
 
-	
+    
 >
-	<onimpact>
-		<damage effecttype="Magic" amount="66,100,144" />
-		<playeffect effect="effects/impact.effect" source="target_entity" target="" />
-	</onimpact>
-	
-	<modifier key="ult_boost" modpriority="100">
-		<onimpact>
-			<playeffect effect="effects/impact.effect" source="target_entity" target="" />
-			<damage effecttype="Magic" amount="88,133,177" />
-		</onimpact>
-	</modifier>
+    <onimpact>
+        <damage effecttype="Magic" amount="66,100,144" />
+        <playeffect effect="effects/impact.effect" source="target_entity" target="" />
+    </onimpact>
+    
+    <modifier key="ult_boost" modpriority="100">
+        <onimpact>
+            <playeffect effect="effects/impact.effect" source="target_entity" target="" />
+            <damage effecttype="Magic" amount="88,133,177" />
+        </onimpact>
+    </modifier>
 </affector>

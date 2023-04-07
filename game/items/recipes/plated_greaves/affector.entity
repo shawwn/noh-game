@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_PlatedGreaves"
+    name="Affector_PlatedGreaves"
 
-	radius="450"
-	
-	targetselection="all"
-	targetscheme="ally_units"
-	effecttype="Magic"
-	persist="false"
+    radius="450"
+    
+    targetselection="all"
+    targetscheme="ally_units"
+    effecttype="Magic"
+    persist="false"
 >
-	<onimpact>
-		<applystate name="State_PlatedGreaves" duration="30000"/>
-	</onimpact>
+    <onimpact>
+        <applystate name="State_PlatedGreaves" duration="30000"/>
+    </onimpact>
 </affector>

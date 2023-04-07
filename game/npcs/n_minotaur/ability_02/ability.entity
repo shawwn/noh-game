@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Minotaur2"
+    name="Ability_Minotaur2"
 
-	
-	
-	icon="icon.tga"
+    
+    
+    icon="icon.tga"
 
-	
-	actiontype="passive"
+    
+    actiontype="passive"
 >
-	<aura state="State_Minotaur_Ability2" radius="900" targetscheme="ally_units" />
+    <aura state="State_Minotaur_Ability2" radius="900" targetscheme="ally_units" />
 </ability>

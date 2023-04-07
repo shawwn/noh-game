@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Leoric2"
+    name="Ability_Leoric2"
 
-	icon="icon.tga"
-	
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    icon="icon.tga"
+    
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="passive"
+    actiontype="passive"
 >
-	<aura state="State_Leoric_Ability2" radius="900" effecttype="Buff" targetscheme="ally_units" propagatecondition="not_stealthed" />
-	<modifier key="leoric_melee" condition="melee" modpriority="100"
-	>
-		<onattackimpact>
-			<playeffect effect="../../../items/recipes/abyssal_skull/lifesteal.effect" source="source_entity" target="target_entity" />
-		</onattackimpact>
-	</modifier>
+    <aura state="State_Leoric_Ability2" radius="900" effecttype="Buff" targetscheme="ally_units" propagatecondition="not_stealthed" />
+    <modifier key="leoric_melee" condition="melee" modpriority="100"
+    >
+        <onattackimpact>
+            <playeffect effect="../../../items/recipes/abyssal_skull/lifesteal.effect" source="source_entity" target="target_entity" />
+        </onattackimpact>
+    </modifier>
 </ability>

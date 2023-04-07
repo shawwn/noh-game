@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Regen"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="0"
-	components="Item_Lifetube Item_Manatube"
-	autoassemble="true"
-	allowdisassemble="true"
-	
-	actiontype="passive"
-	
-	healthregen="5"
-	manaregenmultiplier="1.25"
-	damage="10"
+    name="Item_Regen"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="0"
+    components="Item_Lifetube Item_Manatube"
+    autoassemble="true"
+    allowdisassemble="true"
+    
+    actiontype="passive"
+    
+    healthregen="5"
+    manaregenmultiplier="1.25"
+    damage="10"
 >
 </item>

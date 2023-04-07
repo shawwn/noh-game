@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Gauntlet_Ability2"
+    name="State_Gauntlet_Ability2"
 
-	icon="icon.tga"
+    icon="icon.tga"
 
-	silenced="true"
-	perplexed="true"
-	disarmed="true"
-	immobilized="true"
-	
-	effecttype=""
+    silenced="true"
+    perplexed="true"
+    disarmed="true"
+    immobilized="true"
+    
+    effecttype=""
 >
 </state>

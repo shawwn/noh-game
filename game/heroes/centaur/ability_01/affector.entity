@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Centaur_Ability1"
-	
-	radius="350"
-	impacteffect=""
-	targetselection="all"
-	targetscheme="enemy_units"
-	effecttype="Magic"
+    name="Affector_Centaur_Ability1"
+    
+    radius="350"
+    impacteffect=""
+    targetselection="all"
+    targetscheme="enemy_units"
+    effecttype="Magic"
 >
-	<onimpact>
-		<damage effecttype="Magic" amount="100,150,200,250"/>
-		<applystate name="State_Stunned" duration="1250,1750,2250,2750"/>
-	</onimpact>
+    <onimpact>
+        <damage effecttype="Magic" amount="100,150,200,250"/>
+        <applystate name="State_Stunned" duration="1250,1750,2250,2750"/>
+    </onimpact>
 </affector>

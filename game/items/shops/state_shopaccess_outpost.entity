@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_ShopAccess_Outpost"
+    name="State_ShopAccess_Outpost"
 
-	icon="/items/icons/scroll.tga"
-	passiveeffect=""
-	
-	effecttype=""
-	
-	shopaccess="Shop_Outpost Shop_Outpost2"
+    icon="/items/icons/scroll.tga"
+    passiveeffect=""
+    
+    effecttype=""
+    
+    shopaccess="Shop_Outpost Shop_Outpost2"
 >
 </state>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Item3A"
+    name="State_Item3A"
 
-	
-	
-	icon="icon.tga"
-	
-	passiveeffect="passive.effect"	
-	
-	movespeedslow="0.15"
-	
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    
+    passiveeffect="passive.effect"  
+    
+    movespeedslow="0.15"
+    
+    effecttype="StatusDebuff"
 >
 </state>

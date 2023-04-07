@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_NecroRanged_2"
+    name="Ability_NecroRanged_2"
 
-	
-	
-	icon="icon.tga"
-	
-	actiontype="passive"
+    
+    
+    icon="icon.tga"
+    
+    actiontype="passive"
 >
-	<aura state="State_NecroRanged_2" radius="350" targetscheme="ally_units" />
+    <aura state="State_NecroRanged_2" radius="350" targetscheme="ally_units" />
 </ability>

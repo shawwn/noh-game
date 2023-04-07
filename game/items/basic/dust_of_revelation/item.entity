@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_DustOfRevelation"
-	
-	icon="icon.tga"
-	statuseffecttooltip="State_DustOfRevelation"
-	
-	cost="180"
-	initialcharges="2"
-	chargecost="1"
-	maxcharges="2"
-	destroyonempty="true"
-	rechargeable="true"
-	allowsharing="true"
-	
-	actiontype="self_position"
-	targetscheme="enemy_units"
-	targetradius="1250"
-	casttime="500"
-	castactiontime="200"
-	cooldowntime="60000"
-	cooldowntype="dustofrevelation"
-	casteffect="cast.effect"
+    name="Item_DustOfRevelation"
+    
+    icon="icon.tga"
+    statuseffecttooltip="State_DustOfRevelation"
+    
+    cost="180"
+    initialcharges="2"
+    chargecost="1"
+    maxcharges="2"
+    destroyonempty="true"
+    rechargeable="true"
+    allowsharing="true"
+    
+    actiontype="self_position"
+    targetscheme="enemy_units"
+    targetradius="1250"
+    casttime="500"
+    castactiontime="200"
+    cooldowntime="60000"
+    cooldowntype="dustofrevelation"
+    casteffect="cast.effect"
 >
-	<onimpact>
-		<spawnaffector name="Affector_DustOfRevelation" target="source_position"/>
-		<playanim name="item_1" target="source_entity" />
-	</onimpact>
+    <onimpact>
+        <spawnaffector name="Affector_DustOfRevelation" target="source_position"/>
+        <playanim name="item_1" target="source_entity" />
+    </onimpact>
 </item>

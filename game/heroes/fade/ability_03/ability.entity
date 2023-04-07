@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Fade3"
-	statuseffecttooltip="State_Fade_Ability3"
+    name="Ability_Fade3"
+    statuseffecttooltip="State_Fade_Ability3"
 
-	icon="icon.tga"
-	
-	anim="ability_3"
-	casttime="0"
-	castactiontime="0"
+    icon="icon.tga"
+    
+    anim="ability_3"
+    casttime="0"
+    castactiontime="0"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="target_self"
-	
-	frontqueue="true"
-	inheritmovement="true"
-	
-	manacost="40"
-	cooldowntime="45000,34000,23000,12000"
+    actiontype="target_self"
+    
+    frontqueue="true"
+    inheritmovement="true"
+    
+    manacost="40"
+    cooldowntime="45000,34000,23000,12000"
 >
-	<onimpact>
-		<disjoint target="source_entity" />
-		<applystate name="State_Fade_Ability3" duration="3000" />
-	</onimpact>
+    <onimpact>
+        <disjoint target="source_entity" />
+        <applystate name="State_Fade_Ability3" duration="3000" />
+    </onimpact>
 </ability>

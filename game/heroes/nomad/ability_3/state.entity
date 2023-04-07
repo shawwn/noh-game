@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Nomad_Ability3"
+    name="State_Nomad_Ability3"
 
-	
-	
-	icon="icon_day.tga"
-	
-	passiveeffect="state.effect"
+    
+    
+    icon="icon_day.tga"
+    
+    passiveeffect="state.effect"
 
-	movespeedslow="0.09"
-	movespeedslowpercharge="0.05"
+    movespeedslow="0.09"
+    movespeedslowpercharge="0.05"
 
-	effecttype="StatusDebuff"
+    effecttype="StatusDebuff"
 >
-	<onattackedpostimpact>
-		<addcharges count="1" />
-	</onattackedpostimpact>
-	
-	<onattack>
-		<addcharges count="1" />
-	</onattack>
-	
-	<onactivatestart>
-		<addcharges count="3" />
-	</onactivatestart>
+    <onattackedpostimpact>
+        <addcharges count="1" />
+    </onattackedpostimpact>
+    
+    <onattack>
+        <addcharges count="1" />
+    </onattack>
+    
+    <onactivatestart>
+        <addcharges count="3" />
+    </onactivatestart>
 </state>

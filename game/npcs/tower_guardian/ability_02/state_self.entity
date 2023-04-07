@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_TowerGuardian_Ability2_Self"
+    name="State_TowerGuardian_Ability2_Self"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect=""
-	
+    
+    
+    icon="icon.tga"
+    passiveeffect=""
+    
 >
-	<onframe >
-		<condition test="target_health_percent lt 1.0" target="proxy_entity">
-			<damage amount="200" b="frametime" op="mult" nonlethal="true"/>
-		</condition>
-	</onframe>
+    <onframe >
+        <condition test="target_health_percent lt 1.0" target="proxy_entity">
+            <damage amount="200" b="frametime" op="mult" nonlethal="true"/>
+        </condition>
+    </onframe>
 </state>

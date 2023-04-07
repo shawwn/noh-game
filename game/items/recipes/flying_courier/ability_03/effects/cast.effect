@@ -1,99 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="1" useentityeffectscale="1">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="world" scale="1">
+        <particlesystem name="system0" space="world" scale="1">
 <!--
-			<billboard
-				bone="_bone_centerofchest"
-				width="100"
-				height="10"
-				position="0 0 0"
-				life="510"
-				material="/shared/effects/materials/whitedot.material"
-				startcolor=".4 .2 .1"
-				endcolor="0"
-			>
-			</billboard>
-			
-			<billboard
-				bone="_bone_centerofchest"
-				width="100"
-				height="10"
-				position="0 0 0"
-				life="510"
-				material="/shared/effects/materials/whitedot.material"
-				startcolor=".4 .2 .1"
-				endcolor="0"
-			>
-			</billboard>
+            <billboard
+                bone="_bone_centerofchest"
+                width="100"
+                height="10"
+                position="0 0 0"
+                life="510"
+                material="/shared/effects/materials/whitedot.material"
+                startcolor=".4 .2 .1"
+                endcolor="0"
+            >
+            </billboard>
+            
+            <billboard
+                bone="_bone_centerofchest"
+                width="100"
+                height="10"
+                position="0 0 0"
+                life="510"
+                material="/shared/effects/materials/whitedot.material"
+                startcolor=".4 .2 .1"
+                endcolor="0"
+            >
+            </billboard>
 -->
-			<simpleemitter
-				bone="_bone_centerofchest"
-				count="1"
-				particlelife="300"
-				position="0 0 0"
-				material="/shared/effects/materials/whitedot.material"
-			>
-				<particle
-					startcolor=".5 .25 .05"
-					endcolor="0 0 0"
-					startsize="200"
-					endsize="0"
-				/>
-			</simpleemitter>
-			
-			<simpleemitter
-				bone="_bone_centerofchest"
-				count="1"
-				spawnrate="2000"
-				gravity="500"
-				particlelife="300"
-				position="0 0 0"
-				material="/shared/effects/materials/whitedot.material"
-			>
-				<particle>
-					<model
-						life="250"
-						startalpha="0"
-						midalpha="1"
-						endalpha="0"
-						midalphapos=".1"
-						model="/shared/models/chest/chest.mdf"
-						anim="idle"
-						yawspeed="0"
-						startscale="1.35"
-						midscale="1.75"
-						endscale="1.35"
-						color="2 2 2"
-						directionalspace="local"
-					>	
-						<billboard
-							bone="_bone_centerofchest"
-							width="100"
-							height="10"
-							position="0 0 0"
-							life="510"
-							material="/shared/effects/materials/whitedot.material"
-							startcolor=".4 .2 .1"
-							endcolor="0"
-						/>	
-					</model>
-					
-					
-				</particle>
-			</simpleemitter>
-				
-		</particlesystem>
+            <simpleemitter
+                bone="_bone_centerofchest"
+                count="1"
+                particlelife="300"
+                position="0 0 0"
+                material="/shared/effects/materials/whitedot.material"
+            >
+                <particle
+                    startcolor=".5 .25 .05"
+                    endcolor="0 0 0"
+                    startsize="200"
+                    endsize="0"
+                />
+            </simpleemitter>
+            
+            <simpleemitter
+                bone="_bone_centerofchest"
+                count="1"
+                spawnrate="2000"
+                gravity="500"
+                particlelife="300"
+                position="0 0 0"
+                material="/shared/effects/materials/whitedot.material"
+            >
+                <particle>
+                    <model
+                        life="250"
+                        startalpha="0"
+                        midalpha="1"
+                        endalpha="0"
+                        midalphapos=".1"
+                        model="/shared/models/chest/chest.mdf"
+                        anim="idle"
+                        yawspeed="0"
+                        startscale="1.35"
+                        midscale="1.75"
+                        endscale="1.35"
+                        color="2 2 2"
+                        directionalspace="local"
+                    >   
+                        <billboard
+                            bone="_bone_centerofchest"
+                            width="100"
+                            height="10"
+                            position="0 0 0"
+                            life="510"
+                            material="/shared/effects/materials/whitedot.material"
+                            startcolor=".4 .2 .1"
+                            endcolor="0"
+                        />  
+                    </model>
+                    
+                    
+                </particle>
+            </simpleemitter>
+                
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<spawnparticlesystem instance="instance1" particlesystem="system1" />
-		<waitfordeath instance="instance0" />
-		<waitfordeath instance="instance1" />
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <spawnparticlesystem instance="instance1" particlesystem="system1" />
+        <waitfordeath instance="instance0" />
+        <waitfordeath instance="instance1" />
+    </thread>
 
 </effect>

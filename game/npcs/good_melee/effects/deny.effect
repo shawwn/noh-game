@@ -1,301 +1,301 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="warp">
-	<definitions>
-	
+    <definitions>
+    
 
-		<modifier
-			name="modifier0"
-			life="20000"
-			
-			startcolor="1 1 1"
-			midcolor="4 4 4"
-			endcolor="0 0 0"			
-			midcolorpos=".1"
-			
-		
-		/>
-		
-		<particlesystem name="system0" space="world">
-
-
-			<sound
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2500"
-				volume="0.5"
-				sample="/shared/sounds/effects/deny.wav"
-			/>
+        <modifier
+            name="modifier0"
+            life="20000"
+            
+            startcolor="1 1 1"
+            midcolor="4 4 4"
+            endcolor="0 0 0"            
+            midcolorpos=".1"
+            
+        
+        />
+        
+        <particlesystem name="system0" space="world">
 
 
-			
-			
-		<light
-			life="250"			
-			startcolor="-10 -10 -10"			
-			endcolor="0 0 0"
-			midcolorpos=".2"
-			falloffstart="00"
-			falloffend="155"
-			position="0 0 20"	
-		/>
-		
-			
-		<model
-			
-			position="0 0 70"
-			life="1000"
-			model="/shared/effects/models/orb/orb.mdf"
-			anim="idle"
-			scale=".5"
-			
-			
-		
-		/>
-			
-		<simpleemitter
-		bone="_bone_centerofchest"
-			life="300"
-			spawnrate="15"
-			particlelife="400"
-			gravity="-6"
-			speed="0.0"
-			acceleration="0.0"
-			timenudge="0"
-			position="0 0 0"
-			material="/shared/effects/materials/flare_01.material"
-		>
-			<particle
-				startcolor="1 .2 0"
-				endcolor="0.0 0.0 0.0"
+            <sound
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2500"
+                volume="0.5"
+                sample="/shared/sounds/effects/deny.wav"
+            />
 
 
-				startalpha=".02"
-				endalpha="0"
-
-				minangle="0"
-				maxangle="360"
-				minanglespeed="0"
-				maxanglespeed="0"
-
-				startsize="150"
-				midsize="120"
-				endsize="50"
-
-				lockup="true"
-				pitch="90"
-
-			/>
-		</simpleemitter>
-
-		
-		
-		<simpleemitter
-		bone="_bone_centerofchest"
-			delay="200"
-			count="1"
-			particlelife="200"
-			gravity="-6"
-			speed="0.0"
-			acceleration="0.0"
-			timenudge="0"
-			position="0 0 40"
-			
-			material="/shared/effects/materials/blink.material"
-		>
-			<particle
-				anglespeed="20"
-				startcolor="0 0 0"
-				midcolor="1 .2 .7"
-				endcolor="0.0 0.0 0.0"
-				midcolorpos=".1"
-
-
-				startsize="280"
-				midsize="220"
-				endsize="0"
+            
+            
+        <light
+            life="250"          
+            startcolor="-10 -10 -10"            
+            endcolor="0 0 0"
+            midcolorpos=".2"
+            falloffstart="00"
+            falloffend="155"
+            position="0 0 20"   
+        />
+        
+            
+        <model
+            
+            position="0 0 70"
+            life="1000"
+            model="/shared/effects/models/orb/orb.mdf"
+            anim="idle"
+            scale=".5"
+            
+            
+        
+        />
+            
+        <simpleemitter
+        bone="_bone_centerofchest"
+            life="300"
+            spawnrate="15"
+            particlelife="400"
+            gravity="-6"
+            speed="0.0"
+            acceleration="0.0"
+            timenudge="0"
+            position="0 0 0"
+            material="/shared/effects/materials/flare_01.material"
+        >
+            <particle
+                startcolor="1 .2 0"
+                endcolor="0.0 0.0 0.0"
 
 
-			/>
-		</simpleemitter>		
+                startalpha=".02"
+                endalpha="0"
 
-		<billboard
-			delay="160"
-			position="0 0 20"
-			life="200"
-			color="1 1 1"
-			startalpha="1.0"				
-			endalpha="1"
-			startparam="0.15"
-			endparam="0.0"				
-			startsize="228"
-			endsize="124"
-			material="/shared/effects/materials/refract_ring.material"
-			lockup="1"
-			pitch="90"
-		/>
-		
-		<billboard
-			delay="50"
-			position="0 0 80"
-			life="250"
-			color=".4 0 .5"
-			startalpha="1.0"				
-			endalpha="1"
-			startparam="0.15"
-			endparam="0.0"				
-			startsize="28"
-			midsize="200"
-			endsize="54"
-			material="/shared/effects/materials/shieldstarfish.material"
-			lockup="1"
-			pitch="90"
-		/>	
-			<groundsprite
-				delay="0"
-				
-							
-				material="/shared/effects/materials/twirl_blend.material"
-				
-				life="1000"
-				
-				startsize="130"				
-				endsize="50"
-				yawspeed="-100"
-				startcolor="0  0 0"
-				endcolor="0  0 0"
-				startalpha="0"
-				midalpha="1"
-				endalpha="0"
-			/>
-	
-			
-			<billboard	
-				delay="333"			
-				startwidth="1100"				
-				endwidth="000"				
-				startheight="50"				
-				endheight="10"
-				position="0 0 80"
-				
-				life="210"
-				material="/shared/effects/materials/whitedot.material"				
-				startcolor="0  0 0"
-				endcolor="1 .3 1"
-				
-			/>	
-		
+                minangle="0"
+                maxangle="360"
+                minanglespeed="0"
+                maxanglespeed="0"
 
-			<billboard	
-				delay="333"			
-				startwidth="800"				
-				endwidth="000"				
-				startheight="10"				
-				endheight="10"
-				position="0 0 80"
-				depthbias="-20"
-				life="210"
-				material="/shared/effects/materials/whitedot.material"				
-				startcolor="0  0 0"
-				endcolor="1 1 0"
-				
-			/>			
-		
-		
-		
-		
-		
-		
-		
-		
+                startsize="150"
+                midsize="120"
+                endsize="50"
+
+                lockup="true"
+                pitch="90"
+
+            />
+        </simpleemitter>
+
+        
+        
+        <simpleemitter
+        bone="_bone_centerofchest"
+            delay="200"
+            count="1"
+            particlelife="200"
+            gravity="-6"
+            speed="0.0"
+            acceleration="0.0"
+            timenudge="0"
+            position="0 0 40"
+            
+            material="/shared/effects/materials/blink.material"
+        >
+            <particle
+                anglespeed="20"
+                startcolor="0 0 0"
+                midcolor="1 .2 .7"
+                endcolor="0.0 0.0 0.0"
+                midcolorpos=".1"
+
+
+                startsize="280"
+                midsize="220"
+                endsize="0"
+
+
+            />
+        </simpleemitter>        
+
+        <billboard
+            delay="160"
+            position="0 0 20"
+            life="200"
+            color="1 1 1"
+            startalpha="1.0"                
+            endalpha="1"
+            startparam="0.15"
+            endparam="0.0"              
+            startsize="228"
+            endsize="124"
+            material="/shared/effects/materials/refract_ring.material"
+            lockup="1"
+            pitch="90"
+        />
+        
+        <billboard
+            delay="50"
+            position="0 0 80"
+            life="250"
+            color=".4 0 .5"
+            startalpha="1.0"                
+            endalpha="1"
+            startparam="0.15"
+            endparam="0.0"              
+            startsize="28"
+            midsize="200"
+            endsize="54"
+            material="/shared/effects/materials/shieldstarfish.material"
+            lockup="1"
+            pitch="90"
+        />  
+            <groundsprite
+                delay="0"
+                
+                            
+                material="/shared/effects/materials/twirl_blend.material"
+                
+                life="1000"
+                
+                startsize="130"             
+                endsize="50"
+                yawspeed="-100"
+                startcolor="0  0 0"
+                endcolor="0  0 0"
+                startalpha="0"
+                midalpha="1"
+                endalpha="0"
+            />
+    
+            
+            <billboard  
+                delay="333"         
+                startwidth="1100"               
+                endwidth="000"              
+                startheight="50"                
+                endheight="10"
+                position="0 0 80"
+                
+                life="210"
+                material="/shared/effects/materials/whitedot.material"              
+                startcolor="0  0 0"
+                endcolor="1 .3 1"
+                
+            />  
+        
+
+            <billboard  
+                delay="333"         
+                startwidth="800"                
+                endwidth="000"              
+                startheight="10"                
+                endheight="10"
+                position="0 0 80"
+                depthbias="-20"
+                life="210"
+                material="/shared/effects/materials/whitedot.material"              
+                startcolor="0  0 0"
+                endcolor="1 1 0"
+                
+            />          
+        
+        
+        
+        
+        
+        
+        
+        
 <simpleemitter
-		
-			spawnrate="1000"
-			
-			count="10"
-			particlelife="1000"			
-			gravity="0"
-			speed="30"
-			drag="0"
-			acceleration="0"
-			position="0 0 55"
+        
+            spawnrate="1000"
+            
+            count="10"
+            particlelife="1000"         
+            gravity="0"
+            speed="30"
+            drag="0"
+            acceleration="0"
+            position="0 0 55"
 
-			material="/shared/effects/materials/smoke_24.material"
-			offsetsphere="45 45 45"
-			minangle="0"
-			maxangle="360"
-			direction="0 0 1"
-			offsetdirection="0 0 0"
-			offsetradial="0 0 0"
-		>
+            material="/shared/effects/materials/smoke_24.material"
+            offsetsphere="45 45 45"
+            minangle="0"
+            maxangle="360"
+            direction="0 0 1"
+            offsetdirection="0 0 0"
+            offsetradial="0 0 0"
+        >
 
-			<particle 
-				minangle="0"
-				maxangle="0"
-				minanglespeed="-40"
-				maxanglespeed="-140"
-				color="0 0 0"
-				
-				midcolorpos=".2"
+            <particle 
+                minangle="0"
+                maxangle="0"
+                minanglespeed="-40"
+                maxanglespeed="-140"
+                color="0 0 0"
+                
+                midcolorpos=".2"
 
-				startframe="0"
-				endframe="1"
-				startsize="140"
-				
-				endsize="3"
-				startalpha=".8"
-				midalpha=".4"
-				endalpha="0"
-				midalphapos=".3"
-				startstickiness="-1"
-				endstickiness="1"
-			/>
-		
-		</simpleemitter>		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+                startframe="0"
+                endframe="1"
+                startsize="140"
+                
+                endsize="3"
+                startalpha=".8"
+                midalpha=".4"
+                endalpha="0"
+                midalphapos=".3"
+                startstickiness="-1"
+                endstickiness="1"
+            />
+        
+        </simpleemitter>        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
       </particlesystem>
    </definitions>
    <thread>
       <spawnparticlesystem instance="instance0" particlesystem="system0" />
-	<spawnmodifier instance="instance1" modifier="modifier0"/>     
-	<waitfordeath instance="instance0" />
+    <spawnmodifier instance="instance1" modifier="modifier0"/>     
+    <waitfordeath instance="instance0" />
       <!-- <die /> -->
    </thread>
 </effect>

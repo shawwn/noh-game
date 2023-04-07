@@ -15,13 +15,13 @@
 //=============================================================================
 // Sampler
 //=============================================================================
-uniform sampler2D	image;
+uniform sampler2D   image;
 
 //=============================================================================
 // Pixel Shader
 //=============================================================================
 void main()
 {
-	gl_FragColor = texture2D(image, gl_TexCoord[0].xy);
-	gl_FragColor.rgb = vec3(dot(gl_FragColor.rgb, vec3(0.30, 0.59, 0.11)));
+    gl_FragColor = texture2D(image, gl_TexCoord[0].xy);
+    gl_FragColor.rgb = vec3(dot(gl_FragColor.rgb, vec3(0.30, 0.59, 0.11)));
 }

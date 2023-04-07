@@ -1,131 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect>
-	<definitions>
-		<particlesystem name="system0" space="world" scale="0.1" color="1.2 1.2 1.2">
-		<!--
-			<sound
-				sound2d="true"
-				sample="/shared/sounds/symbolic/ping.wav"
-			/>-->
+    <definitions>
+        <particlesystem name="system0" space="world" scale="0.1" color="1.2 1.2 1.2">
+        <!--
+            <sound
+                sound2d="true"
+                sample="/shared/sounds/symbolic/ping.wav"
+            />-->
 
-			<billboard
-				color="1"
-				life="400"
-				material="/shared/effects/materials/death.material"
-				startsize="33"
-				endsize="22"
-				
-				
-			/>				
-			
-			<billboard
-				delay="400"
-				color="1 "
-				life="5000"
-				material="/shared/effects/materials/death.material"
-				startsize="22"
-				midsize="22"
-				midsizepos="0.95"
-				endsize="0"
-			/>	
-				
-			<billboard
-				color="1"
-				life="300"
-				material="/shared/effects/materials/corona_07.material"
-				startsize="100"
-				endsize="0"
-			/>	
-			<billboard
-				color="1"	
-				life="300"
-				material="/shared/effects/materials/arrows.material"
-				startsize="80"
-				endsize="0"
-			/>	
-			
-			
-			<billboard
-				color="1"
-				delay="300"
-				life="1000"
-				material="/shared/effects/materials/corona_07.material"
-				startsize="0"
-				endsize="130"
-				startcolor="1"
-				midcolor="1 "
-				endcolor="0 0 0"
-			/>	
-			
-			<billboard
-				delay="300"
-				life="1000"
-				material="/shared/effects/materials/starlight.material"
-				startsize="44"
-				endsize="130"
-				startcolor=".3"
-				midcolor=".3 "
-				endcolor="0 0 0"
-			/>		
-			
-			
-			
-			<simpleemitter
-				delay="0"
-				count="4"
-				spawnrate="1"
-				particlelife="2000"	
-			>
-				<particle>
-					<billboard
-						life="500"
-						material="/shared/effects/materials/whitedot.material"
-						startsize="0"
-						midsize="25"
-						midsizepos=".8"
-						endsize="0"
-						color=".3"
-					/>	
-					
-					<billboard
-						life="1000"
-						material="/shared/effects/materials/corona_06.material"
-						startsize="0"
-						endsize="50"
-						startcolor="1"
-						midcolor="1"
-						endcolor="0 0 0"
-					/>
-				</particle>
-			</simpleemitter>
-			
-			<simpleemitter
-				delay="200"
-				count="4"
-				spawnrate="1"
-				particlelife="2000"	
-			>
-				<particle>
-					<billboard
-						life="1000"
-						material="/shared/effects/materials/corona_07.material"
-						startsize="0"
-						endsize="50"
-						startcolor="1"
-						midcolor="1 "
-						endcolor="0 0 0"
-					/>
-				</particle>
-			</simpleemitter>	
+            <billboard
+                color="1"
+                life="400"
+                material="/shared/effects/materials/death.material"
+                startsize="33"
+                endsize="22"
+                
+                
+            />              
+            
+            <billboard
+                delay="400"
+                color="1 "
+                life="5000"
+                material="/shared/effects/materials/death.material"
+                startsize="22"
+                midsize="22"
+                midsizepos="0.95"
+                endsize="0"
+            />  
+                
+            <billboard
+                color="1"
+                life="300"
+                material="/shared/effects/materials/corona_07.material"
+                startsize="100"
+                endsize="0"
+            />  
+            <billboard
+                color="1"   
+                life="300"
+                material="/shared/effects/materials/arrows.material"
+                startsize="80"
+                endsize="0"
+            />  
+            
+            
+            <billboard
+                color="1"
+                delay="300"
+                life="1000"
+                material="/shared/effects/materials/corona_07.material"
+                startsize="0"
+                endsize="130"
+                startcolor="1"
+                midcolor="1 "
+                endcolor="0 0 0"
+            />  
+            
+            <billboard
+                delay="300"
+                life="1000"
+                material="/shared/effects/materials/starlight.material"
+                startsize="44"
+                endsize="130"
+                startcolor=".3"
+                midcolor=".3 "
+                endcolor="0 0 0"
+            />      
+            
+            
+            
+            <simpleemitter
+                delay="0"
+                count="4"
+                spawnrate="1"
+                particlelife="2000" 
+            >
+                <particle>
+                    <billboard
+                        life="500"
+                        material="/shared/effects/materials/whitedot.material"
+                        startsize="0"
+                        midsize="25"
+                        midsizepos=".8"
+                        endsize="0"
+                        color=".3"
+                    />  
+                    
+                    <billboard
+                        life="1000"
+                        material="/shared/effects/materials/corona_06.material"
+                        startsize="0"
+                        endsize="50"
+                        startcolor="1"
+                        midcolor="1"
+                        endcolor="0 0 0"
+                    />
+                </particle>
+            </simpleemitter>
+            
+            <simpleemitter
+                delay="200"
+                count="4"
+                spawnrate="1"
+                particlelife="2000" 
+            >
+                <particle>
+                    <billboard
+                        life="1000"
+                        material="/shared/effects/materials/corona_07.material"
+                        startsize="0"
+                        endsize="50"
+                        startcolor="1"
+                        midcolor="1 "
+                        endcolor="0 0 0"
+                    />
+                </particle>
+            </simpleemitter>    
 
-		</particlesystem>
-	</definitions>
+        </particlesystem>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-		<!-- <die /> -->
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][pos] -->

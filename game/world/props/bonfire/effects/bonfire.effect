@@ -1,106 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="bonfire" pausable="true">
-	<definitions>
-		<particlesystem name="system0" space="world">		
-		
-			<simpleemitter
-				spawnrate="50"
-				particlelife="1000"
-				gravity="-10"
-				speed="10"
-				drag=".003"
-				acceleration="00"
-				position="5 -10 0"
-				material="/shared/effects/materials/smoke_particle.material"
-				offsetsphere="10 10 0"
-				minangle="0"
-				maxangle="0"
-				direction="0 0 0"
-			>
-				<particle 
-					minangle="0"
-					maxangle="180"
-					minanglespeed="50"
-					startcolor=".2 .2 .1"
-					midcolor=".2 .2 .1"
-					endcolor=".2 .2 .1"
-					midcolorpos="1"
-					maxanglespeed="0"
-					startsize="20"
-					midsize="35"
-					endsize="10"
-					startalpha="0"
-					midalpha="1"
-					endalpha="0"
-					startstickiness="0"
-					endstickiness="0"
-				/>
-			</simpleemitter>
-			
-			<simpleemitter
-				spawnrate="40"
-				particlelife="600"
-				gravity="-10"
-				speed="10"
-				drag=".003"
-				acceleration="00"
-				position="5 -10 0"
-				material="/shared/effects/materials/flame.material"
-				offsetsphere="10 10 0"
-				minangle="0"
-				maxangle="0"
-				direction="0 0 0"
-			>
-				<particle 
-					minangle="0"
-					maxangle="180"
-					minanglespeed="50"
-					startcolor=".3 .3 .2"
-					midcolor=".3 .3 .2"
-					endcolor=".3 .3 .2"
-					midcolorpos="1"
-					maxanglespeed="0"
-					startsize="20"
-					midsize="35"
-					endsize="10"
-					startalpha=".1"
-					midalpha=".3"
-					endalpha="0"
-					startstickiness="0"
-					endstickiness="0"
-				/>
-			</simpleemitter>
+    <definitions>
+        <particlesystem name="system0" space="world">       
+        
+            <simpleemitter
+                spawnrate="50"
+                particlelife="1000"
+                gravity="-10"
+                speed="10"
+                drag=".003"
+                acceleration="00"
+                position="5 -10 0"
+                material="/shared/effects/materials/smoke_particle.material"
+                offsetsphere="10 10 0"
+                minangle="0"
+                maxangle="0"
+                direction="0 0 0"
+            >
+                <particle 
+                    minangle="0"
+                    maxangle="180"
+                    minanglespeed="50"
+                    startcolor=".2 .2 .1"
+                    midcolor=".2 .2 .1"
+                    endcolor=".2 .2 .1"
+                    midcolorpos="1"
+                    maxanglespeed="0"
+                    startsize="20"
+                    midsize="35"
+                    endsize="10"
+                    startalpha="0"
+                    midalpha="1"
+                    endalpha="0"
+                    startstickiness="0"
+                    endstickiness="0"
+                />
+            </simpleemitter>
+            
+            <simpleemitter
+                spawnrate="40"
+                particlelife="600"
+                gravity="-10"
+                speed="10"
+                drag=".003"
+                acceleration="00"
+                position="5 -10 0"
+                material="/shared/effects/materials/flame.material"
+                offsetsphere="10 10 0"
+                minangle="0"
+                maxangle="0"
+                direction="0 0 0"
+            >
+                <particle 
+                    minangle="0"
+                    maxangle="180"
+                    minanglespeed="50"
+                    startcolor=".3 .3 .2"
+                    midcolor=".3 .3 .2"
+                    endcolor=".3 .3 .2"
+                    midcolorpos="1"
+                    maxanglespeed="0"
+                    startsize="20"
+                    midsize="35"
+                    endsize="10"
+                    startalpha=".1"
+                    midalpha=".3"
+                    endalpha="0"
+                    startstickiness="0"
+                    endstickiness="0"
+                />
+            </simpleemitter>
 
-			<simpleemitter
-				spawnrate="50"
-				particlelife="1000"
-				gravity="-6"
-				speed="10"
-				drag=".003"
-				position="5 -10 10"
-				material="/shared/effects/materials/spark_10.material"
-				offsetsphere="15 15 0"
-				minangle="0"
-				maxangle="0"
-				direction="0 0 0"
-			>
-				<particle
-					startcolor="1 .5 .2"
-					endcolor="0 0 0"
-					alpha="1.0"
-					width="5"
-					height="5"
-					lockup="false"
-					lockright="false"
-					minangle="-360"
-					maxangle="1"
-					minanglespeed="110"
-					maxanglespeed="-110"
-				/>
-			</simpleemitter>		
+            <simpleemitter
+                spawnrate="50"
+                particlelife="1000"
+                gravity="-6"
+                speed="10"
+                drag=".003"
+                position="5 -10 10"
+                material="/shared/effects/materials/spark_10.material"
+                offsetsphere="15 15 0"
+                minangle="0"
+                maxangle="0"
+                direction="0 0 0"
+            >
+                <particle
+                    startcolor="1 .5 .2"
+                    endcolor="0 0 0"
+                    alpha="1.0"
+                    width="5"
+                    height="5"
+                    lockup="false"
+                    lockright="false"
+                    minangle="-360"
+                    maxangle="1"
+                    minanglespeed="110"
+                    maxanglespeed="-110"
+                />
+            </simpleemitter>        
 
-		</particlesystem>
-	</definitions>
+        </particlesystem>
+    </definitions>
 <thread>
 <spawnparticlesystem instance="instance0" particlesystem="system0" />
 <waitfordeath instance="instance0" />

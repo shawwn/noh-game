@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Fade_Ability4_Slow"
+    name="State_Fade_Ability4_Slow"
 
-	icon="icon.tga"
-	passiveeffect=""
-	
-	movespeedslow="0.25,0.35,0.45"
-	
-	effecttype="StatusDebuff"
+    icon="icon.tga"
+    passiveeffect=""
+    
+    movespeedslow="0.25,0.35,0.45"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe>
-		<setvar0 a="20" b="charges" op="mult" />
-		<setvar0 a="var0" b="frametime" op="mult" />
-		<damage effecttype="Magic DOT" amount="1" b="var0" op="mult" />
-	</onframe>
+    <onframe>
+        <setvar0 a="20" b="charges" op="mult" />
+        <setvar0 a="var0" b="frametime" op="mult" />
+        <damage effecttype="Magic DOT" amount="1" b="var0" op="mult" />
+    </onframe>
 
-	<oninflict>
-		<playeffect effect="effects/impact.effect" source="target_entity" target="" />
-		<addcharges count="1" />
-	</oninflict>
-	
-	<onrefresh>
-		<playeffect effect="effects/impact.effect" source="target_entity" target="" />
-		<addcharges count="1" />
-	</onrefresh>
+    <oninflict>
+        <playeffect effect="effects/impact.effect" source="target_entity" target="" />
+        <addcharges count="1" />
+    </oninflict>
+    
+    <onrefresh>
+        <playeffect effect="effects/impact.effect" source="target_entity" target="" />
+        <addcharges count="1" />
+    </onrefresh>
 </state>

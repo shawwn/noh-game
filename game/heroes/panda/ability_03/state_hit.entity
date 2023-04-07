@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Panda_Ability3_Hit"
+    name="State_Panda_Ability3_Hit"
 
-	
-	ishidden="true"
-	icon="icon.tga"
-	effecttype="StatusBuff"
-	passiveeffect=""
+    
+    ishidden="true"
+    icon="icon.tga"
+    effecttype="StatusBuff"
+    passiveeffect=""
 >
 
-	
+    
 </state>

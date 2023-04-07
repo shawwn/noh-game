@@ -13,8 +13,8 @@
 //=============================================================================
 struct VS_OUTPUT
 {
-	float4 Color0 : COLOR0;
-	float3 Texcoord0 : TEXCOORD0;
+    float4 Color0 : COLOR0;
+    float3 Texcoord0 : TEXCOORD0;
 };
 
 //=============================================================================
@@ -22,7 +22,7 @@ struct VS_OUTPUT
 //=============================================================================
 struct PS_OUTPUT
 {
-	float4 Color : COLOR;
+    float4 Color : COLOR;
 };
 
 sampler diffuse0;
@@ -33,9 +33,9 @@ sampler diffuse1;
 //=============================================================================
 PS_OUTPUT PS( VS_OUTPUT In )
 {
-	PS_OUTPUT Out;
-	
-	Out.Color = lerp(tex2D(diffuse0, In.Texcoord0.xy), tex2D(diffuse1, In.Texcoord0.xy), saturate(In.Texcoord0.z)) * In.Color0;
-	
-	return Out;
+    PS_OUTPUT Out;
+    
+    Out.Color = lerp(tex2D(diffuse0, In.Texcoord0.xy), tex2D(diffuse1, In.Texcoord0.xy), saturate(In.Texcoord0.z)) * In.Color0;
+    
+    return Out;
 }

@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Insanitarius"
-	
-	statuseffecttooltip="State_Insanitarius"
-	icon="icon.tga"
-	
-	cost="500"
-	components="Item_HelmOfTheVictim Item_GlovesOfHaste Item_Steamstaff"
-	
-	actiontype="toggle"
-	frontqueue="true"
-	inheritmovement="true"
-	casttime="0"
-	castactiontime="0"
-	cooldowntime="10000"
-	toggleoffcooldowntime="0"
-	cooldowntype="insanitarius"
-	noninterrupting="true"
-	noresponse="true"
-	
-	damage="9"
-	attackspeed="0.15"
-	armor="5"
-	healthregen="3"
+    name="Item_Insanitarius"
+    
+    statuseffecttooltip="State_Insanitarius"
+    icon="icon.tga"
+    
+    cost="500"
+    components="Item_HelmOfTheVictim Item_GlovesOfHaste Item_Steamstaff"
+    
+    actiontype="toggle"
+    frontqueue="true"
+    inheritmovement="true"
+    casttime="0"
+    castactiontime="0"
+    cooldowntime="10000"
+    toggleoffcooldowntime="0"
+    cooldowntype="insanitarius"
+    noninterrupting="true"
+    noresponse="true"
+    
+    damage="9"
+    attackspeed="0.15"
+    armor="5"
+    healthregen="3"
 >
-	<onimpact />
-	<ontoggleon>
-	
-		<!-- save old max health -->
-		<setvar0 a="source_maxhealth" /> 
-		
-		<applystate name="State_Insanitarius" istoggle="true" pushentity="true" />
-		
-		<!-- max health bonus -->
-		<setvar1 a="source_maxhealth" b="var0" op="sub" /> 
-		
-		<!-- target health -->
-		<setvar2 a="source_health" b="var1" op="add" />
-		
-		<!-- current health adjusted for bonus -->
-		<setvar3 a="source_health" b="var0" op="div" />
-		<setvar3 a="var3" b="source_maxhealth" op="mult" />
-		
-		<!-- final adjustment to reach target health after the game rescales current health -->
-		<changehealth a="var2" b="var3" op="sub" />
-		
-		<!-- save bonus as the state's accumulator -->
-		<setaccumulator entity="stack_entity" value="var1" />
-	</ontoggleon>
-	
-	<modifier key="insanitarius_active" condition="toggle_active" modpriority="100"
-		icon="icon1.tga"
-		ignorecooldown="true"
-	>
-		<onimpact />
-	</modifier>
+    <onimpact />
+    <ontoggleon>
+    
+        <!-- save old max health -->
+        <setvar0 a="source_maxhealth" /> 
+        
+        <applystate name="State_Insanitarius" istoggle="true" pushentity="true" />
+        
+        <!-- max health bonus -->
+        <setvar1 a="source_maxhealth" b="var0" op="sub" /> 
+        
+        <!-- target health -->
+        <setvar2 a="source_health" b="var1" op="add" />
+        
+        <!-- current health adjusted for bonus -->
+        <setvar3 a="source_health" b="var0" op="div" />
+        <setvar3 a="var3" b="source_maxhealth" op="mult" />
+        
+        <!-- final adjustment to reach target health after the game rescales current health -->
+        <changehealth a="var2" b="var3" op="sub" />
+        
+        <!-- save bonus as the state's accumulator -->
+        <setaccumulator entity="stack_entity" value="var1" />
+    </ontoggleon>
+    
+    <modifier key="insanitarius_active" condition="toggle_active" modpriority="100"
+        icon="icon1.tga"
+        ignorecooldown="true"
+    >
+        <onimpact />
+    </modifier>
 </item>

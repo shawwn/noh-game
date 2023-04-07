@@ -1,270 +1,270 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
-	<template name="player_stats_full">
-		<!-- Lifetime Statistics -->
-		<instance name="header_bar" y="0.3h" height="2.5h" align="center" lbl="player_stats_lifetime_header" show_close="{show_close=0}"
-			onclick="PlaySound('/shared/sounds/ui/button_close_01.wav'); {close}"
-		/>		
-		<panel name="player_stats_full" y="3.0h" color="0 0 0 .9" noclick="1" width="100%" height="31.0h" watch="LoginStatus" ontrigger="If(param2, GetPlayerStats(GetAccountID()));">
-			<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
-			
-			<panel width="-1.0h" align="center" color="invisible" float="bottom" padding="1.0h" noclick="1" reverse="1">
-				
-				<!-- Player Overview -->
-				<panel y="1.0h" width="100%" color="invisible" height="12.4h" noclick="1">
-				
-					<panel height="3.8h" width="-11.0h" align="center" valign="bottom" color="invisible" noclick="1">
-						<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#141e27" noclick="1"/>
-						<frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#455166" noclick="1" />
-						<panel y="0.4h" width="-1.0h" align="center" color="invisible" float="bottom">
-							<panel height="30%" float="right" padding="0" noclick="1" passivechildren="true">
-								<label width="33.3%" color="#ffab01" shadow="1" font="dyn_10" textvalign="top" textalign="center" noclick="1">player_stats_wins</label>
-								<label width="33.3%" color="#ffab01" shadow="1" font="dyn_10" textvalign="top" textalign="center" noclick="1">player_stats_losses</label>
-								<label width="33.3%" color="#ffab01" shadow="1" font="dyn_10" textvalign="top" textalign="center" noclick="1">player_stats_winning_percentage</label>
-							</panel>
-							<panel height="70%" float="right" padding="0" noclick="1" passivechildren="true">
-								<label width="33.3%" color="white" shadow="1" font="dyn_10" textvalign="center" textalign="center" noclick="1" watch="PlayerStats" ontrigger="SetText(param0);"/>
-								<label width="33.3%" color="white" shadow="1" font="dyn_10" textvalign="center" textalign="center" noclick="1" watch="PlayerStats" ontrigger="SetText(param1);"/>
-								<label width="33.3%" color="white" shadow="1" font="dyn_10" textvalign="center" textalign="center" noclick="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_win_percent', 'percent', FtoP(param0 / (param0 + param1), 0)));"/>
-							</panel>
-						</panel>
-					</panel>					
-				
-					<panel width="-9.0h" height="9.0h" align="center" color="0 0 0 1" noclick="1">		
-						<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
-						
-						<panel x="0.5h" width="8.0h" height="8.0h" align="left" valign="center">
-							<image texture="/ui/common/ability_coverup.tga" />
-							<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
-						</panel>
-						
-						<label x="0.5h" y="0.3h" width="-8.5h" height="2.0h" align="right" font="dyn_14" color="#ffab01" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(param27);" />
-						
-						<panel x="0.5h" y="2.7h" width="-8.5h" align="right" color="invisible" noclick="1" float="right" padding="0.5h">
-							<label width="9.0h" height="2.4h" textalign="left" textvalign="top" font="dyn_8" color="1 1 1 1" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_clan_name', 'clan', param28));" />						
-							<label width="9.0h" height="2.4h" textalign="left" textvalign="top" font="dyn_8" color="1 1 1 1" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_rank', 'rank', param29));" />
-						</panel>
-						<panel
-						
-							x="-0.5h" y="-0.5h"
-							width="-9.5h" height="3.6h"
-							valign="bottom" align="right"
-							color="invisible"							
-							onmouseover="ShowWidget('accountstats_tip');"
-							onmouseout="HideWidget('accountstats_tip');"	
-							
-							noclick="1" passivechildren="true"
-						>
-							<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 1" noclick="1" />
-							<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
-							
-							<label x="0.3h" y="0.1h" width="-4.0h" height="1.8h" textalign="center" textvalign="top" font="dyn_8" color="1 1 1 1" shadow="1" noclick="1" content="player_stats_level" />
-							
-							<!-- Lvl Bar -->
-							<panel x="0.3h" y="-0.3h" width="-4.0h" height="1.8h" valign="bottom" align="left" color="invisible" noclick="1">							
-								<image texture="/ui/legion/behind_bar.tga" color="#170045" noclick="1" />
-								
-								<panel width="0" watch="PlayerStats" ontrigger="If(param23 gt param33 and param23 lt param34 and param23 gt 0, SetWidth((((param23 - param33) / (param34 - param33)) * 100) # '%'), SetWidth(1));"  noclick="1">
-									<image texture="/ui/legion/behind_bar.tga" color="#ac00f5" noclick="1" />
-									<image align="right" texture="/ui/legion/behind_bar.tga" color="1 1 1 .5" noclick="1"/>
-								</panel>
-								
-								<image width="-0.6h" align="center" texture="/ui/elements/bar_highlight.tga" noclick="1"/>							
-								<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
-							</panel>							
-							
-							<!-- Lvl # -->
-							<panel x="-0.3h" width="3.0h" height="3.0h" valign="center" align="right" color="0 0 0 .5" noclick="1">
-								<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
-								<label height="100%" width="100%" textalign="center" textvalign="center" font="dyn_11" color="1 1 1 1" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(param30);" />
-							</panel>
-							
-						</panel>
-						
-						<panel name="accountstats_tip" x="3.0h" y="9.0h" width="28.0h" height="8.5h" align="center" valign="top" color="invisible" visible="0" noclick="1">
-							<frame  texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .8" borderthickness=".6h" align="left" valign="top" noclick="1">
-								<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" noclick="1"/>
-								
-								<label y="0.2h" width="-1.6h" height="2.4h" textvalign="center" textalign="left" align="center" font="dyn_10" color="#ffab01" shadow="1" noclick="1">player_stats_lifetime_header</label>
-								
-								<label y="2.4h" width="-1.6h" height="1.8h" align="center" textalign="left" textvalign="center" font="dyn_9" color="1 1 1 1" shadow="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_experience_earned'));" noclick="1" />
-								<label y="4.2h" width="-1.6h" height="1.8h" align="center" textalign="left" textvalign="center" font="dyn_9" color="1 1 1 1" shadow="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_next_level'));" noclick="1" />
-								<label y="6.0h" width="-1.6h" height="1.8h" align="center" textalign="left" textvalign="center" font="dyn_9" color="1 1 1 1" shadow="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_next_level_needed'));" noclick="1" />
-								
-							</frame>
-						</panel>
-						
-					</panel>					
-				</panel>
-								
-				
-				<!-- Match History Details -->
-				<panel color="invisible" width="100%" height="5.6h" noclick="1" float="bottom" padding="0.4h">				
-					<panel height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_matches" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(Round(param0 + param1 + param26));" />
-					</panel>
-					
-					<panel height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_disconnects" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(param26);" />
-					</panel>
-					
-					<panel height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_leave_percent" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param0 + param1 + param26) gt 0, SetText(FtoP(param26 / (param0 + param1 + param26), 0) # '%%'), SetText('0%%'));" />
-						<image
-							x="5.4h"
-							width="2.0h" height="2.0h"
-							align="center" valign="center"
-							texture="/ui/icons/thumbs_up.tga"
-							onmouseover="ShowWidget('leaverstats_tip');"
-							onmouseout="HideWidget('leaverstats_tip');"
-						/>
-						<instance name="generic_tooltip" x="0" y="2.0h" width="39.0h" height="10.3h" align="center" valign="top" tip_id="leaverstats_tip" title="player_stats_leave_percent" label="game_menu_leave_percentage_text" />
-					</panel>				
-				</panel>
-				
-				<panel height="1" noclick="1">
-					<panel width="96%" align="center" valign="center" color="#414653" noclick="1" />
-				</panel>
-				
-				<!-- Player Detailed Stats -->
-				<panel color="invisible" width="100%" height="7.6h" noclick="1" float="bottom" padding="0.4h">				
-					<panel height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_kills" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(FtoA(param3, 0, 0, ','));" />
-					</panel>
-					
-					<panel height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_deaths" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(FtoA(param7, 0, 0, ','));" />
-					</panel>
-					
-					<panel height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_assists" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(FtoA(param6, 0, 0, ','));" />
-					</panel>
-					
-					<panel height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_kd_ratio" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if(param7 gt 0, SetText(FtoA(param3 / param7, 1) # ':1'), SetText(param3 # ':0'));" />
-					</panel>
-				</panel>				
-				
-			</panel>
-			
-		</panel>
-		
-		<!-- Average Statistics -->		
-		<instance name="header_bar" y="34.8h" height="2.5h" align="center" lbl="player_stats_averages_header" show_close="{show_close=0}"
-			onclick="PlaySound('/shared/sounds/ui/button_close_01.wav'); {close}"
-		/>		
-		<panel name="player_stats_full" y="37.5h" color="0 0 0 .9" noclick="1" width="100%" height="13.2h" watch="LoginStatus" ontrigger="If(param2, GetPlayerStats(GetAccountID()));">
-			
-			<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
-			
-			<panel width="-1.0h" align="center" color="invisible" float="bottom" padding="1.5h" noclick="1">
-				
-				<!-- Player Game Averages -->
-				<panel color="invisible" height="10.5h" noclick="1" float="bottom" padding="0.5h">				
-					
-					<panel y="0.7h" height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_avg_game_length" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param0 + param1 + param26) gt 0, SetText(FtoT((param25 / (param0 + param1 + param26)) * 1000, 1, 0, '0')), SetText('00:00'));" />
-					</panel>
-					
-					<panel height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_avg_kda" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param0 + param1 + param26) gt 0, SetText(FtoA(param3 / (param0 + param1 + param26), 1) # '  /  ' # FtoA(param7 / (param0 + param1 + param26), 1) # '  /  ' # FtoA(param6 / (param0 + param1 + param26), 1)), SetText('0  /  0  /  0'));" />
-					</panel>
-					
-					<panel height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_avg_creep_kills" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param0 + param1 + param26) gt 0, SetText(Round((param10 + param13) / (param0 + param1 + param26))), SetText('0'));" />
-					</panel>
-					
-					<panel height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_avg_creep_denies" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param0 + param1 + param26) gt 0, SetText(Round(param19 / (param0 + param1 + param26))), SetText('0'));" />
-					</panel>
-					
-					<panel height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_experience_earned" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param0 + param1 + param26) gt 0, SetText(FtoA(param23 / (param0 + param1 + param26), 0, 0, ',')), SetText('0'));" />
-					</panel>
-					
-					<panel height="1.6h" color="invisible" noclick="1">
-						<label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_experience_per_minute" noclick="1" />
-						<label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
-						<label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param25 / 60) gt 0, SetText(FtoA(param23 / (param25 / 60), 1)), SetText('0'));" />
-					</panel>
-				</panel>				
-				
-			</panel>
-			
-		</panel>
-		
-		<!-- Account Age / Usage -->
-		<panel y="50.6h" height="1.7h" noclick="1">
-			<label x="0.2h" width="100%" height="100%" align="left" textalign="left" textvalign="center" font="dyn_8" color="1 1 1 1" shadow="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_account_age', 'age', param31));" noclick="1" />
-			<label x="-0.2h" width="100%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_8" color="1 1 1 1" shadow="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_last_match', 'last', param32));" noclick="1" />
-		</panel>
-		
-		<!-- Fetch -->
-		<panel y="-0.5h" width="100%" height="3.0h" valign="bottom" align="center">
-			<frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
-			<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+    <template name="player_stats_full">
+        <!-- Lifetime Statistics -->
+        <instance name="header_bar" y="0.3h" height="2.5h" align="center" lbl="player_stats_lifetime_header" show_close="{show_close=0}"
+            onclick="PlaySound('/shared/sounds/ui/button_close_01.wav'); {close}"
+        />      
+        <panel name="player_stats_full" y="3.0h" color="0 0 0 .9" noclick="1" width="100%" height="31.0h" watch="LoginStatus" ontrigger="If(param2, GetPlayerStats(GetAccountID()));">
+            <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+            
+            <panel width="-1.0h" align="center" color="invisible" float="bottom" padding="1.0h" noclick="1" reverse="1">
+                
+                <!-- Player Overview -->
+                <panel y="1.0h" width="100%" color="invisible" height="12.4h" noclick="1">
+                
+                    <panel height="3.8h" width="-11.0h" align="center" valign="bottom" color="invisible" noclick="1">
+                        <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#141e27" noclick="1"/>
+                        <frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#455166" noclick="1" />
+                        <panel y="0.4h" width="-1.0h" align="center" color="invisible" float="bottom">
+                            <panel height="30%" float="right" padding="0" noclick="1" passivechildren="true">
+                                <label width="33.3%" color="#ffab01" shadow="1" font="dyn_10" textvalign="top" textalign="center" noclick="1">player_stats_wins</label>
+                                <label width="33.3%" color="#ffab01" shadow="1" font="dyn_10" textvalign="top" textalign="center" noclick="1">player_stats_losses</label>
+                                <label width="33.3%" color="#ffab01" shadow="1" font="dyn_10" textvalign="top" textalign="center" noclick="1">player_stats_winning_percentage</label>
+                            </panel>
+                            <panel height="70%" float="right" padding="0" noclick="1" passivechildren="true">
+                                <label width="33.3%" color="white" shadow="1" font="dyn_10" textvalign="center" textalign="center" noclick="1" watch="PlayerStats" ontrigger="SetText(param0);"/>
+                                <label width="33.3%" color="white" shadow="1" font="dyn_10" textvalign="center" textalign="center" noclick="1" watch="PlayerStats" ontrigger="SetText(param1);"/>
+                                <label width="33.3%" color="white" shadow="1" font="dyn_10" textvalign="center" textalign="center" noclick="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_win_percent', 'percent', FtoP(param0 / (param0 + param1), 0)));"/>
+                            </panel>
+                        </panel>
+                    </panel>                    
+                
+                    <panel width="-9.0h" height="9.0h" align="center" color="0 0 0 1" noclick="1">      
+                        <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+                        
+                        <panel x="0.5h" width="8.0h" height="8.0h" align="left" valign="center">
+                            <image texture="/ui/common/ability_coverup.tga" />
+                            <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+                        </panel>
+                        
+                        <label x="0.5h" y="0.3h" width="-8.5h" height="2.0h" align="right" font="dyn_14" color="#ffab01" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(param27);" />
+                        
+                        <panel x="0.5h" y="2.7h" width="-8.5h" align="right" color="invisible" noclick="1" float="right" padding="0.5h">
+                            <label width="9.0h" height="2.4h" textalign="left" textvalign="top" font="dyn_8" color="1 1 1 1" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_clan_name', 'clan', param28));" />                       
+                            <label width="9.0h" height="2.4h" textalign="left" textvalign="top" font="dyn_8" color="1 1 1 1" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_rank', 'rank', param29));" />
+                        </panel>
+                        <panel
+                        
+                            x="-0.5h" y="-0.5h"
+                            width="-9.5h" height="3.6h"
+                            valign="bottom" align="right"
+                            color="invisible"                           
+                            onmouseover="ShowWidget('accountstats_tip');"
+                            onmouseout="HideWidget('accountstats_tip');"    
+                            
+                            noclick="1" passivechildren="true"
+                        >
+                            <frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 1" noclick="1" />
+                            <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+                            
+                            <label x="0.3h" y="0.1h" width="-4.0h" height="1.8h" textalign="center" textvalign="top" font="dyn_8" color="1 1 1 1" shadow="1" noclick="1" content="player_stats_level" />
+                            
+                            <!-- Lvl Bar -->
+                            <panel x="0.3h" y="-0.3h" width="-4.0h" height="1.8h" valign="bottom" align="left" color="invisible" noclick="1">                           
+                                <image texture="/ui/legion/behind_bar.tga" color="#170045" noclick="1" />
+                                
+                                <panel width="0" watch="PlayerStats" ontrigger="If(param23 gt param33 and param23 lt param34 and param23 gt 0, SetWidth((((param23 - param33) / (param34 - param33)) * 100) # '%'), SetWidth(1));"  noclick="1">
+                                    <image texture="/ui/legion/behind_bar.tga" color="#ac00f5" noclick="1" />
+                                    <image align="right" texture="/ui/legion/behind_bar.tga" color="1 1 1 .5" noclick="1"/>
+                                </panel>
+                                
+                                <image width="-0.6h" align="center" texture="/ui/elements/bar_highlight.tga" noclick="1"/>                          
+                                <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+                            </panel>                            
+                            
+                            <!-- Lvl # -->
+                            <panel x="-0.3h" width="3.0h" height="3.0h" valign="center" align="right" color="0 0 0 .5" noclick="1">
+                                <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+                                <label height="100%" width="100%" textalign="center" textvalign="center" font="dyn_11" color="1 1 1 1" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(param30);" />
+                            </panel>
+                            
+                        </panel>
+                        
+                        <panel name="accountstats_tip" x="3.0h" y="9.0h" width="28.0h" height="8.5h" align="center" valign="top" color="invisible" visible="0" noclick="1">
+                            <frame  texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .8" borderthickness=".6h" align="left" valign="top" noclick="1">
+                                <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" noclick="1"/>
+                                
+                                <label y="0.2h" width="-1.6h" height="2.4h" textvalign="center" textalign="left" align="center" font="dyn_10" color="#ffab01" shadow="1" noclick="1">player_stats_lifetime_header</label>
+                                
+                                <label y="2.4h" width="-1.6h" height="1.8h" align="center" textalign="left" textvalign="center" font="dyn_9" color="1 1 1 1" shadow="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_experience_earned'));" noclick="1" />
+                                <label y="4.2h" width="-1.6h" height="1.8h" align="center" textalign="left" textvalign="center" font="dyn_9" color="1 1 1 1" shadow="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_next_level'));" noclick="1" />
+                                <label y="6.0h" width="-1.6h" height="1.8h" align="center" textalign="left" textvalign="center" font="dyn_9" color="1 1 1 1" shadow="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_next_level_needed'));" noclick="1" />
+                                
+                            </frame>
+                        </panel>
+                        
+                    </panel>                    
+                </panel>
+                                
+                
+                <!-- Match History Details -->
+                <panel color="invisible" width="100%" height="5.6h" noclick="1" float="bottom" padding="0.4h">              
+                    <panel height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_matches" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(Round(param0 + param1 + param26));" />
+                    </panel>
+                    
+                    <panel height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_disconnects" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(param26);" />
+                    </panel>
+                    
+                    <panel height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_leave_percent" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param0 + param1 + param26) gt 0, SetText(FtoP(param26 / (param0 + param1 + param26), 0) # '%%'), SetText('0%%'));" />
+                        <image
+                            x="5.4h"
+                            width="2.0h" height="2.0h"
+                            align="center" valign="center"
+                            texture="/ui/icons/thumbs_up.tga"
+                            onmouseover="ShowWidget('leaverstats_tip');"
+                            onmouseout="HideWidget('leaverstats_tip');"
+                        />
+                        <instance name="generic_tooltip" x="0" y="2.0h" width="39.0h" height="10.3h" align="center" valign="top" tip_id="leaverstats_tip" title="player_stats_leave_percent" label="game_menu_leave_percentage_text" />
+                    </panel>                
+                </panel>
+                
+                <panel height="1" noclick="1">
+                    <panel width="96%" align="center" valign="center" color="#414653" noclick="1" />
+                </panel>
+                
+                <!-- Player Detailed Stats -->
+                <panel color="invisible" width="100%" height="7.6h" noclick="1" float="bottom" padding="0.4h">              
+                    <panel height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_kills" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(FtoA(param3, 0, 0, ','));" />
+                    </panel>
+                    
+                    <panel height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_deaths" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(FtoA(param7, 0, 0, ','));" />
+                    </panel>
+                    
+                    <panel height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_assists" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="SetText(FtoA(param6, 0, 0, ','));" />
+                    </panel>
+                    
+                    <panel height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_kd_ratio" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if(param7 gt 0, SetText(FtoA(param3 / param7, 1) # ':1'), SetText(param3 # ':0'));" />
+                    </panel>
+                </panel>                
+                
+            </panel>
+            
+        </panel>
+        
+        <!-- Average Statistics -->     
+        <instance name="header_bar" y="34.8h" height="2.5h" align="center" lbl="player_stats_averages_header" show_close="{show_close=0}"
+            onclick="PlaySound('/shared/sounds/ui/button_close_01.wav'); {close}"
+        />      
+        <panel name="player_stats_full" y="37.5h" color="0 0 0 .9" noclick="1" width="100%" height="13.2h" watch="LoginStatus" ontrigger="If(param2, GetPlayerStats(GetAccountID()));">
+            
+            <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+            
+            <panel width="-1.0h" align="center" color="invisible" float="bottom" padding="1.5h" noclick="1">
+                
+                <!-- Player Game Averages -->
+                <panel color="invisible" height="10.5h" noclick="1" float="bottom" padding="0.5h">              
+                    
+                    <panel y="0.7h" height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_avg_game_length" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param0 + param1 + param26) gt 0, SetText(FtoT((param25 / (param0 + param1 + param26)) * 1000, 1, 0, '0')), SetText('00:00'));" />
+                    </panel>
+                    
+                    <panel height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_avg_kda" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param0 + param1 + param26) gt 0, SetText(FtoA(param3 / (param0 + param1 + param26), 1) # '  /  ' # FtoA(param7 / (param0 + param1 + param26), 1) # '  /  ' # FtoA(param6 / (param0 + param1 + param26), 1)), SetText('0  /  0  /  0'));" />
+                    </panel>
+                    
+                    <panel height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_avg_creep_kills" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param0 + param1 + param26) gt 0, SetText(Round((param10 + param13) / (param0 + param1 + param26))), SetText('0'));" />
+                    </panel>
+                    
+                    <panel height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_avg_creep_denies" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param0 + param1 + param26) gt 0, SetText(Round(param19 / (param0 + param1 + param26))), SetText('0'));" />
+                    </panel>
+                    
+                    <panel height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_experience_earned" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param0 + param1 + param26) gt 0, SetText(FtoA(param23 / (param0 + param1 + param26), 0, 0, ',')), SetText('0'));" />
+                    </panel>
+                    
+                    <panel height="1.6h" color="invisible" noclick="1">
+                        <label width="47%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content="player_stats_experience_per_minute" noclick="1" />
+                        <label width="100%" height="100%" textalign="center" textvalign="center" font="dyn_10" color="#3abde7" shadow="1" content=":" noclick="1" />
+                        <label width="47%" height="100%" align="right" textalign="left" textvalign="center" font="dyn_10" color="white" shadow="1" noclick="1" watch="PlayerStats" ontrigger="if((param25 / 60) gt 0, SetText(FtoA(param23 / (param25 / 60), 1)), SetText('0'));" />
+                    </panel>
+                </panel>                
+                
+            </panel>
+            
+        </panel>
+        
+        <!-- Account Age / Usage -->
+        <panel y="50.6h" height="1.7h" noclick="1">
+            <label x="0.2h" width="100%" height="100%" align="left" textalign="left" textvalign="center" font="dyn_8" color="1 1 1 1" shadow="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_account_age', 'age', param31));" noclick="1" />
+            <label x="-0.2h" width="100%" height="100%" align="left" textalign="right" textvalign="center" font="dyn_8" color="1 1 1 1" shadow="1" watch="PlayerStats" ontrigger="SetText(Translate('player_stats_last_match', 'last', param32));" noclick="1" />
+        </panel>
+        
+        <!-- Fetch -->
+        <panel y="-0.5h" width="100%" height="3.0h" valign="bottom" align="center">
+            <frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
+            <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
 
-			<panel x="0.5h" width="29.0h" height="2.2h" valign="center" color="0 0 0 .5">
-				<frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />					
-				<textbox
-					name="stats_fetch_textbox"
-					y="0.3h"
-					width="-1.0h"
-					valign="center" align="center"
-					maxlength="40"
-					textalign="left" textvalign="center"
-					font="dyn_10"
-					textcolor="white"
-					shadow="false"
-					color="invisible"
-					onshow="SetFocus(true);"
-					onenter="GetPlayerStatsName(this); EraseInputLine();"
-					onesc="EraseInputLine();"
-					onchange="CreateString('ui_autocompleteTextBox', name); ChatAutoCompleteNick(this);"
-					onlosefocus="Set(stats_add_friend_auto, false);"
-					onfocus="Set(stats_add_friend_auto, true); Call('cc_stats_window', 'BringToFront();');"
-					onclick="Call('cc_stats_window', 'BringToFront();');"
-				/>
-			</panel>
-			<instance 
-				name="button2"
-				x="-0.5h"
-				height="2.2h" width="12.4h"
-				align="right" valign="center"
-				font="dyn_10"
-				label="ccstats_button_fetch"
-				onclick="Call(ui_autocompleteTextBox, 'GetPlayerStatsName(this); EraseInputLine();');"
-			/>
-		</panel>
-		
-		<panel onload="CreateBool('stats_add_friend_auto', false);" valign="bottom" width="-1.0h" height="15.0h" y="-3.0h" visible="false" color="invisible" watch="ChatAutoCompleteClear" ontrigger="SetVisible(false);" watch2="ChatAutoCompleteAdd" ontrigger2="if(stats_add_friend_auto, SetVisible(true));">
-			<instance name="autocomplete_list" listbox_name="autocomplete_stats_list" y="-0.2h" x="0.5h" width="29.0h" height="8.7h" align="left" valign="bottom" />
-		</panel>
-	</template>
-	
+            <panel x="0.5h" width="29.0h" height="2.2h" valign="center" color="0 0 0 .5">
+                <frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />                   
+                <textbox
+                    name="stats_fetch_textbox"
+                    y="0.3h"
+                    width="-1.0h"
+                    valign="center" align="center"
+                    maxlength="40"
+                    textalign="left" textvalign="center"
+                    font="dyn_10"
+                    textcolor="white"
+                    shadow="false"
+                    color="invisible"
+                    onshow="SetFocus(true);"
+                    onenter="GetPlayerStatsName(this); EraseInputLine();"
+                    onesc="EraseInputLine();"
+                    onchange="CreateString('ui_autocompleteTextBox', name); ChatAutoCompleteNick(this);"
+                    onlosefocus="Set(stats_add_friend_auto, false);"
+                    onfocus="Set(stats_add_friend_auto, true); Call('cc_stats_window', 'BringToFront();');"
+                    onclick="Call('cc_stats_window', 'BringToFront();');"
+                />
+            </panel>
+            <instance 
+                name="button2"
+                x="-0.5h"
+                height="2.2h" width="12.4h"
+                align="right" valign="center"
+                font="dyn_10"
+                label="ccstats_button_fetch"
+                onclick="Call(ui_autocompleteTextBox, 'GetPlayerStatsName(this); EraseInputLine();');"
+            />
+        </panel>
+        
+        <panel onload="CreateBool('stats_add_friend_auto', false);" valign="bottom" width="-1.0h" height="15.0h" y="-3.0h" visible="false" color="invisible" watch="ChatAutoCompleteClear" ontrigger="SetVisible(false);" watch2="ChatAutoCompleteAdd" ontrigger2="if(stats_add_friend_auto, SetVisible(true));">
+            <instance name="autocomplete_list" listbox_name="autocomplete_stats_list" y="-0.2h" x="0.5h" width="29.0h" height="8.7h" align="left" valign="bottom" />
+        </panel>
+    </template>
+    
 
 </package>

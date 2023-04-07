@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_PuppetMaster_Ability2_Expire"
+    name="State_PuppetMaster_Ability2_Expire"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/hand.effect"
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/hand.effect"
+    effecttype="StatusDebuff"
 
 
 
 
 
 >
-	<onframe />
-	<onexpired>
-		<expirestate name="State_PuppetMaster_Ability2" target="this_owner_entity"/>
-	</onexpired>
+    <onframe />
+    <onexpired>
+        <expirestate name="State_PuppetMaster_Ability2" target="this_owner_entity"/>
+    </onexpired>
 
 </state>

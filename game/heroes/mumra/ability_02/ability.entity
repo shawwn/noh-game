@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Mumra2"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	anim="ability_2"
-	casttime="0"
-	castactiontime="0"
-	
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
-	
-	actiontype="no_target"
+    name="Ability_Mumra2"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    anim="ability_2"
+    casttime="0"
+    castactiontime="0"
+    
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
+    
+    actiontype="no_target"
 
-	cooldowntime="15000"
-	manacost="50,60,70,80"
+    cooldowntime="15000"
+    manacost="50,60,70,80"
 >
-	<onimpact >
-		<spawnaffector name="Affector_Mumra_Ability2_Immune" target="source_position" />
-		<spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="175 0" facing="source_entity" angle="180" fixedposition="true" />
-		<spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="135 135" facing="source_entity" angle="180" fixedposition="true" />
-		<spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="0 175" facing="source_entity" angle="180" fixedposition="true" />
-		<spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="-135 135" facing="source_entity" angle="180" fixedposition="true" />
-		<spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="-175 0" facing="source_entity" angle="180" fixedposition="true" />
-		<spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="-135 -135" facing="source_entity" angle="180" fixedposition="true" />
-		<spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="0 -175" facing="source_entity" angle="180" fixedposition="true" />
-		<spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="135 -135" facing="source_entity" angle="180" fixedposition="true" />
-		<playeffect effect="pet/effects/cast.effect"  source="target_position" target="target_position" />
-	</onimpact>
+    <onimpact >
+        <spawnaffector name="Affector_Mumra_Ability2_Immune" target="source_position" />
+        <spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="175 0" facing="source_entity" angle="180" fixedposition="true" />
+        <spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="135 135" facing="source_entity" angle="180" fixedposition="true" />
+        <spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="0 175" facing="source_entity" angle="180" fixedposition="true" />
+        <spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="-135 135" facing="source_entity" angle="180" fixedposition="true" />
+        <spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="-175 0" facing="source_entity" angle="180" fixedposition="true" />
+        <spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="-135 -135" facing="source_entity" angle="180" fixedposition="true" />
+        <spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="0 -175" facing="source_entity" angle="180" fixedposition="true" />
+        <spawnunit name="Gadget_Mumra_Ability2" target="source_position" owner="this_owner_entity" count="1" offset="135 -135" facing="source_entity" angle="180" fixedposition="true" />
+        <playeffect effect="pet/effects/cast.effect"  source="target_position" target="target_position" />
+    </onimpact>
 </ability>

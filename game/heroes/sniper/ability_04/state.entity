@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Sniper_Ability4"
+    name="State_Sniper_Ability4"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/target.effect"
-	
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/target.effect"
+    
 
 >
 

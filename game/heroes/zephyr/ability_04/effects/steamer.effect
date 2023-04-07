@@ -1,198 +1,198 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect  deferred="1">
-	<definitions>
-		<particlesystem name="system0" space="entity" scale="1">
+    <definitions>
+        <particlesystem name="system0" space="entity" scale="1">
 
-			<sound
-				soundloop="true"
-				fadein="200"
-				fadeout="600"
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2500"
-				volume=".8"
-				sample="../sounds/state.wav"
-			/>
-	
-			<simpleemitter
-				expirelife="1000"
-				spawnrate="10"
-				particlelife="3500"
-				gravity="0"
-				position="0 0 200"
-				offsetsphere="300 350 200"
-			>
-				<particle>
-					<model
-						model="windbone.mdf"
-						anim="idle"
-						life="1600"
-						minscale=".2"
-						maxscale="1"
-						yaw="180"
-						minroll="0"
-						maxroll="0"
-					>
-						<trailemitter
-							bone="_bone_r"
-							spawnrate="25"
-							particlelife="1300"
-							texpostime="1300"
-							texposscale="1"
-							texstretchscale="0"
-							position="10 0 0"
-							material="/shared/effects/materials/arrow_trail.material"
-						>
-							<particle
-								startcolor=".2 .2 .1"
-								midcolor=".2 .2 .1"
-								endcolor="0 0 0"
-								startsize="0"
-								midsize="12"
-								endsize="0"
-								midsizepos=".1"
-							/>
-						</trailemitter>
-					</model>
-				</particle>
-			</simpleemitter>
+            <sound
+                soundloop="true"
+                fadein="200"
+                fadeout="600"
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2500"
+                volume=".8"
+                sample="../sounds/state.wav"
+            />
+    
+            <simpleemitter
+                expirelife="1000"
+                spawnrate="10"
+                particlelife="3500"
+                gravity="0"
+                position="0 0 200"
+                offsetsphere="300 350 200"
+            >
+                <particle>
+                    <model
+                        model="windbone.mdf"
+                        anim="idle"
+                        life="1600"
+                        minscale=".2"
+                        maxscale="1"
+                        yaw="180"
+                        minroll="0"
+                        maxroll="0"
+                    >
+                        <trailemitter
+                            bone="_bone_r"
+                            spawnrate="25"
+                            particlelife="1300"
+                            texpostime="1300"
+                            texposscale="1"
+                            texstretchscale="0"
+                            position="10 0 0"
+                            material="/shared/effects/materials/arrow_trail.material"
+                        >
+                            <particle
+                                startcolor=".2 .2 .1"
+                                midcolor=".2 .2 .1"
+                                endcolor="0 0 0"
+                                startsize="0"
+                                midsize="12"
+                                endsize="0"
+                                midsizepos=".1"
+                            />
+                        </trailemitter>
+                    </model>
+                </particle>
+            </simpleemitter>
 
-			<simpleemitter
-				expirelife="1000"
-				spawnrate="2"
-				particlelife="3500"
-				gravity="0"
-				position="0 0 200"
-				offsetsphere="300 350 200"
-			>
-				<particle>
-					<model
-						model="swirl.mdf"
-						anim="idle"
-						life="1600"
-						minscale=".5"
-						maxscale="2"
-						yaw="180"
-						minroll="90"
-						maxroll="90"
-					>
-						<trailemitter
-							bone="_bone_r"
-							spawnrate="30"
-							particlelife="1300"
-							texpostime="1300"
-							texposscale="1"
-							texstretchscale="0"
-							position="10 0 0"
-							material="/shared/effects/materials/arrow_trail.material"
-						>
-							<particle
-								startcolor=".2 .2 .1"
-								midcolor=".2 .2 .1"
-								endcolor="0 0 0"
-								startsize="0"
-								midsize="12"
-								endsize="0"
-								midsizepos=".1"
-							/>
+            <simpleemitter
+                expirelife="1000"
+                spawnrate="2"
+                particlelife="3500"
+                gravity="0"
+                position="0 0 200"
+                offsetsphere="300 350 200"
+            >
+                <particle>
+                    <model
+                        model="swirl.mdf"
+                        anim="idle"
+                        life="1600"
+                        minscale=".5"
+                        maxscale="2"
+                        yaw="180"
+                        minroll="90"
+                        maxroll="90"
+                    >
+                        <trailemitter
+                            bone="_bone_r"
+                            spawnrate="30"
+                            particlelife="1300"
+                            texpostime="1300"
+                            texposscale="1"
+                            texstretchscale="0"
+                            position="10 0 0"
+                            material="/shared/effects/materials/arrow_trail.material"
+                        >
+                            <particle
+                                startcolor=".2 .2 .1"
+                                midcolor=".2 .2 .1"
+                                endcolor="0 0 0"
+                                startsize="0"
+                                midsize="12"
+                                endsize="0"
+                                midsizepos=".1"
+                            />
 
-						</trailemitter>
-					</model>
-				</particle>
-			</simpleemitter>
+                        </trailemitter>
+                    </model>
+                </particle>
+            </simpleemitter>
 
-			<simpleemitter
-				spawnrate="20"
-				particlelife="1200"
-				material="/shared/effects/materials/dust.material"
-				offsetsphere="350 350 100"
-				position="0 -300 0"
-				minangle="0"
-				maxangle="0"
-				speed="520"
-				depthbias="-50"
-				direction="0 1 0"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="100"
-					maxanglespeed="100"
-					color=".7 .7 .7"
-					startframe="0"
-					size="555"
-					lockup="1"
-					lockright="1"
-					pitch="90"
-					startalpha="0"
-					midalpha=".5"
-					endalpha="0"
-				/>
-			</simpleemitter>
-			
-			<simpleemitter
-				spawnrate="10"
-				particlelife="1200"
-				material="/shared/effects/materials/dust.material"
-				offsetsphere="400 400 100"
-				position="0 0 0"
-				minangle="0"
-				maxangle="0"
-				speed="520"
-				depthbias="-50"
-				direction="0 0 0"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="25"
-					maxanglespeed="50"
-					color=".7 .7 .7"
-					startframe="0"
-					size="555"
-					lockup="1"
-					lockright="1"
-					pitch="90"
-					startalpha="0"
-					midalpha=".5"
-					endalpha="0"
-				/>
-			</simpleemitter>
-				
-			<simpleemitter
-				spawnrate="35"
-				particlelife="1200"
-				material="/shared/effects/materials/leaves.material"
-				offsetsphere="300 300 100"
-				position="0 -300 100"
-				minangle="-30"
-				maxangle="30"
-				speed="520"
-				depthbias="-50"
-				direction=" 0 1 0"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="-300"
-					maxanglespeed="300"
-					color="1 1 1"
-					minsize="2"
-					maxsize="30"
-					startalpha="0"
-					midalpha=".5"
-					endalpha="0"
-				/>
-			</simpleemitter> 
+            <simpleemitter
+                spawnrate="20"
+                particlelife="1200"
+                material="/shared/effects/materials/dust.material"
+                offsetsphere="350 350 100"
+                position="0 -300 0"
+                minangle="0"
+                maxangle="0"
+                speed="520"
+                depthbias="-50"
+                direction="0 1 0"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    minanglespeed="100"
+                    maxanglespeed="100"
+                    color=".7 .7 .7"
+                    startframe="0"
+                    size="555"
+                    lockup="1"
+                    lockright="1"
+                    pitch="90"
+                    startalpha="0"
+                    midalpha=".5"
+                    endalpha="0"
+                />
+            </simpleemitter>
+            
+            <simpleemitter
+                spawnrate="10"
+                particlelife="1200"
+                material="/shared/effects/materials/dust.material"
+                offsetsphere="400 400 100"
+                position="0 0 0"
+                minangle="0"
+                maxangle="0"
+                speed="520"
+                depthbias="-50"
+                direction="0 0 0"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    minanglespeed="25"
+                    maxanglespeed="50"
+                    color=".7 .7 .7"
+                    startframe="0"
+                    size="555"
+                    lockup="1"
+                    lockright="1"
+                    pitch="90"
+                    startalpha="0"
+                    midalpha=".5"
+                    endalpha="0"
+                />
+            </simpleemitter>
+                
+            <simpleemitter
+                spawnrate="35"
+                particlelife="1200"
+                material="/shared/effects/materials/leaves.material"
+                offsetsphere="300 300 100"
+                position="0 -300 100"
+                minangle="-30"
+                maxangle="30"
+                speed="520"
+                depthbias="-50"
+                direction=" 0 1 0"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    minanglespeed="-300"
+                    maxanglespeed="300"
+                    color="1 1 1"
+                    minsize="2"
+                    maxsize="30"
+                    startalpha="0"
+                    midalpha=".5"
+                    endalpha="0"
+                />
+            </simpleemitter> 
 
-			</particlesystem>
+            </particlesystem>
 
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-		<!-- <die /> -->
-	</thread>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][pos] -->

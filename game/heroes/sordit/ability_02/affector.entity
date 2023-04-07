@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Sordit_Ability2"
+    name="Affector_Sordit_Ability2"
 
-	radius="500,600,700,800"
-	
-	targetselection="all"
-	targetscheme="visible_enemy_units"
-	effecttype="Magic"
+    radius="500,600,700,800"
+    
+    targetselection="all"
+    targetscheme="visible_enemy_units"
+    effecttype="Magic"
 >
-	<onimpact>
-		<damage effecttype="Magic" amount="60,120,180,240" />
-		<applystate name="State_Sordit_Ability2" duration="8000,10000,12000,14000" />
-		<playeffect effect="../../../heroes/shaman/ability_03/effects/impact.effect" target="target_entity" source="target_entity"/>
-	</onimpact>
+    <onimpact>
+        <damage effecttype="Magic" amount="60,120,180,240" />
+        <applystate name="State_Sordit_Ability2" duration="8000,10000,12000,14000" />
+        <playeffect effect="../../../heroes/shaman/ability_03/effects/impact.effect" target="target_entity" source="target_entity"/>
+    </onimpact>
 </affector>

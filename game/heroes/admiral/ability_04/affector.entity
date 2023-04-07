@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Admiral_Ability4"
-	
-	radius="400"
-	targetselection="all"
-	effecttype="Magic"
+    name="Affector_Admiral_Ability4"
+    
+    radius="400"
+    targetselection="all"
+    effecttype="Magic"
 >
-	<onspawn>
-		<playeffect effect="../../../heroes/admiral/ability_04/effects/ability_02.effect" source="target_position" target="" />
-	</onspawn>
-	
-	<onimpact>
-		<cantarget targetscheme="ally_units">
-			<applystate name="State_Admiral_Ability4" duration="5000,6000,7000" />
-		</cantarget>
-		<cantarget targetscheme="enemy_units">
-			<damage effecttype="Magic" amount="300,400,500" />
-			<applystate name="State_Stunned" duration="1000" />
-		</cantarget>
-	</onimpact>
+    <onspawn>
+        <playeffect effect="../../../heroes/admiral/ability_04/effects/ability_02.effect" source="target_position" target="" />
+    </onspawn>
+    
+    <onimpact>
+        <cantarget targetscheme="ally_units">
+            <applystate name="State_Admiral_Ability4" duration="5000,6000,7000" />
+        </cantarget>
+        <cantarget targetscheme="enemy_units">
+            <damage effecttype="Magic" amount="300,400,500" />
+            <applystate name="State_Stunned" duration="1000" />
+        </cantarget>
+    </onimpact>
 </affector>

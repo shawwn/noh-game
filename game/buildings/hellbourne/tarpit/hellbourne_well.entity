@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <building
-	name="Building_HellbourneWell"
+    name="Building_HellbourneWell"
 
-	icon=""
-	portrait=""
-	model="model.mdf"
-	skin=""
-	
-	passiveeffect=""
-	destroyedsound=""
-	lowhealtheffect=""
-	lowhealthsound=""
-	selectsound=""
-	isselectable="false"
-	
-	preglobalscale="1.0"
-	modelscale="1.0"
-	effectscale="1.8"
-	boundsheight="256"
-	boundsradius="0"
-	selectionradius="0"
-	targetoffset="0 0 0"
+    icon=""
+    portrait=""
+    model="model.mdf"
+    skin=""
+    
+    passiveeffect=""
+    destroyedsound=""
+    lowhealtheffect=""
+    lowhealthsound=""
+    selectsound=""
+    isselectable="false"
+    
+    preglobalscale="1.0"
+    modelscale="1.0"
+    effectscale="1.8"
+    boundsheight="256"
+    boundsradius="0"
+    selectionradius="0"
+    targetoffset="0 0 0"
 
-	maxhealth="0"
-	healthregen="0"
+    maxhealth="0"
+    healthregen="0"
 
-	armor="0"
-	magicarmor="0"
+    armor="0"
+    magicarmor="0"
 
-	canattack="false"
-	
-	unittype="Well"
+    canattack="false"
+    
+    unittype="Well"
 
-	aggrorange="1"
-	sightrangeday="900"
-	sightrangenight="600"
-	drawonmap="true"
-	isshop="false"
-	invulnerable="true"
+    aggrorange="1"
+    sightrangeday="900"
+    sightrangenight="600"
+    drawonmap="true"
+    isshop="false"
+    invulnerable="true"
 >
-	<aura state="State_HellbourneHealingWell" radius="500" duration="4000" targetscheme="injured_ally_units" effecttype="Magic"/>
-	<aura state="State_ShopAccess_Main" radius="800" targetscheme="all_units"/>
+    <aura state="State_HellbourneHealingWell" radius="500" duration="4000" targetscheme="injured_ally_units" effecttype="Magic"/>
+    <aura state="State_ShopAccess_Main" radius="800" targetscheme="all_units"/>
 </building>

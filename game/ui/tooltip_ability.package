@@ -1,647 +1,647 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
-	<template name="ability_tooltip">
-		<frame
-			name="{id}"
-			texture="/ui/frames/tooltip_bg.tga"
-			color="#00000070"
-			borderthickness="0.5h"
-			visible="false"
-			x="-1h"
-			y="-18h"
-			align="right"
-			valign="bottom"
-			width="27h"
-			height="5.0h"
-			float="bottom"
-		>
-			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness="0.5h"/>
-			<anchor x="1.0h" y="0.6h" />
+    <template name="ability_tooltip">
+        <frame
+            name="{id}"
+            texture="/ui/frames/tooltip_bg.tga"
+            color="#00000070"
+            borderthickness="0.5h"
+            visible="false"
+            x="-1h"
+            y="-18h"
+            align="right"
+            valign="bottom"
+            width="27h"
+            height="5.0h"
+            float="bottom"
+        >
+            <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness="0.5h"/>
+            <anchor x="1.0h" y="0.6h" />
 
-			<!-- Name and value -->
-			<panel
-				width="-2.0h"
-				height="1.8h"
-			>
-				<label
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="ActiveInventoryDescription{slot}"
-					ontrigger="SetText(param0);"
-				/>
-				<label
-					textalign="right"
-					font="dyn_10"
-					color="gray"
-					watch="ActiveInventoryDescription{slot}"
-					ontrigger="If(param3 gt 0, SetText('Value: ' # param3), ClearText());"
-				/>
-				<label
-					textalign="right"
-					font="dyn_10"
-					wrap="true"
-					color="gray"
-					watch="ActiveInventoryDuration{slot}"
-					ontrigger="SetText(FtoT(param, 1, 0, '-')); SetVisible(param gt 0);"
-				/>
-			</panel>
+            <!-- Name and value -->
+            <panel
+                width="-2.0h"
+                height="1.8h"
+            >
+                <label
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveInventoryDescription{slot}"
+                    ontrigger="SetText(param0);"
+                />
+                <label
+                    textalign="right"
+                    font="dyn_10"
+                    color="gray"
+                    watch="ActiveInventoryDescription{slot}"
+                    ontrigger="If(param3 gt 0, SetText('Value: ' # param3), ClearText());"
+                />
+                <label
+                    textalign="right"
+                    font="dyn_10"
+                    wrap="true"
+                    color="gray"
+                    watch="ActiveInventoryDuration{slot}"
+                    ontrigger="SetText(FtoT(param, 1, 0, '-')); SetVisible(param gt 0);"
+                />
+            </panel>
 
-			<!-- Level-->
-			<label
-				width="-2.0h"
-				height="1.8h"
-				textalign="left"
-				font="dyn_10"
-				color="gray"
-				watch="ActiveInventoryStatus{slot}"
-				ontrigger="SetText(Translate('tooltip_level', 'level', param5)); SetVisible(param5 != 0 and param7 != 0);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Level-->
+            <label
+                width="-2.0h"
+                height="1.8h"
+                textalign="left"
+                font="dyn_10"
+                color="gray"
+                watch="ActiveInventoryStatus{slot}"
+                ontrigger="SetText(Translate('tooltip_level', 'level', param5)); SetVisible(param5 != 0 and param7 != 0);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryDescriptionA{slot}"
-				ontrigger="SetVisible(!StringEmpty(param));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryDescriptionA{slot}"
+                ontrigger="SetVisible(!StringEmpty(param));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Description text -->
-			<label
-				width="-2.0h"
-				height="0.0h"
-				font="dyn_9"
-				wrap="true"
-				color="white"
-				watch="ActiveInventoryDescriptionA{slot}"
-				ontrigger="SetText(param); SetVisible(!StringEmpty(param)); SetHeight(GetStringWrapHeight('dyn_9', param, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
-			
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryDescriptionB{slot}"
-				ontrigger="SetVisible(!StringEmpty(param));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Description text -->
+            <label
+                width="-2.0h"
+                height="0.0h"
+                font="dyn_9"
+                wrap="true"
+                color="white"
+                watch="ActiveInventoryDescriptionA{slot}"
+                ontrigger="SetText(param); SetVisible(!StringEmpty(param)); SetHeight(GetStringWrapHeight('dyn_9', param, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
+            
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryDescriptionB{slot}"
+                ontrigger="SetVisible(!StringEmpty(param));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Description text 2 -->
-			<label
-				width="-2.0h"
-				height="0.0h"
-				font="dyn_9"
-				wrap="true"
-				color="white"
-				watch="ActiveInventoryDescriptionB{slot}"
-				ontrigger="SetText(param); SetVisible(!StringEmpty(param)); SetHeight(GetStringWrapHeight('dyn_9', param, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Description text 2 -->
+            <label
+                width="-2.0h"
+                height="0.0h"
+                font="dyn_9"
+                wrap="true"
+                color="white"
+                watch="ActiveInventoryDescriptionB{slot}"
+                ontrigger="SetText(param); SetVisible(!StringEmpty(param)); SetHeight(GetStringWrapHeight('dyn_9', param, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Passive block -->
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryPassiveEffect{slot}"
-				ontrigger="SetVisible(param1 gt 0);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Passive block -->
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryPassiveEffect{slot}"
+                ontrigger="SetVisible(param1 gt 0);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<panel
-				width="-2.0h"
-				height="2.4h"
-				watch="ActiveInventoryPassiveEffect{slot}"
-				ontrigger="SetVisible(param1 gt 0);"
-				float="bottom"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			>
-				<label
-					height="1.8h"
-					font="dyn_10"
-					color="white"
-					content="tooltip_passive_bonuses"
-				/>
+            <panel
+                width="-2.0h"
+                height="2.4h"
+                watch="ActiveInventoryPassiveEffect{slot}"
+                ontrigger="SetVisible(param1 gt 0);"
+                float="bottom"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            >
+                <label
+                    height="1.8h"
+                    font="dyn_10"
+                    color="white"
+                    content="tooltip_passive_bonuses"
+                />
 
-				<panel width="10.5h" height="0.2h" color="gray" />
-				<panel height="0.4h" sticky="true" />
-			</panel>
+                <panel width="10.5h" height="0.2h" color="gray" />
+                <panel height="0.4h" sticky="true" />
+            </panel>
 
-			<!-- Passive bonuses -->
-			<label
-				width="-2.0h"
-				height="0.0h"
-				font="dyn_10"
-				wrap="true"
-				color="white"
-				watch="ActiveInventoryPassiveEffect{slot}"
-				ontrigger="SetText(param0); SetHeight(GetStringWrapHeight('dyn_10', param0, GetWidthFromString('-2.0h')) + GetYFromString('0.4h')); SetVisible(param1 gt 0);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Passive bonuses -->
+            <label
+                width="-2.0h"
+                height="0.0h"
+                font="dyn_10"
+                wrap="true"
+                color="white"
+                watch="ActiveInventoryPassiveEffect{slot}"
+                ontrigger="SetText(param0); SetHeight(GetStringWrapHeight('dyn_10', param0, GetWidthFromString('-2.0h')) + GetYFromString('0.4h')); SetVisible(param1 gt 0);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Activation block -->
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryCanActivate{slot}"
-				ontrigger="SetVisible(param);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Activation block -->
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryCanActivate{slot}"
+                ontrigger="SetVisible(param);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<panel
-				width="-2.0h"
-				height="2.4h"
-				watch="ActiveInventoryCanActivate{slot}"
-				ontrigger="SetVisible(param);"
-				float="bottom"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			>
-				<label
-					width="-2.0h"
-					height="1.8h"
-					font="dyn_10"
-					color="white"
-					watch="ActiveInventoryHotkeys{slot}"
-					ontrigger="If(param0 == 2,
-						SetText(Translate('tooltip_activation1', 'key1', param1, 'key2', param2)),
-						If(param0 == 1,	SetText(Translate('tooltip_activation1', 'key1', param1)),
-							SetText(Translate('tooltip_activation'))));"
-				/>
+            <panel
+                width="-2.0h"
+                height="2.4h"
+                watch="ActiveInventoryCanActivate{slot}"
+                ontrigger="SetVisible(param);"
+                float="bottom"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            >
+                <label
+                    width="-2.0h"
+                    height="1.8h"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveInventoryHotkeys{slot}"
+                    ontrigger="If(param0 == 2,
+                        SetText(Translate('tooltip_activation1', 'key1', param1, 'key2', param2)),
+                        If(param0 == 1, SetText(Translate('tooltip_activation1', 'key1', param1)),
+                            SetText(Translate('tooltip_activation'))));"
+                />
 
-				<panel width="10.5h" height="0.2h" color="gray" sticky="true" />
-				<panel width="-2.0h" height="0.4h" sticky="true" />
-			</panel>
+                <panel width="10.5h" height="0.2h" color="gray" sticky="true" />
+                <panel width="-2.0h" height="0.4h" sticky="true" />
+            </panel>
 
-			<!-- Action type and Target scheme -->
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryDescription{slot}"
-				ontrigger="SetVisible(!StringEmpty(param6) and param11);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			>
-				<label
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="ActiveInventoryDescription{slot}"
-					ontrigger="SetText(param6);"
-				/>
-				<label
-					textalign="right"
-					font="dyn_10"
-					color="white"
-					watch="ActiveInventoryDescription{slot}"
-					ontrigger="SetText(param7);"
-				/>
-			</panel>
+            <!-- Action type and Target scheme -->
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryDescription{slot}"
+                ontrigger="SetVisible(!StringEmpty(param6) and param11);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            >
+                <label
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveInventoryDescription{slot}"
+                    ontrigger="SetText(param6);"
+                />
+                <label
+                    textalign="right"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveInventoryDescription{slot}"
+                    ontrigger="SetText(param7);"
+                />
+            </panel>
 
-			<!-- Cast effect type -->
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				color="white"
-				watch="ActiveInventoryDescription{slot}"
-				ontrigger="SetText(Translate('tooltip_type') # param8); SetVisible(!StringEmpty(param8) and param11);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
-					
-			<!-- Range -->
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				color="white"
-				watch="ActiveInventoryDescription{slot}"
-				ontrigger="SetText(Translate('tooltip_range') # param9); SetVisible(param9 gt 0 and param11);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Cast effect type -->
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                color="white"
+                watch="ActiveInventoryDescription{slot}"
+                ontrigger="SetText(Translate('tooltip_type') # param8); SetVisible(!StringEmpty(param8) and param11);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
+                    
+            <!-- Range -->
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                color="white"
+                watch="ActiveInventoryDescription{slot}"
+                ontrigger="SetText(Translate('tooltip_range') # param9); SetVisible(param9 gt 0 and param11);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Radius -->
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				color="white"
-				watch="ActiveInventoryDescription{slot}"
-				ontrigger="SetText(Translate('tooltip_radius') # param10); SetVisible(param10 gt 0 and param11);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
-			
-			<!-- Channeling time -->
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				color="green"
-				watch="ActiveInventoryDescription{slot}"
-				ontrigger="If(!StringEmpty(param17), SetText(Translate('tooltip_channeling_time', 'time', FtoA2(param17 / 1000, 0, 3)))); SetVisible(!StringEmpty(param17));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Radius -->
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                color="white"
+                watch="ActiveInventoryDescription{slot}"
+                ontrigger="SetText(Translate('tooltip_radius') # param10); SetVisible(param10 gt 0 and param11);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
+            
+            <!-- Channeling time -->
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                color="green"
+                watch="ActiveInventoryDescription{slot}"
+                ontrigger="If(!StringEmpty(param17), SetText(Translate('tooltip_channeling_time', 'time', FtoA2(param17 / 1000, 0, 3)))); SetVisible(!StringEmpty(param17));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Mana cost -->
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				color="aqua"
-				watch="ActiveInventoryDescription{slot}"
-				ontrigger="If(param2 gt 0, SetText(Translate('tooltip_mana_cost') # Round(param2)), ClearText()); SetVisible(param2 gt 0);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
-			
-			<!-- Mana Upkeep -->
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				color="yellow"
-				watch="ActiveInventoryDescription{slot}"
-				ontrigger="If(param18 gt 0, SetText(Translate('tooltip_mana_upkeep', 'value', Round(param18))), ClearText()); SetVisible(param18 gt 0);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Mana cost -->
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                color="aqua"
+                watch="ActiveInventoryDescription{slot}"
+                ontrigger="If(param2 gt 0, SetText(Translate('tooltip_mana_cost') # Round(param2)), ClearText()); SetVisible(param2 gt 0);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
+            
+            <!-- Mana Upkeep -->
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                color="yellow"
+                watch="ActiveInventoryDescription{slot}"
+                ontrigger="If(param18 gt 0, SetText(Translate('tooltip_mana_upkeep', 'value', Round(param18))), ClearText()); SetVisible(param18 gt 0);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Cooldown -->
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				color="#F0E68C"
-				watch="ActiveInventoryCooldown{slot}"
-				ontrigger="If(param1 gt 0, SetText(Translate('tooltip_cooldown', 'time', FtoA2(param1 / 1000, 0, 3))), ClearText()); SetVisible(param1 gt 0);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Cooldown -->
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                color="#F0E68C"
+                watch="ActiveInventoryCooldown{slot}"
+                ontrigger="If(param1 gt 0, SetText(Translate('tooltip_cooldown', 'time', FtoA2(param1 / 1000, 0, 3))), ClearText()); SetVisible(param1 gt 0);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryEffectDescription{slot}"
-				ontrigger="SetVisible(!StringEmpty(param));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryEffectDescription{slot}"
+                ontrigger="SetVisible(!StringEmpty(param));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Effect -->
-			<label
-				width="-2.0h"
-				height="0.0h"
-				font="dyn_9"
-				wrap="true"
-				color="white"
-				watch="ActiveInventoryEffectDescription{slot}"
-				ontrigger="SetText(param); SetVisible(!StringEmpty(param)); SetHeight(GetStringWrapHeight('dyn_9', param, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Effect -->
+            <label
+                width="-2.0h"
+                height="0.0h"
+                font="dyn_9"
+                wrap="true"
+                color="white"
+                watch="ActiveInventoryEffectDescription{slot}"
+                ontrigger="SetText(param); SetVisible(!StringEmpty(param)); SetHeight(GetStringWrapHeight('dyn_9', param, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Triggered effect -->
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryTriggeredEffect{slot}"
-				ontrigger="SetVisible(param0);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Triggered effect -->
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryTriggeredEffect{slot}"
+                ontrigger="SetVisible(param0);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<panel
-				width="-2.0h"
-				height="2.4h"
-				watch="ActiveInventoryTriggeredEffect{slot}"
-				ontrigger="SetVisible(param0);"
-				float="bottom"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			>
-				<label
-					width="-2.0h"
-					height="1.8h"
-					font="dyn_10"
-					color="white"
-					watch="ActiveInventoryTriggeredEffect{slot}"
-					ontrigger="SetText(param1);"
-				/>
+            <panel
+                width="-2.0h"
+                height="2.4h"
+                watch="ActiveInventoryTriggeredEffect{slot}"
+                ontrigger="SetVisible(param0);"
+                float="bottom"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            >
+                <label
+                    width="-2.0h"
+                    height="1.8h"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveInventoryTriggeredEffect{slot}"
+                    ontrigger="SetText(param1);"
+                />
 
-				<panel width="10.5h" height="0.2h" color="gray" sticky="true" />
-				<panel width="-2.0h" height="0.4h" sticky="true" />
-			</panel>
+                <panel width="10.5h" height="0.2h" color="gray" sticky="true" />
+                <panel width="-2.0h" height="0.4h" sticky="true" />
+            </panel>
 
-			<label
-				width="-2.0h"
-				height="0.0h"
-				font="dyn_9"
-				wrap="true"
-				color="white"
-				watch="ActiveInventoryTriggeredEffectDescription{slot}"
-				ontrigger="SetText(param); SetVisible(!StringEmpty(param)); SetHeight(GetStringWrapHeight('dyn_9', param, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <label
+                width="-2.0h"
+                height="0.0h"
+                font="dyn_9"
+                wrap="true"
+                color="white"
+                watch="ActiveInventoryTriggeredEffectDescription{slot}"
+                ontrigger="SetText(param); SetVisible(!StringEmpty(param)); SetHeight(GetStringWrapHeight('dyn_9', param, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Status effect -->
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryStatusEffect{slot}"
-				ontrigger="SetVisible(!StringEmpty(param0));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Status effect -->
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryStatusEffect{slot}"
+                ontrigger="SetVisible(!StringEmpty(param0));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<panel
-				width="-2.0h"
-				height="2.4h"
-				watch="ActiveInventoryStatusEffect{slot}"
-				ontrigger="SetVisible(!StringEmpty(param0));"
-				float="bottom"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			>
-				<label
-					height="1.8h"
-					font="dyn_10"
-					color="white"
-					watch="ActiveInventoryStatusEffect{slot}"
-					ontrigger="SetText(param0);"
-				/>
+            <panel
+                width="-2.0h"
+                height="2.4h"
+                watch="ActiveInventoryStatusEffect{slot}"
+                ontrigger="SetVisible(!StringEmpty(param0));"
+                float="bottom"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            >
+                <label
+                    height="1.8h"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveInventoryStatusEffect{slot}"
+                    ontrigger="SetText(param0);"
+                />
 
-				<panel width="10.5h" height="0.2h" color="gray" />
-				<panel height="0.4h" sticky="true" />
-			</panel>
+                <panel width="10.5h" height="0.2h" color="gray" />
+                <panel height="0.4h" sticky="true" />
+            </panel>
 
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				wrap="true"
-				color="white"
-				watch="ActiveInventoryStatusEffect{slot}"
-				ontrigger="SetText(param1); SetHeight(GetStringWrapHeight('dyn_10', param1, GetWidthFromString('-2.0h')) + GetYFromString('0.4h')); SetVisible(param2 gt 0 and !StringEmpty(param0));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
-			
-			<!-- Status Effect 2 -->
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryStatusEffect2{slot}"
-				ontrigger="SetVisible(!StringEmpty(param0));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                wrap="true"
+                color="white"
+                watch="ActiveInventoryStatusEffect{slot}"
+                ontrigger="SetText(param1); SetHeight(GetStringWrapHeight('dyn_10', param1, GetWidthFromString('-2.0h')) + GetYFromString('0.4h')); SetVisible(param2 gt 0 and !StringEmpty(param0));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
+            
+            <!-- Status Effect 2 -->
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryStatusEffect2{slot}"
+                ontrigger="SetVisible(!StringEmpty(param0));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<panel
-				width="-2.0h"
-				height="2.4h"
-				watch="ActiveInventoryStatusEffect2{slot}"
-				ontrigger="SetVisible(!StringEmpty(param0));"
-				float="bottom"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			>
-				<label
-					height="1.8h"
-					font="dyn_10"
-					color="white"
-					watch="ActiveInventoryStatusEffect2{slot}"
-					ontrigger="SetText(param0);"
-				/>
+            <panel
+                width="-2.0h"
+                height="2.4h"
+                watch="ActiveInventoryStatusEffect2{slot}"
+                ontrigger="SetVisible(!StringEmpty(param0));"
+                float="bottom"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            >
+                <label
+                    height="1.8h"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveInventoryStatusEffect2{slot}"
+                    ontrigger="SetText(param0);"
+                />
 
-				<panel width="10.5h" height="0.2h" color="gray" />
-				<panel height="0.4h" sticky="true" />
-			</panel>
+                <panel width="10.5h" height="0.2h" color="gray" />
+                <panel height="0.4h" sticky="true" />
+            </panel>
 
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				wrap="true"
-				color="white"
-				watch="ActiveInventoryStatusEffect2{slot}"
-				ontrigger="SetText(param1); SetHeight(GetStringWrapHeight('dyn_10', param1, GetWidthFromString('-2.0h')) + GetYFromString('0.4h')); SetVisible(param2 gt 0 and !StringEmpty(param0));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                wrap="true"
+                color="white"
+                watch="ActiveInventoryStatusEffect2{slot}"
+                ontrigger="SetText(param1); SetHeight(GetStringWrapHeight('dyn_10', param1, GetWidthFromString('-2.0h')) + GetYFromString('0.4h')); SetVisible(param2 gt 0 and !StringEmpty(param0));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Aura block -->
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryAura{slot}"
-				ontrigger="SetVisible(param0);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Aura block -->
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryAura{slot}"
+                ontrigger="SetVisible(param0);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<panel
-				width="-2.0h"
-				height="2.4h"
-				watch="ActiveInventoryAura{slot}"
-				ontrigger="SetVisible(param0);"
-				float="bottom"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			>
-				<label
-					width="-2.0h"
-					height="1.8h"
-					font="dyn_10"
-					color="white"
-					content="tooltip_aura"
-				/>
+            <panel
+                width="-2.0h"
+                height="2.4h"
+                watch="ActiveInventoryAura{slot}"
+                ontrigger="SetVisible(param0);"
+                float="bottom"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            >
+                <label
+                    width="-2.0h"
+                    height="1.8h"
+                    font="dyn_10"
+                    color="white"
+                    content="tooltip_aura"
+                />
 
-				<panel width="10.5h" height="0.2h" color="gray" sticky="true" />
-				<panel width="-2.0h" height="0.4h" sticky="true" />
-			</panel>
+                <panel width="10.5h" height="0.2h" color="gray" sticky="true" />
+                <panel width="-2.0h" height="0.4h" sticky="true" />
+            </panel>
 
-			<!-- Radius and Target scheme -->
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryAura{slot}"
-				ontrigger="SetVisible(param0);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			>
-				<label
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="ActiveInventoryAura{slot}"
-					ontrigger="SetText('Radius: ' # param6); SetVisible(param0);"
-				/>
-				<label
-					textalign="right"
-					font="dyn_10"
-					color="white"
-					watch="ActiveInventoryAura{slot}"
-					ontrigger="SetText(param4);"
-				/>
-			</panel>
+            <!-- Radius and Target scheme -->
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryAura{slot}"
+                ontrigger="SetVisible(param0);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            >
+                <label
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveInventoryAura{slot}"
+                    ontrigger="SetText('Radius: ' # param6); SetVisible(param0);"
+                />
+                <label
+                    textalign="right"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveInventoryAura{slot}"
+                    ontrigger="SetText(param4);"
+                />
+            </panel>
 
-			<!-- Aura effect type -->
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				color="white"
-				watch="ActiveInventoryAura{slot}"
-				ontrigger="SetText(Translate('tooltip_type') # param5); SetVisible(!StringEmpty(param5) and param0);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Aura effect type -->
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                color="white"
+                watch="ActiveInventoryAura{slot}"
+                ontrigger="SetText(Translate('tooltip_type') # param5); SetVisible(!StringEmpty(param5) and param0);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryAura{slot}"
-				ontrigger="SetVisible(param0);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryAura{slot}"
+                ontrigger="SetVisible(param0);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Aura bonuses -->
-			<panel
-				width="-2.0h"
-				height="2.4h"
-				watch="ActiveInventoryAura{slot}"
-				ontrigger="SetVisible(param0);"
-				float="bottom"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			>
-				<label
-					height="1.8h"
-					font="dyn_10"
-					color="white"
-					content="tooltip_aura_effects"
-				/>
+            <!-- Aura bonuses -->
+            <panel
+                width="-2.0h"
+                height="2.4h"
+                watch="ActiveInventoryAura{slot}"
+                ontrigger="SetVisible(param0);"
+                float="bottom"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            >
+                <label
+                    height="1.8h"
+                    font="dyn_10"
+                    color="white"
+                    content="tooltip_aura_effects"
+                />
 
-				<panel width="10.5h" height="0.2h" color="gray" />
-				<panel height="0.4h" sticky="true" />
-			</panel>
+                <panel width="10.5h" height="0.2h" color="gray" />
+                <panel height="0.4h" sticky="true" />
+            </panel>
 
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				wrap="true"
-				color="white"
-				watch="ActiveInventoryAura{slot}"
-				ontrigger="SetText(param1); SetHeight(GetStringWrapHeight('dyn_10', param1, GetWidthFromString('-2.0h')) + GetYFromString('0.4h')); SetVisible(param2 gt 0);"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                wrap="true"
+                color="white"
+                watch="ActiveInventoryAura{slot}"
+                ontrigger="SetText(param1); SetHeight(GetStringWrapHeight('dyn_10', param1, GetWidthFromString('-2.0h')) + GetYFromString('0.4h')); SetVisible(param2 gt 0);"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Flavor text -->
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				watch="ActiveInventoryDescription{slot}"
-				ontrigger="SetVisible(!StringEmpty(param14));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Flavor text -->
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                watch="ActiveInventoryDescription{slot}"
+                ontrigger="SetVisible(!StringEmpty(param14));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_9"
-				wrap="true"
-				color="gray"
-				watch="ActiveInventoryDescription{slot}"
-				ontrigger="SetText(param14); SetVisible(!StringEmpty(param14)); SetHeight(GetStringWrapHeight('dyn_9', param14, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_9"
+                wrap="true"
+                color="gray"
+                watch="ActiveInventoryDescription{slot}"
+                ontrigger="SetText(param14); SetVisible(!StringEmpty(param14)); SetHeight(GetStringWrapHeight('dyn_9', param14, GetWidthFromString('-2.0h')) + GetYFromString('0.2h'));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<!-- Help -->
-			<panel
-				width="-2.0h"
-				height="1.5h"
-				watch="ActiveInventoryDescription{slot}"
-				ontrigger="SetVisible({help} and !StringEmpty(param12));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
-			
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				wrap="true"
-				color="yellow"
-				watch="ActiveInventoryDescription{slot}"
-				ontrigger="SetText(param12); SetVisible({help} and !StringEmpty(param12));"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-			/>
+            <!-- Help -->
+            <panel
+                width="-2.0h"
+                height="1.5h"
+                watch="ActiveInventoryDescription{slot}"
+                ontrigger="SetVisible({help} and !StringEmpty(param12));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
+            
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                wrap="true"
+                color="yellow"
+                watch="ActiveInventoryDescription{slot}"
+                ontrigger="SetText(param12); SetVisible({help} and !StringEmpty(param12));"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+            />
 
-			<panel width="-2.0h" height="0.0h"
-				onframe="If(IsVisible(), Call('{id}', 'SetHeight(' # GetY() # ' + GetYFromString(\'0.55h\'));'));"
-				sticky="true"
-				stickytoinvis="false"
-			/>
-		</frame>
-	</template>
+            <panel width="-2.0h" height="0.0h"
+                onframe="If(IsVisible(), Call('{id}', 'SetHeight(' # GetY() # ' + GetYFromString(\'0.55h\'));'));"
+                sticky="true"
+                stickytoinvis="false"
+            />
+        </frame>
+    </template>
 </package>

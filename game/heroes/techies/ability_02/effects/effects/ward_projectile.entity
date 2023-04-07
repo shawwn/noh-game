@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_PollywogPriestWardAttack"
+    name="Projectile_PollywogPriestWardAttack"
 
-	speed="900"
-	gravity="3500"
-	canturn="false"
+    speed="900"
+    gravity="3500"
+    canturn="false"
 
-	model="/shared/models/invis.mdf"
+    model="/shared/models/invis.mdf"
 
-	traileffect="effects/projectile.effect"
-	impacteffect="effects/standard_projectile_impact.effect"
+    traileffect="effects/projectile.effect"
+    impacteffect="effects/standard_projectile_impact.effect"
 >
 </projectile>

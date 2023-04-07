@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_ManaPotion"
+    name="Item_ManaPotion"
 
-	statuseffecttooltip="State_ManaPotion"
-	icon="icon.tga"
-	
-	cost="50"
-	initialcharges="1"
-	chargecost="1"
-	rechargeable="true"
-	destroyonempty="true"
-	allowsharing="true"
-	
-	actiontype="target_entity"
-	frontqueue="true"
-	targetscheme="ally_units"
-	casttime="0"
-	castactiontime="0"
-	
-	range="100"
+    statuseffecttooltip="State_ManaPotion"
+    icon="icon.tga"
+    
+    cost="50"
+    initialcharges="1"
+    chargecost="1"
+    rechargeable="true"
+    destroyonempty="true"
+    allowsharing="true"
+    
+    actiontype="target_entity"
+    frontqueue="true"
+    targetscheme="ally_units"
+    casttime="0"
+    castactiontime="0"
+    
+    range="100"
 >
-	<onimpact>
-		<applystate name="State_ManaPotion" duration="30000" />
-		<playanim name="item_1" target="source_entity" />
-	</onimpact>
+    <onimpact>
+        <applystate name="State_ManaPotion" duration="30000" />
+        <playanim name="item_1" target="source_entity" />
+    </onimpact>
 </item>

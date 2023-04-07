@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Evasion"
+    name="Item_Evasion"
 
-	icon="icon.tga"
-	
-	components="Item_Wingbow Item_Steamstaff Item_SnakeBracelet"
-	autoassemble="true"
+    icon="icon.tga"
+    
+    components="Item_Wingbow Item_Steamstaff Item_SnakeBracelet"
+    autoassemble="true"
 
-	actiontype="passive"
-	
-	agility="30"
-	damage="30"
-	attackspeed="0.3"
-	evasion="0.3"
+    actiontype="passive"
+    
+    agility="30"
+    damage="30"
+    attackspeed="0.3"
+    evasion="0.3"
 >
 </item>

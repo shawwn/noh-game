@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Bear4"
+    name="Ability_Bear4"
 
-	
-	
-	icon="summon/icons/ability_4.tga"
-	
-	actiontype="passive"
-	magicarmor="8.2"
+    
+    
+    icon="summon/icons/ability_4.tga"
+    
+    actiontype="passive"
+    magicarmor="8.2"
 >
 </ability>

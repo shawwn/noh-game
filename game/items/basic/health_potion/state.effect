@@ -1,156 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true" useentityeffectscale="1">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="world" scale="1.3">
+        <particlesystem name="system0" space="world" scale="1.3">
 
-			<sound
-				linearfalloff="true"
-				falloffstart="0"
-				falloffend="2200"
-				volume=".7"
-				sample="/shared/sounds/items/item_healthpotion.wav"
-			/>
+            <sound
+                linearfalloff="true"
+                falloffstart="0"
+                falloffend="2200"
+                volume=".7"
+                sample="/shared/sounds/items/item_healthpotion.wav"
+            />
 
-			<simpleemitter
-				spawnrate="35"
-				bone="_bone_centerofchest"
-				particlelife="1000"			
-				gravity="-55"
-				acceleration="250"
-				material="/shared/effects/materials/blink.material"
-				offsetsphere="115 115 5"
-				minangle="0"
-				maxangle="360"
-			>
-				<particle 
+            <simpleemitter
+                spawnrate="35"
+                bone="_bone_centerofchest"
+                particlelife="1000"         
+                gravity="-55"
+                acceleration="250"
+                material="/shared/effects/materials/blink.material"
+                offsetsphere="115 115 5"
+                minangle="0"
+                maxangle="360"
+            >
+                <particle 
 
-					startcolor=".2 .2 0"
-					midcolor="1 1 .3"
-					endcolor="0 0 0"
-					startsize="0"
-					endsize="15"
-					widthdistort="0"
-					startstickiness="0"
-					endstickiness="1.5"
-					flare="1"
-				/>
-			</simpleemitter>
+                    startcolor=".2 .2 0"
+                    midcolor="1 1 .3"
+                    endcolor="0 0 0"
+                    startsize="0"
+                    endsize="15"
+                    widthdistort="0"
+                    startstickiness="0"
+                    endstickiness="1.5"
+                    flare="1"
+                />
+            </simpleemitter>
 
-			<simpleemitter
-				spawnrate="35"
-				bone="_bone_centerofchest"
-				minparticlelife="300"
-				maxparticlelife="1300"			
-				gravity="-5"
-				acceleration="150"
-				material="/shared/effects/materials/starbolt_01.material"
-				offsetsphere="65 65 5"
-				minangle="0"
-				maxangle="360"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="-250"
-					maxanglespeed="250"
-					startcolor="1 0 0"
-					midcolor="1 .5 1"
-					endcolor="0 0 0"
-					startsize="0"
-					endsize="13"
-					startstickiness="0"
-					endstickiness="0"
-				/>
-			</simpleemitter>  
+            <simpleemitter
+                spawnrate="35"
+                bone="_bone_centerofchest"
+                minparticlelife="300"
+                maxparticlelife="1300"          
+                gravity="-5"
+                acceleration="150"
+                material="/shared/effects/materials/starbolt_01.material"
+                offsetsphere="65 65 5"
+                minangle="0"
+                maxangle="360"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    minanglespeed="-250"
+                    maxanglespeed="250"
+                    startcolor="1 0 0"
+                    midcolor="1 .5 1"
+                    endcolor="0 0 0"
+                    startsize="0"
+                    endsize="13"
+                    startstickiness="0"
+                    endstickiness="0"
+                />
+            </simpleemitter>  
 
-			<simpleemitter
-				spawnrate="6"
-				bone="_bone_centerofchest"
-				particlelife="2000"			
-				gravity="-5"
-				material="/shared/effects/materials/deamon.material"
-				offsetsphere="15 15 5"
-				minangle="0"
-				maxangle="360"
-				position="0 0 -40"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="-150"
-					maxanglespeed="150"
-					startcolor="0 0 .2"
-					midcolor=".2 0 .025"
-					endcolor="0"
-					startsize="5"
-					midsize="125"
-					endsize="25"
-					startalpha="0"
-					midalpha="1"
-					endalpha="0"
-					pitch="90"
-					lockup="1"
-					anchor="1"
-				/>
-			</simpleemitter> 
+            <simpleemitter
+                spawnrate="6"
+                bone="_bone_centerofchest"
+                particlelife="2000"         
+                gravity="-5"
+                material="/shared/effects/materials/deamon.material"
+                offsetsphere="15 15 5"
+                minangle="0"
+                maxangle="360"
+                position="0 0 -40"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    minanglespeed="-150"
+                    maxanglespeed="150"
+                    startcolor="0 0 .2"
+                    midcolor=".2 0 .025"
+                    endcolor="0"
+                    startsize="5"
+                    midsize="125"
+                    endsize="25"
+                    startalpha="0"
+                    midalpha="1"
+                    endalpha="0"
+                    pitch="90"
+                    lockup="1"
+                    anchor="1"
+                />
+            </simpleemitter> 
 
-			<simpleemitter
-				spawnrate="5"
-				bone="_bone_centerofchest"
-				particlelife="1860"			
-				gravity="-5"
-				acceleration="0"
-				material="/shared/effects/materials/flare2.material"
-				offsetsphere="11"
-				angle="0"
-				position="0 0 -50"
-			>
-				<particle 
-					startcolor="0"
-					midcolor=".2 .1 .1"
-					endcolor="0"
-					startsize="5"
-					midsize="100"
-					endsize="25"
-					startalpha="0"
-					midalpha="1"
-					endalpha="0"
-					pitch="0"
-					lockup="1"
-					startheight="110"
-					endheight="800"
-					anchor="1"
-				/>
-			</simpleemitter> 
+            <simpleemitter
+                spawnrate="5"
+                bone="_bone_centerofchest"
+                particlelife="1860"         
+                gravity="-5"
+                acceleration="0"
+                material="/shared/effects/materials/flare2.material"
+                offsetsphere="11"
+                angle="0"
+                position="0 0 -50"
+            >
+                <particle 
+                    startcolor="0"
+                    midcolor=".2 .1 .1"
+                    endcolor="0"
+                    startsize="5"
+                    midsize="100"
+                    endsize="25"
+                    startalpha="0"
+                    midalpha="1"
+                    endalpha="0"
+                    pitch="0"
+                    lockup="1"
+                    startheight="110"
+                    endheight="800"
+                    anchor="1"
+                />
+            </simpleemitter> 
 
-			<billboard
-				life="500"
-				startsize="300"
-				endsize="700"
-				position="0 0 70"
-				material="/shared/effects/materials/flare_01.material"
-				startcolor=".5 .1 .1"
-				endcolor="0 0 0"
-			/>
+            <billboard
+                life="500"
+                startsize="300"
+                endsize="700"
+                position="0 0 70"
+                material="/shared/effects/materials/flare_01.material"
+                startcolor=".5 .1 .1"
+                endcolor="0 0 0"
+            />
 
-			<billboard
-				expirelife="300"
-				size="300"
-				position="0 0 70"
-				material="/shared/effects/materials/flare_01.material"
-				startcolor=".5 .1 .1"
-				endcolor="0 0 0"
-			/>
+            <billboard
+                expirelife="300"
+                size="300"
+                position="0 0 70"
+                material="/shared/effects/materials/flare_01.material"
+                startcolor=".5 .1 .1"
+                endcolor="0 0 0"
+            />
 
-		</particlesystem>
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-      		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-	</thread>
+    <thread>
+            <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+    </thread>
 
 </effect>

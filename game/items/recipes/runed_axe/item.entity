@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Splash"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="0"
-	components="Item_Broadsword Item_BastardSword Item_Regen"
-	autoassemble="true"
-	allowdisassemble="true"
-	
-	actiontype="passive"
-	
-	damage="65"
-	healthregen="6"
-	manaregenmultiplier="1.5"
+    name="Item_Splash"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="0"
+    components="Item_Broadsword Item_BastardSword Item_Regen"
+    autoassemble="true"
+    allowdisassemble="true"
+    
+    actiontype="passive"
+    
+    damage="65"
+    healthregen="6"
+    manaregenmultiplier="1.5"
 >
-	<modifier key="splash_melee" condition="melee" modpriority="100">
-		<onattackimpact effectdescription="true">
-			<cantarget targetscheme="enemy_units">
-				<splashdamage a="total_adjusted_damage" b="0.40" op="mult" radius="225" effecttype="Physical Splash" targetscheme="enemy_units" />
-			</cantarget>
-		</onattackimpact>
-	</modifier>
+    <modifier key="splash_melee" condition="melee" modpriority="100">
+        <onattackimpact effectdescription="true">
+            <cantarget targetscheme="enemy_units">
+                <splashdamage a="total_adjusted_damage" b="0.40" op="mult" radius="225" effecttype="Physical Splash" targetscheme="enemy_units" />
+            </cantarget>
+        </onattackimpact>
+    </modifier>
 </item>

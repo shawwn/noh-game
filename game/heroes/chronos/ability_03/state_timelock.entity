@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Chronos_Ability3_Timelock"
-	
-	icon="icon.tga"
-	passiveeffect="effects/lock.effect"
-	effecttype=""
-	ishidden="true"
-	immobilized="true"
-	stunned="true"
-	frozen="true"
+    name="State_Chronos_Ability3_Timelock"
+    
+    icon="icon.tga"
+    passiveeffect="effects/lock.effect"
+    effecttype=""
+    ishidden="true"
+    immobilized="true"
+    stunned="true"
+    frozen="true"
 >
 
 </state>

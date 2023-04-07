@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Hantumon2"
+    name="Ability_Hantumon2"
 
-	
-	
-	icon="icon.tga"
-	
-	anim="ability_2_start"
-	casttime="1000"
-	castactiontime="500"
+    
+    
+    icon="icon.tga"
+    
+    anim="ability_2_start"
+    casttime="1000"
+    castactiontime="500"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="target_entity"
-	targetscheme="all_other_units"
-	casteffecttype="Physical"
-	
-	manacost="50"
-	cooldowntime="30000,20000,10000,5000"
-	
-	range="700"
+    actiontype="target_entity"
+    targetscheme="all_other_units"
+    casteffecttype="Physical"
+    
+    manacost="50"
+    cooldowntime="30000,20000,10000,5000"
+    
+    range="700"
 >
-	<onimpact >
-		<teleport interpolate="false" facetarget="true" specifyangle="true" angle="180"/>
-		<cantarget targetscheme="ally_units">
-			<playeffect effect="effects/warpin.effect" source="source_entity" target="target_entity" />
-		</cantarget>
-		<cantarget targetscheme="enemy_units">
-			<bonusdamageadd a="30,60,90,120" target="source_entity"/>
-			<attack />
-			<playanim name="ability_2_attack" variations="1" length="400" target="source_entity" />
-			<playeffect effect="effects/ability_02.effect" source="target_entity" target="" />
-			<order command="attack" />
-		</cantarget>
-	</onimpact>
+    <onimpact >
+        <teleport interpolate="false" facetarget="true" specifyangle="true" angle="180"/>
+        <cantarget targetscheme="ally_units">
+            <playeffect effect="effects/warpin.effect" source="source_entity" target="target_entity" />
+        </cantarget>
+        <cantarget targetscheme="enemy_units">
+            <bonusdamageadd a="30,60,90,120" target="source_entity"/>
+            <attack />
+            <playanim name="ability_2_attack" variations="1" length="400" target="source_entity" />
+            <playeffect effect="effects/ability_02.effect" source="target_entity" target="" />
+            <order command="attack" />
+        </cantarget>
+    </onimpact>
 </ability>

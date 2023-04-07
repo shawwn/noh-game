@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Xalynx_Ability4"
+    name="Affector_Xalynx_Ability4"
 
-	radius="0"
-	lifetime="-1"
+    radius="0"
+    lifetime="-1"
 
-	impactinterval="1000"
-	maximpactsperinterval="1"
-	targetselection="all"
-	targetscheme="self"
-	canturn="false"
+    impactinterval="1000"
+    maximpactsperinterval="1"
+    targetselection="all"
+    targetscheme="self"
+    canturn="false"
 >
-	<onimpact>
-		<condition test="not_stealthed" target="this_owner_entity"> 
-			<spawnaffector name="Affector_Xalynx_Ability4_Pulse" target="source_entity"/>
-		</condition>
-	</onimpact>
+    <onimpact>
+        <condition test="not_stealthed" target="this_owner_entity"> 
+            <spawnaffector name="Affector_Xalynx_Ability4_Pulse" target="source_entity"/>
+        </condition>
+    </onimpact>
 </affector>

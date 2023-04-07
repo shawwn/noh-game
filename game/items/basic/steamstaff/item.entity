@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Steamstaff"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="900"
-	
-	actiontype="passive"
-	
-	damage="10"
-	attackspeed="0.1"
+    name="Item_Steamstaff"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="900"
+    
+    actiontype="passive"
+    
+    damage="10"
+    attackspeed="0.1"
 >
 </item>

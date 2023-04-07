@@ -4,7 +4,7 @@
     
     iscontrollable="false"
     invulnerable="true"
-	
+    
     goldbountymin="75,150,225"
     goldbountymax="75,150,225"
 >

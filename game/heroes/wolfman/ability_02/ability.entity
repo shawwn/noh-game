@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_WolfMan2"
+    name="Ability_WolfMan2"
 
-	
-	
-	icon="icon.tga"
-	statuseffecttooltip="State_WolfMan_Ability2"
-	statuseffecttooltip2="State_WolfMan_Ability2_Units"
-	
-	anim="ability_2"
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
-	casteffect="cast.effect"
+    
+    
+    icon="icon.tga"
+    statuseffecttooltip="State_WolfMan_Ability2"
+    statuseffecttooltip2="State_WolfMan_Ability2_Units"
+    
+    anim="ability_2"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
+    casteffect="cast.effect"
 
-	actiontype="global"
-	targetscheme="player_controlled_ally_units"
-	casteffecttype="Magic"
-	
-	manacost="15,20,25,30"
-	cooldowntime="35000"
+    actiontype="global"
+    targetscheme="player_controlled_ally_units"
+    casteffecttype="Magic"
+    
+    manacost="15,20,25,30"
+    cooldowntime="35000"
 >
-	<onimpact >
-		<condition test="target_type hero">
-			<applystate name="State_WolfMan_Ability2" duration="16000" target="target_entity"/>
-		</condition>
-		<condition test="not_target_type hero">
-			<applystate name="State_WolfMan_Ability2_Units" duration="16000" target="target_entity"/>
-		</condition>
+    <onimpact >
+        <condition test="target_type hero">
+            <applystate name="State_WolfMan_Ability2" duration="16000" target="target_entity"/>
+        </condition>
+        <condition test="not_target_type hero">
+            <applystate name="State_WolfMan_Ability2_Units" duration="16000" target="target_entity"/>
+        </condition>
 
-	</onimpact>
+    </onimpact>
 </ability>

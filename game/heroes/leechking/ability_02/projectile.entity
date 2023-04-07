@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Leechking_Ability2"
+    name="Projectile_Leechking_Ability2"
 
-	speed="2000"
-	gravity="0"	
-	modelscale="0.8"
-	model="../../../heroes/soulstealer/projectile/bones.mdf"
+    speed="2000"
+    gravity="0" 
+    modelscale="0.8"
+    model="../../../heroes/soulstealer/projectile/bones.mdf"
 
-	effectscale="1"
-	impacteffect="../../../heroes/soulstealer/projectile/impact.effect"
-	traileffect="../../../heroes/soulstealer/projectile/trail.effect"
+    effectscale="1"
+    impacteffect="../../../heroes/soulstealer/projectile/impact.effect"
+    traileffect="../../../heroes/soulstealer/projectile/trail.effect"
 >
 </projectile>

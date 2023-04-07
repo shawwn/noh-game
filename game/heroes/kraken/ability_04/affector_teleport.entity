@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Kraken_Ability4_Teleport"
-	effect="effects/ability_self.effect,effects/ability_self_2.effect,effects/ability_self_3.effect"	
-	radius="350"
-	lifetime="4000,5000,6000"
-	impactdelay="4000,5000,6000"
-	targetselection="all"
-	targetscheme="all_other_units"
-	maximpactspertarget="1"
+    name="Affector_Kraken_Ability4_Teleport"
+    effect="effects/ability_self.effect,effects/ability_self_2.effect,effects/ability_self_3.effect"    
+    radius="350"
+    lifetime="4000,5000,6000"
+    impactdelay="4000,5000,6000"
+    targetselection="all"
+    targetscheme="all_other_units"
+    maximpactspertarget="1"
 
 >
-	<onframe>
-		<condition test="distance gt 3000" source="this_owner_entity" target="proxy_entity">
-			<condition test="distance gt 3500" source="this_owner_entity" target="proxy_entity">
-				<delete target="this_entity" source="" />
-			</condition>
-			<condition test="distance lt 3500" source="this_owner_entity" target="proxy_entity">
-				<expirestate name="State_Kraken_Ability4_Self" target="this_owner_entity" />
-				<spawnaffector name="Affector_Kraken_Ability4_Teleport_Instant" target="this_owner_entity" proxy="proxy_entity" />
-				<delete target="this_entity" source="" />
-			</condition>
-		</condition>
-	</onframe>
-	
-	<onimpact>
-		<condition test="target_type alive">
-			<unbind target="target_entity" />
-			<cantarget targetscheme="enemy_units">
-				<damage effecttype="Magic" amount="150,300,450" />
-				<applystate name="State_Kraken_Ability4_Slow" duration="4000"/>
-			</cantarget>
-			
-			<teleport source="target_entity" target="proxy_position" interpolate="false" />
-			
-			<disjoint target="target_entity" />
-		</condition>
-	</onimpact>
+    <onframe>
+        <condition test="distance gt 3000" source="this_owner_entity" target="proxy_entity">
+            <condition test="distance gt 3500" source="this_owner_entity" target="proxy_entity">
+                <delete target="this_entity" source="" />
+            </condition>
+            <condition test="distance lt 3500" source="this_owner_entity" target="proxy_entity">
+                <expirestate name="State_Kraken_Ability4_Self" target="this_owner_entity" />
+                <spawnaffector name="Affector_Kraken_Ability4_Teleport_Instant" target="this_owner_entity" proxy="proxy_entity" />
+                <delete target="this_entity" source="" />
+            </condition>
+        </condition>
+    </onframe>
+    
+    <onimpact>
+        <condition test="target_type alive">
+            <unbind target="target_entity" />
+            <cantarget targetscheme="enemy_units">
+                <damage effecttype="Magic" amount="150,300,450" />
+                <applystate name="State_Kraken_Ability4_Slow" duration="4000"/>
+            </cantarget>
+            
+            <teleport source="target_entity" target="proxy_position" interpolate="false" />
+            
+            <disjoint target="target_entity" />
+        </condition>
+    </onimpact>
 </affector>

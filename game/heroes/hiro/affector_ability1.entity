@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Hiro_Ability1"
+    name="Affector_Hiro_Ability1"
 
-	radius="250"
-	
-	lifetime="5000"
-	targetscheme="enemy_units"
-	effecttype="Magic"
-	persist="false"
-	canturn="false"
+    radius="250"
+    
+    lifetime="5000"
+    targetscheme="enemy_units"
+    effecttype="Magic"
+    persist="false"
+    canturn="false"
 >
-	<onframe>
-		<damage effecttype="Magic" amount="80,100,120,140" b="frametime" op="mult"/>
-	</onframe>
+    <onframe>
+        <damage effecttype="Magic" amount="80,100,120,140" b="frametime" op="mult"/>
+    </onframe>
 </affector>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Rampage_Ability1_Timer"
-	
-	ishidden="true"
-	impactinterval="4000"
+    name="State_Rampage_Ability1_Timer"
+    
+    ishidden="true"
+    impactinterval="4000"
 >
-	<onimpact>
-		<damage effecttype="DummyDmg" amount="1" target="source_entity" source="source_entity" />
-	</onimpact>
+    <onimpact>
+        <damage effecttype="DummyDmg" amount="1" target="source_entity" source="source_entity" />
+    </onimpact>
 </state>

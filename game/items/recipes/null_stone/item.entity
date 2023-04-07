@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Protect"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="1325"
-	components="Item_Regen Item_Confluence"
-	
-	actiontype="passive"
-	cooldowntime="20000"
-	cooldowntype="protect"
-	
-	strength="15"
-	agility="15"
-	intelligence="15"
-	healthregen="6"
-	manaregenmultiplier="1.5"
+    name="Item_Protect"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="1325"
+    components="Item_Regen Item_Confluence"
+    
+    actiontype="passive"
+    cooldowntime="20000"
+    cooldowntype="protect"
+    
+    strength="15"
+    agility="15"
+    intelligence="15"
+    healthregen="6"
+    manaregenmultiplier="1.5"
 >
-	<onframe />
-	<onattackedpreimpact>
-		<condition test="target_type enemy">
-			<condition test="canactivate">
-				<negate immunitytype="MagicImmunity1">
-				<playeffect effect="impact.effect" source="source_entity"/>
-					<startcooldown />
-				</negate>
-			</condition>
-		</condition>
-	</onattackedpreimpact>
-	<ontargeted />
-	<ontargettedpreimpact>
-		<condition test="target_type enemy">
-			<condition test="canactivate">
-				<negate immunitytype="MagicImmunity1">
-				<playeffect effect="impact.effect" source="source_entity"/>
-					<startcooldown />
-				</negate>
-			</condition>
-		</condition>
-	</ontargettedpreimpact>
+    <onframe />
+    <onattackedpreimpact>
+        <condition test="target_type enemy">
+            <condition test="canactivate">
+                <negate immunitytype="MagicImmunity1">
+                <playeffect effect="impact.effect" source="source_entity"/>
+                    <startcooldown />
+                </negate>
+            </condition>
+        </condition>
+    </onattackedpreimpact>
+    <ontargeted />
+    <ontargettedpreimpact>
+        <condition test="target_type enemy">
+            <condition test="canactivate">
+                <negate immunitytype="MagicImmunity1">
+                <playeffect effect="impact.effect" source="source_entity"/>
+                    <startcooldown />
+                </negate>
+            </condition>
+        </condition>
+    </ontargettedpreimpact>
 </item>

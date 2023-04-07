@@ -17,10 +17,10 @@
 //=============================================================================
 struct VS_OUTPUT
 {
-	float2 Texcoord0 : TEXCOORD0;
-	float2 Texcoord1 : TEXCOORD1;
-	float2 Texcoord2 : TEXCOORD2;
-	float2 Texcoord3 : TEXCOORD3;
+    float2 Texcoord0 : TEXCOORD0;
+    float2 Texcoord1 : TEXCOORD1;
+    float2 Texcoord2 : TEXCOORD2;
+    float2 Texcoord3 : TEXCOORD3;
 };
 
 //=============================================================================
@@ -28,7 +28,7 @@ struct VS_OUTPUT
 //=============================================================================
 struct PS_OUTPUT
 {
-	float4 Color : COLOR;
+    float4 Color : COLOR;
 };
 
 sampler image;
@@ -38,28 +38,28 @@ sampler image;
 //=============================================================================
 PS_OUTPUT PS( VS_OUTPUT In )
 {
-	PS_OUTPUT Out;
-		
-	Out.Color = 0.0f;
-	
-	// Downsize
-	Out.Color += tex2D(image, In.Texcoord0);
-	Out.Color += tex2D(image, In.Texcoord1);
-	Out.Color += tex2D(image, In.Texcoord2);
-	Out.Color += tex2D(image, In.Texcoord3);
-	
-	Out.Color *= 0.25f;
+    PS_OUTPUT Out;
+        
+    Out.Color = 0.0f;
+    
+    // Downsize
+    Out.Color += tex2D(image, In.Texcoord0);
+    Out.Color += tex2D(image, In.Texcoord1);
+    Out.Color += tex2D(image, In.Texcoord2);
+    Out.Color += tex2D(image, In.Texcoord3);
+    
+    Out.Color *= 0.25f;
 
-	// Bright filter
-	static const float fMin = 1.00f;
-	static const float fMax = 2.00f;
-	static const float fLerp = 0.0f;
-	
-	float fBrightness = max(Out.Color.r, max(Out.Color.g, Out.Color.b)) + dot(Out.Color.rgb, float3(1.0f, 1.0f, 1.0f));
-	float fScale = lerp(smoothstep(fMin, fMax, fBrightness), 1.0f, fLerp);
-	
-	Out.Color.rgb *= fScale;
-	
-	return Out;
+    // Bright filter
+    static const float fMin = 1.00f;
+    static const float fMax = 2.00f;
+    static const float fLerp = 0.0f;
+    
+    float fBrightness = max(Out.Color.r, max(Out.Color.g, Out.Color.b)) + dot(Out.Color.rgb, float3(1.0f, 1.0f, 1.0f));
+    float fScale = lerp(smoothstep(fMin, fMax, fBrightness), 1.0f, fLerp);
+    
+    Out.Color.rgb *= fScale;
+    
+    return Out;
 }
 

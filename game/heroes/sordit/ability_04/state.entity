@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Sordit_Ability4"
+    name="State_Sordit_Ability4"
 
-	icon="icon.tga"
-	passiveeffect="effects/state.effect"
-	
-	stealthtype="hero"
-	fadetime="500"
-	unitwalking="true"
-	movespeedmultiplier="0.1,0.15,0.20"
-	
-	effecttype="StatusBuff"
+    icon="icon.tga"
+    passiveeffect="effects/state.effect"
+    
+    stealthtype="hero"
+    fadetime="500"
+    unitwalking="true"
+    movespeedmultiplier="0.1,0.15,0.20"
+    
+    effecttype="StatusBuff"
 >
-	<oninflict>
-		<forgetattacks />
-		<startfade />
-		<playeffect effect=""/>
-	</oninflict>
-	
-	<onattack>
-		<bonusdamageadd target="" a="225,375,525" />
-		<expire />	
-	</onattack>
-	
-	<onattackimpact>
-		<playeffect effect="effects/impact.effect" source="target_entity" />
-	</onattackimpact>
-	
-	<onattackstart>
-		<playanim name="attack_3" speed="source_attackspeed" target="source_entity" />
-	</onattackstart>
-	
-	<onactivatepreimpact>
-		<expire />
-	</onactivatepreimpact>
+    <oninflict>
+        <forgetattacks />
+        <startfade />
+        <playeffect effect=""/>
+    </oninflict>
+    
+    <onattack>
+        <bonusdamageadd target="" a="225,375,525" />
+        <expire />  
+    </onattack>
+    
+    <onattackimpact>
+        <playeffect effect="effects/impact.effect" source="target_entity" />
+    </onattackimpact>
+    
+    <onattackstart>
+        <playanim name="attack_3" speed="source_attackspeed" target="source_entity" />
+    </onattackstart>
+    
+    <onactivatepreimpact>
+        <expire />
+    </onactivatepreimpact>
 
-	<onframe >
-		<damage effecttype="Magic" amount="25,30,35" b="frametime" op="mult"/>
-	</onframe>
+    <onframe >
+        <damage effecttype="Magic" amount="25,30,35" b="frametime" op="mult"/>
+    </onframe>
 </state>

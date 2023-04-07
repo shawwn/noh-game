@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="pages2.max" file="../../ability_04/effects/pages.model" type="K2">
 
-	<anim name="idle" clip="pages.clip" loop="true" loopbackframe="-1"/>
+    <anim name="idle" clip="pages.clip" loop="true" loopbackframe="-1"/>
 
 </model>

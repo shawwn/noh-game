@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Gauntlet_Ability2_Link_Nobones"
+    name="State_Gauntlet_Ability2_Link_Nobones"
 
-	ishidden="true"
-	passiveeffect="effects/trail_nobones.effect"
+    ishidden="true"
+    passiveeffect="effects/trail_nobones.effect"
 >
 
 </state>

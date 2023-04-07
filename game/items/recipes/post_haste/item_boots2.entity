@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_PostHaste"
-	
-	icon="icon.tga"
-	
-	cost="2200"
-	components="Item_Marchers"
-	
-	actiontype="target_entity"
-	searchradius="600"
-	targetscheme="teleport_targets"
-	allowoutofrangecast="true"
-	range="999999"
-	ignoreinvulnerable="true"
-	ischanneling="true"
-	casttime="3000"
-	castactiontime="0"
-	channeltime="3000"
-	cooldowntime="60000"
-	cooldowntype="teleport"
-	manacost="75"
+    name="Item_PostHaste"
+    
+    icon="icon.tga"
+    
+    cost="2200"
+    components="Item_Marchers"
+    
+    actiontype="target_entity"
+    searchradius="600"
+    targetscheme="teleport_targets"
+    allowoutofrangecast="true"
+    range="999999"
+    ignoreinvulnerable="true"
+    ischanneling="true"
+    casttime="3000"
+    castactiontime="0"
+    channeltime="3000"
+    cooldowntime="60000"
+    cooldowntype="teleport"
+    manacost="75"
 >
-	<onimpact effectdescription="true"/>
-	
-	<onchannelstart>
-		<applystate name="State_Boots_Target" ischannel="true" />
-		<applystate name="State_Boots_Source" target="source_entity" ischannel="true" />
-		<ping name="teleport" position="target_entity"/>
-	</onchannelstart>
-	
-	<onchannelend>
-		<playeffect effect="/items/basic/homecoming_stone/effects/impact.effect" source="source_position" />
-		<teleport />
-		<disjoint target="source_entity" />
-	</onchannelend>
-	
-	<modifier key="movespeed" modpriority="90" exclusive="true"
-		movespeed="95"
-	/>
+    <onimpact effectdescription="true"/>
+    
+    <onchannelstart>
+        <applystate name="State_Boots_Target" ischannel="true" />
+        <applystate name="State_Boots_Source" target="source_entity" ischannel="true" />
+        <ping name="teleport" position="target_entity"/>
+    </onchannelstart>
+    
+    <onchannelend>
+        <playeffect effect="/items/basic/homecoming_stone/effects/impact.effect" source="source_position" />
+        <teleport />
+        <disjoint target="source_entity" />
+    </onchannelend>
+    
+    <modifier key="movespeed" modpriority="90" exclusive="true"
+        movespeed="95"
+    />
 </item>

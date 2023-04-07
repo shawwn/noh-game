@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Ebula_Ability1"
+    name="State_Ebula_Ability1"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/sting_01.effect"
-	
-	
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/sting_01.effect"
+    
+    
+    effecttype="StatusDebuff"
 >
-	<onframe >
-		<damage effecttype="Magic" amount="2" b="frametime" op="mult" nonlethal="true"/>
-	</onframe>
+    <onframe >
+        <damage effecttype="Magic" amount="2" b="frametime" op="mult" nonlethal="true"/>
+    </onframe>
 </state>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_SnotterBoss_Ability1"
+    name="State_SnotterBoss_Ability1"
 
-	
-	
-	icon="icon.tga"
-	
-	movespeedmultiplier="0.12"
-	passiveeffect="state.effect"
+    
+    
+    icon="icon.tga"
+    
+    movespeedmultiplier="0.12"
+    passiveeffect="state.effect"
 
-	effecttype="StatusBuff"
+    effecttype="StatusBuff"
 >
 </state>

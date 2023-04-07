@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Valkyrie_Ability3"
+    name="Affector_Valkyrie_Ability3"
 
-	radius="800"
+    radius="800"
 
-	targetselection="all"
-	targetscheme="ally_heroes"
-	effecttype=""
-	
+    targetselection="all"
+    targetscheme="ally_heroes"
+    effecttype=""
+    
 
 >
-	<onimpact>
-		<applystate name="State_Valkyrie_Ability3_Buff" duration="10000" />
-		<playeffect effect="effects/land.effect" target="source_position" source="source_position" occlude="true"/>
-	</onimpact>
-	
+    <onimpact>
+        <applystate name="State_Valkyrie_Ability3_Buff" duration="10000" />
+        <playeffect effect="effects/land.effect" target="source_position" source="source_position" occlude="true"/>
+    </onimpact>
+    
 </affector>

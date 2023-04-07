@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Frosty_Ability4"
+    name="Affector_Frosty_Ability4"
 
-	radius="635"
-	
-	lifetime="-1"
-	impactinterval="100"
-	maximpactsperinterval="1"
-	targetselection="random_position"
-	targetscheme="nothing"
-	
-	effect="effects/area.effect"
-	impacteffect="impact.effect"
+    radius="635"
+    
+    lifetime="-1"
+    impactinterval="100"
+    maximpactsperinterval="1"
+    targetselection="random_position"
+    targetscheme="nothing"
+    
+    effect="effects/area.effect"
+    impacteffect="impact.effect"
 >
-	<aura state="State_Frosty_Ability4" targetscheme="enemy_units" duration="1000" />
-	
-	<onimpact>
-		<spawnaffector name="Affector_Frosty_Ability4_Burst" target="target_position" />
-		<playeffect effect="effects/impacts.effect" source="target_position" target="" />
-	</onimpact>
+    <aura state="State_Frosty_Ability4" targetscheme="enemy_units" duration="1000" />
+    
+    <onimpact>
+        <spawnaffector name="Affector_Frosty_Ability4_Burst" target="target_position" />
+        <playeffect effect="effects/impacts.effect" source="target_position" target="" />
+    </onimpact>
 </affector>

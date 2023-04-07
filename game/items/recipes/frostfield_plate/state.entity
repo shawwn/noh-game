@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_FrostfieldPlate"
+    name="State_FrostfieldPlate"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect=""
-	movespeedslow="0.4"
-	
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect=""
+    movespeedslow="0.4"
+    
+    effecttype="StatusDebuff"
 >
 </state>

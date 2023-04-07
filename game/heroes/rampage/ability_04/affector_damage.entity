@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Rampage_Ability4_damage"
+    name="Affector_Rampage_Ability4_damage"
 
-	impactdelay="100"
-	persist="true"
+    impactdelay="100"
+    persist="true"
 >
-	<onimpact>
-		<push force="168" duration="1550" source="source_entity" target="target_entity" />
-		<applystate name="State_Rampage_Ability4" duration="1550" target="target_entity" />
-		<spawnaffector name="Affector_Rampage_Ability4_Trees" target="target_entity" />
-		<damage effecttype="Magic" amount="200,300,400" source="source_entity" target="target_entity" />
-		<order command="attack" source="source_entity" target="target_entity" />
-		<playanim name="ability_3" speed="source_attackspeed" target="source_entity" />
-	</onimpact>
+    <onimpact>
+        <push force="168" duration="1550" source="source_entity" target="target_entity" />
+        <applystate name="State_Rampage_Ability4" duration="1550" target="target_entity" />
+        <spawnaffector name="Affector_Rampage_Ability4_Trees" target="target_entity" />
+        <damage effecttype="Magic" amount="200,300,400" source="source_entity" target="target_entity" />
+        <order command="attack" source="source_entity" target="target_entity" />
+        <playanim name="ability_3" speed="source_attackspeed" target="source_entity" />
+    </onimpact>
 </affector>

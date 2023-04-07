@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true">
 
-	<definitions>
+    <definitions>
 
-		<modifier 
-			name="modifier0"
-			startalpha="0"
-			endalpha="1"
-			life="400"
-		/>
+        <modifier 
+            name="modifier0"
+            startalpha="0"
+            endalpha="1"
+            life="400"
+        />
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnmodifier instance="instance0" modifier="modifier0"/>
-     	 	<waitfordeath instance="instance0" />
-	</thread>
+    <thread>
+        <spawnmodifier instance="instance0" modifier="modifier0"/>
+            <waitfordeath instance="instance0" />
+    </thread>
 
 </effect>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Engineer_Ability3_Turret"
-	
-	icon="icon.tga"
-	passiveeffect="effects/state_turret.effect"
-	ishidden="true"
-	impactinterval="1000"
-	damage="13,28,48,63"
+    name="State_Engineer_Ability3_Turret"
+    
+    icon="icon.tga"
+    passiveeffect="effects/state_turret.effect"
+    ishidden="true"
+    impactinterval="1000"
+    damage="13,28,48,63"
 
-	effecttype="StatusBuff"
+    effecttype="StatusBuff"
 >
-	<onimpact>
-		<condition test="not_hasstate State_Engineer_Ability2_Turret_RecentlyDamaged" target="target_entity" >
-			<heal target="target_entity" a="target_maxhealth" b="0.25" op="mult" />
-		</condition>
-	</onimpact>
+    <onimpact>
+        <condition test="not_hasstate State_Engineer_Ability2_Turret_RecentlyDamaged" target="target_entity" >
+            <heal target="target_entity" a="target_maxhealth" b="0.25" op="mult" />
+        </condition>
+    </onimpact>
 </state>

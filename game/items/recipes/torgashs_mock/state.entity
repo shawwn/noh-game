@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Item4D"
+    name="State_Item4D"
 
-	
-	
+    
+    
 
-	passiveeffect="state.effect"	
+    passiveeffect="state.effect"    
 
-	icon="icon.tga"
+    icon="icon.tga"
 
-	effecttype=""
+    effecttype=""
 >
-	<onframe>
-		<condition target="source_entity" test="target_type Courier" />
-		<else>
-			<damage effecttype="Magic DOT" amount="40" b="frametime" op="mult"/>
-		</else>
-	</onframe>
+    <onframe>
+        <condition target="source_entity" test="target_type Courier" />
+        <else>
+            <damage effecttype="Magic DOT" amount="40" b="frametime" op="mult"/>
+        </else>
+    </onframe>
 </state>

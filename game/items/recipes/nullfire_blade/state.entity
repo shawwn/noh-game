@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Item2F"
+    name="State_Item2F"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="state.effect"
-	impacteffect="impact.effect"
-	
-	movespeedslowstart="0.8"
-	movespeedslowend="0.0"
-	
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="state.effect"
+    impacteffect="impact.effect"
+    
+    movespeedslowstart="0.8"
+    movespeedslowend="0.0"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe />
+    <onframe />
 </state>

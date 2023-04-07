@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Scout_Ability1"
+    name="State_Scout_Ability1"
 
-	icon="icon.tga"
-	passiveeffect="effects/state.effect"
-	
-	stealthtype="hero"
-	fadetime="500"
-	unitwalking="true"
-	movespeedmultiplier="0.25"
-	
-	effecttype="StatusBuff"
+    icon="icon.tga"
+    passiveeffect="effects/state.effect"
+    
+    stealthtype="hero"
+    fadetime="500"
+    unitwalking="true"
+    movespeedmultiplier="0.25"
+    
+    effecttype="StatusBuff"
 >
-	<oninflict>
-		<forgetattacks />
-		<startfade />
-		<playeffect effect="effects/cast.effect"/>
-	</oninflict>
-	
-	
-	<onattackstart>
-		<applystate name="State_Scout_Ability1_Attack" target="source_entity" duration="4000" />
-		<playanim name="strong_attack_1" speed="source_attackspeed" target="source_entity" />
-		<expire />
-	</onattackstart>
-	
-	<onactivatepreimpact>
-		<expire />
-	</onactivatepreimpact>
+    <oninflict>
+        <forgetattacks />
+        <startfade />
+        <playeffect effect="effects/cast.effect"/>
+    </oninflict>
+    
+    
+    <onattackstart>
+        <applystate name="State_Scout_Ability1_Attack" target="source_entity" duration="4000" />
+        <playanim name="strong_attack_1" speed="source_attackspeed" target="source_entity" />
+        <expire />
+    </onattackstart>
+    
+    <onactivatepreimpact>
+        <expire />
+    </onactivatepreimpact>
 </state>

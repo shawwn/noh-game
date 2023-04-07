@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Nomad1"
+    name="Ability_Nomad1"
 
-	
-	
-	icon="icon.tga"
-	
-	statuseffecttooltip="State_Nomad_Ability1"
-	statuseffectheader="true"
-	statuseffecttooltip2="State_Nomad_Ability1_Enemy"
-	statuseffectheader2="true"
-	
-	
-	anim=""
-	casttime="0"
-	castactiontime="0"
+    
+    
+    icon="icon.tga"
+    
+    statuseffecttooltip="State_Nomad_Ability1"
+    statuseffectheader="true"
+    statuseffecttooltip2="State_Nomad_Ability1_Enemy"
+    statuseffectheader2="true"
+    
+    
+    anim=""
+    casttime="0"
+    castactiontime="0"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="target_self"
-	frontqueue="true"
-	targetradius="150,200,250,300"
-	
-	manacost="60,70,80,90"
-	cooldowntime="30000,25000,20000,15000"
+    actiontype="target_self"
+    frontqueue="true"
+    targetradius="150,200,250,300"
+    
+    manacost="60,70,80,90"
+    cooldowntime="30000,25000,20000,15000"
 
 >
-	<onattackstart>
-		<expirestate name="State_Nomad_Ability1" target="source_entity"/>
-	</onattackstart>
-	
-	<onimpact >
-		<applystate name="State_Nomad_Ability1" duration="4000,5000,6000,7000"/>
-	</onimpact>
+    <onattackstart>
+        <expirestate name="State_Nomad_Ability1" target="source_entity"/>
+    </onattackstart>
+    
+    <onimpact >
+        <applystate name="State_Nomad_Ability1" duration="4000,5000,6000,7000"/>
+    </onimpact>
 </ability>

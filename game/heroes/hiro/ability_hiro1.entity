@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Hiro1"
+    name="Ability_Hiro1"
 
-	
-	
-	statuseffecttooltip="State_Hiro_Ability1"
-	icon="icons/ability_1.tga"
-	
-	anim="ability_1_start"
-	casttime="0"
-	castactiontime="0"
+    
+    
+    statuseffecttooltip="State_Hiro_Ability1"
+    icon="icons/ability_1.tga"
+    
+    anim="ability_1_start"
+    casttime="0"
+    castactiontime="0"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="target_self"
-	targetscheme="enemy_units" 
-	targetradius="250"
-	casteffecttype="Magic"
-	
-	manacost="110"
-	cooldowntime="30000"
+    actiontype="target_self"
+    targetscheme="enemy_units" 
+    targetradius="250"
+    casteffecttype="Magic"
+    
+    manacost="110"
+    cooldowntime="30000"
 >
-	<onimpact >
-		<expirestate name="State_PowerupMoveSpeed" target="source_entity"/>
-		<spawnaffector name="Affector_Hiro_Ability1" target="source_entity"/>
-		<applystate name="State_Hiro_Ability1" duration="5000"/>
-	</onimpact>
+    <onimpact >
+        <expirestate name="State_PowerupMoveSpeed" target="source_entity"/>
+        <spawnaffector name="Affector_Hiro_Ability1" target="source_entity"/>
+        <applystate name="State_Hiro_Ability1" duration="5000"/>
+    </onimpact>
 </ability>

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Item5C_State"
+    name="Affector_Item5C_State"
 
-	radius="700"
-	arc="90"
-	
-	maxtotalimpacts="3"
-	maximpactspertarget="1"
-	targetselection="closest"
-	targetscheme="visible_enemy_units"
-	effecttype="Magic"
-	
-	impacteffect="/heroes/kunas/effects/ability_01/chain_impact.effect"
-	bridgeeffect="/heroes/kunas/effects/ability_01/chain_lightning_link.effect"
+    radius="700"
+    arc="90"
+    
+    maxtotalimpacts="3"
+    maximpactspertarget="1"
+    targetselection="closest"
+    targetscheme="visible_enemy_units"
+    effecttype="Magic"
+    
+    impacteffect="/heroes/kunas/effects/ability_01/chain_impact.effect"
+    bridgeeffect="/heroes/kunas/effects/ability_01/chain_lightning_link.effect"
 >
-	<onimpact>
-		<damage effecttype="Magic" amount="200"/>
-	</onimpact>
+    <onimpact>
+        <damage effecttype="Magic" amount="200"/>
+    </onimpact>
 </affector>

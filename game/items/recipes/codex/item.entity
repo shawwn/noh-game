@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Nuke"
-	
-	casttime="500"
-	castactiontime="0"
-	anim=""
-	
-	icon="icon.tga"
-	
-	cost="1350"
-	components="Item_NeophytesBook Item_Punchdagger"
-	maxlevel="5"
-	
-	actiontype="target_entity"
-	targetscheme="enemy_units"
-	casteffecttype="Magic"
-	range="600,700,800,900,1000"
-	manacost="180,160,140,120,100"
-	cooldowntime="40000,36000,32000,28000,24000"
-	cooldowntype="nuke"
-	
-	impacteffect="impact.effect"
-	
-	intelligence="15,17,19,21,23"
-	agility="3"
-	strength="3"
-	damage="9"
+    name="Item_Nuke"
+    
+    casttime="500"
+    castactiontime="0"
+    anim=""
+    
+    icon="icon.tga"
+    
+    cost="1350"
+    components="Item_NeophytesBook Item_Punchdagger"
+    maxlevel="5"
+    
+    actiontype="target_entity"
+    targetscheme="enemy_units"
+    casteffecttype="Magic"
+    range="600,700,800,900,1000"
+    manacost="180,160,140,120,100"
+    cooldowntime="40000,36000,32000,28000,24000"
+    cooldowntype="nuke"
+    
+    impacteffect="impact.effect"
+    
+    intelligence="15,17,19,21,23"
+    agility="3"
+    strength="3"
+    damage="9"
 >
-	<onimpact effectdescription="true">
-		<damage effecttype="Magic" amount="400,500,600,700,800"/>
-		<playeffect effect="cast.effect"/>
-		<playanim name="item_1" target="source_entity" />
-	</onimpact>
+    <onimpact effectdescription="true">
+        <damage effecttype="Magic" amount="400,500,600,700,800"/>
+        <playeffect effect="cast.effect"/>
+        <playanim name="item_1" target="source_entity" />
+    </onimpact>
 </item>

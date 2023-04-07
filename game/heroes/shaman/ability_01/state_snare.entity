@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Shaman_Ability1_Snare"
+    name="State_Shaman_Ability1_Snare"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/entangle.effect"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/entangle.effect"
 
-	movespeedslowstart="0.33,0.33,0.33,0.33"
-	movespeedslowmid="0.33,0.66,0.66,0.66"
-	movespeedslowend="0.33,0.66,0.66,0.66"
-	movespeedslowduration="1000,2000,3000,3000"
-	movespeedslowmidpos="0.5,0.5,0.33,0.33"
-	
-	
+    movespeedslowstart="0.33,0.33,0.33,0.33"
+    movespeedslowmid="0.33,0.66,0.66,0.66"
+    movespeedslowend="0.33,0.66,0.66,0.66"
+    movespeedslowduration="1000,2000,3000,3000"
+    movespeedslowmidpos="0.5,0.5,0.33,0.33"
+    
+    
 >
-	<oninflict>
-		<applystate name="State_Stunned" duration="200" />
-	</oninflict>
+    <oninflict>
+        <applystate name="State_Stunned" duration="200" />
+    </oninflict>
 
-	
-	<onexpired>
-		<applystate name="State_Shaman_Ability1_Damage" duration="7000" />
-		<applystate name="State_Stunned" duration="0,0,1000,1000" />
-	</onexpired>
-	
+    
+    <onexpired>
+        <applystate name="State_Shaman_Ability1_Damage" duration="7000" />
+        <applystate name="State_Stunned" duration="0,0,1000,1000" />
+    </onexpired>
+    
 </state>

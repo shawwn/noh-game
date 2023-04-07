@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="" file="wake.model" type="K2" >
-	<spawnevent cmd="StartEffect waterripples.effect 0"/> 
+    <spawnevent cmd="StartEffect waterripples.effect 0"/> 
 <anim name="idle" clip="clips/default_1.clip" fps="30" loop="true">
-	
+    
 </anim>
 </model>

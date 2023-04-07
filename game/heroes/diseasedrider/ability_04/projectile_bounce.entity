@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_DiseasedRider_Ability4_Bounce"
+    name="Projectile_DiseasedRider_Ability4_Bounce"
 
-	speed="522"
-	gravity="0"	
+    speed="522"
+    gravity="0" 
 
-	flying="true"
-	flyheight="48"
+    flying="true"
+    flyheight="48"
 
-	modelscale="1.2"
-	model="effects/model.mdf"
+    modelscale="1.2"
+    model="effects/model.mdf"
 
-	impacteffect="effects/impact.effect"
-	invalideffect=""
-	traileffect="effects/trail.effect"
+    impacteffect="effects/impact.effect"
+    invalideffect=""
+    traileffect="effects/trail.effect"
 >
-	<onimpact>
-		<!-- Boost with SotM -->
-		<hasmodifier name="ult_boost">
-			<damage effecttype="Magic" amount="370,460,550"  />
-		</hasmodifier>
-		<else>
-			<damage effecttype="Magic" amount="280,370,460"  />
-		</else>
-		<applystate name="State_DiseasedRider_Ability4" duration="4000" />
-		<applystate name="State_Stunned" duration="100" />
-		<bounce count="7" range="600" targetscheme="visible_enemy_units" />
-	</onimpact>
+    <onimpact>
+        <!-- Boost with SotM -->
+        <hasmodifier name="ult_boost">
+            <damage effecttype="Magic" amount="370,460,550"  />
+        </hasmodifier>
+        <else>
+            <damage effecttype="Magic" amount="280,370,460"  />
+        </else>
+        <applystate name="State_DiseasedRider_Ability4" duration="4000" />
+        <applystate name="State_Stunned" duration="100" />
+        <bounce count="7" range="600" targetscheme="visible_enemy_units" />
+    </onimpact>
 </projectile>

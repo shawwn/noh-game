@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_ManaBattery"
+    name="State_ManaBattery"
 
-	
-	
-	icon="icon.tga"
+    
+    
+    icon="icon.tga"
 
-	effecttype=""
+    effecttype=""
 >
-	<onabilityimpact>
-		<addcharges target="this_inflictor_entity"/>
-	</onabilityimpact>
+    <onabilityimpact>
+        <addcharges target="this_inflictor_entity"/>
+    </onabilityimpact>
 </state>

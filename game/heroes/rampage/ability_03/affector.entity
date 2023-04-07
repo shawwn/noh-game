@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Rampage_Ability3"
+    name="Affector_Rampage_Ability3"
 
-	radius="100"
-	lifetime="950,1150,1350,1550"
+    radius="100"
+    lifetime="950,1150,1350,1550"
 
-  	destroytrees="true"
+    destroytrees="true"
 >
-	<onimpact/>
+    <onimpact/>
 </affector>

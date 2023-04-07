@@ -1,132 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect  >
-	<definitions>
+    <definitions>
 
 
-	<particlesystem name="system0" space="world" scale="1">
+    <particlesystem name="system0" space="world" scale="1">
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2500"
-				volume=".85"
-				sample="../sounds/cast.wav"
-			/>
-				
-			<light
-				delay="0"
-				bone="_bone_book_root"
-				life="1150"			
-				startcolor="0 2 3"			
-				endcolor="0 0 0"
-				midcolorpos=".2"
-				falloffstart="200"
-				falloffend="355"
-				position="0 0 50"	
-			/>	
-			<simpleemitter		
-				count="1"
-				spawnrate="5000"
-				particlelife="2600"
-				acceleration="0.0"			
-				minangle="0"
-				maxangle="0"			
-				direction="0 1 0"			
-			>
-				<particle
-					turn="1"
-				>
-					<model
-						position="0 0 30"
-						life="1700"					
-						anim="idle"
-						model="pages.mdf"			
-						startscale="1"
-						endscale="1"			
-						startcolor="1 1 1"
-						midcolor="1 1 1"
-						endcolor="1 1 1"
-						startalpha="1"
-						midalpha="1"
-						endalpha="0"
-						midalphapos=".6"
-						midcolorpos=".75"									
-					/>		
+            <sound
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2500"
+                volume=".85"
+                sample="../sounds/cast.wav"
+            />
+                
+            <light
+                delay="0"
+                bone="_bone_book_root"
+                life="1150"         
+                startcolor="0 2 3"          
+                endcolor="0 0 0"
+                midcolorpos=".2"
+                falloffstart="200"
+                falloffend="355"
+                position="0 0 50"   
+            />  
+            <simpleemitter      
+                count="1"
+                spawnrate="5000"
+                particlelife="2600"
+                acceleration="0.0"          
+                minangle="0"
+                maxangle="0"            
+                direction="0 1 0"           
+            >
+                <particle
+                    turn="1"
+                >
+                    <model
+                        position="0 0 30"
+                        life="1700"                 
+                        anim="idle"
+                        model="pages.mdf"           
+                        startscale="1"
+                        endscale="1"            
+                        startcolor="1 1 1"
+                        midcolor="1 1 1"
+                        endcolor="1 1 1"
+                        startalpha="1"
+                        midalpha="1"
+                        endalpha="0"
+                        midalphapos=".6"
+                        midcolorpos=".75"                                   
+                    />      
 
 
 
-					
-				</particle>	
-				
+                    
+                </particle> 
+                
 
-			</simpleemitter>
-	
+            </simpleemitter>
+    
 
-			<simpleemitter	
-				bone="_bone_book_root"
-				count="44"
-				spawnrate="100"
-				particlelife="200"
-				acceleration="0.0"		
-				drag="0.02"
-				minangle="0"
-				maxangle="44"			
-				direction="-1 0 0"
-				speed="1202"
-				material="/shared/effects/materials/whitedot.material"
-			>
-				<particle
-					
-					startsize="40"
-					endsize="0"
-					startcolor="1 1 1"
-					midcolor="0 1 1"
-					endcolor="0 0 0"
-				>							
-				</particle>		
+            <simpleemitter  
+                bone="_bone_book_root"
+                count="44"
+                spawnrate="100"
+                particlelife="200"
+                acceleration="0.0"      
+                drag="0.02"
+                minangle="0"
+                maxangle="44"           
+                direction="-1 0 0"
+                speed="1202"
+                material="/shared/effects/materials/whitedot.material"
+            >
+                <particle
+                    
+                    startsize="40"
+                    endsize="0"
+                    startcolor="1 1 1"
+                    midcolor="0 1 1"
+                    endcolor="0 0 0"
+                >                           
+                </particle>     
 
-			</simpleemitter>
+            </simpleemitter>
 
-	
-			<billboard	
-				bone="_bone_book_root"
-				life="1000"				
-				height="400"
-				directionalspace="local"
-				material="/shared/effects/materials/whitedot.material"
-				startalpha="1"
-				endalpha="0"
-				startcolor=".0 .5 .8"
-				endcolor="0 0 0 "
-				depthbias="-30"
-				lockup="1"
-				lockright="1"
-				roll="90"
-			/>	
-			
-			<billboard	
-				bone="_bone_book_root"
-				life="1000"				
-				height="400"
-				directionalspace="local"
-				material="/shared/effects/materials/whitedot.material"
-				startalpha="1"
-				endalpha="0"
-				
-				startcolor=".0 .5 .8"
-				endcolor="0 0 0 "
-				depthbias="-30"
-				lockup="1"
-				lockright="1"
-				yaw="90"
-			/>				
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-		<!-- <die /> -->
-	</thread>
+    
+            <billboard  
+                bone="_bone_book_root"
+                life="1000"             
+                height="400"
+                directionalspace="local"
+                material="/shared/effects/materials/whitedot.material"
+                startalpha="1"
+                endalpha="0"
+                startcolor=".0 .5 .8"
+                endcolor="0 0 0 "
+                depthbias="-30"
+                lockup="1"
+                lockright="1"
+                roll="90"
+            />  
+            
+            <billboard  
+                bone="_bone_book_root"
+                life="1000"             
+                height="400"
+                directionalspace="local"
+                material="/shared/effects/materials/whitedot.material"
+                startalpha="1"
+                endalpha="0"
+                
+                startcolor=".0 .5 .8"
+                endcolor="0 0 0 "
+                depthbias="-30"
+                lockup="1"
+                lockright="1"
+                yaw="90"
+            />              
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][position] -->

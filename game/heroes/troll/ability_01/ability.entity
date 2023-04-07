@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Troll1"
+    name="Ability_Troll1"
 
-	statuseffecttooltip="State_Troll_Ability1"
-	icon="icon.tga"
-	
-	anim="ability_4"
-	casttime="300"
-	castactiontime="300"
-	casteffect="../../../heroes/yogi/effects/ability_04/effects/transformation.effect"
+    statuseffecttooltip="State_Troll_Ability1"
+    icon="icon.tga"
+    
+    anim="ability_4"
+    casttime="300"
+    castactiontime="300"
+    casteffect="../../../heroes/yogi/effects/ability_04/effects/transformation.effect"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="toggle"
-	frontqueue="true"
-	noresponse="true"
-	
-	manacost="40"
-	cooldowntime="8000"
-	noninterrupting="true"
-	inheritmovement="true"
+    actiontype="toggle"
+    frontqueue="true"
+    noresponse="true"
+    
+    manacost="40"
+    cooldowntime="8000"
+    noninterrupting="true"
+    inheritmovement="true"
 
 >
-	<ontoggleon>
-		<applystate name="State_Troll_Ability1" istoggle="true"/>		
-	</ontoggleon>
-	<onimpact />
-	
-	<modifier key="troll1_toggle_active" condition="toggle_active" modpriority="100"
-		icon="../icon.tga"
-		statuseffecttooltip=""
-		anim="ability_4_back"
-		casttime="600"
-		castactiontime="500"
-		casteffect="../../../heroes/yogi/effects/ability_04/effects/transformation_back.effect"
-	>
-		<onimpact />
-	</modifier>
+    <ontoggleon>
+        <applystate name="State_Troll_Ability1" istoggle="true"/>       
+    </ontoggleon>
+    <onimpact />
+    
+    <modifier key="troll1_toggle_active" condition="toggle_active" modpriority="100"
+        icon="../icon.tga"
+        statuseffecttooltip=""
+        anim="ability_4_back"
+        casttime="600"
+        castactiontime="500"
+        casteffect="../../../heroes/yogi/effects/ability_04/effects/transformation_back.effect"
+    >
+        <onimpact />
+    </modifier>
 </ability>

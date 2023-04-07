@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_PushStaff"
+    name="Affector_PushStaff"
 
-	radius="100"
-	lifetime="250"
+    radius="100"
+    lifetime="250"
 
-  	destroytrees="true"
+    destroytrees="true"
 >
-	<onimpact/>
+    <onimpact/>
 </affector>

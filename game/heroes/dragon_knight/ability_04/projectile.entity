@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_DragonKnight_Attack_1"
+    name="Projectile_DragonKnight_Attack_1"
 
-	speed="1200"
-	gravity="0"
-	modelscale="1.25"
-	model="../../../heroes/helldemon/ability_04/effects/spirit_rig/model.mdf"
-	
-	traileffect="../../../heroes/maliken/projectile/effects/trail.effect"
-	impacteffect="../../../heroes/maliken/projectile/effects/impact.effect"
+    speed="1200"
+    gravity="0"
+    modelscale="1.25"
+    model="../../../heroes/helldemon/ability_04/effects/spirit_rig/model.mdf"
+    
+    traileffect="../../../heroes/maliken/projectile/effects/trail.effect"
+    impacteffect="../../../heroes/maliken/projectile/effects/impact.effect"
 >
-	<onimpact>>
-		<applystate name="State_DragonKnight_Ability4_Dot" duration="5000" />
-	</onimpact>
+    <onimpact>>
+        <applystate name="State_DragonKnight_Ability4_Dot" duration="5000" />
+    </onimpact>
 </projectile>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_ShieldOfTheFive"
+    name="Affector_ShieldOfTheFive"
 
-	radius="450"
-	
-	targetselection="all"
-	targetscheme="ally_units"
-	effecttype="Magic Buff"
-	persist="false"
+    radius="450"
+    
+    targetselection="all"
+    targetscheme="ally_units"
+    effecttype="Magic Buff"
+    persist="false"
 >
-	<onimpact>
-		<applystate name="State_ShieldOfTheFive" duration="30000"/>
-	</onimpact>
+    <onimpact>
+        <applystate name="State_ShieldOfTheFive" duration="30000"/>
+    </onimpact>
 </affector>

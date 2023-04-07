@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Legionnaire_Ability2"
+    name="Affector_Legionnaire_Ability2"
 
-	radius="240"
-	arc="110"
-	
-	maximpactspertarget="1"
-	targetselection="all"
-	targetscheme="enemy_units"
-	effecttype=""
+    radius="240"
+    arc="110"
+    
+    maximpactspertarget="1"
+    targetselection="all"
+    targetscheme="enemy_units"
+    effecttype=""
 >
-	<onimpact>
-		<applystate name="State_Legionnaire_Ability2_Terrify" target="target_entity" duration="4000,5000,6000,7000" />
-		<condition test="target_entity eq proxy_entity">
-		</condition>
-	
-			<damage effecttype="Physical" amount="1" b="source_attackdamage" op="mult" />
-	
-	</onimpact>
-	
-	<onexpired>
-		<expirestate name="State_Legionnaire_Ability2_Self" target="source_entity" />
-	</onexpired>
+    <onimpact>
+        <applystate name="State_Legionnaire_Ability2_Terrify" target="target_entity" duration="4000,5000,6000,7000" />
+        <condition test="target_entity eq proxy_entity">
+        </condition>
+    
+            <damage effecttype="Physical" amount="1" b="source_attackdamage" op="mult" />
+    
+    </onimpact>
+    
+    <onexpired>
+        <expirestate name="State_Legionnaire_Ability2_Self" target="source_entity" />
+    </onexpired>
 </affector>

@@ -1,433 +1,433 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface   name="game_lobby" onshow="PlayMusic('/music/lobby.mp3',true);">
 
-	<!-- Packages -->
-	<include file="ui_items.package"/>
-	<include file="game_chat.package"/>
-	
-	<!-- Dynamic Textures -->
-	<texture file="/ui/elements/line_break.tga" />
-	<texture file="/ui/elements/kick_up.tga" />
-	<texture file="/ui/elements/kick_over.tga" />
-	<texture file="/ui/elements/kick_down.tga" />
-	<texture file="/ui/elements/stats_up.tga" />
-	<texture file="/ui/elements/stats_over.tga" />
-	<texture file="/ui/elements/stats_down.tga" />
-	<texture file="/ui/elements/referee_up.tga" />
-	<texture file="/ui/elements/referee_over.tga" />
-	<texture file="/ui/elements/referee_down.tga" />
+    <!-- Packages -->
+    <include file="ui_items.package"/>
+    <include file="game_chat.package"/>
+    
+    <!-- Dynamic Textures -->
+    <texture file="/ui/elements/line_break.tga" />
+    <texture file="/ui/elements/kick_up.tga" />
+    <texture file="/ui/elements/kick_over.tga" />
+    <texture file="/ui/elements/kick_down.tga" />
+    <texture file="/ui/elements/stats_up.tga" />
+    <texture file="/ui/elements/stats_over.tga" />
+    <texture file="/ui/elements/stats_down.tga" />
+    <texture file="/ui/elements/referee_up.tga" />
+    <texture file="/ui/elements/referee_over.tga" />
+    <texture file="/ui/elements/referee_down.tga" />
 
-	<!-- Templates -->
-	<template name="player_action_button">
-		<button
-			name="{id}"
-			group="{group}"
-			x="{x}" y="{y}"
-			width="{width=100%}" height="{height=100%}"
-			align="{align}" valign="{valign=center}"
-			color="invisible"
-			onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav'); {onmouseover}"
-			onmouseout="{onmouseout}"
-			onclick="PlaySound('/shared/sounds/ui/button_click_05.wav'); {onclick}"
-			watch="{watch}"
-			ontrigger="{ontrigger}"
-			numstates="{numstates=1}"
-			visible="{visible=true}"
-		>
-			<widgetstate statename="up">
-				<image texture="/ui/elements/{texture}_up.tga" />
-			</widgetstate>
+    <!-- Templates -->
+    <template name="player_action_button">
+        <button
+            name="{id}"
+            group="{group}"
+            x="{x}" y="{y}"
+            width="{width=100%}" height="{height=100%}"
+            align="{align}" valign="{valign=center}"
+            color="invisible"
+            onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav'); {onmouseover}"
+            onmouseout="{onmouseout}"
+            onclick="PlaySound('/shared/sounds/ui/button_click_05.wav'); {onclick}"
+            watch="{watch}"
+            ontrigger="{ontrigger}"
+            numstates="{numstates=1}"
+            visible="{visible=true}"
+        >
+            <widgetstate statename="up">
+                <image texture="/ui/elements/{texture}_up.tga" />
+            </widgetstate>
 
-			<widgetstate statename="over">
-				<image texture="/ui/elements/{texture}_over.tga" />
-			</widgetstate>
+            <widgetstate statename="over">
+                <image texture="/ui/elements/{texture}_over.tga" />
+            </widgetstate>
 
-			<widgetstate statename="down" x="1" y="1">
-				<image texture="/ui/elements/{texture}_down.tga" />
-			</widgetstate>
+            <widgetstate statename="down" x="1" y="1">
+                <image texture="/ui/elements/{texture}_down.tga" />
+            </widgetstate>
 
-			<widgetstate statename="disabled">
-				<image texture="/ui/elements/{texture}_up.tga" color=".5 .5 .5 1"/>
-			</widgetstate>
+            <widgetstate statename="disabled">
+                <image texture="/ui/elements/{texture}_up.tga" color=".5 .5 .5 1"/>
+            </widgetstate>
 
-			<widgetstate statename="up2">
-				<frame width="130%" height="130%" align="center" valign="center" color="invisible" bordercolor="white" borderthickness="0.1h"/>
-				<image texture="/ui/elements/{texture}_up.tga" />
-			</widgetstate>
+            <widgetstate statename="up2">
+                <frame width="130%" height="130%" align="center" valign="center" color="invisible" bordercolor="white" borderthickness="0.1h"/>
+                <image texture="/ui/elements/{texture}_up.tga" />
+            </widgetstate>
 
-			<widgetstate statename="over2">
-				<frame width="130%" height="130%" align="center" valign="center" color="invisible" bordercolor="white" borderthickness="0.1h"/>
-				<image texture="/ui/elements/{texture}_over.tga" />
-			</widgetstate>
+            <widgetstate statename="over2">
+                <frame width="130%" height="130%" align="center" valign="center" color="invisible" bordercolor="white" borderthickness="0.1h"/>
+                <image texture="/ui/elements/{texture}_over.tga" />
+            </widgetstate>
 
-			<widgetstate statename="down2" x="1" y="1">
-				<frame width="130%" height="130%" align="center" valign="center" color="invisible" bordercolor="white" borderthickness="0.1h"/>
-				<image texture="/ui/elements/{texture}_down.tga" />
-			</widgetstate>
-		</button>
-	</template>
-	
-	<template name="addfriend_button">
-		<panel
-			x="{x}" y="{y}"
-			width="{width}" height="{height}"
-			align="{align}" valign="{valign}"
-			watch="LobbyPlayerInfo{player}"
-			ontrigger="
-				CreateString('_add_buddy_name_lobby_{player}', param1);
-				If(!param8 and param0 ge 0 and !StringEmpty(param1) and !IsBuddy(param1) and IsLoggedIn(),
-					ShowWidget('add_friend_lobby_{player}'),
-					HideWidget('add_friend_lobby_{player}')
-					);
-				"
-			>
-			<button
-				group="{group}"
-				name="add_friend_lobby_{player}"
-				color="invisible"
-				onmouseover="{onmouseover}"
-				onmouseout="{onmouseout}"
-				onclick="PlaySound('/shared/sounds/ui/button_click_05.wav'); ChatAddBuddy(_add_buddy_name_lobby_{player}); SetVisible(false);"
-			>
-				<widgetstate statename="up">
-					<image texture="/ui/elements/lobby/stats_{team}_up.tga" />
-				</widgetstate>
+            <widgetstate statename="down2" x="1" y="1">
+                <frame width="130%" height="130%" align="center" valign="center" color="invisible" bordercolor="white" borderthickness="0.1h"/>
+                <image texture="/ui/elements/{texture}_down.tga" />
+            </widgetstate>
+        </button>
+    </template>
+    
+    <template name="addfriend_button">
+        <panel
+            x="{x}" y="{y}"
+            width="{width}" height="{height}"
+            align="{align}" valign="{valign}"
+            watch="LobbyPlayerInfo{player}"
+            ontrigger="
+                CreateString('_add_buddy_name_lobby_{player}', param1);
+                If(!param8 and param0 ge 0 and !StringEmpty(param1) and !IsBuddy(param1) and IsLoggedIn(),
+                    ShowWidget('add_friend_lobby_{player}'),
+                    HideWidget('add_friend_lobby_{player}')
+                    );
+                "
+            >
+            <button
+                group="{group}"
+                name="add_friend_lobby_{player}"
+                color="invisible"
+                onmouseover="{onmouseover}"
+                onmouseout="{onmouseout}"
+                onclick="PlaySound('/shared/sounds/ui/button_click_05.wav'); ChatAddBuddy(_add_buddy_name_lobby_{player}); SetVisible(false);"
+            >
+                <widgetstate statename="up">
+                    <image texture="/ui/elements/lobby/stats_{team}_up.tga" />
+                </widgetstate>
 
-				<widgetstate statename="over">
-					<image texture="/ui/elements/lobby/stats_{team}_over.tga" />
-				</widgetstate>
+                <widgetstate statename="over">
+                    <image texture="/ui/elements/lobby/stats_{team}_over.tga" />
+                </widgetstate>
 
-				<widgetstate statename="down">
-					<image texture="/ui/elements/lobby/stats_{team}_down.tga" />
-				</widgetstate>
+                <widgetstate statename="down">
+                    <image texture="/ui/elements/lobby/stats_{team}_down.tga" />
+                </widgetstate>
 
-				<widgetstate statename="disabled">
-					<image texture="/ui/elements/lobby/stats_{team}_disabled.tga" />
-				</widgetstate>
-			</button>
-		</panel>
-	</template>
+                <widgetstate statename="disabled">
+                    <image texture="/ui/elements/lobby/stats_{team}_disabled.tga" />
+                </widgetstate>
+            </button>
+        </panel>
+    </template>
 
-	<template name="player_summary">
-		<panel height="12%" width="93.2%" watch="LobbyPlayerInfo{player}" ontrigger="SetVisible(param0 != -2);">
-			<panel watch="LobbyPlayerInfo{player}" ontrigger="SetVisible(param0 != -1);">
-				<panel height="80%" width="100%" valign="center" color="invisible" float="right">
-					<!-- Color -->
-					<panel x="0.0h" width="100@" valign="center" color="invisible">
-						<image align="center" valign="center" width="-1" height="-1" texture="/ui/elements/star.tga" watch="LobbyPlayerInfo{player}" ontrigger="SetColor(param2);"/>
-					</panel>
+    <template name="player_summary">
+        <panel height="12%" width="93.2%" watch="LobbyPlayerInfo{player}" ontrigger="SetVisible(param0 != -2);">
+            <panel watch="LobbyPlayerInfo{player}" ontrigger="SetVisible(param0 != -1);">
+                <panel height="80%" width="100%" valign="center" color="invisible" float="right">
+                    <!-- Color -->
+                    <panel x="0.0h" width="100@" valign="center" color="invisible">
+                        <image align="center" valign="center" width="-1" height="-1" texture="/ui/elements/star.tga" watch="LobbyPlayerInfo{player}" ontrigger="SetColor(param2);"/>
+                    </panel>
 
-					<!-- Name -->
-					<panel width="63.8%" valign="center" color="invisible">
-						<label
-							x="0.4h" y="-0.1h"
-							height="100%"
-							color="white"
-							shadow="1"
-							font="dyn_14"
-							textvalign="center"
-							watch="LobbyPlayerInfo{player}"
-							ontrigger="SetText(param1);"
-						/>
-					</panel>
+                    <!-- Name -->
+                    <panel width="63.8%" valign="center" color="invisible">
+                        <label
+                            x="0.4h" y="-0.1h"
+                            height="100%"
+                            color="white"
+                            shadow="1"
+                            font="dyn_14"
+                            textvalign="center"
+                            watch="LobbyPlayerInfo{player}"
+                            ontrigger="SetText(param1);"
+                        />
+                    </panel>
 
-					<panel width="32%" valign="center" float="right" padding="0.6h">
-						<instance name="player_voice_button"
-							width="70@" height="70%"
-							onmouseover="ShowWidget('voice_tip{player}');"
-							onmouseout="HideWidget('voice_tip{player}');"
-							texture="/ui/elements/chat_icon.tga"
-							teamindex="{slot}"
-							team="{teamnum}"
-						/>
-						<instance name="player_action_button"
-							width="70@" height="70%"
-							onmouseover="ShowWidget('kick_tip{player}');"
-							onmouseout="HideWidget('kick_tip{player}');"
-							texture="kick"
-							onclick="Kick(*('_lobby_kick_clientnum_{player}'));"
-							watch="LobbyPlayerInfo{player}"
-							ontrigger="SetVisible(param4); CreateInt('_lobby_kick_clientnum_{player}', param0);"
-						/>
-						<button
-							width="80@" height="80%"
-							valign="center"
-							texture="/ui/info/close_button.tga"
-							watch="LobbyPlayerInfo{player}"
-							ontrigger="SetVisible(param8);"
-							onclick="Team(-4);"
-							onmouseover="ShowWidget('leave_team_tip{player}');"
-							onmouseout="HideWidget('leave_team_tip{player}');"
-						/>
-					</panel>
-				</panel>
-				<instance x="100%" name="addfriend_button" width="2.65h" height="5.3h" valign="bottom" team="{team}" player="{player}" onmouseover="ShowWidget('add_friend_tip{player}');" onmouseout="hidewidget('add_friend_tip{player}');" />
+                    <panel width="32%" valign="center" float="right" padding="0.6h">
+                        <instance name="player_voice_button"
+                            width="70@" height="70%"
+                            onmouseover="ShowWidget('voice_tip{player}');"
+                            onmouseout="HideWidget('voice_tip{player}');"
+                            texture="/ui/elements/chat_icon.tga"
+                            teamindex="{slot}"
+                            team="{teamnum}"
+                        />
+                        <instance name="player_action_button"
+                            width="70@" height="70%"
+                            onmouseover="ShowWidget('kick_tip{player}');"
+                            onmouseout="HideWidget('kick_tip{player}');"
+                            texture="kick"
+                            onclick="Kick(*('_lobby_kick_clientnum_{player}'));"
+                            watch="LobbyPlayerInfo{player}"
+                            ontrigger="SetVisible(param4); CreateInt('_lobby_kick_clientnum_{player}', param0);"
+                        />
+                        <button
+                            width="80@" height="80%"
+                            valign="center"
+                            texture="/ui/info/close_button.tga"
+                            watch="LobbyPlayerInfo{player}"
+                            ontrigger="SetVisible(param8);"
+                            onclick="Team(-4);"
+                            onmouseover="ShowWidget('leave_team_tip{player}');"
+                            onmouseout="HideWidget('leave_team_tip{player}');"
+                        />
+                    </panel>
+                </panel>
+                <instance x="100%" name="addfriend_button" width="2.65h" height="5.3h" valign="bottom" team="{team}" player="{player}" onmouseover="ShowWidget('add_friend_tip{player}');" onmouseout="hidewidget('add_friend_tip{player}');" />
 
-				<instance
-					name="simple_tooltip"
-					tip_id="kick_tip{player}"
-					x="45%" y="-2.2h"
-					width="15.4h" height="2.2h"
-					align="center" valign="top"
-					visible="false"
-					watch="LobbyPlayerInfo{player}"
-					ontrigger="SetText(Translate('gamelobby_kick_tip', 'name', param1));"
-					panelwatch="LobbyPlayerInfo{player}"
-					panelontrigger="SetWidth(GetStringWidth('dyn_9', Translate('gamelobby_kick_tip', 'name', param1)) * 1.2);"
-				/>
-				<instance name="simple_tooltip" tip_id="add_friend_tip{player}" x="52%" y="-3.2h" width="13.0h" height="2.2h" align="center" valign="top" label="gamelobby_add_friend_tip" visible="0" />
-				<instance
-					name="simple_tooltip"
-					tip_id="voice_tip{player}"
-					x="39%" y="-2.2h"
-					width="21.4h" height="2.2h"
-					align="center" valign="top"
-					visible="false"
-					watch="LobbyPlayerInfo{player}"
-					ontrigger="SetText(Translate('game_lobby_mute', 'name', param1));"
-					panelwatch="LobbyPlayerInfo{player}"
-					panelontrigger="SetWidth(GetStringWidth('dyn_9', Translate('game_lobby_mute', 'name', param1)) * 1.1);"
-				/>
-				<instance
-					name="simple_tooltip"
-					tip_id="leave_team_tip{player}"
-					x="39%" y="-2.2h"
-					width="21.4h" height="2.2h"
-					align="center" valign="top"
-					visible="false"
-					watch="LobbyPlayerInfo{player}"
-					ontrigger="SetText(Translate('game_lobby_leave_team_tip'));"
-					panelwatch="LobbyPlayerInfo{player}"
-					panelontrigger="SetWidth(GetStringWidth('dyn_9', Translate('game_lobby_leave_team_tip')) * 1.1);"
-				/>
-			</panel>
+                <instance
+                    name="simple_tooltip"
+                    tip_id="kick_tip{player}"
+                    x="45%" y="-2.2h"
+                    width="15.4h" height="2.2h"
+                    align="center" valign="top"
+                    visible="false"
+                    watch="LobbyPlayerInfo{player}"
+                    ontrigger="SetText(Translate('gamelobby_kick_tip', 'name', param1));"
+                    panelwatch="LobbyPlayerInfo{player}"
+                    panelontrigger="SetWidth(GetStringWidth('dyn_9', Translate('gamelobby_kick_tip', 'name', param1)) * 1.2);"
+                />
+                <instance name="simple_tooltip" tip_id="add_friend_tip{player}" x="52%" y="-3.2h" width="13.0h" height="2.2h" align="center" valign="top" label="gamelobby_add_friend_tip" visible="0" />
+                <instance
+                    name="simple_tooltip"
+                    tip_id="voice_tip{player}"
+                    x="39%" y="-2.2h"
+                    width="21.4h" height="2.2h"
+                    align="center" valign="top"
+                    visible="false"
+                    watch="LobbyPlayerInfo{player}"
+                    ontrigger="SetText(Translate('game_lobby_mute', 'name', param1));"
+                    panelwatch="LobbyPlayerInfo{player}"
+                    panelontrigger="SetWidth(GetStringWidth('dyn_9', Translate('game_lobby_mute', 'name', param1)) * 1.1);"
+                />
+                <instance
+                    name="simple_tooltip"
+                    tip_id="leave_team_tip{player}"
+                    x="39%" y="-2.2h"
+                    width="21.4h" height="2.2h"
+                    align="center" valign="top"
+                    visible="false"
+                    watch="LobbyPlayerInfo{player}"
+                    ontrigger="SetText(Translate('game_lobby_leave_team_tip'));"
+                    panelwatch="LobbyPlayerInfo{player}"
+                    panelontrigger="SetWidth(GetStringWidth('dyn_9', Translate('game_lobby_leave_team_tip')) * 1.1);"
+                />
+            </panel>
 
-			<panel watch="LobbyPlayerInfo{player}" ontrigger="SetVisible(param0 == -1);" visible="false">
-				<!-- Color -->
-				<panel x="0.0h" width="100@" valign="center" color="invisible">
-					<image align="center" valign="center" width="-1" height="-1" texture="/ui/elements/star.tga" watch="LobbyPlayerInfo{player}" ontrigger="SetColor(param2);"/>
-				</panel>
-				<instance
-					name="button2"
-					label="gamelobby_take_slot_button"
-					font="dyn_12"
-					align="center" valign="center"
-					width="80%" height="80%"
-					labelwatch="LobbyPlayerInfo{player}"
-					labelontrigger="SetText(Translate('game_lobby_take_slot_color', 'color', param7));"
-					onclick="PlaySound('/shared/sounds/ui/lobby/button_jointeam.wav'); Team({index}, {slot});"
-					watch="LobbyCountDown"
-					ontrigger="SetEnabled(param0 == -1);"
-				/>
-			</panel>
-		</panel>
-	</template>
+            <panel watch="LobbyPlayerInfo{player}" ontrigger="SetVisible(param0 == -1);" visible="false">
+                <!-- Color -->
+                <panel x="0.0h" width="100@" valign="center" color="invisible">
+                    <image align="center" valign="center" width="-1" height="-1" texture="/ui/elements/star.tga" watch="LobbyPlayerInfo{player}" ontrigger="SetColor(param2);"/>
+                </panel>
+                <instance
+                    name="button2"
+                    label="gamelobby_take_slot_button"
+                    font="dyn_12"
+                    align="center" valign="center"
+                    width="80%" height="80%"
+                    labelwatch="LobbyPlayerInfo{player}"
+                    labelontrigger="SetText(Translate('game_lobby_take_slot_color', 'color', param7));"
+                    onclick="PlaySound('/shared/sounds/ui/lobby/button_jointeam.wav'); Team({index}, {slot});"
+                    watch="LobbyCountDown"
+                    ontrigger="SetEnabled(param0 == -1);"
+                />
+            </panel>
+        </panel>
+    </template>
 
-	<image width="177.7h" height="100h" align="center" texture="/ui/elements/lobby/background.tga" visible="1" noclick="1" />	
-	<image width="100%" height="25@" align="center" texture="/ui/elements/heroselection/main_arch.tga" visible="1" noclick="1"/>
-	<image x="-11.0h" width="50h" height="100h" align="left" valign="bottom" texture="/ui/elements/lobby/statue_legion.tga" visible="1" noclick="1"/>
-	<image x="11.0h" width="50h" height="100h" align="right" valign="bottom" texture="/ui/elements/lobby/statue_hellbourne.tga" visible="1" noclick="1"/>
+    <image width="177.7h" height="100h" align="center" texture="/ui/elements/lobby/background.tga" visible="1" noclick="1" />   
+    <image width="100%" height="25@" align="center" texture="/ui/elements/heroselection/main_arch.tga" visible="1" noclick="1"/>
+    <image x="-11.0h" width="50h" height="100h" align="left" valign="bottom" texture="/ui/elements/lobby/statue_legion.tga" visible="1" noclick="1"/>
+    <image x="11.0h" width="50h" height="100h" align="right" valign="bottom" texture="/ui/elements/lobby/statue_hellbourne.tga" visible="1" noclick="1"/>
 
-	<template name="team_list">
-		<panel x="{x=0}" align="{align}" height="85.333h" width="85.333h" texture="/ui/elements/lobby/lobby_{team}.tga" noclick="1">
-			<panel x="{list_x}" y="{y}" width="34.13%" height="28%" float="bottom" padding="2.19%">
-				<instance name="player_summary" slot="0" player="{A=0}" team="{team}" teamnum="{teamnum}" index="{index}"/>
-				<instance name="player_summary" slot="1" player="{B=1}" team="{team}" teamnum="{teamnum}" index="{index}"/>
-				<instance name="player_summary" slot="2" player="{C=2}" team="{team}" teamnum="{teamnum}" index="{index}"/>
-				<instance name="player_summary" slot="3" player="{D=3}" team="{team}" teamnum="{teamnum}" index="{index}"/>
-				<instance name="player_summary" slot="4" player="{E=4}" team="{team}" teamnum="{teamnum}" index="{index}"/>
-			</panel>
-		</panel>
-	</template>
+    <template name="team_list">
+        <panel x="{x=0}" align="{align}" height="85.333h" width="85.333h" texture="/ui/elements/lobby/lobby_{team}.tga" noclick="1">
+            <panel x="{list_x}" y="{y}" width="34.13%" height="28%" float="bottom" padding="2.19%">
+                <instance name="player_summary" slot="0" player="{A=0}" team="{team}" teamnum="{teamnum}" index="{index}"/>
+                <instance name="player_summary" slot="1" player="{B=1}" team="{team}" teamnum="{teamnum}" index="{index}"/>
+                <instance name="player_summary" slot="2" player="{C=2}" team="{team}" teamnum="{teamnum}" index="{index}"/>
+                <instance name="player_summary" slot="3" player="{D=3}" team="{team}" teamnum="{teamnum}" index="{index}"/>
+                <instance name="player_summary" slot="4" player="{E=4}" team="{team}" teamnum="{teamnum}" index="{index}"/>
+            </panel>
+        </panel>
+    </template>
 
-	<!-- Legion Players -->
-	<instance name="team_list" x="-20.8h" align="center" list_x="11.0%" y="24.1%" index="1" team="legion" teamnum="1"/>
+    <!-- Legion Players -->
+    <instance name="team_list" x="-20.8h" align="center" list_x="11.0%" y="24.1%" index="1" team="legion" teamnum="1"/>
 
-	<!-- Hellbourne Players -->
-	<instance name="team_list" x="22.0h" align="center" list_x="56.0%" y="24.1%" index="2" team="hellbourne" teamnum="2" A="5" B="6" C="7" D="8" E="9"/>
+    <!-- Hellbourne Players -->
+    <instance name="team_list" x="22.0h" align="center" list_x="56.0%" y="24.1%" index="2" team="hellbourne" teamnum="2" A="5" B="6" C="7" D="8" E="9"/>
 
-	<!-- Logo / Refs -->
-	<template name="referee">
-		<panel x="{x}" y="{y}" width="5.25@" height="5.25%" visible="false" watch="LobbyReferee{index}" ontrigger="SetVisible(!StringEmpty(param1));">
-			<image texture="/ui/elements/referee_up.tga"/>
-			<instance name="player_action_button"
-				valign="top"
-				onmouseover="ShowWidget('demote_ref_tip{index}');"
-				onmouseout="HideWidget('demote_ref_tip{index}');"
-				texture="kick"
-				watch="LobbyReferee{index}"
-				ontrigger="SetOnclick('DemoteRef(' # param0 # ');');"
-			/>
-			<instance name="simple_tooltip" tip_id="demote_ref_tip{index}" x="39%" y="-2.2h" width="22.4h" height="2.2h" align="center" valign="top" visible="false" watch="LobbyReferee{index}" ontrigger="SetText('game_lobby_demote_referee', 'name', param1);"/>
-		</panel>
-	</template>
+    <!-- Logo / Refs -->
+    <template name="referee">
+        <panel x="{x}" y="{y}" width="5.25@" height="5.25%" visible="false" watch="LobbyReferee{index}" ontrigger="SetVisible(!StringEmpty(param1));">
+            <image texture="/ui/elements/referee_up.tga"/>
+            <instance name="player_action_button"
+                valign="top"
+                onmouseover="ShowWidget('demote_ref_tip{index}');"
+                onmouseout="HideWidget('demote_ref_tip{index}');"
+                texture="kick"
+                watch="LobbyReferee{index}"
+                ontrigger="SetOnclick('DemoteRef(' # param0 # ');');"
+            />
+            <instance name="simple_tooltip" tip_id="demote_ref_tip{index}" x="39%" y="-2.2h" width="22.4h" height="2.2h" align="center" valign="top" visible="false" watch="LobbyReferee{index}" ontrigger="SetText('game_lobby_demote_referee', 'name', param1);"/>
+        </panel>
+    </template>
 
-	<panel align="center" valign="top" width="42.7h" height="42.7h" texture="/ui/elements/lobby/lobby_logo.tga" noclick="1">
-		<panel color="invisible" x="3.125%" y="57.5%" width="44.5%" height="14.5%" onmouseover="showwidget('ref_tooltip');" onmouseout="hidewidget('ref_tooltip');"/>
-		<panel color="invisible" x="53.125%" y="57.5%" width="43.9%" height="14.5%" onmouseover="showwidget('ref_tooltip');" onmouseout="hidewidget('ref_tooltip');"/>
-		<label
-			x="3.125%" y="65%"
-			width="44.5%" height="6.25%"
-			textalign="center" textvalign="center"
-			font="dyn_12" color="gray" shadow="1" noclick="1"
-			watch="LobbyReferee0"
-			ontrigger="
-				If(StringEmpty(param1), SetText(Translate('game_lobby_no_referee')), SetText(param1));
-				If(StringEmpty(param1), SetColor('gray'), SetColor('white'));
-				"
-		/>
-		<instance name="referee" x="41.125%" y="65.7%" index="0"/>
+    <panel align="center" valign="top" width="42.7h" height="42.7h" texture="/ui/elements/lobby/lobby_logo.tga" noclick="1">
+        <panel color="invisible" x="3.125%" y="57.5%" width="44.5%" height="14.5%" onmouseover="showwidget('ref_tooltip');" onmouseout="hidewidget('ref_tooltip');"/>
+        <panel color="invisible" x="53.125%" y="57.5%" width="43.9%" height="14.5%" onmouseover="showwidget('ref_tooltip');" onmouseout="hidewidget('ref_tooltip');"/>
+        <label
+            x="3.125%" y="65%"
+            width="44.5%" height="6.25%"
+            textalign="center" textvalign="center"
+            font="dyn_12" color="gray" shadow="1" noclick="1"
+            watch="LobbyReferee0"
+            ontrigger="
+                If(StringEmpty(param1), SetText(Translate('game_lobby_no_referee')), SetText(param1));
+                If(StringEmpty(param1), SetColor('gray'), SetColor('white'));
+                "
+        />
+        <instance name="referee" x="41.125%" y="65.7%" index="0"/>
 
-		<label
-			x="53.125%" y="65%"
-			width="44.5%" height="6.25%"
-			textalign="center" textvalign="center"
-			font="dyn_12" color="gray" shadow="1" noclick="1"
-			watch="LobbyReferee1"
-			ontrigger="
-				If(StringEmpty(param1), SetText(Translate('game_lobby_no_referee')), SetText(param1));
-				If(StringEmpty(param1), SetColor('gray'), SetColor('white'));
-				"
-		/>
-		<instance name="referee" x="91.125%" y="65.7%" index="1"/>
+        <label
+            x="53.125%" y="65%"
+            width="44.5%" height="6.25%"
+            textalign="center" textvalign="center"
+            font="dyn_12" color="gray" shadow="1" noclick="1"
+            watch="LobbyReferee1"
+            ontrigger="
+                If(StringEmpty(param1), SetText(Translate('game_lobby_no_referee')), SetText(param1));
+                If(StringEmpty(param1), SetColor('gray'), SetColor('white'));
+                "
+        />
+        <instance name="referee" x="91.125%" y="65.7%" index="1"/>
 
-		<instance name="simple_tooltip" tip_id="ref_tooltip" x="0" y="39%" textvoffset="0.2h" width="25.6h" height="6.9h" align="center" valign="top" textvalign="top" label="gamelobby_referee_tip" visible="0" />
-	</panel>
+        <instance name="simple_tooltip" tip_id="ref_tooltip" x="0" y="39%" textvoffset="0.2h" width="25.6h" height="6.9h" align="center" valign="top" textvalign="top" label="gamelobby_referee_tip" visible="0" />
+    </panel>
 
-	<!-- Spectators -->
-	<template name="spectator_list_entry">
-		<panel texture="/ui/elements/line_break.tga" color="1 1 1 .1">
-			<label x="1.0h" y="0.1h" textvalign="center" font="dyn_12" color="white" shadow="true" content="{name}"/>
-			<panel x="-3.0h" width="18%" align="right">
-				<instance name="player_action_button"
-					align="left"
-					width="65@" height="65%"
-					onmouseover="ShowWidget('kick_tip{player}');"
-					onmouseout="HideWidget('kick_tip{player}');"
-					texture="kick"
-					onclick="Kick({index});"
-					visible="{cankick}"
-				/>
-				<instance name="player_action_button"
-					align="right"
-					width="60@" height="60%"
-					onmouseover="ShowWidget('referee_tip{player}');"
-					onmouseout="HideWidget('referee_tip{player}');"
-					texture="referee"
-					onclick="PromoteRef({index});"
-					visible="{canpromote}"
-				/>
-			</panel>
-		</panel>
-		<instance name="simple_tooltip" tip_id="kick_tip{player}" x="22%" y="-2.2h" width="15.4h" height="2.2h" align="center" valign="top" visible="false" label="gamelobby_kick_tip"/>
-		<instance name="simple_tooltip" tip_id="referee_tip{player}" x="29%" y="-2.2h" width="25.4h" height="2.2h" align="center" valign="top" visible="false" label="gamelobby_make_referee_tip"/>
-	</template>
+    <!-- Spectators -->
+    <template name="spectator_list_entry">
+        <panel texture="/ui/elements/line_break.tga" color="1 1 1 .1">
+            <label x="1.0h" y="0.1h" textvalign="center" font="dyn_12" color="white" shadow="true" content="{name}"/>
+            <panel x="-3.0h" width="18%" align="right">
+                <instance name="player_action_button"
+                    align="left"
+                    width="65@" height="65%"
+                    onmouseover="ShowWidget('kick_tip{player}');"
+                    onmouseout="HideWidget('kick_tip{player}');"
+                    texture="kick"
+                    onclick="Kick({index});"
+                    visible="{cankick}"
+                />
+                <instance name="player_action_button"
+                    align="right"
+                    width="60@" height="60%"
+                    onmouseover="ShowWidget('referee_tip{player}');"
+                    onmouseout="HideWidget('referee_tip{player}');"
+                    texture="referee"
+                    onclick="PromoteRef({index});"
+                    visible="{canpromote}"
+                />
+            </panel>
+        </panel>
+        <instance name="simple_tooltip" tip_id="kick_tip{player}" x="22%" y="-2.2h" width="15.4h" height="2.2h" align="center" valign="top" visible="false" label="gamelobby_kick_tip"/>
+        <instance name="simple_tooltip" tip_id="referee_tip{player}" x="29%" y="-2.2h" width="25.4h" height="2.2h" align="center" valign="top" visible="false" label="gamelobby_make_referee_tip"/>
+    </template>
 
-	<panel y="25.0h" align="center" valign="top" width="42.7h" height="42.7h" noclick="1" watch="LobbyTeamInfo0" ontrigger="SetVisible(param2 gt 0);">
-		<panel y="37.6%" x="-0.3%" width="55.8%" height="45.8%" align="center" color="0.06667 0.102 0.1294 1" noclick="1">
-			<instance
-				name="button2"
-				y="-1.6h"
-				width="80%" height="2.4h"
-				align="center" valign="bottom"
-				font="dyn_9" label="gamelobby_spectate_button"
-				onclick="PlaySound('/shared/sounds/ui/lobby/button_spectator.wav'); Team(0);"
-				watch="LobbyTeamInfo0"
-				ontrigger="SetEnabled(param0);"
-			/>
-		</panel>
-		<image texture="/ui/elements/lobby/spectator_bg.tga" noclick="1"/>
-		<label y="28.125%" height="7%" textvalign="center" textalign="center" font="dyn_14" color="white" shadow="1" content="gamelobby_spectators_header"/>
-		<!-- Spectator List -->
-		
-		<listbox
-			x="-0.1h" y="39.0%"
-			width="54.0%" height="34.7%"
-			align="center" valign="top"
-			color="invisible"
-			itemwidth="100%" itemheight="2.75h"
-			select="false"
-			hoverselect="false"
-			exteriorscrollbars="false"
-			scrollbarplaceholder="false"
-			scrolltexture="/ui/info/combobox.tga"
-			scrollbarsize="2.0h"
-			scrollbaroffset="0"
-			handleheight="2.0h"
-			watch="LobbySpectators"
-			ontrigger="
-				If(param0 == -1, Clear());
-				If(param0 != -1 and !param5,
-					AddTemplateListItem('spectator_list_entry', param0, 'index', param0, 'name', param1, 'cankick', param4, 'canpromote', param6)
-					);"
-		/>
-	</panel>
+    <panel y="25.0h" align="center" valign="top" width="42.7h" height="42.7h" noclick="1" watch="LobbyTeamInfo0" ontrigger="SetVisible(param2 gt 0);">
+        <panel y="37.6%" x="-0.3%" width="55.8%" height="45.8%" align="center" color="0.06667 0.102 0.1294 1" noclick="1">
+            <instance
+                name="button2"
+                y="-1.6h"
+                width="80%" height="2.4h"
+                align="center" valign="bottom"
+                font="dyn_9" label="gamelobby_spectate_button"
+                onclick="PlaySound('/shared/sounds/ui/lobby/button_spectator.wav'); Team(0);"
+                watch="LobbyTeamInfo0"
+                ontrigger="SetEnabled(param0);"
+            />
+        </panel>
+        <image texture="/ui/elements/lobby/spectator_bg.tga" noclick="1"/>
+        <label y="28.125%" height="7%" textvalign="center" textalign="center" font="dyn_14" color="white" shadow="1" content="gamelobby_spectators_header"/>
+        <!-- Spectator List -->
+        
+        <listbox
+            x="-0.1h" y="39.0%"
+            width="54.0%" height="34.7%"
+            align="center" valign="top"
+            color="invisible"
+            itemwidth="100%" itemheight="2.75h"
+            select="false"
+            hoverselect="false"
+            exteriorscrollbars="false"
+            scrollbarplaceholder="false"
+            scrolltexture="/ui/info/combobox.tga"
+            scrollbarsize="2.0h"
+            scrollbaroffset="0"
+            handleheight="2.0h"
+            watch="LobbySpectators"
+            ontrigger="
+                If(param0 == -1, Clear());
+                If(param0 != -1 and !param5,
+                    AddTemplateListItem('spectator_list_entry', param0, 'index', param0, 'name', param1, 'cankick', param4, 'canpromote', param6)
+                    );"
+        />
+    </panel>
 
-	<!-- Chat -->
-	<panel align="left" y="-.5h" valign="bottom" width="-45.5h" height="36.5h" color="invisible" noclick="1">
-		<instance name="frame_stone_brown" backercolor="black" vis_ornate_top="1" uscale=".14" vscale=".4" valign="bottom" align="center" body="lobby_chat_window" />
-	</panel>
+    <!-- Chat -->
+    <panel align="left" y="-.5h" valign="bottom" width="-45.5h" height="36.5h" color="invisible" noclick="1">
+        <instance name="frame_stone_brown" backercolor="black" vis_ornate_top="1" uscale=".14" vscale=".4" valign="bottom" align="center" body="lobby_chat_window" />
+    </panel>
 
-	<!-- Game Info -->
-	<panel x="-2.0h" y="-0.6h" align="right" valign="bottom" width="42.666h" height="42.666h" noclick="1" color="invisible">
-		<panel y="-4.0h" x="4.4h" width="15.5h" height="4.3h" valign="bottom" align="left" watch="LobbyStatus" ontrigger="SetVisible(!param1);">
-			<instance name="button2" label="gamelobby_disconnect_button" font="dyn_12" borderthickness="1.6h" onclick="Disconnect();"/>
-		</panel>
-		<panel y="-4.0h" x="4.4h" width="15.5h" height="4.3h" valign="bottom" align="left" watch="LobbyStatus" ontrigger="SetVisible(param1);">
-			<instance name="button2" label="gamelobby_disband_game_button" font="dyn_12" borderthickness="1.6h"
-			onclick="PlaySound('/shared/sounds/ui/lobby/button_disband.wav'); Disconnect();"/>
-		</panel>
-		<instance
-			name="button2"
-			y="-4.0h" x="-4.2h"
-			width="15.5h" height="4.3h"
-			valign="bottom" align="right"
-			label="gamelobby_start_game_button"
-			font="dyn_12" borderthickness="1.6h"
-			watch="LobbyStatus"
-			ontrigger="SetEnabled(param1);"
-			onclick="RequestMatchStart();"
-		/>
-		<image texture="/ui/elements/lobby/info_bg.tga" noclick="1"/>
+    <!-- Game Info -->
+    <panel x="-2.0h" y="-0.6h" align="right" valign="bottom" width="42.666h" height="42.666h" noclick="1" color="invisible">
+        <panel y="-4.0h" x="4.4h" width="15.5h" height="4.3h" valign="bottom" align="left" watch="LobbyStatus" ontrigger="SetVisible(!param1);">
+            <instance name="button2" label="gamelobby_disconnect_button" font="dyn_12" borderthickness="1.6h" onclick="Disconnect();"/>
+        </panel>
+        <panel y="-4.0h" x="4.4h" width="15.5h" height="4.3h" valign="bottom" align="left" watch="LobbyStatus" ontrigger="SetVisible(param1);">
+            <instance name="button2" label="gamelobby_disband_game_button" font="dyn_12" borderthickness="1.6h"
+            onclick="PlaySound('/shared/sounds/ui/lobby/button_disband.wav'); Disconnect();"/>
+        </panel>
+        <instance
+            name="button2"
+            y="-4.0h" x="-4.2h"
+            width="15.5h" height="4.3h"
+            valign="bottom" align="right"
+            label="gamelobby_start_game_button"
+            font="dyn_12" borderthickness="1.6h"
+            watch="LobbyStatus"
+            ontrigger="SetEnabled(param1);"
+            onclick="RequestMatchStart();"
+        />
+        <image texture="/ui/elements/lobby/info_bg.tga" noclick="1"/>
 
-		<panel y="11.4h" width="-8.0h" height="18.0h" align="center" color="invisible" float="bottom" padding="0.1h">
-			<panel height="12%">
-				<label textalign="left" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_match_name', 'name', param7));"/>
-			</panel>
-			<panel height="12%">
-				<label textalign="left" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_server_name', 'name', param2));"/>
-				<label textalign="right" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_ping', 'value', FtoA(param6, 0, 3, ' ')));"/>
-			</panel>
-			<panel height="12%">
-				<label textalign="left" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_map', 'name', param3));"/>
-				<label
-					textalign="right"
-					font="dyn_12" color="white" shadow="1"
-					watch="LobbyGameInfo"
-					ontrigger="
-						If(param8 == -1, SetText(Translate('game_lobby_match_id_none')), SetText(Translate('game_lobby_match_id', 'value', param8)));
-						If(param8 == -1, SetColor('gray'), SetColor('white'));
-						"
-				/>
-			</panel>
-			<panel height="12%">
-				<label textalign="left" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_host', 'host', param9));"/>
-				<label textalign="right" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_num_players', 'count', param4, 'max', param5));"/>
-			</panel>
-			<label height="12%" textalign="left" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_mode', 'mode', param0));"/>
-			<label height="36%" textalign="left" font="dyn_12" color="white" shadow="1" wrap="true" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_options', 'options', param1));"/>
-		</panel>
-		
-		<!-- Private Game Option -->
-		<panel x="-4.0h" y="-10.6h" width="-29.4h" valign="bottom" align="right" height="3.0h" color="invisible">
-			<panel watch="LobbyStatus" ontrigger="SetVisible(param1);">
-				<instance name="Noptions_checkbox" align="left" valign="center" font="dyn_10" onclick="If(GetValue() == 1, SetServerPrivateValue(1), SetServerPrivateValue(0));" label="gamelobby_private_button" watch="LobbyPrivate" ontrigger="SetButtonState(param);" />
-			</panel>
-			<panel watch="LobbyStatus" ontrigger="SetVisible(!param1);" noclick="true" passivechildren="true">
-				<instance name="Noptions_checkbox" align="left" valign="center" font="dyn_10" onclick="If(GetValue() == 1, SetServerPrivateValue(1), SetServerPrivateValue(0));" label="gamelobby_private_button" watch="LobbyPrivate" ontrigger="SetButtonState(param);" />
-			</panel>
-			<instance name="tip_mark" tip_id="announce_tip" width="1.8h" height="1.8h" valign="center" align="right" />
-			<instance name="generic_tooltip" x="-11.2h" y="-10.4h" width="26h" height="10.3h" align="left" valign="top" tip_id="announce_tip" title="gamelobby_private_tip_header" label="gamelobby_private_tip_text" />
-		</panel>
-	</panel>
+        <panel y="11.4h" width="-8.0h" height="18.0h" align="center" color="invisible" float="bottom" padding="0.1h">
+            <panel height="12%">
+                <label textalign="left" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_match_name', 'name', param7));"/>
+            </panel>
+            <panel height="12%">
+                <label textalign="left" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_server_name', 'name', param2));"/>
+                <label textalign="right" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_ping', 'value', FtoA(param6, 0, 3, ' ')));"/>
+            </panel>
+            <panel height="12%">
+                <label textalign="left" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_map', 'name', param3));"/>
+                <label
+                    textalign="right"
+                    font="dyn_12" color="white" shadow="1"
+                    watch="LobbyGameInfo"
+                    ontrigger="
+                        If(param8 == -1, SetText(Translate('game_lobby_match_id_none')), SetText(Translate('game_lobby_match_id', 'value', param8)));
+                        If(param8 == -1, SetColor('gray'), SetColor('white'));
+                        "
+                />
+            </panel>
+            <panel height="12%">
+                <label textalign="left" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_host', 'host', param9));"/>
+                <label textalign="right" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_num_players', 'count', param4, 'max', param5));"/>
+            </panel>
+            <label height="12%" textalign="left" font="dyn_12" color="white" shadow="1" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_mode', 'mode', param0));"/>
+            <label height="36%" textalign="left" font="dyn_12" color="white" shadow="1" wrap="true" watch="LobbyGameInfo" ontrigger="SetText(Translate('game_lobby_options', 'options', param1));"/>
+        </panel>
+        
+        <!-- Private Game Option -->
+        <panel x="-4.0h" y="-10.6h" width="-29.4h" valign="bottom" align="right" height="3.0h" color="invisible">
+            <panel watch="LobbyStatus" ontrigger="SetVisible(param1);">
+                <instance name="Noptions_checkbox" align="left" valign="center" font="dyn_10" onclick="If(GetValue() == 1, SetServerPrivateValue(1), SetServerPrivateValue(0));" label="gamelobby_private_button" watch="LobbyPrivate" ontrigger="SetButtonState(param);" />
+            </panel>
+            <panel watch="LobbyStatus" ontrigger="SetVisible(!param1);" noclick="true" passivechildren="true">
+                <instance name="Noptions_checkbox" align="left" valign="center" font="dyn_10" onclick="If(GetValue() == 1, SetServerPrivateValue(1), SetServerPrivateValue(0));" label="gamelobby_private_button" watch="LobbyPrivate" ontrigger="SetButtonState(param);" />
+            </panel>
+            <instance name="tip_mark" tip_id="announce_tip" width="1.8h" height="1.8h" valign="center" align="right" />
+            <instance name="generic_tooltip" x="-11.2h" y="-10.4h" width="26h" height="10.3h" align="left" valign="top" tip_id="announce_tip" title="gamelobby_private_tip_header" label="gamelobby_private_tip_text" />
+        </panel>
+    </panel>
 </interface>

@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Vindicator3"
+    name="Ability_Vindicator3"
 
-	icon="icon.tga"
-	statuseffecttooltip="State_Vindicator_Ability3_Int"
-	
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    icon="icon.tga"
+    statuseffecttooltip="State_Vindicator_Ability3_Int"
+    
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="passive"
-	
-	intelligencepercharge="1"
+    actiontype="passive"
+    
+    intelligencepercharge="1"
 >
-	<aura state="State_Vindicator_Ability3_Int" radius="950" targetscheme="enemy_heroes" />
+    <aura state="State_Vindicator_Ability3_Int" radius="950" targetscheme="enemy_heroes" />
 
-	<onimpact />
-	
-	<onframe>
-		<condition test="not_hastrait silenced" target="source_entity">
-			<setactivemodifierkey name="active" />
-		</condition>
-		<else>
-			<setactivemodifierkey name="" />
-		</else>
-	</onframe>
-	
-	<modifier key="active" modpriority="100">
-		<aura state="State_Vindicator_Ability3_Aura" radius="900" targetscheme="enemy_heroes" />
-	</modifier>
+    <onimpact />
+    
+    <onframe>
+        <condition test="not_hastrait silenced" target="source_entity">
+            <setactivemodifierkey name="active" />
+        </condition>
+        <else>
+            <setactivemodifierkey name="" />
+        </else>
+    </onframe>
+    
+    <modifier key="active" modpriority="100">
+        <aura state="State_Vindicator_Ability3_Aura" radius="900" targetscheme="enemy_heroes" />
+    </modifier>
 </ability>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Ophelia_Ability2"
+    name="State_Ophelia_Ability2"
 
-	
-	ishidden="false"
-	icon="icon.tga"
-	effecttype="StatusBuff"
-	passiveeffect="effects/state.effect"
+    
+    ishidden="false"
+    icon="icon.tga"
+    effecttype="StatusBuff"
+    passiveeffect="effects/state.effect"
 >
 
-	
+    
 </state>

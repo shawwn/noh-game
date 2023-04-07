@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Intelligence7"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="1100"
-	components="Item_MightyBlade Item_NeophytesBook Item_Glowstone,Item_MightyBlade Item_Quickblade Item_Glowstone,Item_Quickblade Item_NeophytesBook Item_Glowstone"
-	
-	actiontype="passive"
-	
-	strength="10"
-	agility="10"
-	intelligence="10"
-	maxhealth="200"
-	maxmana="150"
-	modifierkey="ult_boost"
+    name="Item_Intelligence7"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="1100"
+    components="Item_MightyBlade Item_NeophytesBook Item_Glowstone,Item_MightyBlade Item_Quickblade Item_Glowstone,Item_Quickblade Item_NeophytesBook Item_Glowstone"
+    
+    actiontype="passive"
+    
+    strength="10"
+    agility="10"
+    intelligence="10"
+    maxhealth="200"
+    maxmana="150"
+    modifierkey="ult_boost"
 >
 </item>

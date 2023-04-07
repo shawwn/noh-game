@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="" deferred="true">
-	<definitions>
+    <definitions>
 
-	<!-- roots -->
-		<particlesystem name="system0" space="world">
-			<model
-				life="500"
-				bone="Bip01 L Hand"
-				model="log.mdf"
-				anim="idle"
-				
-				yawspeed="0"
-				scale="=1"						
-				position="0.0 0.0 0.0"	
-				pitch="180"
-				yaw="0"			
-				startalpha="0"				
-				endalpha="1"
-			/>	
-			
-			<model
-				delay="500"
-				bone="Bip01 L Hand"
-				model="log.mdf"
-				anim="idle"
-				expirelife="1000"
-				yawspeed="0"
-				scale="2.1"						
-				position="0.0 0.0 0.0"	
-				pitch="180"
-				yaw="0"			
-				startalpha="1"				
-				endalpha="0"
-			/>	
-			
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-		
-	</thread> 
+    <!-- roots -->
+        <particlesystem name="system0" space="world">
+            <model
+                life="500"
+                bone="Bip01 L Hand"
+                model="log.mdf"
+                anim="idle"
+                
+                yawspeed="0"
+                scale="=1"                      
+                position="0.0 0.0 0.0"  
+                pitch="180"
+                yaw="0"         
+                startalpha="0"              
+                endalpha="1"
+            />  
+            
+            <model
+                delay="500"
+                bone="Bip01 L Hand"
+                model="log.mdf"
+                anim="idle"
+                expirelife="1000"
+                yawspeed="0"
+                scale="2.1"                     
+                position="0.0 0.0 0.0"  
+                pitch="180"
+                yaw="0"         
+                startalpha="1"              
+                endalpha="0"
+            />  
+            
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+        
+    </thread> 
 </effect>

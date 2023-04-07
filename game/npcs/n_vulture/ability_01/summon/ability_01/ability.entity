@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_VultureSummon1"
+    name="Ability_VultureSummon1"
 
-	
-	
-	icon="/npcs/n_vulture/ability_01/icon.tga"
+    
+    
+    icon="/npcs/n_vulture/ability_01/icon.tga"
 
-	
-	actiontype="passive"
+    
+    actiontype="passive"
 >
-	<aura state="State_Vulture_Ability1" radius="600" targetscheme="enemy_units" />
+    <aura state="State_Vulture_Ability1" radius="600" targetscheme="enemy_units" />
 </ability>

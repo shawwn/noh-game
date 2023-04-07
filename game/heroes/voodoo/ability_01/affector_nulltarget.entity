@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Voodoo_Ability1_NullTarget"
+    name="Affector_Voodoo_Ability1_NullTarget"
 
-	radius="600"
-	
-	lifetime="0"
-	targetselection="random"
-	targetscheme="visible_organic_enemy_units"
-	effecttype=""
-	maxtotalimpacts="1"
+    radius="600"
+    
+    lifetime="0"
+    targetselection="random"
+    targetscheme="visible_organic_enemy_units"
+    effecttype=""
+    maxtotalimpacts="1"
 >
-	<onimpact>
-		<spawnprojectile name="Projectile_Voodoo_Ability1_Bounce" source="this_position" target="target_entity" noresponse="true" />
-	</onimpact>
+    <onimpact>
+        <spawnprojectile name="Projectile_Voodoo_Ability1_Bounce" source="this_position" target="target_entity" noresponse="true" />
+    </onimpact>
 </affector>

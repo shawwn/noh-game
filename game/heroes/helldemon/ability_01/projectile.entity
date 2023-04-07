@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_HellDemon_Ability1"
+    name="Projectile_HellDemon_Ability1"
 
-	speed="400"
-	gravity="0"
-	flying="true"
-	flyheight="100"
-	
-	modelscale="2"
-	model="effects/reaper_green/model.mdf"
+    speed="400"
+    gravity="0"
+    flying="true"
+    flyheight="100"
+    
+    modelscale="2"
+    model="effects/reaper_green/model.mdf"
 
 
-	traileffect="effects/trail.effect"
+    traileffect="effects/trail.effect"
 >
-	<onimpact>
-		<playeffect effect="effects/impact.effect" source="target_entity" target="" />
-		<heal target="target_entity" a="50,75,100,130" />
-	</onimpact>
+    <onimpact>
+        <playeffect effect="effects/impact.effect" source="target_entity" target="" />
+        <heal target="target_entity" a="50,75,100,130" />
+    </onimpact>
 </projectile>

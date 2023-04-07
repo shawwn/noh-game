@@ -1,505 +1,505 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="medastalEffects">
-	<definitions>
-		<particlesystem name="system0" space="world">
+    <definitions>
+        <particlesystem name="system0" space="world">
 
-		<sound
-			linearfalloff="true" 
-			falloffstart="0"
-			falloffend="1200"
-			volume="0.5" 
-			soundloop="true"
-			fadein="200"
-			fadeout="300"
-			sample="/world/props/kongor/sounds/idle.wav"
-		/>
+        <sound
+            linearfalloff="true" 
+            falloffstart="0"
+            falloffend="1200"
+            volume="0.5" 
+            soundloop="true"
+            fadein="200"
+            fadeout="300"
+            sample="/world/props/kongor/sounds/idle.wav"
+        />
 
-			<model
-				position="0 0 25"
-				bone="_bone_fx3"
-				name="circleOfBones"
-				model="/shared/effects/models/circle_of_bones/model.mdf"
-				anim="idle"
-				pitch="-15"
-				pitchspeed="80"
-				yawspeed="-60"
-				scale="2"
-			/>
-		
-			<!--bigGreenGlow-->
-			<simpleemitter
-				bone="_bone_fx3"			
-         		spawnrate="1"				
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="0"
-          		drag="0"
-				position="0 0 -10"
-				offsetsphere="0 0 0"
-				material="/shared/effects/materials/fairy_glow.material"
-			>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor="1 1 1"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					midsize="125"
-					endsize="0"
-					endanchor="0"
-				/>
-        	</simpleemitter>
-			
-			<!--greenGlow-->
-			<simpleemitter
-				bone="_bone_fx3"			
-         		spawnrate="7"				
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="-1"
-          		drag="0"
-				position="0 0 -10"
-				offsetsphere="50 50 0"
-				material="/shared/effects/materials/fairy_glow.material"
-			>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor="1 1 1"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					midsize="100"
-					endsize="0"
-					endanchor="0"
-				/>
-        	</simpleemitter>			
+            <model
+                position="0 0 25"
+                bone="_bone_fx3"
+                name="circleOfBones"
+                model="/shared/effects/models/circle_of_bones/model.mdf"
+                anim="idle"
+                pitch="-15"
+                pitchspeed="80"
+                yawspeed="-60"
+                scale="2"
+            />
+        
+            <!--bigGreenGlow-->
+            <simpleemitter
+                bone="_bone_fx3"            
+                spawnrate="1"               
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="0"
+                drag="0"
+                position="0 0 -10"
+                offsetsphere="0 0 0"
+                material="/shared/effects/materials/fairy_glow.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor="1 1 1"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    midsize="125"
+                    endsize="0"
+                    endanchor="0"
+                />
+            </simpleemitter>
+            
+            <!--greenGlow-->
+            <simpleemitter
+                bone="_bone_fx3"            
+                spawnrate="7"               
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="-1"
+                drag="0"
+                position="0 0 -10"
+                offsetsphere="50 50 0"
+                material="/shared/effects/materials/fairy_glow.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor="1 1 1"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    midsize="100"
+                    endsize="0"
+                    endanchor="0"
+                />
+            </simpleemitter>            
 
-			<!--purpleSmokeRising-->
-			<simpleemitter
-				bone="_bone_fx3"			
-         		spawnrate="6"				
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="-10"
-          		drag=".1"
-				position="0 0 0"
-				offsetsphere="25 25 0"
-				material="/shared/effects/materials/phantom_smoke_16.material"
-			>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor=".1 1 .1"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					endsize="200"					
-					endanchor="0"
-				/>
-        	</simpleemitter>
+            <!--purpleSmokeRising-->
+            <simpleemitter
+                bone="_bone_fx3"            
+                spawnrate="6"               
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="-10"
+                drag=".1"
+                position="0 0 0"
+                offsetsphere="25 25 0"
+                material="/shared/effects/materials/phantom_smoke_16.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor=".1 1 .1"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    endsize="200"                   
+                    endanchor="0"
+                />
+            </simpleemitter>
 
-			<!--greenSmoke-->
-			<simpleemitter
-				bone="_bone_fx3"			
-         		spawnrate="10"				
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="0"
-          		drag="0"
-				position="0 0 0"
-				offsetsphere="20 20 0"
-				material="/shared/effects/materials/phantom_smoke_02.material"
-			>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor=".25 2 .25"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					endsize="400"					
-					endanchor="0"
-				/>
-        	</simpleemitter>
-			
-			<!--greenSmoke-->
-			<simpleemitter
-				bone="_bone_fx3"			
-         		spawnrate="10"				
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="0"
-          		drag="0"
-				position="0 0 0"
-				offsetsphere="20 20 0"
-				material="/shared/effects/materials/phantom_smoke_16.material"
-			>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor=".08 .8 .08"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					endsize="400"					
-					endanchor="0"
-				/>
-        	</simpleemitter>			
+            <!--greenSmoke-->
+            <simpleemitter
+                bone="_bone_fx3"            
+                spawnrate="10"              
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="0"
+                drag="0"
+                position="0 0 0"
+                offsetsphere="20 20 0"
+                material="/shared/effects/materials/phantom_smoke_02.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor=".25 2 .25"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    endsize="400"                   
+                    endanchor="0"
+                />
+            </simpleemitter>
+            
+            <!--greenSmoke-->
+            <simpleemitter
+                bone="_bone_fx3"            
+                spawnrate="10"              
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="0"
+                drag="0"
+                position="0 0 0"
+                offsetsphere="20 20 0"
+                material="/shared/effects/materials/phantom_smoke_16.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor=".08 .8 .08"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    endsize="400"                   
+                    endanchor="0"
+                />
+            </simpleemitter>            
 
-			<!--purpleSmokeRollingDown-->
-			<simpleemitter
-				bone="_bone_fx3"			
-         		spawnrate="10"				
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="15"
-          		drag=".1"
-				position="0 0 0"
-				offsetsphere="20 20 0"
-				material="/shared/effects/materials/phantom_smoke_02.material"
-			>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor=".1 1 .1"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					endsize="400"					
-					endanchor="0"
-				/>
-        	</simpleemitter>			
+            <!--purpleSmokeRollingDown-->
+            <simpleemitter
+                bone="_bone_fx3"            
+                spawnrate="10"              
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="15"
+                drag=".1"
+                position="0 0 0"
+                offsetsphere="20 20 0"
+                material="/shared/effects/materials/phantom_smoke_02.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor=".1 1 .1"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    endsize="400"                   
+                    endanchor="0"
+                />
+            </simpleemitter>            
 
-			<!--greenBillboardForGlow-->
-			<billboard
-				bone="_bone_fx3"
-				size="1200"
-				color=".03 .12 .03"
-				position="75 250 0"
-				material="/shared/effects/materials/whitedot.material"
-				depthbias="-200"
-				lockup="true"
-				pitch="270"	
-			/>	
-			
-			<twopointtrailemitter
-				owner="circleOfBones" 
-				bone_a="_bone_fx_01"
-				bone_b="_bone_fx_03"
-				spawnrate="20"
-				particlelife="1800"
-				startparticlealpha="1"		
-				midpartcilealphapos=".99"
-				texpostime="3500"
-				texposscale="0"
-				texstretchscale="1"				
-				material="/shared/effects/materials/fairy_glow.material"
-			>
-					<particle 				
-						color=".3 .3 .3"
-					/>
-			</twopointtrailemitter>	
+            <!--greenBillboardForGlow-->
+            <billboard
+                bone="_bone_fx3"
+                size="1200"
+                color=".03 .12 .03"
+                position="75 250 0"
+                material="/shared/effects/materials/whitedot.material"
+                depthbias="-200"
+                lockup="true"
+                pitch="270" 
+            />  
+            
+            <twopointtrailemitter
+                owner="circleOfBones" 
+                bone_a="_bone_fx_01"
+                bone_b="_bone_fx_03"
+                spawnrate="20"
+                particlelife="1800"
+                startparticlealpha="1"      
+                midpartcilealphapos=".99"
+                texpostime="3500"
+                texposscale="0"
+                texstretchscale="1"             
+                material="/shared/effects/materials/fairy_glow.material"
+            >
+                    <particle               
+                        color=".3 .3 .3"
+                    />
+            </twopointtrailemitter> 
 
-			<twopointtrailemitter
-				owner="circleOfBones" 
-				bone_a="_bone_fx_04"
-				bone_b="_bone_fx_06"
-				spawnrate="20"
-				particlelife="1800"
-				startparticlealpha="1"		
-				midpartcilealphapos=".99"
-				texpostime="3500"
-				texposscale="0"
-				texstretchscale="1"				
-				material="/shared/effects/materials/fairy_glow.material"
-			>
-					<particle 				
-						color=".3 .3 .3"
-					/>
-			</twopointtrailemitter>	
-			
-			<twopointtrailemitter
-				owner="circleOfBones" 
-				bone_a="_bone_fx_07"
-				bone_b="_bone_fx_09"
-				spawnrate="5"
-				particlelife="1500"
-				startparticlealpha="1"		
-				midpartcilealphapos=".99"
-				texpostime="3500"
-				texposscale="0"
-				texstretchscale="1"				
-				material="/shared/effects/materials/fairy_glow.material"
-			>
-					<particle 				
-						color=".3 .3 .3"
-					/>
-			</twopointtrailemitter>				
+            <twopointtrailemitter
+                owner="circleOfBones" 
+                bone_a="_bone_fx_04"
+                bone_b="_bone_fx_06"
+                spawnrate="20"
+                particlelife="1800"
+                startparticlealpha="1"      
+                midpartcilealphapos=".99"
+                texpostime="3500"
+                texposscale="0"
+                texstretchscale="1"             
+                material="/shared/effects/materials/fairy_glow.material"
+            >
+                    <particle               
+                        color=".3 .3 .3"
+                    />
+            </twopointtrailemitter> 
+            
+            <twopointtrailemitter
+                owner="circleOfBones" 
+                bone_a="_bone_fx_07"
+                bone_b="_bone_fx_09"
+                spawnrate="5"
+                particlelife="1500"
+                startparticlealpha="1"      
+                midpartcilealphapos=".99"
+                texpostime="3500"
+                texposscale="0"
+                texstretchscale="1"             
+                material="/shared/effects/materials/fairy_glow.material"
+            >
+                    <particle               
+                        color=".3 .3 .3"
+                    />
+            </twopointtrailemitter>             
 
-			<model
-				position="0 0 25"
-				bone="_bone_fx2"
-				name="circleOfBones"
-				model="/shared/effects/models/circle_of_bones/model.mdf"
-				anim="idle"
-				pitch="-15"
-				pitchspeed="50"
-				yawspeed="-60"
-				scale="2"
-			/>
-		
-			<!--bigGreenGlow-->
-			<simpleemitter
-				bone="_bone_fx2"			
-         		spawnrate="1"				
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="0"
-          		drag="0"
-				position="0 0 -10"
-				offsetsphere="0 0 0"
-				material="/shared/effects/materials/fairy_glow.material"
-			>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor="1 1 1"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					midsize="125"
-					endsize="0"
-					endanchor="0"
-				/>
-        	</simpleemitter>
-			
-			<!--greenGlow-->
-			<simpleemitter
-				bone="_bone_fx2"			
-         		spawnrate="7"				
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="-1"
-          		drag="0"
-				position="0 0 -10"
-				offsetsphere="50 50 0"
-				material="/shared/effects/materials/fairy_glow.material"
-			>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor="1 1 1"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					midsize="100"
-					endsize="0"
-					endanchor="0"
-				/>
-        	</simpleemitter>			
+            <model
+                position="0 0 25"
+                bone="_bone_fx2"
+                name="circleOfBones"
+                model="/shared/effects/models/circle_of_bones/model.mdf"
+                anim="idle"
+                pitch="-15"
+                pitchspeed="50"
+                yawspeed="-60"
+                scale="2"
+            />
+        
+            <!--bigGreenGlow-->
+            <simpleemitter
+                bone="_bone_fx2"            
+                spawnrate="1"               
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="0"
+                drag="0"
+                position="0 0 -10"
+                offsetsphere="0 0 0"
+                material="/shared/effects/materials/fairy_glow.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor="1 1 1"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    midsize="125"
+                    endsize="0"
+                    endanchor="0"
+                />
+            </simpleemitter>
+            
+            <!--greenGlow-->
+            <simpleemitter
+                bone="_bone_fx2"            
+                spawnrate="7"               
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="-1"
+                drag="0"
+                position="0 0 -10"
+                offsetsphere="50 50 0"
+                material="/shared/effects/materials/fairy_glow.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor="1 1 1"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    midsize="100"
+                    endsize="0"
+                    endanchor="0"
+                />
+            </simpleemitter>            
 
-			<!--purpleSmokeRising-->
-			<simpleemitter
-				bone="_bone_fx2"			
-         		spawnrate="6"				
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="-10"
-          		drag=".1"
-				position="0 0 0"
-				offsetsphere="25 25 0"
-				material="/shared/effects/materials/phantom_smoke_16.material"
-			>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor=".1 1 .1"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					endsize="200"					
-					endanchor="0"
-				/>
-        	</simpleemitter>
+            <!--purpleSmokeRising-->
+            <simpleemitter
+                bone="_bone_fx2"            
+                spawnrate="6"               
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="-10"
+                drag=".1"
+                position="0 0 0"
+                offsetsphere="25 25 0"
+                material="/shared/effects/materials/phantom_smoke_16.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor=".1 1 .1"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    endsize="200"                   
+                    endanchor="0"
+                />
+            </simpleemitter>
 
-			<!--greenSmoke-->
-			<simpleemitter
-				bone="_bone_fx2"			
-         		spawnrate="10"				
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="0"
-          		drag="0"
-				position="0 0 0"
-				offsetsphere="20 20 0"
-				material="/shared/effects/materials/phantom_smoke_02.material"
-			>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor=".25 2 .25"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					endsize="400"					
-					endanchor="0"
-				/>
-        	</simpleemitter>
-			
-			<!--greenSmoke-->
-			<simpleemitter
-				bone="_bone_fx2"			
-         		spawnrate="10"				
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="0"
-          		drag="0"
-				position="0 0 0"
-				offsetsphere="20 20 0"
-				material="/shared/effects/materials/phantom_smoke_16.material"
-			>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor=".08 .8 .08"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					endsize="400"					
-					endanchor="0"
-				/>
-        	</simpleemitter>			
+            <!--greenSmoke-->
+            <simpleemitter
+                bone="_bone_fx2"            
+                spawnrate="10"              
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="0"
+                drag="0"
+                position="0 0 0"
+                offsetsphere="20 20 0"
+                material="/shared/effects/materials/phantom_smoke_02.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor=".25 2 .25"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    endsize="400"                   
+                    endanchor="0"
+                />
+            </simpleemitter>
+            
+            <!--greenSmoke-->
+            <simpleemitter
+                bone="_bone_fx2"            
+                spawnrate="10"              
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="0"
+                drag="0"
+                position="0 0 0"
+                offsetsphere="20 20 0"
+                material="/shared/effects/materials/phantom_smoke_16.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor=".08 .8 .08"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    endsize="400"                   
+                    endanchor="0"
+                />
+            </simpleemitter>            
 
-			<!--purpleSmokeRollingDown-->
-			<simpleemitter
-				bone="_bone_fx2"			
-         		spawnrate="10"				
-				minparticlelife="1500"
-          		maxparticlelife="3000"
-          		gravity="15"
-          		drag=".1"
-				position="0 0 0"
-				offsetsphere="20 20 0"
-				material="/shared/effects/materials/phantom_smoke_02.material"
-			>
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor=".1 1 .1"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					endsize="400"					
-					endanchor="0"
-				/>
-        	</simpleemitter>			
+            <!--purpleSmokeRollingDown-->
+            <simpleemitter
+                bone="_bone_fx2"            
+                spawnrate="10"              
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="15"
+                drag=".1"
+                position="0 0 0"
+                offsetsphere="20 20 0"
+                material="/shared/effects/materials/phantom_smoke_02.material"
+            >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor=".1 1 .1"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    endsize="400"                   
+                    endanchor="0"
+                />
+            </simpleemitter>            
 
-			<!--greenBillboardForGlow-->
-			<billboard
-				bone="_bone_fx2"
-				size="1200"
-				color=".03 .12 .03"
-				position="-75 250 0"
-				material="/shared/effects/materials/whitedot.material"
-				depthbias="-200"
-				lockup="true"
-				pitch="270"	
-			/>	
-			
-			<twopointtrailemitter
-				owner="circleOfBones" 
-				bone_a="_bone_fx_01"
-				bone_b="_bone_fx_03"
-				spawnrate="20"
-				particlelife="1800"
-				startparticlealpha="1"		
-				midpartcilealphapos=".99"
-				texpostime="3500"
-				texposscale="0"
-				texstretchscale="1"				
-				material="/shared/effects/materials/fairy_glow.material"
-			>
-					<particle 				
-						color=".3 .3 .3"
-					/>
-			</twopointtrailemitter>	
+            <!--greenBillboardForGlow-->
+            <billboard
+                bone="_bone_fx2"
+                size="1200"
+                color=".03 .12 .03"
+                position="-75 250 0"
+                material="/shared/effects/materials/whitedot.material"
+                depthbias="-200"
+                lockup="true"
+                pitch="270" 
+            />  
+            
+            <twopointtrailemitter
+                owner="circleOfBones" 
+                bone_a="_bone_fx_01"
+                bone_b="_bone_fx_03"
+                spawnrate="20"
+                particlelife="1800"
+                startparticlealpha="1"      
+                midpartcilealphapos=".99"
+                texpostime="3500"
+                texposscale="0"
+                texstretchscale="1"             
+                material="/shared/effects/materials/fairy_glow.material"
+            >
+                    <particle               
+                        color=".3 .3 .3"
+                    />
+            </twopointtrailemitter> 
 
-			<twopointtrailemitter
-				owner="circleOfBones" 
-				bone_a="_bone_fx_04"
-				bone_b="_bone_fx_06"
-				spawnrate="20"
-				particlelife="1800"
-				startparticlealpha="1"		
-				midpartcilealphapos=".99"
-				texpostime="3500"
-				texposscale="0"
-				texstretchscale="1"				
-				material="/shared/effects/materials/fairy_glow.material"
-			>
-					<particle 				
-						color=".3 .3 .3"
-					/>
-			</twopointtrailemitter>	
-			
-			<twopointtrailemitter
-				owner="circleOfBones" 
-				bone_a="_bone_fx_07"
-				bone_b="_bone_fx_09"
-				spawnrate="5"
-				particlelife="1500"
-				startparticlealpha="1"		
-				midpartcilealphapos=".99"
-				texpostime="3500"
-				texposscale="0"
-				texstretchscale="1"				
-				material="/shared/effects/materials/fairy_glow.material"
-			>
-					<particle 				
-						color=".3 .3 .3"
-					/>
-			</twopointtrailemitter>				
-		
-			
-		</particlesystem>
+            <twopointtrailemitter
+                owner="circleOfBones" 
+                bone_a="_bone_fx_04"
+                bone_b="_bone_fx_06"
+                spawnrate="20"
+                particlelife="1800"
+                startparticlealpha="1"      
+                midpartcilealphapos=".99"
+                texpostime="3500"
+                texposscale="0"
+                texstretchscale="1"             
+                material="/shared/effects/materials/fairy_glow.material"
+            >
+                    <particle               
+                        color=".3 .3 .3"
+                    />
+            </twopointtrailemitter> 
+            
+            <twopointtrailemitter
+                owner="circleOfBones" 
+                bone_a="_bone_fx_07"
+                bone_b="_bone_fx_09"
+                spawnrate="5"
+                particlelife="1500"
+                startparticlealpha="1"      
+                midpartcilealphapos=".99"
+                texpostime="3500"
+                texposscale="0"
+                texstretchscale="1"             
+                material="/shared/effects/materials/fairy_glow.material"
+            >
+                    <particle               
+                        color=".3 .3 .3"
+                    />
+            </twopointtrailemitter>             
+        
+            
+        </particlesystem>
    </definitions>
    <thread>
       <spawnparticlesystem instance="instance0" particlesystem="system0" />

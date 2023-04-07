@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_SacrificialStone"
+    name="State_SacrificialStone"
 
-	icon="icon.tga"
-	ishidden="true"
+    icon="icon.tga"
+    ishidden="true"
 >
-	<onkilled>
-		<condition target="source_entity" test="not_target_type illusion">
-			<addcharges entity="this_spawner_entity" />
-		</condition>
-	</onkilled>
-	
-	<onframe />
+    <onkilled>
+        <condition target="source_entity" test="not_target_type illusion">
+            <addcharges entity="this_spawner_entity" />
+        </condition>
+    </onkilled>
+    
+    <onframe />
 </state>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Panda_Ability2_Bind"
+    name="State_Panda_Ability2_Bind"
 
-	
-	
-	icon="icon.tga"
-	
-	silenced="true"
-	perplexed="true"
-	immobilized="true"
-	disarmed="true"
-	silenced="true"
-	disarmed="true"
-	immobilized="true"
-	perplexed="true"
-	
-	passiveeffect="effects/launch.effect"
-	nothreat="1"
-	effecttype=""
+    
+    
+    icon="icon.tga"
+    
+    silenced="true"
+    perplexed="true"
+    immobilized="true"
+    disarmed="true"
+    silenced="true"
+    disarmed="true"
+    immobilized="true"
+    perplexed="true"
+    
+    passiveeffect="effects/launch.effect"
+    nothreat="1"
+    effecttype=""
 >
 </state>

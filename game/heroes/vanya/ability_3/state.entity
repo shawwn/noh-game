@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Vanya_Ability3"
+    name="State_Vanya_Ability3"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/trail.effect"
-	modifierkey="attack_impact"
-	disarmed="true"
-	ishidden="true"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/trail.effect"
+    modifierkey="attack_impact"
+    disarmed="true"
+    ishidden="true"
 
-	unitwalking="true"
-	effecttype=""
+    unitwalking="true"
+    effecttype=""
 >
-	<oninflict>
-		<setaccumulator value="1.0" />
-	</oninflict>
-	<onattack>
-		<bonusdamagemult a="accumulator" b="1" op="sub" target="" />
-		<changeaccumulator b="0.75" op="mult" />
-	</onattack>
+    <oninflict>
+        <setaccumulator value="1.0" />
+    </oninflict>
+    <onattack>
+        <bonusdamagemult a="accumulator" b="1" op="sub" target="" />
+        <changeaccumulator b="0.75" op="mult" />
+    </onattack>
 </state>

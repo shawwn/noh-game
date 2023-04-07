@@ -5,5 +5,5 @@
 
 <frameevent frame="1" cmd="starteffect /buildings/hellbourne/repeater1/effects/repeater1_death/effects/soul_trail.effect 0"/>
 </anim>
-	
+    
 </model>

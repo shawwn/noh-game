@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <shop
-	name="Shop_Outpost"
+    name="Shop_Outpost"
 
-	style="outpost"
-	header="/ui/elements/shop/shopkeeper_outpost.tga"
-	
-	icon="shop_outpost.tga"
-	order="0"
-	slot="10"
+    style="outpost"
+    header="/ui/elements/shop/shopkeeper_outpost.tga"
+    
+    icon="shop_outpost.tga"
+    order="0"
+    slot="10"
 >
 
-	<item name="Item_HomecomingStone" />
-	<item name="Item_DuckBoots" />
-	<item name="Item_LoggersHatchet" />
-	<item name="Item_IronBuckler" />
-	
-	<item name="Item_Scarab" />
-	<item name="Item_TrinketOfRestoration" />
-	<item name="Item_MysticVestments" />
-	<item name="Item_Punchdagger" />
-	<item name="Item_GlovesOfHaste" />
-	
-	<item name="Item_MajorTotem" />
-	<item name="Item_Lifetube" />
+    <item name="Item_HomecomingStone" />
+    <item name="Item_DuckBoots" />
+    <item name="Item_LoggersHatchet" />
+    <item name="Item_IronBuckler" />
+    
+    <item name="Item_Scarab" />
+    <item name="Item_TrinketOfRestoration" />
+    <item name="Item_MysticVestments" />
+    <item name="Item_Punchdagger" />
+    <item name="Item_GlovesOfHaste" />
+    
+    <item name="Item_MajorTotem" />
+    <item name="Item_Lifetube" />
 </shop>

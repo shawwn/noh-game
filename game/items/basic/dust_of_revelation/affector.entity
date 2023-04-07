@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_DustOfRevelation"
+    name="Affector_DustOfRevelation"
 
-	radius="1250"
-	
-	targetselection="all"
-	targetscheme="enemy_units"
-	effecttype="Magic"
-	persist="false"
+    radius="1250"
+    
+    targetselection="all"
+    targetscheme="enemy_units"
+    effecttype="Magic"
+    persist="false"
 >
-	<onimpact>
-		<applystate name="State_DustOfRevelation" duration="12000"/>
-	</onimpact>
+    <onimpact>
+        <applystate name="State_DustOfRevelation" duration="12000"/>
+    </onimpact>
 </affector>

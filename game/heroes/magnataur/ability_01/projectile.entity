@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Magnataur_Ability1"
+    name="Projectile_Magnataur_Ability1"
 
-	speed="1900"
-	gravity="0"
+    speed="1900"
+    gravity="0"
 
-	modelscale="1"
-	model="/shared/models/invis.mdf"
-	
-	traileffect="effects/trail.effect"	
-	effectscale=""
-	impacteffect=""
-	
-	touchradius="150"
-	maxtouchespertarget="1"
-	touchtargetscheme="organic_enemy_units"
-	toucheffecttype="Magical"
+    modelscale="1"
+    model="/shared/models/invis.mdf"
+    
+    traileffect="effects/trail.effect"  
+    effectscale=""
+    impacteffect=""
+    
+    touchradius="150"
+    maxtouchespertarget="1"
+    touchtargetscheme="organic_enemy_units"
+    toucheffecttype="Magical"
 >
-	<ontouch>
-		<damage effecttype="Magic" amount="80,150,225,300" />	
-	</ontouch>
+    <ontouch>
+        <damage effecttype="Magic" amount="80,150,225,300" />   
+    </ontouch>
 </projectile>

@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
 
-	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true"/>
-	<anim name="portrait" clip="clips/portrait.clip" fps="30" loop="true"/>
-	
-	<anim name="bored" clip="clips/bored_1.clip"/>
-	
-	<anim name="taunt_1" clip="clips/taunt.clip"/>
-		
-	<anim name="item_1" clip="clips/item_1.clip"/>
-	
-	<anim name="ability_1" clip="clips/ability_1.clip" fps="30" loop="false">
-		<frameevent frame="1" cmd="PlaySoundLinear /heroes/armadon/ability_01/sounds/ability_01_grunt.wav 1500 2500 .85"/>
-	</anim>
+    <anim name="idle" clip="clips/default_1.clip" fps="30" loop="true"/>
+    <anim name="portrait" clip="clips/portrait.clip" fps="30" loop="true"/>
+    
+    <anim name="bored" clip="clips/bored_1.clip"/>
+    
+    <anim name="taunt_1" clip="clips/taunt.clip"/>
+        
+    <anim name="item_1" clip="clips/item_1.clip"/>
+    
+    <anim name="ability_1" clip="clips/ability_1.clip" fps="30" loop="false">
+        <frameevent frame="1" cmd="PlaySoundLinear /heroes/armadon/ability_01/sounds/ability_01_grunt.wav 1500 2500 .85"/>
+    </anim>
 
-	<anim name="ability_2" clip="clips/ability_2.clip" fps="30" loop="false">
-		<frameevent frame="1" cmd="PlaySoundLinear /heroes/armadon/ability_02/sounds/ability_02_grunt.wav 1500 2500 .7"/>
-	</anim>
+    <anim name="ability_2" clip="clips/ability_2.clip" fps="30" loop="false">
+        <frameevent frame="1" cmd="PlaySoundLinear /heroes/armadon/ability_02/sounds/ability_02_grunt.wav 1500 2500 .7"/>
+    </anim>
 
-	<anim name="attack_1" clip="clips/attack_1.clip" fps="100" loop="false">
-		<frameevent frame="21" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .65"/>
-	</anim>
+    <anim name="attack_1" clip="clips/attack_1.clip" fps="100" loop="false">
+        <frameevent frame="21" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .65"/>
+    </anim>
 
-	<anim name="attack_2" clip="clips/attack_2.clip" fps="100" loop="false">
-		<frameevent frame="23" cmd="PlaySoundLinear /heroes/armadon/sounds/attack_grunt_%.wav 500 2000 .6"/>
-		<frameevent frame="21" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .65"/>
-	</anim>
+    <anim name="attack_2" clip="clips/attack_2.clip" fps="100" loop="false">
+        <frameevent frame="23" cmd="PlaySoundLinear /heroes/armadon/sounds/attack_grunt_%.wav 500 2000 .6"/>
+        <frameevent frame="21" cmd="PlaySoundLinear /shared/sounds/attacks/attack_medium_%.wav 400 1800 .65"/>
+    </anim>
 
-	<anim name="walk_1" clip="clips/walk_1.clip" fps="28" loop="true" blendtime="200">
-		<frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
-		<frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
-		<frameevent frame="13" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
-		<frameevent frame="18" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
-		
-		<frameevent frame="3" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
-		<frameevent frame="13" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
-	</anim>
+    <anim name="walk_1" clip="clips/walk_1.clip" fps="28" loop="true" blendtime="200">
+        <frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+        <frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+        <frameevent frame="13" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+        <frameevent frame="18" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+        
+        <frameevent frame="3" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+        <frameevent frame="13" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+    </anim>
 
-	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
-		<frameevent frame="1" cmd="PlaySoundLinear /heroes/armadon/sounds/death.wav 800 1500 0.6"/>
-	</anim>
+    <anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+        <frameevent frame="1" cmd="PlaySoundLinear /heroes/armadon/sounds/death.wav 800 1500 0.6"/>
+    </anim>
 
 </model>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Fleetfeet"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="450"
-	
-	actiontype="passive"
-	
-	agility="6"
+    name="Item_Fleetfeet"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="450"
+    
+    actiontype="passive"
+    
+    agility="6"
 >
 </item>

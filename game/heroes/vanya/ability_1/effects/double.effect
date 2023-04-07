@@ -1,113 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="bloodimpact_small">
-	<definitions>
-		<particlesystem name="system0" space="world">
+    <definitions>
+        <particlesystem name="system0" space="world">
 
 
 <!--
-	<simpleemitter
-         	bone="_bone_centerofchest"
-         	spawnrate="2000"
-			count="12"
-          	particlelife="900"
-          	gravity="10"
-         	speed="450"
-          	drag=".1"
-          	acceleration="0.0"
-			position="0 0 0"
-			offsetsphere="2 2 2"
-          	material="/shared/effects/materials/blood1.material"
-         	>
-  		<particle 
-			angle="180"			
-			color=".5.5 .5"
-			frame=".5"
-			startsize="1"
-		
-			minendsize="125"			
-			maxendsize="140"			
-
-			startalpha="1"
-			midalpha=".8"
-			endalpha="0"
-			
-		/>
-    </simpleemitter>
-	-->
-	
-	
-	<simpleemitter
-         	bone="_bone_centerofchest"
-         	spawnrate="52"
-			count="7"
-          	particlelife="300"
-          	gravity="0"         	
-          	drag=".1"
-          	acceleration="0.0"
-			position="0 0 30"
-			offsetsphere="40 40 40"
-          	material="/shared/effects/materials/3d_slash.material"
-         	>
-  		<particle 
-			size="180"
-			startframe="0.0"
-			endframe="1.0"
-			color=".6 .1 1"
-			minyaw="-360"
-			maxyaw="360"
-			lockup="1"
-			depthbias="30"
-		/>
-		
-  		<particle 
-			size="180"
-			startframe="0.0"
-			endframe="1.0"
-			color="0.1 .5 .8"
-			minyaw="-360"
-			maxyaw="360"
-			lockup="1"
-			depthbias="30"
-		/>		
-    </simpleemitter>	
+    <simpleemitter
+            bone="_bone_centerofchest"
+            spawnrate="2000"
+            count="12"
+            particlelife="900"
+            gravity="10"
+            speed="450"
+            drag=".1"
+            acceleration="0.0"
+            position="0 0 0"
+            offsetsphere="2 2 2"
+            material="/shared/effects/materials/blood1.material"
+            >
+        <particle 
+            angle="180"         
+            color=".5.5 .5"
+            frame=".5"
+            startsize="1"
         
-		
-	
-	<simpleemitter
-			delay="300"
-         	bone="_bone_centerofchest"
-         	spawnrate="52"
-			count="5"
-          	particlelife="300"
-          	gravity="0"         	
-          	drag=".1"
-          	acceleration="0.0"
-			position="0 0 30"
-			offsetsphere="40 40 40"
-          	material="/shared/effects/materials/3d_slash.material"
-         	>
-  		<particle 
-			size="180"
-			startframe="0.0"
-			endframe="1.0"
-			color=".6 .1 1"
-			minyaw="-360"
-			maxyaw="360"
-			lockup="1"
-			depthbias="30"
-		/>
-		
-  		<particle 
-			size="180"
-			startframe="0.0"
-			endframe="1.0"
-			color="0.1 .5 .8"
-			minyaw="-360"
-			maxyaw="360"
-			lockup="1"
-			depthbias="30"
-		/>		
-    </simpleemitter>		
+            minendsize="125"            
+            maxendsize="140"            
+
+            startalpha="1"
+            midalpha=".8"
+            endalpha="0"
+            
+        />
+    </simpleemitter>
+    -->
+    
+    
+    <simpleemitter
+            bone="_bone_centerofchest"
+            spawnrate="52"
+            count="7"
+            particlelife="300"
+            gravity="0"             
+            drag=".1"
+            acceleration="0.0"
+            position="0 0 30"
+            offsetsphere="40 40 40"
+            material="/shared/effects/materials/3d_slash.material"
+            >
+        <particle 
+            size="180"
+            startframe="0.0"
+            endframe="1.0"
+            color=".6 .1 1"
+            minyaw="-360"
+            maxyaw="360"
+            lockup="1"
+            depthbias="30"
+        />
+        
+        <particle 
+            size="180"
+            startframe="0.0"
+            endframe="1.0"
+            color="0.1 .5 .8"
+            minyaw="-360"
+            maxyaw="360"
+            lockup="1"
+            depthbias="30"
+        />      
+    </simpleemitter>    
+        
+        
+    
+    <simpleemitter
+            delay="300"
+            bone="_bone_centerofchest"
+            spawnrate="52"
+            count="5"
+            particlelife="300"
+            gravity="0"             
+            drag=".1"
+            acceleration="0.0"
+            position="0 0 30"
+            offsetsphere="40 40 40"
+            material="/shared/effects/materials/3d_slash.material"
+            >
+        <particle 
+            size="180"
+            startframe="0.0"
+            endframe="1.0"
+            color=".6 .1 1"
+            minyaw="-360"
+            maxyaw="360"
+            lockup="1"
+            depthbias="30"
+        />
+        
+        <particle 
+            size="180"
+            startframe="0.0"
+            endframe="1.0"
+            color="0.1 .5 .8"
+            minyaw="-360"
+            maxyaw="360"
+            lockup="1"
+            depthbias="30"
+        />      
+    </simpleemitter>        
       </particlesystem>
    </definitions>
    <thread>

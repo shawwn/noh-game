@@ -2,7 +2,7 @@
 <ability
     name="Ability_BountyHunter3"
 
-	statuseffecttooltip="State_BountyHunter_Ability3"
+    statuseffecttooltip="State_BountyHunter_Ability3"
     icon="icon.tga"
 
     maxlevel="4"

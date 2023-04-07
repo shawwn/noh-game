@@ -1,180 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="fiends_grip_target">
-	<definitions>
-		<particlesystem name="system0" space="entity">
+    <definitions>
+        <particlesystem name="system0" space="entity">
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2500"
-				volume=".75"
-				sample="../sounds/impact.wav"
-			/>
+            <sound
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2500"
+                volume=".75"
+                sample="../sounds/impact.wav"
+            />
 
-		
+        
 
-		<groundsprite
-			life="830"
+        <groundsprite
+            life="830"
 
-			timenudge="0"
-			material="/shared/effects/materials/nova_09.material"
+            timenudge="0"
+            material="/shared/effects/materials/nova_09.material"
 
-			startsize="15"
-			
-			endsize="450"
-			midsizepos=".5"
+            startsize="15"
+            
+            endsize="450"
+            midsizepos=".5"
 
-			startcolor=".5 0 1"
-			midcolor=".5 0 1"
-			endcolor=".5 0 1"
-	
-			startalpha="1"
-			midalpha="1"
-			endalpha="0"
-			midalphapos=".4"
+            startcolor=".5 0 1"
+            midcolor=".5 0 1"
+            endcolor=".5 0 1"
+    
+            startalpha="1"
+            midalpha="1"
+            endalpha="0"
+            midalphapos=".4"
 
-			anglesspeed="0 0 50"
+            anglesspeed="0 0 50"
 
-		/>
+        />
 
-		
+        
 
-		
-
-
-		<simpleemitter
-		
-			spawnrate="60"
-			count="5"
-			bone="Bip01 Spine"
-			particlelife="850"			
-			gravity="-65"
-			speed="60"
-			drag="0"
-			acceleration="0"
-			position="0 0 -20"
-
-			material="/shared/effects/materials/lightning_06.material"
-			offsetsphere="40 40 0"
-			minangle="0"
-			maxangle="0"
-			direction="0 0 0"
-			offsetdirection="0 105 0"
-			offsetradial="0 0 0"
-		>
-
-			<particle 
-
-				minangle="0"
-				maxangle="0"
-				minanglespeed="0"
-				maxanglespeed="0"
+        
 
 
-				startcolor="0 0 0"
-				midcolor=".8 .0 1"
-				endcolor="0 0 0"
+        <simpleemitter
+        
+            spawnrate="60"
+            count="5"
+            bone="Bip01 Spine"
+            particlelife="850"          
+            gravity="-65"
+            speed="60"
+            drag="0"
+            acceleration="0"
+            position="0 0 -20"
 
-				midcolorpos=".4"
+            material="/shared/effects/materials/lightning_06.material"
+            offsetsphere="40 40 0"
+            minangle="0"
+            maxangle="0"
+            direction="0 0 0"
+            offsetdirection="0 105 0"
+            offsetradial="0 0 0"
+        >
 
-				startframe="0"
-				endframe="1"
+            <particle 
 
-				startwidth="10"
-				midwidth="7.5"
-				endwidth="10"
-				midwidthpos=".5"
-
-
-				startheight="0"
-				endheight="820"
-
-				startalpha="0"
-				midalpha=".1"
-				endalpha="0"
-				midalphapos=".1"
-				startstickiness="0"
-				endstickiness=".6"
-
-				lockup="true"
-
-			/>
-
-
-		</simpleemitter>
-
-		<simpleemitter
-		
-			spawnrate="60"
-			count="10"
-			bone="Bip01 Spine"
-			particlelife="850"			
-			gravity="-75"
-			speed="60"
-			drag=".08"
-			acceleration="0"
-			position="0 0 0"
-
-			material="/shared/effects/materials/lightning_06.material"
-			offsetsphere="40 40 0"
-			minangle="90"
-			maxangle="-90"
-			direction="0 0 0"
-			offsetdirection="40 40 0"
-			offsetradial="0 0 0"
-		>
-
-			<particle 
-
-				minangle="0"
-				maxangle="0"
-				minanglespeed="0"
-				maxanglespeed="0"
+                minangle="0"
+                maxangle="0"
+                minanglespeed="0"
+                maxanglespeed="0"
 
 
-				startcolor="0 0 0"
-				midcolor=".8 0 1"
-				endcolor="0 0 0"
+                startcolor="0 0 0"
+                midcolor=".8 .0 1"
+                endcolor="0 0 0"
 
-				midcolorpos=".1"
+                midcolorpos=".4"
 
-				startframe="0"
-				endframe="1"
+                startframe="0"
+                endframe="1"
 
-				startwidth="10"
-				midwidth="7.5"
-				endwidth="3"
-				midwidthpos=".5"
-
-
-				startheight="0"
-				endheight="820"
-
-				startalpha="0"
-				midalpha=".1"
-				endalpha="0"
-				midalphapos=".1"
-				startstickiness="0"
-				endstickiness="0"
-
-				lockup="true"
-
-			/>
+                startwidth="10"
+                midwidth="7.5"
+                endwidth="10"
+                midwidthpos=".5"
 
 
-		</simpleemitter>
+                startheight="0"
+                endheight="820"
+
+                startalpha="0"
+                midalpha=".1"
+                endalpha="0"
+                midalphapos=".1"
+                startstickiness="0"
+                endstickiness=".6"
+
+                lockup="true"
+
+            />
+
+
+        </simpleemitter>
+
+        <simpleemitter
+        
+            spawnrate="60"
+            count="10"
+            bone="Bip01 Spine"
+            particlelife="850"          
+            gravity="-75"
+            speed="60"
+            drag=".08"
+            acceleration="0"
+            position="0 0 0"
+
+            material="/shared/effects/materials/lightning_06.material"
+            offsetsphere="40 40 0"
+            minangle="90"
+            maxangle="-90"
+            direction="0 0 0"
+            offsetdirection="40 40 0"
+            offsetradial="0 0 0"
+        >
+
+            <particle 
+
+                minangle="0"
+                maxangle="0"
+                minanglespeed="0"
+                maxanglespeed="0"
+
+
+                startcolor="0 0 0"
+                midcolor=".8 0 1"
+                endcolor="0 0 0"
+
+                midcolorpos=".1"
+
+                startframe="0"
+                endframe="1"
+
+                startwidth="10"
+                midwidth="7.5"
+                endwidth="3"
+                midwidthpos=".5"
+
+
+                startheight="0"
+                endheight="820"
+
+                startalpha="0"
+                midalpha=".1"
+                endalpha="0"
+                midalphapos=".1"
+                startstickiness="0"
+                endstickiness="0"
+
+                lockup="true"
+
+            />
+
+
+        </simpleemitter>
 
 
 
 
-			
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-		<!-- <die /> -->
-	</thread>
+            
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][pos] -->

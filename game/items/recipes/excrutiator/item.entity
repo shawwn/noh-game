@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Excruciator"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="0"
-	components="Item_Ringmail Item_Broadsword Item_ApprenticesRobe"
-	statuseffecttooltip="State_Excruciator"
-	autoassemble="true"
-	passiveeffect=""
-	actiontype="target_self"
-	
-	armor="5"
-	damage="22"
-	intelligence="10"
+    name="Item_Excruciator"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="0"
+    components="Item_Ringmail Item_Broadsword Item_ApprenticesRobe"
+    statuseffecttooltip="State_Excruciator"
+    autoassemble="true"
+    passiveeffect=""
+    actiontype="target_self"
+    
+    armor="5"
+    damage="22"
+    intelligence="10"
 
-	manacost="25"
-	frontqueue="true"
-	inheritmovement="true"
-	casttime="0"
-	castactiontime="0"
-	cooldowntime="20000"
-	cooldowntype="excruciator"
+    manacost="25"
+    frontqueue="true"
+    inheritmovement="true"
+    casttime="0"
+    castactiontime="0"
+    cooldowntime="20000"
+    cooldowntype="excruciator"
 >
-	<onimpact >
-		<applystate name="State_Excruciator" duration="5000"/>
-	</onimpact>
+    <onimpact >
+        <applystate name="State_Excruciator" duration="5000"/>
+    </onimpact>
 </item>

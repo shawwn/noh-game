@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_DaemonicBreastplate"
-	
-	
-	
-	icon="icon.tga"
-	
-	passiveeffect="aura.effect"	
-	statuseffecttooltip="State_DaemonicBreastplate_Enemy"
-	
-	cost="1500"
-	components="Item_Ringmail Item_Platemail Item_Warpcleft"
-	
-	actiontype="passive"
-	
-	armor="10"
-	attackspeed=".4"
+    name="Item_DaemonicBreastplate"
+    
+    
+    
+    icon="icon.tga"
+    
+    passiveeffect="aura.effect" 
+    statuseffecttooltip="State_DaemonicBreastplate_Enemy"
+    
+    cost="1500"
+    components="Item_Ringmail Item_Platemail Item_Warpcleft"
+    
+    actiontype="passive"
+    
+    armor="10"
+    attackspeed=".4"
 >
-	<onframe />
-	<aura state="State_DaemonicBreastplate_Ally" radius="900" targetscheme="ally_objects" effecttype="Buff" propagatecondition="not_stealthed"/>
-	<aura state="State_DaemonicBreastplate_Enemy" radius="900" targetscheme="enemy_objects" effecttype="Debuff" propagatecondition="not_stealthed"/>
+    <onframe />
+    <aura state="State_DaemonicBreastplate_Ally" radius="900" targetscheme="ally_objects" effecttype="Buff" propagatecondition="not_stealthed"/>
+    <aura state="State_DaemonicBreastplate_Enemy" radius="900" targetscheme="enemy_objects" effecttype="Debuff" propagatecondition="not_stealthed"/>
 </item>

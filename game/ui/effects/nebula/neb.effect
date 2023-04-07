@@ -1,130 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="neb">
 
-	<definitions>
-		<particlesystem name="system0" space="world">
-			<simpleemitter 
-				bone="_bone_left"	
-         		spawnrate="3"				
-				minparticlelife="8000"
-          		maxparticlelife="12000"
-          		gravity="0"
-          		drag="0"
-				position="0 0 0"
-				offsetsphere="120 0 180"
-          		material="neb.material"
-      			  >
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					scale="4"
-					startcolor="0 .4  .8"
-					endcolor="0 .4  .8"
-					frame="25"
-					startsize="35"
-					endsize="75"
-					startalpha="0"
-					midalpha=".2"
-					endalpha="0"
-					endanchor="0"
-				/>
-        	</simpleemitter>
+    <definitions>
+        <particlesystem name="system0" space="world">
+            <simpleemitter 
+                bone="_bone_left"   
+                spawnrate="3"               
+                minparticlelife="8000"
+                maxparticlelife="12000"
+                gravity="0"
+                drag="0"
+                position="0 0 0"
+                offsetsphere="120 0 180"
+                material="neb.material"
+                  >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    scale="4"
+                    startcolor="0 .4  .8"
+                    endcolor="0 .4  .8"
+                    frame="25"
+                    startsize="35"
+                    endsize="75"
+                    startalpha="0"
+                    midalpha=".2"
+                    endalpha="0"
+                    endanchor="0"
+                />
+            </simpleemitter>
 
 
-			<simpleemitter 
-				bone="_bone_left"	
-         		spawnrate="1"				
-				minparticlelife="8000"
-          		maxparticlelife="12000"
-          		gravity="0"
-          		drag="0"
-				position="0 0 0"
-				offsetsphere="80 0 80"
-          		material="neb2.material"
-      			  >
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					scale="5"					
-					startcolor="0 0 0"
-					midcolor="0 .09  .123"
-					endcolor="0 0 0"
-					alpha=".5"
-					frame="25"
-					startsize="35"
-					endsize="75"
-				/>
-        	</simpleemitter>				
-				
-				
-		
-			<simpleemitter 
-				bone="_bone_right"	
-         		spawnrate="3"				
-				minparticlelife="8000"
-          		maxparticlelife="12000"
-          		gravity="0"
-          		drag="0"
-				position="0 0 0"
-				offsetsphere="120 0 180"
-          		material="neb.material"
-      			  >
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					scale="4"
-					startcolor="0 .4  .8"
-					endcolor="0 .4  .8"
-					frame="25"
-					startsize="35"
-					endsize="75"
-					startalpha="0"
-					midalpha=".2"
-					endalpha="0"
-					endanchor="0"
-				/>
-        	</simpleemitter>
+            <simpleemitter 
+                bone="_bone_left"   
+                spawnrate="1"               
+                minparticlelife="8000"
+                maxparticlelife="12000"
+                gravity="0"
+                drag="0"
+                position="0 0 0"
+                offsetsphere="80 0 80"
+                material="neb2.material"
+                  >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    scale="5"                   
+                    startcolor="0 0 0"
+                    midcolor="0 .09  .123"
+                    endcolor="0 0 0"
+                    alpha=".5"
+                    frame="25"
+                    startsize="35"
+                    endsize="75"
+                />
+            </simpleemitter>                
+                
+                
+        
+            <simpleemitter 
+                bone="_bone_right"  
+                spawnrate="3"               
+                minparticlelife="8000"
+                maxparticlelife="12000"
+                gravity="0"
+                drag="0"
+                position="0 0 0"
+                offsetsphere="120 0 180"
+                material="neb.material"
+                  >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    scale="4"
+                    startcolor="0 .4  .8"
+                    endcolor="0 .4  .8"
+                    frame="25"
+                    startsize="35"
+                    endsize="75"
+                    startalpha="0"
+                    midalpha=".2"
+                    endalpha="0"
+                    endanchor="0"
+                />
+            </simpleemitter>
 
 
-			<simpleemitter 
-				bone="_bone_right"	
-         		spawnrate="1"				
-				minparticlelife="8000"
-          		maxparticlelife="12000"
-          		gravity="0"
-          		drag="0"
-				position="0 0 0"
-				offsetsphere="80 0 80"
-          		material="neb2.material"
-      			  >
-  				<particle 
-					maxangle="360"			
-					minanglespeed="-6"
-					maxanglespeed="6"
-					scale="5"					
-					startcolor="0 0 0"
-					midcolor="0 .09  .123"
-					endcolor="0 0 0"
-					alpha=".5"
-					frame="25"
-					startsize="35"
-					endsize="75"
-				/>
-        	</simpleemitter>				
-				
-				
-		</particlesystem>
+            <simpleemitter 
+                bone="_bone_right"  
+                spawnrate="1"               
+                minparticlelife="8000"
+                maxparticlelife="12000"
+                gravity="0"
+                drag="0"
+                position="0 0 0"
+                offsetsphere="80 0 80"
+                material="neb2.material"
+                  >
+                <particle 
+                    maxangle="360"          
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    scale="5"                   
+                    startcolor="0 0 0"
+                    midcolor="0 .09  .123"
+                    endcolor="0 0 0"
+                    alpha=".5"
+                    frame="25"
+                    startsize="35"
+                    endsize="75"
+                />
+            </simpleemitter>                
+                
+                
+        </particlesystem>
 
-	</definitions>
-	
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
-		<waitfordeath instance="instance0"/>
-		<!-- <die /> -->
-	</thread>
+    </definitions>
+    
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+        <waitfordeath instance="instance0"/>
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][position] -->

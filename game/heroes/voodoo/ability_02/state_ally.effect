@@ -1,146 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect  deferred="1" useentityeffectscale="1">
-	<definitions>
-		<modifier
-			name="modifier0"
-			life="800"
-			startcolor="2 12 2"
-			endcolor="1.0 1.0 1.0"
-		/>
-	
-	
-		<particlesystem name="system0" space="entity" scale="1.2">
+    <definitions>
+        <modifier
+            name="modifier0"
+            life="800"
+            startcolor="2 12 2"
+            endcolor="1.0 1.0 1.0"
+        />
+    
+    
+        <particlesystem name="system0" space="entity" scale="1.2">
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2000"
-				volume="0.7" 
-				sample="/heroes/voodoo/ability_02/sounds/ability_02_ally.wav"
-			/>
+            <sound
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2000"
+                volume="0.7" 
+                sample="/heroes/voodoo/ability_02/sounds/ability_02_ally.wav"
+            />
 
-		<simpleemitter
-			bone="_bone_centerofchest"
-			spawnrate="20"			
-	
-			gravity="-11"
-			minparticlelife="600"
-			maxparticlelife="900"				
-			position="0 0 0"
-			material="/shared/effects/materials/dust.material"
-			offsetsphere="30 30 30"
-			direction="0 0 0"
-			inheritvelocity=".2"
-		>
+        <simpleemitter
+            bone="_bone_centerofchest"
+            spawnrate="20"          
+    
+            gravity="-11"
+            minparticlelife="600"
+            maxparticlelife="900"               
+            position="0 0 0"
+            material="/shared/effects/materials/dust.material"
+            offsetsphere="30 30 30"
+            direction="0 0 0"
+            inheritvelocity=".2"
+        >
 
-			<particle 
-				minangle="-360"
-				maxangle="360"
-				minsize="40"
-				maxsize="50"
-				color="0.1 .7 0"
-				startalpha="1"
-				endalpha="0"
-			
-			/>
-		</simpleemitter>
+            <particle 
+                minangle="-360"
+                maxangle="360"
+                minsize="40"
+                maxsize="50"
+                color="0.1 .7 0"
+                startalpha="1"
+                endalpha="0"
+            
+            />
+        </simpleemitter>
 
-		<simpleemitter
-			bone="_bone_centerofchest"
-			spawnrate="30"			
-		
-			gravity="-11"
-			minparticlelife="600"
-			maxparticlelife="900"				
-			position="0 0 0"
-			material="/shared/effects/materials/phantom_smoke_03.material"
-			offsetsphere="30 30 30"
-			direction="0 0 0"
-			inheritvelocity=".2"
-		>
+        <simpleemitter
+            bone="_bone_centerofchest"
+            spawnrate="30"          
+        
+            gravity="-11"
+            minparticlelife="600"
+            maxparticlelife="900"               
+            position="0 0 0"
+            material="/shared/effects/materials/phantom_smoke_03.material"
+            offsetsphere="30 30 30"
+            direction="0 0 0"
+            inheritvelocity=".2"
+        >
 
-			<particle 
-				minangle="-360"
-				maxangle="360"
-				minsize="40"
-				maxsize="50"
-				color="0.1 1 0"
-				startalpha="1"
-				endalpha="0"			
-			/>
-		</simpleemitter>			
+            <particle 
+                minangle="-360"
+                maxangle="360"
+                minsize="40"
+                maxsize="50"
+                color="0.1 1 0"
+                startalpha="1"
+                endalpha="0"            
+            />
+        </simpleemitter>            
 
-			
-			<billboard	
-				life="600"
-				startsize="50"
-				
-				endsize="35"
-				
-				position="0 0 10"
-				bone="_bone_overhead"						
-				material="/shared/effects/materials/mojo_good.material"
-				color="1 1 1"
-				
-				startalpha="1"			
-				alpha="1"				
-				
-			>
-			</billboard>		
-			
-			<billboard	
-				delay="600"
-				life="1600"
-				startsize="35"
-				loop="1"
-				midsize="43"
-				endsize="35"
-				
-				position="0 0 10"
-				bone="_bone_overhead"						
-				material="/shared/effects/materials/mojo_good.material"
-				color="1 1 1"
-				
-				startalpha="1"			
-				alpha="1"				
-				
-			>
-			</billboard>
-			
-			<simpleemitter	
-				delay="0"
-				bone="_bone_overhead"			
-				count="1"
-				particlelife="300"			
-				speed="0"
-				drag="0"
-				position="0 0 10"					
-				acceleration="0"
-				material="/shared/effects/materials/whitedot.material"
-			>
+            
+            <billboard  
+                life="600"
+                startsize="50"
+                
+                endsize="35"
+                
+                position="0 0 10"
+                bone="_bone_overhead"                       
+                material="/shared/effects/materials/mojo_good.material"
+                color="1 1 1"
+                
+                startalpha="1"          
+                alpha="1"               
+                
+            >
+            </billboard>        
+            
+            <billboard  
+                delay="600"
+                life="1600"
+                startsize="35"
+                loop="1"
+                midsize="43"
+                endsize="35"
+                
+                position="0 0 10"
+                bone="_bone_overhead"                       
+                material="/shared/effects/materials/mojo_good.material"
+                color="1 1 1"
+                
+                startalpha="1"          
+                alpha="1"               
+                
+            >
+            </billboard>
+            
+            <simpleemitter  
+                delay="0"
+                bone="_bone_overhead"           
+                count="1"
+                particlelife="300"          
+                speed="0"
+                drag="0"
+                position="0 0 10"                   
+                acceleration="0"
+                material="/shared/effects/materials/whitedot.material"
+            >
 
-				<particle
-					startcolor=".2 1 .2"						
-					endcolor="0 0 0"						
-					midalphapos="0.9"					
-					startsize="200"
-					endsize="0"
-					depthbias="0"
-				/>
-			</simpleemitter>	
-		
+                <particle
+                    startcolor=".2 1 .2"                        
+                    endcolor="0 0 0"                        
+                    midalphapos="0.9"                   
+                    startsize="200"
+                    endsize="0"
+                    depthbias="0"
+                />
+            </simpleemitter>    
+        
 
-		
-			
+        
+            
 
 
-				
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<spawnmodifier instance="instance1" modifier="modifier0"/>  
-		<waitfordeath instance="instance0" />
-		
-	</thread>
+                
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <spawnmodifier instance="instance1" modifier="modifier0"/>  
+        <waitfordeath instance="instance0" />
+        
+    </thread>
 </effect>

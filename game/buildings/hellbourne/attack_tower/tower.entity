@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <building
-	name="Building_HellbourneTower"
-	
-	
-	
-	icon="icon.tga"
-	portrait="icon.tga"
-	model="model.mdf"
-	skin=""
-	
-	passiveeffect="effects/idle.effect"
-	destroyedsound=""
-	lowhealtheffect="effects/damage.effect"
-	lowhealthsound=""
-	selectsound=""
-	
-	preglobalscale="2.25"
-	modelscale="1.0"
-	effectscale="1.8"
-	boundsheight="256"
-	boundsradius="86"
-	selectionradius="115"
-	targetoffset="0 0 64"
+    name="Building_HellbourneTower"
+    
+    
+    
+    icon="icon.tga"
+    portrait="icon.tga"
+    model="model.mdf"
+    skin=""
+    
+    passiveeffect="effects/idle.effect"
+    destroyedsound=""
+    lowhealtheffect="effects/damage.effect"
+    lowhealthsound=""
+    selectsound=""
+    
+    preglobalscale="2.25"
+    modelscale="1.0"
+    effectscale="1.8"
+    boundsheight="256"
+    boundsradius="86"
+    selectionradius="115"
+    targetoffset="0 0 64"
 
-	maxhealth="1300,1600"
-	healthregen="0"
+    maxhealth="1300,1600"
+    healthregen="0"
 
-	armor="18,18,25,30"
-	magicarmor="0"
+    armor="18,18,25,30"
+    magicarmor="0"
 
-	canattack="true"
-	
-	attackduration="1000,950"
-	attackactiontime="50"
-	attackcooldown="1000,950"
-	attackdamagemin="100,120,122"
-	attackdamagemax="120,140,182"
-	attacknumanims="1"
-	attackoffset="0 0 270"
-	attackprojectile="Projectile_EvilTowerAttack"
-	attackrange="700"
-	attackstarteffect="effects/attack.effect"
-	attackactioneffect=""
-	attackimpacteffect=""
-	attacktype="ranged"
-	combattype="Tower"
-	immunity="DisableImmunity"
+    canattack="true"
+    
+    attackduration="1000,950"
+    attackactiontime="50"
+    attackcooldown="1000,950"
+    attackdamagemin="100,120,122"
+    attackdamagemax="120,140,182"
+    attacknumanims="1"
+    attackoffset="0 0 270"
+    attackprojectile="Projectile_EvilTowerAttack"
+    attackrange="700"
+    attackstarteffect="effects/attack.effect"
+    attackactioneffect=""
+    attackimpacteffect=""
+    attacktype="ranged"
+    combattype="Tower"
+    immunity="DisableImmunity"
 
-	aggrorange="700"
-	sightrangeday="1900"
-	sightrangenight="800"
-	revealrange="900"
-	revealtype="tower"
-	
-	goldbountymin="452,502,552,602"
-	goldbountymax="470,520,570,620"
-	goldbountyteam="200,240,280,320"
-	goldbountyconsolation="315,350,385,420"
-	
-	corpsetime="1000"
-	corpsefadetime="4000"
-	corpsefadeeffect="/shared/effects/corpse_sink.effect"
-	
-	unittype="Tower"
+    aggrorange="700"
+    sightrangeday="1900"
+    sightrangenight="800"
+    revealrange="900"
+    revealtype="tower"
+    
+    goldbountymin="452,502,552,602"
+    goldbountymax="470,520,570,620"
+    goldbountyteam="200,240,280,320"
+    goldbountyconsolation="315,350,385,420"
+    
+    corpsetime="1000"
+    corpsefadetime="4000"
+    corpsefadeeffect="/shared/effects/corpse_sink.effect"
+    
+    unittype="Tower"
 >
-	<modifier
-		key="easymode"
-		priority="100"
-		maxhealth="1000,1300"
-		attackdamagemin="70,90,92"
-		attackdamagemax="90,100,152"
-	/>
+    <modifier
+        key="easymode"
+        priority="100"
+        maxhealth="1000,1300"
+        attackdamagemin="70,90,92"
+        attackdamagemax="90,100,152"
+    />
 </building>

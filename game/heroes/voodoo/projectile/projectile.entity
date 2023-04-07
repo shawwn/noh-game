@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Voodoo_Attack"
+    name="Projectile_Voodoo_Attack"
 
-	speed="1000"
-	gravity="1100"
+    speed="1000"
+    gravity="1100"
 
-	modelscale=".2"
-	model="/shared/models/invis.mdf"
+    modelscale=".2"
+    model="/shared/models/invis.mdf"
 
-	traileffect="trail.effect"
-	impacteffect="impact.effect"
+    traileffect="trail.effect"
+    impacteffect="impact.effect"
 >
 </projectile>

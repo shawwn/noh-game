@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_TowerGuardian_Ability1"
+    name="Affector_TowerGuardian_Ability1"
 
-	radius="300"
-	
-	targetscheme="enemy_units"
-	targetselection="all"
-	effecttype="Magic"
-	
-	effect=""
-	impacteffect="effects/impact.effect"
+    radius="300"
+    
+    targetscheme="enemy_units"
+    targetselection="all"
+    effecttype="Magic"
+    
+    effect=""
+    impacteffect="effects/impact.effect"
 >
-	<onspawn>
-		<damage effecttype="Magic" amount="300" target="this_owner_entity" nonlethal="true" />
-		<playeffect effect="effects/area.effect" target="source_entity" source="source_entity" />
-	</onspawn>
-	<onimpact>
-		<damage effecttype="Magic" amount="200" />
-		<push force="600" duration="250" source="this_entity" />
-	</onimpact>
+    <onspawn>
+        <damage effecttype="Magic" amount="300" target="this_owner_entity" nonlethal="true" />
+        <playeffect effect="effects/area.effect" target="source_entity" source="source_entity" />
+    </onspawn>
+    <onimpact>
+        <damage effecttype="Magic" amount="200" />
+        <push force="600" duration="250" source="this_entity" />
+    </onimpact>
 </affector>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <material>
-	<parameters vDiffuseColor="1.0 1.0 1.0" fSpecularLevel="1.0000" fGlossiness="16.0000" fBumpLevel="1.0"></parameters>
-	<phase name="shadow" vs="terrain_shadow" ps="mesh_shadow" srcblend="BLEND_ONE" dstblend="BLEND_ZERO" cull="CULL_BACK" translucent="false"></phase>
-	<phase name="depth" vs="terrain_depth" ps="mesh_depth" srcblend="BLEND_ONE" dstblend="BLEND_ZERO" cull="CULL_BACK" translucent="false"></phase>
-	<phase name="color" vs="terrain_color" ps="terrain_color" srcblend="BLEND_ONE" dstblend="BLEND_ZERO" cull="CULL_BACK" translucent="false">
-		<sampler name="diffuse0" texture="!terrain_d" repeat_u="true" repeat_v="true" scale_u="1.0000" scale_v="1.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false"></sampler>
-		<sampler name="normalmap0" texture="!terrain_n" repeat_u="true" repeat_v="true" scale_u="1.0000" scale_v="1.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false"></sampler>
-		<sampler name="diffuse1" texture="!terrain_d2" repeat_u="true" repeat_v="true" scale_u="1.0000" scale_v="1.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false"></sampler>
-		<sampler name="normalmap1" texture="!terrain_n2" repeat_u="true" repeat_v="true" scale_u="1.0000" scale_v="1.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false"></sampler>
-	</phase>
+    <parameters vDiffuseColor="1.0 1.0 1.0" fSpecularLevel="1.0000" fGlossiness="16.0000" fBumpLevel="1.0"></parameters>
+    <phase name="shadow" vs="terrain_shadow" ps="mesh_shadow" srcblend="BLEND_ONE" dstblend="BLEND_ZERO" cull="CULL_BACK" translucent="false"></phase>
+    <phase name="depth" vs="terrain_depth" ps="mesh_depth" srcblend="BLEND_ONE" dstblend="BLEND_ZERO" cull="CULL_BACK" translucent="false"></phase>
+    <phase name="color" vs="terrain_color" ps="terrain_color" srcblend="BLEND_ONE" dstblend="BLEND_ZERO" cull="CULL_BACK" translucent="false">
+        <sampler name="diffuse0" texture="!terrain_d" repeat_u="true" repeat_v="true" scale_u="1.0000" scale_v="1.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false"></sampler>
+        <sampler name="normalmap0" texture="!terrain_n" repeat_u="true" repeat_v="true" scale_u="1.0000" scale_v="1.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false"></sampler>
+        <sampler name="diffuse1" texture="!terrain_d2" repeat_u="true" repeat_v="true" scale_u="1.0000" scale_v="1.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false"></sampler>
+        <sampler name="normalmap1" texture="!terrain_n2" repeat_u="true" repeat_v="true" scale_u="1.0000" scale_v="1.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false"></sampler>
+    </phase>
 </material>

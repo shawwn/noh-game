@@ -1,267 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="aphotic_shield">
-	<definitions>
-		<particlesystem name="system0" space="entity">
-<!--		<groundsprite material="/shared/effects/materials/fairy_flash_03.material" /> -->
+    <definitions>
+        <particlesystem name="system0" space="entity">
+<!--        <groundsprite material="/shared/effects/materials/fairy_flash_03.material" /> -->
 
 
 
-		<model name="sword_02" 
+        <model name="sword_02" 
 
-			
-			model="/heroes/good/treant/effects/enchant_tree/forest_eye/model.mdf"
-			anim="idle"
-			scale=".75"
-			yaw="90"
-			position="0 0 250"
-			directionalspace="local"
+            
+            model="/heroes/good/treant/effects/enchant_tree/forest_eye/model.mdf"
+            anim="idle"
+            scale=".75"
+            yaw="90"
+            position="0 0 250"
+            directionalspace="local"
 
-		 />
+         />
 
-		<light
-			
-			
-			life="2000"
-			loop="true"
-			startcolor="0 1 0"
-			midcolor="1 .85 0"
-			endcolor="0 1 0"
-			falloffstart="55"
-			falloffend="95"
-			position="0 0 230"
-
-
-			
-			/>
-		<simpleemitter
-			life="1000"
-			loop="true"
-
-			particlelife="2000"
-			spawnrate=".5"	
-			gravity="0"
-			speed="0"
-			drag="0"
-			acceleration="0"
-			position="0 0 250"
+        <light
+            
+            
+            life="2000"
+            loop="true"
+            startcolor="0 1 0"
+            midcolor="1 .85 0"
+            endcolor="0 1 0"
+            falloffstart="55"
+            falloffend="95"
+            position="0 0 230"
 
 
-			material="/shared/effects/materials/tree_sentry_02.material"
-			offsetsphere="0 0 0"
-			minangle="0"
-			maxangle="0"
-			direction="0 0 0"
-		>
+            
+            />
+        <simpleemitter
+            life="1000"
+            loop="true"
 
-			<particle 
-				minangle="0"
-				maxangle="0"
-				minanglespeed="0"
+            particlelife="2000"
+            spawnrate=".5"  
+            gravity="0"
+            speed="0"
+            drag="0"
+            acceleration="0"
+            position="0 0 250"
 
-				startcolor="0 1 0"
-				midcolor="1 .85 0"
-				endcolor="0 1 0"
-				midcolorpos=".5"
 
-				maxanglespeed="0"
-				startframe="0"
-				endframe="0"
-				startsize="50"
-				midsize="25"
-				endsize="50"
-				midsizepos=".5"
-				startalpha="0"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".5"
-				startstickiness="1"
-				endstickiness="1"
-			/>
-		</simpleemitter>
+            material="/shared/effects/materials/tree_sentry_02.material"
+            offsetsphere="0 0 0"
+            minangle="0"
+            maxangle="0"
+            direction="0 0 0"
+        >
+
+            <particle 
+                minangle="0"
+                maxangle="0"
+                minanglespeed="0"
+
+                startcolor="0 1 0"
+                midcolor="1 .85 0"
+                endcolor="0 1 0"
+                midcolorpos=".5"
+
+                maxanglespeed="0"
+                startframe="0"
+                endframe="0"
+                startsize="50"
+                midsize="25"
+                endsize="50"
+                midsizepos=".5"
+                startalpha="0"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".5"
+                startstickiness="1"
+                endstickiness="1"
+            />
+        </simpleemitter>
 
 
 <!-- ***** HEAL STREAKS *****-->
 
-		<orbiteremitter
-			
-			
-			spawnrate="20"
-			
-			
-			particlelife="800"			
-			
-			speed=".001"
-			drag=".3"
-			acceleration="0"
-			timenudge="0"
-			material="/shared/effects/materials/heal.material"
-			minangle="170"
-			maxangle="200"
-			gravity=".5"
-			origin="35 35 0"
-			position="0 0 120"
-			orbit=".041 .041 .025"
-			direction="0 0 1"
-			cylindrical="1"
-			offset="70 70 15"
-		>
+        <orbiteremitter
+            
+            
+            spawnrate="20"
+            
+            
+            particlelife="800"          
+            
+            speed=".001"
+            drag=".3"
+            acceleration="0"
+            timenudge="0"
+            material="/shared/effects/materials/heal.material"
+            minangle="170"
+            maxangle="200"
+            gravity=".5"
+            origin="35 35 0"
+            position="0 0 120"
+            orbit=".041 .041 .025"
+            direction="0 0 1"
+            cylindrical="1"
+            offset="70 70 15"
+        >
 
-			<particle 
-				minangle="0"
-				maxangle="0"
-				minanglespeed="100"
+            <particle 
+                minangle="0"
+                maxangle="0"
+                minanglespeed="100"
 
-				startcolor="1 .85 .5"
-				midcolor="1 .85 .5"
-				endcolor="1 .85 .5"
-				midcolorpos=".5"
+                startcolor="1 .85 .5"
+                midcolor="1 .85 .5"
+                endcolor="1 .85 .5"
+                midcolorpos=".5"
 
-				maxanglespeed="0"
-				startframe="0"
-				endframe="1"
+                maxanglespeed="0"
+                startframe="0"
+                endframe="1"
 
-				startwidth="5"
-				midwidth="30"
-				endwidth="5"
+                startwidth="5"
+                midwidth="30"
+                endwidth="5"
 
-				startheight="20"
-				midheight="55"
-				endheight="235"
-				midheightpos=".3" 
+                startheight="20"
+                midheight="55"
+                endheight="235"
+                midheightpos=".3" 
 
-				lockup="true"
-				lockright="false"
-				pitch="0"
-				yaw="0"
+                lockup="true"
+                lockright="false"
+                pitch="0"
+                yaw="0"
 
-				startalpha="1"
-				midalpha="1"
-				endalpha=".5"
-				midalphapos=".2"
+                startalpha="1"
+                midalpha="1"
+                endalpha=".5"
+                midalphapos=".2"
 
-				startstickiness=".5"
-				endstickiness="0"
-			/>
-
-
-
-		</orbiteremitter>
+                startstickiness=".5"
+                endstickiness="0"
+            />
 
 
 
-	<simpleemitter
-			
-			spawnrate="35"
-			
-			particlelife="1600"			
-			gravity="-2.8"
-			speed="10"
-			drag="0"
-			acceleration="0"
-			position="0 0 10"
-			timenudge="-700"
-			material="/shared/effects/materials/glow_dust.material"
-			offsetsphere="30 30 2"
-			minangle="0"
-			maxangle="360"
-			direction="0 0 0"
-		>
-
-			<particle 
-				minangle="0"
-				maxangle="0"
-				minanglespeed="100"
-
-				startcolor="0 1 0"
-				midcolor="0 1 0"
-				endcolor="0 1 0"
-				midcolorpos=".7"
+        </orbiteremitter>
 
 
-				maxanglespeed="0"
-				startframe="0"
-				endframe="1"
 
-				startsize="9"
-				midsize="18"
-				endsize="9"
-				midsizepos=".5"
+    <simpleemitter
+            
+            spawnrate="35"
+            
+            particlelife="1600"         
+            gravity="-2.8"
+            speed="10"
+            drag="0"
+            acceleration="0"
+            position="0 0 10"
+            timenudge="-700"
+            material="/shared/effects/materials/glow_dust.material"
+            offsetsphere="30 30 2"
+            minangle="0"
+            maxangle="360"
+            direction="0 0 0"
+        >
 
-				
+            <particle 
+                minangle="0"
+                maxangle="0"
+                minanglespeed="100"
 
-				startalpha="0"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".3"
-
-				startstickiness="0"
-				endstickiness="0"
-			/>
-
-
-			<particle 
-				minangle="0"
-				maxangle="0"
-				minanglespeed="100"
-
-				startcolor="0 1 0"
-				midcolor="0 1 0"
-				endcolor="0 1 0"
-				midcolorpos=".7"
+                startcolor="0 1 0"
+                midcolor="0 1 0"
+                endcolor="0 1 0"
+                midcolorpos=".7"
 
 
-				maxanglespeed="0"
-				startframe="0"
-				endframe="1"
+                maxanglespeed="0"
+                startframe="0"
+                endframe="1"
 
-				startsize="9"
-				midsize="22"
-				endsize="9"
-				midsizepos=".5"
+                startsize="9"
+                midsize="18"
+                endsize="9"
+                midsizepos=".5"
 
-				
+                
 
-				startalpha="0"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".3"
+                startalpha="0"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".3"
 
-				startstickiness="0"
-				endstickiness="0"
-			/>
-
-			<particle 
-				minangle="0"
-				maxangle="0"
-				minanglespeed="100"
-
-				startcolor="1 .85 0"
-				midcolor="1 .85 0"
-				endcolor="1 .85 0"
-				midcolorpos=".7"
+                startstickiness="0"
+                endstickiness="0"
+            />
 
 
-				maxanglespeed="0"
-				startframe="0"
-				endframe="1"
+            <particle 
+                minangle="0"
+                maxangle="0"
+                minanglespeed="100"
 
-				startsize="9"
-				midsize="12"
-				endsize="9"
-				midsizepos=".5"
+                startcolor="0 1 0"
+                midcolor="0 1 0"
+                endcolor="0 1 0"
+                midcolorpos=".7"
 
-				
 
-				startalpha="0"
-				midalpha="1"
-				endalpha="0"
-				midalphapos=".3"
+                maxanglespeed="0"
+                startframe="0"
+                endframe="1"
 
-				startstickiness="0"
-				endstickiness="0"
-			/>
+                startsize="9"
+                midsize="22"
+                endsize="9"
+                midsizepos=".5"
 
-		</simpleemitter> 
+                
+
+                startalpha="0"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".3"
+
+                startstickiness="0"
+                endstickiness="0"
+            />
+
+            <particle 
+                minangle="0"
+                maxangle="0"
+                minanglespeed="100"
+
+                startcolor="1 .85 0"
+                midcolor="1 .85 0"
+                endcolor="1 .85 0"
+                midcolorpos=".7"
+
+
+                maxanglespeed="0"
+                startframe="0"
+                endframe="1"
+
+                startsize="9"
+                midsize="12"
+                endsize="9"
+                midsizepos=".5"
+
+                
+
+                startalpha="0"
+                midalpha="1"
+                endalpha="0"
+                midalphapos=".3"
+
+                startstickiness="0"
+                endstickiness="0"
+            />
+
+        </simpleemitter> 
 
 
 

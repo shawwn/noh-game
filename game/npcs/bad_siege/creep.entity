@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <creep
-	name="Creep_HellbourneSiege"
-	
-	
-	
-	icon="icons/siege.tga"
-	portrait="icons/siege.tga"
-	model="model.mdf"
-	skin=""
-	
-	passiveeffect=""
-	spawneffect=""
-	respawneffect=""
-	selectsound=""
-	orderconfirmedsound=""
-	
-	preglobalscale="1.8"
-	modelscale="1.0"
-	effectscale="1.0"
-	boundsheight="80"
-	boundsradius="24"
-	selectionradius="76"
-	targetoffset="0 0 32"
+    name="Creep_HellbourneSiege"
+    
+    
+    
+    icon="icons/siege.tga"
+    portrait="icons/siege.tga"
+    model="model.mdf"
+    skin=""
+    
+    passiveeffect=""
+    spawneffect=""
+    respawneffect=""
+    selectsound=""
+    orderconfirmedsound=""
+    
+    preglobalscale="1.8"
+    modelscale="1.0"
+    effectscale="1.0"
+    boundsheight="80"
+    boundsradius="24"
+    selectionradius="76"
+    targetoffset="0 0 32"
 
-	movespeed="325"
-	turnrate="120"
+    movespeed="325"
+    turnrate="120"
 
-	maxhealth="500"
-	healthregen="0"
-	maxmana="0"
-	manaregen="0"
+    maxhealth="500"
+    healthregen="0"
+    maxmana="0"
+    manaregen="0"
 
-	armor="0"
-	magicarmor="0"
-	
-	immunity="SiegeImmunity"
+    armor="0"
+    magicarmor="0"
+    
+    immunity="SiegeImmunity"
 
-	cancarryitems="false"
+    cancarryitems="false"
 
-	attackduration="1000"
-	attackactiontime="150"
-	attackcooldown="2700"
-	attackdamagemin="35"
-	attackdamagemax="46"
-	attacknumanims="1"
-	attackoffset="0 30 50"
-	attackprojectile="Projectile_EvilSiegeCreepAttack"
-	attackrange="690"
-	attackstarteffect=""
-	attackactioneffect=""
-	attackimpacteffect=""
-	attacktype="ranged"
-	combattype="Siege"
+    attackduration="1000"
+    attackactiontime="150"
+    attackcooldown="2700"
+    attackdamagemin="35"
+    attackdamagemax="46"
+    attacknumanims="1"
+    attackoffset="0 30 50"
+    attackprojectile="Projectile_EvilSiegeCreepAttack"
+    attackrange="690"
+    attackstarteffect=""
+    attackactioneffect=""
+    attackimpacteffect=""
+    attacktype="ranged"
+    combattype="Siege"
 
-	aggrorange="800"
-	sightrangeday="1400"
-	sightrangenight="900"
+    aggrorange="800"
+    sightrangeday="1400"
+    sightrangenight="900"
 
-	experiencebounty="88"
-	goldbountymin="56"
-	goldbountymax="80"
-	
-	corpsetime="10000"
-	corpsefadetime="5000"
-	corpsefadeeffect="/shared/effects/corpse_sink.effect"
-	
-	tiltfactor="1.0"
-	tiltspeed="90.0"
-	
-	unittype="Mechanical"
+    experiencebounty="88"
+    goldbountymin="56"
+    goldbountymax="80"
+    
+    corpsetime="10000"
+    corpsefadetime="5000"
+    corpsefadeeffect="/shared/effects/corpse_sink.effect"
+    
+    tiltfactor="1.0"
+    tiltspeed="90.0"
+    
+    unittype="Mechanical"
 >
 </creep>

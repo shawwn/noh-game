@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Kraken_Ability4_Slow"
+    name="State_Kraken_Ability4_Slow"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/state_slowed.effect"
-	
-	movespeedslow="0.2,0.3,0.4"
-	armor="-2,-4,-6"
-	
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/state_slowed.effect"
+    
+    movespeedslow="0.2,0.3,0.4"
+    armor="-2,-4,-6"
+    
+    effecttype="StatusDebuff"
 >
-	
+    
 </state>

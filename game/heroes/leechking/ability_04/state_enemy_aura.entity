@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Leechking_Ability4_Debuff"
+    name="State_Leechking_Ability4_Debuff"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect=""
-	displaylevel="true"
-	
-	movespeedslow="0.20,0.40,0.60"
+    
+    
+    icon="icon.tga"
+    passiveeffect=""
+    displaylevel="true"
+    
+    movespeedslow="0.20,0.40,0.60"
 
-	effecttype="StatusdeBuff"
+    effecttype="StatusdeBuff"
 >
-	<onframe >
-	
-	</onframe>
+    <onframe >
+    
+    </onframe>
 
 </state>

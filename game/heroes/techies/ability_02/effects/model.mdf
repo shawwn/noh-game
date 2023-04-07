@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="rig.max" file="model.model" type="K2" >
 
-	<spawnevent cmd="StartEffect effects/ward_body_01.effect 0"/>
-	
-	<anim name="portrait" clip="clips/default_1.clip" loop="true"/>
+    <spawnevent cmd="StartEffect effects/ward_body_01.effect 0"/>
+    
+    <anim name="portrait" clip="clips/default_1.clip" loop="true"/>
 
-	<anim name="spawn_1"  clip="clips/attack_1.clip" startframe="15" numframes="-1" fps="30" loop="false">
+    <anim name="spawn_1"  clip="clips/attack_1.clip" startframe="15" numframes="-1" fps="30" loop="false">
 
-	</anim>
+    </anim>
 
-	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true"/>
+    <anim name="idle" clip="clips/default_1.clip" fps="30" loop="true"/>
 
-	<anim name="attack_1" clip="clips/attack_1.clip" fps="30" loop="false">
-		<frameevent frame="9" cmd="PlaySoundLinear /heroes/pollywogpriest/ability_04/sounds/ability_04_attack.wav 0 1800 .25"/>
-	</anim>
+    <anim name="attack_1" clip="clips/attack_1.clip" fps="30" loop="false">
+        <frameevent frame="9" cmd="PlaySoundLinear /heroes/pollywogpriest/ability_04/sounds/ability_04_attack.wav 0 1800 .25"/>
+    </anim>
 
-	<anim name="death_1" clip="clips/death_1.clip" fps="30"  loopbackframe="30" loop="true">
-		<frameevent frame="1" cmd="PlaySoundLinear /heroes/pollywogpriest/ability_04/sounds/ability_04_death.wav 0 1400 .2"/>
-		<frameevent frame="5" cmd="StopEffect 0"/>
-	</anim>	
+    <anim name="death_1" clip="clips/death_1.clip" fps="30"  loopbackframe="30" loop="true">
+        <frameevent frame="1" cmd="PlaySoundLinear /heroes/pollywogpriest/ability_04/sounds/ability_04_death.wav 0 1400 .2"/>
+        <frameevent frame="5" cmd="StopEffect 0"/>
+    </anim> 
 </model>
 

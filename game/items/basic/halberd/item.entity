@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Halberd"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="1500"
-	
-	actiontype="passive"
-	
-	damage="21"
+    name="Item_Halberd"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="1500"
+    
+    actiontype="passive"
+    
+    damage="21"
 >
-	<onattackimpact >
-		<condition test="not_target_type building">
-			<chance threshold="0.15">
-				<damage effecttype="Physical" amount="40" />
-				<popup name="bonus_damage" a="result" />
-			</chance>
-		</condition>
-	</onattackimpact>
+    <onattackimpact >
+        <condition test="not_target_type building">
+            <chance threshold="0.15">
+                <damage effecttype="Physical" amount="40" />
+                <popup name="bonus_damage" a="result" />
+            </chance>
+        </condition>
+    </onattackimpact>
 </item>

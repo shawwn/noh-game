@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <shop
-	name="Shop_Weapons"
-	
-	
-	allowremoteaccess="true"
+    name="Shop_Weapons"
+    
+    
+    allowremoteaccess="true"
 
-	style="weapons"
-	header="/ui/elements/shop/shopkeeper_weapons.tga"
-	
-	icon="shop_weapons.tga"
-	order="1"
-	slot="1"
+    style="weapons"
+    header="/ui/elements/shop/shopkeeper_weapons.tga"
+    
+    icon="shop_weapons.tga"
+    order="1"
+    slot="1"
 >
-	<item name="Item_Punchdagger" />
-	<item name="Item_Broadsword" />
-	<item name="Item_BastardSword" />
-	<item name="Item_Halberd" />
-	<item name="Item_Warhammer" />
+    <item name="Item_Punchdagger" />
+    <item name="Item_Broadsword" />
+    <item name="Item_BastardSword" />
+    <item name="Item_Halberd" />
+    <item name="Item_Warhammer" />
 
-	<item name="Item_IronBuckler" />
-	<item name="Item_GuardianRing" />
-	<item name="Item_Ringmail" />
-	<item name="Item_HelmOfTheVictim" />
-	<item name="Item_Platemail" />
-	
-	<item name="Item_Steamstaff" />
-	<item name="Item_LoggersHatchet" />
+    <item name="Item_IronBuckler" />
+    <item name="Item_GuardianRing" />
+    <item name="Item_Ringmail" />
+    <item name="Item_HelmOfTheVictim" />
+    <item name="Item_Platemail" />
+    
+    <item name="Item_Steamstaff" />
+    <item name="Item_LoggersHatchet" />
 </shop>

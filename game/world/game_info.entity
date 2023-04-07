@@ -1,118 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game
-	name="Game_Rules"
+    name="Game_Rules"
 
-	startinggold="3890"
-	repickcost="175"
-	randombonus="75"
-	goldpertick="1"
-	incomeinterval="875"
-	
-	experiencemultiplier="1.0"
-	
-	norepick="false"
-	noswap="false"
-	forcerandom="false"
-	
-	allowallheroes="false"
-	allowagility="true"
-	allowintelligence="true"
-	allowstrength="true"
-	heropoolsize="0"
-	
-	spawnpowerups="true"
-	alternatepicks="false"
-	
-	respawntimeperlevel="4000"
-	repickonrespawn="false"
+    startinggold="3890"
+    repickcost="175"
+    randombonus="75"
+    goldpertick="1"
+    incomeinterval="875"
+    
+    experiencemultiplier="1.0"
+    
+    norepick="false"
+    noswap="false"
+    forcerandom="false"
+    
+    allowallheroes="false"
+    allowagility="true"
+    allowintelligence="true"
+    allowstrength="true"
+    heropoolsize="0"
+    
+    spawnpowerups="true"
+    alternatepicks="false"
+    
+    respawntimeperlevel="4000"
+    repickonrespawn="false"
 >
-	<modifier key="randomdraft" modpriority="100" group="game_mode"
-		norepick="true"
-		alternatepicks="true"
-		allowallheroes="true"
-		startinggold="3015"
-		randombonus="0"
-		heropoolsize="20"
-	/>
-	
-	<modifier key="singledraft" modpriority="100" group="game_mode"
-		norepick="true"
-		startinggold="3015"
-		randombonus="0"
+    <modifier key="randomdraft" modpriority="100" group="game_mode"
+        norepick="true"
+        alternatepicks="true"
+        allowallheroes="true"
+        startinggold="3015"
+        randombonus="0"
+        heropoolsize="20"
+    />
+    
+    <modifier key="singledraft" modpriority="100" group="game_mode"
+        norepick="true"
+        startinggold="3015"
+        randombonus="0"
 
-		allowallheroes="true"
-		allowagility="true"
-		allowintelligence="true"
-		allowstrength="true"
-	/>
-	
-	<modifier key="deathmatch" modpriority="100" group="game_mode"
-		repickonrespawn="true"
-	/>
-	
-	<modifier key="allheroes" modpriority="50"
-		startinggold="3015"
-		allowallheroes="true"
-		randombonus="250"
-		repickcost="350"
-	/>
+        allowallheroes="true"
+        allowagility="true"
+        allowintelligence="true"
+        allowstrength="true"
+    />
+    
+    <modifier key="deathmatch" modpriority="100" group="game_mode"
+        repickonrespawn="true"
+    />
+    
+    <modifier key="allheroes" modpriority="50"
+        startinggold="3015"
+        allowallheroes="true"
+        randombonus="250"
+        repickcost="350"
+    />
 
-	<modifier key="forcerandom" modpriority="60"
-		forcerandom="true"
-		randombonus="0"
-		startinggold="4265"
-		repickcost="400"
-	/>
-	
-	<modifier key="alternatepicks" modpriority="90"
-		alternatepicks="true"
-	/>
+    <modifier key="forcerandom" modpriority="60"
+        forcerandom="true"
+        randombonus="0"
+        startinggold="4265"
+        repickcost="400"
+    />
+    
+    <modifier key="alternatepicks" modpriority="90"
+        alternatepicks="true"
+    />
 
-	<modifier key="norepick" modpriority="90"
-		norepick="true"
-	/>
-	
-	<modifier key="noswap" modpriority="90"
-		noswap="true"
-	/>
+    <modifier key="norepick" modpriority="90"
+        norepick="true"
+    />
+    
+    <modifier key="noswap" modpriority="90"
+        noswap="true"
+    />
 
-	<modifier key="noagility" modpriority="90"
-		allowagility="false"
-	/>
-	
-	<modifier key="nointelligence" modpriority="90"
-		allowintelligence="false"
-	/>
-	
-	<modifier key="nostrength" modpriority="90"
-		allowstrength="false"
-	/>
-	
-	<modifier key="norespawntimer" modpriority="90"
-		respawntimeperlevel="0"
-	/>
-	
-	<modifier key="dropitems" modpriority="90"
-	/>
-	
-	<modifier key="nopowerups" modpriority="90"
-		spawnpowerups="false"
-	/>
-	
-	<modifier key="easymode" modpriority="90"
-		goldpertick="2"
-		experiencemultiplier="1.5"
-	/>
+    <modifier key="noagility" modpriority="90"
+        allowagility="false"
+    />
+    
+    <modifier key="nointelligence" modpriority="90"
+        allowintelligence="false"
+    />
+    
+    <modifier key="nostrength" modpriority="90"
+        allowstrength="false"
+    />
+    
+    <modifier key="norespawntimer" modpriority="90"
+        respawntimeperlevel="0"
+    />
+    
+    <modifier key="dropitems" modpriority="90"
+    />
+    
+    <modifier key="nopowerups" modpriority="90"
+        spawnpowerups="false"
+    />
+    
+    <modifier key="easymode" modpriority="90"
+        goldpertick="2"
+        experiencemultiplier="1.5"
+    />
 
-	<modifier key="allowduplicate" modpriority="90"
-	/>
+    <modifier key="allowduplicate" modpriority="90"
+    />
 
-	<!--modifier key="reverseselect" modpriority="90"
-	/-->
+    <!--modifier key="reverseselect" modpriority="90"
+    /-->
 
-	<!--modifier key="allowveto" modpriority="90"
-	/-->
+    <!--modifier key="allowveto" modpriority="90"
+    /-->
 
-	<!--modifier key="shuffleteams" modpriority="90"
-	/-->
+    <!--modifier key="shuffleteams" modpriority="90"
+    /-->
 </game>

@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Chipper4"
-	statuseffecttooltip="State_Chipper_Ability4"
-	
-	icon="icon.tga"
+    name="Ability_Chipper4"
+    statuseffecttooltip="State_Chipper_Ability4"
+    
+    icon="icon.tga"
 
-	anim="ability_4"
-	casttime="500"
-	castactiontime="0"
-	casteffect="effects/leap.effect"
+    anim="ability_4"
+    casttime="500"
+    castactiontime="0"
+    casteffect="effects/leap.effect"
 
-	maxlevel="3"
-	requiredlevel="6,11,16"
+    maxlevel="3"
+    requiredlevel="6,11,16"
 
-	actiontype="target_position"
-	targetradius="400"
-	casteffecttype="Magic"
-	targetscheme="enemy_units"
+    actiontype="target_position"
+    targetradius="400"
+    casteffecttype="Magic"
+    targetscheme="enemy_units"
 
-	manacost="140,180,220"
-	cooldowntime="60000,45000,30000"
+    manacost="140,180,220"
+    cooldowntime="60000,45000,30000"
 
-	range="700"
+    range="700"
 >
-	<onimpact>
-		<spawnlinearaffector name="Affector_Chipper_Ability4" target="source_position" distance="0"	/>
+    <onimpact>
+        <spawnlinearaffector name="Affector_Chipper_Ability4" target="source_position" distance="0" />
 
-	</onimpact>
+    </onimpact>
 </ability>

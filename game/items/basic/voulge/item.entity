@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Voulge"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="2400"
-	
-	actiontype="passive"
-	
-	damage="46"
+    name="Item_Voulge"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="2400"
+    
+    actiontype="passive"
+    
+    damage="46"
 >
 </item>

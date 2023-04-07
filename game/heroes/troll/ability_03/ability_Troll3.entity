@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Troll3"
+    name="Ability_Troll3"
 
-	
-	
-	
-	icon="icon.tga"
-	
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    
+    
+    
+    icon="icon.tga"
+    
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="passive"
+    actiontype="passive"
 >
-	<aura state="State_Troll_Ability3" radius="700" targetscheme="ally_units" propagatecondition="not_stealthed"/>
+    <aura state="State_Troll_Ability3" radius="700" targetscheme="ally_units" propagatecondition="not_stealthed"/>
 </ability>

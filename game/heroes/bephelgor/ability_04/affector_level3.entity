@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Bephelgor_Ability4_Level3"
+    name="Affector_Bephelgor_Ability4_Level3"
 
-	radiusstart="50"
-	radiusend="600"
-	
-	innerradiusoffset="100"
-	
-	lifetime="1000"
-	maximpactspertarget="1"
-	targetselection="all"
-	targetscheme="enemy_units_notmine"
-	effecttype="Magic"
-	persist="true"
-	impacteffect="effects/impact.effect"
-	effect="effects/level_3.effect"
+    radiusstart="50"
+    radiusend="600"
+    
+    innerradiusoffset="100"
+    
+    lifetime="1000"
+    maximpactspertarget="1"
+    targetselection="all"
+    targetscheme="enemy_units_notmine"
+    effecttype="Magic"
+    persist="true"
+    impacteffect="effects/impact.effect"
+    effect="effects/level_3.effect"
 >
-	<onimpact>
-		<playeffect effect="effects/impact_level_3.effect" source="target_position" target=""/>
-		<damage effecttype="Magic" amount="350,450,550" />
-		<applystate name="State_Bephelgor_Ability4" duration="6000" />
-	</onimpact>
+    <onimpact>
+        <playeffect effect="effects/impact_level_3.effect" source="target_position" target=""/>
+        <damage effecttype="Magic" amount="350,450,550" />
+        <applystate name="State_Bephelgor_Ability4" duration="6000" />
+    </onimpact>
 </affector>

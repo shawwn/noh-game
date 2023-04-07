@@ -7,14 +7,14 @@
 //=============================================================================
 // Global variables
 //=============================================================================
-float4	vTexelSize;
+float4  vTexelSize;
 
 //=============================================================================
 // Vertex shader output structure
 //=============================================================================
 struct VS_OUTPUT
 {
-	float2 Texcoord0 : TEXCOORD0;
+    float2 Texcoord0 : TEXCOORD0;
 };
 
 //=============================================================================
@@ -22,7 +22,7 @@ struct VS_OUTPUT
 //=============================================================================
 struct PS_OUTPUT
 {
-	float4 Color : COLOR;
+    float4 Color : COLOR;
 };
 
 sampler image;
@@ -32,10 +32,10 @@ sampler image;
 //=============================================================================
 PS_OUTPUT PS( VS_OUTPUT In )
 {
-	PS_OUTPUT Out;
+    PS_OUTPUT Out;
 
-	Out.Color = tex2D(image, In.Texcoord0);
+    Out.Color = tex2D(image, In.Texcoord0);
 
-	return Out;
+    return Out;
 }
 

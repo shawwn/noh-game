@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Ursa_Ability2"
+    name="State_Ursa_Ability2"
 
-	icon="icon.tga"
-	passiveeffect="effects/thirst.effect"
-	attackspeed="4.0"
-	initialcharges="3,4,5,6"
-	effecttype="StatusBuff"
-	noninterrupting="true"
-	inheritmovement="true"
+    icon="icon.tga"
+    passiveeffect="effects/thirst.effect"
+    attackspeed="4.0"
+    initialcharges="3,4,5,6"
+    effecttype="StatusBuff"
+    noninterrupting="true"
+    inheritmovement="true"
 >
-	<onexpired>
-		<playeffect effect="../../../heroes/predator/ability_02/state_out.effect" target="source_entity" />
-	</onexpired>
-	
-	<oninflict>
-		<setcharges a="3,4,5,6" />
-	</oninflict>
-	
-	<onattack>
-		<removecharge />
-		<condition test="charges eq 0">
-			<expire />
-		</condition>
-	</onattack>
+    <onexpired>
+        <playeffect effect="../../../heroes/predator/ability_02/state_out.effect" target="source_entity" />
+    </onexpired>
+    
+    <oninflict>
+        <setcharges a="3,4,5,6" />
+    </oninflict>
+    
+    <onattack>
+        <removecharge />
+        <condition test="charges eq 0">
+            <expire />
+        </condition>
+    </onattack>
 </state>

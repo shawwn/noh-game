@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_TokenOfStealth"
+    name="Affector_TokenOfStealth"
 
-	radius="1250"
-	
-	targetselection="all"
-	targetscheme="ally_units"
-	effecttype=""
-	persist="false"
+    radius="1250"
+    
+    targetselection="all"
+    targetscheme="ally_units"
+    effecttype=""
+    persist="false"
 >
-	<onimpact>
-		<applystate name="State_TokenOfStealth" duration="45000"/>
-	</onimpact>
+    <onimpact>
+        <applystate name="State_TokenOfStealth" duration="45000"/>
+    </onimpact>
 </affector>

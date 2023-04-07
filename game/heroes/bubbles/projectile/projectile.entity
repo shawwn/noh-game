@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Bubbles_Attack"
+    name="Projectile_Bubbles_Attack"
 
-	speed="900"
-	gravity="-500"
+    speed="900"
+    gravity="-500"
 
-	modelscale="3"
-	model="projectile.mdf"
+    modelscale="3"
+    model="projectile.mdf"
 
-	impacteffect="impact.effect"
+    impacteffect="impact.effect"
 
 >
 </projectile>

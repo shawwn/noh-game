@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Voodoo_Ability1"
+    name="Projectile_Voodoo_Ability1"
 
-	speed="600"
-	gravity="0"	
+    speed="600"
+    gravity="0" 
 
-	modelscale=".75"
-	model="effects/bottle.mdf"
+    modelscale=".75"
+    model="effects/bottle.mdf"
 
-	impacteffect="effects/impact.effect"
-	invalideffect="effects/impact.effect"
-	traileffect=""
+    impacteffect="effects/impact.effect"
+    invalideffect="effects/impact.effect"
+    traileffect=""
 >
 </projectile>

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Item5C"
+    name="State_Item5C"
 
-	icon="icon.tga"
-	passiveeffect="state.effect"
-	
-	effecttype="StatusBuff"
+    icon="icon.tga"
+    passiveeffect="state.effect"
+    
+    effecttype="StatusBuff"
 >
-	<onframe effectdescription="true"/>
-	<onattackedpreimpact>
-		<condition test="not_target_type Well">
-			<combateffecttype effecttype="Attack">
-				<chance threshold="0.2">
-					<spawnaffector name="Affector_Item5C_State" target="source_position" direction="target_entity"/>
-				</chance>
-			</combateffecttype>
-		</condition>
-	</onattackedpreimpact>
+    <onframe effectdescription="true"/>
+    <onattackedpreimpact>
+        <condition test="not_target_type Well">
+            <combateffecttype effecttype="Attack">
+                <chance threshold="0.2">
+                    <spawnaffector name="Affector_Item5C_State" target="source_position" direction="target_entity"/>
+                </chance>
+            </combateffecttype>
+        </condition>
+    </onattackedpreimpact>
 </state>

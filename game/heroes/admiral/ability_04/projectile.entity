@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Admiral_Ability4"
+    name="Projectile_Admiral_Ability4"
 
-	speed="650"
-	gravity="0"
+    speed="650"
+    gravity="0"
 
-	modelscale="1"
-	model="/shared/models/invis.mdf"
-	
-	traileffect="effects/trail.effect"	
-	effectscale=""
-	impacteffect=""
+    modelscale="1"
+    model="/shared/models/invis.mdf"
+    
+    traileffect="effects/trail.effect"  
+    effectscale=""
+    impacteffect=""
 >
-	<onimpact>
-		<spawnaffector name="Affector_Admiral_Ability4" target="this_position" />
-		<delete target="stack_entity" />
-	</onimpact>
+    <onimpact>
+        <spawnaffector name="Affector_Admiral_Ability4" target="this_position" />
+        <delete target="stack_entity" />
+    </onimpact>
 </projectile>

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <shop
-	name="Shop_Accessories2"
+    name="Shop_Accessories2"
 
-	style="accessories"
-	header="/ui/elements/shop/shopkeeper_accessories.tga"
-	allowremoteaccess="true"
-	
-	icon="shop_accessories.tga"
-	order="1"
-	slot="0"
+    style="accessories"
+    header="/ui/elements/shop/shopkeeper_accessories.tga"
+    allowremoteaccess="true"
+    
+    icon="shop_accessories.tga"
+    order="1"
+    slot="0"
 >
-	<item name="Item_NeophytesBook" />
+    <item name="Item_NeophytesBook" />
 </shop>

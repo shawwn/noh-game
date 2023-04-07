@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Admiral_Ability1_Slow"
-	
-	icon="icon.tga"
-	
-	movespeedslow="0.3"
+    name="State_Admiral_Ability1_Slow"
+    
+    icon="icon.tga"
+    
+    movespeedslow="0.3"
 >
 </state>

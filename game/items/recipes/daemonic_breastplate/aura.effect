@@ -1,107 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="groundsprite" useentityeffectscale="true">
-	<definitions>
-		<particlesystem name="system0" space="world" scale="1">
-		
-			<groundsprite
-			delay="250"
-				loop="true"
-				life="2000"
-				startsize="100"
-				midsize="80"
-				endsize="100"
-				material="/shared/effects/materials/aura_daemonic_01.material"
-				
-				startcolor=".0 .3 .5"
-				midcolor=".0 .2 .5"
-				endcolor=".0 .3 .5"
-				startalpha="1"
-				midalpha="0"
-				endalpha="1"
-			
-				
-			/>
-			
-			<groundsprite
-			delay="250"
-				loop="true"
-				expirelife="1200"
-				yawspeed="-20"
-				material="/shared/effects/materials/fuzzy_02.material"
-				size="100"
-				color=".0 .2 .3"
-				pitch="180"
-				
-			/>
-			
-			<groundsprite
-				life="2000"
-				material="/shared/effects/materials/cuirass_aura_3.material"
-				startsize="58"
-				endsize="140"
-				startcolor="0"
-				midcolor=".0 .3 .5"
-				endcolor="0"
-				loop="true"
-				expirelife="400"
-			/>
-			
-				<groundsprite
-				life="2000"
-				material="/shared/effects/materials/fuzzy_02.material"
-				startsize="58"
-				endsize="40"
-				startcolor="0"
-				midcolor=".0 .3 .5"
-				endcolor="0"
-				loop="true"
-				expirelife="400"
-			/>
-			
-			<!--<simpleemitter
-				spawnrate="75"
-				expirelife="300"
-				particlelife="1000"
-				gravity="-55"
-				speed="40"
-				drag=".08"
-				acceleration="0"
-				position="0 0 -10"
-				material="/shared/effects/materials/phantom_smoke_10.material"
-				offsetsphere="160 160 10"
-				minangle="90"
-				maxangle="-90"
-				directionalspace="local"
-			>
-				<particle 
-					startcolor="0 0 0"
-					midcolor="2 .7 .2"
-					endcolor="0 0 0"
-					midcolorpos=".1"
-					startframe="0"
-					endframe="1"
-					startwidth="10"
-					midwidth="7.5"
-					endwidth="3"
-					midwidthpos=".5"
-					startheight="0"
-					midheight="150"
-					endheight="10"
-					startalpha="0"
-					midalpha="1"
-					endalpha="0"
-					midalphapos=".1"
-					lockup="true"
-					anchor="1"
-				/>
-			</simpleemitter>-->
+    <definitions>
+        <particlesystem name="system0" space="world" scale="1">
+        
+            <groundsprite
+            delay="250"
+                loop="true"
+                life="2000"
+                startsize="100"
+                midsize="80"
+                endsize="100"
+                material="/shared/effects/materials/aura_daemonic_01.material"
+                
+                startcolor=".0 .3 .5"
+                midcolor=".0 .2 .5"
+                endcolor=".0 .3 .5"
+                startalpha="1"
+                midalpha="0"
+                endalpha="1"
+            
+                
+            />
+            
+            <groundsprite
+            delay="250"
+                loop="true"
+                expirelife="1200"
+                yawspeed="-20"
+                material="/shared/effects/materials/fuzzy_02.material"
+                size="100"
+                color=".0 .2 .3"
+                pitch="180"
+                
+            />
+            
+            <groundsprite
+                life="2000"
+                material="/shared/effects/materials/cuirass_aura_3.material"
+                startsize="58"
+                endsize="140"
+                startcolor="0"
+                midcolor=".0 .3 .5"
+                endcolor="0"
+                loop="true"
+                expirelife="400"
+            />
+            
+                <groundsprite
+                life="2000"
+                material="/shared/effects/materials/fuzzy_02.material"
+                startsize="58"
+                endsize="40"
+                startcolor="0"
+                midcolor=".0 .3 .5"
+                endcolor="0"
+                loop="true"
+                expirelife="400"
+            />
+            
+            <!--<simpleemitter
+                spawnrate="75"
+                expirelife="300"
+                particlelife="1000"
+                gravity="-55"
+                speed="40"
+                drag=".08"
+                acceleration="0"
+                position="0 0 -10"
+                material="/shared/effects/materials/phantom_smoke_10.material"
+                offsetsphere="160 160 10"
+                minangle="90"
+                maxangle="-90"
+                directionalspace="local"
+            >
+                <particle 
+                    startcolor="0 0 0"
+                    midcolor="2 .7 .2"
+                    endcolor="0 0 0"
+                    midcolorpos=".1"
+                    startframe="0"
+                    endframe="1"
+                    startwidth="10"
+                    midwidth="7.5"
+                    endwidth="3"
+                    midwidthpos=".5"
+                    startheight="0"
+                    midheight="150"
+                    endheight="10"
+                    startalpha="0"
+                    midalpha="1"
+                    endalpha="0"
+                    midalphapos=".1"
+                    lockup="true"
+                    anchor="1"
+                />
+            </simpleemitter>-->
 
-			
-			
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-	</thread>
+            
+            
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+    </thread>
 </effect>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Shaman_Ability1_Damage"
+    name="State_Shaman_Ability1_Damage"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/blood.effect"
-	
-	
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/blood.effect"
+    
+    
 >
-	<onframe >
-		<damage effecttype="Physical" amount="7,14,21,28" b="frametime" op="mult" />
-	</onframe>
-	
-	
+    <onframe >
+        <damage effecttype="Physical" amount="7,14,21,28" b="frametime" op="mult" />
+    </onframe>
+    
+    
 </state>

@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
-	<template name="statistic">
-		<panel height="50" width="99%" color="invisible">
-			<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="4" color="#560001"/>
-			<frame texture="/ui/frames/roundframe.tga" color="#662222" borderthickness="4"/>
-			<panel width="50" align="left" color="invisible">
-				<panel x="3" width="44" height="44" color="red" valign="center"/>
-				<image x="4" valign="center" width="42" height="42" texture="{icon}"/>
-			</panel>
-			<panel width="-53" align="right" color="invisible">
-				<label width="100%" height="60%" valign="top" textvalign="center" align="left" font="chat_14" color="white" shadow="true">{label}</label> <!-- header label -->	
-				<label width="100%" height="60%" valign="bottom" textvalign="center" align="center" font="chat_14" color="yellow" shadow="true" watch1="{triggername1}" ontrigger1="{triggereffect1}" watch2="{triggername2}" ontrigger2="{triggereffect2}" watch3="{triggername3}" ontrigger3="{triggereffect3}">{stat}</label> <!-- header label -->	
-			</panel>					
-		</panel>	
-	</template>
-	
+    <template name="statistic">
+        <panel height="50" width="99%" color="invisible">
+            <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="4" color="#560001"/>
+            <frame texture="/ui/frames/roundframe.tga" color="#662222" borderthickness="4"/>
+            <panel width="50" align="left" color="invisible">
+                <panel x="3" width="44" height="44" color="red" valign="center"/>
+                <image x="4" valign="center" width="42" height="42" texture="{icon}"/>
+            </panel>
+            <panel width="-53" align="right" color="invisible">
+                <label width="100%" height="60%" valign="top" textvalign="center" align="left" font="chat_14" color="white" shadow="true">{label}</label> <!-- header label --> 
+                <label width="100%" height="60%" valign="bottom" textvalign="center" align="center" font="chat_14" color="yellow" shadow="true" watch1="{triggername1}" ontrigger1="{triggereffect1}" watch2="{triggername2}" ontrigger2="{triggereffect2}" watch3="{triggername3}" ontrigger3="{triggereffect3}">{stat}</label> <!-- header label -->  
+            </panel>                    
+        </panel>    
+    </template>
+    
 
 
-	<panel name="statistics" y="6" x="1" width="343" height="547" align="center" valign="center" visible="false" onload="CreateInt('_persistant_killratio'); CreateInt('_persistant_hours'); CreateInt('_persistant_wins'); CreateInt('_persistant_minutes'); CreateInt('_persistant_losses');" passivechildren="true" noclick="true">
-		<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="12" color="#560001"/>
-		<frame texture="/ui/frames/roundframe.tga" color="#662222" borderthickness="12"/>
-		<frame texture="/ui/frames/rounded_header_bg_white.tga" height="26" color="#7C1A19" borderthickness="12"/>
-		<frame texture="/ui/frames/roundframe_header.tga" height="26" color="#863838" borderthickness="12"/>
-		<frame valign="bottom" texture="/ui/frames/rounded_footer_bg_white.tga" height="26" color="#7C1A19" borderthickness="12"/>
-		<frame valign="bottom" texture="/ui/frames/roundframe_footer.tga" height="26" color="#863838" borderthickness="12">
-			<label width="100%" x="10" height="24" textalign="left" textvalign="center" align="center" font="chat_12" color="yellow" shadow="true">p_statistics_label_acct_created</label>
-		</frame>
-		
-	
-		<label width="100%" x="10" height="24" textvalign="center" align="center" font="chat_14" color="yellow" shadow="true" watch="PlayerNamePersistant" ontrigger="SetText(Translate('player_statistics_name', 'name', param));"/>
-		<label width="100%" x="-10" height="24" textalign="right" textvalign="center" align="center" font="chat_12" color="yellow" shadow="true" watch="Persistant24" ontrigger="SetText(Translate('player_statistics_skill_factor', 'value', param));"/>
-		<panel y="26" width="-4" height="-52" color="invisible" align="center">
-			<panel y="1" width="50%" float="bottom" padding="5">
-				<instance name="statistic" triggername1="Persistant0" triggereffect1="SetText(param);" label="p_statistics_label_player_rank" stat="5" icon="/ui/elements/stat_icons/player_rank.tga"/>
-				<instance name="statistic" triggername1="Persistant16" triggereffect1="SetText(param);" label="p_statistics_label_karma_score" stat="-99" icon="/ui/elements/stat_icons/karma_score.tga"/>
-				<instance name="statistic" triggername1="Persistant1" triggereffect1="SetText(param);" label="p_statistics_label_player_exp" stat="5" icon="/ui/elements/stat_icons/player_experience.tga"/>
-				<instance name="statistic" triggername1="Persistant3" triggereffect1="Set('_persistant_wins', param);" triggername2="Persistant4" triggereffect2="Set('_persistant_losses', param);" triggername3="Persistant5" triggereffect3="SetText(_persistant_wins # '-' # _persistant_losses # '-' # param);" label="p_statistics_label_match_record" stat="5-1-0" icon="/ui/elements/stat_icons/match_record.tga"/>
-				<instance name="statistic" triggername1="Persistant11" triggereffect1="SetText(param);" label="p_statistics_label_player_damage" stat="5" icon="/ui/elements/stat_icons/player_damage.tga"/>
-				<instance name="statistic" triggername1="Persistant6" triggereffect1="SetText(param);" label="p_statistics_label_total_kills" stat="5" icon="/ui/elements/stat_icons/total_kills.tga"/>
-				<instance name="statistic" triggername1="Persistant8" triggereffect1="SetText(param);" label="p_statistics_label_total_assists" stat="5" icon="/ui/elements/stat_icons/total_assists.tga"/>
-				<instance name="statistic" triggername1="Persistant9" triggereffect1="SetText(param);" label="p_statistics_label_souls_spent" stat="5" icon="/ui/elements/stat_icons/souls_spent.tga"/>	
-				<instance name="statistic" triggername1="Persistant13" triggereffect1="SetText(param);" label="p_statistics_label_npc_kills" stat="5" icon="/ui/elements/stat_icons/npc_kills.tga"/>		
-			</panel>
-			
-			<panel y="1" x="50%" width="50%" float="bottom" padding="5">
-				<instance name="statistic" triggername1="Persistant14" triggereffect1="SetText(param);" label="p_statistics_label_hp_healed" stat="5" icon="/ui/elements/stat_icons/hps_healed.tga"/>
-				<instance name="statistic" triggername1="Persistant15" triggereffect1="SetText(param);" label="p_statistics_label_resurrections" stat="5" icon="/ui/elements/stat_icons/resurections.tga"/>
-				<instance name="statistic" triggername1="Persistant12" triggereffect1="SetText(param);" label="p_statistics_label_building_dmg" stat="5" icon="/ui/elements/stat_icons/total_building_damage.tga"/>
-				<instance name="statistic" triggername1="Persistant10" triggereffect1="SetText(param);" label="p_statistics_label_building_razed" stat="5" icon="/ui/elements/stat_icons/razed.tga"/>
-				<instance name="statistic" triggername1="Persistant18" triggereffect1="SetText(param);" label="p_statistics_label_hp_repaired" stat="5" icon="/ui/elements/stat_icons/build.tga"/>
-				<instance name="statistic" triggername1="Persistant7" triggereffect1="SetText(param);" label="p_statistics_label_total_deaths" stat="5" icon="/ui/elements/stat_icons/total_deaths.tga"/>					
-				<instance name="statistic" triggername1="Persistant22" triggereffect1="Set('_persistant_killratio', param);" triggername2="Persistant23" triggereffect2="SetText(_persistant_killratio # ':' # param);" label="p_statistics_label_kill_to_death" stat="2:1" icon="/ui/elements/stat_icons/kill_death_ratio.tga"/>
-				<instance name="statistic" triggername1="Persistant19" triggereffect1="Set('_persistant_hours', param);" triggername2="Persistant20" triggereffect2="Set('_persistant_minutes', param);" triggername3="Persistant21" triggereffect3="SetText(_persistant_hours # ':' # _persistant_minutes # ':' # param);" label="p_statistics_label_time_played" stat="05:13:10" icon="/ui/elements/stat_icons/hours_played.tga"/>
-				<instance name="statistic" triggername1="Persistant17" triggereffect1="SetText(param);" label="p_statistics_label_total_gold" stat="5" icon="/ui/elements/stat_icons/total_gold.tga"/>					
-			</panel>				
-		</panel>
-	</panel>	
+    <panel name="statistics" y="6" x="1" width="343" height="547" align="center" valign="center" visible="false" onload="CreateInt('_persistant_killratio'); CreateInt('_persistant_hours'); CreateInt('_persistant_wins'); CreateInt('_persistant_minutes'); CreateInt('_persistant_losses');" passivechildren="true" noclick="true">
+        <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="12" color="#560001"/>
+        <frame texture="/ui/frames/roundframe.tga" color="#662222" borderthickness="12"/>
+        <frame texture="/ui/frames/rounded_header_bg_white.tga" height="26" color="#7C1A19" borderthickness="12"/>
+        <frame texture="/ui/frames/roundframe_header.tga" height="26" color="#863838" borderthickness="12"/>
+        <frame valign="bottom" texture="/ui/frames/rounded_footer_bg_white.tga" height="26" color="#7C1A19" borderthickness="12"/>
+        <frame valign="bottom" texture="/ui/frames/roundframe_footer.tga" height="26" color="#863838" borderthickness="12">
+            <label width="100%" x="10" height="24" textalign="left" textvalign="center" align="center" font="chat_12" color="yellow" shadow="true">p_statistics_label_acct_created</label>
+        </frame>
+        
+    
+        <label width="100%" x="10" height="24" textvalign="center" align="center" font="chat_14" color="yellow" shadow="true" watch="PlayerNamePersistant" ontrigger="SetText(Translate('player_statistics_name', 'name', param));"/>
+        <label width="100%" x="-10" height="24" textalign="right" textvalign="center" align="center" font="chat_12" color="yellow" shadow="true" watch="Persistant24" ontrigger="SetText(Translate('player_statistics_skill_factor', 'value', param));"/>
+        <panel y="26" width="-4" height="-52" color="invisible" align="center">
+            <panel y="1" width="50%" float="bottom" padding="5">
+                <instance name="statistic" triggername1="Persistant0" triggereffect1="SetText(param);" label="p_statistics_label_player_rank" stat="5" icon="/ui/elements/stat_icons/player_rank.tga"/>
+                <instance name="statistic" triggername1="Persistant16" triggereffect1="SetText(param);" label="p_statistics_label_karma_score" stat="-99" icon="/ui/elements/stat_icons/karma_score.tga"/>
+                <instance name="statistic" triggername1="Persistant1" triggereffect1="SetText(param);" label="p_statistics_label_player_exp" stat="5" icon="/ui/elements/stat_icons/player_experience.tga"/>
+                <instance name="statistic" triggername1="Persistant3" triggereffect1="Set('_persistant_wins', param);" triggername2="Persistant4" triggereffect2="Set('_persistant_losses', param);" triggername3="Persistant5" triggereffect3="SetText(_persistant_wins # '-' # _persistant_losses # '-' # param);" label="p_statistics_label_match_record" stat="5-1-0" icon="/ui/elements/stat_icons/match_record.tga"/>
+                <instance name="statistic" triggername1="Persistant11" triggereffect1="SetText(param);" label="p_statistics_label_player_damage" stat="5" icon="/ui/elements/stat_icons/player_damage.tga"/>
+                <instance name="statistic" triggername1="Persistant6" triggereffect1="SetText(param);" label="p_statistics_label_total_kills" stat="5" icon="/ui/elements/stat_icons/total_kills.tga"/>
+                <instance name="statistic" triggername1="Persistant8" triggereffect1="SetText(param);" label="p_statistics_label_total_assists" stat="5" icon="/ui/elements/stat_icons/total_assists.tga"/>
+                <instance name="statistic" triggername1="Persistant9" triggereffect1="SetText(param);" label="p_statistics_label_souls_spent" stat="5" icon="/ui/elements/stat_icons/souls_spent.tga"/> 
+                <instance name="statistic" triggername1="Persistant13" triggereffect1="SetText(param);" label="p_statistics_label_npc_kills" stat="5" icon="/ui/elements/stat_icons/npc_kills.tga"/>        
+            </panel>
+            
+            <panel y="1" x="50%" width="50%" float="bottom" padding="5">
+                <instance name="statistic" triggername1="Persistant14" triggereffect1="SetText(param);" label="p_statistics_label_hp_healed" stat="5" icon="/ui/elements/stat_icons/hps_healed.tga"/>
+                <instance name="statistic" triggername1="Persistant15" triggereffect1="SetText(param);" label="p_statistics_label_resurrections" stat="5" icon="/ui/elements/stat_icons/resurections.tga"/>
+                <instance name="statistic" triggername1="Persistant12" triggereffect1="SetText(param);" label="p_statistics_label_building_dmg" stat="5" icon="/ui/elements/stat_icons/total_building_damage.tga"/>
+                <instance name="statistic" triggername1="Persistant10" triggereffect1="SetText(param);" label="p_statistics_label_building_razed" stat="5" icon="/ui/elements/stat_icons/razed.tga"/>
+                <instance name="statistic" triggername1="Persistant18" triggereffect1="SetText(param);" label="p_statistics_label_hp_repaired" stat="5" icon="/ui/elements/stat_icons/build.tga"/>
+                <instance name="statistic" triggername1="Persistant7" triggereffect1="SetText(param);" label="p_statistics_label_total_deaths" stat="5" icon="/ui/elements/stat_icons/total_deaths.tga"/>                   
+                <instance name="statistic" triggername1="Persistant22" triggereffect1="Set('_persistant_killratio', param);" triggername2="Persistant23" triggereffect2="SetText(_persistant_killratio # ':' # param);" label="p_statistics_label_kill_to_death" stat="2:1" icon="/ui/elements/stat_icons/kill_death_ratio.tga"/>
+                <instance name="statistic" triggername1="Persistant19" triggereffect1="Set('_persistant_hours', param);" triggername2="Persistant20" triggereffect2="Set('_persistant_minutes', param);" triggername3="Persistant21" triggereffect3="SetText(_persistant_hours # ':' # _persistant_minutes # ':' # param);" label="p_statistics_label_time_played" stat="05:13:10" icon="/ui/elements/stat_icons/hours_played.tga"/>
+                <instance name="statistic" triggername1="Persistant17" triggereffect1="SetText(param);" label="p_statistics_label_total_gold" stat="5" icon="/ui/elements/stat_icons/total_gold.tga"/>                  
+            </panel>                
+        </panel>
+    </panel>    
 </package>

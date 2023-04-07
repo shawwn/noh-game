@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_GoodSiegeCreepAttack"
+    name="Projectile_GoodSiegeCreepAttack"
 
-	speed="900"
-	gravity="1000"
+    speed="900"
+    gravity="1000"
 
-	modelscale="1"
-	model="effects/model.mdf"
-	anim="idle"
-	traileffect="effects/trail.effect"
-	impacteffect="effects/impact.effect"
-	passiveeffect="effects/body.effect"
+    modelscale="1"
+    model="effects/model.mdf"
+    anim="idle"
+    traileffect="effects/trail.effect"
+    impacteffect="effects/impact.effect"
+    passiveeffect="effects/body.effect"
 >
 </projectile>

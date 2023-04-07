@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Leoric4"	
-	
-	icon="icon.tga"
-	
-	maxlevel="3"
-	requiredlevel="6,11,16"
+    name="Ability_Leoric4"  
+    
+    icon="icon.tga"
+    
+    maxlevel="3"
+    requiredlevel="6,11,16"
 
-	actiontype="passive"
-	
-	manacost="100"
-	cooldowntime="300000,220000,140000"
+    actiontype="passive"
+    
+    manacost="100"
+    cooldowntime="300000,220000,140000"
 >
-	<ondeath propagatetoillusions="false" >
-		<condition test="isready">
-			<condition test="canactivate">
-				<protecteddeath target="source_entity" />
-				<playeffect effect="../../../items/basic/token_of_life/death.effect" source="source_position" />
-				<setrespawntime target="source_entity" a="5000,4000,3000" />
-				<setrespawnposition target="source_entity" position="source_position" />
-				<setrespawnhealthmultiplier target="source_entity" value="1.0" />
-				<setrespawnmanamultiplier target="source_entity" value="1.0" />
-				<startcooldown />
-			</condition>
-		</condition>
-	</ondeath>
+    <ondeath propagatetoillusions="false" >
+        <condition test="isready">
+            <condition test="canactivate">
+                <protecteddeath target="source_entity" />
+                <playeffect effect="../../../items/basic/token_of_life/death.effect" source="source_position" />
+                <setrespawntime target="source_entity" a="5000,4000,3000" />
+                <setrespawnposition target="source_entity" position="source_position" />
+                <setrespawnhealthmultiplier target="source_entity" value="1.0" />
+                <setrespawnmanamultiplier target="source_entity" value="1.0" />
+                <startcooldown />
+            </condition>
+        </condition>
+    </ondeath>
 </ability>

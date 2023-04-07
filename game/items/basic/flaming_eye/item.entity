@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_FlamingEye"
-	
-	icon="icon.tga"
-	
-	cost="200"
-	initialcharges="2"
-	chargecost="1"
-	destroyonempty="true"
-	rechargeable="true"
-	allowsharing="true"
+    name="Item_FlamingEye"
+    
+    icon="icon.tga"
+    
+    cost="200"
+    initialcharges="2"
+    chargecost="1"
+    destroyonempty="true"
+    rechargeable="true"
+    allowsharing="true"
   allowtransfer="true"
-	
-	actiontype="target_position"
-	casttime="500"
-	castactiontime="200"
-	range="600"
-	manacost="5"
-	cooldowntime="1000"
-	cooldowntype="flamingeye"
+    
+    actiontype="target_position"
+    casttime="500"
+    castactiontime="200"
+    range="600"
+    manacost="5"
+    cooldowntime="1000"
+    cooldowntype="flamingeye"
 
-	initialstock="2"	
-	maxstock="2"
-	restockdelay="360000"
+    initialstock="2"    
+    maxstock="2"
+    restockdelay="360000"
 >
-	<onimpact>
-		<spawnunit name="Gadget_FlamingEye" target="target_position" />
-		<playanim name="item_1" target="source_entity" />
-	</onimpact>
+    <onimpact>
+        <spawnunit name="Gadget_FlamingEye" target="target_position" />
+        <playanim name="item_1" target="source_entity" />
+    </onimpact>
 </item>

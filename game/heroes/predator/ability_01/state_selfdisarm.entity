@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Predator_Ability1_SelfDisarm"
+    name="State_Predator_Ability1_SelfDisarm"
 
-	
-	ishidden="true"
-	
-	icon="icon.tga"
-	disarmed="true"
+    
+    ishidden="true"
+    
+    icon="icon.tga"
+    disarmed="true"
 
 
 

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Techies_Ability2_Trap"
+    name="Affector_Techies_Ability2_Trap"
 
-	radius="450"
-	
-	targetselection="all"
-	targetscheme="all_units"
-	effecttype="Physical"
+    radius="450"
+    
+    targetselection="all"
+    targetscheme="all_units"
+    effecttype="Physical"
 >
-	<onimpact>
-		<condition test="target_type StasisTrap">			
-			<kill target="target_entity" source="" />
-		</condition>
-	</onimpact>
+    <onimpact>
+        <condition test="target_type StasisTrap">           
+            <kill target="target_entity" source="" />
+        </condition>
+    </onimpact>
 </affector>

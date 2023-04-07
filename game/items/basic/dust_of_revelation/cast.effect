@@ -1,199 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect persistent="1">
-	<definitions>
-		<particlesystem deferred="true" name="system0" space="world" scale="1">
-		
-			<billboard
-				delay="000"
-				life="1250"
-				startcolor="0 .05 .1"
-				endcolor="0 0 0"
-				midalphapos="0.75"
-				startparam="0.05"
-				endparam="0.0"
-				startsize="000"
-				endsize="1100"
-				midsizepos=".4"
-				depthbias="0"
-				position="0 0 50"
-				material="/shared/effects/materials/corona_06.material"
-				lockup="true"
-				pitch="90"
-			/>
-			
-			<billboard
-				delay="000"
-				life="1250"
-				startcolor="0 .05 .1"
-				endcolor="0 0 0"
-				midalphapos="0.75"
-				startparam="0.05"
-				endparam="0.0"
-				startsize="000"
-				endsize="700"
-				midsizepos=".4"
-				depthbias="0"
-				position="0 0 50"
-				material="/shared/effects/materials/corona_06.material"
-				lockup="true"
-				pitch="90"
-			/>
-	
-			<billboard
-				delay="200"
-				life="1250"
-				startcolor=".25 0 .25"
-				endcolor="0 0 0"
-				startalpha="1.0"
-				midalpha="1.0"
-				endalpha="0.0"
-				midalphapos="0.75"
-				startparam="0.05"
-				endparam="0.0"
-				startsize="000"
-				endsize="1250"
-				midsizepos=".4"
-				depthbias="0"
-				position="0 0 50"
-				material="/shared/effects/materials/starlight.material"
-				lockup="true"
-				pitch="90"
-			/>
-			
-			<billboard
-				life="1250"
-				color="1 1 1"
-				startalpha="1.0"
-				midalpha="1.0"
-				endalpha="0.0"
-				midalphapos="0.75"
-				startparam="0.01"
-				endparam="0.0"
-				startsize="000"
-				param=".1"
-				endsize="1000"
-				midsizepos=".4"
-				depthbias="0"
-				position="0 0 50"
-				material="/shared/effects/materials/refract_swell.material"
-				lockup="true"
-				pitch="90"
-			/>
+    <definitions>
+        <particlesystem deferred="true" name="system0" space="world" scale="1">
+        
+            <billboard
+                delay="000"
+                life="1250"
+                startcolor="0 .05 .1"
+                endcolor="0 0 0"
+                midalphapos="0.75"
+                startparam="0.05"
+                endparam="0.0"
+                startsize="000"
+                endsize="1100"
+                midsizepos=".4"
+                depthbias="0"
+                position="0 0 50"
+                material="/shared/effects/materials/corona_06.material"
+                lockup="true"
+                pitch="90"
+            />
+            
+            <billboard
+                delay="000"
+                life="1250"
+                startcolor="0 .05 .1"
+                endcolor="0 0 0"
+                midalphapos="0.75"
+                startparam="0.05"
+                endparam="0.0"
+                startsize="000"
+                endsize="700"
+                midsizepos=".4"
+                depthbias="0"
+                position="0 0 50"
+                material="/shared/effects/materials/corona_06.material"
+                lockup="true"
+                pitch="90"
+            />
+    
+            <billboard
+                delay="200"
+                life="1250"
+                startcolor=".25 0 .25"
+                endcolor="0 0 0"
+                startalpha="1.0"
+                midalpha="1.0"
+                endalpha="0.0"
+                midalphapos="0.75"
+                startparam="0.05"
+                endparam="0.0"
+                startsize="000"
+                endsize="1250"
+                midsizepos=".4"
+                depthbias="0"
+                position="0 0 50"
+                material="/shared/effects/materials/starlight.material"
+                lockup="true"
+                pitch="90"
+            />
+            
+            <billboard
+                life="1250"
+                color="1 1 1"
+                startalpha="1.0"
+                midalpha="1.0"
+                endalpha="0.0"
+                midalphapos="0.75"
+                startparam="0.01"
+                endparam="0.0"
+                startsize="000"
+                param=".1"
+                endsize="1000"
+                midsizepos=".4"
+                depthbias="0"
+                position="0 0 50"
+                material="/shared/effects/materials/refract_swell.material"
+                lockup="true"
+                pitch="90"
+            />
 
-			<orbiteremitter
-				spawnrate="500"
-				life="750"
-				particlelife="1000"
-				gravity="0"
-				speed="1"
-				drag="0.02"
-				acceleration="0"
-				minangle="10"
-				maxangle="60"
-				position="0 0 0"
-				origin="0 0 100"
-				startorbit="-0.1 6 50"
-				endorbit="-0.35 6 25"
-				direction="0 0 1"
-				offset="5 5 200"
-				cylindrical="true"
-				material="/shared/effects/materials/fairy_glow_06.material"
-			>
-				<particle
-					startcolor="1 .7 1"
-					endcolor="0 0 0"
-					alpha="1.0"
-					minsize="2"
-					maxsize="6"
-					lockup="false"
-					lockright="false"
-					minangle="-360"
-					maxangle="1"
-					minanglespeed="110"
-					maxanglespeed="-110"
-				/>
-			</orbiteremitter>
-			
-			<orbiteremitter
-				delay="500"
-				spawnrate="500"
-				life="300"
-				particlelife="1000"
-				gravity="0"
-				speed="1"
-				drag="0.02"
-				acceleration="0"
-				minangle="10"
-				maxangle="60"
-				position="0 0 0"
-				origin="0 0 100"
-				startorbit="0.1 6 5"
-				endorbit="0.35 6 5"
-				direction="0 0 1"
-				offset="5 5 225"
-				cylindrical="true"
-				material="/shared/effects/materials/fairy_glow_03.material"
-			>
-				<particle
-					startcolor="1 1 1"
-					endcolor="0 0 0"
-					alpha="1.0"
-					minsize="2"
-					maxsize="6"
-					lockup="false"
-					lockright="false"
-					minangle="-360"
-					maxangle="1"
-					minanglespeed="110"
-					maxanglespeed="-110"
-				/>
-			</orbiteremitter>
-			
-			<model
-				life="1000"
-				position="0 0 50"
-				model="/shared/effects/models/circle_of_bones/model.mdf"
-				anim="idle"
-				startscale="0"
-				endscale="15"
-				yawspeed="90"
-				expirelife="1000"
-				startalpha="1"
-				endalpha="0"
-			>
-				<template name="streaks">
-					<trailemitter
-						life="750"
-						bone="{bone}"
-						spawnrate="30"
-						particlelife="1000"
-						texpostime="1800"
-						texposscale="0"
-						texstretchscale="1"
-						material="/shared/effects/materials/phantom_smoke_13.material"
-					>
-						<particle
-							color=".15 0 .15"
-							endcolor="0 0 0"
-							startalpha="1"
-							endalpha="0"
-						/>
-					</trailemitter>
-				</template>
-				
-				<instance name="streaks" bone="_bone_fx_01"/>
-				<instance name="streaks" bone="_bone_fx_03"/>
-				<instance name="streaks" bone="_bone_fx_05"/>
-				<instance name="streaks" bone="_bone_fx_07"/>
-				<instance name="streaks" bone="_bone_fx_09"/>
-				<instance name="streaks" bone="_bone_fx_11"/>
-				
-			</model>
+            <orbiteremitter
+                spawnrate="500"
+                life="750"
+                particlelife="1000"
+                gravity="0"
+                speed="1"
+                drag="0.02"
+                acceleration="0"
+                minangle="10"
+                maxangle="60"
+                position="0 0 0"
+                origin="0 0 100"
+                startorbit="-0.1 6 50"
+                endorbit="-0.35 6 25"
+                direction="0 0 1"
+                offset="5 5 200"
+                cylindrical="true"
+                material="/shared/effects/materials/fairy_glow_06.material"
+            >
+                <particle
+                    startcolor="1 .7 1"
+                    endcolor="0 0 0"
+                    alpha="1.0"
+                    minsize="2"
+                    maxsize="6"
+                    lockup="false"
+                    lockright="false"
+                    minangle="-360"
+                    maxangle="1"
+                    minanglespeed="110"
+                    maxanglespeed="-110"
+                />
+            </orbiteremitter>
+            
+            <orbiteremitter
+                delay="500"
+                spawnrate="500"
+                life="300"
+                particlelife="1000"
+                gravity="0"
+                speed="1"
+                drag="0.02"
+                acceleration="0"
+                minangle="10"
+                maxangle="60"
+                position="0 0 0"
+                origin="0 0 100"
+                startorbit="0.1 6 5"
+                endorbit="0.35 6 5"
+                direction="0 0 1"
+                offset="5 5 225"
+                cylindrical="true"
+                material="/shared/effects/materials/fairy_glow_03.material"
+            >
+                <particle
+                    startcolor="1 1 1"
+                    endcolor="0 0 0"
+                    alpha="1.0"
+                    minsize="2"
+                    maxsize="6"
+                    lockup="false"
+                    lockright="false"
+                    minangle="-360"
+                    maxangle="1"
+                    minanglespeed="110"
+                    maxanglespeed="-110"
+                />
+            </orbiteremitter>
+            
+            <model
+                life="1000"
+                position="0 0 50"
+                model="/shared/effects/models/circle_of_bones/model.mdf"
+                anim="idle"
+                startscale="0"
+                endscale="15"
+                yawspeed="90"
+                expirelife="1000"
+                startalpha="1"
+                endalpha="0"
+            >
+                <template name="streaks">
+                    <trailemitter
+                        life="750"
+                        bone="{bone}"
+                        spawnrate="30"
+                        particlelife="1000"
+                        texpostime="1800"
+                        texposscale="0"
+                        texstretchscale="1"
+                        material="/shared/effects/materials/phantom_smoke_13.material"
+                    >
+                        <particle
+                            color=".15 0 .15"
+                            endcolor="0 0 0"
+                            startalpha="1"
+                            endalpha="0"
+                        />
+                    </trailemitter>
+                </template>
+                
+                <instance name="streaks" bone="_bone_fx_01"/>
+                <instance name="streaks" bone="_bone_fx_03"/>
+                <instance name="streaks" bone="_bone_fx_05"/>
+                <instance name="streaks" bone="_bone_fx_07"/>
+                <instance name="streaks" bone="_bone_fx_09"/>
+                <instance name="streaks" bone="_bone_fx_11"/>
+                
+            </model>
 
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-	</thread>
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+    </thread>
 </effect>

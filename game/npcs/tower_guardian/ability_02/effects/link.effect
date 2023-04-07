@@ -1,138 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="chain_lightning">
-	<definitions>
-	
-		<simpleemitter
-			name="trail_01"
-			life="2000"
-			spawnrate="100"
-			startminparticlelife="2000"
-			startmaxparticlelife="2000"
-			endminparticlelife="1"
-			endmaxparticlelife="1"
-			position="0 0 0"
-			material="/shared/effects/materials/phantom_smoke_04.material"
-		>
-			<particle
-				startcolor="1 0 0"
-				midcolor=".6 0 0"
-				endcolor="0 0 0"
-				startsize="0"
-				midsize="8"
-				endsize="0"
-				midcolorpos=".1"
-				midsizepos=".1"
-			/>
-		</simpleemitter>
-		
-		
-		<particlesystem name="system0" space="world">
+    <definitions>
+    
+        <simpleemitter
+            name="trail_01"
+            life="2000"
+            spawnrate="100"
+            startminparticlelife="2000"
+            startmaxparticlelife="2000"
+            endminparticlelife="1"
+            endmaxparticlelife="1"
+            position="0 0 0"
+            material="/shared/effects/materials/phantom_smoke_04.material"
+        >
+            <particle
+                startcolor="1 0 0"
+                midcolor=".6 0 0"
+                endcolor="0 0 0"
+                startsize="0"
+                midsize="8"
+                endsize="0"
+                midcolorpos=".1"
+                midsizepos=".1"
+            />
+        </simpleemitter>
+        
+        
+        <particlesystem name="system0" space="world">
 
-			<sound
-				sample="/heroes/kunas/sounds/ability_1.wav"
-				
-				volume="1"
-				falloff="150"
+            <sound
+                sample="/heroes/kunas/sounds/ability_1.wav"
+                
+                volume="1"
+                falloff="150"
 
-			/>
-		
-			<trackeremitter
-				count="10"
-				bone="_bone_fx_06"
-				owner="target"
-				targetbone="_bone_fx_04"
-				targetowner="source"
-				tracktype="angular"
-				trackspeed="30.0"
-				drag="0"
-				spawnrate="250"
-				particlelife="3000"
-				gravity="-50"
-				offsetsphere="5 5 5"
-				minspeed="10.0"
-				maxspeed="220.0"
-				acceleration="30.0"
-				direction="0.0 0.0 1.0"
-				inheritvelocity="0.0"
-				distancelife="true"
-			>
-					<particle
-						emitter0="trail_01"
-					/>
-			</trackeremitter>
-		
-			<beam
-				owner_a="source"
-				owner_b="target"
+            />
+        
+            <trackeremitter
+                count="10"
+                bone="_bone_fx_06"
+                owner="target"
+                targetbone="_bone_fx_04"
+                targetowner="source"
+                tracktype="angular"
+                trackspeed="30.0"
+                drag="0"
+                spawnrate="250"
+                particlelife="3000"
+                gravity="-50"
+                offsetsphere="5 5 5"
+                minspeed="10.0"
+                maxspeed="220.0"
+                acceleration="30.0"
+                direction="0.0 0.0 1.0"
+                inheritvelocity="0.0"
+                distancelife="true"
+            >
+                    <particle
+                        emitter0="trail_01"
+                    />
+            </trackeremitter>
+        
+            <beam
+                owner_a="source"
+                owner_b="target"
 
-				bone_a="_bone_fx_02"
-				bone_b="_bone_fx_06"
+                bone_a="_bone_fx_02"
+                bone_b="_bone_fx_06"
 
-				size="30"
-				color="1 .2 0"
-				alpha="1.0"
-				material="/shared/effects/materials/femme_lightning_06.material"
+                size="30"
+                color="1 .2 0"
+                alpha="1.0"
+                material="/shared/effects/materials/femme_lightning_06.material"
 
-				framespeed="1.75"
-			/>
+                framespeed="1.75"
+            />
 
-			<beam
-				owner_a="source"
-				owner_b="target"
+            <beam
+                owner_a="source"
+                owner_b="target"
 
-				bone_a="_bone_fx_04"
-				bone_b="_bone_fx_06"
+                bone_a="_bone_fx_04"
+                bone_b="_bone_fx_06"
 
-				size="30"
-				color="1 .2 0"
-				alpha="1.0"
-				material="/shared/effects/materials/femme_lightning_06.material"
+                size="30"
+                color="1 .2 0"
+                alpha="1.0"
+                material="/shared/effects/materials/femme_lightning_06.material"
 
-				framespeed="1.75"
-			/>
-			
-			
-			<template name="target">
-			<beam
+                framespeed="1.75"
+            />
+            
+            
+            <template name="target">
+            <beam
 
-				owner_a="{owner1}"
-				owner_b="{owner2}"
+                owner_a="{owner1}"
+                owner_b="{owner2}"
 
-				bone_a="{bone1}"
-				bone_b="{bone2}"
-				size="20"
-				color="1 .2 0"
-				alpha="1.0"
-				material="/shared/effects/materials/femme_lightning_06.material"
+                bone_a="{bone1}"
+                bone_b="{bone2}"
+                size="20"
+                color="1 .2 0"
+                alpha="1.0"
+                material="/shared/effects/materials/femme_lightning_06.material"
 
-				framespeed="1.75"
-			/>
-			
+                framespeed="1.75"
+            />
+            
 
-			</template>
-			<instance name="target" bone1="_bone_fx_02" bone2="_bone_fx_06" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_03" bone2="_bone_fx_06" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_05" bone2="_bone_fx_03" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_04" bone2="_bone_fx_05" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_02" bone2="_bone_fx_04" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_03" bone2="_bone_fx_04" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_02" bone2="_bone_fx_03" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_01" bone2="_bone_fx_03" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_01" bone2="_bone_fx_02" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_10" bone2="_bone_fx_09" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_11" bone2="_bone_fx_09" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_10" bone2="_bone_fx_11" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_11" bone2="_bone_fx_06" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_10" bone2="_bone_fx_13" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_14" bone2="_bone_fx_13" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_14" bone2="_bone_fx_10" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_12" bone2="_bone_fx_13" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_12" bone2="_bone_fx_10" owner1="target" owner2="target"/>
-			<instance name="target" bone1="_bone_fx_11" bone2="_bone_fx_12" owner1="target" owner2="target"/>
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
-		<waitfordeath instance="instance0"/>
-	</thread>
+            </template>
+            <instance name="target" bone1="_bone_fx_02" bone2="_bone_fx_06" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_03" bone2="_bone_fx_06" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_05" bone2="_bone_fx_03" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_04" bone2="_bone_fx_05" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_02" bone2="_bone_fx_04" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_03" bone2="_bone_fx_04" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_02" bone2="_bone_fx_03" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_01" bone2="_bone_fx_03" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_01" bone2="_bone_fx_02" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_10" bone2="_bone_fx_09" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_11" bone2="_bone_fx_09" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_10" bone2="_bone_fx_11" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_11" bone2="_bone_fx_06" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_10" bone2="_bone_fx_13" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_14" bone2="_bone_fx_13" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_14" bone2="_bone_fx_10" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_12" bone2="_bone_fx_13" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_12" bone2="_bone_fx_10" owner1="target" owner2="target"/>
+            <instance name="target" bone1="_bone_fx_11" bone2="_bone_fx_12" owner1="target" owner2="target"/>
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+        <waitfordeath instance="instance0"/>
+    </thread>
 </effect>

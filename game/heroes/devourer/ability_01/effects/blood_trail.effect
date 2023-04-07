@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deffered="1" name="deathExplosionLarge" >
-	<definitions>
+    <definitions>
 
-	
-		<particlesystem name="system0" space="world" scale=".6" >
+    
+        <particlesystem name="system0" space="world" scale=".6" >
 
-	
-	
-	
-		<simpleemitter
-			count="15"
-	
-			particlelife="1500"				
-			spawnrate="110"
-			speed="80"
-			gravity="11"
-			drag="0.01"
-					
-			
+    
+    
+    
+        <simpleemitter
+            count="15"
+    
+            particlelife="1500"             
+            spawnrate="110"
+            speed="80"
+            gravity="11"
+            drag="0.01"
+                    
+            
 
-			material="/shared/effects/materials/blood1.material"
+            material="/shared/effects/materials/blood1.material"
 
-			inheritvelocity="0.25"
-	
-		>
+            inheritvelocity="0.25"
+    
+        >
 
-			<particle 
-				minanglespeed="-100"
-				maxanglespeed="100"
-				
-				
-				minangle="-60"
-				maxangle="60"
-				color=".4 0 0"
-				
-				startsize="30"
-								
-				endsize="80"
-				startalpha="1"
-				endalpha="0"
-		
-			/>
-		</simpleemitter>		
-	
-	
+            <particle 
+                minanglespeed="-100"
+                maxanglespeed="100"
+                
+                
+                minangle="-60"
+                maxangle="60"
+                color=".4 0 0"
+                
+                startsize="30"
+                                
+                endsize="80"
+                startalpha="1"
+                endalpha="0"
+        
+            />
+        </simpleemitter>        
+    
+    
       </particlesystem>
    </definitions>
 <thread>
-	<spawnparticlesystem instance="instance0" particlesystem="system0" />
-	
-	
-	<waitfordeath instance="instance0" />
-	<wait duration="20000"/>
-	<!-- <die /> -->
+    <spawnparticlesystem instance="instance0" particlesystem="system0" />
+    
+    
+    <waitfordeath instance="instance0" />
+    <wait duration="20000"/>
+    <!-- <die /> -->
 </thread>
 </effect>
 

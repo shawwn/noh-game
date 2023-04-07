@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Troll_Attack"
+    name="Projectile_Troll_Attack"
 
-	speed="1300"
-	gravity="1000"
-	canturn="true"
+    speed="1300"
+    gravity="1000"
+    canturn="true"
 
-	modelscale="0.6"
-	model="effects/spear.mdf"
-	traileffect="effects/trail.effect"
-	impacteffect="effects/impact.effect"
+    modelscale="0.6"
+    model="effects/spear.mdf"
+    traileffect="effects/trail.effect"
+    impacteffect="effects/impact.effect"
 
 >
 </projectile>

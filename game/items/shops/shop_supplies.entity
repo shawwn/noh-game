@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <shop
-	name="Shop_Supplies"
-	
-	allowremoteaccess="true"
+    name="Shop_Supplies"
+    
+    allowremoteaccess="true"
 
-	style="supplies"
-	header="/ui/elements/shop/shopkeeper_supplies.tga"
-	
-	icon="shop_supplies.tga"
-	order="1"
-	slot="3"
+    style="supplies"
+    header="/ui/elements/shop/shopkeeper_supplies.tga"
+    
+    icon="shop_supplies.tga"
+    order="1"
+    slot="3"
 >
-	<item name="Item_ManaPotion" />
-	<item name="Item_HealthPotion" />
-	<item name="Item_RunesOfTheBlight" />
-	<item name="Item_Bottle" />
+    <item name="Item_ManaPotion" />
+    <item name="Item_HealthPotion" />
+    <item name="Item_RunesOfTheBlight" />
+    <item name="Item_Bottle" />
 
-	<item name="Item_FlamingEye" />
-	<item name="Item_ManaEye" />
-	<item name="Item_DustOfRevelation" />
-	<item name="Item_HomecomingStone" />
-	
-	<item name="Item_GroundFamiliar" />
-	<item name="Item_WingedFamiliar" />
+    <item name="Item_FlamingEye" />
+    <item name="Item_ManaEye" />
+    <item name="Item_DustOfRevelation" />
+    <item name="Item_HomecomingStone" />
+    
+    <item name="Item_GroundFamiliar" />
+    <item name="Item_WingedFamiliar" />
 </shop>

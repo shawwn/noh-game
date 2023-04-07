@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="xalynx_projectile.max" file="projectile.model" type="K2">
-	<anim name="idle" clip="projectile.clip"/>
+    <anim name="idle" clip="projectile.clip"/>
 </model>

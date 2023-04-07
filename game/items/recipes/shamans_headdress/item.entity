@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_MagicArmor2"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="0"
-	components="Item_MysticVestments Item_HelmOfTheVictim Item_TrinketOfRestoration Item_TrinketOfRestoration,Item_MysticVestments Item_HelmOfTheVictim Item_Lifetube"
-	autoassemble="true"
-	allowdisassemble="true"
-	
-	actiontype="passive"
-		
-	healthregen="8"
+    name="Item_MagicArmor2"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="0"
+    components="Item_MysticVestments Item_HelmOfTheVictim Item_TrinketOfRestoration Item_TrinketOfRestoration,Item_MysticVestments Item_HelmOfTheVictim Item_Lifetube"
+    autoassemble="true"
+    allowdisassemble="true"
+    
+    actiontype="passive"
+        
+    healthregen="8"
 >
-	<modifier key="magic_armor" modpriority="10" exclusive="true"
-		magicarmor="10"
-	/>
+    <modifier key="magic_armor" modpriority="10" exclusive="true"
+        magicarmor="10"
+    />
 </item>

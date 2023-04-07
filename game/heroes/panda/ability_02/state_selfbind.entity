@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Panda_Ability2_Selfbind"
+    name="State_Panda_Ability2_Selfbind"
 
-	
-	
-	icon="icon.tga"
-	
+    
+    
+    icon="icon.tga"
+    
 
-	silenced="true"
-	disarmed="true"
-	immobilized="true"
-	perplexed="true"
-	effecttype=""
-	ishidden="true"
+    silenced="true"
+    disarmed="true"
+    immobilized="true"
+    perplexed="true"
+    effecttype=""
+    ishidden="true"
 >
 </state>

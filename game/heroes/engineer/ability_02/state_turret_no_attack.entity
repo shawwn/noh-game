@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Engineer_Ability2_Turret_No_Attack"
-	
-	icon="icon.tga"
-	passiveeffect=""
-	
-	disarmed="true"
-	ishidden="true"
-	
-	morphpriority="100"
-	morphsightrangeday="100"
-	morphsightrangenight="100"
-	
-	effecttype=""
+    name="State_Engineer_Ability2_Turret_No_Attack"
+    
+    icon="icon.tga"
+    passiveeffect=""
+    
+    disarmed="true"
+    ishidden="true"
+    
+    morphpriority="100"
+    morphsightrangeday="100"
+    morphsightrangenight="100"
+    
+    effecttype=""
 >
-	<onframe>
-		<condition test="source_mana gt 0" >
-			<expire />
-		</condition>
-	</onframe>
+    <onframe>
+        <condition test="source_mana gt 0" >
+            <expire />
+        </condition>
+    </onframe>
 </state>

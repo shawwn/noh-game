@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Kraken_Ability4_Enemy"
+    name="State_Kraken_Ability4_Enemy"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/state.effect"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/state.effect"
 >
 </state>

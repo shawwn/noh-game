@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Mortred_Ability3"
+    name="State_Mortred_Ability3"
 
-	icon="icon.tga"
-	passiveeffect="state_in.effect"
-	effecttype="StatusBuff"
-	evasion="0.075,0.10,0.125,0.15"
-	
+    icon="icon.tga"
+    passiveeffect="state_in.effect"
+    effecttype="StatusBuff"
+    evasion="0.075,0.10,0.125,0.15"
+    
 >
-	<onexpired>
-		<playeffect effect="state_out.effect" target="source_entity" />
-	</onexpired>	
+    <onexpired>
+        <playeffect effect="state_out.effect" target="source_entity" />
+    </onexpired>    
 </state>

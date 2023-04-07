@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Cheese"
+    name="Item_Cheese"
 
   carryscheme="cheese"
   clonescheme="cheese"
-		
-	icon="icon.tga"
-	cost="0"
-	initialcharges="1"
-	chargecost="1"
-	rechargeable="true"
-	destroyonempty="true"
-	allowsharing="true"
-	
-	actiontype="no_target"
-	frontqueue="true"
-	targetscheme="ally_units"
-	casttime="0"
-	castactiontime="0"
+        
+    icon="icon.tga"
+    cost="0"
+    initialcharges="1"
+    chargecost="1"
+    rechargeable="true"
+    destroyonempty="true"
+    allowsharing="true"
+    
+    actiontype="no_target"
+    frontqueue="true"
+    targetscheme="ally_units"
+    casttime="0"
+    castactiontime="0"
 >
-	<onimpact>
-		<heal a="2500" />
-		<givemana amount="1000" />
-		<playanim name="item_1" target="source_entity" />
-	</onimpact>
+    <onimpact>
+        <heal a="2500" />
+        <givemana amount="1000" />
+        <playanim name="item_1" target="source_entity" />
+    </onimpact>
 </item>

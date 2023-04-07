@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_HungrySpirit"
-	
-	
-	icon="icon.tga"
-	cost="900"
-	
-	actiontype="passive"
+    name="Item_HungrySpirit"
+    
+    
+    icon="icon.tga"
+    cost="900"
+    
+    actiontype="passive"
 >
-	<onattackimpact>
-		<playeffect effect="lifesteal.effect" source="source_entity" target="target_entity"/>
-	</onattackimpact>
+    <onattackimpact>
+        <playeffect effect="lifesteal.effect" source="source_entity" target="target_entity"/>
+    </onattackimpact>
 
-	<modifier key="attack" modpriority="50" exclusive="true"
-		lifesteal="0.1"
-	/>
+    <modifier key="attack" modpriority="50" exclusive="true"
+        lifesteal="0.1"
+    />
 </item>

@@ -1,109 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="" deferred="true">
-	<definitions>
-			<modifier
-				name="modifier0"
-				startcolor=".5 .5 .5"
-				endcolor="1 1 1"
-				life="2000"
-			/>
-	<!-- roots -->
-		<particlesystem name="system0" space="world" useentityscale="1">
-			
-			
-			 	
-			<twopointtrailemitter
-			 	bone_a="Bip01 L Forearm"
-				bone_b="Bip01 L Finger2"
-				spawnrate="200"
-				particlelife="500"
-				texpostime="500"
-				texposscale="0.0"
-				texstretchscale="1.0"
-				material="/shared/effects/materials/swoosh_add.material"
-				subframepos="true"
-				life="1000"
-			>
-	         	<particle
-					startcolor="0 .6 .6"
-					endcolor="0 0 0" 
-				/>
-			</twopointtrailemitter>
+    <definitions>
+            <modifier
+                name="modifier0"
+                startcolor=".5 .5 .5"
+                endcolor="1 1 1"
+                life="2000"
+            />
+    <!-- roots -->
+        <particlesystem name="system0" space="world" useentityscale="1">
+            
+            
+                
+            <twopointtrailemitter
+                bone_a="Bip01 L Forearm"
+                bone_b="Bip01 L Finger2"
+                spawnrate="200"
+                particlelife="500"
+                texpostime="500"
+                texposscale="0.0"
+                texstretchscale="1.0"
+                material="/shared/effects/materials/swoosh_add.material"
+                subframepos="true"
+                life="1000"
+            >
+                <particle
+                    startcolor="0 .6 .6"
+                    endcolor="0 0 0" 
+                />
+            </twopointtrailemitter>
 
-			<twopointtrailemitter
-			 	bone_a="Bip01 R Forearm"
-				bone_b="Bip01 R Finger2"
-				spawnrate="200"
-				particlelife="500"
-				texpostime="500"
-				texposscale="0.0"
-				texstretchscale="1.0"
-				material="/shared/effects/materials/swoosh_add.material"
-				subframepos="true"
-				life="1000"
-			>
-	         	<particle
-					startcolor="0 .6 .6"
-					endcolor="0 0 0" 
-				/>
-			</twopointtrailemitter>
-					
-			<simpleemitter
-				bone="_bone_centerofchest"
-				minparticlelife="500"			
-				maxparticlelife="1500"
-				count="10"
-				gravity="1"
-				speed="20"
-				material="/shared/effects/materials/dust_explosion.material"
-				offsetsphere="15 15 15"
-				angle="10"
-				position="0 0 0"
-			>
-				<particle 
-					endwidth="80"
-					color="1 .8 .7"				
-					startsize="30"
-					endsize="200"
-					startalpha="0.7"
-					endalpha="0"
-					minangle="-15"
-					maxangle="45"
-				/>
-			</simpleemitter>
-		
-		<simpleemitter
-				bone="_bone_centerofchest"
-				minparticlelife="300"			
-				maxparticlelife="1000"
-				count="20"
-				gravity="1"
-				speed="50"
-				material="/shared/effects/materials/leaf.material"
-				offsetsphere="50 50 15"
-				
-				position="0 0 0"
-			>
-				<particle 
-					
-					color=".5 .5 .5"				
-					startsize="0"
-					endsize="10"
-					startalpha="1"
-					endalpha="1"
-					minangle="-15"
-					maxangle="45"
-				/>
-			</simpleemitter>
+            <twopointtrailemitter
+                bone_a="Bip01 R Forearm"
+                bone_b="Bip01 R Finger2"
+                spawnrate="200"
+                particlelife="500"
+                texpostime="500"
+                texposscale="0.0"
+                texstretchscale="1.0"
+                material="/shared/effects/materials/swoosh_add.material"
+                subframepos="true"
+                life="1000"
+            >
+                <particle
+                    startcolor="0 .6 .6"
+                    endcolor="0 0 0" 
+                />
+            </twopointtrailemitter>
+                    
+            <simpleemitter
+                bone="_bone_centerofchest"
+                minparticlelife="500"           
+                maxparticlelife="1500"
+                count="10"
+                gravity="1"
+                speed="20"
+                material="/shared/effects/materials/dust_explosion.material"
+                offsetsphere="15 15 15"
+                angle="10"
+                position="0 0 0"
+            >
+                <particle 
+                    endwidth="80"
+                    color="1 .8 .7"             
+                    startsize="30"
+                    endsize="200"
+                    startalpha="0.7"
+                    endalpha="0"
+                    minangle="-15"
+                    maxangle="45"
+                />
+            </simpleemitter>
+        
+        <simpleemitter
+                bone="_bone_centerofchest"
+                minparticlelife="300"           
+                maxparticlelife="1000"
+                count="20"
+                gravity="1"
+                speed="50"
+                material="/shared/effects/materials/leaf.material"
+                offsetsphere="50 50 15"
+                
+                position="0 0 0"
+            >
+                <particle 
+                    
+                    color=".5 .5 .5"                
+                    startsize="0"
+                    endsize="10"
+                    startalpha="1"
+                    endalpha="1"
+                    minangle="-15"
+                    maxangle="45"
+                />
+            </simpleemitter>
 
-			
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-	<spawnmodifier instance="instance1" modifier="modifier0"/>
+            
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+    <spawnmodifier instance="instance1" modifier="modifier0"/>
 
       <waitfordeath instance="instance0" />
-	<waitfordeath instance="instance1" />
-	</thread> 
+    <waitfordeath instance="instance1" />
+    </thread> 
 </effect>

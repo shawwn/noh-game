@@ -2,5 +2,5 @@
 <model name="outpost02.max" file="high.model" type="K2" >
 
 <spawnevent cmd="StartEffect effects/body.effect"/>
-	<anim name="idle" clip="clip/high.clip" fps="30" loop="1"/>
+    <anim name="idle" clip="clip/high.clip" fps="30" loop="1"/>
 </model>

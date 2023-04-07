@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Kongor"
+    name="State_Kongor"
 
-	
-	
-	icon="icon.tga"
+    
+    
+    icon="icon.tga"
 
-	impactinterval="30000"	
-	
-	damagepercharge="1"
-	maxhealthpercharge="50"
-	armorpercharge="0.05"
+    impactinterval="30000"  
+    
+    damagepercharge="1"
+    maxhealthpercharge="50"
+    armorpercharge="0.05"
 >
-	<onimpact>	
-		<setcharges target="this_entity" a="time" b="0.0000333333" op="mult"/>
-		<setcharges target="this_entity" a="charges" b="90" op="min"/>
-	</onimpact>
-	
-	<oninflict>
-		<setcharges target="this_entity" a="time" b="0.0000333333" op="mult"/>
-		<setcharges target="this_entity" a="charges" b="90" op="min"/>
-	</oninflict>
+    <onimpact>  
+        <setcharges target="this_entity" a="time" b="0.0000333333" op="mult"/>
+        <setcharges target="this_entity" a="charges" b="90" op="min"/>
+    </onimpact>
+    
+    <oninflict>
+        <setcharges target="this_entity" a="time" b="0.0000333333" op="mult"/>
+        <setcharges target="this_entity" a="charges" b="90" op="min"/>
+    </oninflict>
 </state>

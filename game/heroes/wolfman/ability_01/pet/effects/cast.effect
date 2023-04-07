@@ -1,162 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect>
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="world" scale=".8">
+        <particlesystem name="system0" space="world" scale=".8">
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2500"
-				volume=".65"
-				sample="../../sounds/cast.wav"
-			/>
+            <sound
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2500"
+                volume=".65"
+                sample="../../sounds/cast.wav"
+            />
 
-			<groundsprite	
-				delay="200"
-				life="3500"
-				material="/shared/effects/materials/earth_cracks_02.material"
-				minsize="95"
-				maxsize="125"			
-				color="1"
-				startalpha="1"
-				midalpha="1"
-				endalpha="0"
-				midalphapos="0.8"
-				maxyaw="360"
-			/>
+            <groundsprite   
+                delay="200"
+                life="3500"
+                material="/shared/effects/materials/earth_cracks_02.material"
+                minsize="95"
+                maxsize="125"           
+                color="1"
+                startalpha="1"
+                midalpha="1"
+                endalpha="0"
+                midalphapos="0.8"
+                maxyaw="360"
+            />
 
-			<groundsprite	
-				delay="200"
-				life="3500"
-				material="/shared/effects/materials/ground_smash_overlay.material"
-				minsize="145"
-				maxsize="185"			
-				color="1"
-				startalpha=".7"
-				midalpha=".7"
-				endalpha="0"
-				midalphapos="0.8"
-				maxyaw="360"
-			/>
+            <groundsprite   
+                delay="200"
+                life="3500"
+                material="/shared/effects/materials/ground_smash_overlay.material"
+                minsize="145"
+                maxsize="185"           
+                color="1"
+                startalpha=".7"
+                midalpha=".7"
+                endalpha="0"
+                midalphapos="0.8"
+                maxyaw="360"
+            />
 
-			<simpleemitter	
-				count="3"
-				spawnrate="500"			
-				particlelife="5500"	
-				offsetsphere="5"
-				minangle="-90"
-				maxangle="-90"
-				offsetradial="60"
-			>
-				<particle>
-					<debris
-						position="0 0 5"
-						scale="0.8"
-						life="2500"
-						model="debris.mdf"
-						anim="idle"	
-						minspeed="400.0"
-						maxspeed="1000.0"
-						minrotationspeed="100.0"
-						maxrotationspeed="700.0"
-						gravity="20.0"
-						drag="0.015"
-						color=".9 .9 .7"
-						minangle="0"
-						maxangle="120"
-						collide="true"
-						startalpha="1.0"
-						midalpha="1.0"
-						endalpha="0.0"
-						midalphapos="0.95"
-						bounce="0.2"
-						reflect="0.6"
-						animpose="false"
-				/>				
-				</particle>
-			</simpleemitter>
+            <simpleemitter  
+                count="3"
+                spawnrate="500"         
+                particlelife="5500" 
+                offsetsphere="5"
+                minangle="-90"
+                maxangle="-90"
+                offsetradial="60"
+            >
+                <particle>
+                    <debris
+                        position="0 0 5"
+                        scale="0.8"
+                        life="2500"
+                        model="debris.mdf"
+                        anim="idle" 
+                        minspeed="400.0"
+                        maxspeed="1000.0"
+                        minrotationspeed="100.0"
+                        maxrotationspeed="700.0"
+                        gravity="20.0"
+                        drag="0.015"
+                        color=".9 .9 .7"
+                        minangle="0"
+                        maxangle="120"
+                        collide="true"
+                        startalpha="1.0"
+                        midalpha="1.0"
+                        endalpha="0.0"
+                        midalphapos="0.95"
+                        bounce="0.2"
+                        reflect="0.6"
+                        animpose="false"
+                />              
+                </particle>
+            </simpleemitter>
 
-			<simpleemitter
-				minparticlelife="500"			
-				maxparticlelife="1400"
-				spawnrate="555"
-				count="8"
-				life="300"
-				gravity="5"
-				speed="250"
-				material="/shared/effects/materials/dust.material"
-				offsetsphere="60"
-				angle="10"
-				position="0 0 20"
-				direction="0 0 1"
-				drag="0.15"
-				depthbias="-50"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="-50"
-					maxanglespeed="50"
-					color=".44 .42 .4"
-					maxstartsize="160"
-					minstartsize="120"
-					endsize="350"
-					startalpha=".5"
-					endalpha="0"
-				/>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="-120"
-					maxanglespeed="120"
-					color=".74 .72 .7"
-					startsize="10"
-					endsize="300"
-					startalpha=".3"
-					endalpha="0"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                minparticlelife="500"           
+                maxparticlelife="1400"
+                spawnrate="555"
+                count="8"
+                life="300"
+                gravity="5"
+                speed="250"
+                material="/shared/effects/materials/dust.material"
+                offsetsphere="60"
+                angle="10"
+                position="0 0 20"
+                direction="0 0 1"
+                drag="0.15"
+                depthbias="-50"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    minanglespeed="-50"
+                    maxanglespeed="50"
+                    color=".44 .42 .4"
+                    maxstartsize="160"
+                    minstartsize="120"
+                    endsize="350"
+                    startalpha=".5"
+                    endalpha="0"
+                />
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    minanglespeed="-120"
+                    maxanglespeed="120"
+                    color=".74 .72 .7"
+                    startsize="10"
+                    endsize="300"
+                    startalpha=".3"
+                    endalpha="0"
+                />
+            </simpleemitter>
 
-			<simpleemitter	
-				count="8"
-				spawnrate="1500"			
-				particlelife="5500"	
-				minangle="-90"
-				maxangle="-90"
-				offsetradial="140"
-			>
-				<particle>
-					<model
-						position="0 0 -20"
-						life="3000"
-						model="spike.mdf"
-						anim="idle"
-						animspeed="2"	
-						color=".7 .7 .5"
-						startalpha="1"
-						midalpha="1"
-						endalpha="0"
-						midalphapos="0.9"
-						minscale=".5"
-						maxscale="2"
-						minyaw="-180"
-						maxyaw="180"
-						minpitch="-20"
-						maxpitch="20"
-						minroll="-20"
-						maxroll="20"
-					/>				
-				</particle>
+            <simpleemitter  
+                count="8"
+                spawnrate="1500"            
+                particlelife="5500" 
+                minangle="-90"
+                maxangle="-90"
+                offsetradial="140"
+            >
+                <particle>
+                    <model
+                        position="0 0 -20"
+                        life="3000"
+                        model="spike.mdf"
+                        anim="idle"
+                        animspeed="2"   
+                        color=".7 .7 .5"
+                        startalpha="1"
+                        midalpha="1"
+                        endalpha="0"
+                        midalphapos="0.9"
+                        minscale=".5"
+                        maxscale="2"
+                        minyaw="-180"
+                        maxyaw="180"
+                        minpitch="-20"
+                        maxpitch="20"
+                        minroll="-20"
+                        maxroll="20"
+                    />              
+                </particle>
 
-			</simpleemitter>
+            </simpleemitter>
 
-		</particlesystem>
-	</definitions>
+        </particlesystem>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-     	 	<waitfordeath instance="instance0" />
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+            <waitfordeath instance="instance0" />
+    </thread>
 
 </effect>

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Yogi1"
+    name="Ability_Yogi1"
 
-	
-	
-	icon="icons/ability_1.tga"
-	
-	anim="ability_1"
-	casttime="1000"
-	castactiontime="500"
+    
+    
+    icon="icons/ability_1.tga"
+    
+    anim="ability_1"
+    casttime="1000"
+    castactiontime="500"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="no_target"
-	manacost="75"
-	cooldowntime="180000,160000,140000,120000"
+    actiontype="no_target"
+    manacost="75"
+    cooldowntime="180000,160000,140000,120000"
 >
-	<onimpact >
-		<spawnunit name="Pet_Yogi_Ability1" target="source_entity" offset="0 150" facing="source_entity" angle="180" />
-	</onimpact>
+    <onimpact >
+        <spawnunit name="Pet_Yogi_Ability1" target="source_entity" offset="0 150" facing="source_entity" angle="180" />
+    </onimpact>
 </ability>

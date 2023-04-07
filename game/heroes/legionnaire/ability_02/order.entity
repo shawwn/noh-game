@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <order
-	name="Order_Legionnaire_Ability2"
+    name="Order_Legionnaire_Ability2"
 
-	triggerrange="100"
+    triggerrange="100"
 >
-	<onbegin>
-		<applystate name="State_Legionnaire_Ability2_Self" duration="200" target="source_entity" continuous="true" pushentity="true" />
-		<setproxy index="0" target="stack_entity" />
-	</onbegin>
-	
-	<oncomplete>
-		<order command="attack" force="true" forceduration="150" source="source_entity" target="target_entity" queue="front" />
-		<startexpire entity="this_proxy_entity" />
-	</oncomplete>
-	
-	<oncancel>
-		<expire entity="this_proxy_entity" />
-	</oncancel>
-	
-	<onframe>
-		<condition target="source_entity" test="hastrait stunned or hastrait immobilized or hastrait restrained">
-			<cancel />
-		</condition>
-		<distance target="target_entity" source="source_entity" />
-		<condition test="result gt 2000">
-			<cancel />
-		</condition>
-	</onframe>
+    <onbegin>
+        <applystate name="State_Legionnaire_Ability2_Self" duration="200" target="source_entity" continuous="true" pushentity="true" />
+        <setproxy index="0" target="stack_entity" />
+    </onbegin>
+    
+    <oncomplete>
+        <order command="attack" force="true" forceduration="150" source="source_entity" target="target_entity" queue="front" />
+        <startexpire entity="this_proxy_entity" />
+    </oncomplete>
+    
+    <oncancel>
+        <expire entity="this_proxy_entity" />
+    </oncancel>
+    
+    <onframe>
+        <condition target="source_entity" test="hastrait stunned or hastrait immobilized or hastrait restrained">
+            <cancel />
+        </condition>
+        <distance target="target_entity" source="source_entity" />
+        <condition test="result gt 2000">
+            <cancel />
+        </condition>
+    </onframe>
 </order>

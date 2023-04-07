@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Magnataur_Ability4"
-	
-	radius="410"
-	impacteffect="../../../../heroes/behemoth/ability_04/effects/subripple.effect"
-	targetselection="all"
-	targetscheme="enemy_units"
-	effecttype="Magic"
+    name="Affector_Magnataur_Ability4"
+    
+    radius="410"
+    impacteffect="../../../../heroes/behemoth/ability_04/effects/subripple.effect"
+    targetselection="all"
+    targetscheme="enemy_units"
+    effecttype="Magic"
 >
-	<onimpact>
-		<teleport target="proxy_position" source="target_entity"/>
-		<damage effecttype="Physical Splash" amount="150,225,300"/>
-		<applystate name="State_Stunned" duration="2500,3250,4000"/>
-	</onimpact>
+    <onimpact>
+        <teleport target="proxy_position" source="target_entity"/>
+        <damage effecttype="Physical Splash" amount="150,225,300"/>
+        <applystate name="State_Stunned" duration="2500,3250,4000"/>
+    </onimpact>
 </affector>

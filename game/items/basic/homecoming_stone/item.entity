@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_HomecomingStone"
-	
-	icon="icon.tga"
-	
-	cost="135"
-	initialcharges="1"
-	chargecost="1"
-	destroyonempty="true"
-	rechargeable="true"
-	allowsharing="true"
-	
-	actiontype="target_position"
-	allowoutofrangecast="true"
-	ischanneling="true"
-	casttime="3000"
-	castactiontime="0"
-	channeltime="3000"
-	cooldowntime="65000"
-	cooldowntype="teleport"
-	manacost="75"
-	
-	range="99999"
+    name="Item_HomecomingStone"
+    
+    icon="icon.tga"
+    
+    cost="135"
+    initialcharges="1"
+    chargecost="1"
+    destroyonempty="true"
+    rechargeable="true"
+    allowsharing="true"
+    
+    actiontype="target_position"
+    allowoutofrangecast="true"
+    ischanneling="true"
+    casttime="3000"
+    castactiontime="0"
+    channeltime="3000"
+    cooldowntime="65000"
+    cooldowntype="teleport"
+    manacost="75"
+    
+    range="99999"
 >
-	<onimpact>
-		<playanim name="item_1" target="source_entity" />
-	</onimpact>
-	
-	<onchannelstart>
-		<applystate name="State_HomecomingStone_Source" target="source_entity" ischannel="true" />
-		<pushentity searchfortarget="true" searchorigin="target_position" radius="99999" targetscheme="ally_buildings" ignoreinvulnerable="true"/>
-		
-		<condition test="stack_entity != 0">
-			<spawnaffector name="Affector_HomecomingStone_Target" ischannel="true" proxy="source_entity" pushentity="true" target="target_position" positionmodifier="minonline" positionorigin="stack_position" positionvalue="350" />
-			<playeffect effect="effects/source_start.effect" source="source_position" target="" occlude="true" />
-			<ping name="teleport" position="stack_position" />
-		</condition>
-	</onchannelstart>
+    <onimpact>
+        <playanim name="item_1" target="source_entity" />
+    </onimpact>
+    
+    <onchannelstart>
+        <applystate name="State_HomecomingStone_Source" target="source_entity" ischannel="true" />
+        <pushentity searchfortarget="true" searchorigin="target_position" radius="99999" targetscheme="ally_buildings" ignoreinvulnerable="true"/>
+        
+        <condition test="stack_entity != 0">
+            <spawnaffector name="Affector_HomecomingStone_Target" ischannel="true" proxy="source_entity" pushentity="true" target="target_position" positionmodifier="minonline" positionorigin="stack_position" positionvalue="350" />
+            <playeffect effect="effects/source_start.effect" source="source_position" target="" occlude="true" />
+            <ping name="teleport" position="stack_position" />
+        </condition>
+    </onchannelstart>
 </item>

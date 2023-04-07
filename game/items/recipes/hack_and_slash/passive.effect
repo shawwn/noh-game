@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="bloodEffect" deferred="true">
-	<definitions>
-		<particlesystem name="system0" space="world" useentityeffectscale="true" scale="1.5">	
+    <definitions>
+        <particlesystem name="system0" space="world" useentityeffectscale="true" scale="1.5">   
 
-			<simpleemitter
-				bone="_bone_back"
-				spawnrate="30"
-				life="1000"
-				particlelife="950"
-				gravity="-10"
-				speed="50"
-				drag=".01"
-				acceleration="0.0"
-				position="0 0 0"
-				offsetsphere="15 15 0"
-				material="/shared/effects/materials/blood1.material"
-				minangle="-30"
-				maxangle="30"
-				direction="0 0 -1"
-				offsetdirection="0 0 0"
-				offsetradial="0 0 0"
-				particledirectionalspace="local"
-				loop="true"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					angle="180"
-					color=".5 .5 .5"
-					startsize="30"
-					midsize="20"
-					minendsize="40"
-					maxendsize="60"
-					startalpha="0"
-					midalpha=".6"
-					endalpha="0"
-					midalphapos=".2"
-				/>
-			</simpleemitter>
-			
-			<!--biggerSplatsOnGround-->
-			<simpleemitter
-				life="1000"
-				particlelife="3000"
-				spawnrate="6"
-				speed="0"
-				gravity="0"
-				direction="0 0 1"
-				particledirectionalspace="local"
-				minangle="0"
-				maxangle="30"
-				offsetsphere="35 35 0"
-				position="0 0 0"
-				loop="true"				
-			>
-				<particle> 
-					<groundsprite
-						life="3000"
-						material="/shared/effects/materials/splatter_blend.material"
-						startscale=".05"
-						endscale=".15"
-						minyaw="-360"	
-						maxyaw="360"
-						minsize="110"
-						maxsize="160"
-						position="0 0 0"
-						color=".4 0 0"
-						startalpha="0"
-						midalpha="1"
-						endalpha="0"
-						midalphapos=".1"
-					/>		
-				</particle>
-			</simpleemitter>			
+            <simpleemitter
+                bone="_bone_back"
+                spawnrate="30"
+                life="1000"
+                particlelife="950"
+                gravity="-10"
+                speed="50"
+                drag=".01"
+                acceleration="0.0"
+                position="0 0 0"
+                offsetsphere="15 15 0"
+                material="/shared/effects/materials/blood1.material"
+                minangle="-30"
+                maxangle="30"
+                direction="0 0 -1"
+                offsetdirection="0 0 0"
+                offsetradial="0 0 0"
+                particledirectionalspace="local"
+                loop="true"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    angle="180"
+                    color=".5 .5 .5"
+                    startsize="30"
+                    midsize="20"
+                    minendsize="40"
+                    maxendsize="60"
+                    startalpha="0"
+                    midalpha=".6"
+                    endalpha="0"
+                    midalphapos=".2"
+                />
+            </simpleemitter>
+            
+            <!--biggerSplatsOnGround-->
+            <simpleemitter
+                life="1000"
+                particlelife="3000"
+                spawnrate="6"
+                speed="0"
+                gravity="0"
+                direction="0 0 1"
+                particledirectionalspace="local"
+                minangle="0"
+                maxangle="30"
+                offsetsphere="35 35 0"
+                position="0 0 0"
+                loop="true"             
+            >
+                <particle> 
+                    <groundsprite
+                        life="3000"
+                        material="/shared/effects/materials/splatter_blend.material"
+                        startscale=".05"
+                        endscale=".15"
+                        minyaw="-360"   
+                        maxyaw="360"
+                        minsize="110"
+                        maxsize="160"
+                        position="0 0 0"
+                        color=".4 0 0"
+                        startalpha="0"
+                        midalpha="1"
+                        endalpha="0"
+                        midalphapos=".1"
+                    />      
+                </particle>
+            </simpleemitter>            
 
-			
-			
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<spawnparticlesystem instance="instance1" particlesystem="system1" />
-		<waitfordeath instance="instance0" />
-		<waitfordeath instance="instance1" />
-	</thread>
+            
+            
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <spawnparticlesystem instance="instance1" particlesystem="system1" />
+        <waitfordeath instance="instance0" />
+        <waitfordeath instance="instance1" />
+    </thread>
 </effect>

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_HealthPotion"
+    name="State_HealthPotion"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="state.effect"
-	
-	healthregen="40"
-	
-	effecttype="StatusBuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="state.effect"
+    
+    healthregen="40"
+    
+    effecttype="StatusBuff"
 >
-	<ondamaged>
-		<condition test="target_type enemy">
-			<expire />
-		</condition>
-	</ondamaged>
+    <ondamaged>
+        <condition test="target_type enemy">
+            <expire />
+        </condition>
+    </ondamaged>
 </state>

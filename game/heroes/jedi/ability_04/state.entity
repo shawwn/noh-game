@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Jedi_Ability4"
+    name="State_Jedi_Ability4"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/state.effect"
-	
-	silenced="true"
-	disarmed="true"
-	immobilized="true"
-	perplexed="true"
-	revealed="true"
-	frozen="true"
-	
-	impactinterval="1000"
-	
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/state.effect"
+    
+    silenced="true"
+    disarmed="true"
+    immobilized="true"
+    perplexed="true"
+    revealed="true"
+    frozen="true"
+    
+    impactinterval="1000"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe >
-		<setvar0 a="0.05" b="target_maxmana" op="mult" />
-		<evaluate a="var0" b="frametime" op="mult" />
-		<takemana target="target_entity" amount="1" b="result" op="mult" />
-		<givemana target="source_entity" amount="result" />
-	</onframe>
-	
-	<onimpact>
-		<damage effecttype="Magic" amount="100,155,215" />
-	</onimpact>
-	
-	<modifier key="ult_boost" modpriority="100">
-		<onimpact>
-			<damage effecttype="Magic" amount="155,215,270" />
-		</onimpact>
-		<onframe >
-			<setvar0 a="0.05" b="target_maxmana" op="mult" />
-			<evaluate a="var0" b="frametime" op="mult" />
-			<takemana target="target_entity" amount="1" b="result" op="mult" />
-			<givemana target="source_entity" amount="result" />
-		</onframe>
-	</modifier>
+    <onframe >
+        <setvar0 a="0.05" b="target_maxmana" op="mult" />
+        <evaluate a="var0" b="frametime" op="mult" />
+        <takemana target="target_entity" amount="1" b="result" op="mult" />
+        <givemana target="source_entity" amount="result" />
+    </onframe>
+    
+    <onimpact>
+        <damage effecttype="Magic" amount="100,155,215" />
+    </onimpact>
+    
+    <modifier key="ult_boost" modpriority="100">
+        <onimpact>
+            <damage effecttype="Magic" amount="155,215,270" />
+        </onimpact>
+        <onframe >
+            <setvar0 a="0.05" b="target_maxmana" op="mult" />
+            <evaluate a="var0" b="frametime" op="mult" />
+            <takemana target="target_entity" amount="1" b="result" op="mult" />
+            <givemana target="source_entity" amount="result" />
+        </onframe>
+    </modifier>
 </state>

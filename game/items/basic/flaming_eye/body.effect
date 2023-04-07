@@ -1,228 +1,228 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true" useentityeffectscale="1">
-	<definitions>
-		<particlesystem name="system0" space="entity" scale="1">
-		
-			<model
-				position="0 0 125"
-				name="circleOfBones"
-				model="eyeball.mdf"
-				anim="idle"
-				scale="1"
-				color="1"
-				pitch="50"
-			>
-			
-				<simpleemitter
-					spawnrate="2"
-					particlelife="800"
-					gravity="0"
-					minspeed="2"
-					maxspeed="10"
-					drag=".1"
-					position="0 0 5"
-					material="/shared/effects/materials/blink.material"
-					offsetsphere="0 0 0"
-					direction="0 0 1"
-				>
-					<particle 
-						startcolor="0 0 0"
-						midcolor=".5 .25 0"
-						endcolor="0 0 0"
-						minsize="50"
-						maxsize="100"
-						startalpha="0"
-						midalpha="0"
-						endalpha="0"
-						midalphapos="0"
-						turn="true"
-					/>
-				</simpleemitter>
-				
-				<simpleemitter
-					spawnrate="50"
-					particlelife="800"
-					gravity="0"
-					minspeed="1"
-					maxspeed="75"
-					drag=".1"
-					position="0 0 5"
-					material="/shared/effects/materials/whitedot.material"
-					offsetsphere="0 0 0"
-					direction="0 0 1"
-				>
-					<particle 
-						startcolor=".5 .3 0"
-						midcolor=".5 .2 0"
-						endcolor="0 0 0"
-						minheightdistort=".15"
-						maxheightdistort=".4"
-						endframe="15"
-						minsize="1"
-						maxsize="2"
-						startalpha="0"
-						midalpha="0"
-						endalpha="0"
-						midalphapos="0"
-						turn="true"
-					/>
-				</simpleemitter>
-				
-				<billboard
-					bone="eyeBallCTRL"
-					life="1250"
-					size="100"
-					position="0 0 0"
-					material="/shared/effects/materials/flare_01.material"
-					lockup="true"
-					pitch="90"
-					startcolor="0 0 0"
-					midcolor=".5 .3 .1"
-					endcolor="0 0 0"
-					loop="true"
-				/>
+    <definitions>
+        <particlesystem name="system0" space="entity" scale="1">
+        
+            <model
+                position="0 0 125"
+                name="circleOfBones"
+                model="eyeball.mdf"
+                anim="idle"
+                scale="1"
+                color="1"
+                pitch="50"
+            >
+            
+                <simpleemitter
+                    spawnrate="2"
+                    particlelife="800"
+                    gravity="0"
+                    minspeed="2"
+                    maxspeed="10"
+                    drag=".1"
+                    position="0 0 5"
+                    material="/shared/effects/materials/blink.material"
+                    offsetsphere="0 0 0"
+                    direction="0 0 1"
+                >
+                    <particle 
+                        startcolor="0 0 0"
+                        midcolor=".5 .25 0"
+                        endcolor="0 0 0"
+                        minsize="50"
+                        maxsize="100"
+                        startalpha="0"
+                        midalpha="0"
+                        endalpha="0"
+                        midalphapos="0"
+                        turn="true"
+                    />
+                </simpleemitter>
+                
+                <simpleemitter
+                    spawnrate="50"
+                    particlelife="800"
+                    gravity="0"
+                    minspeed="1"
+                    maxspeed="75"
+                    drag=".1"
+                    position="0 0 5"
+                    material="/shared/effects/materials/whitedot.material"
+                    offsetsphere="0 0 0"
+                    direction="0 0 1"
+                >
+                    <particle 
+                        startcolor=".5 .3 0"
+                        midcolor=".5 .2 0"
+                        endcolor="0 0 0"
+                        minheightdistort=".15"
+                        maxheightdistort=".4"
+                        endframe="15"
+                        minsize="1"
+                        maxsize="2"
+                        startalpha="0"
+                        midalpha="0"
+                        endalpha="0"
+                        midalphapos="0"
+                        turn="true"
+                    />
+                </simpleemitter>
+                
+                <billboard
+                    bone="eyeBallCTRL"
+                    life="1250"
+                    size="100"
+                    position="0 0 0"
+                    material="/shared/effects/materials/flare_01.material"
+                    lockup="true"
+                    pitch="90"
+                    startcolor="0 0 0"
+                    midcolor=".5 .3 .1"
+                    endcolor="0 0 0"
+                    loop="true"
+                />
 
-				<simpleemitter
-					bone="eyeBallCTRL"
-					spawnrate="10"
-					minparticlelife="750"
-					maxparticlelife="1500"
-					gravity="0"
-					drag="0"
-					position="0 0 0"
-					offsetsphere="7"
-					material="/shared/effects/materials/phantom_smoke_13.material"
-					startparticlealpha="1"
-					endparticlealpha="0"
-				>
-					<particle
-						minangle="0"
-						maxangle="360"
-						minanglespeed="-6"
-						maxanglespeed="6"
-						startcolor="0 0 0"
-						midcolor="1 .5 0"
-						endcolor="0 0 0"
-						midcolorpos=".5"
-						startsize="0"
-						endsize="40"
-						endanchor="0"
-					/>
-				</simpleemitter>
-			
-			</model>
+                <simpleemitter
+                    bone="eyeBallCTRL"
+                    spawnrate="10"
+                    minparticlelife="750"
+                    maxparticlelife="1500"
+                    gravity="0"
+                    drag="0"
+                    position="0 0 0"
+                    offsetsphere="7"
+                    material="/shared/effects/materials/phantom_smoke_13.material"
+                    startparticlealpha="1"
+                    endparticlealpha="0"
+                >
+                    <particle
+                        minangle="0"
+                        maxangle="360"
+                        minanglespeed="-6"
+                        maxanglespeed="6"
+                        startcolor="0 0 0"
+                        midcolor="1 .5 0"
+                        endcolor="0 0 0"
+                        midcolorpos=".5"
+                        startsize="0"
+                        endsize="40"
+                        endanchor="0"
+                    />
+                </simpleemitter>
+            
+            </model>
 
-			<model
-				life="3000"
-				bone="_bone_overhead"
-				position="0 0 0"
-				name="circleOfBones"
-				model="model.mdf"
-				anim="idle"
-				scale="1"
-				startcolor="0 0 0"
-				midcolor="1 1 1"
-				endcolor="0 0 0"
-				yaw="180"
-			>
-			</model>
+            <model
+                life="3000"
+                bone="_bone_overhead"
+                position="0 0 0"
+                name="circleOfBones"
+                model="model.mdf"
+                anim="idle"
+                scale="1"
+                startcolor="0 0 0"
+                midcolor="1 1 1"
+                endcolor="0 0 0"
+                yaw="180"
+            >
+            </model>
 
-			<simpleemitter
-				spawnrate="10"
-				minparticlelife="1500"
-				maxparticlelife="3000"
-				gravity="0"
-				drag="0"
-				position="0 0 20"
-				offsetsphere="25 25 0"
-				material="/shared/effects/materials/phantom_smoke_04.material"
-			>
-				<particle 
-					maxangle="360"
-					minanglespeed="-6"
-					maxanglespeed="6"
-					startcolor="0 0 0"
-					midcolor=".25 .1 0"
-					endcolor="0 0 0"
-					startalpha="1 1 1"
-					endalpha="0 0 0"
-					startsize="0"
-					endsize="150"
-					endanchor="0"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                spawnrate="10"
+                minparticlelife="1500"
+                maxparticlelife="3000"
+                gravity="0"
+                drag="0"
+                position="0 0 20"
+                offsetsphere="25 25 0"
+                material="/shared/effects/materials/phantom_smoke_04.material"
+            >
+                <particle 
+                    maxangle="360"
+                    minanglespeed="-6"
+                    maxanglespeed="6"
+                    startcolor="0 0 0"
+                    midcolor=".25 .1 0"
+                    endcolor="0 0 0"
+                    startalpha="1 1 1"
+                    endalpha="0 0 0"
+                    startsize="0"
+                    endsize="150"
+                    endanchor="0"
+                />
+            </simpleemitter>
 
-			<simpleemitter
-				spawnrate="4"
-				particlelife="1000"
-				gravity="-10"
-				speed="5"
-				drag="0"
-				acceleration="0.0"
-				position="0 10 50"
-				offsetsphere="25 25 0"
-				material="/shared/effects/materials/heathaze.material"
-				loop="true"
-			>
-				<particle 
-				angle="180"
-				startparam=".035"
-				endparam="0.0"
-				startcolor="1 1 1"
-				frame=".1"
-				startalpha="0"
-				midalpha=".2"
-				endalpha="0"
-				startsize="150" 
-				endsize="200"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                spawnrate="4"
+                particlelife="1000"
+                gravity="-10"
+                speed="5"
+                drag="0"
+                acceleration="0.0"
+                position="0 10 50"
+                offsetsphere="25 25 0"
+                material="/shared/effects/materials/heathaze.material"
+                loop="true"
+            >
+                <particle 
+                angle="180"
+                startparam=".035"
+                endparam="0.0"
+                startcolor="1 1 1"
+                frame=".1"
+                startalpha="0"
+                midalpha=".2"
+                endalpha="0"
+                startsize="150" 
+                endsize="200"
+                />
+            </simpleemitter>
 
-			<groundsprite
-				life="2500"
-				material="/shared/effects/materials/manaeye.material"
-				size="25"
-				startcolor="1 .25 0"
-				midcolor=".65 .25 0"
-				endcolor="1 .25 0"
-				midcolorpos=".25"
-				yawspeed="0"
-				loop="true"
-			/>
-			
-			<simpleemitter
-				spawnrate="50"
-				particlelife="800"
-				gravity="-50"
-				minspeed="1"
-				maxspeed="75"
-				drag=".1"
-				position="0 0 25"
-				material="/shared/effects/materials/whitedot.material"
-				offsetsphere="0 0 0"
-				direction="0 0 1"
-			>
-				<particle 
-					startcolor="1 .5 0"
-					midcolor="1 .5 0"
-					endcolor="0 0 0"
-					minheightdistort=".15"
-					maxheightdistort=".25"
-					endframe="15"
-					minsize="1"
-					maxsize="3"
-					startalpha="0"
-					midalpha="0"
-					endalpha="0"
-					midalphapos="0"
-				/>
-			</simpleemitter>
+            <groundsprite
+                life="2500"
+                material="/shared/effects/materials/manaeye.material"
+                size="25"
+                startcolor="1 .25 0"
+                midcolor=".65 .25 0"
+                endcolor="1 .25 0"
+                midcolorpos=".25"
+                yawspeed="0"
+                loop="true"
+            />
+            
+            <simpleemitter
+                spawnrate="50"
+                particlelife="800"
+                gravity="-50"
+                minspeed="1"
+                maxspeed="75"
+                drag=".1"
+                position="0 0 25"
+                material="/shared/effects/materials/whitedot.material"
+                offsetsphere="0 0 0"
+                direction="0 0 1"
+            >
+                <particle 
+                    startcolor="1 .5 0"
+                    midcolor="1 .5 0"
+                    endcolor="0 0 0"
+                    minheightdistort=".15"
+                    maxheightdistort=".25"
+                    endframe="15"
+                    minsize="1"
+                    maxsize="3"
+                    startalpha="0"
+                    midalpha="0"
+                    endalpha="0"
+                    midalphapos="0"
+                />
+            </simpleemitter>
 
-		</particlesystem>
-	</definitions>
+        </particlesystem>
+    </definitions>
 <thread>
-	<spawnparticlesystem instance="instance0" particlesystem="system0" />
-	<waitfordeath instance="instance0" />
+    <spawnparticlesystem instance="instance0" particlesystem="system0" />
+    <waitfordeath instance="instance0" />
 </thread>
 </effect>
 

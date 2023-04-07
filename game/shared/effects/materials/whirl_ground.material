@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <material>
-	<parameters />
-	<phase
-		name="color"
-		vs="effect_lit"
-		ps="effect"
-		srcblend="BLEND_SRC_ALPHA"
-		dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
-		cull="CULL_NONE"
-		translucent="true"
-		depthwrite="false"
-		depthbias="true"
-		depthslopebias="1"
-		alphawrite="false"
-	>
-		<sampler
-			name="diffuse"
-			texture="/shared/effects/textures/twirl_blend_06.tga"
-			repeat_u="true"
-			repeat_v="true"
-			mipmaps="true"
-			fullquality="false"
-			nocompress="false"
-			filtering="true"
-		/>
-	</phase>
+    <parameters />
+    <phase
+        name="color"
+        vs="effect_lit"
+        ps="effect"
+        srcblend="BLEND_SRC_ALPHA"
+        dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
+        cull="CULL_NONE"
+        translucent="true"
+        depthwrite="false"
+        depthbias="true"
+        depthslopebias="1"
+        alphawrite="false"
+    >
+        <sampler
+            name="diffuse"
+            texture="/shared/effects/textures/twirl_blend_06.tga"
+            repeat_u="true"
+            repeat_v="true"
+            mipmaps="true"
+            fullquality="false"
+            nocompress="false"
+            filtering="true"
+        />
+    </phase>
 </material>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Scarab"
-	icon="icon.tga"
-	cost="325"
-	allowsharing="true"
-	actiontype="passive"
-	manaregenmultiplier="0.5"
+    name="Item_Scarab"
+    icon="icon.tga"
+    cost="325"
+    allowsharing="true"
+    actiontype="passive"
+    manaregenmultiplier="0.5"
 />

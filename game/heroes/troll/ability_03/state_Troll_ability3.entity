@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Troll_Ability3"
+    name="State_Troll_Ability3"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/ability_03.effect"
-	displaylevel="true"
-	
-	magicarmor="1,1,2,3"
-	attackrange="20,40,60,80"
-	attackspeed="0.10,0.15,0.20,0.25"
-	
-	effecttype="StatusBuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/ability_03.effect"
+    displaylevel="true"
+    
+    magicarmor="1,1,2,3"
+    attackrange="20,40,60,80"
+    attackspeed="0.10,0.15,0.20,0.25"
+    
+    effecttype="StatusBuff"
 >
 </state>

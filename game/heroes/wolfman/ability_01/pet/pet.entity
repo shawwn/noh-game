@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pet
-	name="Pet_WolfMan_Ability1"
-	
-	
-	
-	icon="/heroes/wolfman/ability_01/icon.tga"
-	portrait="/heroes/wolfman/ability_01/icon.tga"
-	model="model.mdf"
-	skin=""
-	
-	passiveeffect="effects/body.effect"
-	spawneffect="effects/spawn.effect"
-	respawneffect=""
-	selectsound=""
-	orderconfirmedsound=""
-	
-	preglobalscale="1.45"
-	modelscale="1.0"
-	effectscale="1.0"
-	boundsheight="64"
-	boundsradius="16"
-	selectionradius="48"
-	targetoffset="0 0 0"
+    name="Pet_WolfMan_Ability1"
+    
+    
+    
+    icon="/heroes/wolfman/ability_01/icon.tga"
+    portrait="/heroes/wolfman/ability_01/icon.tga"
+    model="model.mdf"
+    skin=""
+    
+    passiveeffect="effects/body.effect"
+    spawneffect="effects/spawn.effect"
+    respawneffect=""
+    selectsound=""
+    orderconfirmedsound=""
+    
+    preglobalscale="1.45"
+    modelscale="1.0"
+    effectscale="1.0"
+    boundsheight="64"
+    boundsradius="16"
+    selectionradius="48"
+    targetoffset="0 0 0"
 
-	movespeed="400"
-	turnrate="320"
+    movespeed="400"
+    turnrate="320"
 
-	maxhealth="400,475,550,625"
-	healthregen="0.25"
-	maxmana="0"
-	manaregen="0"
+    maxhealth="400,475,550,625"
+    healthregen="0.25"
+    maxmana="0"
+    manaregen="0"
 
-	armor="0"
-	magicarmor="0"
+    armor="0"
+    magicarmor="0"
 
-	cancarryitems="false"
-	inventory0=",Ability_WolfMan_Ability1_Pet_Ability1"
-	inventory1=",,,Ability_WolfMan_Ability1_Pet_Ability2"
-	inventory2=""
-	inventory3=""
+    cancarryitems="false"
+    inventory0=",Ability_WolfMan_Ability1_Pet_Ability1"
+    inventory1=",,,Ability_WolfMan_Ability1_Pet_Ability2"
+    inventory2=""
+    inventory3=""
 
-	attackduration="1000"
-	attackactiontime="750"
-	attackcooldown="1250"
-	attackdamagemin="17,27,34,43"
-	attackdamagemax="18,30,40,49"
-	attacknumanims="2"
-	attackoffset="0 60 100"
-	attackprojectile=""
-	attackrange="100"
-	attackstarteffect=""
-	attackactioneffect=""
-	attackimpacteffect="effects/impact.effect"
-	attacktype="melee"
-	combattype="Melee"
+    attackduration="1000"
+    attackactiontime="750"
+    attackcooldown="1250"
+    attackdamagemin="17,27,34,43"
+    attackdamagemax="18,30,40,49"
+    attacknumanims="2"
+    attackoffset="0 60 100"
+    attackprojectile=""
+    attackrange="100"
+    attackstarteffect=""
+    attackactioneffect=""
+    attackimpacteffect="effects/impact.effect"
+    attacktype="melee"
+    combattype="Melee"
 
-	aggrorange="600"
-	sightrangeday="1200"
-	sightrangenight="800"
-	
-	goldbountymin="21,26,36,41"
-	goldbountymax="21,26,36,41"
-	experiencebounty="20"
-	
-	lifetime="55000"
+    aggrorange="600"
+    sightrangeday="1200"
+    sightrangenight="800"
+    
+    goldbountymin="21,26,36,41"
+    goldbountymax="21,26,36,41"
+    experiencebounty="20"
+    
+    lifetime="55000"
 
-	corpsetime="4000"
-	corpsefadetime="4500"
-	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+    corpsetime="4000"
+    corpsefadetime="4500"
+    corpsefadeeffect="/shared/effects/corpse_sink.effect"
 >
 </pet>

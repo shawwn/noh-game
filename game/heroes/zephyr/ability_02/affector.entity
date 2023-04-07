@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Zephyr_Ability2"
+    name="Affector_Zephyr_Ability2"
 
-	radius="150"
-	
-	lifetime="-1"
-	targetscheme="enemy_units"
-	effecttype="Magic"
+    radius="150"
+    
+    lifetime="-1"
+    targetscheme="enemy_units"
+    effecttype="Magic"
 >
-	<onframe>
-		<damage effecttype="Magic" amount="15,20,25,30" b="frametime" op="mult" />
-	</onframe>
+    <onframe>
+        <damage effecttype="Magic" amount="15,20,25,30" b="frametime" op="mult" />
+    </onframe>
 </affector>

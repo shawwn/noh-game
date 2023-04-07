@@ -1,155 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true" useentityeffectscale="true">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="world" scale=".5">
+        <particlesystem name="system0" space="world" scale=".5">
 
-			<sound
-				volume=".8" 
-				sample=""
-				linearfalloff="true"
-				falloffstart="200"
-				falloffend="1400"
-			/>	
+            <sound
+                volume=".8" 
+                sample=""
+                linearfalloff="true"
+                falloffstart="200"
+                falloffend="1400"
+            />  
 
-			<simpleemitter
-				bone="_bone_righthand"
-				spawnrate="20"
-				minparticlelife="650"
-				maxparticlelife="1200"
-				minspeed="0"
-				maxspeed="400"
-				drag="0.08"
-				depthbias="-20"
-				offsetsphere="30"
-				angle="30"
-				material="/shared/effects/materials/phantom_smoke_04.material"
-			>
-				<particle
-					maxangle="360"
-					minanglespeed="-150"
-					maxanglespeed="150"
-					startcolor="1 0.5 1"
-					midcolor="1 0.3 1"
-					endcolor="0 0 0"
-					minstartsize="30"
-					maxstartsize="45"
-					endsize="60"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                bone="_bone_righthand"
+                spawnrate="20"
+                minparticlelife="650"
+                maxparticlelife="1200"
+                minspeed="0"
+                maxspeed="400"
+                drag="0.08"
+                depthbias="-20"
+                offsetsphere="30"
+                angle="30"
+                material="/shared/effects/materials/phantom_smoke_04.material"
+            >
+                <particle
+                    maxangle="360"
+                    minanglespeed="-150"
+                    maxanglespeed="150"
+                    startcolor="1 0.5 1"
+                    midcolor="1 0.3 1"
+                    endcolor="0 0 0"
+                    minstartsize="30"
+                    maxstartsize="45"
+                    endsize="60"
+                />
+            </simpleemitter>
 
-			<simpleemitter
-				bone="_bone_righthand"
-				spawnrate="25"
-				minparticlelife="300"
-				maxparticlelife="600"
-				minspeed="0"
-				maxspeed="500"
-				drag="0.05"
-				angle="20"
-				offsetsphere="25"
-				depthbias="-70"
-				material="/shared/effects/materials/splatter_add.material"
-			>
-				<particle
-					minangle="-70"
-					maxangle="70"
-					minanglespeed="-110"
-					maxanglespeed="110"
-					startcolor="1 .2 .1"
-					endcolor="0"
-					size="12"
-					minendscale="5"
-					maxendscale="6"
-					endstickiness=".6"
-					anchor="0.6"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                bone="_bone_righthand"
+                spawnrate="25"
+                minparticlelife="300"
+                maxparticlelife="600"
+                minspeed="0"
+                maxspeed="500"
+                drag="0.05"
+                angle="20"
+                offsetsphere="25"
+                depthbias="-70"
+                material="/shared/effects/materials/splatter_add.material"
+            >
+                <particle
+                    minangle="-70"
+                    maxangle="70"
+                    minanglespeed="-110"
+                    maxanglespeed="110"
+                    startcolor="1 .2 .1"
+                    endcolor="0"
+                    size="12"
+                    minendscale="5"
+                    maxendscale="6"
+                    endstickiness=".6"
+                    anchor="0.6"
+                />
+            </simpleemitter>
 
-			<billboard
-				expirelife="300"
-				startcolor=".2 .05 .2"
-				endcolor="0"
-				startsize="235"
-				endsize="0"
-				bone="Bip01 R Hand"
-				depthbias="-50"
-				material="/shared/effects/materials/whitedot.material"
-			/>
+            <billboard
+                expirelife="300"
+                startcolor=".2 .05 .2"
+                endcolor="0"
+                startsize="235"
+                endsize="0"
+                bone="Bip01 R Hand"
+                depthbias="-50"
+                material="/shared/effects/materials/whitedot.material"
+            />
 
-			<simpleemitter
-				bone="_bone_lefthand"
-				spawnrate="20"
-				minparticlelife="650"
-				maxparticlelife="1200"
-				minspeed="0"
-				maxspeed="400"
-				drag="0.08"
-				depthbias="-20"
-				offsetsphere="30"
-				angle="30"
-				material="/shared/effects/materials/phantom_smoke_04.material"
-			>
-				<particle
-					maxangle="360"
-					minanglespeed="-150"
-					maxanglespeed="150"
-					startcolor="1 0.5 1"
-					midcolor="1 0.3 1"
-					endcolor="0 0 0"
-					minstartsize="30"
-					maxstartsize="45"
-					endsize="60"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                bone="_bone_lefthand"
+                spawnrate="20"
+                minparticlelife="650"
+                maxparticlelife="1200"
+                minspeed="0"
+                maxspeed="400"
+                drag="0.08"
+                depthbias="-20"
+                offsetsphere="30"
+                angle="30"
+                material="/shared/effects/materials/phantom_smoke_04.material"
+            >
+                <particle
+                    maxangle="360"
+                    minanglespeed="-150"
+                    maxanglespeed="150"
+                    startcolor="1 0.5 1"
+                    midcolor="1 0.3 1"
+                    endcolor="0 0 0"
+                    minstartsize="30"
+                    maxstartsize="45"
+                    endsize="60"
+                />
+            </simpleemitter>
 
-			<simpleemitter
-				bone="_bone_lefthand"
-				spawnrate="25"
-				minparticlelife="300"
-				maxparticlelife="600"
-				minspeed="0"
-				maxspeed="500"
-				drag="0.05"
-				angle="20"
-				offsetsphere="25"
-				depthbias="-70"
-				material="/shared/effects/materials/splatter_add.material"
-			>
-				<particle
-					minangle="-70"
-					maxangle="70"
-					minanglespeed="-110"
-					maxanglespeed="110"
-					startcolor="1 .2 .1"
-					endcolor="0"
-					size="12"
-					minendscale="5"
-					maxendscale="6"
-					endstickiness=".6"
-					anchor="0.6"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                bone="_bone_lefthand"
+                spawnrate="25"
+                minparticlelife="300"
+                maxparticlelife="600"
+                minspeed="0"
+                maxspeed="500"
+                drag="0.05"
+                angle="20"
+                offsetsphere="25"
+                depthbias="-70"
+                material="/shared/effects/materials/splatter_add.material"
+            >
+                <particle
+                    minangle="-70"
+                    maxangle="70"
+                    minanglespeed="-110"
+                    maxanglespeed="110"
+                    startcolor="1 .2 .1"
+                    endcolor="0"
+                    size="12"
+                    minendscale="5"
+                    maxendscale="6"
+                    endstickiness=".6"
+                    anchor="0.6"
+                />
+            </simpleemitter>
 
-			<billboard
-				expirelife="300"
-				startcolor=".2 .05 .2"
-				endcolor="0"
-				startsize="235"
-				endsize="0"
-				bone="Bip01 L Hand"
-				depthbias="-50"
-				material="/shared/effects/materials/whitedot.material"
-			/>
+            <billboard
+                expirelife="300"
+                startcolor=".2 .05 .2"
+                endcolor="0"
+                startsize="235"
+                endsize="0"
+                bone="Bip01 L Hand"
+                depthbias="-50"
+                material="/shared/effects/materials/whitedot.material"
+            />
 
-		</particlesystem>
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
-		<waitfordeath instance="instance0"/>
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+        <waitfordeath instance="instance0"/>
+    </thread>
 
 </effect>

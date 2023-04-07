@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_WolfCommander_Ability1"
+    name="State_WolfCommander_Ability1"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="state.effect"
-	
-	basedamagemultiplier="0.3"
-	
-	effecttype="StatusBuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="state.effect"
+    
+    basedamagemultiplier="0.3"
+    
+    effecttype="StatusBuff"
 >
 </state>

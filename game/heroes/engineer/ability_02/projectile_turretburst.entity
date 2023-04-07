@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_EngineerTurretAttackBurst"
+    name="Projectile_EngineerTurretAttackBurst"
 
-	speed="5000"
-	gravity="0"
+    speed="5000"
+    gravity="0"
 
-	modelscale=".2"
-	model="effects/bullet/bullet.mdf"
-	
-	traileffect="effects/bullet/trail.effect"
+    modelscale=".2"
+    model="effects/bullet/bullet.mdf"
+    
+    traileffect="effects/bullet/trail.effect"
 >
-	<onimpact>
-		<damage effecttype="Physical" amount="1" b="source_attackdamage" op="mult" />
-	</onimpact>
+    <onimpact>
+        <damage effecttype="Physical" amount="1" b="source_attackdamage" op="mult" />
+    </onimpact>
 </projectile>

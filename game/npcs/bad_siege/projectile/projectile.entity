@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_EvilSiegeCreepAttack"
+    name="Projectile_EvilSiegeCreepAttack"
 
-	speed="700"
-	gravity="1500"
+    speed="700"
+    gravity="1500"
 
-	model="effects/model.mdf"
-	modelscale=".9"
+    model="effects/model.mdf"
+    modelscale=".9"
 
-	impacteffect="effects/impact.effect"
-	traileffect="effects/trail.effect"
+    impacteffect="effects/impact.effect"
+    traileffect="effects/trail.effect"
 >
 </projectile>

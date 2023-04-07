@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="model.max" file="model.model" type="K2" >
 
-	<spawnevent cmd="StartEffect /world/props/rootlamp/glow.effect 0"/>
+    <spawnevent cmd="StartEffect /world/props/rootlamp/glow.effect 0"/>
 
-	<anim name="idle" clip="clips/default_1.clip" fps="20" loop="true" loopbackframe="1">
-	</anim>
-	
+    <anim name="idle" clip="clips/default_1.clip" fps="20" loop="true" loopbackframe="1">
+    </anim>
+    
 </model>

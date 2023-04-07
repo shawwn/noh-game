@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_ManaBurn1"
-	
-	statuseffecttooltip="State_Item2F"
-	
-	icon="icon.tga"
-	
-	cost="850"
-	components="Item_Quickblade Item_Quickblade Item_ApprenticesRobe"
-	maxlevel="2"
-	initialcharges="8"
-	chargecost="1"
-	
-	actiontype="target_entity"
-	targetscheme="all_units"
-	range="600"
-	casttime="0"
-	castactiontime="0"
-	cooldowntime="12000"
-	cooldowntype="manaburn1"
-	casteffect="cast.effect"
-	casteffecttype="Magic"
-	
-	agility="22,26"
-	intelligence="6,10"
+    name="Item_ManaBurn1"
+    
+    statuseffecttooltip="State_Item2F"
+    
+    icon="icon.tga"
+    
+    cost="850"
+    components="Item_Quickblade Item_Quickblade Item_ApprenticesRobe"
+    maxlevel="2"
+    initialcharges="8"
+    chargecost="1"
+    
+    actiontype="target_entity"
+    targetscheme="all_units"
+    range="600"
+    casttime="0"
+    castactiontime="0"
+    cooldowntime="12000"
+    cooldowntype="manaburn1"
+    casteffect="cast.effect"
+    casteffecttype="Magic"
+    
+    agility="22,26"
+    intelligence="6,10"
 >
-	<onimpact effectdescription="true">
-		<cantarget targetscheme="enemy_units">
-			<cantarget targetscheme="summoned_enemy_units">
-				<kill target="target_entity" />
-			</cantarget>
-			<applystate name="State_Item2F" duration="4000" />
-			<dispel type="StatusBuff" />
-			<playeffect effect="impact.effect" source="target_entity" target="" />
-		</cantarget>
-		<cantarget targetscheme="ally_units">
-			<dispel type="StatusDebuff" />
-			<playeffect effect="impact.effect" source="target_entity" target="" />
-		</cantarget>
-		<killillusions/>
-		<playanim name="item_1" target="source_entity" />
-	</onimpact>
-	
-	<onupgrade>
-		<setcharges a="8" />
-	</onupgrade>
-	
-	<modifier key="manacombustion" modpriority="75" exclusive="true">
-		<onattackimpact effectdescription="true" propagatetoillusions="true">
-			<cantarget targetscheme="enemy_units" effecttype="Magic">
-				<takemana amount="20,36" />
-				<condition test="result gt 0">
-					<playeffect effect="manaburn.effect" source="source_entity" target="target_entity" />
-					<popup name="manaburn" source="target_entity" target="source_entity" a="result" />
-					<damage effecttype="Physical" amount="1" b="result" op="mult" />
-				</condition>
-			</cantarget>
-		</onattackimpact>
-	</modifier>
+    <onimpact effectdescription="true">
+        <cantarget targetscheme="enemy_units">
+            <cantarget targetscheme="summoned_enemy_units">
+                <kill target="target_entity" />
+            </cantarget>
+            <applystate name="State_Item2F" duration="4000" />
+            <dispel type="StatusBuff" />
+            <playeffect effect="impact.effect" source="target_entity" target="" />
+        </cantarget>
+        <cantarget targetscheme="ally_units">
+            <dispel type="StatusDebuff" />
+            <playeffect effect="impact.effect" source="target_entity" target="" />
+        </cantarget>
+        <killillusions/>
+        <playanim name="item_1" target="source_entity" />
+    </onimpact>
+    
+    <onupgrade>
+        <setcharges a="8" />
+    </onupgrade>
+    
+    <modifier key="manacombustion" modpriority="75" exclusive="true">
+        <onattackimpact effectdescription="true" propagatetoillusions="true">
+            <cantarget targetscheme="enemy_units" effecttype="Magic">
+                <takemana amount="20,36" />
+                <condition test="result gt 0">
+                    <playeffect effect="manaburn.effect" source="source_entity" target="target_entity" />
+                    <popup name="manaburn" source="target_entity" target="source_entity" a="result" />
+                    <damage effecttype="Physical" amount="1" b="result" op="mult" />
+                </condition>
+            </cantarget>
+        </onattackimpact>
+    </modifier>
 </item>

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Item5C"
+    name="Affector_Item5C"
 
-	radius="600"
-	
-	impactdelay="200"
-	maximpactsperinterval="1"
-	maximpactspertarget="1"
-	repeattargetimpacts="false"
-	targetscheme="visible_enemy_units"
-	targetselection="closest"
-	effecttype="Magic"
-	persist="true"
-	
-	impacteffect="/heroes/kunas/effects/ability_01/chain_impact.effect"
-	bridgeeffect="/heroes/kunas/effects/ability_01/chain_lightning_engine.effect"
-	linkeffect="/heroes/kunas/effects/ability_01/chain_lightning_link.effect"
+    radius="600"
+    
+    impactdelay="200"
+    maximpactsperinterval="1"
+    maximpactspertarget="1"
+    repeattargetimpacts="false"
+    targetscheme="visible_enemy_units"
+    targetselection="closest"
+    effecttype="Magic"
+    persist="true"
+    
+    impacteffect="/heroes/kunas/effects/ability_01/chain_impact.effect"
+    bridgeeffect="/heroes/kunas/effects/ability_01/chain_lightning_engine.effect"
+    linkeffect="/heroes/kunas/effects/ability_01/chain_lightning_link.effect"
 >
-	<onimpact>
-		<damage effecttype="Magic" amount="200"/>
-		<chain count="2"/>
-	</onimpact>
+    <onimpact>
+        <damage effecttype="Magic" amount="200"/>
+        <chain count="2"/>
+    </onimpact>
 </affector>

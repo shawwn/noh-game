@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Fade_Ability4_RelayExp"
+    name="State_Fade_Ability4_RelayExp"
 
-	icon="icon.tga"
-	passiveeffect=""
-	ishidden="true"
-	
-	effecttype=""
+    icon="icon.tga"
+    passiveeffect=""
+    ishidden="true"
+    
+    effecttype=""
 >
-	
-	<aura
-		gadget="Gadget_Fade_Ability4"
-		radius="0"
-		targetscheme="self"
-	/> 
+    
+    <aura
+        gadget="Gadget_Fade_Ability4"
+        radius="0"
+        targetscheme="self"
+    /> 
 </state>

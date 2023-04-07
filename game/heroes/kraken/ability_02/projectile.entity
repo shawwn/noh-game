@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Kraken_Ability2"
+    name="Projectile_Kraken_Ability2"
 
-	speed="850"
-	gravity="0"
+    speed="850"
+    gravity="0"
 
-	modelscale="1.0"
-	model=""
-	
-	canturn="true"
-	flying="true"
-	flyheight="0"
-	pathing="true"
+    modelscale="1.0"
+    model=""
+    
+    canturn="true"
+    flying="true"
+    flyheight="0"
+    pathing="true"
 >
-	
-	<onspawn>
-		<spawnaffector name="Affector_Kraken_Ability2" target="this_entity" owner="this_owner_entity" />
-		<applystate name="State_Kraken_Ability2_Self_Killprojectile" duration="10000" proxy="this_entity" inflictor="this_entity" source="this_entity" target="this_owner_entity" />
-	</onspawn>
+    
+    <onspawn>
+        <spawnaffector name="Affector_Kraken_Ability2" target="this_entity" owner="this_owner_entity" />
+        <applystate name="State_Kraken_Ability2_Self_Killprojectile" duration="10000" proxy="this_entity" inflictor="this_entity" source="this_entity" target="this_owner_entity" />
+    </onspawn>
 
-	<ondeath>
-		<expirestate name="State_Kraken_Ability2_Self_Killprojectile" target="this_owner_entity" />
-	</ondeath>
+    <ondeath>
+        <expirestate name="State_Kraken_Ability2_Self_Killprojectile" target="this_owner_entity" />
+    </ondeath>
 </projectile>

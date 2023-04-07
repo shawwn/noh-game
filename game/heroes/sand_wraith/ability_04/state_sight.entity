@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_SandWraith_Ability4_Sight"
+    name="State_SandWraith_Ability4_Sight"
 
-	ishidden="true"
-	
+    ishidden="true"
+    
 >
-	<aura
-		gadget="Gadget_SandWraith_Ability4"
-		radius="0"
-		targetscheme="self"
-	/>
+    <aura
+        gadget="Gadget_SandWraith_Ability4"
+        radius="0"
+        targetscheme="self"
+    />
 </state>

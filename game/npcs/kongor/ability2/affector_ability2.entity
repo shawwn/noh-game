@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Kongor_Ability2"
+    name="Affector_Kongor_Ability2"
 
-	radius="250"
-	
-	targetselection="all"
-	targetscheme="enemy_units"
-	effecttype="Magic"
+    radius="250"
+    
+    targetselection="all"
+    targetscheme="enemy_units"
+    effecttype="Magic"
 >
-	<onimpact>
-		<condition test="target_type hero">
-			<applystate name="State_Kongor_Ability2" duration="2000"/>
-		</condition>
-		
-		<condition test="target_type not_hero">
-			<applystate name="State_Kongor_Ability2" duration="4000"/>
-		</condition>
-		
-		<damage effecttype="Magic" amount="70"/>
-	</onimpact>
+    <onimpact>
+        <condition test="target_type hero">
+            <applystate name="State_Kongor_Ability2" duration="2000"/>
+        </condition>
+        
+        <condition test="target_type not_hero">
+            <applystate name="State_Kongor_Ability2" duration="4000"/>
+        </condition>
+        
+        <damage effecttype="Magic" amount="70"/>
+    </onimpact>
 </affector>

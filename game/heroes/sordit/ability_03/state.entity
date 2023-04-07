@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Sordit_Ability3"
+    name="State_Sordit_Ability3"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/state.effect"
-	revealed="true"
-	
-	misschance="0.1,0.15,0.20,0.25"
-	
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/state.effect"
+    revealed="true"
+    
+    misschance="0.1,0.15,0.20,0.25"
+    
+    effecttype="StatusDebuff"
 >
 
-	<onattackedpreimpact>
-		<playeffect effect="effects/anger.effect" source="source_entity" target="source_entity"/>
-	</onattackedpreimpact>
-	
-	<aura
-		gadget="Gadget_Sordit_Ability3"
-		radius="0"
-		targetscheme="self"
-	/>
+    <onattackedpreimpact>
+        <playeffect effect="effects/anger.effect" source="source_entity" target="source_entity"/>
+    </onattackedpreimpact>
+    
+    <aura
+        gadget="Gadget_Sordit_Ability3"
+        radius="0"
+        targetscheme="self"
+    />
 </state>

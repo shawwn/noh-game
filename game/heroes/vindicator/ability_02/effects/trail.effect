@@ -1,202 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true">
-	<definitions>
-		<particlesystem name="system0" space="local" scale="0.33">
+    <definitions>
+        <particlesystem name="system0" space="local" scale="0.33">
 
-					
-				
+                    
+                
 
-			<billboard			
-				expirelife="200"				
-				startsize="820"				
-				endsize="0"
-				material="/shared/effects/materials/whitedot.material"
-				startalpha="1"
-				endalpha="0"
-				startcolor=".0 .2 .7"
-				endcolor="0 0 0 "
-				depthbias="-10"
-			/>	
+            <billboard          
+                expirelife="200"                
+                startsize="820"             
+                endsize="0"
+                material="/shared/effects/materials/whitedot.material"
+                startalpha="1"
+                endalpha="0"
+                startcolor=".0 .2 .7"
+                endcolor="0 0 0 "
+                depthbias="-10"
+            />  
 
-				
-			<groundsprite			
-				expirelife="200"				
-				startsize="1820"				
-				endsize="0"
-				material="/shared/effects/materials/whitedot_ground.material"
-				startalpha="1"
-				endalpha="0"
-				startcolor=".0 .1 .2"
-				endcolor="0 0 0 "
-				depthbias="-10"
-			/>			
+                
+            <groundsprite           
+                expirelife="200"                
+                startsize="1820"                
+                endsize="0"
+                material="/shared/effects/materials/whitedot_ground.material"
+                startalpha="1"
+                endalpha="0"
+                startcolor=".0 .1 .2"
+                endcolor="0 0 0 "
+                depthbias="-10"
+            />          
 
-			
-			<trailemitter				
-				spawnrate="50"
-				particlelife="800"
-				texpostime="800"
-			 	texposscale="0.0"
-			 	texstretchscale=".4"
-				position="65 0 0"
-				material="/shared/effects/materials/arrow_trail.material"
-			>
-				<particle
-					 startcolor="1 1 1"
-					 midcolor="0.5 0.5 0.2"
-					 endcolor="0 0 0"
-					 startsize="10"
-					 midsize="40"
-					 endsize="30"
-					 midsizepos="0.2"
-			 />
-			</trailemitter>				
-			
-			<trailemitter				
-				spawnrate="50"
-				particlelife="800"
-				texpostime="800"
-			 	texposscale="0.0"
-			 	texstretchscale=".4"
-				position="-65 0 0"
-				material="/shared/effects/materials/arrow_trail.material"
-			>
-				<particle
-					 startcolor="1 1 1"
-					 midcolor="0.5 0.5 0.2"
-					 endcolor="0 0 0"
-					 startsize="40"
-					 midsize="30"
-					 endsize="5"
-					 midsizepos="0.2"
-			 />
-			</trailemitter>				
-			
-			
-			<trailemitter
-				
-				spawnrate="50"
-				particlelife="800"
-				texpostime="800"
-			 	texposscale="0.0"
-			 	texstretchscale=".4"
-				position="0 60 0"
-				material="/shared/effects/materials/arrow_trail.material"
-			>
-				<particle
-					 startcolor=".0 .3 1"
-					 midcolor="0.051 0.3 0.4"
-					 endcolor="0 0 0"
-					 startsize="10"
-					 midsize="80"
-					 endsize="30"
-					 midsizepos="0.2"
-			 />
-			</trailemitter>	
+            
+            <trailemitter               
+                spawnrate="50"
+                particlelife="800"
+                texpostime="800"
+                texposscale="0.0"
+                texstretchscale=".4"
+                position="65 0 0"
+                material="/shared/effects/materials/arrow_trail.material"
+            >
+                <particle
+                     startcolor="1 1 1"
+                     midcolor="0.5 0.5 0.2"
+                     endcolor="0 0 0"
+                     startsize="10"
+                     midsize="40"
+                     endsize="30"
+                     midsizepos="0.2"
+             />
+            </trailemitter>             
+            
+            <trailemitter               
+                spawnrate="50"
+                particlelife="800"
+                texpostime="800"
+                texposscale="0.0"
+                texstretchscale=".4"
+                position="-65 0 0"
+                material="/shared/effects/materials/arrow_trail.material"
+            >
+                <particle
+                     startcolor="1 1 1"
+                     midcolor="0.5 0.5 0.2"
+                     endcolor="0 0 0"
+                     startsize="40"
+                     midsize="30"
+                     endsize="5"
+                     midsizepos="0.2"
+             />
+            </trailemitter>             
+            
+            
+            <trailemitter
+                
+                spawnrate="50"
+                particlelife="800"
+                texpostime="800"
+                texposscale="0.0"
+                texstretchscale=".4"
+                position="0 60 0"
+                material="/shared/effects/materials/arrow_trail.material"
+            >
+                <particle
+                     startcolor=".0 .3 1"
+                     midcolor="0.051 0.3 0.4"
+                     endcolor="0 0 0"
+                     startsize="10"
+                     midsize="80"
+                     endsize="30"
+                     midsizepos="0.2"
+             />
+            </trailemitter> 
 
-			<trailemitter
-				
-				spawnrate="50"
-				particlelife="500"
-				texpostime="500"
-			 	texposscale="0.0"
-			 	texstretchscale=".4"
-				position="0 60 0"
-				material="/shared/effects/materials/arrow_trail.material"
-			>
-				<particle
-					 startcolor=".0 .5 1"
-					 midcolor="0.051 0.3 0.5"
-					 endcolor="0 0 0"
-					 startsize="10"
-					 midsize="80"
-					 endsize="30"
-					 midsizepos="0.2"
-			 />
-			</trailemitter>	
-				
-			<trailemitter
-				life="400"
-				
-				spawnrate="50"
-				particlelife="500"
-				texpostime="500"
-			 	texposscale="0.0"
-			 	texstretchscale=".4"
-				position="0 60 0"
-				material="/shared/effects/materials/arrow_trail.material"
-			>
-				<particle
-					 startcolor=".0 .3 1"
-					 midcolor="0.1 0.3 0.5"
-					 endcolor="0 0 0"
-					 startsize="410"
-					 midsize="320"
-					 endsize="30"
-					 midsizepos="0.2"
-			 />
-			</trailemitter>	
+            <trailemitter
+                
+                spawnrate="50"
+                particlelife="500"
+                texpostime="500"
+                texposscale="0.0"
+                texstretchscale=".4"
+                position="0 60 0"
+                material="/shared/effects/materials/arrow_trail.material"
+            >
+                <particle
+                     startcolor=".0 .5 1"
+                     midcolor="0.051 0.3 0.5"
+                     endcolor="0 0 0"
+                     startsize="10"
+                     midsize="80"
+                     endsize="30"
+                     midsizepos="0.2"
+             />
+            </trailemitter> 
+                
+            <trailemitter
+                life="400"
+                
+                spawnrate="50"
+                particlelife="500"
+                texpostime="500"
+                texposscale="0.0"
+                texstretchscale=".4"
+                position="0 60 0"
+                material="/shared/effects/materials/arrow_trail.material"
+            >
+                <particle
+                     startcolor=".0 .3 1"
+                     midcolor="0.1 0.3 0.5"
+                     endcolor="0 0 0"
+                     startsize="410"
+                     midsize="320"
+                     endsize="30"
+                     midsizepos="0.2"
+             />
+            </trailemitter> 
 
-			
-					
-			
-		
-			
-			
-			<simpleemitter	
-				
-				spawnrate="8"				
-				particlelife="800"								
-				position="0 0 0"
-				material="/shared/effects/materials/refract_swell.material"				
-				particledirectionalspace="local"
-				offsetdirection="0 0 0"
-				offsetradial="0"
-				param=".4"
-			>
+            
+                    
+            
+        
+            
+            
+            <simpleemitter  
+                
+                spawnrate="8"               
+                particlelife="800"                              
+                position="0 0 0"
+                material="/shared/effects/materials/refract_swell.material"             
+                particledirectionalspace="local"
+                offsetdirection="0 0 0"
+                offsetradial="0"
+                param=".4"
+            >
 
-				<particle 		
-					startsize="120"				
-					endsize="500"				
-					param="0.5"
-					startalpha=".3"
-					midalpha=".3"
-					endalpha="0"
-					midalphapos=".5"					
-					
-					lockup="true"
-					lockright="1"
-					pitch="0"
-					flare="0"
-					yaw="00"
-				
-				/>
-			</simpleemitter>			
-			
-			
-			<billboard
-				life="600"				
-				position="0 20 0"
-				color="1.0 1.0 1.0"				
-				size="600"
-				
-				startparam=".15"				
-				depthbias="100"				
-				material="/shared/effects/materials/refract_swell_directional.material"
-				lockup="true"
-				roll="270"
-				pitch="90"
-				turn="true"
-			/>				
-			
-			
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-		<!-- <die /> -->
-	</thread>
+                <particle       
+                    startsize="120"             
+                    endsize="500"               
+                    param="0.5"
+                    startalpha=".3"
+                    midalpha=".3"
+                    endalpha="0"
+                    midalphapos=".5"                    
+                    
+                    lockup="true"
+                    lockright="1"
+                    pitch="0"
+                    flare="0"
+                    yaw="00"
+                
+                />
+            </simpleemitter>            
+            
+            
+            <billboard
+                life="600"              
+                position="0 20 0"
+                color="1.0 1.0 1.0"             
+                size="600"
+                
+                startparam=".15"                
+                depthbias="100"             
+                material="/shared/effects/materials/refract_swell_directional.material"
+                lockup="true"
+                roll="270"
+                pitch="90"
+                turn="true"
+            />              
+            
+            
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][pos] -->

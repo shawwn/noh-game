@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Mortred_Ability1"
+    name="State_Mortred_Ability1"
 
-	icon="icon.tga"
-	passiveeffect="../../../heroes/vanya/ability_2/effects/state.effect"
-	movespeedslow="0.5"
-	effecttype="StatusDebuff"
+    icon="icon.tga"
+    passiveeffect="../../../heroes/vanya/ability_2/effects/state.effect"
+    movespeedslow="0.5"
+    effecttype="StatusDebuff"
 >
 </state>

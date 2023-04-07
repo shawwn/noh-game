@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Techies4_Detonate"
-	
-	icon="icon_detonate.tga"
-	
-	anim=""
-	casttime="0"
-	castactiontime="0"
-	
-	
-	actiontype="target_self"
-	frontqueue="true"
-	inheritmovement="true"
-	noninterrupting="true"
-	manacost="0"
-	cooldowntime="500"
-	keyslot="4"
+    name="Ability_Techies4_Detonate"
+    
+    icon="icon_detonate.tga"
+    
+    anim=""
+    casttime="0"
+    castactiontime="0"
+    
+    
+    actiontype="target_self"
+    frontqueue="true"
+    inheritmovement="true"
+    noninterrupting="true"
+    manacost="0"
+    cooldowntime="500"
+    keyslot="4"
 >
-	<onimpact effectdescription="true">
-		<spawnaffector name="Affector_Techies_Ability4_Detonate" target="source_position" />
-	</onimpact>
-	<modifier key="mines1" modpriority="90"
-		baselevel="1"
-	/>
-	
-	<modifier key="mines2" modpriority="90"
-		baselevel="2"
-	/>
-	
-	<modifier key="mines3" modpriority="90"
-		baselevel="3"
-	/>
+    <onimpact effectdescription="true">
+        <spawnaffector name="Affector_Techies_Ability4_Detonate" target="source_position" />
+    </onimpact>
+    <modifier key="mines1" modpriority="90"
+        baselevel="1"
+    />
+    
+    <modifier key="mines2" modpriority="90"
+        baselevel="2"
+    />
+    
+    <modifier key="mines3" modpriority="90"
+        baselevel="3"
+    />
 </ability>

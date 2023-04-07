@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_DragonKnight_Ability1_Damage"
+    name="Affector_DragonKnight_Ability1_Damage"
 
 
-	radiusstart="50"
-	radiusend="250"
-	speed="1200"
-	
-	lifetime="500"
-	maximpactspertarget="1"
-	targetselection="all"
-	targetscheme="enemy_units"
-	effecttype="Magic"
-	persist="true"
-	
-	impacteffect="../../../heroes/pyromancer/ability_01/effects/ability_01_impact.effect"
+    radiusstart="50"
+    radiusend="250"
+    speed="1200"
+    
+    lifetime="500"
+    maximpactspertarget="1"
+    targetselection="all"
+    targetscheme="enemy_units"
+    effecttype="Magic"
+    persist="true"
+    
+    impacteffect="../../../heroes/pyromancer/ability_01/effects/ability_01_impact.effect"
 >
-	<onimpact>
-		<damage effecttype="Magic" amount="75,150,225,300"/>
-	</onimpact>
+    <onimpact>
+        <damage effecttype="Magic" amount="75,150,225,300"/>
+    </onimpact>
 </affector>

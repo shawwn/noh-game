@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_PowerupStealth"
+    name="State_PowerupStealth"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/state.effect"
-	
-	stealthtype="hero"
-	fadetime="100"
-	
-	effecttype="StatusBuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/state.effect"
+    
+    stealthtype="hero"
+    fadetime="100"
+    
+    effecttype="StatusBuff"
 >
-	<oninflict>
-		<forgetattacks />
-		<startfade />
-	</oninflict>
+    <oninflict>
+        <forgetattacks />
+        <startfade />
+    </oninflict>
 
-	<onattackstart>
-		<expire />
-	</onattackstart>
+    <onattackstart>
+        <expire />
+    </onattackstart>
 
-	<onactivatestart>
-		<expire />
-	</onactivatestart>
+    <onactivatestart>
+        <expire />
+    </onactivatestart>
 </state>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Nomad_Ability3_Night"
+    name="State_Nomad_Ability3_Night"
 
-	
-	
-	icon="icon_night.tga"
-	movespeedslow="0.40"
-	
-	passiveeffect=""
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon_night.tga"
+    movespeedslow="0.40"
+    
+    passiveeffect=""
+    effecttype="StatusDebuff"
 >
 </state>

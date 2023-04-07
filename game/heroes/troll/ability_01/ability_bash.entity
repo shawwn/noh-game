@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Troll5"
+    name="Ability_Troll5"
 
-	
-	
-	icon=""
+    
+    
+    icon=""
 
-	actiontype="passive"
-	cooldowntime="2000"
-	cooldowntype="bashing"
-	
-	baselevel="0"
-	maxlevel="4"
-	
-	manacost="0"
+    actiontype="passive"
+    cooldowntime="2000"
+    cooldowntype="bashing"
+    
+    baselevel="0"
+    maxlevel="4"
+    
+    manacost="0"
 >
-	<onattackimpact effectdescription="true" propagatetoillusions="false">
-		<condition test="canactivate">
-			<cantarget targetscheme="enemy_units" >
-				<chance threshold="0.1">
-						<applystate name="State_Stunned" duration="800,1200,1600,2000"/>
-						<damage effecttype="Physical" amount="20,30,40,50" />
-						<startcooldown/>
-					</chance>
-			</cantarget>
-		</condition>
-	</onattackimpact>
-	
-	<modifier key="ability1_1" modpriority="90"
-		baselevel="1"
-	/>
-	<modifier key="ability1_2" modpriority="90"
-		baselevel="2"
-	/>
-	<modifier key="ability1_3" modpriority="90"
-		baselevel="3"
-	/>
-	<modifier key="ability1_4" modpriority="90"
-		baselevel="4"
-	/>
+    <onattackimpact effectdescription="true" propagatetoillusions="false">
+        <condition test="canactivate">
+            <cantarget targetscheme="enemy_units" >
+                <chance threshold="0.1">
+                        <applystate name="State_Stunned" duration="800,1200,1600,2000"/>
+                        <damage effecttype="Physical" amount="20,30,40,50" />
+                        <startcooldown/>
+                    </chance>
+            </cantarget>
+        </condition>
+    </onattackimpact>
+    
+    <modifier key="ability1_1" modpriority="90"
+        baselevel="1"
+    />
+    <modifier key="ability1_2" modpriority="90"
+        baselevel="2"
+    />
+    <modifier key="ability1_3" modpriority="90"
+        baselevel="3"
+    />
+    <modifier key="ability1_4" modpriority="90"
+        baselevel="4"
+    />
 </ability>

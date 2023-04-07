@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_SnakeBracelet"
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="1800"
-	
-	actiontype="passive"
-	
-	evasion=".25"
-	
+    name="Item_SnakeBracelet"
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="1800"
+    
+    actiontype="passive"
+    
+    evasion=".25"
+    
 >
 </item>

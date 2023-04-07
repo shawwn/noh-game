@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Rampage4"
+    name="Ability_Rampage4"
 
-	icon="icon.tga"
-	
-	anim="ability_4"
-	casttime="470"
-	castactiontime="470"
-	casteffect="effects/cast.effect"
+    icon="icon.tga"
+    
+    anim="ability_4"
+    casttime="470"
+    castactiontime="470"
+    casteffect="effects/cast.effect"
 
-	maxlevel="3"
-	requiredlevel="6,11,16"
+    maxlevel="3"
+    requiredlevel="6,11,16"
 
-	actiontype="target_entity"
-	targetscheme="enemy_units"
-	casteffecttype="Physical"
-	
-	range="400,550,700"
-	manacost="200,250,300"
-	cooldowntime="60000"
+    actiontype="target_entity"
+    targetscheme="enemy_units"
+    casteffecttype="Physical"
+    
+    range="400,550,700"
+    manacost="200,250,300"
+    cooldowntime="60000"
 >
-	<onframe />
+    <onframe />
 
-	<onimpact>
-		<spawnaffector name="Affector_Rampage_Ability4" target="target_entity" />
-	</onimpact>
-	
-	<modifier key="ult_boost" modpriority="100"
-		displayname="true"
-		cooldowntime="20000"
-	>
-	</modifier>
+    <onimpact>
+        <spawnaffector name="Affector_Rampage_Ability4" target="target_entity" />
+    </onimpact>
+    
+    <modifier key="ult_boost" modpriority="100"
+        displayname="true"
+        cooldowntime="20000"
+    >
+    </modifier>
 </ability>

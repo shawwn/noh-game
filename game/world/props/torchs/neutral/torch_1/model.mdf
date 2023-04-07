@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="model.max" file="model.model" type="K2" >
 <anim name="idle" clip="clips/default_1.clip" fps="30" loop="true">
-		
-		<startevent cmd="starteffect effects/gfx_torch_02_fire_02.effect"/>
-		
-	</anim>
+        
+        <startevent cmd="starteffect effects/gfx_torch_02_fire_02.effect"/>
+        
+    </anim>
 </model>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Item4F"
+    name="State_Item4F"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="state.effect"
-	
-	lifesteal="1.5"
-	
-	effecttype="StatusBuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="state.effect"
+    
+    lifesteal="1.5"
+    
+    effecttype="StatusBuff"
 >
 </state>

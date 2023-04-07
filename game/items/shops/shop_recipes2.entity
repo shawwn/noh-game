@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <shop
-	name="Shop_Recipes2"
-	
-	style="recipes"
-	header="/ui/elements/shop/shopkeeper_recipes.tga"
-	allowremoteaccess="true"
-	
-	icon="shop_recipes2.tga"
-	order="1"
-	slot="6"
+    name="Shop_Recipes2"
+    
+    style="recipes"
+    header="/ui/elements/shop/shopkeeper_recipes.tga"
+    allowremoteaccess="true"
+    
+    icon="shop_recipes2.tga"
+    order="1"
+    slot="6"
 >
-	<item name="Item_ManaRegen3" />
-	<item name="Item_MysticPotpourri" />
-	<item name="Item_ShieldOfTheFive" />
-	<item name="Item_Replenish" />
-	
-	<item name="Item_PushStaff" />
-	<item name="Item_LifeSteal5" />
-	<item name="Item_NomesWisdom" />
-	<item name="Item_Astrolabe" />
+    <item name="Item_ManaRegen3" />
+    <item name="Item_MysticPotpourri" />
+    <item name="Item_ShieldOfTheFive" />
+    <item name="Item_Replenish" />
+    
+    <item name="Item_PushStaff" />
+    <item name="Item_LifeSteal5" />
+    <item name="Item_NomesWisdom" />
+    <item name="Item_Astrolabe" />
 
-	
-	<item name="Item_Summon" />
-	<item name="Item_Intelligence6" />
-	<item name="Item_BarrierIdol" />
-	<item name="Item_RestorationStone" />
+    
+    <item name="Item_Summon" />
+    <item name="Item_Intelligence6" />
+    <item name="Item_BarrierIdol" />
+    <item name="Item_RestorationStone" />
 
 </shop>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Treant_Ability4"
+    name="Affector_Treant_Ability4"
 
-	radius="700"
-	
-	targetselection="all"
-	targetscheme="visible_enemy_units"
-	effecttype="Magic"
-	
-	effect=""
-	impacteffect="impact.effect"
+    radius="700"
+    
+    targetselection="all"
+    targetscheme="visible_enemy_units"
+    effecttype="Magic"
+    
+    effect=""
+    impacteffect="impact.effect"
 >
-	<onimpact>
-		<applystate name="State_Stunned" duration="50"/>
-		<applystate name="State_Treant_Ability4" duration="3000,4000,5000"/>
-	</onimpact>
+    <onimpact>
+        <applystate name="State_Stunned" duration="50"/>
+        <applystate name="State_Treant_Ability4" duration="3000,4000,5000"/>
+    </onimpact>
 </affector>

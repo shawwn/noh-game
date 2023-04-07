@@ -1,284 +1,284 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
-	<template name="im_entry">
-		<!--
+    <template name="im_entry">
+        <!--
 
-		NO FOCUS
-		texture: /ui/info/button.tga
-		label color: white
+        NO FOCUS
+        texture: /ui/info/button.tga
+        label color: white
 
-		NO FOCUS / ALERT / NEW MSG
-		texture: /ui/info/button.tga
-		label color: yellow
+        NO FOCUS / ALERT / NEW MSG
+        texture: /ui/info/button.tga
+        label color: yellow
 
-		FOCUS
-		texture: /ui/info/button_down.tga
-		label color: white
+        FOCUS
+        texture: /ui/info/button_down.tga
+        label color: white
 
-		-->	
-					
-		<panel color="invisible" name="im_entry_{name}" height="-0.2h" onload="CreateBool('im_unread_{name}', false);">
-			<frame
-				visible="1"
-				name="im_entry_{name}_frame"
-				texture="/ui/info/button.tga"
-				borderthickness="0.2h"
-				color="1 1 1 0.25"
-			/>								
+        --> 
+                    
+        <panel color="invisible" name="im_entry_{name}" height="-0.2h" onload="CreateBool('im_unread_{name}', false);">
+            <frame
+                visible="1"
+                name="im_entry_{name}_frame"
+                texture="/ui/info/button.tga"
+                borderthickness="0.2h"
+                color="1 1 1 0.25"
+            />                              
 
-			<panel color="invisible" x="0.5h" align="left" valign="center" height="-1.0h" noclick="1">
-				<label name="im_entry_{name}_label" width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="left" font="dyn_10" color="white" shadow="true" noclick="true" blockinput="false" shadowcolor="black" watch="ChatWhisperUpdate" ontrigger="If(StringEquals(param0,'{name}') and !IsVisible('ccwidget_whisper_{name}') and (param2), SetColor('1','1','0','1'));">{name}</label>
-			</panel>
+            <panel color="invisible" x="0.5h" align="left" valign="center" height="-1.0h" noclick="1">
+                <label name="im_entry_{name}_label" width="100%" height="100%" textvalign="center" textalign="left" valign="center" align="left" font="dyn_10" color="white" shadow="true" noclick="true" blockinput="false" shadowcolor="black" watch="ChatWhisperUpdate" ontrigger="If(StringEquals(param0,'{name}') and !IsVisible('ccwidget_whisper_{name}') and (param2), SetColor('1','1','0','1'));">{name}</label>
+            </panel>
 
-			<button
-				x="-0.5h"			
-				width="1.5h" height="1.5h"
-				align="right"
-				valign="center"
-				color="1 1 1 1"
-				texture="/ui/info/close_button.tga"
-				onclick="PlaySound('/ui/sounds/close.mp3'); ChatCloseIM('{name}'); SetFocusName('im_chat_box');"
-			/>
-		</panel>
-		
-	</template>
-	
-	<template name="im_scroll_btn">
-		<!-- 
-		Scroll Up
-
-
-		NO SCROLLING NEEDED
-		frame textrue: /ui/info/button.tga
-		arrow image color: 1 1 1 .7
-		cc_scroll_up_disable panel: visible
-
-		SCROLLING NEEDED
-		frame textrue: /ui/info/button.tga
-		arrow image color: 1 1 1 .7
-		cc_scroll_up_disable panel: not visible
-
-		ON MOUSEOVER
-		frame textrue: /ui/info/button_down.tga
-		arrow image color: 1 1 1 .7
-		cc_scroll_up_disable panel: not visible
-
-		-->
-		<panel color="invisible" height="1.4h" valign="{valign=top}" onframe="If(im_scrollpos + ({direction}) lt 0 or im_scrollpos + ({direction}) gt (im_count - 8), DisableWidget('im_scroll_{arrow}'), EnableWidget('im_scroll_{arrow}'));">
-			<button
-				name="im_scroll_{arrow}"
-				color="invisible"
-				visible="{visible=1}"
-				enabled="{enabled=1}"
-				onmouseover="PlaySound('/shared/sounds/ui/button_over_03.wav'); {onmouseover}"
-				onmouseout="{onmouseout}"
-				onclick="PlaySound('{sound=/shared/sounds/ui/button_click_01.wav}'); if (im_scrollpos + ({direction}) ge 0 and im_scrollpos + ({direction}) le (im_count - 8), Set('im_scrollpos', im_scrollpos + ({direction}))); Call('im_listbox', 'SetVerticalListScroll(im_scrollpos);'); SetFocusName('im_chat_box'); {onclick}"
-			>
-				<widgetstate statename="up">				
-					<frame
-						visible="1"
-						texture="/ui/info/button.tga"
-						borderthickness="0.2h"
-						color="white"
-					/>					
-					<image width="-5.5h" height="-0.8h" align="center" valign="center" texture="/ui/elements/cc_scroll_{arrow}.tga" color="1 1 1 .7" />					
-				</widgetstate>			
-
-				<widgetstate statename="over">
-					<frame
-						visible="1"
-						texture="/ui/info/button_down.tga"
-						borderthickness="0.2h"
-						color="white"
-					/>					
-					<image width="-5.5h" height="-0.8h" align="center" valign="center" texture="/ui/elements/cc_scroll_{arrow}.tga" color="1 1 1 .7" />
-				</widgetstate>		
-
-				<widgetstate statename="down" x="1" y="1">
-					<frame
-						visible="1"
-						texture="/ui/info/button_down.tga"
-						borderthickness="0.2h"
-						color="white"
-					/>					
-					<image width="-5.5h" height="-0.8h" align="center" valign="center" texture="/ui/elements/cc_scroll_{arrow}.tga" color="1 1 1 .7" />
-				</widgetstate>
-				
-				<widgetstate statename="disabled">
-					<frame
-						visible="1"
-						texture="/ui/info/button.tga"
-						borderthickness="0.2h"
-						color="white"
-					/>					
-					<image width="-5.5h" height="-0.8h" align="center" valign="center" texture="/ui/elements/cc_scroll_{arrow}.tga" color="1 1 1 .7" />
-					<panel  color="0 0 0 .7"/>
-				</widgetstate>
-			</button>
-		</panel>	
-	</template>
-	
-	<template name="ccwidget_whisper_sub">
-		<panel name="ccwidget_whisper_{nick}" color="invisible" noclick="true" blockinput="false" group="im_windows" visible="false" watch="ChatCloseIM" ontrigger="if(StringEquals(param, '{nick}'), DestroyWidget());" onshow="Call('im_entry_{nick}_frame', 'SetColor(\'1\',\'1\',\'1\',\'1\'); SetBorderColor(\'1\',\'1\',\'1\',\'1\');'); Call('im_entry_{nick}_label', 'SetColor(\'1\',\'1\',\'1\',\'1\');'); If(im_unread_{nick}, Set('cc_unread_ims', cc_unread_ims - 1)); Set('im_unread_{nick}', false);" onhide="Call('im_entry_{nick}_frame', 'SetColor(\'1\',\'1\',\'1\',\'0.25\'); SetBorderColor(\'1\',\'1\',\'1\',\'0.25\');'); Call('im_entry_{nick}_label', 'SetColor(\'1\',\'1\',\'1\',\'1\');');">
-			<panel name="whisper_box_panel_{nick}" color="invisible" height="-8" width="-8" align="center" valign="center" blockinput="false" noclick="true">
-				<!-- Chat Window -->
-				<frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 .7" noclick="1" />
-
-				<textbuffer
-					name="whisper_{nick}_textbuffer"
-					scrolltexture="/ui/info/combobox.tga"
-					handleheight="2.0h"
-					width="-1.0h" height="-1.0h"
-					align="center" valign="center"
-					scrollbarsize="2.0h" 
-					textalign="left"
-					font="dyn_10"
-					wrap="true"
-					anchorbottom="true"
-					usesmileys="true"
-					maxlines="1000"
-					shadow="true"
-					color="invisible"
-					textcolor="white"
-					onhide="ClearBufferText();"
-					onshow="ClearBufferText(); ChatUpdateWhispers('{nick}');"
-					watch="ChatWhisperUpdate"
-					ontrigger="if(StringEquals(param0,'{nick}'), Split(AddBufferText(param1),PlaySound('/shared/sounds/ui/msg_recv.mp3')));"
-					onclick="Call('ccwidget_whisper', 'BringToFront();');"
-				/>
-			</panel>
-		</panel>
-	</template>
+            <button
+                x="-0.5h"           
+                width="1.5h" height="1.5h"
+                align="right"
+                valign="center"
+                color="1 1 1 1"
+                texture="/ui/info/close_button.tga"
+                onclick="PlaySound('/ui/sounds/close.mp3'); ChatCloseIM('{name}'); SetFocusName('im_chat_box');"
+            />
+        </panel>
+        
+    </template>
+    
+    <template name="im_scroll_btn">
+        <!-- 
+        Scroll Up
 
 
-	<template name="ccwidget_whisperclan_display">
-		<!-- Header -->
-		<panel height="{headerheight=22}" y="-{headerheight=22}" align="center" blockinput="false" noclick="true">
-			<label x="6" align="left" valign="center" textvalign="center" font="{titlefont=dyn_10}" color="{titlecolor=white}" shadow="true" blockinput="false" noclick="true">ccwhisper_label_send_clan_message</label>
-			<button name="ccwidget_{id}_close2" parentid="{id}" x="-5" width="14" height="14" align="right" valign="center" color="#FFFFFF99" texture="/ui/elements/xbutton.tga" onclick="PlaySound('/ui/sounds/close.mp3'); DestroyWidget('ccwidget_whisperclan');"/>
-		</panel>
-		<panel name="whisper_clan_panel" color="invisible" height="-8" width="-8" align="center" valign="center" blockinput="false" noclick="true">
-			<!--<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="6" color="#000000DD" blockinput="false" noclick="true"/>-->
-			<frame texture="/ui/frames/roundframe.tga" color="{bordercolor=#A0A0A077}" borderthickness="6" blockinput="false" noclick="true"/>
-			<textbuffer name="whisper_clan_textbuffer" height="-6" width="-6" align="center" valign="center" usesmilies="true" anchorbottom="true" font="dyn_10" textcolor="white" shadow="true" color="invisible" onshow="ClearBufferText(); ChatUpdateClanWhispers();" watch="ChatClanWhisperUpdate" ontrigger="AddBufferText(param); PlaySound('/shared/sounds/ui/msg_recv.mp3');"/>
-		</panel>
+        NO SCROLLING NEEDED
+        frame textrue: /ui/info/button.tga
+        arrow image color: 1 1 1 .7
+        cc_scroll_up_disable panel: visible
 
-		<!-- Footer -->
-		<panel height="{footerheight=28}" y="{footerheight=28}" width="-2" align="center" visible="{footer=1}" valign="bottom" blockinput="false" noclick="true">
-			<instance name="cceditbox" parentid="{id}" id="whisperclan" maxlength="300" height="-8" x="6" width="-85" align="left" valign="center" bordercolor="{bordercolor=#A0A0A077}" cvar="_target_nick" onshow="SetFocus(true);" onenter="if(ChatSendClanWhisper(this), EraseInputLine());" onesc="EraseInputLine();"/>
+        SCROLLING NEEDED
+        frame textrue: /ui/info/button.tga
+        arrow image color: 1 1 1 .7
+        cc_scroll_up_disable panel: not visible
 
-			<instance
-				parentid="{id}"
-				x="-5"
-				width="70" height="20"
-				align="right" valign="center"
-				name="ccbutton"
-				label="ccwhisper_button_send_whisper"
-				onfocus="Call('whisper_clan_panel','BringToFront();'); Call('ccbar', 'BringToFront();');"
-				onclick="Call('cceditbox_{id}whisperclan_textbox', 'if(ChatSendClanWhisper(this), EraseInputLine());');"
-				bordercolor="{bordercolor=#A0A0A077}"
-			/>
-		</panel>
-	</template>
-	
-	<panel name="ccwidget_whisper" color="invisible" width="60.0h" height="35.0h" align="center" valign="center" visible="0" noclick="0" blockinput="0" cangrab="1" onload="CreateInt('im_count', 0); CreateInt('im_scrollpos', 0); CreateString('im_target');" watch="ChatWhisperUpdate" ontrigger="if(!IsVisible('ccwidget_whisper_' # param0) and (param2), ChatAddNotification('IM recieved from ' # param0));" onclick="BringToFront();">
-		<frame color="0 0 0 .9" bordercolor="#455166" borderthickness="1" noclick="1" blockinput="0"/>
-		<instance name="header_bar" width="-2" height="2.4h" align="center" lbl="ccwhisper_header_send_a_message" show_close="1" onclick="Call('ccwidget_whisper', 'FadeOut(250);');" />
+        ON MOUSEOVER
+        frame textrue: /ui/info/button_down.tga
+        arrow image color: 1 1 1 .7
+        cc_scroll_up_disable panel: not visible
 
-		<panel y="2.8h" height="-6.7h" width="-1.0h" align="center" color="invisible">
-			<!-- Name List -->
-			<panel height="-0.6h" valign="center" width="16.0h" color="invisible" onclick="Call('ccwidget_whisper', 'BringToFront();');">	
-			
-				<instance
-					name="im_scroll_btn"
-					direction="-1"
-					arrow="up"
-					onclick=""
-				/>
-				
-				<listbox
-					name="im_listbox"
-					width="-2"
-					height="-3.4h"
-					align="center"
-					valign="center"
-					color="invisible"
-					font="dyn_10"
-					itemwidth="100%"
-					itemheight="2.4h"
-					highlight="under"
-					highlightcolor="invisible"
-					highlightbordercolor="invisible"						
-					select="true"						
-					clearselection="true"
-					hoverselect="0"						
-					exteriorscrollbars="0" 
-					scrollbarplaceholder="false"
-					scrollbarsize="2.0h" 						
-					scrolltexture="/ui/info/combobox.tga"						
-					handleheight="2.0h"
-					usescrollbars="false"
-					watch="ChatMessageTrigger"
-					ontrigger="If(!HasListItem(param0) and StringLength(param0) gt 0, AddTemplateListItem('im_entry', param0, 'name', param0)); ShowOnly('ccwidget_whisper_' # param0); Set('im_target', param0); SetFocusName('im_chat_box');"
-					watch2="ChatWhisperUpdate"
-					ontrigger2="If(!HasListItem(param0) and StringLength(param0) gt 0 and (param2), AddTemplateListItem('im_entry', param0, 'name', param0));"
-					onclick="ShowOnly('ccwidget_whisper_' # this); Set('im_target', this); Call('ccwidget_whisper', 'BringToFront();'); SetFocusName('im_chat_box');"
-					ondoubleclick="ShowOnly('ccwidget_whisper_' # this); Set('im_target', this); Call('ccwidget_whisper', 'BringToFront();'); SetFocusName('im_chat_box');"
-					onselect="Call('ccwidget_whisper', 'BringToFront();');"
-					watch1="ChatCloseIM"
-					ontrigger1="EraseListItemByValue(param);"
-				/>
-				
-				<instance
-					name="im_scroll_btn"
-					direction="1"
-					valign="bottom"
-					arrow="down"
-					onclick=""
-				/>				
-				
-			</panel>
+        -->
+        <panel color="invisible" height="1.4h" valign="{valign=top}" onframe="If(im_scrollpos + ({direction}) lt 0 or im_scrollpos + ({direction}) gt (im_count - 8), DisableWidget('im_scroll_{arrow}'), EnableWidget('im_scroll_{arrow}'));">
+            <button
+                name="im_scroll_{arrow}"
+                color="invisible"
+                visible="{visible=1}"
+                enabled="{enabled=1}"
+                onmouseover="PlaySound('/shared/sounds/ui/button_over_03.wav'); {onmouseover}"
+                onmouseout="{onmouseout}"
+                onclick="PlaySound('{sound=/shared/sounds/ui/button_click_01.wav}'); if (im_scrollpos + ({direction}) ge 0 and im_scrollpos + ({direction}) le (im_count - 8), Set('im_scrollpos', im_scrollpos + ({direction}))); Call('im_listbox', 'SetVerticalListScroll(im_scrollpos);'); SetFocusName('im_chat_box'); {onclick}"
+            >
+                <widgetstate statename="up">                
+                    <frame
+                        visible="1"
+                        texture="/ui/info/button.tga"
+                        borderthickness="0.2h"
+                        color="white"
+                    />                  
+                    <image width="-5.5h" height="-0.8h" align="center" valign="center" texture="/ui/elements/cc_scroll_{arrow}.tga" color="1 1 1 .7" />                 
+                </widgetstate>          
 
-			<panel align="right" width="-16.0h" watch1="ChatMessageTrigger" ontrigger1="If(!IsVisible('cc_panel'), ShowCCPanel()); If(!WidgetExists('ccwidget_whisper_' # param0), Split(Instantiate('ccwidget_whisper_sub', 'nick', param0, 'id', 'whisper'), Set('im_count', im_count + 1))); ShowOnly('ccwidget_whisper_' # param0); Set('im_target', param0); ShowWidget('ccwidget_whisper'); SetFocusName('im_chat_box');" watch2="ChatWhisperUpdate" ontrigger2="If(!WidgetExists('ccwidget_whisper_' # param0) and (param2), Split(Instantiate('ccwidget_whisper_sub', 'nick', param0, 'id', 'whisper'), if(im_count == 0, Split(ShowOnly('ccwidget_whisper_' # param0), Set('im_target', param0))), Set('im_count', im_count + 1))); if(!IsVisible('ccwidget_whisper_' # param0) and (param2), Split(Call('im_entry_' # param0 # '_label', 'SetColor(\'1\',\'1\',\'0\',\'1\');'), If(!(*('im_unread_' # param0)), Set('cc_unread_ims', cc_unread_ims + 1)), Set('im_unread_' # param0, true))); If(param2, ShowWidget('ccwidget_whisper'));"/>
-		</panel>
+                <widgetstate statename="over">
+                    <frame
+                        visible="1"
+                        texture="/ui/info/button_down.tga"
+                        borderthickness="0.2h"
+                        color="white"
+                    />                  
+                    <image width="-5.5h" height="-0.8h" align="center" valign="center" texture="/ui/elements/cc_scroll_{arrow}.tga" color="1 1 1 .7" />
+                </widgetstate>      
 
-		<!-- Footer -->
-		<panel y="-0.5h" height="3.0h" width="-1.0h" align="center" valign="bottom" color="invisible" onshow="SetFocusName('im_chat_box');">
-			<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 .7" noclick="1" />
+                <widgetstate statename="down" x="1" y="1">
+                    <frame
+                        visible="1"
+                        texture="/ui/info/button_down.tga"
+                        borderthickness="0.2h"
+                        color="white"
+                    />                  
+                    <image width="-5.5h" height="-0.8h" align="center" valign="center" texture="/ui/elements/cc_scroll_{arrow}.tga" color="1 1 1 .7" />
+                </widgetstate>
+                
+                <widgetstate statename="disabled">
+                    <frame
+                        visible="1"
+                        texture="/ui/info/button.tga"
+                        borderthickness="0.2h"
+                        color="white"
+                    />                  
+                    <image width="-5.5h" height="-0.8h" align="center" valign="center" texture="/ui/elements/cc_scroll_{arrow}.tga" color="1 1 1 .7" />
+                    <panel  color="0 0 0 .7"/>
+                </widgetstate>
+            </button>
+        </panel>    
+    </template>
+    
+    <template name="ccwidget_whisper_sub">
+        <panel name="ccwidget_whisper_{nick}" color="invisible" noclick="true" blockinput="false" group="im_windows" visible="false" watch="ChatCloseIM" ontrigger="if(StringEquals(param, '{nick}'), DestroyWidget());" onshow="Call('im_entry_{nick}_frame', 'SetColor(\'1\',\'1\',\'1\',\'1\'); SetBorderColor(\'1\',\'1\',\'1\',\'1\');'); Call('im_entry_{nick}_label', 'SetColor(\'1\',\'1\',\'1\',\'1\');'); If(im_unread_{nick}, Set('cc_unread_ims', cc_unread_ims - 1)); Set('im_unread_{nick}', false);" onhide="Call('im_entry_{nick}_frame', 'SetColor(\'1\',\'1\',\'1\',\'0.25\'); SetBorderColor(\'1\',\'1\',\'1\',\'0.25\');'); Call('im_entry_{nick}_label', 'SetColor(\'1\',\'1\',\'1\',\'1\');');">
+            <panel name="whisper_box_panel_{nick}" color="invisible" height="-8" width="-8" align="center" valign="center" blockinput="false" noclick="true">
+                <!-- Chat Window -->
+                <frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 .7" noclick="1" />
 
-			<panel x="0.5h" width="-13.5h" height="2.2h" valign="center" color="0 0 0 .5">
-				<frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />
-				<textbox
-					name="im_chat_box"
-					y="0.3h"
-					width="-1.0h"
-					valign="center" align="center"
-					maxlength="250"
-					textalign="left" textvalign="center"
-					font="dyn_10"
-					textcolor="white"
-					shadow="false"
-					color="invisible"
-					onshow="SleepWidget(1);"
-					onwake="SetFocus(true);"
-					onenter="if(ChatSendIM(im_target, this), EraseInputLine()); SetFocusName(name);"
-					onesc="EraseInputLine(); SetFocus(true);"
-					onchange="if(StringLength(this) gt 0, EnableWidget('im_send_message_button'), DisableWidget('im_send_message_button'));"
-					onfocus="Call('ccwidget_whisper', 'BringToFront();');"
-					onclick="Call('ccwidget_whisper', 'BringToFront();');"
-				/>
-			</panel>
-			<instance 
-				name="button2"
-				button_name="im_send_message_button"
-				enabled="false"
-				x="-0.5h"
-				height="2.4h" width="12.0h"
-				align="right" valign="center"
-				font="dyn_10"
-				label="ccwhisper_button_send_message"
-				onclick="Call('im_chat_box', 'if(ChatSendIM(im_target,this), EraseInputLine());'); SetActiveWidget('im_chat_box');"
-			/>
-		</panel>
-	</panel>
+                <textbuffer
+                    name="whisper_{nick}_textbuffer"
+                    scrolltexture="/ui/info/combobox.tga"
+                    handleheight="2.0h"
+                    width="-1.0h" height="-1.0h"
+                    align="center" valign="center"
+                    scrollbarsize="2.0h" 
+                    textalign="left"
+                    font="dyn_10"
+                    wrap="true"
+                    anchorbottom="true"
+                    usesmileys="true"
+                    maxlines="1000"
+                    shadow="true"
+                    color="invisible"
+                    textcolor="white"
+                    onhide="ClearBufferText();"
+                    onshow="ClearBufferText(); ChatUpdateWhispers('{nick}');"
+                    watch="ChatWhisperUpdate"
+                    ontrigger="if(StringEquals(param0,'{nick}'), Split(AddBufferText(param1),PlaySound('/shared/sounds/ui/msg_recv.mp3')));"
+                    onclick="Call('ccwidget_whisper', 'BringToFront();');"
+                />
+            </panel>
+        </panel>
+    </template>
+
+
+    <template name="ccwidget_whisperclan_display">
+        <!-- Header -->
+        <panel height="{headerheight=22}" y="-{headerheight=22}" align="center" blockinput="false" noclick="true">
+            <label x="6" align="left" valign="center" textvalign="center" font="{titlefont=dyn_10}" color="{titlecolor=white}" shadow="true" blockinput="false" noclick="true">ccwhisper_label_send_clan_message</label>
+            <button name="ccwidget_{id}_close2" parentid="{id}" x="-5" width="14" height="14" align="right" valign="center" color="#FFFFFF99" texture="/ui/elements/xbutton.tga" onclick="PlaySound('/ui/sounds/close.mp3'); DestroyWidget('ccwidget_whisperclan');"/>
+        </panel>
+        <panel name="whisper_clan_panel" color="invisible" height="-8" width="-8" align="center" valign="center" blockinput="false" noclick="true">
+            <!--<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="6" color="#000000DD" blockinput="false" noclick="true"/>-->
+            <frame texture="/ui/frames/roundframe.tga" color="{bordercolor=#A0A0A077}" borderthickness="6" blockinput="false" noclick="true"/>
+            <textbuffer name="whisper_clan_textbuffer" height="-6" width="-6" align="center" valign="center" usesmilies="true" anchorbottom="true" font="dyn_10" textcolor="white" shadow="true" color="invisible" onshow="ClearBufferText(); ChatUpdateClanWhispers();" watch="ChatClanWhisperUpdate" ontrigger="AddBufferText(param); PlaySound('/shared/sounds/ui/msg_recv.mp3');"/>
+        </panel>
+
+        <!-- Footer -->
+        <panel height="{footerheight=28}" y="{footerheight=28}" width="-2" align="center" visible="{footer=1}" valign="bottom" blockinput="false" noclick="true">
+            <instance name="cceditbox" parentid="{id}" id="whisperclan" maxlength="300" height="-8" x="6" width="-85" align="left" valign="center" bordercolor="{bordercolor=#A0A0A077}" cvar="_target_nick" onshow="SetFocus(true);" onenter="if(ChatSendClanWhisper(this), EraseInputLine());" onesc="EraseInputLine();"/>
+
+            <instance
+                parentid="{id}"
+                x="-5"
+                width="70" height="20"
+                align="right" valign="center"
+                name="ccbutton"
+                label="ccwhisper_button_send_whisper"
+                onfocus="Call('whisper_clan_panel','BringToFront();'); Call('ccbar', 'BringToFront();');"
+                onclick="Call('cceditbox_{id}whisperclan_textbox', 'if(ChatSendClanWhisper(this), EraseInputLine());');"
+                bordercolor="{bordercolor=#A0A0A077}"
+            />
+        </panel>
+    </template>
+    
+    <panel name="ccwidget_whisper" color="invisible" width="60.0h" height="35.0h" align="center" valign="center" visible="0" noclick="0" blockinput="0" cangrab="1" onload="CreateInt('im_count', 0); CreateInt('im_scrollpos', 0); CreateString('im_target');" watch="ChatWhisperUpdate" ontrigger="if(!IsVisible('ccwidget_whisper_' # param0) and (param2), ChatAddNotification('IM recieved from ' # param0));" onclick="BringToFront();">
+        <frame color="0 0 0 .9" bordercolor="#455166" borderthickness="1" noclick="1" blockinput="0"/>
+        <instance name="header_bar" width="-2" height="2.4h" align="center" lbl="ccwhisper_header_send_a_message" show_close="1" onclick="Call('ccwidget_whisper', 'FadeOut(250);');" />
+
+        <panel y="2.8h" height="-6.7h" width="-1.0h" align="center" color="invisible">
+            <!-- Name List -->
+            <panel height="-0.6h" valign="center" width="16.0h" color="invisible" onclick="Call('ccwidget_whisper', 'BringToFront();');">   
+            
+                <instance
+                    name="im_scroll_btn"
+                    direction="-1"
+                    arrow="up"
+                    onclick=""
+                />
+                
+                <listbox
+                    name="im_listbox"
+                    width="-2"
+                    height="-3.4h"
+                    align="center"
+                    valign="center"
+                    color="invisible"
+                    font="dyn_10"
+                    itemwidth="100%"
+                    itemheight="2.4h"
+                    highlight="under"
+                    highlightcolor="invisible"
+                    highlightbordercolor="invisible"                        
+                    select="true"                       
+                    clearselection="true"
+                    hoverselect="0"                     
+                    exteriorscrollbars="0" 
+                    scrollbarplaceholder="false"
+                    scrollbarsize="2.0h"                        
+                    scrolltexture="/ui/info/combobox.tga"                       
+                    handleheight="2.0h"
+                    usescrollbars="false"
+                    watch="ChatMessageTrigger"
+                    ontrigger="If(!HasListItem(param0) and StringLength(param0) gt 0, AddTemplateListItem('im_entry', param0, 'name', param0)); ShowOnly('ccwidget_whisper_' # param0); Set('im_target', param0); SetFocusName('im_chat_box');"
+                    watch2="ChatWhisperUpdate"
+                    ontrigger2="If(!HasListItem(param0) and StringLength(param0) gt 0 and (param2), AddTemplateListItem('im_entry', param0, 'name', param0));"
+                    onclick="ShowOnly('ccwidget_whisper_' # this); Set('im_target', this); Call('ccwidget_whisper', 'BringToFront();'); SetFocusName('im_chat_box');"
+                    ondoubleclick="ShowOnly('ccwidget_whisper_' # this); Set('im_target', this); Call('ccwidget_whisper', 'BringToFront();'); SetFocusName('im_chat_box');"
+                    onselect="Call('ccwidget_whisper', 'BringToFront();');"
+                    watch1="ChatCloseIM"
+                    ontrigger1="EraseListItemByValue(param);"
+                />
+                
+                <instance
+                    name="im_scroll_btn"
+                    direction="1"
+                    valign="bottom"
+                    arrow="down"
+                    onclick=""
+                />              
+                
+            </panel>
+
+            <panel align="right" width="-16.0h" watch1="ChatMessageTrigger" ontrigger1="If(!IsVisible('cc_panel'), ShowCCPanel()); If(!WidgetExists('ccwidget_whisper_' # param0), Split(Instantiate('ccwidget_whisper_sub', 'nick', param0, 'id', 'whisper'), Set('im_count', im_count + 1))); ShowOnly('ccwidget_whisper_' # param0); Set('im_target', param0); ShowWidget('ccwidget_whisper'); SetFocusName('im_chat_box');" watch2="ChatWhisperUpdate" ontrigger2="If(!WidgetExists('ccwidget_whisper_' # param0) and (param2), Split(Instantiate('ccwidget_whisper_sub', 'nick', param0, 'id', 'whisper'), if(im_count == 0, Split(ShowOnly('ccwidget_whisper_' # param0), Set('im_target', param0))), Set('im_count', im_count + 1))); if(!IsVisible('ccwidget_whisper_' # param0) and (param2), Split(Call('im_entry_' # param0 # '_label', 'SetColor(\'1\',\'1\',\'0\',\'1\');'), If(!(*('im_unread_' # param0)), Set('cc_unread_ims', cc_unread_ims + 1)), Set('im_unread_' # param0, true))); If(param2, ShowWidget('ccwidget_whisper'));"/>
+        </panel>
+
+        <!-- Footer -->
+        <panel y="-0.5h" height="3.0h" width="-1.0h" align="center" valign="bottom" color="invisible" onshow="SetFocusName('im_chat_box');">
+            <frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 .7" noclick="1" />
+
+            <panel x="0.5h" width="-13.5h" height="2.2h" valign="center" color="0 0 0 .5">
+                <frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />
+                <textbox
+                    name="im_chat_box"
+                    y="0.3h"
+                    width="-1.0h"
+                    valign="center" align="center"
+                    maxlength="250"
+                    textalign="left" textvalign="center"
+                    font="dyn_10"
+                    textcolor="white"
+                    shadow="false"
+                    color="invisible"
+                    onshow="SleepWidget(1);"
+                    onwake="SetFocus(true);"
+                    onenter="if(ChatSendIM(im_target, this), EraseInputLine()); SetFocusName(name);"
+                    onesc="EraseInputLine(); SetFocus(true);"
+                    onchange="if(StringLength(this) gt 0, EnableWidget('im_send_message_button'), DisableWidget('im_send_message_button'));"
+                    onfocus="Call('ccwidget_whisper', 'BringToFront();');"
+                    onclick="Call('ccwidget_whisper', 'BringToFront();');"
+                />
+            </panel>
+            <instance 
+                name="button2"
+                button_name="im_send_message_button"
+                enabled="false"
+                x="-0.5h"
+                height="2.4h" width="12.0h"
+                align="right" valign="center"
+                font="dyn_10"
+                label="ccwhisper_button_send_message"
+                onclick="Call('im_chat_box', 'if(ChatSendIM(im_target,this), EraseInputLine());'); SetActiveWidget('im_chat_box');"
+            />
+        </panel>
+    </panel>
 </package>

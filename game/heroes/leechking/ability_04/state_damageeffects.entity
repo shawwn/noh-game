@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Leechking_Ability4_Damageeffects"
-	icon="icon.tga"
-	passiveeffect="effects/impact.effect"
-	effecttype=""
-	displaylevel="true"
-	ishidden="true"	
+    name="State_Leechking_Ability4_Damageeffects"
+    icon="icon.tga"
+    passiveeffect="effects/impact.effect"
+    effecttype=""
+    displaylevel="true"
+    ishidden="true" 
 
 >
 

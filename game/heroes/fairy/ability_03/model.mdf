@@ -2,6 +2,6 @@
 <model name="ability_3.max" file="ability_3.model" type="K2" >
 
 
-	<anim name="idle" clip="ability_3.clip" fps="42" loop="true"/>
-	
+    <anim name="idle" clip="ability_3.clip" fps="42" loop="true"/>
+    
 </model>

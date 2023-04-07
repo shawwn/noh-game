@@ -1,111 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="1" useentityeffectscale="1">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="entity" scale=".5">
+        <particlesystem name="system0" space="entity" scale=".5">
 
-			<simpleemitter
-				position="0 0 60"
-				spawnrate="30"
-				particlelife="700"
-				direction="0 0 1"	
-          			material="/shared/effects/materials/smash_add.material"
-         	>
-				<particle 
-					minangle="0"
-					maxangle="360"
-					startcolor="0"
-					midcolor=".25 .15 0"
-					endcolor="0"
-					midcolorpos="0.25"
-					startsize="40"
-					endsize="175"
-					startanchor="1.0"
-					endanchor="0.3"
-					flare="1"
-					startheight="50"
-					endheight="50"
-					scale="2"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                position="0 0 60"
+                spawnrate="30"
+                particlelife="700"
+                direction="0 0 1"   
+                    material="/shared/effects/materials/smash_add.material"
+            >
+                <particle 
+                    minangle="0"
+                    maxangle="360"
+                    startcolor="0"
+                    midcolor=".25 .15 0"
+                    endcolor="0"
+                    midcolorpos="0.25"
+                    startsize="40"
+                    endsize="175"
+                    startanchor="1.0"
+                    endanchor="0.3"
+                    flare="1"
+                    startheight="50"
+                    endheight="50"
+                    scale="2"
+                />
+            </simpleemitter>
 
-			<template name="Fire">
-				<model
-					name="skulls"
-					model="model.mdf"
-					anim="idle"
-					position="0 0 80"
-					scale="2"
-					expirelife="400"
-					startalpha="1"				
-					endalpha="0"
-					loop="true"
-					life="3000"
-					startcolor="1"
-					midcolor="1 0.6 2"
-					endcolor="1"
-				/>
+            <template name="Fire">
+                <model
+                    name="skulls"
+                    model="model.mdf"
+                    anim="idle"
+                    position="0 0 80"
+                    scale="2"
+                    expirelife="400"
+                    startalpha="1"              
+                    endalpha="0"
+                    loop="true"
+                    life="3000"
+                    startcolor="1"
+                    midcolor="1 0.6 2"
+                    endcolor="1"
+                />
 
-				<simpleemitter
-					bone="{bone1}"
-					owner="skulls"
-					spawnrate="20"
-					particlelife="900"			
-					speed="50"
-					material="/shared/effects/materials/phantom_smoke_13.material"
-					maxangle="5"
-					minangle="0"
-					direction="0 0 1"
-					inhertivelocity="1"
-				>
-					<particle 
-						minangle="0"
-						maxangle="360"
-						minanglespeed="50"
-						maxanglespeed="-50"
-						startcolor=".5 0 .4"
-						midcolor="1 .1 1"
-						endcolor="0"
-						startsize="30"
-						midsize="10"
-						endsize="0"
-					/>
-				</simpleemitter>
-			</template>
+                <simpleemitter
+                    bone="{bone1}"
+                    owner="skulls"
+                    spawnrate="20"
+                    particlelife="900"          
+                    speed="50"
+                    material="/shared/effects/materials/phantom_smoke_13.material"
+                    maxangle="5"
+                    minangle="0"
+                    direction="0 0 1"
+                    inhertivelocity="1"
+                >
+                    <particle 
+                        minangle="0"
+                        maxangle="360"
+                        minanglespeed="50"
+                        maxanglespeed="-50"
+                        startcolor=".5 0 .4"
+                        midcolor="1 .1 1"
+                        endcolor="0"
+                        startsize="30"
+                        midsize="10"
+                        endsize="0"
+                    />
+                </simpleemitter>
+            </template>
 
-			<instance name="Fire" bone1="_bone_fx_skull1"/>
-			<instance name="Fire" bone1="_bone_fx_skull2"/>	
-			<instance name="Fire" bone1="_bone_fx_skull3"/>
-			<instance name="Fire" bone1="_bone_fx_skull4"/>
+            <instance name="Fire" bone1="_bone_fx_skull1"/>
+            <instance name="Fire" bone1="_bone_fx_skull2"/> 
+            <instance name="Fire" bone1="_bone_fx_skull3"/>
+            <instance name="Fire" bone1="_bone_fx_skull4"/>
 
-			<template name="beam">
-				<beam
-					owner_a="skulls"
-					owner_b="source"
-					bone_a="{bone2}"
-					bone_b="Scene Root"
-					size="30"
-					startcolor=".5 .4 0"
-					endcolor="0"
-					material="/shared/effects/materials/femme_lightning_10.material"
-					minframespeed="1"
-					maxframespeed="2.2"
-				/>
-			</template>
+            <template name="beam">
+                <beam
+                    owner_a="skulls"
+                    owner_b="source"
+                    bone_a="{bone2}"
+                    bone_b="Scene Root"
+                    size="30"
+                    startcolor=".5 .4 0"
+                    endcolor="0"
+                    material="/shared/effects/materials/femme_lightning_10.material"
+                    minframespeed="1"
+                    maxframespeed="2.2"
+                />
+            </template>
 
-			<instance name="beam" bone2="_bone_fx_skull1"/>
-			<instance name="beam" bone2="_bone_fx_skull2"/>
-			<instance name="beam" bone2="_bone_fx_skull3"/>
-			<instance name="beam" bone2="_bone_fx_skull4"/>
-		
-		</particlesystem>
+            <instance name="beam" bone2="_bone_fx_skull1"/>
+            <instance name="beam" bone2="_bone_fx_skull2"/>
+            <instance name="beam" bone2="_bone_fx_skull3"/>
+            <instance name="beam" bone2="_bone_fx_skull4"/>
+        
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
-		<waitfordeath instance="instance0" />
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+        <waitfordeath instance="instance0" />
+    </thread>
 
 </effect>

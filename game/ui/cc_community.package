@@ -1,663 +1,663 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
-	
-	<!-- Friends List -->
-	<panel y="3.0h" width="-1.0h" height="36.4h" align="center" noclick="1">
-		<instance name="header_bar" height="2.2h" align="center" lbl="cc_com_header_your_friends_list" />
+    
+    <!-- Friends List -->
+    <panel y="3.0h" width="-1.0h" height="36.4h" align="center" noclick="1">
+        <instance name="header_bar" height="2.2h" align="center" lbl="cc_com_header_your_friends_list" />
 
-		<panel name="friends_list_display" y="2.4h" align="center" color="0 0 0 .75">
-			<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
-			<panel name="cc_friendslist" width="-1.0h" height="-1.0h" align="center" valign="center" color="0 0 0 .3" visible="1">
-				<frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 1" noclick="1" />
-				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+        <panel name="friends_list_display" y="2.4h" align="center" color="0 0 0 .75">
+            <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+            <panel name="cc_friendslist" width="-1.0h" height="-1.0h" align="center" valign="center" color="0 0 0 .3" visible="1">
+                <frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 1" noclick="1" />
+                <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
 
-				<instance name="buddy_listbox" listbox_name="cc_panel_friends" ondoubleclick="If(ChatUserOnline(ui_lastSelectedUser), ChatOpenMessage(ui_lastSelectedUser));" tooltip="friendlist_rtclick"/>
-				<instance name="cc_rightclick_menu" menu_name="friendlist_rtclick"/>
-			</panel>
-			
-		</panel>	
-		
-	</panel>
-	<!-- END Friends List -->
-	
+                <instance name="buddy_listbox" listbox_name="cc_panel_friends" ondoubleclick="If(ChatUserOnline(ui_lastSelectedUser), ChatOpenMessage(ui_lastSelectedUser));" tooltip="friendlist_rtclick"/>
+                <instance name="cc_rightclick_menu" menu_name="friendlist_rtclick"/>
+            </panel>
+            
+        </panel>    
+        
+    </panel>
+    <!-- END Friends List -->
+    
 
-	<!-- Clan List -->
-	<panel y="58.5h" width="-1.0h" height="34.4h" align="center" noclick="1">
-		<instance name="header_bar" height="2.2h" align="center" lbl="cc_com_header_clan_management" />
+    <!-- Clan List -->
+    <panel y="58.5h" width="-1.0h" height="34.4h" align="center" noclick="1">
+        <instance name="header_bar" height="2.2h" align="center" lbl="cc_com_header_clan_management" />
 
-		<panel name="" y="2.4h"  align="center" color="0 0 0 .75">
-			<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
-			
-			<!-- Clan (None) -->
-			<panel name="clan_list_none" y="0.5h" width="-1.2h" height="17.8h" align="center" valign="top" color="invisible" group="clan_group" visible="1" blockinput="false" noclick="true">
-				<frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
-				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+        <panel name="" y="2.4h"  align="center" color="0 0 0 .75">
+            <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+            
+            <!-- Clan (None) -->
+            <panel name="clan_list_none" y="0.5h" width="-1.2h" height="17.8h" align="center" valign="top" color="invisible" group="clan_group" visible="1" blockinput="false" noclick="true">
+                <frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
+                <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
 
-				<label y="1.0h" width="-2.0h" height="4.0h" align="center" textalign="center" wrap="1" font="dyn_12" color="red" shadow="true">cc_com_label_not_in_clan</label>
-				<label y="5.4h" width="-2.0h" height="8.0h" align="center" textalign="left" wrap="1" font="dyn_10" color="white" shadow="true">cc_com_label_if_interested</label>
+                <label y="1.0h" width="-2.0h" height="4.0h" align="center" textalign="center" wrap="1" font="dyn_12" color="red" shadow="true">cc_com_label_not_in_clan</label>
+                <label y="5.4h" width="-2.0h" height="8.0h" align="center" textalign="left" wrap="1" font="dyn_10" color="white" shadow="true">cc_com_label_if_interested</label>
 
-				<panel width="-1.0h" y="14.0h" height="3.0h" align="center" color="invisible">
-					<combobox
+                <panel width="-1.0h" y="14.0h" height="3.0h" align="center" color="invisible">
+                    <combobox
 
-						name="no_clan_state"				
-						width="100%"
-						height="2.2h"
-						align="right"
-						valign="center"
-						color="invisible"
-						itemwidth="100%"
-						itemheight="2h"
-						maxlistheight="6"
-						cvar="cc_lookingForClan"
-						exteriorscrollbars="false"
-						scrolltexture="/ui/info/combobox.tga"
-						handleheight="100@"
-						handlewidth="100%"
-						scrollbarsize="2h"
-						scrollbaroffset="0"
-						highlight="under"
-						onload=""
-						onselect="PlaySound('/shared/sounds/ui/ccpanel/button_click_02.wav'); SetFocus(1);"
-						onmouseover="PlaySound('/shared/sounds/ui/ccpanel/button_over_02.wav');"
-					>
-					
-						<instance name="Noptions_combobox_state" state="up" color="1 1 1 1" image="up"/>
-						<instance name="Noptions_combobox_state" state="over" color="#69ccff" image="over"/>
-						<instance name="Noptions_combobox_state" state="down" color="#69ccff" image="over"/>
-						<widgetstate statename="listbg">
-							<panel height="+2.7h">
-								<frame y="-1.9h" texture="/ui/info/combobox_dropdown.tga" borderthickness="3h" color="white"/>
-							</panel>
-						</widgetstate>
-						<widgetstate statename="itembg">
-							<panel width="100%" />
-						</widgetstate>
-						<widgetstate statename="itemhighlight">
-							<panel width="100%" texture="/ui/info/header_bar_c.tga">
-								<panel width="100%" height="100%" >
-									<image height="50%" width="32" align="left" valign="top" texture="/ui/info/header_bar_tl.tga" noclick="1"/>
-									<image height="50%" width="32" align="left" valign="bottom" texture="/ui/info/header_bar_bl.tga" noclick="1"/>
-									<image height="50%" width="32" align="right" valign="top" texture="/ui/info/header_bar_tr.tga" noclick="1"/>
-									<image height="50%" width="32" align="right" valign="bottom" texture="/ui/info/header_bar_br.tga" noclick="1"/>		
-								</panel>
-							</panel>
-						</widgetstate>
+                        name="no_clan_state"                
+                        width="100%"
+                        height="2.2h"
+                        align="right"
+                        valign="center"
+                        color="invisible"
+                        itemwidth="100%"
+                        itemheight="2h"
+                        maxlistheight="6"
+                        cvar="cc_lookingForClan"
+                        exteriorscrollbars="false"
+                        scrolltexture="/ui/info/combobox.tga"
+                        handleheight="100@"
+                        handlewidth="100%"
+                        scrollbarsize="2h"
+                        scrollbaroffset="0"
+                        highlight="under"
+                        onload=""
+                        onselect="PlaySound('/shared/sounds/ui/ccpanel/button_click_02.wav'); SetFocus(1);"
+                        onmouseover="PlaySound('/shared/sounds/ui/ccpanel/button_over_02.wav');"
+                    >
+                    
+                        <instance name="Noptions_combobox_state" state="up" color="1 1 1 1" image="up"/>
+                        <instance name="Noptions_combobox_state" state="over" color="#69ccff" image="over"/>
+                        <instance name="Noptions_combobox_state" state="down" color="#69ccff" image="over"/>
+                        <widgetstate statename="listbg">
+                            <panel height="+2.7h">
+                                <frame y="-1.9h" texture="/ui/info/combobox_dropdown.tga" borderthickness="3h" color="white"/>
+                            </panel>
+                        </widgetstate>
+                        <widgetstate statename="itembg">
+                            <panel width="100%" />
+                        </widgetstate>
+                        <widgetstate statename="itemhighlight">
+                            <panel width="100%" texture="/ui/info/header_bar_c.tga">
+                                <panel width="100%" height="100%" >
+                                    <image height="50%" width="32" align="left" valign="top" texture="/ui/info/header_bar_tl.tga" noclick="1"/>
+                                    <image height="50%" width="32" align="left" valign="bottom" texture="/ui/info/header_bar_bl.tga" noclick="1"/>
+                                    <image height="50%" width="32" align="right" valign="top" texture="/ui/info/header_bar_tr.tga" noclick="1"/>
+                                    <image height="50%" width="32" align="right" valign="bottom" texture="/ui/info/header_bar_br.tga" noclick="1"/>     
+                                </panel>
+                            </panel>
+                        </widgetstate>
 
-						<listitem value="false"><label x="1.0h" color="white" font="dyn_10" height="100%" textvalign="center">cc_com_dropbox_not_interested</label></listitem>
-						<listitem value="true"><label x="1.0h" color="white" font="dyn_10" height="100%" textvalign="center">cc_com_dropbox_looking_for_clan</label></listitem>
-						
-					</combobox>
-				</panel>
-			</panel>
-			<!-- END Clan (None) -->
-			
-			<!-- Clan (Member) -->
-			<panel name="clan_list_member" y="0.5h" width="-1.2h" height="33.3h" align="center" valign="top" color="invisible" group="clan_group" visible="0" blockinput="false" noclick="true">
-				<frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 1" noclick="1" />
-				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+                        <listitem value="false"><label x="1.0h" color="white" font="dyn_10" height="100%" textvalign="center">cc_com_dropbox_not_interested</label></listitem>
+                        <listitem value="true"><label x="1.0h" color="white" font="dyn_10" height="100%" textvalign="center">cc_com_dropbox_looking_for_clan</label></listitem>
+                        
+                    </combobox>
+                </panel>
+            </panel>
+            <!-- END Clan (None) -->
+            
+            <!-- Clan (Member) -->
+            <panel name="clan_list_member" y="0.5h" width="-1.2h" height="33.3h" align="center" valign="top" color="invisible" group="clan_group" visible="0" blockinput="false" noclick="true">
+                <frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 1" noclick="1" />
+                <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
 
-				<listbox 
-					name="clans_listbox_member"					
-					y="0.5h"
-					width="-1.0h"
-					height="-4.8h"
-					align="center" valign="top"
-					color="invisible"
-					itemwidth="100%" itemheight="2.0h"
-					wrap="row"
-					hoverselect="false"
-					highlight="under"
-					clearselection="true"
-					highlightcolor="#FFFFFF38"
-					highlightbordercolor="invisible"
-					scrollbarsize="2.0h" 						
-					scrolltexture="/ui/info/combobox.tga"						
-					handleheight="2.0h"
-					font="dyn_10"				
-					watch="ChatClanEvent"					
-					onselect="Set('ui_lastSelectedUser', this);"
-					onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip'));"
-					onmouseout="HideWidget('hover_tip');"
-					ondoubleclick="if(ChatUserOnline(ui_lastSelectedUser), ChatOpenMessage(ui_lastSelectedUser));"
-					onrightclick="
-						Set('ui_lastSelectedUser', this);
-						Set('ui_tooltipTarget', 'clanlist_rtclick_member');
-						Call(ui_tooltipTarget, 'SetVisible(true);');
-						Call(ui_tooltipTarget, 'SetX(\'' # param0 # '\');');
-						Call(ui_tooltipTarget, 'SetY(\'' # param1 # '\');');
-						PlaySound('/shared/sounds/ui/button_rightclick.mp3'));
-						SetFocusName(ui_tooltipTarget);"
-					>
-				</listbox>
-				
-				<instance name="cc_rightclick_menu" menu_name="clanlist_rtclick_member"/>
-			</panel>
-			<!-- END Clan (Member) -->
-			
-			<!-- Clan (Officer) -->
-			<panel name="clan_list_officer" y="0.5h" width="-1.2h" height="33.3h" align="center" valign="top" color="invisible" group="clan_group" visible="0" blockinput="false" noclick="true">
-				<frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 1" noclick="1" />
-				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
-						
-				<listbox 
-					name="clans_listbox_officer"
-					y="0.5h"
-					width="-1.0h"
-					height="-4.8h"
-					align="center" valign="top"
-					color="invisible"
-					itemwidth="100%" itemheight="2.0h"
-					wrap="row"
-					hoverselect="false"
-					highlight="under"
-					clearselection="true"
-					highlightcolor="#FFFFFF38"
-					highlightbordercolor="invisible"
-					scrollbarsize="2.0h" 						
-					scrolltexture="/ui/info/combobox.tga"						
-					handleheight="2.0h"
-					font="dyn_10"
-					watch="ChatClanEvent"
-					onselect="Set('ui_lastSelectedUser', this);"
-					onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip'));"
-					onmouseout="HideWidget('hover_tip');"
-					ondoubleclick="if(ChatUserOnline(ui_lastSelectedUser), ChatOpenMessage(ui_lastSelectedUser));"
-					onrightclick="
-						Set('ui_lastSelectedUser', this);
-						Set('ui_tooltipTarget', 'clanlist_rtclick_officer');
-						Call(ui_tooltipTarget, 'SetVisible(true);');
-						Call(ui_tooltipTarget, 'SetX(\'' # param0 # '\');');
-						Call(ui_tooltipTarget, 'SetY(\'' # param1 # '\');');
-						PlaySound('/shared/sounds/ui/button_rightclick.mp3'));
-						SetFocusName(ui_tooltipTarget);"
-					>
-				</listbox>
-				
-				<instance name="cc_rightclick_menu" menu_name="clanlist_rtclick_officer"/>
-			</panel>
-			<!-- END Clan (Officer) -->
-			
-			<!-- Clan (Leader) -->
-			<panel name="clan_list_leader" y="0.5h" width="-1.2h" height="33.3h" align="center" valign="top" color="invisible" group="clan_group" visible="0" blockinput="false" noclick="true">
-				<frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 1" noclick="1" />
-				<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
-						
-				<listbox 
-					name="clans_listbox_leader"
-					y="0.5h"
-					width="-1.0h"
-					height="-4.0h"
-					align="center" valign="top"
-					color="invisible"
-					itemwidth="100%" itemheight="2.0h"
-					wrap="row"
-					hoverselect="false"
-					highlight="under"
-					clearselection="true"
-					highlightcolor="#FFFFFF38"
-					highlightbordercolor="invisible"
-					scrollbarsize="2.0h" 						
-					scrolltexture="/ui/info/combobox.tga"						
-					handleheight="2.0h"
-					font="dyn_10"
-					watch="ChatClanEvent"
-					onselect="Set('ui_lastSelectedUser', this);"
-					onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip'));"
-					onmouseout="HideWidget('hover_tip');"
-					ondoubleclick="if(ChatUserOnline(ui_lastSelectedUser), ChatOpenMessage(ui_lastSelectedUser));"
-					onrightclick="
-						Set('ui_lastSelectedUser', this);
-						Set('ui_tooltipTarget', 'clanlist_rtclick_leader');
-						Call(ui_tooltipTarget, 'SetVisible(true);');
-						Call(ui_tooltipTarget, 'SetX(\'' # param0 # '\');');
-						Call(ui_tooltipTarget, 'SetY(\'' # param1 # '\');');
-						PlaySound('/shared/sounds/ui/button_rightclick.mp3'));
-						SetFocusName(ui_tooltipTarget);"
-					>
-				</listbox>
-				
-				<instance name="cc_rightclick_menu" menu_name="clanlist_rtclick_leader"/>
-
-
-				<instance
-					y="-0.6h"
-					height="2.2h" width="-2.0h"
-					align="center"
-					valign="bottom"
-					name="button2"
-					font="dyn_10"
-					label="cc_com_rtclick_clan_invite_member"
-					watch=""
-					ontrigger=""
-					onclick="ShowWidget('clan_invite'); SetFocus(1);"
-				/>
-			</panel>
-			<!-- END Clan (Leader) -->
-			
-			<!-- Clan Invite -->
-			<panel name="clan_invite" y="0.5h" width="-1.2h" height="33.3h" align="center" valign="top" color="invisible" group="clan_group" visible="0" blockinput="false" noclick="true">					
-				<frame color="0 0 0 1" bordercolor="#455166" borderthickness="1" noclick="1" />
+                <listbox 
+                    name="clans_listbox_member"                 
+                    y="0.5h"
+                    width="-1.0h"
+                    height="-4.8h"
+                    align="center" valign="top"
+                    color="invisible"
+                    itemwidth="100%" itemheight="2.0h"
+                    wrap="row"
+                    hoverselect="false"
+                    highlight="under"
+                    clearselection="true"
+                    highlightcolor="#FFFFFF38"
+                    highlightbordercolor="invisible"
+                    scrollbarsize="2.0h"                        
+                    scrolltexture="/ui/info/combobox.tga"                       
+                    handleheight="2.0h"
+                    font="dyn_10"               
+                    watch="ChatClanEvent"                   
+                    onselect="Set('ui_lastSelectedUser', this);"
+                    onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip'));"
+                    onmouseout="HideWidget('hover_tip');"
+                    ondoubleclick="if(ChatUserOnline(ui_lastSelectedUser), ChatOpenMessage(ui_lastSelectedUser));"
+                    onrightclick="
+                        Set('ui_lastSelectedUser', this);
+                        Set('ui_tooltipTarget', 'clanlist_rtclick_member');
+                        Call(ui_tooltipTarget, 'SetVisible(true);');
+                        Call(ui_tooltipTarget, 'SetX(\'' # param0 # '\');');
+                        Call(ui_tooltipTarget, 'SetY(\'' # param1 # '\');');
+                        PlaySound('/shared/sounds/ui/button_rightclick.mp3'));
+                        SetFocusName(ui_tooltipTarget);"
+                    >
+                </listbox>
+                
+                <instance name="cc_rightclick_menu" menu_name="clanlist_rtclick_member"/>
+            </panel>
+            <!-- END Clan (Member) -->
+            
+            <!-- Clan (Officer) -->
+            <panel name="clan_list_officer" y="0.5h" width="-1.2h" height="33.3h" align="center" valign="top" color="invisible" group="clan_group" visible="0" blockinput="false" noclick="true">
+                <frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 1" noclick="1" />
+                <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+                        
+                <listbox 
+                    name="clans_listbox_officer"
+                    y="0.5h"
+                    width="-1.0h"
+                    height="-4.8h"
+                    align="center" valign="top"
+                    color="invisible"
+                    itemwidth="100%" itemheight="2.0h"
+                    wrap="row"
+                    hoverselect="false"
+                    highlight="under"
+                    clearselection="true"
+                    highlightcolor="#FFFFFF38"
+                    highlightbordercolor="invisible"
+                    scrollbarsize="2.0h"                        
+                    scrolltexture="/ui/info/combobox.tga"                       
+                    handleheight="2.0h"
+                    font="dyn_10"
+                    watch="ChatClanEvent"
+                    onselect="Set('ui_lastSelectedUser', this);"
+                    onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip'));"
+                    onmouseout="HideWidget('hover_tip');"
+                    ondoubleclick="if(ChatUserOnline(ui_lastSelectedUser), ChatOpenMessage(ui_lastSelectedUser));"
+                    onrightclick="
+                        Set('ui_lastSelectedUser', this);
+                        Set('ui_tooltipTarget', 'clanlist_rtclick_officer');
+                        Call(ui_tooltipTarget, 'SetVisible(true);');
+                        Call(ui_tooltipTarget, 'SetX(\'' # param0 # '\');');
+                        Call(ui_tooltipTarget, 'SetY(\'' # param1 # '\');');
+                        PlaySound('/shared/sounds/ui/button_rightclick.mp3'));
+                        SetFocusName(ui_tooltipTarget);"
+                    >
+                </listbox>
+                
+                <instance name="cc_rightclick_menu" menu_name="clanlist_rtclick_officer"/>
+            </panel>
+            <!-- END Clan (Officer) -->
+            
+            <!-- Clan (Leader) -->
+            <panel name="clan_list_leader" y="0.5h" width="-1.2h" height="33.3h" align="center" valign="top" color="invisible" group="clan_group" visible="0" blockinput="false" noclick="true">
+                <frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 1" noclick="1" />
+                <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+                        
+                <listbox 
+                    name="clans_listbox_leader"
+                    y="0.5h"
+                    width="-1.0h"
+                    height="-4.0h"
+                    align="center" valign="top"
+                    color="invisible"
+                    itemwidth="100%" itemheight="2.0h"
+                    wrap="row"
+                    hoverselect="false"
+                    highlight="under"
+                    clearselection="true"
+                    highlightcolor="#FFFFFF38"
+                    highlightbordercolor="invisible"
+                    scrollbarsize="2.0h"                        
+                    scrolltexture="/ui/info/combobox.tga"                       
+                    handleheight="2.0h"
+                    font="dyn_10"
+                    watch="ChatClanEvent"
+                    onselect="Set('ui_lastSelectedUser', this);"
+                    onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip'));"
+                    onmouseout="HideWidget('hover_tip');"
+                    ondoubleclick="if(ChatUserOnline(ui_lastSelectedUser), ChatOpenMessage(ui_lastSelectedUser));"
+                    onrightclick="
+                        Set('ui_lastSelectedUser', this);
+                        Set('ui_tooltipTarget', 'clanlist_rtclick_leader');
+                        Call(ui_tooltipTarget, 'SetVisible(true);');
+                        Call(ui_tooltipTarget, 'SetX(\'' # param0 # '\');');
+                        Call(ui_tooltipTarget, 'SetY(\'' # param1 # '\');');
+                        PlaySound('/shared/sounds/ui/button_rightclick.mp3'));
+                        SetFocusName(ui_tooltipTarget);"
+                    >
+                </listbox>
+                
+                <instance name="cc_rightclick_menu" menu_name="clanlist_rtclick_leader"/>
 
 
-				<!-- Find Options -->
-				<panel name="clan_invite_options" align="center">
-
-					<panel y="0.6h" height="5.6h" width="-1.0h" align="center">
-						<frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
-						<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />						
-
-						<label y="0.5h" height="4.0h" width="-1.0h" align="center" textalign="left" wrap="1" font="dyn_10" color="white" shadow="true">cc_com_label_find_nickname_below</label>
-
-						<panel y="-0.5h" height="3.0h" valign="bottom" color="invisible">
-							<panel x="0.5h" width="-6.8h" height="2.2h" valign="center" color="0 0 0 .5">
-								<frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />					
-								<textbox
-									name=""
-									y="0.3h"
-									width="-1.0h"
-									valign="center" align="center"
-									maxlength="40"
-									textalign="left" textvalign="center"
-									font="dyn_10"
-									textcolor="white"
-									shadow="false"
-									color="invisible"
-									onenter=""
-								/>
-							</panel>
-							<instance 
-								name="button2"
-								x="-0.5h"
-								height="2.2h" width="5.4h"
-								align="right" valign="center"
-								font="dyn_10"
-								label="cc_com_button_findoptions_invite"
-								onclick="ShowWidget('cc_msg');"
-							/>
-						</panel>
-
-					</panel>					
-					<panel y="6.7h" height="6.0h" width="-1.0h" align="center">
-						<frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
-						<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />						
-						
-						<instance
-							y="-3.3h"
-							height="2.2h" width="-2.0h"
-							align="center"
-							valign="bottom"
-							name="button2"
-							font="dyn_10"
-							label="cc_com_button_findoptions_current"
-							watch=""
-							ontrigger=""
-							onshow="SetEnabled(ChatInGame());"
-							onclick="If(ChatInGame(), ShowWidget('clan_invite_cur_game_list')); SetFocus(1);"
-						/>
-
-						<instance
-							y="-0.6h"
-							height="2.2h" width="-2.0h"
-							align="center"
-							valign="bottom"
-							name="button2"
-							font="dyn_10"
-							label="cc_com_button_findoptions_recent"
-							watch=""
-							ontrigger=""
-							onclick="Call('cc_community_blocker', 'FadeIn(250);'); Call('clan_invite_recent_list', 'FadeIn(250);');"
-						/>
-					</panel>
-				</panel>
-				<!-- END Find Options -->
-
-				<instance
-					name="button2"
-					y="-0.5h"
-					align="center"
-					valign="bottom"
-					height="2.2h"
-					width="-2.0h"
-					font="dyn_10"
-					label="general_cancel"
-					watch=""
-					ontrigger=""
-					onclick="hideWidget('clan_invite'); SetFocus(1); showWidget('clans_listbox_member'); showWidget('clans_listbox_officer'); showWidget('clans_listbox_leader');"
-					onrightclick="SetFocus(1);"
-					onmouseover=""
-					onmouseout=""
-					onfocus="Call('ccwidget_community','BringToFront();'); Call('ccbar', 'BringToFront();'); Call('community_header_image','SetColor(1,1,1);'); Call('community_footer_image','SetColor(1,1,1);'); Call('community_right_image','SetColor(1,1,1);');"
-					onlosefocus="Call('community_header_image','SetColor(0.7,0.7,0.7);'); Call('community_footer_image','SetColor(0.7,0.7,0.7);'); Call('community_right_image','SetColor(0.7,0.7,0.7);'); HideWidget('hover_tip');"
-				/>
+                <instance
+                    y="-0.6h"
+                    height="2.2h" width="-2.0h"
+                    align="center"
+                    valign="bottom"
+                    name="button2"
+                    font="dyn_10"
+                    label="cc_com_rtclick_clan_invite_member"
+                    watch=""
+                    ontrigger=""
+                    onclick="ShowWidget('clan_invite'); SetFocus(1);"
+                />
+            </panel>
+            <!-- END Clan (Leader) -->
+            
+            <!-- Clan Invite -->
+            <panel name="clan_invite" y="0.5h" width="-1.2h" height="33.3h" align="center" valign="top" color="invisible" group="clan_group" visible="0" blockinput="false" noclick="true">                 
+                <frame color="0 0 0 1" bordercolor="#455166" borderthickness="1" noclick="1" />
 
 
+                <!-- Find Options -->
+                <panel name="clan_invite_options" align="center">
 
-			</panel>
-			<!-- END Clan Invite -->			
+                    <panel y="0.6h" height="5.6h" width="-1.0h" align="center">
+                        <frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
+                        <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />                       
 
-		</panel>
-	</panel>
-	<!-- END Clan List -->	
-	
-	<!-- Add Friends -->
+                        <label y="0.5h" height="4.0h" width="-1.0h" align="center" textalign="left" wrap="1" font="dyn_10" color="white" shadow="true">cc_com_label_find_nickname_below</label>
 
-	<panel y="42.3h" width="-1.0h" height="13.5h" align="center" noclick="1" onhide="ChatAutoCompleteClear();">
-		<instance name="header_bar" height="2.2h" align="center" lbl="cc_com_header_add_friends" />
+                        <panel y="-0.5h" height="3.0h" valign="bottom" color="invisible">
+                            <panel x="0.5h" width="-6.8h" height="2.2h" valign="center" color="0 0 0 .5">
+                                <frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />                   
+                                <textbox
+                                    name=""
+                                    y="0.3h"
+                                    width="-1.0h"
+                                    valign="center" align="center"
+                                    maxlength="40"
+                                    textalign="left" textvalign="center"
+                                    font="dyn_10"
+                                    textcolor="white"
+                                    shadow="false"
+                                    color="invisible"
+                                    onenter=""
+                                />
+                            </panel>
+                            <instance 
+                                name="button2"
+                                x="-0.5h"
+                                height="2.2h" width="5.4h"
+                                align="right" valign="center"
+                                font="dyn_10"
+                                label="cc_com_button_findoptions_invite"
+                                onclick="ShowWidget('cc_msg');"
+                            />
+                        </panel>
 
-		<panel name="" y="2.4h"  align="center" color="0 0 0 .75">
-			<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
-			
-			<!-- Friend Invite -->
-			<panel name="friends_add" width="-1.2h" height="-1.2h" align="center" valign="center" color="invisible" visible="1" blockinput="false" noclick="true">
+                    </panel>                    
+                    <panel y="6.7h" height="6.0h" width="-1.0h" align="center">
+                        <frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
+                        <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />                       
+                        
+                        <instance
+                            y="-3.3h"
+                            height="2.2h" width="-2.0h"
+                            align="center"
+                            valign="bottom"
+                            name="button2"
+                            font="dyn_10"
+                            label="cc_com_button_findoptions_current"
+                            watch=""
+                            ontrigger=""
+                            onshow="SetEnabled(ChatInGame());"
+                            onclick="If(ChatInGame(), ShowWidget('clan_invite_cur_game_list')); SetFocus(1);"
+                        />
 
-				<!-- Find Options -->
-				<panel name="friend_invite_options" align="center" color="invisible">	
-					
-					<!-- Text Add -->
-					<panel height="5.6h" align="center">
-						<frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
-						<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+                        <instance
+                            y="-0.6h"
+                            height="2.2h" width="-2.0h"
+                            align="center"
+                            valign="bottom"
+                            name="button2"
+                            font="dyn_10"
+                            label="cc_com_button_findoptions_recent"
+                            watch=""
+                            ontrigger=""
+                            onclick="Call('cc_community_blocker', 'FadeIn(250);'); Call('clan_invite_recent_list', 'FadeIn(250);');"
+                        />
+                    </panel>
+                </panel>
+                <!-- END Find Options -->
 
-						<label y="0.5h" height="4.0h" width="-1.0h" align="center" textalign="left" wrap="1" font="dyn_10" color="white" shadow="true">cc_com_label_enter_nickname</label>
+                <instance
+                    name="button2"
+                    y="-0.5h"
+                    align="center"
+                    valign="bottom"
+                    height="2.2h"
+                    width="-2.0h"
+                    font="dyn_10"
+                    label="general_cancel"
+                    watch=""
+                    ontrigger=""
+                    onclick="hideWidget('clan_invite'); SetFocus(1); showWidget('clans_listbox_member'); showWidget('clans_listbox_officer'); showWidget('clans_listbox_leader');"
+                    onrightclick="SetFocus(1);"
+                    onmouseover=""
+                    onmouseout=""
+                    onfocus="Call('ccwidget_community','BringToFront();'); Call('ccbar', 'BringToFront();'); Call('community_header_image','SetColor(1,1,1);'); Call('community_footer_image','SetColor(1,1,1);'); Call('community_right_image','SetColor(1,1,1);');"
+                    onlosefocus="Call('community_header_image','SetColor(0.7,0.7,0.7);'); Call('community_footer_image','SetColor(0.7,0.7,0.7);'); Call('community_right_image','SetColor(0.7,0.7,0.7);'); HideWidget('hover_tip');"
+                />
 
-						<panel y="-0.5h" height="3.0h" valign="bottom" color="invisible" onload="CreateBool('cc_add_friend_auto', false);">
-							<panel x="0.5h" width="-6.8h" height="2.2h" valign="center" color="0 0 0 .5">
-								<frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />					
-								<textbox
-									name="friend_add_entry"
-									y="0.3h"
-									width="-1.0h"
-									valign="center" align="center"
-									maxlength="40"
-									textalign="left" textvalign="center"
-									font="dyn_10"
-									textcolor="white"
-									shadow="false"
-									color="invisible"
-									onenter="Call('friend_add_entry', 'ChatAddBuddy(this); EraseInputLine();');"
-									onchange="CreateString('ui_autocompleteTextBox', name); ChatAutoCompleteNick(this);"
-									onlosefocus="Set(cc_add_friend_auto, false);"
-									onfocus="Set(cc_add_friend_auto, true);"
-								/>
-							</panel>
-							<instance 
-								name="button2"
-								x="-0.5h"
-								height="2.2h" width="5.4h"
-								align="right" valign="center"
-								font="dyn_10"
-								label="cc_com_button_add"
-								onclick="Call('friend_add_entry', 'ChatAddBuddy(this); EraseInputLine();'); SetFocus(1);"
-							/>
-						</panel>	
-					
-					</panel>
-					
-					<!-- Add From -->
-					<panel y="6.2h" height="6.0h" align="center">
-						<frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
-						<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
-						<instance
-							y="-3.3h"
-							height="2.2h" width="-2.0h"
-							align="center"
-							valign="bottom"
-							name="button2"
-							font="dyn_10"
-							label="cc_com_button_find_in_game"
-							watch=""
-							ontrigger=""
-							onshow="SetEnabled(ChatInGame());"
-							onclick="if(ChatInGame(), ShowWidget('friend_invite_recent_list')); SetFocus(1);"
-							onrightclick="SetFocus(1);"
-						/>
-						<instance
-							y="-0.6h"
-							height="2.2h" width="-2.0h"
-							align="center"
-							valign="bottom"
-							name="button2"
-							font="dyn_10"
-							label="cc_com_button_recently_with"
-							watch=""
-							ontrigger=""
-							onclick="Call('cc_community_blocker', 'FadeIn(250);'); Call('friend_invite_recent_list', 'FadeIn(250);');"
-							onrightclick="SetFocus(1);"
-						/>	
-						
-					</panel>
-					
-					<panel width="-1.0h" height="30.0h" y="4.2h" visible="false" color="invisible" watch="ChatAutoCompleteClear" ontrigger="SetVisible(false);" watch2="ChatAutoCompleteAdd" ontrigger2="if(cc_add_friend_auto, SetVisible(true));">
-						<instance name="autocomplete_list" listbox_name="autocomplete_friends_list" y="0.5h" x="0.5h" width="14.0h" height="8.7h" align="left" valign="top" />
-					</panel>
-					
-				</panel>
-				<!-- END Find Options -->
 
-			</panel>
-			<!-- END Friend Invite -->
-		</panel>
-	</panel>
-	<!-- END Add Friends -->
-	
 
-	<panel name="cc_community_blocker" color="0 0 0 .7" visible="0"/>
-	
+            </panel>
+            <!-- END Clan Invite -->            
 
-	<!-- Friend Add Recent Browse Lists -->
-	<panel name="friend_invite_recent_list" x="-25.3h" width="25.0h" y="29.5h" height="28.0h" color="invisible" visible="0" onshow="Set('ui_lastSelectedUser', '');">
-		<frame color="0 0 0 1" bordercolor="#455166" borderthickness="1" noclick="1" />
-		<instance name="header_bar" width="-2" height="2.2h" buttonsize="1.4h" align="center" lbl="cc_com_aside_header_recently_with" show_close="1" onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('friend_invite_recent_list', 'FadeOut(250);');" />
-			
-		<panel y="2.3h" width="-0.6h" height="-5.2h" align="center" valign="top" color="invisible">
-			<instance name="recently_played_listbox" listbox_name="cc_panel_recently_played" tooltip="recently_played_rtclick" ondoubleclick="ChatAddBuddy(this);"/>
-		</panel>
-		
-		<instance name="cc_rightclick_menu" menu_name="recently_played_rtclick"/>
+        </panel>
+    </panel>
+    <!-- END Clan List -->  
+    
+    <!-- Add Friends -->
 
-		<instance
-			y="-0.5h" x="-0.5h"
-			height="2.2h" width="40%"
-			align="right"
-			valign="bottom"
-			name="button2"
-			font="dyn_10"
-			label="cc_com_aside_recent_button_add"
-			onclick="if(StringLength(ui_lastSelectedUser) gt 0,ChatAddBuddy(ui_lastSelectedUser));"
-		/>
-		<instance
-			y="-0.5h" x="0.5h"
-			height="2.2h" width="40%"
-			align="left"
-			valign="bottom"
-			name="button2"
-			font="dyn_10"
-			label="general_cancel"
-			onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('friend_invite_recent_list', 'FadeOut(250);');"
-		/>
-	</panel>
-	<!-- END Friend Add Recent Browse Lists -->	
-	
-	<!-- Friend Add Browse Current Lists -->
-	<panel name="friend_invite_browse_lists" x="-20.0h" y="30.0h" height="30.0h" color="invisible" visible="0" onshow="Set('ui_lastSelectedUser', '');">
-		<frame color="0 0 0 1" bordercolor="#455166" borderthickness="1" noclick="1" />
-		<instance name="header_bar" width="-2" height="2.2h" align="center" lbl="cc_com_aside_header_in_current_game" show_close="1" onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('friend_invite_browse_lists', 'FadeOut(250);');" />
-				
-		<listbox 
-			name="friends_listbox_add_curgame"
-			y="2.6h"
-			width="-1.0h" height="-8.6h"
-			align="center" valign="top"
-			color="invisible"
-			itemwidth="100%"
-			itemheight="2.3h"
-			wrap="row"
-			font="dyn_10"
-			hoverselect="false"
-			clearselection="true"
-			highlight="under"
-			highlightcolor="#67a7da62"
-			highlightbordercolor="invisible"			
-			exteriorscrollbars="false"
-			scrollbarsize="2.0h" 						
-			scrolltexture="/ui/info/combobox.tga"						
-			handleheight="2.0h"			
-			watch1="ChatUserEvent"
-			ontrigger1="If(StringEmpty(param0) or StringEquals(param0, cc_curGameChannel), UICmd(param1));"
-			watch2="ChatUserNames"
-			ontrigger2="If(StringEmpty(param0) or StringEquals(param0, cc_curGameChannel), AddTemplateListItem('chat_list_entry', param1, 'name', param1));"
-			onselect="Set('ui_lastSelectedUser', this);"
-			onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip')));"
-			onmouseout="HideWidget('hover_tip');"
-			onrightclick="PlaySound('/shared/sounds/ui/button_rightclick.mp3');"
-			onfocus="Call('ccwidget_community','BringToFront();'); Call('ccbar', 'BringToFront();'); Call('community_header_image','SetColor(1,1,1);'); Call('community_footer_image','SetColor(1,1,1);'); Call('community_right_image','SetColor(1,1,1);');"
-			onlosefocus="Call('community_header_image','SetColor(0.7,0.7,0.7);'); Call('community_footer_image','SetColor(0.7,0.7,0.7);'); Call('community_right_image','SetColor(0.7,0.7,0.7);'); HideWidget('hover_tip');"
-			>
-		</listbox>
+    <panel y="42.3h" width="-1.0h" height="13.5h" align="center" noclick="1" onhide="ChatAutoCompleteClear();">
+        <instance name="header_bar" height="2.2h" align="center" lbl="cc_com_header_add_friends" />
 
-		<instance
-			y="-3.4h"
-			height="2.2h" width="-4.0h"
-			align="center"
-			valign="bottom"
-			name="button2"
-			font="dyn_10"
-			label="cc_com_aside_current_button_add"
-			onclick="if(StringLength(ui_lastSelectedUser) gt 0,ChatAddBuddy(ui_lastSelectedUser)); SetFocus(1);"
-		/>
-		<instance
-			y="-0.8h"
-			height="2.2h" width="-4.0h"
-			align="center"
-			valign="bottom"
-			name="button2"
-			font="dyn_10"
-			label="general_cancel"
-			onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('friend_invite_browse_lists', 'FadeOut(250);');"
-		/>
-	</panel>
-	<!-- END Friend Add Browse Current Lists -->
-	
-	<!-- Clan Recent Browse Lists -->
-	<panel name="clan_invite_recent_list" x="-20.0h" y="62.0h" height="30.0h" color="invisible" visible="0" onshow="Set('ui_lastSelectedUser', '');">
-		<frame color="0 0 0 1" bordercolor="#455166" borderthickness="1" noclick="1" />
-		<instance name="header_bar" width="-2" height="2.2h" align="center" lbl="cc_com_header_clan_inv_recent" show_close="1" onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('clan_invite_recent_list', 'FadeOut(250);');" />
-							
-		<listbox 
-			y="2.6h"
-			width="-1.0h" height="-8.6h"
-			align="center" valign="top"
-			color="invisible"
-			itemwidth="100%"
-			itemheight="2.3h"
-			wrap="row"
-			font="dyn_10"
-			hoverselect="false"
-			clearselection="true"
-			highlight="under"
-			highlightcolor="#67a7da62"
-			highlightbordercolor="invisible"			
-			exteriorscrollbars="false"
-			scrollbarsize="2.0h" 						
-			scrolltexture="/ui/info/combobox.tga"						
-			handleheight="2.0h"			
-			watch="ChatRecentlyPlayedClan"
-			onselect="Set('ui_lastSelectedUser', this);"
-			onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip'));"
-			onmouseout="HideWidget('hover_tip');"
-			onrightclick="PlaySound('/shared/sounds/ui/button_rightclick.mp3');"
-			>
-		</listbox>
+        <panel name="" y="2.4h"  align="center" color="0 0 0 .75">
+            <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+            
+            <!-- Friend Invite -->
+            <panel name="friends_add" width="-1.2h" height="-1.2h" align="center" valign="center" color="invisible" visible="1" blockinput="false" noclick="true">
 
-		<instance
-			y="-3.4h"
-			height="2.2h" width="-4.0h"
-			align="center"
-			valign="bottom"
-			name="button2"
-			font="dyn_10"
-			label="cc_com_button_clan_inv_recent_add"
-			onclick="if(StringLength(ui_lastSelectedUser) gt 0,ChatInviteUser(ui_lastSelectedUser)); SetFocus(1);"
-		/>
+                <!-- Find Options -->
+                <panel name="friend_invite_options" align="center" color="invisible">   
+                    
+                    <!-- Text Add -->
+                    <panel height="5.6h" align="center">
+                        <frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
+                        <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
 
-		<instance
-			y="-0.8h"
-			height="2.2h" width="-4.0h"
-			align="center"
-			valign="bottom"
-			name="button2"
-			font="dyn_10"
-			label="general_cancel"
-			onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('clan_invite_recent_list', 'FadeOut(250);');"
-		/>
+                        <label y="0.5h" height="4.0h" width="-1.0h" align="center" textalign="left" wrap="1" font="dyn_10" color="white" shadow="true">cc_com_label_enter_nickname</label>
 
-	</panel>
+                        <panel y="-0.5h" height="3.0h" valign="bottom" color="invisible" onload="CreateBool('cc_add_friend_auto', false);">
+                            <panel x="0.5h" width="-6.8h" height="2.2h" valign="center" color="0 0 0 .5">
+                                <frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />                   
+                                <textbox
+                                    name="friend_add_entry"
+                                    y="0.3h"
+                                    width="-1.0h"
+                                    valign="center" align="center"
+                                    maxlength="40"
+                                    textalign="left" textvalign="center"
+                                    font="dyn_10"
+                                    textcolor="white"
+                                    shadow="false"
+                                    color="invisible"
+                                    onenter="Call('friend_add_entry', 'ChatAddBuddy(this); EraseInputLine();');"
+                                    onchange="CreateString('ui_autocompleteTextBox', name); ChatAutoCompleteNick(this);"
+                                    onlosefocus="Set(cc_add_friend_auto, false);"
+                                    onfocus="Set(cc_add_friend_auto, true);"
+                                />
+                            </panel>
+                            <instance 
+                                name="button2"
+                                x="-0.5h"
+                                height="2.2h" width="5.4h"
+                                align="right" valign="center"
+                                font="dyn_10"
+                                label="cc_com_button_add"
+                                onclick="Call('friend_add_entry', 'ChatAddBuddy(this); EraseInputLine();'); SetFocus(1);"
+                            />
+                        </panel>    
+                    
+                    </panel>
+                    
+                    <!-- Add From -->
+                    <panel y="6.2h" height="6.0h" align="center">
+                        <frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 1" noclick="1" />
+                        <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+                        <instance
+                            y="-3.3h"
+                            height="2.2h" width="-2.0h"
+                            align="center"
+                            valign="bottom"
+                            name="button2"
+                            font="dyn_10"
+                            label="cc_com_button_find_in_game"
+                            watch=""
+                            ontrigger=""
+                            onshow="SetEnabled(ChatInGame());"
+                            onclick="if(ChatInGame(), ShowWidget('friend_invite_recent_list')); SetFocus(1);"
+                            onrightclick="SetFocus(1);"
+                        />
+                        <instance
+                            y="-0.6h"
+                            height="2.2h" width="-2.0h"
+                            align="center"
+                            valign="bottom"
+                            name="button2"
+                            font="dyn_10"
+                            label="cc_com_button_recently_with"
+                            watch=""
+                            ontrigger=""
+                            onclick="Call('cc_community_blocker', 'FadeIn(250);'); Call('friend_invite_recent_list', 'FadeIn(250);');"
+                            onrightclick="SetFocus(1);"
+                        />  
+                        
+                    </panel>
+                    
+                    <panel width="-1.0h" height="30.0h" y="4.2h" visible="false" color="invisible" watch="ChatAutoCompleteClear" ontrigger="SetVisible(false);" watch2="ChatAutoCompleteAdd" ontrigger2="if(cc_add_friend_auto, SetVisible(true));">
+                        <instance name="autocomplete_list" listbox_name="autocomplete_friends_list" y="0.5h" x="0.5h" width="14.0h" height="8.7h" align="left" valign="top" />
+                    </panel>
+                    
+                </panel>
+                <!-- END Find Options -->
 
-	
-	<!-- Clan Cur Game Browse Lists -->
-		
-	<panel name="clan_invite_cur_game_list" x="-20.0h" y="62.0h" height="30.0h" color="invisible" visible="0" onshow="Set('ui_lastSelectedUser', '');">
-		<frame color="0 0 0 1" bordercolor="#455166" borderthickness="1" noclick="1" />
-		<instance name="header_bar" width="-2" height="2.2h" align="center" lbl="cc_com_header_clan_inv_current" show_close="1" onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('clan_invite_cur_game_list', 'FadeOut(250);');" />
-							
-		<listbox 
-			y="2.6h"
-			width="-1.0h" height="-8.6h"
-			align="center" valign="top"
-			color="invisible"
-			itemwidth="100%"
-			itemheight="2.3h"
-			wrap="row"
-			font="dyn_10"
-			hoverselect="false"
-			clearselection="true"
-			highlight="under"
-			highlightcolor="#67a7da62"
-			highlightbordercolor="invisible"			
-			exteriorscrollbars="false"
-			scrollbarsize="2.0h" 						
-			scrolltexture="/ui/info/combobox.tga"						
-			handleheight="2.0h"			
-			watch="ChatRecentlyPlayedClan"
-			onselect="Set('ui_lastSelectedUser', this);"
-			onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip'));"
-			onmouseout="HideWidget('hover_tip');"
-			onrightclick="PlaySound('/shared/sounds/ui/button_rightclick.mp3');"
-			>
-		</listbox>
+            </panel>
+            <!-- END Friend Invite -->
+        </panel>
+    </panel>
+    <!-- END Add Friends -->
+    
 
-		<instance
-			y="-3.4h"
-			height="2.2h" width="-4.0h"
-			align="center"
-			valign="bottom"
-			name="button2"
-			font="dyn_10"
-			label="cc_com_button_clan_inv_current_add"
-			onclick="if(StringLength(ui_lastSelectedUser) gt 0,ChatInviteUser(ui_lastSelectedUser)); SetFocus(1);"
-		/>
+    <panel name="cc_community_blocker" color="0 0 0 .7" visible="0"/>
+    
 
-		<instance
-			y="-0.8h"
-			height="2.2h" width="-4.0h"
-			align="center"
-			valign="bottom"
-			name="button2"
-			font="dyn_10"
-			label="general_cancel"
-			onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('clan_invite_cur_game_list', 'FadeOut(250);');"
-		/>
+    <!-- Friend Add Recent Browse Lists -->
+    <panel name="friend_invite_recent_list" x="-25.3h" width="25.0h" y="29.5h" height="28.0h" color="invisible" visible="0" onshow="Set('ui_lastSelectedUser', '');">
+        <frame color="0 0 0 1" bordercolor="#455166" borderthickness="1" noclick="1" />
+        <instance name="header_bar" width="-2" height="2.2h" buttonsize="1.4h" align="center" lbl="cc_com_aside_header_recently_with" show_close="1" onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('friend_invite_recent_list', 'FadeOut(250);');" />
+            
+        <panel y="2.3h" width="-0.6h" height="-5.2h" align="center" valign="top" color="invisible">
+            <instance name="recently_played_listbox" listbox_name="cc_panel_recently_played" tooltip="recently_played_rtclick" ondoubleclick="ChatAddBuddy(this);"/>
+        </panel>
+        
+        <instance name="cc_rightclick_menu" menu_name="recently_played_rtclick"/>
 
-	</panel>
+        <instance
+            y="-0.5h" x="-0.5h"
+            height="2.2h" width="40%"
+            align="right"
+            valign="bottom"
+            name="button2"
+            font="dyn_10"
+            label="cc_com_aside_recent_button_add"
+            onclick="if(StringLength(ui_lastSelectedUser) gt 0,ChatAddBuddy(ui_lastSelectedUser));"
+        />
+        <instance
+            y="-0.5h" x="0.5h"
+            height="2.2h" width="40%"
+            align="left"
+            valign="bottom"
+            name="button2"
+            font="dyn_10"
+            label="general_cancel"
+            onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('friend_invite_recent_list', 'FadeOut(250);');"
+        />
+    </panel>
+    <!-- END Friend Add Recent Browse Lists --> 
+    
+    <!-- Friend Add Browse Current Lists -->
+    <panel name="friend_invite_browse_lists" x="-20.0h" y="30.0h" height="30.0h" color="invisible" visible="0" onshow="Set('ui_lastSelectedUser', '');">
+        <frame color="0 0 0 1" bordercolor="#455166" borderthickness="1" noclick="1" />
+        <instance name="header_bar" width="-2" height="2.2h" align="center" lbl="cc_com_aside_header_in_current_game" show_close="1" onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('friend_invite_browse_lists', 'FadeOut(250);');" />
+                
+        <listbox 
+            name="friends_listbox_add_curgame"
+            y="2.6h"
+            width="-1.0h" height="-8.6h"
+            align="center" valign="top"
+            color="invisible"
+            itemwidth="100%"
+            itemheight="2.3h"
+            wrap="row"
+            font="dyn_10"
+            hoverselect="false"
+            clearselection="true"
+            highlight="under"
+            highlightcolor="#67a7da62"
+            highlightbordercolor="invisible"            
+            exteriorscrollbars="false"
+            scrollbarsize="2.0h"                        
+            scrolltexture="/ui/info/combobox.tga"                       
+            handleheight="2.0h"         
+            watch1="ChatUserEvent"
+            ontrigger1="If(StringEmpty(param0) or StringEquals(param0, cc_curGameChannel), UICmd(param1));"
+            watch2="ChatUserNames"
+            ontrigger2="If(StringEmpty(param0) or StringEquals(param0, cc_curGameChannel), AddTemplateListItem('chat_list_entry', param1, 'name', param1));"
+            onselect="Set('ui_lastSelectedUser', this);"
+            onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip')));"
+            onmouseout="HideWidget('hover_tip');"
+            onrightclick="PlaySound('/shared/sounds/ui/button_rightclick.mp3');"
+            onfocus="Call('ccwidget_community','BringToFront();'); Call('ccbar', 'BringToFront();'); Call('community_header_image','SetColor(1,1,1);'); Call('community_footer_image','SetColor(1,1,1);'); Call('community_right_image','SetColor(1,1,1);');"
+            onlosefocus="Call('community_header_image','SetColor(0.7,0.7,0.7);'); Call('community_footer_image','SetColor(0.7,0.7,0.7);'); Call('community_right_image','SetColor(0.7,0.7,0.7);'); HideWidget('hover_tip');"
+            >
+        </listbox>
 
-	
-	<!-- END New CC Panel -->
-	
-	
+        <instance
+            y="-3.4h"
+            height="2.2h" width="-4.0h"
+            align="center"
+            valign="bottom"
+            name="button2"
+            font="dyn_10"
+            label="cc_com_aside_current_button_add"
+            onclick="if(StringLength(ui_lastSelectedUser) gt 0,ChatAddBuddy(ui_lastSelectedUser)); SetFocus(1);"
+        />
+        <instance
+            y="-0.8h"
+            height="2.2h" width="-4.0h"
+            align="center"
+            valign="bottom"
+            name="button2"
+            font="dyn_10"
+            label="general_cancel"
+            onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('friend_invite_browse_lists', 'FadeOut(250);');"
+        />
+    </panel>
+    <!-- END Friend Add Browse Current Lists -->
+    
+    <!-- Clan Recent Browse Lists -->
+    <panel name="clan_invite_recent_list" x="-20.0h" y="62.0h" height="30.0h" color="invisible" visible="0" onshow="Set('ui_lastSelectedUser', '');">
+        <frame color="0 0 0 1" bordercolor="#455166" borderthickness="1" noclick="1" />
+        <instance name="header_bar" width="-2" height="2.2h" align="center" lbl="cc_com_header_clan_inv_recent" show_close="1" onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('clan_invite_recent_list', 'FadeOut(250);');" />
+                            
+        <listbox 
+            y="2.6h"
+            width="-1.0h" height="-8.6h"
+            align="center" valign="top"
+            color="invisible"
+            itemwidth="100%"
+            itemheight="2.3h"
+            wrap="row"
+            font="dyn_10"
+            hoverselect="false"
+            clearselection="true"
+            highlight="under"
+            highlightcolor="#67a7da62"
+            highlightbordercolor="invisible"            
+            exteriorscrollbars="false"
+            scrollbarsize="2.0h"                        
+            scrolltexture="/ui/info/combobox.tga"                       
+            handleheight="2.0h"         
+            watch="ChatRecentlyPlayedClan"
+            onselect="Set('ui_lastSelectedUser', this);"
+            onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip'));"
+            onmouseout="HideWidget('hover_tip');"
+            onrightclick="PlaySound('/shared/sounds/ui/button_rightclick.mp3');"
+            >
+        </listbox>
 
-	<!-- Friends List Hover Info -->
-	<instance name="friend_hovertip"/>
-	<!-- END Friends List Hover Info -->
+        <instance
+            y="-3.4h"
+            height="2.2h" width="-4.0h"
+            align="center"
+            valign="bottom"
+            name="button2"
+            font="dyn_10"
+            label="cc_com_button_clan_inv_recent_add"
+            onclick="if(StringLength(ui_lastSelectedUser) gt 0,ChatInviteUser(ui_lastSelectedUser)); SetFocus(1);"
+        />
 
-	
+        <instance
+            y="-0.8h"
+            height="2.2h" width="-4.0h"
+            align="center"
+            valign="bottom"
+            name="button2"
+            font="dyn_10"
+            label="general_cancel"
+            onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('clan_invite_recent_list', 'FadeOut(250);');"
+        />
+
+    </panel>
+
+    
+    <!-- Clan Cur Game Browse Lists -->
+        
+    <panel name="clan_invite_cur_game_list" x="-20.0h" y="62.0h" height="30.0h" color="invisible" visible="0" onshow="Set('ui_lastSelectedUser', '');">
+        <frame color="0 0 0 1" bordercolor="#455166" borderthickness="1" noclick="1" />
+        <instance name="header_bar" width="-2" height="2.2h" align="center" lbl="cc_com_header_clan_inv_current" show_close="1" onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('clan_invite_cur_game_list', 'FadeOut(250);');" />
+                            
+        <listbox 
+            y="2.6h"
+            width="-1.0h" height="-8.6h"
+            align="center" valign="top"
+            color="invisible"
+            itemwidth="100%"
+            itemheight="2.3h"
+            wrap="row"
+            font="dyn_10"
+            hoverselect="false"
+            clearselection="true"
+            highlight="under"
+            highlightcolor="#67a7da62"
+            highlightbordercolor="invisible"            
+            exteriorscrollbars="false"
+            scrollbarsize="2.0h"                        
+            scrolltexture="/ui/info/combobox.tga"                       
+            handleheight="2.0h"         
+            watch="ChatRecentlyPlayedClan"
+            onselect="Set('ui_lastSelectedUser', this);"
+            onhover="ShowWidget('hover_tip'); if(!ChatUpdateHoverInfo(this), HideWidget('hover_tip'));"
+            onmouseout="HideWidget('hover_tip');"
+            onrightclick="PlaySound('/shared/sounds/ui/button_rightclick.mp3');"
+            >
+        </listbox>
+
+        <instance
+            y="-3.4h"
+            height="2.2h" width="-4.0h"
+            align="center"
+            valign="bottom"
+            name="button2"
+            font="dyn_10"
+            label="cc_com_button_clan_inv_current_add"
+            onclick="if(StringLength(ui_lastSelectedUser) gt 0,ChatInviteUser(ui_lastSelectedUser)); SetFocus(1);"
+        />
+
+        <instance
+            y="-0.8h"
+            height="2.2h" width="-4.0h"
+            align="center"
+            valign="bottom"
+            name="button2"
+            font="dyn_10"
+            label="general_cancel"
+            onclick="Call('cc_community_blocker', 'FadeOut(250);'); Call('clan_invite_cur_game_list', 'FadeOut(250);');"
+        />
+
+    </panel>
+
+    
+    <!-- END New CC Panel -->
+    
+    
+
+    <!-- Friends List Hover Info -->
+    <instance name="friend_hovertip"/>
+    <!-- END Friends List Hover Info -->
+
+    
 </package>

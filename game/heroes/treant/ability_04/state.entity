@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Treant_Ability4"
+    name="State_Treant_Ability4"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/state.effect"
-	
-	disarmed="true"
-	immobilized="true"
-	revealed="true"
-	
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/state.effect"
+    
+    disarmed="true"
+    immobilized="true"
+    revealed="true"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe>
-		<damage effecttype="Magic" amount="85" b="frametime" op="mult"/>
-	</onframe>
+    <onframe>
+        <damage effecttype="Magic" amount="85" b="frametime" op="mult"/>
+    </onframe>
 </state>

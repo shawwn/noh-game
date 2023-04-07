@@ -1,95 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true">
-	<definitions>
-		<particlesystem name="system0" space="local" scale="0.33">
+    <definitions>
+        <particlesystem name="system0" space="local" scale="0.33">
 
 
 
-			<billboard			
-				expirelife="200"				
-				startsize="720"				
-				endsize="0"
-				material="/shared/effects/materials/whitedot.material"
-				startalpha="1"
-				endalpha="0"
-				startcolor=".5 .3 0"
-				endcolor="1 1 1 "
-				depthbias="-10"
-			/>			
-			
-			<trailemitter				
-				spawnrate="50"
-				particlelife="500"
-				texpostime="500"
-			 	texposscale="0.0"
-			 	texstretchscale=".4"
-				position="65 0 0"
-				material="/shared/effects/materials/arrow_trail.material"
-			>
-				<particle				
-					 startcolor=".5 .5 .5"
-					 midcolor="0.5 0.4 0.0"
-					 endcolor="0 0 0"
-					 startsize="40"
-					 midsize="30"
-					 endsize="5"
-					 midsizepos="0.2"
-			 />
-			</trailemitter>				
-			
-			<trailemitter				
-				spawnrate="50"
-				particlelife="500"
-				texpostime="500"
-			 	texposscale="0.0"
-			 	texstretchscale=".4"
-				position="-65 0 0"
-				material="/shared/effects/materials/arrow_trail.material"
-			>
-				<particle
-					 startcolor=".5 .5 .5"
-					 midcolor="0.5 0.4 0.0"
-					 endcolor="0 0 0"
-					 startsize="40"
-					 midsize="30"
-					 endsize="5"
-					 midsizepos="0.2"
-			 />
-			</trailemitter>				
-			
-			
-			<trailemitter				
-				spawnrate="50"
-				particlelife="500"
-				texpostime="500"
-			 	texposscale="0.0"
-			 	texstretchscale=".4"
-				position="0 60 0"
-				material="/shared/effects/materials/arrow_trail.material"
-			>
-				<particle
-					 startcolor=".5 .3 0"
-					 midcolor="0.351 0.3 0.2"
-					 endcolor="0 0 0"
-					 startsize="10"
-					 midsize="180"
-					 endsize="30"
-					 midsizepos="0.2"
-			 />
-			</trailemitter>	
+            <billboard          
+                expirelife="200"                
+                startsize="720"             
+                endsize="0"
+                material="/shared/effects/materials/whitedot.material"
+                startalpha="1"
+                endalpha="0"
+                startcolor=".5 .3 0"
+                endcolor="1 1 1 "
+                depthbias="-10"
+            />          
+            
+            <trailemitter               
+                spawnrate="50"
+                particlelife="500"
+                texpostime="500"
+                texposscale="0.0"
+                texstretchscale=".4"
+                position="65 0 0"
+                material="/shared/effects/materials/arrow_trail.material"
+            >
+                <particle               
+                     startcolor=".5 .5 .5"
+                     midcolor="0.5 0.4 0.0"
+                     endcolor="0 0 0"
+                     startsize="40"
+                     midsize="30"
+                     endsize="5"
+                     midsizepos="0.2"
+             />
+            </trailemitter>             
+            
+            <trailemitter               
+                spawnrate="50"
+                particlelife="500"
+                texpostime="500"
+                texposscale="0.0"
+                texstretchscale=".4"
+                position="-65 0 0"
+                material="/shared/effects/materials/arrow_trail.material"
+            >
+                <particle
+                     startcolor=".5 .5 .5"
+                     midcolor="0.5 0.4 0.0"
+                     endcolor="0 0 0"
+                     startsize="40"
+                     midsize="30"
+                     endsize="5"
+                     midsizepos="0.2"
+             />
+            </trailemitter>             
+            
+            
+            <trailemitter               
+                spawnrate="50"
+                particlelife="500"
+                texpostime="500"
+                texposscale="0.0"
+                texstretchscale=".4"
+                position="0 60 0"
+                material="/shared/effects/materials/arrow_trail.material"
+            >
+                <particle
+                     startcolor=".5 .3 0"
+                     midcolor="0.351 0.3 0.2"
+                     endcolor="0 0 0"
+                     startsize="10"
+                     midsize="180"
+                     endsize="30"
+                     midsizepos="0.2"
+             />
+            </trailemitter> 
 
 
 
-			
+            
 
-			
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-		<!-- <die /> -->
-	</thread>
+            
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][pos] -->

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Techies3"
+    name="Ability_Techies3"
 
-	icon="icon.tga"
+    icon="icon.tga"
 
-	casttime="0"
-	castactiontime="0"
-	
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
-	
-	cooldowntime="75000"
-	noninterrupting="true"
-	
-	anim="ability_2"
-	range="100"
-	actiontype="target_entity"
-	targetscheme="nonboss_organic_enemy_units"
-	casteffecttype="Magic"
-	manacost="100,125,150,175"
+    casttime="0"
+    castactiontime="0"
+    
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
+    
+    cooldowntime="75000"
+    noninterrupting="true"
+    
+    anim="ability_2"
+    range="100"
+    actiontype="target_entity"
+    targetscheme="nonboss_organic_enemy_units"
+    casteffecttype="Magic"
+    manacost="100,125,150,175"
 >
-	<onimpact>
-		<spawnaffector name="Affector_Techies_Ability3" target="source_position" />	
-		<spawnaffector name="Affector_Techies_Ability3_Close" target="source_position" />	
-		<kill target="source_entity" source="source_entity" />
-		<playeffect effect="../../../heroes/engineer/ability_01/effects/impact.effect" source="source_position" target="" occlude="true" />	
-	</onimpact>
+    <onimpact>
+        <spawnaffector name="Affector_Techies_Ability3" target="source_position" /> 
+        <spawnaffector name="Affector_Techies_Ability3_Close" target="source_position" />   
+        <kill target="source_entity" source="source_entity" />
+        <playeffect effect="../../../heroes/engineer/ability_01/effects/impact.effect" source="source_position" target="" occlude="true" /> 
+    </onimpact>
 </ability>

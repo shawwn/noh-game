@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <powerup
-	name="Powerup_Illusion"
-	
-	
-	
-	icon="icon.tga"
-	portrait="icon.tga"
-	model="model.mdf"
-	skin="purple"
-	
-	passiveeffect="passive.effect"
-	spawneffect=""
-	respawneffect=""
-	selectsound=""
-	orderconfirmedsound=""
-	
-	preglobalscale="2"
-	modelscale="1.0"
-	effectscale="1.0"
-	boundsheight="32"
-	boundsradius="16"
-	selectionradius="32"
-	targetoffset="0 0 16"
+    name="Powerup_Illusion"
+    
+    
+    
+    icon="icon.tga"
+    portrait="icon.tga"
+    model="model.mdf"
+    skin="purple"
+    
+    passiveeffect="passive.effect"
+    spawneffect=""
+    respawneffect=""
+    selectsound=""
+    orderconfirmedsound=""
+    
+    preglobalscale="2"
+    modelscale="1.0"
+    effectscale="1.0"
+    boundsheight="32"
+    boundsradius="16"
+    selectionradius="32"
+    targetoffset="0 0 16"
 
-	maxhealth="75"
+    maxhealth="75"
 
-	immunity="MagicImmunity1"
+    immunity="MagicImmunity1"
 
-	attacktype="none"
-	combattype="Ranged"
-	
-	touchstate=""
-	touchstateduration=""
-	touchaction="spawn_illusion"
-	touchactionparameter="2 75000 3.0000 0.3500"
-	touchsound="/shared/sounds/announcer/powerup_illusion.wav"
+    attacktype="none"
+    combattype="Ranged"
+    
+    touchstate=""
+    touchstateduration=""
+    touchaction="spawn_illusion"
+    touchactionparameter="2 75000 3.0000 0.3500"
+    touchsound="/shared/sounds/announcer/powerup_illusion.wav"
 >
 </powerup>

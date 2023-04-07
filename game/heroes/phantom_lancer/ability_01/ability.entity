@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_PhantomLancer1"
-	
-	
-	
-	statuseffecttooltip="State_PhantomLancer_Ability1"
-	statuseffectheader="true"
-	icon="icon.tga"
-	
-	
-	anim="ability_1"
-	casttime="800"
-	castactiontime="300"
-	casteffect="effects/cast.effect"
-	
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
-	projectile="Projectile_PhantomLancer_Ability1"
-	actiontype="target_entity"
-	targetscheme="enemy_units"
-	manacost="125,130,135,140"
-	cooldowntime="7000"
-	
-	range="750"
+    name="Ability_PhantomLancer1"
+    
+    
+    
+    statuseffecttooltip="State_PhantomLancer_Ability1"
+    statuseffectheader="true"
+    icon="icon.tga"
+    
+    
+    anim="ability_1"
+    casttime="800"
+    castactiontime="300"
+    casteffect="effects/cast.effect"
+    
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
+    projectile="Projectile_PhantomLancer_Ability1"
+    actiontype="target_entity"
+    targetscheme="enemy_units"
+    manacost="125,130,135,140"
+    cooldowntime="7000"
+    
+    range="750"
 >
-	<onimpact >
-		<applystate name="State_PhantomLancer_Ability1" duration="3000" />
-		<spawnillusion target="target_entity" owner="source_entity" source="source_entity" count="1" lifetime="2000,4000,6000,8000" receivedamagemultiplier="4.0" inflictdamagemultiplier="0.25" spawneffect="" deatheffect="" />
-	</onimpact>
+    <onimpact >
+        <applystate name="State_PhantomLancer_Ability1" duration="3000" />
+        <spawnillusion target="target_entity" owner="source_entity" source="source_entity" count="1" lifetime="2000,4000,6000,8000" receivedamagemultiplier="4.0" inflictdamagemultiplier="0.25" spawneffect="" deatheffect="" />
+    </onimpact>
 </ability>

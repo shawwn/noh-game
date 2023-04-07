@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gadget
-	name="Gadget_Voodoo_Ability2"
-	
-	model="/shared/models/invis.mdf"
-	boundsheight="0"
-	boundsradius="0"
-	isselectable="false"
-	canrotate="false"
-	ismobile="false"
-	effectscale="1"
+    name="Gadget_Voodoo_Ability2"
+    
+    model="/shared/models/invis.mdf"
+    boundsheight="0"
+    boundsradius="0"
+    isselectable="false"
+    canrotate="false"
+    ismobile="false"
+    effectscale="1"
 
-	attacktype="none"
+    attacktype="none"
 
-	deathtime="0"
-	corpsetime="0"
-	
-	invulnerable="true"
-	flying="true"
-	drawonmap="false"
-	lifetime="8000"
-	
-	passiveeffect="effects/state.effect"
-	hidden="true"
+    deathtime="0"
+    corpsetime="0"
+    
+    invulnerable="true"
+    flying="true"
+    drawonmap="false"
+    lifetime="8000"
+    
+    passiveeffect="effects/state.effect"
+    hidden="true"
 >
-	<aura state="State_Voodoo_Ability2_Buff_Aura" radius="340" effecttype="Magic Buff" targetscheme="ally_units" />
-	<aura state="State_Voodoo_Ability2_Debuff_Aura" radius="340" effecttype="Magic DeBuff" targetscheme="enemy_units" />
+    <aura state="State_Voodoo_Ability2_Buff_Aura" radius="340" effecttype="Magic Buff" targetscheme="ally_units" />
+    <aura state="State_Voodoo_Ability2_Debuff_Aura" radius="340" effecttype="Magic DeBuff" targetscheme="enemy_units" />
 </gadget>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Item5G"
+    name="Affector_Item5G"
 
-	radius="1700"
-	
-	targetselection="all"
-	targetscheme="ally_units"
-	effecttype="Magic"
-	persist="false"
-	effect="affector.effect"
-	impacteffect="impact.effect"
+    radius="1700"
+    
+    targetselection="all"
+    targetscheme="ally_units"
+    effecttype="Magic"
+    persist="false"
+    effect="affector.effect"
+    impacteffect="impact.effect"
 >
-	<onimpact>
-		<setvar0 a="25" b="param" op="mult" />
-		<heal a="400" b="var0" op="add" />
-	</onimpact>
+    <onimpact>
+        <setvar0 a="25" b="param" op="mult" />
+        <heal a="400" b="var0" op="add" />
+    </onimpact>
 </affector>

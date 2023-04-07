@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_TowerMaster1"
-	
-	icon="icon.tga"
-	
-	anim="ability_1"
-	casttime="10000"
-	castactiontime="0"
-	
+    name="Ability_TowerMaster1"
+    
+    icon="icon.tga"
+    
+    anim="ability_1"
+    casttime="10000"
+    castactiontime="0"
+    
 
 
-	actiontype="target_entity"
-	targetscheme="enemy_units"
-	casteffecttype=""
-	manacost="200"
-	cooldowntime="18000"
-	ischanneling="true"
-	channelrange="700"
-	
-	range="600"
-	
+    actiontype="target_entity"
+    targetscheme="enemy_units"
+    casteffecttype=""
+    manacost="200"
+    cooldowntime="18000"
+    ischanneling="true"
+    channelrange="700"
+    
+    range="600"
+    
 >
-	<onchannelstart>
-		<spawnaffector name="Affector_TowerMaster_Ability1" target="target_position" ischannel="true" param="accumulator" />
-		<applystate name="State_TowerMaster_Ability1_Channeling" target="source_entity" ischannel="true" />
-		<applystate name="State_TowerMaster_UsedAbility" target="source_entity" duration ="13000" />
-	</onchannelstart>
-	<onattackimpact>
-		<setaccumulator value="total_adjusted_damage" />
-		<condition test="not_hasstate State_TowerMaster_UsedAbility" target="source_entity" >
-			<testnearby radius="300" targetscheme="enemy_units" origin="target_entity" />
-			<setvar0 a="result" />
-			<condition test="var0 ge 3">
-				<canactivate>
-					<useability target="target_entity"/>
-				</canactivate>
-			</condition>
-			<condition test="var0 eq 2">
-				<chance threshold="0.2">
-					<canactivate>
-						<useability target="target_entity"/>
-					</canactivate>
-				</chance>
-			</condition>
-			<condition test="var0 eq 1">
-				<chance threshold="0.1">
-					<canactivate>
-						<useability target="target_entity"/>
-					</canactivate>
-				</chance>
-			</condition>
-		</condition>
-	</onattackimpact>
+    <onchannelstart>
+        <spawnaffector name="Affector_TowerMaster_Ability1" target="target_position" ischannel="true" param="accumulator" />
+        <applystate name="State_TowerMaster_Ability1_Channeling" target="source_entity" ischannel="true" />
+        <applystate name="State_TowerMaster_UsedAbility" target="source_entity" duration ="13000" />
+    </onchannelstart>
+    <onattackimpact>
+        <setaccumulator value="total_adjusted_damage" />
+        <condition test="not_hasstate State_TowerMaster_UsedAbility" target="source_entity" >
+            <testnearby radius="300" targetscheme="enemy_units" origin="target_entity" />
+            <setvar0 a="result" />
+            <condition test="var0 ge 3">
+                <canactivate>
+                    <useability target="target_entity"/>
+                </canactivate>
+            </condition>
+            <condition test="var0 eq 2">
+                <chance threshold="0.2">
+                    <canactivate>
+                        <useability target="target_entity"/>
+                    </canactivate>
+                </chance>
+            </condition>
+            <condition test="var0 eq 1">
+                <chance threshold="0.1">
+                    <canactivate>
+                        <useability target="target_entity"/>
+                    </canactivate>
+                </chance>
+            </condition>
+        </condition>
+    </onattackimpact>
 
 
 </ability>

@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_PuppetMaster3"
-	
-	
-	
+    name="Ability_PuppetMaster3"
+    
+    
+    
 
-	icon="icon.tga"
-	passiveeffect=""
-	
-	anim="ability_3"
+    icon="icon.tga"
+    passiveeffect=""
+    
+    anim="ability_3"
 
-	
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
-	maxcharges="5"
-	initialcharges="5"
+    
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
+    maxcharges="5"
+    initialcharges="5"
 
-	actiontype="passive"
-	basedamagemultiplier="0.06,0.12,0.18,0.24"
+    actiontype="passive"
+    basedamagemultiplier="0.06,0.12,0.18,0.24"
 >
-	<onlearn>
-		<setcharges target="this_entity" a="5" />
-	</onlearn>
-	<onattackstart>
-		<condition test="charges == 1">
-			<setattackprojectile name="Projectile_PuppetMasterSplashAttack" />
-		</condition>
-	</onattackstart>
-	<onattackimpact />
-	<onattack>
-		<removecharge />
-		<condition test="charges == 0">
-			<bonusdamagemult target="" a="0.25,0.5,0.75,1.0" />
-			<addattackactions>
-				<splashdamage centerontarget="true" target="target_entity" a="total_adjusted_damage" b="0.25,0.5,0.75,1.0" op="mult" radius="200" effecttype="Physical Splash" targetscheme="enemy_units" />
-			</addattackactions>
-			<setcharges target="this_entity" a="5" />
-		</condition>
-	</onattack>
-	<ondeath>
-		<setcharges target="this_entity" a="5" />
-	</ondeath>
+    <onlearn>
+        <setcharges target="this_entity" a="5" />
+    </onlearn>
+    <onattackstart>
+        <condition test="charges == 1">
+            <setattackprojectile name="Projectile_PuppetMasterSplashAttack" />
+        </condition>
+    </onattackstart>
+    <onattackimpact />
+    <onattack>
+        <removecharge />
+        <condition test="charges == 0">
+            <bonusdamagemult target="" a="0.25,0.5,0.75,1.0" />
+            <addattackactions>
+                <splashdamage centerontarget="true" target="target_entity" a="total_adjusted_damage" b="0.25,0.5,0.75,1.0" op="mult" radius="200" effecttype="Physical Splash" targetscheme="enemy_units" />
+            </addattackactions>
+            <setcharges target="this_entity" a="5" />
+        </condition>
+    </onattack>
+    <ondeath>
+        <setcharges target="this_entity" a="5" />
+    </ondeath>
 </ability>

@@ -9,16 +9,16 @@
 //=============================================================================
 static const int KERNEL_SIZE = 13;
 
-float4		vTexelSize;
+float4      vTexelSize;
 
 //=============================================================================
 // Vertex shader output structure
 //=============================================================================
 struct VS_OUTPUT
 {
-	float4 Color0         : COLOR0;
-	float4 Texcoord0      : TEXCOORD0;
-	float4 PositionScreen : TEXCOORD1;
+    float4 Color0         : COLOR0;
+    float4 Texcoord0      : TEXCOORD0;
+    float4 PositionScreen : TEXCOORD1;
 };
 
 //=============================================================================
@@ -26,7 +26,7 @@ struct VS_OUTPUT
 //=============================================================================
 struct PS_OUTPUT
 {
-	float4 Color : COLOR;
+    float4 Color : COLOR;
 };
 
 sampler blur;
@@ -37,27 +37,27 @@ sampler scene;
 //=============================================================================
 PS_OUTPUT PS( VS_OUTPUT In )
 {
-	PS_OUTPUT Out;
-	
-	float4 vBlur = tex2D(blur, In.Texcoord0);
-	vBlur.rgb = vBlur.rgb * 2.0f - 1.0f;
-	vBlur.rgb *= In.Texcoord0.w;
-	
-	float2 vSceneTexcoord = In.PositionScreen.xy / In.PositionScreen.w;
-	
-	Out.Color = 0.0f;
-	
-	[unroll(KERNEL_SIZE)] for (int i = 0; i < KERNEL_SIZE; i++)
-	{
-		float fLerp = float(float(i) / (KERNEL_SIZE - 1.0f));
-	
-		Out.Color.rgb += tex2D(scene, vSceneTexcoord + lerp(-vTexelSize.xy, vTexelSize.xy, fLerp) * vBlur.xy).rgb;
-	}
-	
-	Out.Color /= KERNEL_SIZE;
+    PS_OUTPUT Out;
+    
+    float4 vBlur = tex2D(blur, In.Texcoord0);
+    vBlur.rgb = vBlur.rgb * 2.0f - 1.0f;
+    vBlur.rgb *= In.Texcoord0.w;
+    
+    float2 vSceneTexcoord = In.PositionScreen.xy / In.PositionScreen.w;
+    
+    Out.Color = 0.0f;
+    
+    [unroll(KERNEL_SIZE)] for (int i = 0; i < KERNEL_SIZE; i++)
+    {
+        float fLerp = float(float(i) / (KERNEL_SIZE - 1.0f));
+    
+        Out.Color.rgb += tex2D(scene, vSceneTexcoord + lerp(-vTexelSize.xy, vTexelSize.xy, fLerp) * vBlur.xy).rgb;
+    }
+    
+    Out.Color /= KERNEL_SIZE;
 
-	Out.Color.a = vBlur.a;
-	Out.Color *= In.Color0;
-	
-	return Out;
+    Out.Color.a = vBlur.a;
+    Out.Color *= In.Color0;
+    
+    return Out;
 }

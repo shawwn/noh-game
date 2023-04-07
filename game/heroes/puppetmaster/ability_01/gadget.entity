@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gadget
-	name="Gadget_PuppetMaster_Ability1_DummyPush"
-	
-	
-	
-	icon=""
-	portrait=""
-	model="effects/cross.mdf"
-	
-	
-	preglobalscale="2.6"
-	modelscale="1.0"
-	effectscale="1.0"
-	boundsheight="0"
-	boundsradius="0"
-	isselectable="false"
-	selectionradius="0"
-	targetoffset="0 0 0"
+    name="Gadget_PuppetMaster_Ability1_DummyPush"
+    
+    
+    
+    icon=""
+    portrait=""
+    model="effects/cross.mdf"
+    
+    
+    preglobalscale="2.6"
+    modelscale="1.0"
+    effectscale="1.0"
+    boundsheight="0"
+    boundsradius="0"
+    isselectable="false"
+    selectionradius="0"
+    targetoffset="0 0 0"
 
-	canrotate="false"
-	ismobile="false"
+    canrotate="false"
+    ismobile="false"
 
-	attacktype="none"
-	combattype="Ranged"
+    attacktype="none"
+    combattype="Ranged"
 
-	sightrangeday="800"
-	sightrangenight="500"
+    sightrangeday="800"
+    sightrangenight="500"
 
 
-	deathtime="0"
-	corpsetime="0"
-	unitwalking="true"
-	
-	invulnerable="true"
-	flying="false"
-	drawonmap="false"
+    deathtime="0"
+    corpsetime="0"
+    unitwalking="true"
+    
+    invulnerable="true"
+    flying="false"
+    drawonmap="false"
 >
-	<aura state="State_PuppetMaster_Ability1_PushImmunity" radius="10" targetscheme="all_units" />
-	<onspawn>
-		<playeffect effect="effects/beam.effect" source="this_entity" target="proxy_entity"/>
-	</onspawn>	
-	<ondeath>
-		<expirestate name="State_PuppetMaster_Ability1_ImmobilePush" target="proxy_entity" />
-	</ondeath>
-	
+    <aura state="State_PuppetMaster_Ability1_PushImmunity" radius="10" targetscheme="all_units" />
+    <onspawn>
+        <playeffect effect="effects/beam.effect" source="this_entity" target="proxy_entity"/>
+    </onspawn>  
+    <ondeath>
+        <expirestate name="State_PuppetMaster_Ability1_ImmobilePush" target="proxy_entity" />
+    </ondeath>
+    
 </gadget>

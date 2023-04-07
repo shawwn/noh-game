@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect>
-	<definitions>
-		<particlesystem name="system0" space="entity">
-				
-			
-			
-			<simpleemitter		
-				
-				spawnrate="1"
-				particlelife="10000"			
-				speed="4"
-				drag="0"
-				minangle="0"
-				maxangle="-45"
-				position="0 0 32"
-				material="/shared/effects/materials/refract_wave2.material"
-				direction="0 1 0"					
-				offsetsphere="50 75 0"
-			>
+    <definitions>
+        <particlesystem name="system0" space="entity">
+                
+            
+            
+            <simpleemitter      
+                
+                spawnrate="1"
+                particlelife="10000"            
+                speed="4"
+                drag="0"
+                minangle="0"
+                maxangle="-45"
+                position="0 0 32"
+                material="/shared/effects/materials/refract_wave2.material"
+                direction="0 1 0"                   
+                offsetsphere="50 75 0"
+            >
 
-				<particle
-					color="1 1 1"
-					startparam=".09"
-					endparam="0.00"
-					startheight="0"
-					endheight="412"
-					startwidth="0"
-					endwidth="1024"
-					depthbias="0"
-					turn="true"
-					lockup="true"
-					pitch="-90"
-					
-				/>
-			</simpleemitter>	
+                <particle
+                    color="1 1 1"
+                    startparam=".09"
+                    endparam="0.00"
+                    startheight="0"
+                    endheight="412"
+                    startwidth="0"
+                    endwidth="1024"
+                    depthbias="0"
+                    turn="true"
+                    lockup="true"
+                    pitch="-90"
+                    
+                />
+            </simpleemitter>    
 
-			<simpleemitter		
-				
-				spawnrate="2"
-				particlelife="10000"			
-				speed="1"
-				drag="2"
-				minangle="0"
-				maxangle="0"
-				position="-60 0 70"
-				material="/shared/effects/materials/foam.material"
-				offsetsphere="256 40 0"
-							
+            <simpleemitter      
+                
+                spawnrate="2"
+                particlelife="10000"            
+                speed="1"
+                drag="2"
+                minangle="0"
+                maxangle="0"
+                position="-60 0 70"
+                material="/shared/effects/materials/foam.material"
+                offsetsphere="256 40 0"
+                            
 
-			>
+            >
 
-				<particle
-					startcolor="0 0 0"
-					midcolor=".3 .3 .3"
-					endcolor="0 0 0"
-					startsize="0"
-					endsize="200"
-					depthbias="0"
-					lockup="true"
-					pitch="90"
-					rollspeed="30"
-				/>
-				
-				
-				
-				
-				
-			</simpleemitter>	
-							
-		
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
-		<waitfordeath instance="instance0"/>
-		<!-- <die /> -->
-	</thread>
+                <particle
+                    startcolor="0 0 0"
+                    midcolor=".3 .3 .3"
+                    endcolor="0 0 0"
+                    startsize="0"
+                    endsize="200"
+                    depthbias="0"
+                    lockup="true"
+                    pitch="90"
+                    rollspeed="30"
+                />
+                
+                
+                
+                
+                
+            </simpleemitter>    
+                            
+        
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+        <waitfordeath instance="instance0"/>
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][position] -->

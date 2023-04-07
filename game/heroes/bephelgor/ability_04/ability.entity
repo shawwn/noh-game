@@ -1,97 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Bephelgor4"
+    name="Ability_Bephelgor4"
 
-	
-	
-	statuseffecttooltip="State_Bephelgor_Ability4"
-	icon="icon.tga"
-	
-	anim="ability_4"
-	casttime="1000"
-	castactiontime="200"
+    
+    
+    statuseffecttooltip="State_Bephelgor_Ability4"
+    icon="icon.tga"
+    
+    anim="ability_4"
+    casttime="1000"
+    castactiontime="200"
 
-	maxlevel="3"
-	requiredlevel="6,11,16"
+    maxlevel="3"
+    requiredlevel="6,11,16"
 
-	actiontype="self_position"
-	targetscheme="enemy_units"
-	casteffecttype="Magic"
-	targetradius="600"
-	casteffect=""
-	maxcharges="100"
-	manacost="100,150,200"
-	cooldowntime="35000"
+    actiontype="self_position"
+    targetscheme="enemy_units"
+    casteffecttype="Magic"
+    targetradius="600"
+    casteffect=""
+    maxcharges="100"
+    manacost="100,150,200"
+    cooldowntime="35000"
 >
 
-	
-	<onframe>
-		<condition test="not_hasstate State_Bephelgor_Ability4_Removecharges and charges gt 0" target="source_entity">
-			<applystate name="State_Bephelgor_Ability4_Removecharges" duration="100000" />
-		</condition>
-		<condition test="charges lt 40">
-			<setactivemodifierkey name="" />
-			<setaccumulator value="0" />
-		</condition>
-		<condition test="charges ge 40 and charges lt 80">
-			<hasmodifier name="bephelgor_ability4_level2" />
-			<else>
-				<setactivemodifierkey name="bephelgor_ability4_level2" />
-			</else>			
-		</condition>
-		<condition test="charges ge 70">
-			<condition test="accumulator eq 0">
-				<playeffect effect="effects/ready.effect" source="source_entity" target="" />
-				<setaccumulator value="1" />
-			</condition>
-		</condition>
-		<condition test="charges ge 80">
-			<hasmodifier name="bephelgor_ability4_level3" />
-			<else>
-				<setactivemodifierkey name="bephelgor_ability4_level3" />
-			</else>
-		</condition>
-	</onframe>
-	
-	<onimpact>
-		<setcharges a="0" />
-		<setactivemodifierkey name="" />
-		<spawnaffector name="Affector_Bephelgor_Ability4" proxy="source_entity" target="source_position"/>
-	</onimpact>
-	
-	<ondeath>
-		<setcharges a="0" />
-		<setaccumulator value="0" />
-	</ondeath>	
+    
+    <onframe>
+        <condition test="not_hasstate State_Bephelgor_Ability4_Removecharges and charges gt 0" target="source_entity">
+            <applystate name="State_Bephelgor_Ability4_Removecharges" duration="100000" />
+        </condition>
+        <condition test="charges lt 40">
+            <setactivemodifierkey name="" />
+            <setaccumulator value="0" />
+        </condition>
+        <condition test="charges ge 40 and charges lt 80">
+            <hasmodifier name="bephelgor_ability4_level2" />
+            <else>
+                <setactivemodifierkey name="bephelgor_ability4_level2" />
+            </else>         
+        </condition>
+        <condition test="charges ge 70">
+            <condition test="accumulator eq 0">
+                <playeffect effect="effects/ready.effect" source="source_entity" target="" />
+                <setaccumulator value="1" />
+            </condition>
+        </condition>
+        <condition test="charges ge 80">
+            <hasmodifier name="bephelgor_ability4_level3" />
+            <else>
+                <setactivemodifierkey name="bephelgor_ability4_level3" />
+            </else>
+        </condition>
+    </onframe>
+    
+    <onimpact>
+        <setcharges a="0" />
+        <setactivemodifierkey name="" />
+        <spawnaffector name="Affector_Bephelgor_Ability4" proxy="source_entity" target="source_position"/>
+    </onimpact>
+    
+    <ondeath>
+        <setcharges a="0" />
+        <setaccumulator value="0" />
+    </ondeath>  
 
-	<aura state="State_Bephelgor_Ability4_Aura" radius="1000" notooltip="true" targetscheme="player_controlled_enemy_units" stack="true" />
-	
-	<modifier key="bephelgor_ability4_level2" modpriority="60"
-		description="true"
-		disabled="false"
-		icon="icon_b.tga"
-		cooldowntime="60000"
-	>
-		<onimpact>
-			<setcharges a="0" />
-			<setactivemodifierkey name="" />
-			<spawnaffector name="Affector_Bephelgor_Ability4_Level2" proxy="source_entity" target="source_position"/>
-		</onimpact>
-	</modifier>
-	
-	<modifier key="bephelgor_ability4_level3" modpriority="70"
-		description="true"
-		disabled="false"
-		icon="icon_c.tga"
-		cooldowntime="120000"
-	>
-		<onimpact>
-			<setcharges a="0" />
-			<setactivemodifierkey name="" />
-			<playeffect effect="effects/cast.effect" source="source_entity" target="" />
-			<spawnaffector name="Affector_Bephelgor_Ability4_Level3" proxy="source_entity" target="source_position"/>
-			<spawnaffector name="Affector_Bephelgor_Ability4_Level3_Minion" proxy="source_entity" target="source_position"/>
-			<setaccumulator value="0" />
-		</onimpact>
-	</modifier>	
+    <aura state="State_Bephelgor_Ability4_Aura" radius="1000" notooltip="true" targetscheme="player_controlled_enemy_units" stack="true" />
+    
+    <modifier key="bephelgor_ability4_level2" modpriority="60"
+        description="true"
+        disabled="false"
+        icon="icon_b.tga"
+        cooldowntime="60000"
+    >
+        <onimpact>
+            <setcharges a="0" />
+            <setactivemodifierkey name="" />
+            <spawnaffector name="Affector_Bephelgor_Ability4_Level2" proxy="source_entity" target="source_position"/>
+        </onimpact>
+    </modifier>
+    
+    <modifier key="bephelgor_ability4_level3" modpriority="70"
+        description="true"
+        disabled="false"
+        icon="icon_c.tga"
+        cooldowntime="120000"
+    >
+        <onimpact>
+            <setcharges a="0" />
+            <setactivemodifierkey name="" />
+            <playeffect effect="effects/cast.effect" source="source_entity" target="" />
+            <spawnaffector name="Affector_Bephelgor_Ability4_Level3" proxy="source_entity" target="source_position"/>
+            <spawnaffector name="Affector_Bephelgor_Ability4_Level3_Minion" proxy="source_entity" target="source_position"/>
+            <setaccumulator value="0" />
+        </onimpact>
+    </modifier> 
 </ability>

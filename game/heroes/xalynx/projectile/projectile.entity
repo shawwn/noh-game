@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_XalynxAttack"
+    name="Projectile_XalynxAttack"
 
-	speed="900"
-	gravity="0"
+    speed="900"
+    gravity="0"
 
-	scale="1.4"
-	model="effects/model.mdf"
+    scale="1.4"
+    model="effects/model.mdf"
 
-	impacteffect=""
-	traileffect="effects/trail.effect"
+    impacteffect=""
+    traileffect="effects/trail.effect"
 >
 </projectile>

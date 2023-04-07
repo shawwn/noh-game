@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_ElderParasite"
+    name="State_ElderParasite"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="cast.effect"
-	
-	attackspeed="1.00"
-	movespeedmultiplier="0.20"
-	incomingdamagemultiplier="0.30"
-	
-	effecttype="StatusBuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="cast.effect"
+    
+    attackspeed="1.00"
+    movespeedmultiplier="0.20"
+    incomingdamagemultiplier="0.30"
+    
+    effecttype="StatusBuff"
 >
 
-	<onattackimpact>
-		<playeffect effect="state.effect" source="source_entity" target="target_entity"/>
-	</onattackimpact>
+    <onattackimpact>
+        <playeffect effect="state.effect" source="source_entity" target="target_entity"/>
+    </onattackimpact>
 
 </state>

@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect useentityeffectscale="1">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="world" scale="2">
+        <particlesystem name="system0" space="world" scale="2">
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2500"
-				volume="1"
-				sample="/shared/sounds/impacts/impact_flesh_%.wav"
-			/>
+            <sound
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2500"
+                volume="1"
+                sample="/shared/sounds/impacts/impact_flesh_%.wav"
+            />
 
-			<billboard
-				life="500"
-				bone="_bone_centerofchest"
-				depthbias="-20"
-				material="/shared/effects/materials/whitedot.material"
-				size="60"
-				startcolor=".1 .15 .6"
-				endcolor="0 0 0"
-			/>
+            <billboard
+                life="500"
+                bone="_bone_centerofchest"
+                depthbias="-20"
+                material="/shared/effects/materials/whitedot.material"
+                size="60"
+                startcolor=".1 .15 .6"
+                endcolor="0 0 0"
+            />
 
-			<billboard
-				life="200"
-				bone="_bone_centerofchest"
-				depthbias="-20"
-				material="/shared/effects/materials/stomp_01.material"
-				endsize="80"
-				startcolor="0 .4 1"
-				endcolor="0 0 0"
-				maxroll="360"
-			/>
+            <billboard
+                life="200"
+                bone="_bone_centerofchest"
+                depthbias="-20"
+                material="/shared/effects/materials/stomp_01.material"
+                endsize="80"
+                startcolor="0 .4 1"
+                endcolor="0 0 0"
+                maxroll="360"
+            />
 
-			<billboard
-				life="200"
-				bone="_bone_centerofchest"
-				material="/shared/effects/materials/star_02.material"
-				endsize="30"
-				startcolor=".2 .2 1"
-				endcolor="0 0 0"
-				maxroll="360"
-			/>
-	
-		</particlesystem>
+            <billboard
+                life="200"
+                bone="_bone_centerofchest"
+                material="/shared/effects/materials/star_02.material"
+                endsize="30"
+                startcolor=".2 .2 1"
+                endcolor="0 0 0"
+                maxroll="360"
+            />
+    
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+    </thread>
 
 </effect>

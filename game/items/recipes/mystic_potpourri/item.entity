@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_MysticPotpourri"
-	
-	icon="icon.tga"
-	
-	cost="200"
-	components="Item_MinorTotem Item_TrinketOfRestoration"
-	
-	actiontype="passive"
-	
-	strength="2"
-	agility="2"
-	intelligence="2"
+    name="Item_MysticPotpourri"
+    
+    icon="icon.tga"
+    
+    cost="200"
+    components="Item_MinorTotem Item_TrinketOfRestoration"
+    
+    actiontype="passive"
+    
+    strength="2"
+    agility="2"
+    intelligence="2"
 >
-	<aura state="State_MysticPotpourri" radius="500" targetscheme="ally_units" effecttype="Buff" propagatecondition="not_stealthed" />
+    <aura state="State_MysticPotpourri" radius="500" targetscheme="ally_units" effecttype="Buff" propagatecondition="not_stealthed" />
 </item>

@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface name="game_upgrade">
-	<include file="ui_items.package"/>
-	<include file="credit_card.package"/>
+    <include file="ui_items.package"/>
+    <include file="credit_card.package"/>
 
-	<template name="upgrade">
-		<instance name="header_bar" lbl="game_upgrade_header" height="2.5h" show_close="false"/>
+    <template name="upgrade">
+        <instance name="header_bar" lbl="game_upgrade_header" height="2.5h" show_close="false"/>
 
-		<panel y="3.0h" x="0.5h" width="28.0h" height="-3.0h" color="invisible">
-			<instance height="2.5h" name="header_bar" lbl="game_upgrade_benefits_header" lbl_font="dyn_9" show_close="0" />
+        <panel y="3.0h" x="0.5h" width="28.0h" height="-3.0h" color="invisible">
+            <instance height="2.5h" name="header_bar" lbl="game_upgrade_benefits_header" lbl_font="dyn_9" show_close="0" />
 
-			<panel y="2.7h" height="38.3h" float="bottom" padding="1.5h">
-				<frame y="0" color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+            <panel y="2.7h" height="38.3h" float="bottom" padding="1.5h">
+                <frame y="0" color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
 
-			</panel>
-		</panel>
+            </panel>
+        </panel>
 
-		<panel y="3.0h" x="-0.5h" width="-30.0h" height="-3.0h" align="right" color="invisible">
-			<panel name="cc_form" valign="center" noclick="1" color="invisible">
-				<instance name="cc_form" close_cmd="Call('game_prime_upgrade', 'FadeOut(250);');  Call('dummy', 'SleepWidget(250, \'HideUpgradeInterface();\');');"/>
-			</panel>
-		</panel>
-	</template>
+        <panel y="3.0h" x="-0.5h" width="-30.0h" height="-3.0h" align="right" color="invisible">
+            <panel name="cc_form" valign="center" noclick="1" color="invisible">
+                <instance name="cc_form" close_cmd="Call('game_prime_upgrade', 'FadeOut(250);');  Call('dummy', 'SleepWidget(250, \'HideUpgradeInterface();\');');"/>
+            </panel>
+        </panel>
+    </template>
 
-	<panel name="dummy" color="invisible" onshow="Call('game_prime_upgrade', 'FadeIn(250);');"/>
-	<panel name="game_prime_upgrade" color="0 0 0 .6">
-		<panel width="80.0h" height="52.0h" valign="center" align="center">
-			<instance name="frame_stone" backercolor="0 0 0 .7" vscale=".24" uscale=".16" body="upgrade" onclose="Call('Noptions', 'FadeOut(250);');" />
-		</panel>
-	</panel>
+    <panel name="dummy" color="invisible" onshow="Call('game_prime_upgrade', 'FadeIn(250);');"/>
+    <panel name="game_prime_upgrade" color="0 0 0 .6">
+        <panel width="80.0h" height="52.0h" valign="center" align="center">
+            <instance name="frame_stone" backercolor="0 0 0 .7" vscale=".24" uscale=".16" body="upgrade" onclose="Call('Noptions', 'FadeOut(250);');" />
+        </panel>
+    </panel>
 </interface>

@@ -1,97 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hero
-	name="Hero_Ursa"
-	
-	
-	
-	team="dev_Hellbourne"
-	icon="icon.tga"
-	portrait="icon.tga"
-	model="model.mdf"
-	skin=""
-	
-	passiveeffect=""
-	spawneffect=""
-	respawneffect="/shared/effects/respawn.effect"
-	selectedsound="sounds/voice/select_%.wav"
-	selectedflavorsound="sounds/voice/select_flavour_%.wav"
-	confirmmovesound="sounds/voice/move_%.wav"
-	confirmattacksound="sounds/voice/attack_%.wav"
-	nomanasound="sounds/voice/no_mana.wav"
-	cooldownsound="sounds/voice/cooldown.wav"
-	announcersound="sounds/voice/hero_select.wav"
-	tauntedsound="sounds/voice/taunt_prior.wav"
-	tauntkillsound="sounds/voice/taunt_after.wav"
-	
-	preglobalscale="1.33"
-	modelscale="0.8"
-	effectscale="0.9"
-	boundsheight="112"
-	boundsradius="24"
-	selectionradius="54"
-	targetoffset="0 0 92"
+    name="Hero_Ursa"
+    
+    
+    
+    team="dev_Hellbourne"
+    icon="icon.tga"
+    portrait="icon.tga"
+    model="model.mdf"
+    skin=""
+    
+    passiveeffect=""
+    spawneffect=""
+    respawneffect="/shared/effects/respawn.effect"
+    selectedsound="sounds/voice/select_%.wav"
+    selectedflavorsound="sounds/voice/select_flavour_%.wav"
+    confirmmovesound="sounds/voice/move_%.wav"
+    confirmattacksound="sounds/voice/attack_%.wav"
+    nomanasound="sounds/voice/no_mana.wav"
+    cooldownsound="sounds/voice/cooldown.wav"
+    announcersound="sounds/voice/hero_select.wav"
+    tauntedsound="sounds/voice/taunt_prior.wav"
+    tauntkillsound="sounds/voice/taunt_after.wav"
+    
+    preglobalscale="1.33"
+    modelscale="0.8"
+    effectscale="0.9"
+    boundsheight="112"
+    boundsradius="24"
+    selectionradius="54"
+    targetoffset="0 0 92"
 
-	movespeed="310"
-	turnrate="340"
-	turnsmoothing="0.05"
+    movespeed="310"
+    turnrate="340"
+    turnsmoothing="0.05"
 
-	maxhealth="150"
-	healthregen="0.25"
-	maxmana="0"
-	manaregen="0.01"
+    maxhealth="150"
+    healthregen="0.25"
+    maxmana="0"
+    manaregen="0.01"
 
-	armor="2.08"
-	magicarmor="5.5"
+    armor="2.08"
+    magicarmor="5.5"
 
-	inventory0="Ability_Ursa1"
-	inventory1="Ability_Ursa2"
-	inventory2="Ability_Ursa3"
-	inventory3="Ability_Ursa4"
-	inventory4="Ability_AttributeBoost"
-	inventory5=""
-	inventory6=""
-	inventory8="Ability_Taunt"
+    inventory0="Ability_Ursa1"
+    inventory1="Ability_Ursa2"
+    inventory2="Ability_Ursa3"
+    inventory3="Ability_Ursa4"
+    inventory4="Ability_AttributeBoost"
+    inventory5=""
+    inventory6=""
+    inventory8="Ability_Taunt"
 
-	attackduration="1200"
-	attackactiontime="800"
-	attackcooldown="1750"
-	attackdamagemin="31"
-	attackdamagemax="37"
-	attacknumanims="2"
-	attackoffset="0 20 90"
-	attackprojectile=""
-	attackrange="100"
-	attackstarteffect=""
-	attackactioneffect=""
-	attackimpacteffect="../../../heroes/predator/effects/impact.effect"
-	attacktype="melee"
-	combattype="Hero"
+    attackduration="1200"
+    attackactiontime="800"
+    attackcooldown="1750"
+    attackdamagemin="31"
+    attackdamagemax="37"
+    attacknumanims="2"
+    attackoffset="0 20 90"
+    attackprojectile=""
+    attackrange="100"
+    attackstarteffect=""
+    attackactioneffect=""
+    attackimpacteffect="../../../heroes/predator/effects/impact.effect"
+    attacktype="melee"
+    combattype="Hero"
 
-	aggrorange="600"
-	sightrangeday="1800"
-	sightrangenight="800"
-	wanderrange="250"
+    aggrorange="600"
+    sightrangeday="1800"
+    sightrangenight="800"
+    wanderrange="250"
 
-	primaryattribute="Agility"
-	strength="23"
-	strengthperlevel="2.9"
-	agility="18"
-	agilityperlevel="2.1"
-	intelligence="16"
-	intelligenceperlevel="1.5"
+    primaryattribute="Agility"
+    strength="23"
+    strengthperlevel="2.9"
+    agility="18"
+    agilityperlevel="2.1"
+    intelligence="16"
+    intelligenceperlevel="1.5"
 >
-	<recommendeditem name="Item_RunesOfTheBlight" />
-	<recommendeditem name="Item_HealthPotion" />
-	<recommendeditem name="Item_HomecomingStone" />	
-	<recommendeditem name="Item_Strength5" />
-	
-	<recommendeditem name="Item_EnhancedMarchers" />
-	<recommendeditem name="Item_Stealth" />
-	<recommendeditem name="Item_Evasion" />	
-	<recommendeditem name="Item_LifeSteal4" />
-	
-	<recommendeditem name="Item_BehemothsHeart" />
-	<recommendeditem name="Item_DaemonicBreastplate" />
-	<recommendeditem name="Item_Brutalizer" />
-	<recommendeditem name="Item_Insanitarius" />
+    <recommendeditem name="Item_RunesOfTheBlight" />
+    <recommendeditem name="Item_HealthPotion" />
+    <recommendeditem name="Item_HomecomingStone" /> 
+    <recommendeditem name="Item_Strength5" />
+    
+    <recommendeditem name="Item_EnhancedMarchers" />
+    <recommendeditem name="Item_Stealth" />
+    <recommendeditem name="Item_Evasion" /> 
+    <recommendeditem name="Item_LifeSteal4" />
+    
+    <recommendeditem name="Item_BehemothsHeart" />
+    <recommendeditem name="Item_DaemonicBreastplate" />
+    <recommendeditem name="Item_Brutalizer" />
+    <recommendeditem name="Item_Insanitarius" />
 </hero>

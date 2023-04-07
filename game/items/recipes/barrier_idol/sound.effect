@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true" useentityeffectscale="1">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="entity" scale="2.75">
-			
-			<sound
-				linearfalloff="true"
-				falloffstart="0"
-				falloffend="2200"
-				volume="0.4"
-				sample="sounds/cast.wav"
-			/>
-			
-			<sound
-				linearfalloff="true"
-				falloffstart="0"
-				falloffend="2200"
-				volume="0.5"
-				sample="sounds/impact.wav"
-			/>
-		
-			<sound
-				delay="100"
-				linearfalloff="true"
-				falloffstart="0"
-				falloffend="2200"
-				volume="0.3"
-				sample="/shared/sounds/items/item_armor5.wav"
-			/>
+        <particlesystem name="system0" space="entity" scale="2.75">
+            
+            <sound
+                linearfalloff="true"
+                falloffstart="0"
+                falloffend="2200"
+                volume="0.4"
+                sample="sounds/cast.wav"
+            />
+            
+            <sound
+                linearfalloff="true"
+                falloffstart="0"
+                falloffend="2200"
+                volume="0.5"
+                sample="sounds/impact.wav"
+            />
+        
+            <sound
+                delay="100"
+                linearfalloff="true"
+                falloffstart="0"
+                falloffend="2200"
+                volume="0.3"
+                sample="/shared/sounds/items/item_armor5.wav"
+            />
 
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-	</thread>
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+    </thread>
 
 </effect>

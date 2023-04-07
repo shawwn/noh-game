@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="world" scale="0.3">
+        <particlesystem name="system0" space="world" scale="0.3">
 
-			<!-- Back Wheels -->
-			
-			<simpleemitter
-				gravity="-1"
-				position="50 -55 2"
-				spawnrate="15"
-				minparticlelife="800"
-				maxparticlelife="1650"
-				offsetsphere="35 15 0"
-				material="/shared/effects/materials/dust.material"
-				depthbias="-55"
-				inheritvelocity="-0.1"
-			>
-				<particle 
-					minangle="-180"
-					maxangle="180"		
-					startcolor="0.73"
-					endcolor="0.4"
-					size="12"
-					minstartscale="6"
-					maxstartscale="8"
-					maxendscale="20"
-					minendscale="12"
-					startalpha="0"
-					midalpha="0.4"
-					midalphapos="0.2"
-					endalpha="0"
-				/>
-			</simpleemitter>
+            <!-- Back Wheels -->
+            
+            <simpleemitter
+                gravity="-1"
+                position="50 -55 2"
+                spawnrate="15"
+                minparticlelife="800"
+                maxparticlelife="1650"
+                offsetsphere="35 15 0"
+                material="/shared/effects/materials/dust.material"
+                depthbias="-55"
+                inheritvelocity="-0.1"
+            >
+                <particle 
+                    minangle="-180"
+                    maxangle="180"      
+                    startcolor="0.73"
+                    endcolor="0.4"
+                    size="12"
+                    minstartscale="6"
+                    maxstartscale="8"
+                    maxendscale="20"
+                    minendscale="12"
+                    startalpha="0"
+                    midalpha="0.4"
+                    midalphapos="0.2"
+                    endalpha="0"
+                />
+            </simpleemitter>
 
-			<simpleemitter
-				gravity="-1"
-				position="-50 -55 2"
-				spawnrate="15"
-				minparticlelife="800"
-				maxparticlelife="1650"
-				offsetsphere="35 15 0"
-				material="/shared/effects/materials/dust.material"
-				depthbias="-55"
-				inheritvelocity="-0.1"
-			>
-				<particle 
-					minangle="-180"
-					maxangle="180"			
-					startcolor="0.73"
-					endcolor="0.4"
-					size="12"
-					minstartscale="6"
-					maxstartscale="8"
-					maxendscale="20"
-					minendscale="12"
-					startalpha="0"
-					midalpha="0.4"
-					midalphapos="0.2"
-					endalpha="0"
-				/>
-			</simpleemitter>
-			
-		</particlesystem>
+            <simpleemitter
+                gravity="-1"
+                position="-50 -55 2"
+                spawnrate="15"
+                minparticlelife="800"
+                maxparticlelife="1650"
+                offsetsphere="35 15 0"
+                material="/shared/effects/materials/dust.material"
+                depthbias="-55"
+                inheritvelocity="-0.1"
+            >
+                <particle 
+                    minangle="-180"
+                    maxangle="180"          
+                    startcolor="0.73"
+                    endcolor="0.4"
+                    size="12"
+                    minstartscale="6"
+                    maxstartscale="8"
+                    maxendscale="20"
+                    minendscale="12"
+                    startalpha="0"
+                    midalpha="0.4"
+                    midalphapos="0.2"
+                    endalpha="0"
+                />
+            </simpleemitter>
+            
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
-		<waitfordeath instance="instance0"/>
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+        <waitfordeath instance="instance0"/>
+    </thread>
 
 </effect>

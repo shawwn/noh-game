@@ -1,95 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect>
-	<definitions>
-		<particlesystem name="system0" space="world" scale="1.0">
-			
-			
-			
-			<simpleemitter
-				timenudge="100"
-				spawnrate="200"
-				particlelife="3500"
-				count="30"
-				startgravity="2"
-				endgravity="10"
-				speed="75.0"
-				startdrag="0"
-				middrag="1"
-				enddrag="0.3"
-				middragpos=".8"
-				acceleration="0.0"
-				material="/shared/effects/materials/leaf.material"
-				inheritvelocity="0"
-				position="0 0 100"
-				offsetsphere="0 0 0"
-				minangle="45"
-				maxangle="180"
-			>
-				<particle
-					startcolor=".6 .6 .6"
-					midcolor=".4 .4 .0"
-					endcolor="0.4 0.4 0.0"
-					midcolorpos="0.5"
-					startalpha="1.0"
-					endalpha="0"
-					angle="0"
-					anglespeed="420"
-					startsize="10"
-					midsize="8"
-					endsize="0"
-					lockup="false"
-					lockright="false"
-					pitch="0"
-				/>
-			</simpleemitter>
+    <definitions>
+        <particlesystem name="system0" space="world" scale="1.0">
+            
+            
+            
+            <simpleemitter
+                timenudge="100"
+                spawnrate="200"
+                particlelife="3500"
+                count="30"
+                startgravity="2"
+                endgravity="10"
+                speed="75.0"
+                startdrag="0"
+                middrag="1"
+                enddrag="0.3"
+                middragpos=".8"
+                acceleration="0.0"
+                material="/shared/effects/materials/leaf.material"
+                inheritvelocity="0"
+                position="0 0 100"
+                offsetsphere="0 0 0"
+                minangle="45"
+                maxangle="180"
+            >
+                <particle
+                    startcolor=".6 .6 .6"
+                    midcolor=".4 .4 .0"
+                    endcolor="0.4 0.4 0.0"
+                    midcolorpos="0.5"
+                    startalpha="1.0"
+                    endalpha="0"
+                    angle="0"
+                    anglespeed="420"
+                    startsize="10"
+                    midsize="8"
+                    endsize="0"
+                    lockup="false"
+                    lockright="false"
+                    pitch="0"
+                />
+            </simpleemitter>
 
-			<simpleemitter
-				delay="300"
-				timenudge="100"
-				spawnrate="200"
-				particlelife="4000"
-				count="25"
-				startgravity="2"
-				endgravity="8"
-				speed="65.0"
-				startdrag="0"
-				middrag="5"
-				enddrag="0.3"
-				middragpos=".8"
-				acceleration="0.0"
-				material="/shared/effects/materials/leaves.material"
-				inheritvelocity="0"
-				position="25 10 100"
-				offsetsphere="0 0 0"
-				minangle="45"
-				maxangle="-180"
-			>
-				<particle
-					startcolor=".6 .6 .6"
-					midcolor=".4 .4 .0"
-					endcolor="0.4 0.4 0.0"
-					midcolorpos="0.5"
-					startalpha="1.0"
-					endalpha="0"
-					angle="0"
-					anglespeed="420"
-					startsize="13"
-					midsize="8"
-					endsize="0"
-					lockup="false"
-					lockright="false"
-					pitch="0"
-				/>
-			</simpleemitter>
-		
-			
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-		<!-- <die /> -->
-	</thread>
+            <simpleemitter
+                delay="300"
+                timenudge="100"
+                spawnrate="200"
+                particlelife="4000"
+                count="25"
+                startgravity="2"
+                endgravity="8"
+                speed="65.0"
+                startdrag="0"
+                middrag="5"
+                enddrag="0.3"
+                middragpos=".8"
+                acceleration="0.0"
+                material="/shared/effects/materials/leaves.material"
+                inheritvelocity="0"
+                position="25 10 100"
+                offsetsphere="0 0 0"
+                minangle="45"
+                maxangle="-180"
+            >
+                <particle
+                    startcolor=".6 .6 .6"
+                    midcolor=".4 .4 .0"
+                    endcolor="0.4 0.4 0.0"
+                    midcolorpos="0.5"
+                    startalpha="1.0"
+                    endalpha="0"
+                    angle="0"
+                    anglespeed="420"
+                    startsize="13"
+                    midsize="8"
+                    endsize="0"
+                    lockup="false"
+                    lockright="false"
+                    pitch="0"
+                />
+            </simpleemitter>
+        
+            
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][pos] -->

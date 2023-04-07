@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_ShieldOfTheFive"
+    name="State_ShieldOfTheFive"
 
-	
-	passiveeffect="state.effect"
-	icon="icon.tga"
-	
-	armor="2"
-	
-	effecttype="StatusBuff"
+    
+    passiveeffect="state.effect"
+    icon="icon.tga"
+    
+    armor="2"
+    
+    effecttype="StatusBuff"
 >
 </state>

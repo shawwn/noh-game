@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gadget
-	name="Gadget_Techies_Ability4"
-	
-	
-	
-	icon="icon.tga"
-	portrait="icon.tga"
-	
-	model="../../../heroes/voodoo/ability_04/effects/ward.mdf"
-	
-	preglobalscale="1.6"
-	modelscale="1.0"
-	effectscale="1.0"
-	boundsheight="64"
-	boundsradius="8"
-	selectionradius="48"
-	targetoffset="0 0 64"
-	isselectable="true"
-	iscontrollable="true"
+    name="Gadget_Techies_Ability4"
+    
+    
+    
+    icon="icon.tga"
+    portrait="icon.tga"
+    
+    model="../../../heroes/voodoo/ability_04/effects/ward.mdf"
+    
+    preglobalscale="1.6"
+    modelscale="1.0"
+    effectscale="1.0"
+    boundsheight="64"
+    boundsradius="8"
+    selectionradius="48"
+    targetoffset="0 0 64"
+    isselectable="true"
+    iscontrollable="true"
 
-	canrotate="false"
-	ismobile="false"
-	unitwalking="true"
+    canrotate="false"
+    ismobile="false"
+    unitwalking="true"
 
-	maxhealth="200"
-	inventory0="Ability_Gadget_Techies4"
+    maxhealth="200"
+    inventory0="Ability_Gadget_Techies4"
 
-	immunity="GadgetImmunity"
-	unittype="PseudoPet RemoteMine"
-	attacktype="none"
-	combattype="Ranged"
-	stealthtype="ward"
-	fadetime="100"
+    immunity="GadgetImmunity"
+    unittype="PseudoPet RemoteMine"
+    attacktype="none"
+    combattype="Ranged"
+    stealthtype="ward"
+    fadetime="100"
 
-	sightrangeday="1800"
-	sightrangenight="800"
-	lifetime="480000"
+    sightrangeday="1800"
+    sightrangenight="800"
+    lifetime="480000"
 >
-	<onspawn>
-		<startfade />
-	</onspawn>
+    <onspawn>
+        <startfade />
+    </onspawn>
 </gadget>

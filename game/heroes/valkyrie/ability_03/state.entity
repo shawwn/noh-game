@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Valkyrie_Ability3"
-	
-	icon="icon.tga"
-	passiveeffect="effects/trail.effect"
+    name="State_Valkyrie_Ability3"
+    
+    icon="icon.tga"
+    passiveeffect="effects/trail.effect"
 
-	stunned="true"
+    stunned="true"
 
-	ishidden="true"
+    ishidden="true"
 
-	unitwalking="true"
-	effecttype=""
+    unitwalking="true"
+    effecttype=""
 >
 </state>

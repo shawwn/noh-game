@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="Self_State_Scout_Ability4"
+    name="Self_State_Scout_Ability4"
 
-	ishidden="true"
-	
-	passiveeffect="effects/channeling.effect"
+    ishidden="true"
+    
+    passiveeffect="effects/channeling.effect"
 >
 </state>

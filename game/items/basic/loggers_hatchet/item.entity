@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_LoggersHatchet"
-	
-	icon="icon.tga"
-	
-	cost="225"
-	nosell="true"
-	
-	casttime="200"
-	castactiontime="0"
-	
-	actiontype="target_entity"
-	targetscheme="trees"
-	casteffect="cast.effect"
-	range="100"
-	cooldowntime="15000"
-	cooldowntype="hatchet"
-	
+    name="Item_LoggersHatchet"
+    
+    icon="icon.tga"
+    
+    cost="225"
+    nosell="true"
+    
+    casttime="200"
+    castactiontime="0"
+    
+    actiontype="target_entity"
+    targetscheme="trees"
+    casteffect="cast.effect"
+    range="100"
+    cooldowntime="15000"
+    cooldowntype="hatchet"
+    
 >
-	<onimpact>
-		<killtrees />
-		<playanim name="attack_1" target="source_entity" speed="1.5"/>
-	</onimpact>
-	
-	<modifier key="hatchet_ranged" condition="ranged" modpriority="100" exclusive="true">
-		<onattackdamageevent activateonbounces="true">
-			<damagesupertype supertype="attack">
-				<cantarget targetscheme="all_nonhero_units">
-					<setvalue name="damage_attempted" a="damage_attempted" b="1.12" op="mult" />
-				</cantarget>
-			</damagesupertype>
-		</onattackdamageevent>
-		<onframe />
-	</modifier>
+    <onimpact>
+        <killtrees />
+        <playanim name="attack_1" target="source_entity" speed="1.5"/>
+    </onimpact>
+    
+    <modifier key="hatchet_ranged" condition="ranged" modpriority="100" exclusive="true">
+        <onattackdamageevent activateonbounces="true">
+            <damagesupertype supertype="attack">
+                <cantarget targetscheme="all_nonhero_units">
+                    <setvalue name="damage_attempted" a="damage_attempted" b="1.12" op="mult" />
+                </cantarget>
+            </damagesupertype>
+        </onattackdamageevent>
+        <onframe />
+    </modifier>
 
-	<modifier key="hatchet_melee" condition="melee" modpriority="100" exclusive="true">
-		<onattackdamageevent activateonbounces="true">
-			<damagesupertype supertype="attack">
-				<cantarget targetscheme="all_nonhero_units">
-					<setvalue name="damage_attempted" a="damage_attempted" b="1.32" op="mult" />
-				</cantarget>
-			</damagesupertype>
-		</onattackdamageevent>
-		<onframe />
-	</modifier>
-	
-	<modifier key="hatchet_shopdescription" condition="hatchetdesc" modpriority="101">
-		<onframe />
-	</modifier>
+    <modifier key="hatchet_melee" condition="melee" modpriority="100" exclusive="true">
+        <onattackdamageevent activateonbounces="true">
+            <damagesupertype supertype="attack">
+                <cantarget targetscheme="all_nonhero_units">
+                    <setvalue name="damage_attempted" a="damage_attempted" b="1.32" op="mult" />
+                </cantarget>
+            </damagesupertype>
+        </onattackdamageevent>
+        <onframe />
+    </modifier>
+    
+    <modifier key="hatchet_shopdescription" condition="hatchetdesc" modpriority="101">
+        <onframe />
+    </modifier>
 </item>

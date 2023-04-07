@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gadget
-	name="Gadget_Hunter_Ability3"
-	
-	model="/shared/models/invis.mdf"
-	boundsheight="0"
-	boundsradius="0"
-	isselectable="false"
-	canrotate="false"
-	ismobile="false"
-	effectscale="1"
+    name="Gadget_Hunter_Ability3"
+    
+    model="/shared/models/invis.mdf"
+    boundsheight="0"
+    boundsradius="0"
+    isselectable="false"
+    canrotate="false"
+    ismobile="false"
+    effectscale="1"
 
-	attacktype="none"
+    attacktype="none"
 
-	lifetime="0"
-	deathtime="0"
-	corpsetime="0"
-	
-	invulnerable="true"
-	flying="true"
-	drawonmap="true"
-	
-	passiveeffect="effects/state.effect"
-	alwaysvisible="true"
-	hidden="true"
+    lifetime="0"
+    deathtime="0"
+    corpsetime="0"
+    
+    invulnerable="true"
+    flying="true"
+    drawonmap="true"
+    
+    passiveeffect="effects/state.effect"
+    alwaysvisible="true"
+    hidden="true"
 >
 </gadget>

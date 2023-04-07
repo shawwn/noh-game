@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_PuppetMaster_Ability2"
+    name="State_PuppetMaster_Ability2"
 
-	
-	
-	icon="icon.tga"
-	
-	ishidden="true"
+    
+    
+    icon="icon.tga"
+    
+    ishidden="true"
 
-	morphpriority="50"
-	morphattacktargetscheme="all_units"
-	morphattacknonlethal="true"
-	
-	effecttype="StatusDebuff"
+    morphpriority="50"
+    morphattacktargetscheme="all_units"
+    morphattacknonlethal="true"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe >
-		<condition test="not_target_type alive" target="proxy_entity" >
-			<expirestate name="State_PuppetMaster_Ability2_Expire" target="this_owner_entity" />
-		</condition>
-	</onframe>
-	<onexpired>
-		<order command="stop" force="true" source="this_owner_entity" />
-	</onexpired>
+    <onframe >
+        <condition test="not_target_type alive" target="proxy_entity" >
+            <expirestate name="State_PuppetMaster_Ability2_Expire" target="this_owner_entity" />
+        </condition>
+    </onframe>
+    <onexpired>
+        <order command="stop" force="true" source="this_owner_entity" />
+    </onexpired>
 
 </state>

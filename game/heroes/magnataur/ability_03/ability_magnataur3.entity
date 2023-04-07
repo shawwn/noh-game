@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Magnataur3"
+    name="Ability_Magnataur3"
 
-	
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/passive.effect"
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/passive.effect"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="passive"
+    actiontype="passive"
 
 >
-	<aura state="State_Magnataur_Ability3" radius="550" targetscheme="enemy_units" effecttype="Magic"/>
+    <aura state="State_Magnataur_Ability3" radius="550" targetscheme="enemy_units" effecttype="Magic"/>
 </ability>

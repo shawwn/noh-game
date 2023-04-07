@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect useentityeffectscale="true">
-	<definitions>
-		<particlesystem name="system0" space="world">
-			<model
-				parentmodel="true"
-				parentskeleton="true"
-				color="0.0 2.0 0.0"
-				material="/shared/effects/materials/shell2.material"
-			/>
-			
-			<sound
-				sample="sounds/regeneration.wav"
-				falloffstart="0.0" 
-				falloffend="1000.0"
-				volume="1.0" 
-				linearfalloff="true"
-			/>
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-		<!-- <die /> -->
-	</thread>
+    <definitions>
+        <particlesystem name="system0" space="world">
+            <model
+                parentmodel="true"
+                parentskeleton="true"
+                color="0.0 2.0 0.0"
+                material="/shared/effects/materials/shell2.material"
+            />
+            
+            <sound
+                sample="sounds/regeneration.wav"
+                falloffstart="0.0" 
+                falloffend="1000.0"
+                volume="1.0" 
+                linearfalloff="true"
+            />
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][pos] -->

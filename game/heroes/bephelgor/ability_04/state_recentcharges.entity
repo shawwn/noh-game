@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Bephelgor_Ability4_Recentcharge"
+    name="State_Bephelgor_Ability4_Recentcharge"
 
-	icon="icon.tga"
-	ishidden="true"
-	
-	effecttype=""
+    icon="icon.tga"
+    ishidden="true"
+    
+    effecttype=""
 >
 
 

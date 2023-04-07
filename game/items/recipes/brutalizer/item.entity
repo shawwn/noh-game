@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Brutalizer"
-	
-	icon="icon.tga"
-	
-	cost="1150"
-	components="Item_BlessedArmband Item_Halberd"
-	
-	actiontype="passive"
-	cooldowntime="2000"
-	cooldowntype="bashing"
-	
-	strength="6"
-	damage="30"
+    name="Item_Brutalizer"
+    
+    icon="icon.tga"
+    
+    cost="1150"
+    components="Item_BlessedArmband Item_Halberd"
+    
+    actiontype="passive"
+    cooldowntime="2000"
+    cooldowntype="bashing"
+    
+    strength="6"
+    damage="30"
 >
-	<modifier key="brutalizer_melee" condition="melee" modpriority="100" exclusive="true">
-		<onattackimpact effectdescription="true" propagatetoillusions="false">
-			<condition test="canactivate">
-				<cantarget targetscheme="enemy_units" >
-					<chance threshold="0.25">
-						<applystate name="State_Stunned" duration="1400"/>
-						<damage effecttype="Physical" amount="25" />
-						<startcooldown/>
-					</chance>
-				</cantarget>
-			</condition>
-		</onattackimpact>
-	</modifier>
+    <modifier key="brutalizer_melee" condition="melee" modpriority="100" exclusive="true">
+        <onattackimpact effectdescription="true" propagatetoillusions="false">
+            <condition test="canactivate">
+                <cantarget targetscheme="enemy_units" >
+                    <chance threshold="0.25">
+                        <applystate name="State_Stunned" duration="1400"/>
+                        <damage effecttype="Physical" amount="25" />
+                        <startcooldown/>
+                    </chance>
+                </cantarget>
+            </condition>
+        </onattackimpact>
+    </modifier>
 
-	<modifier key="brutalizer_ranged" condition="ranged" modpriority="100" exclusive="true" propagatetoillusions="false" >
-		<onattackimpact effectdescription="true" propagatetoillusions="false">
-			<condition test="canactivate">
-				<condition test="bounce_count lt 2">
-					<cantarget targetscheme="enemy_units" >
-						<chance threshold="0.10">
-							<applystate name="State_Stunned" duration="1400"/>
-							<damage effecttype="Physical" amount="25"/>
-							<startcooldown/>
-						</chance>
-					</cantarget>
-				</condition>
-			</condition>
-		</onattackimpact>
-	</modifier>
-	
-	<modifier key="brutalizer_shopdescription" condition="brutalizerdesc" modpriority="101">
-		<onattackimpact effectdescription="true"/>
-	</modifier>
+    <modifier key="brutalizer_ranged" condition="ranged" modpriority="100" exclusive="true" propagatetoillusions="false" >
+        <onattackimpact effectdescription="true" propagatetoillusions="false">
+            <condition test="canactivate">
+                <condition test="bounce_count lt 2">
+                    <cantarget targetscheme="enemy_units" >
+                        <chance threshold="0.10">
+                            <applystate name="State_Stunned" duration="1400"/>
+                            <damage effecttype="Physical" amount="25"/>
+                            <startcooldown/>
+                        </chance>
+                    </cantarget>
+                </condition>
+            </condition>
+        </onattackimpact>
+    </modifier>
+    
+    <modifier key="brutalizer_shopdescription" condition="brutalizerdesc" modpriority="101">
+        <onattackimpact effectdescription="true"/>
+    </modifier>
 </item>

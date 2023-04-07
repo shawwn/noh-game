@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Pet_Engineer_Burstfire"
-	
-	icon="icon.tga"
-	
-	impactinterval="150"
-	ishidden="true"
-	
-	passiveeffect=""
-	effecttype=""
+    name="State_Pet_Engineer_Burstfire"
+    
+    icon="icon.tga"
+    
+    impactinterval="150"
+    ishidden="true"
+    
+    passiveeffect=""
+    effecttype=""
 >
 
-	<onimpact>
-		<condition test="distance lt 750" source="source_entity" target="proxy_entity">
-			<condition target="proxy_entity" test="not_target_type dead" >
-				<playanim name="attack_1" target="source_entity" speed="source_attackspeed" />
-				<applystate name="State_Pet_Engineer_Burstfire_Anim1" target="source_entity" proxy="proxy_entity" duration="50" stack="true" />
-			</condition>
-		</condition>
-	</onimpact>
+    <onimpact>
+        <condition test="distance lt 750" source="source_entity" target="proxy_entity">
+            <condition target="proxy_entity" test="not_target_type dead" >
+                <playanim name="attack_1" target="source_entity" speed="source_attackspeed" />
+                <applystate name="State_Pet_Engineer_Burstfire_Anim1" target="source_entity" proxy="proxy_entity" duration="50" stack="true" />
+            </condition>
+        </condition>
+    </onimpact>
 </state>

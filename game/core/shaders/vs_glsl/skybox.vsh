@@ -7,19 +7,19 @@
 //=============================================================================
 // Uniform variables
 //=============================================================================
-uniform vec4	vColor;
+uniform vec4    vColor;
 
 //=============================================================================
 // Varying variables
 //=============================================================================
-varying vec4	v_vColor;
+varying vec4    v_vColor;
 
 //=============================================================================
 // Vertex shader
 //=============================================================================
 void main()
 {
-	gl_Position    = gl_Vertex;
-	gl_TexCoord[0] = gl_ModelViewProjectionMatrixInverse * gl_Vertex;
-	v_vColor       = vColor;
+    gl_Position    = gl_Vertex;
+    gl_TexCoord[0] = gl_ModelViewProjectionMatrixInverse * gl_Vertex;
+    v_vColor       = vColor;
 }

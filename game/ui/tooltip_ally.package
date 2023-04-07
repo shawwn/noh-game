@@ -1,277 +1,277 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
-	<template name="ally_tooltip">
-		<frame
-			name="{id}"
-			texture="/ui/frames/tooltip_bg.tga"
-			color="#00000070"
-			borderthickness="0.5h"
-			visible="false"
-			x="-1h"
-			y="-18h"
-			align="right"
-			valign="bottom"
-			width="27h"
-			height="5.0h"
-			float="bottom"
-		>
-			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness="0.5h"/>
-			<anchor x="1.0h" y="0.6h" />
-			
-			<panel
-				width="-2.0h"
-				height="1.8h"
-			>
-				<label
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="AllyPlayerInfo{slot}"
-					ontrigger="SetText(param0); SetColor(param1);"
-				/>
-				
-				<label
-					textalign="right"
-					font="dyn_10"
-					color="yellow"
-					watch="AllyGold{slot}"
-					ontrigger="SetText(Translate('tooltip_gold') # param);"
-				/>
-			</panel>
-		
-			<label
-				width="-2.0h"
-				height="1.8h"
-				textalign="left"
-				font="dyn_10"
-				color="white"
-				watch="AllyHeroInfo{slot}"
-				ontrigger="SetText(param0);"
-			/>
-			
-			<label
-				width="-2.0h"
-				height="1.8h"
-				textalign="left"
-				font="dyn_10"
-				color="white"
-				watch="AllyHeroInfo{slot}"
-				ontrigger="SetText(Translate('tooltip_level', 'level', param2));"
-			/>
-			
-			<panel width="-2.0h" height="1.8h" />
-			
-			<panel
-				width="-2.0h"
-				height="2.4h"
-				float="bottom"
-			>
-				<label
-					height="1.8h"
-					font="dyn_10"
-					color="white"
-					content="tooltip_ally_abilities"
-				/>
+    <template name="ally_tooltip">
+        <frame
+            name="{id}"
+            texture="/ui/frames/tooltip_bg.tga"
+            color="#00000070"
+            borderthickness="0.5h"
+            visible="false"
+            x="-1h"
+            y="-18h"
+            align="right"
+            valign="bottom"
+            width="27h"
+            height="5.0h"
+            float="bottom"
+        >
+            <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness="0.5h"/>
+            <anchor x="1.0h" y="0.6h" />
+            
+            <panel
+                width="-2.0h"
+                height="1.8h"
+            >
+                <label
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="AllyPlayerInfo{slot}"
+                    ontrigger="SetText(param0); SetColor(param1);"
+                />
+                
+                <label
+                    textalign="right"
+                    font="dyn_10"
+                    color="yellow"
+                    watch="AllyGold{slot}"
+                    ontrigger="SetText(Translate('tooltip_gold') # param);"
+                />
+            </panel>
+        
+            <label
+                width="-2.0h"
+                height="1.8h"
+                textalign="left"
+                font="dyn_10"
+                color="white"
+                watch="AllyHeroInfo{slot}"
+                ontrigger="SetText(param0);"
+            />
+            
+            <label
+                width="-2.0h"
+                height="1.8h"
+                textalign="left"
+                font="dyn_10"
+                color="white"
+                watch="AllyHeroInfo{slot}"
+                ontrigger="SetText(Translate('tooltip_level', 'level', param2));"
+            />
+            
+            <panel width="-2.0h" height="1.8h" />
+            
+            <panel
+                width="-2.0h"
+                height="2.4h"
+                float="bottom"
+            >
+                <label
+                    height="1.8h"
+                    font="dyn_10"
+                    color="white"
+                    content="tooltip_ally_abilities"
+                />
 
-				<panel width="10.5h" height="0.2h" color="gray" />
-				<panel height="0.4h" sticky="true" />
-			</panel>
-			
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-				watch="AllyAbility0Info{slot}"
-				ontrigger="SetVisible(param0);"
-			>
-				<label
-					width="67%"
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="AllyAbility0Info{slot}"
-					ontrigger="SetText('[' # param6 # '] ' # param10); If(param2, SetColor('white'), If(param5, SetColor('#4444cc'), SetColor('gray')));"
-				/>
-				
-				<label
-					width="33%"
-					align="right"
-					textalign="left"
-					font="dyn_10"
-					color="gray"
-					watch="AllyAbility0Cooldown{slot}"
-					ontrigger="SetText(param # 's'); SetVisible(param gt 0);"
-				/>
-			</panel>
-			
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-				watch="AllyAbility1Info{slot}"
-				ontrigger="SetVisible(param0);"
-			>
-				<label
-					width="67%"
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="AllyAbility1Info{slot}"
-					ontrigger="SetText('[' # param6 # '] ' # param10); If(param2, SetColor('white'), If(param5, SetColor('#4444cc'), SetColor('gray')));"
-				/>
-				
-				<label
-					width="33%"
-					align="right"
-					textalign="left"
-					font="dyn_10"
-					color="gray"
-					watch="AllyAbility1Cooldown{slot}"
-					ontrigger="SetText(param # 's'); SetVisible(param gt 0);"
-				/>
-			</panel>
-			
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-				watch="AllyAbility2Info{slot}"
-				ontrigger="SetVisible(param0);"
-			>
-				<label
-					width="67%"
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="AllyAbility2Info{slot}"
-					ontrigger="SetText('[' # param6 # '] ' # param10); If(param2, SetColor('white'), If(param5, SetColor('#4444cc'), SetColor('gray')));"
-				/>
-				
-				<label
-					width="33%"
-					align="right"
-					textalign="left"
-					font="dyn_10"
-					color="gray"
-					watch="AllyAbility2Cooldown{slot}"
-					ontrigger="SetText(param # 's'); SetVisible(param gt 0);"
-				/>
-			</panel>
-			
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-				watch="AllyAbility3Info{slot}"
-				ontrigger="SetVisible(param0);"
-			>
-				<label
-					width="67%"
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="AllyAbility3Info{slot}"
-					ontrigger="SetText('[' # param6 # '] ' # param10); If(param2, SetColor('white'), If(param5, SetColor('#4444cc'), SetColor('gray')));"
-				/>
-				
-				<label
-					width="33%"
-					align="right"
-					textalign="left"
-					font="dyn_10"
-					color="gray"
-					watch="AllyAbility3Cooldown{slot}"
-					ontrigger="SetText(param # 's'); SetVisible(param gt 0);"
-				/>
-			</panel>
-			
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				sticky="true"
-				stickytoinvis="false"
-				visible="false"
-				watch="AllyAbility4Info{slot}"
-				ontrigger="SetVisible(param0);"
-			>
-				<label
-					width="67%"
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="AllyAbility4Info{slot}"
-					ontrigger="SetText('[' # param6 # '] ' # param10); If(param2, SetColor('white'), If(param5, SetColor('#4444cc'), SetColor('gray')));"
-				/>
-				
-				<label
-					width="33%"
-					align="right"
-					textalign="left"
-					font="dyn_10"
-					color="gray"
-					watch="AllyAbility4Cooldown{slot}"
-					ontrigger="SetText(param # 's'); SetVisible(param gt 0);"
-				/>
-			</panel>
-			
-			<panel
-				width="-2.0h"
-				height="1.8h"
-				sticky="true"
-				stickytoinvis="false"
-			/>
-			
-			<panel
-				width="-2.0h"
-				height="2.4h"
-				float="bottom"
-				sticky="true"
-				stickytoinvis="false"
-			>
-				<label
-					height="1.8h"
-					font="dyn_10"
-					color="white"
-					content="tooltip_ally_attributes"
-				/>
+                <panel width="10.5h" height="0.2h" color="gray" />
+                <panel height="0.4h" sticky="true" />
+            </panel>
+            
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+                watch="AllyAbility0Info{slot}"
+                ontrigger="SetVisible(param0);"
+            >
+                <label
+                    width="67%"
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="AllyAbility0Info{slot}"
+                    ontrigger="SetText('[' # param6 # '] ' # param10); If(param2, SetColor('white'), If(param5, SetColor('#4444cc'), SetColor('gray')));"
+                />
+                
+                <label
+                    width="33%"
+                    align="right"
+                    textalign="left"
+                    font="dyn_10"
+                    color="gray"
+                    watch="AllyAbility0Cooldown{slot}"
+                    ontrigger="SetText(param # 's'); SetVisible(param gt 0);"
+                />
+            </panel>
+            
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+                watch="AllyAbility1Info{slot}"
+                ontrigger="SetVisible(param0);"
+            >
+                <label
+                    width="67%"
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="AllyAbility1Info{slot}"
+                    ontrigger="SetText('[' # param6 # '] ' # param10); If(param2, SetColor('white'), If(param5, SetColor('#4444cc'), SetColor('gray')));"
+                />
+                
+                <label
+                    width="33%"
+                    align="right"
+                    textalign="left"
+                    font="dyn_10"
+                    color="gray"
+                    watch="AllyAbility1Cooldown{slot}"
+                    ontrigger="SetText(param # 's'); SetVisible(param gt 0);"
+                />
+            </panel>
+            
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+                watch="AllyAbility2Info{slot}"
+                ontrigger="SetVisible(param0);"
+            >
+                <label
+                    width="67%"
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="AllyAbility2Info{slot}"
+                    ontrigger="SetText('[' # param6 # '] ' # param10); If(param2, SetColor('white'), If(param5, SetColor('#4444cc'), SetColor('gray')));"
+                />
+                
+                <label
+                    width="33%"
+                    align="right"
+                    textalign="left"
+                    font="dyn_10"
+                    color="gray"
+                    watch="AllyAbility2Cooldown{slot}"
+                    ontrigger="SetText(param # 's'); SetVisible(param gt 0);"
+                />
+            </panel>
+            
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+                watch="AllyAbility3Info{slot}"
+                ontrigger="SetVisible(param0);"
+            >
+                <label
+                    width="67%"
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="AllyAbility3Info{slot}"
+                    ontrigger="SetText('[' # param6 # '] ' # param10); If(param2, SetColor('white'), If(param5, SetColor('#4444cc'), SetColor('gray')));"
+                />
+                
+                <label
+                    width="33%"
+                    align="right"
+                    textalign="left"
+                    font="dyn_10"
+                    color="gray"
+                    watch="AllyAbility3Cooldown{slot}"
+                    ontrigger="SetText(param # 's'); SetVisible(param gt 0);"
+                />
+            </panel>
+            
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                sticky="true"
+                stickytoinvis="false"
+                visible="false"
+                watch="AllyAbility4Info{slot}"
+                ontrigger="SetVisible(param0);"
+            >
+                <label
+                    width="67%"
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="AllyAbility4Info{slot}"
+                    ontrigger="SetText('[' # param6 # '] ' # param10); If(param2, SetColor('white'), If(param5, SetColor('#4444cc'), SetColor('gray')));"
+                />
+                
+                <label
+                    width="33%"
+                    align="right"
+                    textalign="left"
+                    font="dyn_10"
+                    color="gray"
+                    watch="AllyAbility4Cooldown{slot}"
+                    ontrigger="SetText(param # 's'); SetVisible(param gt 0);"
+                />
+            </panel>
+            
+            <panel
+                width="-2.0h"
+                height="1.8h"
+                sticky="true"
+                stickytoinvis="false"
+            />
+            
+            <panel
+                width="-2.0h"
+                height="2.4h"
+                float="bottom"
+                sticky="true"
+                stickytoinvis="false"
+            >
+                <label
+                    height="1.8h"
+                    font="dyn_10"
+                    color="white"
+                    content="tooltip_ally_attributes"
+                />
 
-				<panel width="10.5h" height="0.2h" color="gray" />
-				<panel height="0.4h" sticky="true" />
-			</panel>
-			
-			<!-- Health -->
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				color="white"
-				watch="AllyHealth{slot}"
-				ontrigger="SetText(Translate('tooltip_health') # Round(param0) # '/' # Round(param1));"
-			/>
-			
-			<!-- Mana -->
-			<label
-				width="-2.0h"
-				height="1.8h"
-				font="dyn_10"
-				color="white"
-				watch="AllyMana{slot}"
-				ontrigger="SetText(Translate('tooltip_mana') # Round(param0) # '/' # Round(param1));"
-			/>
-						
-			<panel width="-2.0h" height="0.0h"
-				onframe="If(IsVisible(), Call('{id}', 'SetHeight(' # GetY() # ' + GetYFromString(\'0.55h\'));'));"
-				sticky="true"
-				stickytoinvis="false"
-			/>
-		</frame>
-	</template>
+                <panel width="10.5h" height="0.2h" color="gray" />
+                <panel height="0.4h" sticky="true" />
+            </panel>
+            
+            <!-- Health -->
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                color="white"
+                watch="AllyHealth{slot}"
+                ontrigger="SetText(Translate('tooltip_health') # Round(param0) # '/' # Round(param1));"
+            />
+            
+            <!-- Mana -->
+            <label
+                width="-2.0h"
+                height="1.8h"
+                font="dyn_10"
+                color="white"
+                watch="AllyMana{slot}"
+                ontrigger="SetText(Translate('tooltip_mana') # Round(param0) # '/' # Round(param1));"
+            />
+                        
+            <panel width="-2.0h" height="0.0h"
+                onframe="If(IsVisible(), Call('{id}', 'SetHeight(' # GetY() # ' + GetYFromString(\'0.55h\'));'));"
+                sticky="true"
+                stickytoinvis="false"
+            />
+        </frame>
+    </template>
 </package>

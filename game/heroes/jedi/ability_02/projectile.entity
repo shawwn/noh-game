@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Jedi_Ability2"
+    name="Projectile_Jedi_Ability2"
 
-	speed="1200"
-	gravity="1500"
+    speed="1200"
+    gravity="1500"
 
-	modelscale="1.0"
-	model=""
-		
-	canturn="false"
-	flying="false"
-	pathing="false"
-	flyheight="0"
+    modelscale="1.0"
+    model=""
+        
+    canturn="false"
+    flying="false"
+    pathing="false"
+    flyheight="0"
 >
-	<onimpact>
-		<spawnaffector name="Affector_Jedi_Ability2" target="target_position" owner="this_owner_entity" />
-	</onimpact>
+    <onimpact>
+        <spawnaffector name="Affector_Jedi_Ability2" target="target_position" owner="this_owner_entity" />
+    </onimpact>
 </projectile>

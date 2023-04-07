@@ -7,15 +7,15 @@
 //=============================================================================
 // Global variables
 //=============================================================================
-float4x4	mWorldViewProj;  // World * View * Projection transformation
+float4x4    mWorldViewProj;  // World * View * Projection transformation
 
 //=============================================================================
 // Vertex shader output structure
 //=============================================================================
 struct VS_OUTPUT
 {
-	float4 Position  : POSITION;
-	float2 Texcoord0 : TEXCOORD0;
+    float4 Position  : POSITION;
+    float2 Texcoord0 : TEXCOORD0;
 };
 
 //=============================================================================
@@ -23,8 +23,8 @@ struct VS_OUTPUT
 //=============================================================================
 struct VS_INPUT
 {
-	float2 Position  : POSITION;
-	float2 Texcoord0 : TEXCOORD0;
+    float2 Position  : POSITION;
+    float2 Texcoord0 : TEXCOORD0;
 };
 
 //=============================================================================
@@ -32,13 +32,13 @@ struct VS_INPUT
 //=============================================================================
 VS_OUTPUT VS( VS_INPUT In )
 {
-	VS_OUTPUT Out;
+    VS_OUTPUT Out;
 
-	float4 v = float4(In.Position.x, In.Position.y, 0.0f, 1.0f);
+    float4 v = float4(In.Position.x, In.Position.y, 0.0f, 1.0f);
 
-	Out.Position	= mul(v, mWorldViewProj);
-	Out.Texcoord0	= In.Texcoord0;
+    Out.Position    = mul(v, mWorldViewProj);
+    Out.Texcoord0   = In.Texcoord0;
 
-	return Out;
+    return Out;
 }
 

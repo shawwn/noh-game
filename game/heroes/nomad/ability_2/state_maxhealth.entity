@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Nomad_Ability2_MaxHealthReduction"
+    name="State_Nomad_Ability2_MaxHealthReduction"
 
-	
-	
-	icon="icon.tga"
-	
-	passiveeffect="effects/ability_01_state.effect"
+    
+    
+    icon="icon.tga"
+    
+    passiveeffect="effects/ability_01_state.effect"
 
-	maxhealthmultiplier="-0.05,-0.1,-0.15,-0.20"
+    maxhealthmultiplier="-0.05,-0.1,-0.15,-0.20"
 
-	effecttype="StatusDebuff"
+    effecttype="StatusDebuff"
 >
 
 </state>

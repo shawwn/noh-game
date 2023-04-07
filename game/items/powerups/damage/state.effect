@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect useentityeffectscale="true">
-	<definitions>
-		<particlesystem name="system0" space="world">
-			<model
-				parentmodel="true"
-				parentskeleton="true"
-				color=".1 .1 1"
-				material="/shared/effects/materials/shell.material"
-			/>
-			
-			<light
-				bone="_bone_center"
-				color="0.0 1 2.0"
-				falloffstart="0.0"
-				falloffend="250.0"
-			/>
-			
-			<!--sound
-				sample="sounds/quaddamage.wav"
-				falloffstart="0.0" 
-				falloffend="1000.0"
-				volume="1.0" 
-				linearfalloff="true"
-			/-->
+    <definitions>
+        <particlesystem name="system0" space="world">
+            <model
+                parentmodel="true"
+                parentskeleton="true"
+                color=".1 .1 1"
+                material="/shared/effects/materials/shell.material"
+            />
+            
+            <light
+                bone="_bone_center"
+                color="0.0 1 2.0"
+                falloffstart="0.0"
+                falloffend="250.0"
+            />
+            
+            <!--sound
+                sample="sounds/quaddamage.wav"
+                falloffstart="0.0" 
+                falloffend="1000.0"
+                volume="1.0" 
+                linearfalloff="true"
+            /-->
 
-			<!--
-			<billboard
-				rollspeed="360"
-				yawspeed="250"
-				pitchspeed="360"
-				bone="_bone_overhead"
-				material="/shared/effects/materials/whitedot2.material"
-				startcolor="0 .5 1"
-				midcolor="0 1 5"
-				endcolor="0 .5 1"
-				startsize="30"
-				midsize="40"
-				endsize="30"
-				life="6500"
-				loop="true"
-				
-				directionalspace="local"
-				depthbias=".3"
-				position="1 -5 25"
-			/>
-				<billboard
-				bone="_bone_overhead"
-				rollspeed="-360"
-				yawspeed="-250"
-				pitchspeed="360"
-	
-				material="/shared/effects/materials/whitedot2.material"
-				startcolor="0 .5 1"
-				midcolor="0 1 5"
-				endcolor="0 .5 1"
-				startsize="30"
-				midsize="40"
-				endsize="30"
-				life="6500"
-				loop="true"
-				
-				directionalspace="local"
-				depthbias=".3"
-				position="1 -5 25"
-			/>
-				<billboard
-				bone="_bone_overhead"
-				rollspeed="250"
-				yawspeed="360"
-	
-				material="/shared/effects/materials/whitedot2.material"
-				startcolor="0 .5 1"
-				midcolor="0 1 5"
-				endcolor="0 .5 1"
-				startsize="30"
-				midsize="40"
-				endsize="30"
-				life="6500"
-				loop="true"
-				
-				directionalspace="local"
-				depthbias=".3"
-				position="1 -5 25"
-			/>
-			-->
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-		<!-- <die /> -->
-	</thread>
+            <!--
+            <billboard
+                rollspeed="360"
+                yawspeed="250"
+                pitchspeed="360"
+                bone="_bone_overhead"
+                material="/shared/effects/materials/whitedot2.material"
+                startcolor="0 .5 1"
+                midcolor="0 1 5"
+                endcolor="0 .5 1"
+                startsize="30"
+                midsize="40"
+                endsize="30"
+                life="6500"
+                loop="true"
+                
+                directionalspace="local"
+                depthbias=".3"
+                position="1 -5 25"
+            />
+                <billboard
+                bone="_bone_overhead"
+                rollspeed="-360"
+                yawspeed="-250"
+                pitchspeed="360"
+    
+                material="/shared/effects/materials/whitedot2.material"
+                startcolor="0 .5 1"
+                midcolor="0 1 5"
+                endcolor="0 .5 1"
+                startsize="30"
+                midsize="40"
+                endsize="30"
+                life="6500"
+                loop="true"
+                
+                directionalspace="local"
+                depthbias=".3"
+                position="1 -5 25"
+            />
+                <billboard
+                bone="_bone_overhead"
+                rollspeed="250"
+                yawspeed="360"
+    
+                material="/shared/effects/materials/whitedot2.material"
+                startcolor="0 .5 1"
+                midcolor="0 1 5"
+                endcolor="0 .5 1"
+                startsize="30"
+                midsize="40"
+                endsize="30"
+                life="6500"
+                loop="true"
+                
+                directionalspace="local"
+                depthbias=".3"
+                position="1 -5 25"
+            />
+            -->
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][pos] -->

@@ -1,122 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="true">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="world" scale="1">
+        <particlesystem name="system0" space="world" scale="1">
 
-		<sound
-				volume=".5"
-				sample="../../sounds/impact.wav"
-				linearfalloff="true"
-				falloffstart="0"
-				falloffend="1500"
-			/>
+        <sound
+                volume=".5"
+                sample="../../sounds/impact.wav"
+                linearfalloff="true"
+                falloffstart="0"
+                falloffend="1500"
+            />
 
-			<sound
-				volume=".2"
-				sample="/heroes/pollywogpriest/sounds/impact_%.wav"
-				linearfalloff="true"
-				falloffstart="0"
-				falloffend="1500"
-			/>
+            <sound
+                volume=".2"
+                sample="/heroes/pollywogpriest/sounds/impact_%.wav"
+                linearfalloff="true"
+                falloffstart="0"
+                falloffend="1500"
+            />
 
-			<simpleemitter
-				spawnrate="2000"
-				count="8"
-				life="400"
-				particlelife="400"
-				offsetsphere="0"
-				material="/shared/effects/materials/electric_impact_add.material"
-			>
-				<particle
-					startcolor="1"
-					midcolor=".5 0 .4"
-					midcolorpos="0.3"
-					endcolor="0"
-					startsize="25"
-					endsize="50"
-					maxangle="360"
-					depthbias="-180"
-					minendscale="1"
-					maxendscale="3"
-					height="12"
-					endwidth="45"
-					flare="1"
-			 	/>
-			</simpleemitter>
+            <simpleemitter
+                spawnrate="2000"
+                count="8"
+                life="400"
+                particlelife="400"
+                offsetsphere="0"
+                material="/shared/effects/materials/electric_impact_add.material"
+            >
+                <particle
+                    startcolor="1"
+                    midcolor=".5 0 .4"
+                    midcolorpos="0.3"
+                    endcolor="0"
+                    startsize="25"
+                    endsize="50"
+                    maxangle="360"
+                    depthbias="-180"
+                    minendscale="1"
+                    maxendscale="3"
+                    height="12"
+                    endwidth="45"
+                    flare="1"
+                />
+            </simpleemitter>
 
-			<billboard
-				bone="_bone_centerofchest"
-				life="700"								
-				startcolor=".5 .2 .6"				
-				endcolor="0"
-				position="0"
-				startsize="30"
-				endsize="100"
-				depthbias="-100"
-				material="/shared/effects/materials/whitedot.material"
-				directionalspace="world"
-			/>
+            <billboard
+                bone="_bone_centerofchest"
+                life="700"                              
+                startcolor=".5 .2 .6"               
+                endcolor="0"
+                position="0"
+                startsize="30"
+                endsize="100"
+                depthbias="-100"
+                material="/shared/effects/materials/whitedot.material"
+                directionalspace="world"
+            />
 
-			<simpleemitter
-				life="400"
-				spawnrate="20"
-				count="5"
-				depthbias="-50"
-				particlelife="500"
-				offsetsphere="25"
-				bone="_bone_centerofchest"
-				material="/shared/effects/materials/phantom_smoke_13.material"
-			>
-				<particle
-					startcolor="0 0 .5"
-					midcolor=".5 0 .6"
-					midcolorpos="0.3"
-					endcolor="0"
-					startsize="25"
-					endsize="50"
-					maxangle="360"
-					minendscale="1"
-					maxendscale="2"
-			 	/>
-			</simpleemitter>
+            <simpleemitter
+                life="400"
+                spawnrate="20"
+                count="5"
+                depthbias="-50"
+                particlelife="500"
+                offsetsphere="25"
+                bone="_bone_centerofchest"
+                material="/shared/effects/materials/phantom_smoke_13.material"
+            >
+                <particle
+                    startcolor="0 0 .5"
+                    midcolor=".5 0 .6"
+                    midcolorpos="0.3"
+                    endcolor="0"
+                    startsize="25"
+                    endsize="50"
+                    maxangle="360"
+                    minendscale="1"
+                    maxendscale="2"
+                />
+            </simpleemitter>
 
-			<trackeremitter	
-				life="400"
-				bone="_bone_center"
-				position="0 0 40"
-				targetbone="_bone_center"
-				inheritvelocity="1.25"
-				tracktype="distance"
-				trackspeed="1.4" 
-				spawnrate="20"
-				particlelife="2000"
-				offsetsphere="65 65 5"
-				speed="220"
-				direction="0 0 1"
-				material="/shared/effects/materials/flare1.material"
-			>
-				<particle 
-					size="2"
-					startalpha="1"
-					endalpha="0"
-					midalphapos=".7"
-					angle="90"
-					minscale="1.5"
-					maxscale="3.5"
-					startcolor="1"
-					midcolor="1 0 1"
-					endcolor="0"					
-				/>
-			</trackeremitter>
-     		 </particlesystem>
+            <trackeremitter 
+                life="400"
+                bone="_bone_center"
+                position="0 0 40"
+                targetbone="_bone_center"
+                inheritvelocity="1.25"
+                tracktype="distance"
+                trackspeed="1.4" 
+                spawnrate="20"
+                particlelife="2000"
+                offsetsphere="65 65 5"
+                speed="220"
+                direction="0 0 1"
+                material="/shared/effects/materials/flare1.material"
+            >
+                <particle 
+                    size="2"
+                    startalpha="1"
+                    endalpha="0"
+                    midalphapos=".7"
+                    angle="90"
+                    minscale="1.5"
+                    maxscale="3.5"
+                    startcolor="1"
+                    midcolor="1 0 1"
+                    endcolor="0"                    
+                />
+            </trackeremitter>
+             </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+    </thread>
 
 </effect>

@@ -1,95 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface name="alt_info">
-	<frame
-		texture="/ui/frames/rounded_bg_white.tga"
-		color="#000000CA"
-		x="-0.5h"
-		y="-4.7h"
-		width="1.0h"
-		height="2.3h"
-		borderthickness="0.6h"
-		watch="AltInfo2Name"
-		ontrigger="SetVisible(!StringEmpty(param));
-			SetX((GetStringWidth('dyn_10', param) + GetXFromString('1.2h')) * -0.5);
-			SetWidth(GetStringWidth('dyn_10', param) + GetXFromString('1.2h'));"
-		watch1="AltInfo2MaxMana"
-		ontrigger1="If(param gt 0, SetY(GetYFromString('-2.3h') - 19), SetY(GetYFromString('-2.3h') - 14));"
-	>
-		<frame
-			texture="/ui/frames/thick.tga"
-			color="#A0A0A0"
-			borderthickness="0.6h"
-			watch1="AltInfo2Name"
-			ontrigger1="SetWidth('100%');" 
-			watch2="AltInfo2Color"
-			ontrigger2="SetBorderColor(param0);"
-		/>
-		<label
-			font="dyn_10"
-			color="white"
-			shadow="true"
-			width="100%"
-			height="95%"
-			textalign="center"
-			textvalign="center"
-			watch1="AltInfo2Name"
-			ontrigger1="SetWidth('100%'); SetText(param);"
-		/>
-	</frame>
-	
-	<panel
-		x="-2.5h"
-		y="-10"
-		width="5h"
-		height="1.3h"
-		watch0="AltInfo2MaxHealth"
-		ontrigger0="SetVisible(param gt 0);"
-		color="invisible"	
-		float="bottom"
-	>
-		<panel color="black" height=".50h">
-			<panel x="1" y="1" width="-2" height="-2" color="black">
-				
-					<panel width="0%" texture="/ui/info/health_pos_r.tga" watch="AltInfo2HealthPercent" ontrigger="SetWidth(FtoP(param));"/>
-					<panel width="0%" texture="/ui/info/health_pos_y.tga" watch="AltInfo2HealthPercent" ontrigger="SetWidth(FtoP(param)); SetColor(1, 1, 1, saturate((param * 2.5) - 0.25));"/>
-					<panel width="0%" texture="/ui/info/health_pos.tga" watch="AltInfo2HealthPercent" ontrigger="SetWidth(FtoP(param)); SetColor(1, 1, 1, saturate((param * 2) - 1));" />
-				
-			</panel>
-		</panel>
-		
-		<panel color="black" height=".30h" watch="AltInfo2MaxMana" ontrigger="SetVisible(param gt 0);">
-			<panel x="1" y="0" width="-2" height="-1" color="black">
-				
-					<panel width="0%" texture="/ui/info/mana_pos.tga" watch="AltInfo2ManaPercent" ontrigger="SetWidth(FtoP(param));"/>
-			
-			</panel>
-		</panel>		
-	</panel>
-	
-	
-	<!--
-	<panel
-		x="-2.75h"
-		y="-10"
-		width="5.5h"
-		height="1.3h"
-		watch0="AltInfo2MaxHealth"
-		ontrigger0="SetVisible(param gt 0);"
-		watch1="AltInfo2MaxMana"
-		ontrigger1="If(param gt 0, SetHeight(1.3h), SetHeight(0.9h)); If(param gt 0, SetY(-16), SetY(-11));"
-	>
-		<panel color="black">
-			<panel x="1" y="1" width="-2" height="-2" float="bottom" padding="1" color="black">
-				<panel x="1" y="1" width="-2" height="0.35h">
-					<panel width="0%" texture="/ui/info/health_pos_r.tga" watch="AltInfo2HealthPercent" ontrigger="SetWidth(FtoP(param));"/>
-					<panel width="0%" texture="/ui/info/health_pos_y.tga" watch="AltInfo2HealthPercent" ontrigger="SetWidth(FtoP(param)); SetColor(1, 1, 1, saturate((param * 2.5) - 0.25));"/>
-					<panel width="0%" texture="/ui/info/health_pos.tga" watch="AltInfo2HealthPercent" ontrigger="SetWidth(FtoP(param)); SetColor(1, 1, 1, saturate((param * 2) - 1));" />
-				</panel>
-				<panel width="-2" x="1" y="-1" height="0.25h" valign="bottom" watch="AltInfo2MaxMana" ontrigger="SetVisible(param gt 0);">
-					<panel width="0%" texture="/ui/info/mana_pos.tga" watch="AltInfo2ManaPercent" ontrigger="SetWidth(FtoP(param));"/>
-				</panel>
-			</panel>
-		</panel>
-	</panel>
--->	
+    <frame
+        texture="/ui/frames/rounded_bg_white.tga"
+        color="#000000CA"
+        x="-0.5h"
+        y="-4.7h"
+        width="1.0h"
+        height="2.3h"
+        borderthickness="0.6h"
+        watch="AltInfo2Name"
+        ontrigger="SetVisible(!StringEmpty(param));
+            SetX((GetStringWidth('dyn_10', param) + GetXFromString('1.2h')) * -0.5);
+            SetWidth(GetStringWidth('dyn_10', param) + GetXFromString('1.2h'));"
+        watch1="AltInfo2MaxMana"
+        ontrigger1="If(param gt 0, SetY(GetYFromString('-2.3h') - 19), SetY(GetYFromString('-2.3h') - 14));"
+    >
+        <frame
+            texture="/ui/frames/thick.tga"
+            color="#A0A0A0"
+            borderthickness="0.6h"
+            watch1="AltInfo2Name"
+            ontrigger1="SetWidth('100%');" 
+            watch2="AltInfo2Color"
+            ontrigger2="SetBorderColor(param0);"
+        />
+        <label
+            font="dyn_10"
+            color="white"
+            shadow="true"
+            width="100%"
+            height="95%"
+            textalign="center"
+            textvalign="center"
+            watch1="AltInfo2Name"
+            ontrigger1="SetWidth('100%'); SetText(param);"
+        />
+    </frame>
+    
+    <panel
+        x="-2.5h"
+        y="-10"
+        width="5h"
+        height="1.3h"
+        watch0="AltInfo2MaxHealth"
+        ontrigger0="SetVisible(param gt 0);"
+        color="invisible"   
+        float="bottom"
+    >
+        <panel color="black" height=".50h">
+            <panel x="1" y="1" width="-2" height="-2" color="black">
+                
+                    <panel width="0%" texture="/ui/info/health_pos_r.tga" watch="AltInfo2HealthPercent" ontrigger="SetWidth(FtoP(param));"/>
+                    <panel width="0%" texture="/ui/info/health_pos_y.tga" watch="AltInfo2HealthPercent" ontrigger="SetWidth(FtoP(param)); SetColor(1, 1, 1, saturate((param * 2.5) - 0.25));"/>
+                    <panel width="0%" texture="/ui/info/health_pos.tga" watch="AltInfo2HealthPercent" ontrigger="SetWidth(FtoP(param)); SetColor(1, 1, 1, saturate((param * 2) - 1));" />
+                
+            </panel>
+        </panel>
+        
+        <panel color="black" height=".30h" watch="AltInfo2MaxMana" ontrigger="SetVisible(param gt 0);">
+            <panel x="1" y="0" width="-2" height="-1" color="black">
+                
+                    <panel width="0%" texture="/ui/info/mana_pos.tga" watch="AltInfo2ManaPercent" ontrigger="SetWidth(FtoP(param));"/>
+            
+            </panel>
+        </panel>        
+    </panel>
+    
+    
+    <!--
+    <panel
+        x="-2.75h"
+        y="-10"
+        width="5.5h"
+        height="1.3h"
+        watch0="AltInfo2MaxHealth"
+        ontrigger0="SetVisible(param gt 0);"
+        watch1="AltInfo2MaxMana"
+        ontrigger1="If(param gt 0, SetHeight(1.3h), SetHeight(0.9h)); If(param gt 0, SetY(-16), SetY(-11));"
+    >
+        <panel color="black">
+            <panel x="1" y="1" width="-2" height="-2" float="bottom" padding="1" color="black">
+                <panel x="1" y="1" width="-2" height="0.35h">
+                    <panel width="0%" texture="/ui/info/health_pos_r.tga" watch="AltInfo2HealthPercent" ontrigger="SetWidth(FtoP(param));"/>
+                    <panel width="0%" texture="/ui/info/health_pos_y.tga" watch="AltInfo2HealthPercent" ontrigger="SetWidth(FtoP(param)); SetColor(1, 1, 1, saturate((param * 2.5) - 0.25));"/>
+                    <panel width="0%" texture="/ui/info/health_pos.tga" watch="AltInfo2HealthPercent" ontrigger="SetWidth(FtoP(param)); SetColor(1, 1, 1, saturate((param * 2) - 1));" />
+                </panel>
+                <panel width="-2" x="1" y="-1" height="0.25h" valign="bottom" watch="AltInfo2MaxMana" ontrigger="SetVisible(param gt 0);">
+                    <panel width="0%" texture="/ui/info/mana_pos.tga" watch="AltInfo2ManaPercent" ontrigger="SetWidth(FtoP(param));"/>
+                </panel>
+            </panel>
+        </panel>
+    </panel>
+--> 
 </interface>

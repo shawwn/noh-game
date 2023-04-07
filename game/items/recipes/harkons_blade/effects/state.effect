@@ -1,147 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="" usentityeffectscale="true" deferred="true">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="world" scale="1.25">
+        <particlesystem name="system0" space="world" scale="1.25">
 <!--
-			<simpleemitter
-				bone="_bone_centerofchest"
-				spawnrate="5550"
-				minparticlelife="0"
-				maxparticlelife="300"
-				count="55"
-				life="300"
-				timenudge="-150"
-				material="/shared/effects/materials/flare_03.material"
-			>
-				<particle
-					maxangle="360"
-					startcolor="0 0.1 1"
-					midcolor="0 .2 .75"
-					endcolor="0 0 0"
-					startheight="100"
-					endheight="0"
-					startsize="0"
-					endsize="30"
-					lockup="true"
-					flare="true"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                bone="_bone_centerofchest"
+                spawnrate="5550"
+                minparticlelife="0"
+                maxparticlelife="300"
+                count="55"
+                life="300"
+                timenudge="-150"
+                material="/shared/effects/materials/flare_03.material"
+            >
+                <particle
+                    maxangle="360"
+                    startcolor="0 0.1 1"
+                    midcolor="0 .2 .75"
+                    endcolor="0 0 0"
+                    startheight="100"
+                    endheight="0"
+                    startsize="0"
+                    endsize="30"
+                    lockup="true"
+                    flare="true"
+                />
+            </simpleemitter>
 -->
-			<simpleemitter
-				bone="_bone_centerofchest"
-				spawnrate="5550"
-				minparticlelife="0"
-				maxparticlelife="300"
-				count="50"
-				life="300"
-				timenudge="-150"
-				offsetsphere="0 0 110"
-				material="/shared/effects/materials/flare_03.material"
-			>
-				<particle
-					maxangle="360"
-					startcolor=".1 0 .4"
-					midcolor="0 .5 .25"
-					endcolor="0 0 0"
-					startheight="200"
-					endheight="0"
-					startsize="0"
-					endsize="30"
-					lockup="true"
-					turn="true"
-				/>
-				<particle
-					maxangle="360"
-					startcolor=".1 0 .4"
-					midcolor="0 .2 .75"
-					endcolor="0 0 0"
-					startheight="200"
-					endheight="0"
-					startsize="0"
-					endsize="30"
-					lockup="true"
-					turn="true"
-				/>
-			</simpleemitter>
-			
-			<simpleemitter	
-				bone="_bone_overhead"			
-				count="1"
-				particlelife="300"			
-				position="0 0 0"					
-				material="/shared/effects/materials/whitedot.material"
-			>
-				<particle
-					startcolor=".3 0 .75"						
-					endcolor="0 0 0"						
-					midalphapos="0.9"
-					startsize="100"
-					endsize="0"
-				/>
-			</simpleemitter>
+            <simpleemitter
+                bone="_bone_centerofchest"
+                spawnrate="5550"
+                minparticlelife="0"
+                maxparticlelife="300"
+                count="50"
+                life="300"
+                timenudge="-150"
+                offsetsphere="0 0 110"
+                material="/shared/effects/materials/flare_03.material"
+            >
+                <particle
+                    maxangle="360"
+                    startcolor=".1 0 .4"
+                    midcolor="0 .5 .25"
+                    endcolor="0 0 0"
+                    startheight="200"
+                    endheight="0"
+                    startsize="0"
+                    endsize="30"
+                    lockup="true"
+                    turn="true"
+                />
+                <particle
+                    maxangle="360"
+                    startcolor=".1 0 .4"
+                    midcolor="0 .2 .75"
+                    endcolor="0 0 0"
+                    startheight="200"
+                    endheight="0"
+                    startsize="0"
+                    endsize="30"
+                    lockup="true"
+                    turn="true"
+                />
+            </simpleemitter>
+            
+            <simpleemitter  
+                bone="_bone_overhead"           
+                count="1"
+                particlelife="300"          
+                position="0 0 0"                    
+                material="/shared/effects/materials/whitedot.material"
+            >
+                <particle
+                    startcolor=".3 0 .75"                       
+                    endcolor="0 0 0"                        
+                    midalphapos="0.9"
+                    startsize="100"
+                    endsize="0"
+                />
+            </simpleemitter>
 
-			<billboard
-				bone="_bone_overhead"
-				material="/shared/effects/materials/broken_shield_01.material"
-				startsize="40"
-				endsize="0" 
-				color=".5 1 .75"
-				position="0 0 25"
-				life="350"
-			/>
+            <billboard
+                bone="_bone_overhead"
+                material="/shared/effects/materials/broken_shield_01.material"
+                startsize="40"
+                endsize="0" 
+                color=".5 1 .75"
+                position="0 0 25"
+                life="350"
+            />
 
-			<simpleemitter
-				bone="_bone_overhead"
-				spawnrate="5550"
-				minparticlelife="300"
-				maxparticlelife="300"
-				count="1"
-				life="500"
-				delay="150"
-				position="0 0 25"
-				material="/shared/effects/materials/broken_shield_01.material"
-			>
-				<particle
-					color="0 .5 .4"
-					startsize="0"
-					endsize="40"
-				/>
-			</simpleemitter>
-			
-			<billboard
-				bone="_bone_overhead"
-				material="/shared/effects/materials/broken_shield_01.material"
-				startsize="23"
-				endsize="23" 
-				color="1 1 1"
-				position="0 0 25"
-				life="1000"
-				loop="true"
-			/>
+            <simpleemitter
+                bone="_bone_overhead"
+                spawnrate="5550"
+                minparticlelife="300"
+                maxparticlelife="300"
+                count="1"
+                life="500"
+                delay="150"
+                position="0 0 25"
+                material="/shared/effects/materials/broken_shield_01.material"
+            >
+                <particle
+                    color="0 .5 .4"
+                    startsize="0"
+                    endsize="40"
+                />
+            </simpleemitter>
+            
+            <billboard
+                bone="_bone_overhead"
+                material="/shared/effects/materials/broken_shield_01.material"
+                startsize="23"
+                endsize="23" 
+                color="1 1 1"
+                position="0 0 25"
+                life="1000"
+                loop="true"
+            />
 
-			<billboard
-				bone="_bone_overhead"
-				material="/shared/effects/materials/broken_shield_01.material"
-				startsize="23"
-				midsize="28"
-				endsize="23" 
-				color="0 .5 .4"
-				position="0 0 25"
-				life="1000"
-				loop="true"
-			/>
+            <billboard
+                bone="_bone_overhead"
+                material="/shared/effects/materials/broken_shield_01.material"
+                startsize="23"
+                midsize="28"
+                endsize="23" 
+                color="0 .5 .4"
+                position="0 0 25"
+                life="1000"
+                loop="true"
+            />
 
-		</particlesystem>
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
-		<waitfordeath instance="instance0"/>
-		<!-- <die /> -->
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+        <waitfordeath instance="instance0"/>
+        <!-- <die /> -->
+    </thread>
 
 </effect>
 

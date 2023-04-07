@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_ValkyrieAttack"
+    name="Projectile_ValkyrieAttack"
 
-	speed="900"
-	gravity="0"
-	canturn="true"
-	modelscale="1.1"
+    speed="900"
+    gravity="0"
+    canturn="true"
+    modelscale="1.1"
 
-	model="effects/spear.mdf"
-	traileffect="effects/trail.effect"
-	impacteffect="effects/impact.effect"
+    model="effects/spear.mdf"
+    traileffect="effects/trail.effect"
+    impacteffect="effects/impact.effect"
 >
 </projectile>

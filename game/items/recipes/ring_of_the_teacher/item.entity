@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_ManaRegen3"
-	
-	icon="icon.tga"
-	
-	cost="0"
-	components="Item_Scarab Item_GuardianRing"
-	autoassemble="true"
-	allowdisassemble="true"
-	
-	actiontype="no_target"
-	frontqueue="true"
-	inheritmovement="true"
-	casttime="0"
-	castactiontime="0"
-	casteffect="cast.effect"
-	cooldowntime="1000"
-	cooldowntype="manaregen3"
-	
-	damage="6"
+    name="Item_ManaRegen3"
+    
+    icon="icon.tga"
+    
+    cost="0"
+    components="Item_Scarab Item_GuardianRing"
+    autoassemble="true"
+    allowdisassemble="true"
+    
+    actiontype="no_target"
+    frontqueue="true"
+    inheritmovement="true"
+    casttime="0"
+    castactiontime="0"
+    casteffect="cast.effect"
+    cooldowntime="1000"
+    cooldowntype="manaregen3"
+    
+    damage="6"
 >
-	<modifier key="ringoftheteacher_heroes" modpriority="100"
-		displayname="true"
-		description2="true"
-	>
-		<onimpact effectdescription="true">
-			<setactivemodifierkey name="" />
-		</onimpact>
-		
-		<aura state="State_Item1D" radius="900" targetscheme="ally_heroes" propagatecondition="not_stealthed"/>
-	</modifier>
-	<onimpact />
-	<modifier key="" modpriority="100"
-		displayname="true"
-		description="true"
-		description2="true"
-	>
-		<onimpact effectdescription="true">
-			<setactivemodifierkey name="ringoftheteacher_heroes" />
-		</onimpact>
-		
-		<aura state="State_Item1D" radius="900" targetscheme="ally_units" propagatecondition="not_stealthed"/>
-	</modifier>
+    <modifier key="ringoftheteacher_heroes" modpriority="100"
+        displayname="true"
+        description2="true"
+    >
+        <onimpact effectdescription="true">
+            <setactivemodifierkey name="" />
+        </onimpact>
+        
+        <aura state="State_Item1D" radius="900" targetscheme="ally_heroes" propagatecondition="not_stealthed"/>
+    </modifier>
+    <onimpact />
+    <modifier key="" modpriority="100"
+        displayname="true"
+        description="true"
+        description2="true"
+    >
+        <onimpact effectdescription="true">
+            <setactivemodifierkey name="ringoftheteacher_heroes" />
+        </onimpact>
+        
+        <aura state="State_Item1D" radius="900" targetscheme="ally_units" propagatecondition="not_stealthed"/>
+    </modifier>
 </item>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_HelmOfTheVictim"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="950"
-	
-	actiontype="passive"
-	
-	armor="5"
-	healthregen="3"
+    name="Item_HelmOfTheVictim"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="950"
+    
+    actiontype="passive"
+    
+    armor="5"
+    healthregen="3"
 >
 </item>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Techies_Ability2"
+    name="Affector_Techies_Ability2"
 
-	radius="450"
-	
-	targetselection="all"
-	targetscheme="enemy_units"
-	effecttype="Magic"
-	impactdelay="2000"
-	impacteffect="effects/impact.effect"
+    radius="450"
+    
+    targetselection="all"
+    targetscheme="enemy_units"
+    effecttype="Magic"
+    impactdelay="2000"
+    impacteffect="effects/impact.effect"
 >
-	<onimpact>
-		<applystate name="State_Stunned" duration="3000,4000,5000,6000" />
-	</onimpact>
+    <onimpact>
+        <applystate name="State_Stunned" duration="3000,4000,5000,6000" />
+    </onimpact>
 </affector>

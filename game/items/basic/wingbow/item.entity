@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Wingbow"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="3300"
-	
-	actiontype="passive"
-	
-	agility="25"
+    name="Item_Wingbow"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="3300"
+    
+    actiontype="passive"
+    
+    agility="25"
 >
 </item>

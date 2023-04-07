@@ -1,121 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
-	<template name="attribute_tooltip">
-		<frame
-			name="attribute_tooltip"
-			texture="/ui/frames/tooltip_bg.tga"
-			color="#00000070"
-			borderthickness="0.5h"
-			visible="false"
-			x="-1h"
-			y="-18h"
-			align="right"
-			valign="bottom"
-			width="27h"
-			height="5.0h"
-			float="bottom"
-		>
-			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness="0.5h"/>
-			<anchor x="1.0h" y="0.6h" />
-			
-			<panel
-				width="-2.0h"
-				height="1.8h"
-			>
-				<label
-					width="50%"
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="ActiveStrength"
-					ontrigger="SetText(Translate('tooltip_strength') # Round(param1));"
-				/>
-				<label
-					width="50%"
-					align="right"
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="ActiveStrength"
-					ontrigger="
-						If(param1 - param0 == 0.0,
-							SetText(''),
-							If(param1 - param0 > 0.0,
-								SetText('^777(' # Round(param0) # ' ^g+' # Round(param1 - param0) # '^777)'),
-								SetText('^777(' # Round(param0) # ' ^r' # Round(param1 - param0) # '^777)')
-							)
-						);
-					"
-				/>
-			</panel>
-			
-			<panel
-				width="-2.0h"
-				height="1.8h"
-			>
-				<label
-					width="50%"
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="ActiveAgility"
-					ontrigger="SetText(Translate('tooltip_agility') # Round(param1));"
-				/>
-				<label
-					width="50%"
-					align="right"
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="ActiveAgility"
-					ontrigger="
-						If(param1 - param0 == 0.0,
-							SetText(''),
-							If(param1 - param0 > 0.0,
-								SetText('^777(' # Round(param0) # ' ^g+' # Round(param1 - param0) # '^777)'),
-								SetText('^777(' # Round(param0) # ' ^r' # Round(param1 - param0) # '^777)')
-							)
-						);
-					"
-				/>
-			</panel>
-			
-			<panel
-				width="-2.0h"
-				height="1.8h"
-			>
-				<label
-					width="50%"
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="ActiveIntelligence"
-					ontrigger="SetText(Translate('tooltip_intelligence') # Round(param1));"
-				/>
-				<label
-					width="50%"
-					align="right"
-					textalign="left"
-					font="dyn_10"
-					color="white"
-					watch="ActiveIntelligence"
-					ontrigger="
-						If(param1 - param0 == 0.0,
-							SetText(''),
-							If(param1 - param0 > 0.0,
-								SetText('^777(' # Round(param0) # ' ^g+' # Round(param1 - param0) # '^777)'),
-								SetText('^777(' # Round(param0) # ' ^r' # Round(param1 - param0) # '^777)')
-							)
-						);
-					"
-				/>
-			</panel>
-			
-			<panel width="-2.0h" height="0.0h"
-				onframe="If(IsVisible(), Call('attribute_tooltip', 'SetHeight(' # GetY() # ' + GetYFromString(\'0.55h\'));'));"
-				sticky="true"
-				stickytoinvis="false"
-			/>
-		</frame>
-	</template>
+    <template name="attribute_tooltip">
+        <frame
+            name="attribute_tooltip"
+            texture="/ui/frames/tooltip_bg.tga"
+            color="#00000070"
+            borderthickness="0.5h"
+            visible="false"
+            x="-1h"
+            y="-18h"
+            align="right"
+            valign="bottom"
+            width="27h"
+            height="5.0h"
+            float="bottom"
+        >
+            <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness="0.5h"/>
+            <anchor x="1.0h" y="0.6h" />
+            
+            <panel
+                width="-2.0h"
+                height="1.8h"
+            >
+                <label
+                    width="50%"
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveStrength"
+                    ontrigger="SetText(Translate('tooltip_strength') # Round(param1));"
+                />
+                <label
+                    width="50%"
+                    align="right"
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveStrength"
+                    ontrigger="
+                        If(param1 - param0 == 0.0,
+                            SetText(''),
+                            If(param1 - param0 > 0.0,
+                                SetText('^777(' # Round(param0) # ' ^g+' # Round(param1 - param0) # '^777)'),
+                                SetText('^777(' # Round(param0) # ' ^r' # Round(param1 - param0) # '^777)')
+                            )
+                        );
+                    "
+                />
+            </panel>
+            
+            <panel
+                width="-2.0h"
+                height="1.8h"
+            >
+                <label
+                    width="50%"
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveAgility"
+                    ontrigger="SetText(Translate('tooltip_agility') # Round(param1));"
+                />
+                <label
+                    width="50%"
+                    align="right"
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveAgility"
+                    ontrigger="
+                        If(param1 - param0 == 0.0,
+                            SetText(''),
+                            If(param1 - param0 > 0.0,
+                                SetText('^777(' # Round(param0) # ' ^g+' # Round(param1 - param0) # '^777)'),
+                                SetText('^777(' # Round(param0) # ' ^r' # Round(param1 - param0) # '^777)')
+                            )
+                        );
+                    "
+                />
+            </panel>
+            
+            <panel
+                width="-2.0h"
+                height="1.8h"
+            >
+                <label
+                    width="50%"
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveIntelligence"
+                    ontrigger="SetText(Translate('tooltip_intelligence') # Round(param1));"
+                />
+                <label
+                    width="50%"
+                    align="right"
+                    textalign="left"
+                    font="dyn_10"
+                    color="white"
+                    watch="ActiveIntelligence"
+                    ontrigger="
+                        If(param1 - param0 == 0.0,
+                            SetText(''),
+                            If(param1 - param0 > 0.0,
+                                SetText('^777(' # Round(param0) # ' ^g+' # Round(param1 - param0) # '^777)'),
+                                SetText('^777(' # Round(param0) # ' ^r' # Round(param1 - param0) # '^777)')
+                            )
+                        );
+                    "
+                />
+            </panel>
+            
+            <panel width="-2.0h" height="0.0h"
+                onframe="If(IsVisible(), Call('attribute_tooltip', 'SetHeight(' # GetY() # ' + GetYFromString(\'0.55h\'));'));"
+                sticky="true"
+                stickytoinvis="false"
+            />
+        </frame>
+    </template>
 </package>

@@ -1,136 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect>
-	<definitions>
-		<particlesystem name="system0" space="world" scale=".65">
+    <definitions>
+        <particlesystem name="system0" space="world" scale=".65">
 
-			<!--
-			<sound
-				falloff="70.0" 
-				volume="0.7" 
-				sample="sounds/grenade_explosion_%.mp3"
-			/>
-			-->
-			
-			<groundsprite
-				color="0.6 0.5 1"
-				material="/shared/effects/materials/ring.material"
-				startsize="50"
-				endsize="150"
-				startalpha="0"
-				midalpha="0.3"
-				endalpha="0"
-				life="300"
-			/>
+            <!--
+            <sound
+                falloff="70.0" 
+                volume="0.7" 
+                sample="sounds/grenade_explosion_%.mp3"
+            />
+            -->
+            
+            <groundsprite
+                color="0.6 0.5 1"
+                material="/shared/effects/materials/ring.material"
+                startsize="50"
+                endsize="150"
+                startalpha="0"
+                midalpha="0.3"
+                endalpha="0"
+                life="300"
+            />
 
-			<simpleemitter			
-				spawnrate="500"
-				count="6"
-				life="200"
-				particlelife="200"
-				speed="10"
-				material="/shared/effects/materials/flare1.material"
-				
-			>
-				<particle 
-					minangle="0"
-					maxangle="360"
-					startcolor="0.1 0.1 1"
-					endcolor="0 0 0"
-					size="10"
-					maxendheight="700"
-					minendheight="400"
-					width="60"
-				/>
-			</simpleemitter>
+            <simpleemitter          
+                spawnrate="500"
+                count="6"
+                life="200"
+                particlelife="200"
+                speed="10"
+                material="/shared/effects/materials/flare1.material"
+                
+            >
+                <particle 
+                    minangle="0"
+                    maxangle="360"
+                    startcolor="0.1 0.1 1"
+                    endcolor="0 0 0"
+                    size="10"
+                    maxendheight="700"
+                    minendheight="400"
+                    width="60"
+                />
+            </simpleemitter>
 
-			<simpleemitter			
-				spawnrate="2350"
-				count="15"
-				minparticlelife="400"
-				maxparticlelife="1200"
-				gravity="-20"
-				maxspeed="300"
-				drag="0.1"
-				angle="30"	
-				material="/shared/effects/materials/explosion.material"
-				offsetsphere="60 20 40"
-			>
-				<particle 
-					minangle="-360"
-					maxangle="360"
-					minanglespeed="-50"
-					maxanglespeed="50"
-					
-					startcolor="0.1 0.2 2"
-					midcolor="0.1 0 1"
-					endcolor="0 0 0"
-					midcolorpos="0.3"
+            <simpleemitter          
+                spawnrate="2350"
+                count="15"
+                minparticlelife="400"
+                maxparticlelife="1200"
+                gravity="-20"
+                maxspeed="300"
+                drag="0.1"
+                angle="30"  
+                material="/shared/effects/materials/explosion.material"
+                offsetsphere="60 20 40"
+            >
+                <particle 
+                    minangle="-360"
+                    maxangle="360"
+                    minanglespeed="-50"
+                    maxanglespeed="50"
+                    
+                    startcolor="0.1 0.2 2"
+                    midcolor="0.1 0 1"
+                    endcolor="0 0 0"
+                    midcolorpos="0.3"
 
-					size="2"
-					startscale="5"
-					minendscale="40"
-					maxendscale="60"
+                    size="2"
+                    startscale="5"
+                    minendscale="40"
+                    maxendscale="60"
 
-					startheightdistort="0"
-					midheightdistort="0.1"
-					endheightdistort="0"
-					midheightdistortpos="0.1"
-					midsizepos=".2"
-					startalpha="1"
-					midalpha="0"
-					endalpha="0"
-					midalphapos=".2"
-				/>
-			</simpleemitter>
+                    startheightdistort="0"
+                    midheightdistort="0.1"
+                    endheightdistort="0"
+                    midheightdistortpos="0.1"
+                    midsizepos=".2"
+                    startalpha="1"
+                    midalpha="0"
+                    endalpha="0"
+                    midalphapos=".2"
+                />
+            </simpleemitter>
 
-			<simpleemitter			
-				spawnrate="2000"
-				count="2"
-				particlelife="200"
-				material="/shared/effects/materials/flare1.material"
-			>
-				<particle 
-					minangle="0"
-					maxangle="360"
-					startcolor="0 0 0"
-					midcolor="0.3 .2 1"
-					endcolor="0 0 0"
-					size="250"
-				/>
-			</simpleemitter>
+            <simpleemitter          
+                spawnrate="2000"
+                count="2"
+                particlelife="200"
+                material="/shared/effects/materials/flare1.material"
+            >
+                <particle 
+                    minangle="0"
+                    maxangle="360"
+                    startcolor="0 0 0"
+                    midcolor="0.3 .2 1"
+                    endcolor="0 0 0"
+                    size="250"
+                />
+            </simpleemitter>
 
-			<simpleemitter			
-				spawnrate="350"
-				count="15"
-				minparticlelife="200"
-				maxparticlelife="700"
-				gravity="-3"
-				speed="10"
-				material="/shared/effects/materials/explosion2.material"
-				offsetsphere="50 50 70"
-			>
-				<particle 
-					minangle="-180"
-					maxangle="180"
-					minanglespeed="-80"
-					maxanglespeed="50"
-					startcolor="0.2 0.1 1"
-					endcolor="0.2 0 1"
-					startsize="50"
-					endsize="230"
-					startalpha="0"
-					midalpha="1"
-					endalpha="0"
-					midalphapos=".1"					
-				/>
-			</simpleemitter>
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
-		<waitfordeath instance="instance0" />
-		<!-- <die /> -->
-	</thread>
+            <simpleemitter          
+                spawnrate="350"
+                count="15"
+                minparticlelife="200"
+                maxparticlelife="700"
+                gravity="-3"
+                speed="10"
+                material="/shared/effects/materials/explosion2.material"
+                offsetsphere="50 50 70"
+            >
+                <particle 
+                    minangle="-180"
+                    maxangle="180"
+                    minanglespeed="-80"
+                    maxanglespeed="50"
+                    startcolor="0.2 0.1 1"
+                    endcolor="0.2 0 1"
+                    startsize="50"
+                    endsize="230"
+                    startalpha="0"
+                    midalpha="1"
+                    endalpha="0"
+                    midalphapos=".1"                    
+                />
+            </simpleemitter>
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+        <waitfordeath instance="instance0" />
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][position] -->

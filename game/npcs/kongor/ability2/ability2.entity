@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Kongor2"
+    name="Ability_Kongor2"
 
-	
-	
-	statuseffecttooltip=""
-	
-	icon="icon.tga"
+    
+    
+    statuseffecttooltip=""
+    
+    icon="icon.tga"
 
-	actiontype="target_self"
-	
-	cooldowntime="6000"
-	
-	casttime="0"
-	castactiontime="0"
+    actiontype="target_self"
+    
+    cooldowntime="6000"
+    
+    casttime="0"
+    castactiontime="0"
 >
-	<onimpact>
-		<spawnaffector name="Affector_Kongor_Ability2" target="source_entity"/>
-	</onimpact>
-	
-	<ontargetacquired>
-		<setproxy/>
-	</ontargetacquired>
-	
-	<onthink>
-		<condition target="proxy_entity" test="target_entity != 0 and canactivate and distance lt 150 and not_hasorder">
-			<useability target="proxy_entity"/>
-		</condition>
-	</onthink>
+    <onimpact>
+        <spawnaffector name="Affector_Kongor_Ability2" target="source_entity"/>
+    </onimpact>
+    
+    <ontargetacquired>
+        <setproxy/>
+    </ontargetacquired>
+    
+    <onthink>
+        <condition target="proxy_entity" test="target_entity != 0 and canactivate and distance lt 150 and not_hasorder">
+            <useability target="proxy_entity"/>
+        </condition>
+    </onthink>
 </ability>

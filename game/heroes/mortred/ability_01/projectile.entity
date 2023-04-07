@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Mortred_Ability1"
+    name="Projectile_Mortred_Ability1"
 
-	speed="1500"
-	gravity="0"
+    speed="1500"
+    gravity="0"
 
-	modelscale="1.5"
-	model="../../../heroes/witch_slayer/projectile/effects/model.mdf"
-	traileffect="../../../heroes/witch_slayer/projectile/effects/trail.effect"
-	canturn="0"
-	flying="true"
-	flyheight="90"
+    modelscale="1.5"
+    model="../../../heroes/witch_slayer/projectile/effects/model.mdf"
+    traileffect="../../../heroes/witch_slayer/projectile/effects/trail.effect"
+    canturn="0"
+    flying="true"
+    flyheight="90"
 >
-	<onspawn>
-	</onspawn>
-	
-	<onimpact>
-		<damage effecttype="magic" amount="20,40,60,80"/>
-		<applystate name="State_Mortred_Ability1" duration="2000,3000,4000,5000"/>
-	</onimpact>
+    <onspawn>
+    </onspawn>
+    
+    <onimpact>
+        <damage effecttype="magic" amount="20,40,60,80"/>
+        <applystate name="State_Mortred_Ability1" duration="2000,3000,4000,5000"/>
+    </onimpact>
 </projectile>

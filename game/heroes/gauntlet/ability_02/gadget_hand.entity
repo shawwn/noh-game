@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gadget
-	name="Gadget_Gauntlet_Ability2_Hand"
-	
-	icon=""
-	portrait=""
-	model="projectile/model.mdf"
-	
-	preglobalscale="1"
-	modelscale="2.45"
-	effectscale="1.0"
-	boundsheight="0"
-	boundsradius="0"
-	isselectable="false"
-	selectionradius="0"
-	targetoffset="0 0 0"
+    name="Gadget_Gauntlet_Ability2_Hand"
+    
+    icon=""
+    portrait=""
+    model="projectile/model.mdf"
+    
+    preglobalscale="1"
+    modelscale="2.45"
+    effectscale="1.0"
+    boundsheight="0"
+    boundsradius="0"
+    isselectable="false"
+    selectionradius="0"
+    targetoffset="0 0 0"
 
-	canrotate="false"
-	ismobile="false"
+    canrotate="false"
+    ismobile="false"
 
-	attacktype="none"
-	combattype="Ranged"
+    attacktype="none"
+    combattype="Ranged"
 
-	sightrangeday="600"
-	sightrangenight="600"
-	unitwalking="true"
-	canattack="false"
-	deathtime="0"
-	corpsetime="0"
-	
-	invulnerable="true"
-	flying="false"
-	drawonmap="false"
-	clearvision="true"
+    sightrangeday="600"
+    sightrangenight="600"
+    unitwalking="true"
+    canattack="false"
+    deathtime="0"
+    corpsetime="0"
+    
+    invulnerable="true"
+    flying="false"
+    drawonmap="false"
+    clearvision="true"
 
-	unittype="Gauntlet_Gadget"
+    unittype="Gauntlet_Gadget"
 >
-	<ondeath>
-		<expirestate name="State_Gauntlet_Ability2_NoHand" target="this_owner_entity" />
-	</ondeath>
-	
-	<modifier key="gauntlet_charged" modpriority="100"
-		passiveeffect="effects/glow.effect"
-	>
-	</modifier>
+    <ondeath>
+        <expirestate name="State_Gauntlet_Ability2_NoHand" target="this_owner_entity" />
+    </ondeath>
+    
+    <modifier key="gauntlet_charged" modpriority="100"
+        passiveeffect="effects/glow.effect"
+    >
+    </modifier>
 </gadget>

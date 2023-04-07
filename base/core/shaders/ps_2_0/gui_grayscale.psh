@@ -15,9 +15,9 @@
 //=============================================================================
 struct VS_OUTPUT
 {
-	float4 Position  : POSITION;
-	float4 Color0    : COLOR0;
-	float2 Texcoord0 : TEXCOORD0;
+    float4 Position  : POSITION;
+    float4 Color0    : COLOR0;
+    float2 Texcoord0 : TEXCOORD0;
 };
 
 
@@ -26,7 +26,7 @@ struct VS_OUTPUT
 //=============================================================================
 struct PS_OUTPUT
 {
-	float4 Color : COLOR;
+    float4 Color : COLOR;
 };
 
 sampler image;
@@ -36,12 +36,12 @@ sampler image;
 //=============================================================================
 PS_OUTPUT PS( VS_OUTPUT In )
 {
-	PS_OUTPUT Out;
-	
-	Out.Color = tex2D(image, In.Texcoord0);
-	Out.Color.rgb = 0.3f * Out.Color.r + 0.59f * Out.Color.r + 0.11f * Out.Color.b;
-	Out.Color *= In.Color0;
+    PS_OUTPUT Out;
+    
+    Out.Color = tex2D(image, In.Texcoord0);
+    Out.Color.rgb = 0.3f * Out.Color.r + 0.59f * Out.Color.r + 0.11f * Out.Color.b;
+    Out.Color *= In.Color0;
 
-	return Out;
+    return Out;
 }
 

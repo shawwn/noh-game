@@ -1,593 +1,593 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
-	<trigger name="ItemTooltip"/>
-	
-	<template name="stash_button">
-		<panel width="4.8h" height="4.8h">
-			<!-- Background -->
-			<panel watch="StashExists{slot}" ontrigger="SetVisible(!param);">
-				<image texture="/ui/legion/empty_pack.tga"/>
-				<image
-					texture="$white"
-					rendermode="overlay"
-					watch="StashStatus{slot}"
-					ontrigger="SetVisible(true);
-						If(!param0, SetColor('.25 .25 .25'), SetVisible(false));"
-					noclick="true"
-				/>
-			</panel>
-			
-			<panel
-				watch="StashExists{slot}"
-				ontrigger="SetVisible(param);"
-				onclick="PrimaryActionStash({slot});"
-				onrightclick="SecondaryActionStash({slot});"
-				onmouseover="PlaySound('/shared/sounds/ui/button_over_03.wav'); ShowWidget('stash_tooltip{slot}');"
-				onmouseout="HideWidget('stash_tooltip{slot}');"
-			>
-				<!-- Icon -->
-				<image
-					watch="StashIcon{slot}"
-					ontrigger="SetTexture(param);"
-					watch0="StashStatus{slot}"
-					ontrigger0="If(param0, SetRenderMode('normal'), SetRenderMode('grayscale'));"
-					noclick="true"
-				/>
-				
-				<!-- Bevel -->
-				<image
-					texture="/ui/elements/button_bevel_up.tga"
-					noclick="true"
-				/>
-				
-				<!-- Cooldown -->
-				<piegraph start="270" end="-90" square="true" color="#000000cc" watch="StashCooldown{slot}" ontrigger="SetVisible(param1 > 0); SetValue(param2);" noclick="true"/>
-				
-				<!-- Accessability Overlay -->
-				<image
-					texture="$white"
-					rendermode="overlay"
-					watch="StashStatus{slot}"
-					ontrigger="SetVisible(true); If(!param0, SetColor('#404040'), SetVisible(false));"
-					noclick="true"
-				/>
-				
-				<panel
-					width="38.5%"
-					height="38.5%"
-					align="right"
-					valign="bottom"
-					watch="StashCharges{slot}"
-					ontrigger="SetVisible(param gt 0);"
-					noclick="true"
-					passivechildren="true"
-					color="invisible"
-				>
-					<frame color="0 0 0 .7" bordercolor="white" borderthickness="1"/>
-					<label width="100%" height="100%" textalign="center" textvalign="center" color="white" shadow="true" font="dyn_8" watch="StashCharges{slot}" ontrigger="SetText(param);"/>
-				</panel>
-				<panel
-					width="33.75%"
-					height="33.75%"
-					align="left"
-					valign="top"
-					watch="StashStatus{slot}"
-					ontrigger="SetVisible((param1 gt 0) and (param2 gt 1));"
-					noclick="true"
-					passivechildren="true"
-					color="invisible"
-				>
-					<image  texture="/ui/info/charges_box.tga"/>
-					<label x="7.75%" y="5.80%" width="77.78%" height="77.78%" textalign="center" textvalign="center" color="white" font="dyn_10" watch="StashStatus{slot}" ontrigger="SetText(param1);"/>
-				</panel>
-			</panel>
+    <trigger name="ItemTooltip"/>
+    
+    <template name="stash_button">
+        <panel width="4.8h" height="4.8h">
+            <!-- Background -->
+            <panel watch="StashExists{slot}" ontrigger="SetVisible(!param);">
+                <image texture="/ui/legion/empty_pack.tga"/>
+                <image
+                    texture="$white"
+                    rendermode="overlay"
+                    watch="StashStatus{slot}"
+                    ontrigger="SetVisible(true);
+                        If(!param0, SetColor('.25 .25 .25'), SetVisible(false));"
+                    noclick="true"
+                />
+            </panel>
+            
+            <panel
+                watch="StashExists{slot}"
+                ontrigger="SetVisible(param);"
+                onclick="PrimaryActionStash({slot});"
+                onrightclick="SecondaryActionStash({slot});"
+                onmouseover="PlaySound('/shared/sounds/ui/button_over_03.wav'); ShowWidget('stash_tooltip{slot}');"
+                onmouseout="HideWidget('stash_tooltip{slot}');"
+            >
+                <!-- Icon -->
+                <image
+                    watch="StashIcon{slot}"
+                    ontrigger="SetTexture(param);"
+                    watch0="StashStatus{slot}"
+                    ontrigger0="If(param0, SetRenderMode('normal'), SetRenderMode('grayscale'));"
+                    noclick="true"
+                />
+                
+                <!-- Bevel -->
+                <image
+                    texture="/ui/elements/button_bevel_up.tga"
+                    noclick="true"
+                />
+                
+                <!-- Cooldown -->
+                <piegraph start="270" end="-90" square="true" color="#000000cc" watch="StashCooldown{slot}" ontrigger="SetVisible(param1 > 0); SetValue(param2);" noclick="true"/>
+                
+                <!-- Accessability Overlay -->
+                <image
+                    texture="$white"
+                    rendermode="overlay"
+                    watch="StashStatus{slot}"
+                    ontrigger="SetVisible(true); If(!param0, SetColor('#404040'), SetVisible(false));"
+                    noclick="true"
+                />
+                
+                <panel
+                    width="38.5%"
+                    height="38.5%"
+                    align="right"
+                    valign="bottom"
+                    watch="StashCharges{slot}"
+                    ontrigger="SetVisible(param gt 0);"
+                    noclick="true"
+                    passivechildren="true"
+                    color="invisible"
+                >
+                    <frame color="0 0 0 .7" bordercolor="white" borderthickness="1"/>
+                    <label width="100%" height="100%" textalign="center" textvalign="center" color="white" shadow="true" font="dyn_8" watch="StashCharges{slot}" ontrigger="SetText(param);"/>
+                </panel>
+                <panel
+                    width="33.75%"
+                    height="33.75%"
+                    align="left"
+                    valign="top"
+                    watch="StashStatus{slot}"
+                    ontrigger="SetVisible((param1 gt 0) and (param2 gt 1));"
+                    noclick="true"
+                    passivechildren="true"
+                    color="invisible"
+                >
+                    <image  texture="/ui/info/charges_box.tga"/>
+                    <label x="7.75%" y="5.80%" width="77.78%" height="77.78%" textalign="center" textvalign="center" color="white" font="dyn_10" watch="StashStatus{slot}" ontrigger="SetText(param1);"/>
+                </panel>
+            </panel>
 
-			<!-- Drop target -->
-			<panel
-				color="invisible"
-				texture="/ui/info/drop.tga"
-				watch="ItemCursorVisible PlayerCanShop"
-				ontrigger="SetVisible(ItemCursorVisible and PlayerCanShop); RefreshCursor();"
-				onmouseover="SetColor('white');"
-				onmouseout="SetColor('invisible');"
-				onclick="ItemPlaceStash({slot});"
-				onrightclick="ItemPlaceStash({slot});"
-			/>
-		</panel>
-	</template>
+            <!-- Drop target -->
+            <panel
+                color="invisible"
+                texture="/ui/info/drop.tga"
+                watch="ItemCursorVisible PlayerCanShop"
+                ontrigger="SetVisible(ItemCursorVisible and PlayerCanShop); RefreshCursor();"
+                onmouseover="SetColor('white');"
+                onmouseout="SetColor('invisible');"
+                onclick="ItemPlaceStash({slot});"
+                onrightclick="ItemPlaceStash({slot});"
+            />
+        </panel>
+    </template>
 
-	<template name="shop_category_button">
-		<panel width="4.75h" noclick="1">
-			<panel x="0.6h" y="0.7h" width="3.65h" height="3.65h">
-				<image texture="/items/shops/{iconfile}.tga" />
-				
-				<frame
-					borderthickness="0"
-					color="#23b058"
-					rendermode="overlay"
-					visible="true"
-					watch="ShopType"
-					ontrigger="SetVisible(StringEquals(param, '{shopname}'));"
-					noclick="true"
-					passivechildren="true"
-				/>
-				
-				<button
-					texture="/ui/elements/button_roundhl.tga"
-					onmouseover="PlaySound('/shared/sounds/ui/button_over_03.wav'); showWidget('shop_cat_tip{slot}');"
-					onmouseout="hideWidget('shop_cat_tip{slot}');"
-					onclick="PlaySound('/shared/sounds/ui/button_click_03.wav'); SetActiveShop('{shopname}');"
-					interactive="false"
-					color="1 1 1 .5"
-				/>
-			</panel>
-			
-			<image width="6.15h" height="12.3h" texture="/ui/elements/shop/shopkeeper_mid.tga" noclick="1" />
-			
-			<label
-				x="1.7h" y="4.2h"
-				width="1.4h" height="100%"
-				textalign="center" textvalign="top"
-				color="white" shadow="true" font="dyn_8"
-				noclick="true"
-				watch="ShopKey{slot}"
-				ontrigger="SetText(param);"
-			/>
-		</panel>
-	</template>
+    <template name="shop_category_button">
+        <panel width="4.75h" noclick="1">
+            <panel x="0.6h" y="0.7h" width="3.65h" height="3.65h">
+                <image texture="/items/shops/{iconfile}.tga" />
+                
+                <frame
+                    borderthickness="0"
+                    color="#23b058"
+                    rendermode="overlay"
+                    visible="true"
+                    watch="ShopType"
+                    ontrigger="SetVisible(StringEquals(param, '{shopname}'));"
+                    noclick="true"
+                    passivechildren="true"
+                />
+                
+                <button
+                    texture="/ui/elements/button_roundhl.tga"
+                    onmouseover="PlaySound('/shared/sounds/ui/button_over_03.wav'); showWidget('shop_cat_tip{slot}');"
+                    onmouseout="hideWidget('shop_cat_tip{slot}');"
+                    onclick="PlaySound('/shared/sounds/ui/button_click_03.wav'); SetActiveShop('{shopname}');"
+                    interactive="false"
+                    color="1 1 1 .5"
+                />
+            </panel>
+            
+            <image width="6.15h" height="12.3h" texture="/ui/elements/shop/shopkeeper_mid.tga" noclick="1" />
+            
+            <label
+                x="1.7h" y="4.2h"
+                width="1.4h" height="100%"
+                textalign="center" textvalign="top"
+                color="white" shadow="true" font="dyn_8"
+                noclick="true"
+                watch="ShopKey{slot}"
+                ontrigger="SetText(param);"
+            />
+        </panel>
+    </template>
 
-	<template name="shop_item_button">
-		<panel width="100@" height="100%" color="invisible" noclick="1" watch="ShopItem{index}" ontrigger="SetVisible(param0);">
-			<panel height="4.0h" width="4.0h" align="center" valign="bottom" noclick="1">
-				<image
-					watch="ShopItem{index}"
-					ontrigger="SetTexture(param3); If(param6, SetRenderMode('normal'), SetRenderMode('grayscale'));"
-				/>
-				<button
-					texture="/ui/common/button_gloss.tga"
-					rendermode="additive"
-					color="1 1 1 .5"
-					onmouseout="HideWidget('shop_item_description'); HideWidget('shop_item_tooltip{index}');"
-					onclick="PlaySound('/shared/sounds/ui/button_click_02.wav'); Purchase('{index}');"
-					watch="ShopItem{index}"
-					ontrigger="
-						SetOnmouseover('
-							PlaySound(\'/shared/sounds/ui/button_over_03.wav\');
-							ShowWidget(\'shop_item_description\');
-							ShowWidget(\'shop_item_tooltip{index}\');
-							Trigger(\'ItemTooltip\', \'' # param3 # '\', \'' # param1 # '\', \'' # param4 # '\', \'' # param2 # '\');
-							');"
-					interactive="false"
-				/>
-				<image
-					texture="$white"
-					rendermode="overlay"
-					watch="ShopItem{index}"
-					ontrigger="SetVisible(true);
-						If(!param6,
-							SetColor('#404040'),
-							SetVisible(false)
-						);"
-					noclick="true"
-				/>
-				<label x="-0.5h" y="-0.2h" width="100%" height="100%" textalign="right" textvalign="bottom" color="white" shadow="true" font="dyn_10" noclick="true" watch="ShopItem{index}" ontrigger="SetText(param13);" content="{index}" />
-				<frame
-					borderthickness="4"
-					bordercolor="yellow"
-					color="invisible"
-					visible="true"
-					watch="RecipeItemType ShopItemType{index}"
-					ontrigger="SetVisible(StringEquals(RecipeItemType, ShopItemType{index}));"
-					noclick="true"
-					passivechildren="true"
-				>
-					<image x="3" y="3" width="-6" height="-6" color="yellow" texture="/ui/fps/selected.tga" rendermode="additive"/>
-				</frame>
-			</panel>
-			
-			<label height="0.8h" align="center" textalign="center" textvalign="center" color="yellow" font="dyn_8" watch="{watch}{index}" ontrigger="SetText(param4);" />					
-		</panel>
-	</template>
+    <template name="shop_item_button">
+        <panel width="100@" height="100%" color="invisible" noclick="1" watch="ShopItem{index}" ontrigger="SetVisible(param0);">
+            <panel height="4.0h" width="4.0h" align="center" valign="bottom" noclick="1">
+                <image
+                    watch="ShopItem{index}"
+                    ontrigger="SetTexture(param3); If(param6, SetRenderMode('normal'), SetRenderMode('grayscale'));"
+                />
+                <button
+                    texture="/ui/common/button_gloss.tga"
+                    rendermode="additive"
+                    color="1 1 1 .5"
+                    onmouseout="HideWidget('shop_item_description'); HideWidget('shop_item_tooltip{index}');"
+                    onclick="PlaySound('/shared/sounds/ui/button_click_02.wav'); Purchase('{index}');"
+                    watch="ShopItem{index}"
+                    ontrigger="
+                        SetOnmouseover('
+                            PlaySound(\'/shared/sounds/ui/button_over_03.wav\');
+                            ShowWidget(\'shop_item_description\');
+                            ShowWidget(\'shop_item_tooltip{index}\');
+                            Trigger(\'ItemTooltip\', \'' # param3 # '\', \'' # param1 # '\', \'' # param4 # '\', \'' # param2 # '\');
+                            ');"
+                    interactive="false"
+                />
+                <image
+                    texture="$white"
+                    rendermode="overlay"
+                    watch="ShopItem{index}"
+                    ontrigger="SetVisible(true);
+                        If(!param6,
+                            SetColor('#404040'),
+                            SetVisible(false)
+                        );"
+                    noclick="true"
+                />
+                <label x="-0.5h" y="-0.2h" width="100%" height="100%" textalign="right" textvalign="bottom" color="white" shadow="true" font="dyn_10" noclick="true" watch="ShopItem{index}" ontrigger="SetText(param13);" content="{index}" />
+                <frame
+                    borderthickness="4"
+                    bordercolor="yellow"
+                    color="invisible"
+                    visible="true"
+                    watch="RecipeItemType ShopItemType{index}"
+                    ontrigger="SetVisible(StringEquals(RecipeItemType, ShopItemType{index}));"
+                    noclick="true"
+                    passivechildren="true"
+                >
+                    <image x="3" y="3" width="-6" height="-6" color="yellow" texture="/ui/fps/selected.tga" rendermode="additive"/>
+                </frame>
+            </panel>
+            
+            <label height="0.8h" align="center" textalign="center" textvalign="center" color="yellow" font="dyn_8" watch="{watch}{index}" ontrigger="SetText(param4);" />                   
+        </panel>
+    </template>
 
-	<template name="shop_subitem_component">
-		<panel width="3.2h" height="3.2h" align="center" noclick="1" watch="{watch}{index}" ontrigger="SetVisible(param0);">
-			<image
-				watch="{watch}{index}"
-				ontrigger="SetTexture(param3);
-					If(param6, SetRenderMode('normal'), SetRenderMode('grayscale'));
-					SetVisible(!param8);"
-			/>
-			<image
-				texture="$white"
-				rendermode="overlay"
-				watch="{watch}{index}"
-				ontrigger="SetVisible(true);
-					If(!param6, SetColor('#404040'), SetVisible(false));
-					If(param8 and param12, SetVisible(false));"
-				noclick="true"
-			/>
+    <template name="shop_subitem_component">
+        <panel width="3.2h" height="3.2h" align="center" noclick="1" watch="{watch}{index}" ontrigger="SetVisible(param0);">
+            <image
+                watch="{watch}{index}"
+                ontrigger="SetTexture(param3);
+                    If(param6, SetRenderMode('normal'), SetRenderMode('grayscale'));
+                    SetVisible(!param8);"
+            />
+            <image
+                texture="$white"
+                rendermode="overlay"
+                watch="{watch}{index}"
+                ontrigger="SetVisible(true);
+                    If(!param6, SetColor('#404040'), SetVisible(false));
+                    If(param8 and param12, SetVisible(false));"
+                noclick="true"
+            />
 
-			<!-- Sub-Recipe Scroll -->
-			<panel watch="{watch}{index}" ontrigger="SetVisible(param8);">
-				<image
-					width="50%" height="50%"
-					align="center" valign="center"
-					watch="{watch}{index}"
-					ontrigger="SetTexture(param3);
-						If(param6, SetRenderMode('normal'), SetRenderMode('grayscale'));
-						If(param8 and param12, SetRenderMode('normal'));"
-				/>
-				<image texture="/ui/elements/shop/scroll_overlay.tga"/>
-			</panel>
-			
-			<!-- Sub-Can Purchase Button -->
-			<button
-				texture="/ui/common/button_gloss.tga"
-				rendermode="additive"
-				color="1 1 1 .8"
-				onmouseover="PlaySound('/shared/sounds/ui/button_over_03.wav'); ShowOnly('{description}{index}'); ShowWidget('{tooltip}{index}'); HideWidget('shop_description');"
-				onmouseout="HideWidget('{description}{index}'); HideWidget('{tooltip}{index}'); ShowWidget('shop_description');"
-				onclick="PlaySound('/shared/sounds/ui/button_click_02.wav');
-					{cmd}('{index}');"
-				interactive="false"
-			/>
-			
-			<!-- Sub-Owned Item Indicator -->
-			<frame
-				borderthickness="1"
-				color="invisible"
-				watch="{watch}{index}"
-				ontrigger="If(param11, SetBorderColor('lime'), SetBorderColor('invisible'));"
-				noclick="1"
-			/>			
-		</panel>	
-	</template>
+            <!-- Sub-Recipe Scroll -->
+            <panel watch="{watch}{index}" ontrigger="SetVisible(param8);">
+                <image
+                    width="50%" height="50%"
+                    align="center" valign="center"
+                    watch="{watch}{index}"
+                    ontrigger="SetTexture(param3);
+                        If(param6, SetRenderMode('normal'), SetRenderMode('grayscale'));
+                        If(param8 and param12, SetRenderMode('normal'));"
+                />
+                <image texture="/ui/elements/shop/scroll_overlay.tga"/>
+            </panel>
+            
+            <!-- Sub-Can Purchase Button -->
+            <button
+                texture="/ui/common/button_gloss.tga"
+                rendermode="additive"
+                color="1 1 1 .8"
+                onmouseover="PlaySound('/shared/sounds/ui/button_over_03.wav'); ShowOnly('{description}{index}'); ShowWidget('{tooltip}{index}'); HideWidget('shop_description');"
+                onmouseout="HideWidget('{description}{index}'); HideWidget('{tooltip}{index}'); ShowWidget('shop_description');"
+                onclick="PlaySound('/shared/sounds/ui/button_click_02.wav');
+                    {cmd}('{index}');"
+                interactive="false"
+            />
+            
+            <!-- Sub-Owned Item Indicator -->
+            <frame
+                borderthickness="1"
+                color="invisible"
+                watch="{watch}{index}"
+                ontrigger="If(param11, SetBorderColor('lime'), SetBorderColor('invisible'));"
+                noclick="1"
+            />          
+        </panel>    
+    </template>
 
-	<template name="shop_item_component">
-		<panel width="7.1h" watch="{watch}{index}" ontrigger="SetVisible(param0);" visible="true" sticky="true" stickytoinvis="false" color="invisible" noclick="1">
-			
-			<panel x="6.0h" y="-1.0h" width="1h" height="4.6h" valign="bottom" color="black" noclick="1" />
-			
-			<!-- Frame Type -->
-			<image width="12.3h" height="6.15h" valign="bottom" texture="/ui/elements/shop/recipe_bar_frame.tga" noclick="1"/>
-			
-			<!-- Icon -->
-			<panel x="-1.8h" y="-1.7h" width="3.2h" height="3.2h" valign="bottom" align="right" noclick="1">
-				<image
-					watch="{watch}{index}"
-					ontrigger="
-						SetTexture(param3);
-						If(param6, SetRenderMode('normal'), SetRenderMode('grayscale'));
-						SetVisible(!param8);"
-				/>
+    <template name="shop_item_component">
+        <panel width="7.1h" watch="{watch}{index}" ontrigger="SetVisible(param0);" visible="true" sticky="true" stickytoinvis="false" color="invisible" noclick="1">
+            
+            <panel x="6.0h" y="-1.0h" width="1h" height="4.6h" valign="bottom" color="black" noclick="1" />
+            
+            <!-- Frame Type -->
+            <image width="12.3h" height="6.15h" valign="bottom" texture="/ui/elements/shop/recipe_bar_frame.tga" noclick="1"/>
+            
+            <!-- Icon -->
+            <panel x="-1.8h" y="-1.7h" width="3.2h" height="3.2h" valign="bottom" align="right" noclick="1">
+                <image
+                    watch="{watch}{index}"
+                    ontrigger="
+                        SetTexture(param3);
+                        If(param6, SetRenderMode('normal'), SetRenderMode('grayscale'));
+                        SetVisible(!param8);"
+                />
 
-				<image
-					texture="$white"
-					rendermode="overlay"
-					watch="{watch}{index}"
-					ontrigger="SetVisible(true);
-						If(!param6, SetColor('#404040'), SetVisible(false));
-						If(param8 and param12, SetVisible(false));"
-					noclick="true"
-				/>
+                <image
+                    texture="$white"
+                    rendermode="overlay"
+                    watch="{watch}{index}"
+                    ontrigger="SetVisible(true);
+                        If(!param6, SetColor('#404040'), SetVisible(false));
+                        If(param8 and param12, SetVisible(false));"
+                    noclick="true"
+                />
 
-				<!-- Recipe Scroll -->
-				<panel watch="{watch}{index}" ontrigger="SetVisible(param8);">
-					<image
-						width="50%" height="50%"
-						align="center" valign="center"
-						watch="{watch}{index}"
-						ontrigger="SetTexture(param3);
-							If(param6, SetRenderMode('normal'), SetRenderMode('grayscale'));
-							If(param8 and param12, SetRenderMode('normal'));"
-					/>
-					<image texture="/ui/elements/shop/scroll_overlay.tga"/>
-				</panel>
-				
-				<!-- Can Purchase Button -->
-				<button
-					texture="/ui/common/button_gloss.tga"
-					rendermode="additive"
-					color="1 1 1 .8"
-					onmouseover="PlaySound('/shared/sounds/ui/button_over_03.wav'); ShowOnly('{description}{index}'); ShowWidget('{tooltip}{index}'); HideWidget('shop_description');"
-					onmouseout="HideWidget('{description}{index}'); HideWidget('{tooltip}{index}'); ShowWidget('shop_description');"
-					onclick="PlaySound('/shared/sounds/ui/button_click_02.wav');
-						{cmd}('{index}');"
-					interactive="false"
-				/>
-				
-				<!-- Owned Item Indicator -->
-				<frame
-					borderthickness="1"
-					color="invisible"
-					watch="{watch}{index}"
-					ontrigger="If(param11, SetBorderColor('lime'), SetBorderColor('invisible'));"
-					noclick="1"
-				/>
-				
-				<label x="-0.2h" width="100%" height="100%" textalign="right" textvalign="bottom" color="white" shadow="true" font="dyn_11" noclick="true" watch="{watch}{index}" ontrigger="SetText(param13);" />
-			</panel>
-			
-			<!-- Has Sub Recipe -->
-			<panel visible="1" y="-5.6h" noclick="1" watch="{watch}{index}" ontrigger="SetVisible(param8 and param12);">			
-				<!-- Sub Panel-->
-				<panel height="20.0h" width="6.15h" align="center" valign="bottom" texture="/ui/elements/shop/sub_recipe_bar.tga" noclick="1">				
-					<image width="12.3h" height="3.075h" align="center" valign="bottom" texture="/ui/elements/shop/sub_recipe_footer.tga" noclick="1" />					
-					<image width="6.15h" height="3.075h" align="center" valign="bottom" texture="/ui/elements/shop/sub_recipe_equals.tga" noclick="1" />
-					<image y="-3.075h" width="6.15h" height="3.075h" align="center" valign="top" texture="/ui/elements/shop/sub_recipe_header.tga" noclick="1" />
-					
-					<!-- Sub-Components -->
-					<panel y="1.0h" float="bottom" padding="1.0h" noclick="1">
-						<instance name="shop_subitem_component" watch="RecipeComponent{index}SubComponent" index="0" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
-						<instance name="shop_subitem_component" watch="RecipeComponent{index}SubComponent" index="1" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
-						<instance name="shop_subitem_component" watch="RecipeComponent{index}SubComponent" index="2" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
-						<instance name="shop_subitem_component" watch="RecipeComponent{index}SubComponent" index="3" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
-					</panel>					
-				</panel>				
-			</panel>
-			
-			<!-- Plus / Or Next Item-->
-			<image x="5.7h" y="-0.2h" width="3.075h" height="6.15h" valign="bottom" texture="/ui/elements/shop/recipe_bar_plus.tga" noclick="1"/>			
-		</panel>
-	</template>
+                <!-- Recipe Scroll -->
+                <panel watch="{watch}{index}" ontrigger="SetVisible(param8);">
+                    <image
+                        width="50%" height="50%"
+                        align="center" valign="center"
+                        watch="{watch}{index}"
+                        ontrigger="SetTexture(param3);
+                            If(param6, SetRenderMode('normal'), SetRenderMode('grayscale'));
+                            If(param8 and param12, SetRenderMode('normal'));"
+                    />
+                    <image texture="/ui/elements/shop/scroll_overlay.tga"/>
+                </panel>
+                
+                <!-- Can Purchase Button -->
+                <button
+                    texture="/ui/common/button_gloss.tga"
+                    rendermode="additive"
+                    color="1 1 1 .8"
+                    onmouseover="PlaySound('/shared/sounds/ui/button_over_03.wav'); ShowOnly('{description}{index}'); ShowWidget('{tooltip}{index}'); HideWidget('shop_description');"
+                    onmouseout="HideWidget('{description}{index}'); HideWidget('{tooltip}{index}'); ShowWidget('shop_description');"
+                    onclick="PlaySound('/shared/sounds/ui/button_click_02.wav');
+                        {cmd}('{index}');"
+                    interactive="false"
+                />
+                
+                <!-- Owned Item Indicator -->
+                <frame
+                    borderthickness="1"
+                    color="invisible"
+                    watch="{watch}{index}"
+                    ontrigger="If(param11, SetBorderColor('lime'), SetBorderColor('invisible'));"
+                    noclick="1"
+                />
+                
+                <label x="-0.2h" width="100%" height="100%" textalign="right" textvalign="bottom" color="white" shadow="true" font="dyn_11" noclick="true" watch="{watch}{index}" ontrigger="SetText(param13);" />
+            </panel>
+            
+            <!-- Has Sub Recipe -->
+            <panel visible="1" y="-5.6h" noclick="1" watch="{watch}{index}" ontrigger="SetVisible(param8 and param12);">            
+                <!-- Sub Panel-->
+                <panel height="20.0h" width="6.15h" align="center" valign="bottom" texture="/ui/elements/shop/sub_recipe_bar.tga" noclick="1">              
+                    <image width="12.3h" height="3.075h" align="center" valign="bottom" texture="/ui/elements/shop/sub_recipe_footer.tga" noclick="1" />                    
+                    <image width="6.15h" height="3.075h" align="center" valign="bottom" texture="/ui/elements/shop/sub_recipe_equals.tga" noclick="1" />
+                    <image y="-3.075h" width="6.15h" height="3.075h" align="center" valign="top" texture="/ui/elements/shop/sub_recipe_header.tga" noclick="1" />
+                    
+                    <!-- Sub-Components -->
+                    <panel y="1.0h" float="bottom" padding="1.0h" noclick="1">
+                        <instance name="shop_subitem_component" watch="RecipeComponent{index}SubComponent" index="0" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
+                        <instance name="shop_subitem_component" watch="RecipeComponent{index}SubComponent" index="1" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
+                        <instance name="shop_subitem_component" watch="RecipeComponent{index}SubComponent" index="2" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
+                        <instance name="shop_subitem_component" watch="RecipeComponent{index}SubComponent" index="3" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
+                    </panel>                    
+                </panel>                
+            </panel>
+            
+            <!-- Plus / Or Next Item-->
+            <image x="5.7h" y="-0.2h" width="3.075h" height="6.15h" valign="bottom" texture="/ui/elements/shop/recipe_bar_plus.tga" noclick="1"/>           
+        </panel>
+    </template>
 
-	<template name="shopdescription_tooltip">
-		<panel name="{tip_id}" y="{y=-22.5h}" x="{x=6.0h}" width="{width=100%}" height="{height=100%}" align="center" valign="bottom" color="invisible" visible="{visible=0}" noclick="1">
-			<frame  texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .8" borderthickness=".6h" align="left" valign="top" noclick="1">
-				<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" noclick="1"/>
-				<label width="-5%" height="2.2h" textvalign="bottom" textalign="left" align="center" font="dyn_10" color="#ffab01" shadow="1" noclick="1">{title}</label>
-				<label y="2.2h" width="-5%" height="100%" textvalign="top" textalign="left" align="center" font="dyn_9" noclick="1" color="white" shadow="1" wrap="1">{label}</label>
-			</frame>
-		</panel>
-	</template>
-	
-	<template name="stash">
-		<panel color="invisible" visible="0" noclick="1" valign="bottom" watch="ShopActive" ontrigger="SetVisible(param);">
-			<panel width="24.0h" height="16.0h" align="right" valign="bottom" color="black" />
+    <template name="shopdescription_tooltip">
+        <panel name="{tip_id}" y="{y=-22.5h}" x="{x=6.0h}" width="{width=100%}" height="{height=100%}" align="center" valign="bottom" color="invisible" visible="{visible=0}" noclick="1">
+            <frame  texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .8" borderthickness=".6h" align="left" valign="top" noclick="1">
+                <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" noclick="1"/>
+                <label width="-5%" height="2.2h" textvalign="bottom" textalign="left" align="center" font="dyn_10" color="#ffab01" shadow="1" noclick="1">{title}</label>
+                <label y="2.2h" width="-5%" height="100%" textvalign="top" textalign="left" align="center" font="dyn_9" noclick="1" color="white" shadow="1" wrap="1">{label}</label>
+            </frame>
+        </panel>
+    </template>
+    
+    <template name="stash">
+        <panel color="invisible" visible="0" noclick="1" valign="bottom" watch="ShopActive" ontrigger="SetVisible(param);">
+            <panel width="24.0h" height="16.0h" align="right" valign="bottom" color="black" />
 
-			<panel x="5.8h" y="19.2h" float="right" padding="0.8h">
-				<instance name="stash_button" slot="0" />
-				<instance name="stash_button" slot="1" />
-				<instance name="stash_button" slot="2" />
-			</panel>
-			<panel x="5.8h" y="24.7h" float="right" padding="0.8h">
-				<instance name="stash_button" slot="3" />
-				<instance name="stash_button" slot="4" />
-				<instance name="stash_button" slot="5" />
-			</panel>
-			
-			<!-- Framing -->
-			<image texture="/ui/common/bot_right_stash.tga" noclick="1" />			
-			<label x="12.0h" y="15.0h" width="11.2h" height="3.0h" textalign="center" textvalign="center" font="dyn_12" color="white" noclick="1">game_label_stash</label>
+            <panel x="5.8h" y="19.2h" float="right" padding="0.8h">
+                <instance name="stash_button" slot="0" />
+                <instance name="stash_button" slot="1" />
+                <instance name="stash_button" slot="2" />
+            </panel>
+            <panel x="5.8h" y="24.7h" float="right" padding="0.8h">
+                <instance name="stash_button" slot="3" />
+                <instance name="stash_button" slot="4" />
+                <instance name="stash_button" slot="5" />
+            </panel>
+            
+            <!-- Framing -->
+            <image texture="/ui/common/bot_right_stash.tga" noclick="1" />          
+            <label x="12.0h" y="15.0h" width="11.2h" height="3.0h" textalign="center" textvalign="center" font="dyn_12" color="white" noclick="1">game_label_stash</label>
 
-			<!-- Tip Marks-->
-			<button
-				x="-19.8h" y="-11.2h"
-				width="2.6h" height="2.6h"
-				align="right" valign="bottom"
-				color="invisible"
-				onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav'); showwidget('stash_tooltip');"
-				onmouseout="hidewidget('stash_tooltip');"
-			>
-				<widgetstate statename="up">
-					<image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/tip_mark_up.tga" />
-				</widgetstate>
-				<widgetstate statename="over">
-					<image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/tip_mark_over.tga" />
-				</widgetstate>				
-			</button>
-			<button
-				x="-5.3h" y="-8.6h"
-				width="1.7h" height="1.7h"
-				align="right" valign="bottom"
-				color="invisible"
-				onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav'); showwidget('stash_deconstruct_tooltip');"
-				onmouseout="hidewidget('stash_deconstruct_tooltip');"
-			>
-				<widgetstate statename="up">
-					<image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/tip_mark_up.tga" />
-				</widgetstate>
-				<widgetstate statename="over">
-					<image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/tip_mark_over.tga" />
-				</widgetstate>				
-			</button>
-		</panel>
-	</template>
-	
-	<template name="shop">
-		<panel x="-4.8h" y="0" width="65.3h" align="center" valign="bottom" color="invisible" noclick="true">
-			<!-- Stage 2 (Items) -->
-			<panel
-				x="0" y="-19.5h"
-				width="65.7h" height="24.6h"
-				align="right" valign="bottom"
-				color="invisible"
-				noclick="1"
-				visible="true"
-				watch="ShopType"
-				ontrigger="SetVisible(!StringEquals(param, ''));"
-			>
-				<panel x="15.9h" y="2.8h" width="24.6h" height="24.6h" noclick="1">			
-					<!-- Shop Window Type -->
-					<image texture="/ui/elements/shop/item_window.tga" noclick="1" />
-					
-					<panel x="1.7h" y="1.5h" float="bottom" padding="1.1h" noclick="1">
-						<panel height="5.1h" float="right" padding="0.3h" noclick="1">
-							<instance name="shop_item_button" watch="ShopItem" index="0" />
-							<instance name="shop_item_button" watch="ShopItem" index="1" />
-							<instance name="shop_item_button" watch="ShopItem" index="2" />
-							<instance name="shop_item_button" watch="ShopItem" index="3" />
-						</panel>
-						<panel height="5.1h" float="right" padding="0.3h" noclick="1">
-							<instance name="shop_item_button" watch="ShopItem" index="4" />
-							<instance name="shop_item_button" watch="ShopItem" index="5" />
-							<instance name="shop_item_button" watch="ShopItem" index="6" />
-							<instance name="shop_item_button" watch="ShopItem" index="7" />
-						</panel>
-						<panel height="5.1h" float="right" padding="0.3h" noclick="1" color="invisible">
-							<instance name="shop_item_button" watch="ShopItem" index="8" />
-							<instance name="shop_item_button" watch="ShopItem" index="9" />
-							<instance name="shop_item_button" watch="ShopItem" index="10" />
-							<instance name="shop_item_button" watch="ShopItem" index="11" />
-						</panel>
-					</panel>				
-					
-				</panel>
+            <!-- Tip Marks-->
+            <button
+                x="-19.8h" y="-11.2h"
+                width="2.6h" height="2.6h"
+                align="right" valign="bottom"
+                color="invisible"
+                onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav'); showwidget('stash_tooltip');"
+                onmouseout="hidewidget('stash_tooltip');"
+            >
+                <widgetstate statename="up">
+                    <image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/tip_mark_up.tga" />
+                </widgetstate>
+                <widgetstate statename="over">
+                    <image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/tip_mark_over.tga" />
+                </widgetstate>              
+            </button>
+            <button
+                x="-5.3h" y="-8.6h"
+                width="1.7h" height="1.7h"
+                align="right" valign="bottom"
+                color="invisible"
+                onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav'); showwidget('stash_deconstruct_tooltip');"
+                onmouseout="hidewidget('stash_deconstruct_tooltip');"
+            >
+                <widgetstate statename="up">
+                    <image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/tip_mark_up.tga" />
+                </widgetstate>
+                <widgetstate statename="over">
+                    <image width="100%" height="100%" valign="center" align="center" texture="/ui/elements/tip_mark_over.tga" />
+                </widgetstate>              
+            </button>
+        </panel>
+    </template>
+    
+    <template name="shop">
+        <panel x="-4.8h" y="0" width="65.3h" align="center" valign="bottom" color="invisible" noclick="true">
+            <!-- Stage 2 (Items) -->
+            <panel
+                x="0" y="-19.5h"
+                width="65.7h" height="24.6h"
+                align="right" valign="bottom"
+                color="invisible"
+                noclick="1"
+                visible="true"
+                watch="ShopType"
+                ontrigger="SetVisible(!StringEquals(param, ''));"
+            >
+                <panel x="15.9h" y="2.8h" width="24.6h" height="24.6h" noclick="1">         
+                    <!-- Shop Window Type -->
+                    <image texture="/ui/elements/shop/item_window.tga" noclick="1" />
+                    
+                    <panel x="1.7h" y="1.5h" float="bottom" padding="1.1h" noclick="1">
+                        <panel height="5.1h" float="right" padding="0.3h" noclick="1">
+                            <instance name="shop_item_button" watch="ShopItem" index="0" />
+                            <instance name="shop_item_button" watch="ShopItem" index="1" />
+                            <instance name="shop_item_button" watch="ShopItem" index="2" />
+                            <instance name="shop_item_button" watch="ShopItem" index="3" />
+                        </panel>
+                        <panel height="5.1h" float="right" padding="0.3h" noclick="1">
+                            <instance name="shop_item_button" watch="ShopItem" index="4" />
+                            <instance name="shop_item_button" watch="ShopItem" index="5" />
+                            <instance name="shop_item_button" watch="ShopItem" index="6" />
+                            <instance name="shop_item_button" watch="ShopItem" index="7" />
+                        </panel>
+                        <panel height="5.1h" float="right" padding="0.3h" noclick="1" color="invisible">
+                            <instance name="shop_item_button" watch="ShopItem" index="8" />
+                            <instance name="shop_item_button" watch="ShopItem" index="9" />
+                            <instance name="shop_item_button" watch="ShopItem" index="10" />
+                            <instance name="shop_item_button" watch="ShopItem" index="11" />
+                        </panel>
+                    </panel>                
+                    
+                </panel>
 
-				<image x="-7.0h" width="24.6h" height="12.3h" valign="bottom" texture="/ui/elements/shop/item_window_left.tga" noclick="1" />
-			</panel>
+                <image x="-7.0h" width="24.6h" height="12.3h" valign="bottom" texture="/ui/elements/shop/item_window_left.tga" noclick="1" />
+            </panel>
 
-			<!-- Stage 3 (Recipe Display) -->
-			<panel
-				x="0" y="-19.5h"
-				width="26.8h" height="24.6h"
-				align="right" valign="bottom"
-				color="invisible"
-				noclick="1"
-				watch="RecipeItem"
-				ontrigger="SetVisible(param0);"
-			>
-				<image x="0" width="24.6h" height="12.3h" valign="bottom" texture="/ui/elements/shop/item_window_right.tga" noclick="1" />
-				
-				<!-- Current Recipe View -->
-				<panel x="2.0h" y="-2.4h" width="12.3h" height="6.15h" valign="bottom" noclick="1">						
-					<image
-						x="0.6h" y="0.6h"
-						width="4.8h" height="4.8h"
-						watch="RecipeItem"
-						ontrigger="SetTexture(param3);"
-					/>				
-					<image texture="/ui/elements/shop/main_recipe_frame.tga" noclick="1"/>			
-				</panel>
-				
-				<panel x="10.0h" y="-2.4h" float="right" padding="0" noclick="1">
-					<instance name="shop_item_component" watch="RecipeComponent" index="0" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
-					<instance name="shop_item_component" watch="RecipeComponent" index="1" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
-					<instance name="shop_item_component" watch="RecipeComponent" index="2" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
-					<instance name="shop_item_component" watch="RecipeComponent" index="3" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />				
-					
-					<!-- End Cap -->
-					<panel width="3.075h" sticky="true" stickytoinvis="false" color="invisible" noclick="1">
-						<image x="-1.0h" height="6.15h" valign="bottom" texture="/ui/elements/shop/recipe_bar_endcap.tga" noclick="1" />
-					</panel>
-				</panel>
-			</panel>
+            <!-- Stage 3 (Recipe Display) -->
+            <panel
+                x="0" y="-19.5h"
+                width="26.8h" height="24.6h"
+                align="right" valign="bottom"
+                color="invisible"
+                noclick="1"
+                watch="RecipeItem"
+                ontrigger="SetVisible(param0);"
+            >
+                <image x="0" width="24.6h" height="12.3h" valign="bottom" texture="/ui/elements/shop/item_window_right.tga" noclick="1" />
+                
+                <!-- Current Recipe View -->
+                <panel x="2.0h" y="-2.4h" width="12.3h" height="6.15h" valign="bottom" noclick="1">                     
+                    <image
+                        x="0.6h" y="0.6h"
+                        width="4.8h" height="4.8h"
+                        watch="RecipeItem"
+                        ontrigger="SetTexture(param3);"
+                    />              
+                    <image texture="/ui/elements/shop/main_recipe_frame.tga" noclick="1"/>          
+                </panel>
+                
+                <panel x="10.0h" y="-2.4h" float="right" padding="0" noclick="1">
+                    <instance name="shop_item_component" watch="RecipeComponent" index="0" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
+                    <instance name="shop_item_component" watch="RecipeComponent" index="1" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
+                    <instance name="shop_item_component" watch="RecipeComponent" index="2" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />
+                    <instance name="shop_item_component" watch="RecipeComponent" index="3" cmd="PurchaseComponent" description="recipe_component_description" tooltip="recipe_component_tooltip" />             
+                    
+                    <!-- End Cap -->
+                    <panel width="3.075h" sticky="true" stickytoinvis="false" color="invisible" noclick="1">
+                        <image x="-1.0h" height="6.15h" valign="bottom" texture="/ui/elements/shop/recipe_bar_endcap.tga" noclick="1" />
+                    </panel>
+                </panel>
+            </panel>
 
-			<!-- Stage 1 (Shops) -->
-			<panel
-				x="0" y="-9.7h"
-				width="125.0h" height="12.3h"
-				align="right" valign="bottom"
-				color="invisible"
-				noclick="true"
-				visible="false"
-				watch="PlayerCanShop"
-				ontrigger="PlaySound('/shared/sounds/ui/shop_show.wav'); If(!param, CloseShop()); If(param, SetDefaultActiveShop());"
-				onshow=""
-				watch0="ShopActive"
-				ontrigger0="SetVisible(param);"
-				hotkey="ESC"
-				onhotkey="PlaySound('/shared/sounds/ui/button_close_01.wav'); CloseShop();"
-			>
-				<panel x="-65.0h" y="0.2h" width="49.2h" height="24.6h" align="right">
-					<image texture="/ui/elements/shop/shop_left_filler.tga" />
-				</panel>		
-			
-				<panel width="65.7h" align="right" color="invisible" noclick="1" padding="0">
-				
-					<image x="11h" align="right" texture="/ui/elements/shop/shopkeeper_backdrop.tga" noclick="1" />
-					
-					<!-- Left Cap / Store Name -->
-					<panel width="24.6h" noclick="1">
-						<image width="24.6h" height="12.3h" texture="/ui/elements/shop/shopkeeper_left_cap.tga" noclick="1" />					
-						<label x="0.4h" y="2.4h" width="12.0h" height="3.0h" textalign="center" textvalign="center" color="white" font="dyn_11" shadow="1" noclick="1" watch="ShopName" ontrigger="SetText(param);" />
-					</panel>
-					
-					<image x="59.6h" y="2.0h" width="12.3h" height="12.3h" texture="/ui/elements/shop/shopkeeper_right_cap.tga" noclick="1" />	
+            <!-- Stage 1 (Shops) -->
+            <panel
+                x="0" y="-9.7h"
+                width="125.0h" height="12.3h"
+                align="right" valign="bottom"
+                color="invisible"
+                noclick="true"
+                visible="false"
+                watch="PlayerCanShop"
+                ontrigger="PlaySound('/shared/sounds/ui/shop_show.wav'); If(!param, CloseShop()); If(param, SetDefaultActiveShop());"
+                onshow=""
+                watch0="ShopActive"
+                ontrigger0="SetVisible(param);"
+                hotkey="ESC"
+                onhotkey="PlaySound('/shared/sounds/ui/button_close_01.wav'); CloseShop();"
+            >
+                <panel x="-65.0h" y="0.2h" width="49.2h" height="24.6h" align="right">
+                    <image texture="/ui/elements/shop/shop_left_filler.tga" />
+                </panel>        
+            
+                <panel width="65.7h" align="right" color="invisible" noclick="1" padding="0">
+                
+                    <image x="11h" align="right" texture="/ui/elements/shop/shopkeeper_backdrop.tga" noclick="1" />
+                    
+                    <!-- Left Cap / Store Name -->
+                    <panel width="24.6h" noclick="1">
+                        <image width="24.6h" height="12.3h" texture="/ui/elements/shop/shopkeeper_left_cap.tga" noclick="1" />                  
+                        <label x="0.4h" y="2.4h" width="12.0h" height="3.0h" textalign="center" textvalign="center" color="white" font="dyn_11" shadow="1" noclick="1" watch="ShopName" ontrigger="SetText(param);" />
+                    </panel>
+                    
+                    <image x="59.6h" y="2.0h" width="12.3h" height="12.3h" texture="/ui/elements/shop/shopkeeper_right_cap.tga" noclick="1" />  
 
-					<panel x="12.0h" color="invisible" float="right" padding="0" noclick="1">
-						<instance name="shop_category_button" iconfile="shop_accessories" shopname="Shop_Accessories" slot="0"/>
-						<instance name="shop_category_button" iconfile="shop_weapons" shopname="Shop_Weapons" slot="1" />
-						<instance name="shop_category_button" iconfile="shop_relics" shopname="Shop_Relics" slot="2" />
-						<instance name="shop_category_button" iconfile="shop_supplies" shopname="Shop_Supplies" slot="3" />
-						<instance name="shop_category_button" iconfile="shop_recipes1" shopname="Shop_Recipes1" slot="4" />
-						<instance name="shop_category_button" iconfile="shop_recipes2" shopname="Shop_Recipes2" slot="5" />
-						<instance name="shop_category_button" iconfile="shop_recipes3" shopname="Shop_Recipes3" slot="6" />
-						<instance name="shop_category_button" iconfile="shop_recipes4" shopname="Shop_Recipes4" slot="7" />
-						<instance name="shop_category_button" iconfile="shop_recipes5" shopname="Shop_Recipes5" slot="8" />
-						<instance name="shop_category_button" iconfile="shop_secret" shopname="Shop_Secret" slot="9" />
-						<instance name="shop_category_button" iconfile="shop_outpost" shopname="Shop_Outpost" slot="10" />
-					</panel>
-				
-					<!-- Shopkeeper Image -->
-					<panel
-						watch="ShopType"
-						ontrigger="SetVisible(!StringEquals(param, ''));"
-						noclick="1"
-					>
-						<image x="0.6h" y="-6.8h" width="17.0h" height="13.6h" valign="bottom" noclick="1" watch="ShopHeader" ontrigger="SetTexture(param);"/>
-					</panel>
-				</panel>
-				
-				<!-- Item catcher -->
-				<panel
-					align="center"
-					color="invisible"
-					watch="ItemCursorVisible PlayerCanShop"
-					ontrigger="SetVisible(ItemCursorVisible and PlayerCanShop); RefreshCursor();"
-					onmouseover="SetColor('1 1 1 .2');"
-					onmouseout="SetColor('invisible');"
-					onclick="PlaySound('/shared/sounds/ui/sell.wav'); Sell();"
-					onrightclick="PlaySound('/shared/sounds/ui/sell.wav'); Sell();"
-				/>
-				
-				<!-- Stage 1 close button -->
-				<panel x="0.6h" y="0.2h" align="right" width="1.6h" height="1.6h" color="1 1 1 .8" onclick="CloseShop();">
-					<label align="center" valign="center" textalign="center" textvalign="center" font="dyn_10" color="black" content="X" noclick="1" />
-				</panel>
-			</panel>
+                    <panel x="12.0h" color="invisible" float="right" padding="0" noclick="1">
+                        <instance name="shop_category_button" iconfile="shop_accessories" shopname="Shop_Accessories" slot="0"/>
+                        <instance name="shop_category_button" iconfile="shop_weapons" shopname="Shop_Weapons" slot="1" />
+                        <instance name="shop_category_button" iconfile="shop_relics" shopname="Shop_Relics" slot="2" />
+                        <instance name="shop_category_button" iconfile="shop_supplies" shopname="Shop_Supplies" slot="3" />
+                        <instance name="shop_category_button" iconfile="shop_recipes1" shopname="Shop_Recipes1" slot="4" />
+                        <instance name="shop_category_button" iconfile="shop_recipes2" shopname="Shop_Recipes2" slot="5" />
+                        <instance name="shop_category_button" iconfile="shop_recipes3" shopname="Shop_Recipes3" slot="6" />
+                        <instance name="shop_category_button" iconfile="shop_recipes4" shopname="Shop_Recipes4" slot="7" />
+                        <instance name="shop_category_button" iconfile="shop_recipes5" shopname="Shop_Recipes5" slot="8" />
+                        <instance name="shop_category_button" iconfile="shop_secret" shopname="Shop_Secret" slot="9" />
+                        <instance name="shop_category_button" iconfile="shop_outpost" shopname="Shop_Outpost" slot="10" />
+                    </panel>
+                
+                    <!-- Shopkeeper Image -->
+                    <panel
+                        watch="ShopType"
+                        ontrigger="SetVisible(!StringEquals(param, ''));"
+                        noclick="1"
+                    >
+                        <image x="0.6h" y="-6.8h" width="17.0h" height="13.6h" valign="bottom" noclick="1" watch="ShopHeader" ontrigger="SetTexture(param);"/>
+                    </panel>
+                </panel>
+                
+                <!-- Item catcher -->
+                <panel
+                    align="center"
+                    color="invisible"
+                    watch="ItemCursorVisible PlayerCanShop"
+                    ontrigger="SetVisible(ItemCursorVisible and PlayerCanShop); RefreshCursor();"
+                    onmouseover="SetColor('1 1 1 .2');"
+                    onmouseout="SetColor('invisible');"
+                    onclick="PlaySound('/shared/sounds/ui/sell.wav'); Sell();"
+                    onrightclick="PlaySound('/shared/sounds/ui/sell.wav'); Sell();"
+                />
+                
+                <!-- Stage 1 close button -->
+                <panel x="0.6h" y="0.2h" align="right" width="1.6h" height="1.6h" color="1 1 1 .8" onclick="CloseShop();">
+                    <label align="center" valign="center" textalign="center" textvalign="center" font="dyn_10" color="black" content="X" noclick="1" />
+                </panel>
+            </panel>
 
-			<!-- Shop Description Tooltips -->
-			<instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip0" title="game_shop_label_accessories" label="Shop_Accessories_description" />
-			<instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip1" title="game_shop_label_weapons" label="Shop_Weapons_description" />
-			<instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip2" title="game_shop_label_relics" label="Shop_Relics_description" />
-			<instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip3" title="game_shop_label_supplies" label="Shop_Supplies_description" />
-			<instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip4" title="game_shop_label_secret" label="Shop_Secret_description" />
-			<instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip5" title="game_shop_label_recipe_one" label="Shop_Recipes1_description" />
-			<instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip6" title="game_shop_label_recipe_two" label="Shop_Recipes2_description" />
-			<instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip7" title="game_shop_label_recipe_three" label="Shop_Recipes3_description" />
-			<instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip8" title="game_shop_label_recipe_four" label="Shop_Recipes4_description" />
-			<instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip9" title="game_shop_label_recipe_five" label="Shop_Recipes5_description" />
-			<instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip10" title="game_shop_label_recipe_outpost" label="Shop_Outpost_description" />
-		</panel>
-		
-		<floater
-			name="shop_item_description"
-			x="1.0h" y="-1.0h"
-			width="29.0h"
-			valign="bottom"
-			color="invisible"
-			visible="false"
-			passivechildren="true"
-			grow="true"
-		>
-			<frame texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .8" borderthickness=".6h" />
-			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" />
+            <!-- Shop Description Tooltips -->
+            <instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip0" title="game_shop_label_accessories" label="Shop_Accessories_description" />
+            <instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip1" title="game_shop_label_weapons" label="Shop_Weapons_description" />
+            <instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip2" title="game_shop_label_relics" label="Shop_Relics_description" />
+            <instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip3" title="game_shop_label_supplies" label="Shop_Supplies_description" />
+            <instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip4" title="game_shop_label_secret" label="Shop_Secret_description" />
+            <instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip5" title="game_shop_label_recipe_one" label="Shop_Recipes1_description" />
+            <instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip6" title="game_shop_label_recipe_two" label="Shop_Recipes2_description" />
+            <instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip7" title="game_shop_label_recipe_three" label="Shop_Recipes3_description" />
+            <instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip8" title="game_shop_label_recipe_four" label="Shop_Recipes4_description" />
+            <instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip9" title="game_shop_label_recipe_five" label="Shop_Recipes5_description" />
+            <instance name="shopdescription_tooltip" width="36.0h" height="7.3h" tip_id="shop_cat_tip10" title="game_shop_label_recipe_outpost" label="Shop_Outpost_description" />
+        </panel>
+        
+        <floater
+            name="shop_item_description"
+            x="1.0h" y="-1.0h"
+            width="29.0h"
+            valign="bottom"
+            color="invisible"
+            visible="false"
+            passivechildren="true"
+            grow="true"
+        >
+            <frame texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .8" borderthickness=".6h" />
+            <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" />
 
-			<panel width="95%" align="center" valign="center" color="invisible" float="bottom" padding="0.6h" grow="true">
-				<panel y="5%" height="2.2h" color="invisible">
-					<image width="1.8h" height="1.8h" watch="ItemTooltip" ontrigger="SetTexture(param0);" />
-					<label x="2.2h" width="100%" height="100%" font="dyn_12" textalign="left" textvalign="top" color="#FF69B4" watch="ItemTooltip" ontrigger="SetText(param1);" />
-					<label width="100%" height="100%" font="dyn_12" textalign="right" textvalign="top" color="yellow" watch="ItemTooltip" ontrigger="SetText(param2);" />
-				</panel>
+            <panel width="95%" align="center" valign="center" color="invisible" float="bottom" padding="0.6h" grow="true">
+                <panel y="5%" height="2.2h" color="invisible">
+                    <image width="1.8h" height="1.8h" watch="ItemTooltip" ontrigger="SetTexture(param0);" />
+                    <label x="2.2h" width="100%" height="100%" font="dyn_12" textalign="left" textvalign="top" color="#FF69B4" watch="ItemTooltip" ontrigger="SetText(param1);" />
+                    <label width="100%" height="100%" font="dyn_12" textalign="right" textvalign="top" color="yellow" watch="ItemTooltip" ontrigger="SetText(param2);" />
+                </panel>
 
-				<panel width="100%" color="invisible" float="bottom" padding="0.8h" grow="true">
-					<label font="dyn_10" wrap="true" fity="true" watch="ItemTooltip" ontrigger="SetText(param3);" />
-					<label height="100%" font="dyn_8" textalign="left" textvalign="bottom" content="^gSHIFT^* + ^gLEFT CLICK^* to view recipes that use this item" />
-				</panel>
-			</panel>
-		</floater>
-	</template>
+                <panel width="100%" color="invisible" float="bottom" padding="0.8h" grow="true">
+                    <label font="dyn_10" wrap="true" fity="true" watch="ItemTooltip" ontrigger="SetText(param3);" />
+                    <label height="100%" font="dyn_8" textalign="left" textvalign="bottom" content="^gSHIFT^* + ^gLEFT CLICK^* to view recipes that use this item" />
+                </panel>
+            </panel>
+        </floater>
+    </template>
 
-	<tempplate name="old_shop"/>
+    <tempplate name="old_shop"/>
 </package>

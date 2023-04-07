@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <shop
-	name="Shop_Relics"
-	
-	allowremoteaccess="true"
+    name="Shop_Relics"
+    
+    allowremoteaccess="true"
 
-	style="relics"
-	header="/ui/elements/shop/shopkeeper_relics.tga"
-	
-	icon="shop_relics.tga"
-	order="1"
-	slot="2"
+    style="relics"
+    header="/ui/elements/shop/shopkeeper_relics.tga"
+    
+    icon="shop_relics.tga"
+    order="1"
+    slot="2"
 >
-	<item name="Item_GlovesOfHaste" />
-	<item name="Item_HungrySpirit" />
-	<item name="Item_TrinketOfRestoration" />
-	<item name="Item_PortalKey" />
+    <item name="Item_GlovesOfHaste" />
+    <item name="Item_HungrySpirit" />
+    <item name="Item_TrinketOfRestoration" />
+    <item name="Item_PortalKey" />
 
-	<item name="Item_Scarab" />
-	<item name="Item_Marchers" />
-	<item name="Item_BoundEye" />
-	<item name="Item_MysticVestments" />
-	
-	<item name="Item_SnakeBracelet" />
-	
-	<item name="Item_VoidTalisman" />
+    <item name="Item_Scarab" />
+    <item name="Item_Marchers" />
+    <item name="Item_BoundEye" />
+    <item name="Item_MysticVestments" />
+    
+    <item name="Item_SnakeBracelet" />
+    
+    <item name="Item_VoidTalisman" />
 </shop>

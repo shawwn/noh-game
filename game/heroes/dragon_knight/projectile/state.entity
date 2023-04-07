@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_DragonKnight_Ability4_Frost"
+    name="State_DragonKnight_Ability4_Frost"
 
-	
-	
-	icon="icon2.tga"
+    
+    
+    icon="icon2.tga"
 
-	passiveeffect="state.effect"
-	
-	attackspeed="-0.2"
-	movespeedslow="0.3"
-	
-	effecttype="StatusDebuff"
+    passiveeffect="state.effect"
+    
+    attackspeed="-0.2"
+    movespeedslow="0.3"
+    
+    effecttype="StatusDebuff"
 >
 </state>

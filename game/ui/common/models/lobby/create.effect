@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect>
-	<definitions>
-		<particlesystem name="system0" space="world">
-						
-			<simpleemitter				
-				bone="_bone_create_02"				
-				spawnrate="40"
-				particlelife="3200"				
-				speed="0"
-				gravity="0"
-				offsetsphere="0"
-				drag="0.02"
-				material="/shared/effects/materials/whitedot.material"
-				angle="0"				
-			>
-				<particle
-					startcolor="0 .4 .15"
-					endcolor="0 0 0"
-					midcolorpos=".1"
-					startsize="22"
-					endsize="20"
-				/>					
-			</simpleemitter>
+    <definitions>
+        <particlesystem name="system0" space="world">
+                        
+            <simpleemitter              
+                bone="_bone_create_02"              
+                spawnrate="40"
+                particlelife="3200"             
+                speed="0"
+                gravity="0"
+                offsetsphere="0"
+                drag="0.02"
+                material="/shared/effects/materials/whitedot.material"
+                angle="0"               
+            >
+                <particle
+                    startcolor="0 .4 .15"
+                    endcolor="0 0 0"
+                    midcolorpos=".1"
+                    startsize="22"
+                    endsize="20"
+                />                  
+            </simpleemitter>
 
-			
-			
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
-		<waitfordeath instance="instance0"/>
-		<!-- <die /> -->
-	</thread>
+            
+            
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0"/>
+        <waitfordeath instance="instance0"/>
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][position] -->

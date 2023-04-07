@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
-	<include file="player_stats.package"/>
-	
-	<panel name="cc_stats_window" y="-56.0h" x="-0.5h" width="46h" height="56.5h" align="right" color="0 0 0 .9" onclick="BringToFront();">
-		<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
-		
-		<panel width="-1.0h" align="center" noclick="1">
-			<instance name="no_frame" body="player_stats_full"/>
-		</panel>
-		
-		<!-- Stats Expand / Collapse Buttons -->
-		<panel y="2.75h" width="-1.0h" height="2.8h" align="center" valign="bottom" color="0 0 0 .9" noclick="1" onload="CreateBool('cc_stats_expanded', false);"
-			watch="CCStatisticsVisible"
-			ontrigger="if(param and !cc_stats_expanded, Split(PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'), Call('cc_stats_window', 'SlideY(\'0\', 250);'), ShowWidget('collapse'), HideWidget('expand'), ToggleWidget('cc_expand_up'), ToggleWidget('cc_expand_over'), Set(cc_stats_expanded, true)));
-			if(!param and cc_stats_expanded, Split(PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'), Call('cc_stats_window', 'SlideY(\'-56.0h\', 250);'), HideWidget('collapse'), ShowWidget('expand'), ToggleWidget('cc_expand_up'), Set(cc_stats_expanded, false)));"
-		>
-			<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 1" noclick="1" />
-			<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
-		
-			<panel name="expand" noclick="1">
-				<instance
-					height="2.2h" width="20.0h"
-					align="center"
-					valign="center"
-					name="button2"
-					font="dyn_10"
-					label="ccstats_button_show_stats"
-					onmouseover="PlaySound('/shared/sounds/ui/ccpanel/button_over_02.wav');"
-					onclick="PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'); Call('cc_stats_window', 'SlideY(\'0\', 250); BringToFront();'); ShowWidget('collapse'); HideWidget('expand');"
-				/>
-			</panel>
-			
-			<panel visible="0" name="collapse" noclick="1">
-				<instance
-					height="2.2h" width="20.0h"
-					align="center"
-					valign="center"
-					name="button2"
-					font="dyn_10"
-					label="ccstats_button_hide_stats"
-				onmouseover="PlaySound('/shared/sounds/ui/ccpanel/button_over_02.wav');"
-				onclick="PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'); Call('cc_stats_window', 'SlideY(\'-56.0h\', 250);'); HideWidget('collapse'); ShowWidget('expand');"
-				/>
-			</panel>			
-		</panel>
-		
-	</panel>
+    <include file="player_stats.package"/>
+    
+    <panel name="cc_stats_window" y="-56.0h" x="-0.5h" width="46h" height="56.5h" align="right" color="0 0 0 .9" onclick="BringToFront();">
+        <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+        
+        <panel width="-1.0h" align="center" noclick="1">
+            <instance name="no_frame" body="player_stats_full"/>
+        </panel>
+        
+        <!-- Stats Expand / Collapse Buttons -->
+        <panel y="2.75h" width="-1.0h" height="2.8h" align="center" valign="bottom" color="0 0 0 .9" noclick="1" onload="CreateBool('cc_stats_expanded', false);"
+            watch="CCStatisticsVisible"
+            ontrigger="if(param and !cc_stats_expanded, Split(PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'), Call('cc_stats_window', 'SlideY(\'0\', 250);'), ShowWidget('collapse'), HideWidget('expand'), ToggleWidget('cc_expand_up'), ToggleWidget('cc_expand_over'), Set(cc_stats_expanded, true)));
+            if(!param and cc_stats_expanded, Split(PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'), Call('cc_stats_window', 'SlideY(\'-56.0h\', 250);'), HideWidget('collapse'), ShowWidget('expand'), ToggleWidget('cc_expand_up'), Set(cc_stats_expanded, false)));"
+        >
+            <frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 1" noclick="1" />
+            <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+        
+            <panel name="expand" noclick="1">
+                <instance
+                    height="2.2h" width="20.0h"
+                    align="center"
+                    valign="center"
+                    name="button2"
+                    font="dyn_10"
+                    label="ccstats_button_show_stats"
+                    onmouseover="PlaySound('/shared/sounds/ui/ccpanel/button_over_02.wav');"
+                    onclick="PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'); Call('cc_stats_window', 'SlideY(\'0\', 250); BringToFront();'); ShowWidget('collapse'); HideWidget('expand');"
+                />
+            </panel>
+            
+            <panel visible="0" name="collapse" noclick="1">
+                <instance
+                    height="2.2h" width="20.0h"
+                    align="center"
+                    valign="center"
+                    name="button2"
+                    font="dyn_10"
+                    label="ccstats_button_hide_stats"
+                onmouseover="PlaySound('/shared/sounds/ui/ccpanel/button_over_02.wav');"
+                onclick="PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'); Call('cc_stats_window', 'SlideY(\'-56.0h\', 250);'); HideWidget('collapse'); ShowWidget('expand');"
+                />
+            </panel>            
+        </panel>
+        
+    </panel>
 
 </package>

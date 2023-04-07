@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_BarrierIdol"
+    name="Affector_BarrierIdol"
 
-	radius="500"
-	
-	targetselection="all"
-	targetscheme="ally_units"
-	effecttype="Magic BarrierIdol"
+    radius="500"
+    
+    targetselection="all"
+    targetscheme="ally_units"
+    effecttype="Magic BarrierIdol"
 >
-	<onimpact>
-		<applystate name="State_BarrierIdol" duration="8000" />
-		<applystate name="State_BarrierIdol_Immune" duration="50000" />
-		<playeffect effect="impact.effect" source="target_entity" target="target_entity"/>
-	</onimpact>
+    <onimpact>
+        <applystate name="State_BarrierIdol" duration="8000" />
+        <applystate name="State_BarrierIdol_Immune" duration="50000" />
+        <playeffect effect="impact.effect" source="target_entity" target="target_entity"/>
+    </onimpact>
 </affector>

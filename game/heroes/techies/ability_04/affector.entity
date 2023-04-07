@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Techies_Ability4_Detonate"
+    name="Affector_Techies_Ability4_Detonate"
 
-	radius="999999"
-	
-	targetselection="all"
-	targetscheme="all_units"
-	effecttype="Physical"
-	
-	effect=""
+    radius="999999"
+    
+    targetselection="all"
+    targetscheme="all_units"
+    effecttype="Physical"
+    
+    effect=""
 >
-	<onimpact>
-		<condition test="target_type RemoteMine">			
-			<useability slot="0" source="target_entity" />
-		</condition>		
-	</onimpact>
+    <onimpact>
+        <condition test="target_type RemoteMine">           
+            <useability slot="0" source="target_entity" />
+        </condition>        
+    </onimpact>
 </affector>

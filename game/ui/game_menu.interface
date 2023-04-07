@@ -1,596 +1,596 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface name="game_menu">
-	<!-- Fonts -->
-	<include file="ui_items.package"/>
-	<include file="player_stats.package"/>
+    <!-- Fonts -->
+    <include file="ui_items.package"/>
+    <include file="player_stats.package"/>
 
-	<trigger name="GameMenuTooltipText"/>
-	
-	<!-- Templates -->
-	<template name="sharing_checkbox_state">
-		<widgetstate statename="{state}" float="right" padding="3%">
-			<panel width="{size}" color="invisible">
-				<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="4" color="white"/>
-				<frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="6"/>
-				<image x="0" y="0" width="75%" height="75%" align="center" valign="center" texture="/ui/elements/check.tga" visible="{checked}" />
-			</panel>
-			<label width="-{size}" height="100%" textvalign="center" font="{font}" color="{color}" shadow="true">{label}</label>
-		</widgetstate>
-	</template>
+    <trigger name="GameMenuTooltipText"/>
+    
+    <!-- Templates -->
+    <template name="sharing_checkbox_state">
+        <widgetstate statename="{state}" float="right" padding="3%">
+            <panel width="{size}" color="invisible">
+                <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="4" color="white"/>
+                <frame texture="/ui/frames/roundframe.tga" color="#3abde7" borderthickness="6"/>
+                <image x="0" y="0" width="75%" height="75%" align="center" valign="center" texture="/ui/elements/check.tga" visible="{checked}" />
+            </panel>
+            <label width="-{size}" height="100%" textvalign="center" font="{font}" color="{color}" shadow="true">{label}</label>
+        </widgetstate>
+    </template>
 
-	<template name="sharing_checkbox">
-		<panel height="1.5h" align="left" valign="center" noclick="true" color="invisible">
-			<button
-				color="invisible"
-				numstates="2"
-				watch="{watch}"
-				ontrigger="{ontrigger}"
-			>
-				<instance name="sharing_checkbox_state" state="up" size="1.5h" label="{label}" font="{font=dyn_9}" color="white" checked="false"/>
-				<instance name="sharing_checkbox_state" state="over" size="1.5h" label="{label}" font="{font=dyn_9}" color="#3abde7" checked="false"/>
-				<instance name="sharing_checkbox_state" state="down" size="1.5h" label="{label}" font="{font=dyn_9}" color="#3abde7" checked="false"/>
-				<instance name="sharing_checkbox_state" state="up2" size="1.5h" label="{label}" font="{font=dyn_9}" color="#ffaa00" checked="true"/>
-				<instance name="sharing_checkbox_state" state="over2" size="1.5h" label="{label}" font="{font=dyn_9}" color="#3abde7" checked="true"/>
-				<instance name="sharing_checkbox_state" state="down2" size="1.5h" label="{label}" font="{font=dyn_9}" color="#3abde7" checked="true"/>
-			</button>
-		</panel>
-	</template>
+    <template name="sharing_checkbox">
+        <panel height="1.5h" align="left" valign="center" noclick="true" color="invisible">
+            <button
+                color="invisible"
+                numstates="2"
+                watch="{watch}"
+                ontrigger="{ontrigger}"
+            >
+                <instance name="sharing_checkbox_state" state="up" size="1.5h" label="{label}" font="{font=dyn_9}" color="white" checked="false"/>
+                <instance name="sharing_checkbox_state" state="over" size="1.5h" label="{label}" font="{font=dyn_9}" color="#3abde7" checked="false"/>
+                <instance name="sharing_checkbox_state" state="down" size="1.5h" label="{label}" font="{font=dyn_9}" color="#3abde7" checked="false"/>
+                <instance name="sharing_checkbox_state" state="up2" size="1.5h" label="{label}" font="{font=dyn_9}" color="#ffaa00" checked="true"/>
+                <instance name="sharing_checkbox_state" state="over2" size="1.5h" label="{label}" font="{font=dyn_9}" color="#3abde7" checked="true"/>
+                <instance name="sharing_checkbox_state" state="down2" size="1.5h" label="{label}" font="{font=dyn_9}" color="#3abde7" checked="true"/>
+            </button>
+        </panel>
+    </template>
 
-	<template name="addfriend_button">
-		<panel
-			x="-0.4h"
-			width="1.8h" height="1.8h"
-			align="right" valign="center"
-			watch="MenuPlayerInfo{index}"
-			ontrigger="
-				CreateString('_add_buddy_name_{index}', param1);
-				If(IsLoggedIn() and param11 ge 0 and !IsBuddy(param1), ShowWidget('add_friend_{index}'), HideWidget('add_friend_{index}'));
-				"
-		>
-			<button
-				group="{group}"
-				name="add_friend_{index}"
-				color="invisible"
-				watch="MenuPlayerInfo{index}"
-				ontrigger="
-					SetOnmouseover('
-						ShowWidget(\'menu_tooltip\');
-						Call(\'tooltip_label\', \'SetText(Translate(\\\'game_menu_add_friend_tip\\\', \\\'player\\\', \\\'' # param1 # param2 # '\\\'));\');
-					');
-					SetOnclick('
-						PlaySound(\'/shared/sounds/ui/button_click_05.wav\'); ChatAddBuddy(\'' # param2 # '\'); SetVisible(false);
-					');					
-				"
-				onmouseout="HideWidget('menu_tooltip');"
-			>
-				<widgetstate statename="up">
-					<image texture="/ui/elements/addfriend_up.tga" />
-				</widgetstate>
+    <template name="addfriend_button">
+        <panel
+            x="-0.4h"
+            width="1.8h" height="1.8h"
+            align="right" valign="center"
+            watch="MenuPlayerInfo{index}"
+            ontrigger="
+                CreateString('_add_buddy_name_{index}', param1);
+                If(IsLoggedIn() and param11 ge 0 and !IsBuddy(param1), ShowWidget('add_friend_{index}'), HideWidget('add_friend_{index}'));
+                "
+        >
+            <button
+                group="{group}"
+                name="add_friend_{index}"
+                color="invisible"
+                watch="MenuPlayerInfo{index}"
+                ontrigger="
+                    SetOnmouseover('
+                        ShowWidget(\'menu_tooltip\');
+                        Call(\'tooltip_label\', \'SetText(Translate(\\\'game_menu_add_friend_tip\\\', \\\'player\\\', \\\'' # param1 # param2 # '\\\'));\');
+                    ');
+                    SetOnclick('
+                        PlaySound(\'/shared/sounds/ui/button_click_05.wav\'); ChatAddBuddy(\'' # param2 # '\'); SetVisible(false);
+                    ');                 
+                "
+                onmouseout="HideWidget('menu_tooltip');"
+            >
+                <widgetstate statename="up">
+                    <image texture="/ui/elements/addfriend_up.tga" />
+                </widgetstate>
 
-				<widgetstate statename="over">
-					<image texture="/ui/elements/addfriend_over.tga" />
-				</widgetstate>
+                <widgetstate statename="over">
+                    <image texture="/ui/elements/addfriend_over.tga" />
+                </widgetstate>
 
-				<widgetstate statename="down">
-					<image x="1" y="1" texture="/ui/elements/addfriend_over.tga" />
-				</widgetstate>
+                <widgetstate statename="down">
+                    <image x="1" y="1" texture="/ui/elements/addfriend_over.tga" />
+                </widgetstate>
 
-				<widgetstate statename="disabled">
-					<image texture="/ui/elements/addfriend_over.tga" />
-				</widgetstate>
-			</button>
-		</panel>
-	</template>
-	
-	<template name="empty_slot">
-		<panel height="3.0h" width="-0.5h" align="left">
-			<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color=".7 .7 .7 1" noclick="1" />
-			<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
-			
-			<label height="100%" textalign="center" textvalign="center" font="dyn_10" color="1 1 1 .5" shadow="1" wrap="true" noclick="true" content="game_menu_empty_slot"/>
-		</panel>	
-	</template>
+                <widgetstate statename="disabled">
+                    <image texture="/ui/elements/addfriend_over.tga" />
+                </widgetstate>
+            </button>
+        </panel>
+    </template>
+    
+    <template name="empty_slot">
+        <panel height="3.0h" width="-0.5h" align="left">
+            <frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color=".7 .7 .7 1" noclick="1" />
+            <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+            
+            <label height="100%" textalign="center" textvalign="center" font="dyn_10" color="1 1 1 .5" shadow="1" wrap="true" noclick="true" content="game_menu_empty_slot"/>
+        </panel>    
+    </template>
 
-	<template name="sharing_panel">
-		<panel height="3.0h" width="-0.5h" align="left" watch="MenuPlayerInfo{index}" ontrigger="SetVisible(param0 ge 0);">			
+    <template name="sharing_panel">
+        <panel height="3.0h" width="-0.5h" align="left" watch="MenuPlayerInfo{index}" ontrigger="SetVisible(param0 ge 0);">         
 
-			<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color=".7 .7 .7 1" noclick="1" />
-			<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+            <frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color=".7 .7 .7 1" noclick="1" />
+            <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
 
-			<!-- Status Icon -->
-			<image
-				x="0.5h"
-				width="80@" height="80%"
-				valign="center"
-				watch="MenuPlayerInfo{index}"
-				ontrigger="
-					SetVisible(true);
-					If(param12 != 0,
-						If(param12 == 1, SetTexture('/ui/icons/thumbsup_up.tga'), SetTexture('/ui/icons/thumbsdown_up.tga')),
-						If(param13 lt 1,
-							SetTexture('/ui/elements/lobby/icon_loading.tga'),
-							If(param8,
-								SetTexture('/ui/elements/disconnect.tga'),
-								SetVisible(false)
-							)
-						)
-					);
-				"
-			/>
-			
-			<!-- Hero Icon -->
-			<image
-				x="2.9h"
-				width="80@" height="80%"
-				valign="center"
-				watch="MenuPlayerInfo{index}"
-				ontrigger="
-					SetTexture(param6);
-					If(param9, SetRenderMode('grayscale'), SetRenderMode('normal'));
-					SetOnmouseover('
-						ShowWidget(\'menu_tooltip\');
-						Trigger(\'GameMenuTooltipText\', \'' # param14 # '\');
-					');
-				"
-				onmouseout="HideWidget('menu_tooltip');"
-			/>
-			
-			<!-- Name -->
-			<label
-				x="5.7h"
-				fitx="true"
-				font="dyn_10"
-				textvalign="center"
-				shadow="true"
-				watch="MenuPlayerInfo{index}"
-				ontrigger="SetText(param1 # param2);"
-			/>			
+            <!-- Status Icon -->
+            <image
+                x="0.5h"
+                width="80@" height="80%"
+                valign="center"
+                watch="MenuPlayerInfo{index}"
+                ontrigger="
+                    SetVisible(true);
+                    If(param12 != 0,
+                        If(param12 == 1, SetTexture('/ui/icons/thumbsup_up.tga'), SetTexture('/ui/icons/thumbsdown_up.tga')),
+                        If(param13 lt 1,
+                            SetTexture('/ui/elements/lobby/icon_loading.tga'),
+                            If(param8,
+                                SetTexture('/ui/elements/disconnect.tga'),
+                                SetVisible(false)
+                            )
+                        )
+                    );
+                "
+            />
+            
+            <!-- Hero Icon -->
+            <image
+                x="2.9h"
+                width="80@" height="80%"
+                valign="center"
+                watch="MenuPlayerInfo{index}"
+                ontrigger="
+                    SetTexture(param6);
+                    If(param9, SetRenderMode('grayscale'), SetRenderMode('normal'));
+                    SetOnmouseover('
+                        ShowWidget(\'menu_tooltip\');
+                        Trigger(\'GameMenuTooltipText\', \'' # param14 # '\');
+                    ');
+                "
+                onmouseout="HideWidget('menu_tooltip');"
+            />
+            
+            <!-- Name -->
+            <label
+                x="5.7h"
+                fitx="true"
+                font="dyn_10"
+                textvalign="center"
+                shadow="true"
+                watch="MenuPlayerInfo{index}"
+                ontrigger="SetText(param1 # param2);"
+            />          
 
-			<!-- Ally functions -->
-			<panel width="-100@" color="invisible" watch="MenuPlayerInfo{index}" ontrigger="SetVisible(param3 and !param10);" noclick="true">
-				<instance name="player_voice_button"
-					align="right"
-					x="-13.4h"
-					width="70@" height="70%"
-					texture="/ui/elements/chat_icon.tga"
-					teamindex="{index}"
-					alwaysvisible="true"
-				/>
+            <!-- Ally functions -->
+            <panel width="-100@" color="invisible" watch="MenuPlayerInfo{index}" ontrigger="SetVisible(param3 and !param10);" noclick="true">
+                <instance name="player_voice_button"
+                    align="right"
+                    x="-13.4h"
+                    width="70@" height="70%"
+                    texture="/ui/elements/chat_icon.tga"
+                    teamindex="{index}"
+                    alwaysvisible="true"
+                />
 
-				<!-- Full Share -->
-				<panel x="-7.0h" align="right" width="5.0h" color="invisible">
-					<instance
-						name="sharing_checkbox"
-						height="2.0h"
-						font="dyn_9"
-						label="game_menu_share_full"
-						watch="MenuPlayerInfo{index}"
-						ontrigger="
-							If(param4, SetButtonState(1), SetButtonState(0));
-							SetOnclick('
-								PlaySound(\'/shared/sounds/ui/button_click.mp3\');
-								If(GetValue(), ShareFullControl(' # param0 # '), UnshareFullControl(' # param0 # '));
-								');
-							"
-					/>
-				</panel>
+                <!-- Full Share -->
+                <panel x="-7.0h" align="right" width="5.0h" color="invisible">
+                    <instance
+                        name="sharing_checkbox"
+                        height="2.0h"
+                        font="dyn_9"
+                        label="game_menu_share_full"
+                        watch="MenuPlayerInfo{index}"
+                        ontrigger="
+                            If(param4, SetButtonState(1), SetButtonState(0));
+                            SetOnclick('
+                                PlaySound(\'/shared/sounds/ui/button_click.mp3\');
+                                If(GetValue(), ShareFullControl(' # param0 # '), UnshareFullControl(' # param0 # '));
+                                ');
+                            "
+                    />
+                </panel>
 
-				<!-- Courier Share -->
-				<panel align="right" width="7.0h" color="invisible">
-					<instance
-						name="sharing_checkbox"
-						height="2.0h"
-						font="dyn_9"
-						label="game_menu_share_courier"
-						watch="MenuPlayerInfo{index}"
-						ontrigger="
-							If(param5, SetButtonState(1), SetButtonState(0));
-							SetOnclick('
-								PlaySound(\'/shared/sounds/ui/button_click.mp3\');
-								If(GetValue(), SharePartialControl(' # param0 # '), UnsharePartialControl(' # param0 # '));
-								');
-							"
-					/>
-				</panel>
-			</panel>
+                <!-- Courier Share -->
+                <panel align="right" width="7.0h" color="invisible">
+                    <instance
+                        name="sharing_checkbox"
+                        height="2.0h"
+                        font="dyn_9"
+                        label="game_menu_share_courier"
+                        watch="MenuPlayerInfo{index}"
+                        ontrigger="
+                            If(param5, SetButtonState(1), SetButtonState(0));
+                            SetOnclick('
+                                PlaySound(\'/shared/sounds/ui/button_click.mp3\');
+                                If(GetValue(), SharePartialControl(' # param0 # '), UnsharePartialControl(' # param0 # '));
+                                ');
+                            "
+                    />
+                </panel>
+            </panel>
 
-			<!-- Vote Kick -->
-			<panel x="-0.5h" width="70@" height="70%" valign="center" align="right" watch="MenuPlayerInfo{index}" ontrigger="SetVisible(param3 and !param10);">
-				<button
-					texture="/ui/elements/kick.tga"
-					watch="MenuPlayerInfo{index}"
-					ontrigger="
-						SetOnclick('CallVote(\'kick\', ' # param0 # ');');
-						SetOnmouseover('
-							ShowWidget(\'menu_tooltip\');
-							Trigger(\'GameMenuTooltipText\', Translate(\'game_menu_kick_tooltip\', \'player\', \'' # param1 # param2 # '\'));
-						');
-					"
-					watch0="VotePermissions"
-					ontrigger0="SetEnabled(!param0 and !param1);"
-					onmouseout="HideWidget('menu_tooltip');"
-				/>
-				<panel
-					color="invisible"
-					watch="VotePermissions"
-					ontrigger="
-						SetVisible(param0 or param1);
-						If(param0,
-							SetOnmouseover('
-								ShowWidget(\'menu_tooltip\');
-								Trigger(\'GameMenuTooltipText\', Translate(\'game_menu_kick_disabled_other_vote_tooltip\'));
-							'),
-							If(param1,
-								SetOnmouseover('
-									ShowWidget(\'menu_tooltip\');
-									Trigger(\'GameMenuTooltipText\', Translate(\'game_menu_kick_disabled_cooldown_tooltip\', \'time\', \'' # Round(param1 / 1000) # '\'));
-								')
-							)
-						);
-					"
-					onmouseout="HideWidget('menu_tooltip');"
-				/>
-			</panel>
+            <!-- Vote Kick -->
+            <panel x="-0.5h" width="70@" height="70%" valign="center" align="right" watch="MenuPlayerInfo{index}" ontrigger="SetVisible(param3 and !param10);">
+                <button
+                    texture="/ui/elements/kick.tga"
+                    watch="MenuPlayerInfo{index}"
+                    ontrigger="
+                        SetOnclick('CallVote(\'kick\', ' # param0 # ');');
+                        SetOnmouseover('
+                            ShowWidget(\'menu_tooltip\');
+                            Trigger(\'GameMenuTooltipText\', Translate(\'game_menu_kick_tooltip\', \'player\', \'' # param1 # param2 # '\'));
+                        ');
+                    "
+                    watch0="VotePermissions"
+                    ontrigger0="SetEnabled(!param0 and !param1);"
+                    onmouseout="HideWidget('menu_tooltip');"
+                />
+                <panel
+                    color="invisible"
+                    watch="VotePermissions"
+                    ontrigger="
+                        SetVisible(param0 or param1);
+                        If(param0,
+                            SetOnmouseover('
+                                ShowWidget(\'menu_tooltip\');
+                                Trigger(\'GameMenuTooltipText\', Translate(\'game_menu_kick_disabled_other_vote_tooltip\'));
+                            '),
+                            If(param1,
+                                SetOnmouseover('
+                                    ShowWidget(\'menu_tooltip\');
+                                    Trigger(\'GameMenuTooltipText\', Translate(\'game_menu_kick_disabled_cooldown_tooltip\', \'time\', \'' # Round(param1 / 1000) # '\'));
+                                ')
+                            )
+                        );
+                    "
+                    onmouseout="HideWidget('menu_tooltip');"
+                />
+            </panel>
 
-			<instance name="addfriend_button" index="{index}" />
-		</panel>
-	</template>
-	
-	<template name="game_options">
-		<instance name="header_bar" lbl="game_menu_header" height="2.5h" show_close="1" onclick="ToggleMenu();" />
-		
-		<panel y="3.0h" width="18.0h" height="-3.0h" color="invisible">
-			<instance height="2.5h" name="header_bar" lbl="game_menu_client_functions_header" lbl_font="dyn_9" show_close="0" />
+            <instance name="addfriend_button" index="{index}" />
+        </panel>
+    </template>
+    
+    <template name="game_options">
+        <instance name="header_bar" lbl="game_menu_header" height="2.5h" show_close="1" onclick="ToggleMenu();" />
+        
+        <panel y="3.0h" width="18.0h" height="-3.0h" color="invisible">
+            <instance height="2.5h" name="header_bar" lbl="game_menu_client_functions_header" lbl_font="dyn_9" show_close="0" />
 
-			<panel y="2.7h" height="-2.7h">
-				<frame y="0" color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
-				<panel y="2.5h" width="-3.0h" align="center" color="invisible" float="bottom" padding="1.8h" noclick="1">
-					<instance name="button2" height="2.9h" align="center" font="dyn_10" label="game_menu_return_button" onclick="ToggleMenu();"/>
-					<instance name="button2" height="2.4h" align="center" font="dyn_10" label="game_menu_options_button" onclick="Call('Noptions', 'FadeIn(250);');"/>
-					<instance name="button2" height="2.9h" align="center" font="dyn_10" label="game_menu_disconnect_button" onclick="Disconnect();"/>
-					<instance name="button2" height="2.9h" align="center" font="dyn_10" label="game_menu_quit_button" onclick="Quit();"/>
-				</panel>
-				
-								
-				<label
-					y="-0.5h"
-					width="-3.0h" height="1.4h"
-					align="center"
-					valign="bottom"
-					textalign="left" textvalign="center"
-					font="dyn_8" color="white"
-					noclick="1"
-					watch="MatchID"
-					ontrigger="SetText(Translate('game_menu_match_id', 'id', param));"
-				/>
-			</panel>
-			<panel width="-1.2h" height="2.4h" align="center">
-				<instance name="button2" width="-2.5h" font="dyn_10" label="game_menu_pause_button" onclick="CallVote('pause');" ontrigger="SetEnabled(!param0 and !param1 and param5 and !param6); "/>
-				<image
-					width="2.2h" height="2.2h"
-					valign="center"
-					align="right"
-					texture="/ui/elements/tip_mark_up.tga"
-					onmouseover="SetTexture('/ui/elements/tip_mark_over.tga'); ShowWidget('menu_tooltip'); Trigger('GameMenuTooltipText', Translate('game_menu_pause_tooltip'));"
-					onmouseout="SetTexture('/ui/elements/tip_mark_up.tga'); HideWidget('menu_tooltip');"
-				/>
-			</panel>
-			<panel width="-1.2h" height="2.4h" align="center">
-				<instance name="button2" width="-2.5h" font="dyn_10" label="game_menu_unpause_button" onclick="Unpause();" ontrigger="SetEnabled(param6 and param7);"/>
-				<image
-					width="2.2h" height="2.2h"
-					valign="center"
-					align="right"
-					texture="/ui/elements/tip_mark_up.tga"
-					onmouseover="SetTexture('/ui/elements/tip_mark_over.tga'); ShowWidget('menu_tooltip'); Trigger('GameMenuTooltipText', Translate('game_menu_unpause_tooltip'));"
-					onmouseout="SetTexture('/ui/elements/tip_mark_up.tga'); HideWidget('menu_tooltip');"
-				/>
-			</panel>
-		</panel>
-		
-		<!-- Player options -->
-		<panel y="3.0h" width="-19.0h" height="-3.0h" align="right" color="invisible">
-			<instance height="2.5h" name="header_bar" lbl="game_menu_share_control_header" lbl_font="dyn_9" show_close="0" />
+            <panel y="2.7h" height="-2.7h">
+                <frame y="0" color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+                <panel y="2.5h" width="-3.0h" align="center" color="invisible" float="bottom" padding="1.8h" noclick="1">
+                    <instance name="button2" height="2.9h" align="center" font="dyn_10" label="game_menu_return_button" onclick="ToggleMenu();"/>
+                    <instance name="button2" height="2.4h" align="center" font="dyn_10" label="game_menu_options_button" onclick="Call('Noptions', 'FadeIn(250);');"/>
+                    <instance name="button2" height="2.9h" align="center" font="dyn_10" label="game_menu_disconnect_button" onclick="Disconnect();"/>
+                    <instance name="button2" height="2.9h" align="center" font="dyn_10" label="game_menu_quit_button" onclick="Quit();"/>
+                </panel>
+                
+                                
+                <label
+                    y="-0.5h"
+                    width="-3.0h" height="1.4h"
+                    align="center"
+                    valign="bottom"
+                    textalign="left" textvalign="center"
+                    font="dyn_8" color="white"
+                    noclick="1"
+                    watch="MatchID"
+                    ontrigger="SetText(Translate('game_menu_match_id', 'id', param));"
+                />
+            </panel>
+            <panel width="-1.2h" height="2.4h" align="center">
+                <instance name="button2" width="-2.5h" font="dyn_10" label="game_menu_pause_button" onclick="CallVote('pause');" ontrigger="SetEnabled(!param0 and !param1 and param5 and !param6); "/>
+                <image
+                    width="2.2h" height="2.2h"
+                    valign="center"
+                    align="right"
+                    texture="/ui/elements/tip_mark_up.tga"
+                    onmouseover="SetTexture('/ui/elements/tip_mark_over.tga'); ShowWidget('menu_tooltip'); Trigger('GameMenuTooltipText', Translate('game_menu_pause_tooltip'));"
+                    onmouseout="SetTexture('/ui/elements/tip_mark_up.tga'); HideWidget('menu_tooltip');"
+                />
+            </panel>
+            <panel width="-1.2h" height="2.4h" align="center">
+                <instance name="button2" width="-2.5h" font="dyn_10" label="game_menu_unpause_button" onclick="Unpause();" ontrigger="SetEnabled(param6 and param7);"/>
+                <image
+                    width="2.2h" height="2.2h"
+                    valign="center"
+                    align="right"
+                    texture="/ui/elements/tip_mark_up.tga"
+                    onmouseover="SetTexture('/ui/elements/tip_mark_over.tga'); ShowWidget('menu_tooltip'); Trigger('GameMenuTooltipText', Translate('game_menu_unpause_tooltip'));"
+                    onmouseout="SetTexture('/ui/elements/tip_mark_up.tga'); HideWidget('menu_tooltip');"
+                />
+            </panel>
+        </panel>
+        
+        <!-- Player options -->
+        <panel y="3.0h" width="-19.0h" height="-3.0h" align="right" color="invisible">
+            <instance height="2.5h" name="header_bar" lbl="game_menu_share_control_header" lbl_font="dyn_9" show_close="0" />
 
-			<panel y="2.7h" height="-2.7h">
-				<frame y="0" color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+            <panel y="2.7h" height="-2.7h">
+                <frame y="0" color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
 
-				<label y="1.0h" width="-1.4h" height="4.0h" align="center" font="dyn_9" color="white" shadow="1" wrap="1">game_menu_share_control_text</label>
+                <label y="1.0h" width="-1.4h" height="4.0h" align="center" font="dyn_9" color="white" shadow="1" wrap="1">game_menu_share_control_text</label>
 
-				<!-- Empty Slots -->
-				<panel y="6.6h" width="-1.4h" align="center" color="invisible" noclick="true" float="bottom" padding="0.9h">
-					<panel height="2.9h" width="100%" color="invisible" noclick="1"></panel>
-					<instance name="empty_slot"/>
-					<instance name="empty_slot"/>
-					<instance name="empty_slot"/>
-					<instance name="empty_slot"/>
-					<instance name="empty_slot"/>
-					<panel height="2.9h" width="100%" color="invisible" noclick="1"></panel>
-					<instance name="empty_slot"/>
-					<instance name="empty_slot"/>
-					<instance name="empty_slot"/>
-					<instance name="empty_slot"/>
-					<instance name="empty_slot"/>
-				</panel>
-				
-				<panel y="6.6h" width="-1.4h" align="center" color="invisible" noclick="true" float="bottom" padding="0.9h">					
-					<panel height="2.9h" width="100%" align="left" color="invisible" noclick="1">
-						<instance height="2.4h" name="header_bar" lbl="endstats_header_legion_players" lbl_font="dyn_10" show_close="0" />
-					</panel>
-					<instance name="sharing_panel" index="0"/>
-					<instance name="sharing_panel" index="1"/>
-					<instance name="sharing_panel" index="2"/>
-					<instance name="sharing_panel" index="3"/>
-					<instance name="sharing_panel" index="4"/>
-					<panel height="2.9h" width="100%" align="left" color="invisible" noclick="1">
-						<instance height="2.4h" name="header_bar" lbl="endstats_header_hellbourne_players" lbl_font="dyn_10" show_close="0" />
-					</panel>
-					<instance name="sharing_panel" index="5"/>
-					<instance name="sharing_panel" index="6"/>
-					<instance name="sharing_panel" index="7"/>
-					<instance name="sharing_panel" index="8"/>
-					<instance name="sharing_panel" index="9"/>
-				</panel>
-				
-				
-			</panel>
-		</panel>
-	</template>
-	
-	<template name="disconnect_confirmation_leaver">	
-		<label y="1.0h" width="-4.0h" height="3.0h" textalign="center" align="center" font="dyn_12" color="yellow" shadow="1" wrap="true" noclick="true">game_menu_disconnect_confirm</label>
-		<panel y="4.0h" align="center" color="invisible" width="100%" grow="true">
-			<frame  texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .75" borderthickness=".6h" />
-			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
-			<panel y="0.5h" float="bottom" noclick="1" color="invisible" grow="true" width="-2.0h" align="center">
-				
-				<panel align="center" width="100%" color="invisible" grow="true" noclick="true" float="right">
-					<label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" content="game_menu_currentleavepercent" />
-					<label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(FtoA(param8 * 100, 2) # '%%');" />
-				</panel>				
-				<panel align="center" width="100%" color="invisible" grow="true" noclick="true" float="right">
-					<label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" content="game_menu_newleavepercent" />
-					<label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(FtoA(param9 * 100, 2) # '%%');" />
-				</panel>
-				<panel align="center" width="100%" color="invisible" grow="true" noclick="true" float="right">
-					<label fitx="true" fitxpadding="1.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" content="game_menu_newleavethreshold" />
-					<label fitx="true" fitxpadding="1.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(FtoA(param10 * 100, 2) # '%%');" />
-				</panel>
-				<label fity="true" fitypadding="0.5h" width="-2.0h" textalign="left" font="dyn_10" color="#3abde7" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(If(param7, 'You will NOT be able to join leaver protected games if you disconnect from this game.', 'You will NOT become a leaver if you disconnect from this game.'));" />
-			</panel>
-		</panel>
+                <!-- Empty Slots -->
+                <panel y="6.6h" width="-1.4h" align="center" color="invisible" noclick="true" float="bottom" padding="0.9h">
+                    <panel height="2.9h" width="100%" color="invisible" noclick="1"></panel>
+                    <instance name="empty_slot"/>
+                    <instance name="empty_slot"/>
+                    <instance name="empty_slot"/>
+                    <instance name="empty_slot"/>
+                    <instance name="empty_slot"/>
+                    <panel height="2.9h" width="100%" color="invisible" noclick="1"></panel>
+                    <instance name="empty_slot"/>
+                    <instance name="empty_slot"/>
+                    <instance name="empty_slot"/>
+                    <instance name="empty_slot"/>
+                    <instance name="empty_slot"/>
+                </panel>
+                
+                <panel y="6.6h" width="-1.4h" align="center" color="invisible" noclick="true" float="bottom" padding="0.9h">                    
+                    <panel height="2.9h" width="100%" align="left" color="invisible" noclick="1">
+                        <instance height="2.4h" name="header_bar" lbl="endstats_header_legion_players" lbl_font="dyn_10" show_close="0" />
+                    </panel>
+                    <instance name="sharing_panel" index="0"/>
+                    <instance name="sharing_panel" index="1"/>
+                    <instance name="sharing_panel" index="2"/>
+                    <instance name="sharing_panel" index="3"/>
+                    <instance name="sharing_panel" index="4"/>
+                    <panel height="2.9h" width="100%" align="left" color="invisible" noclick="1">
+                        <instance height="2.4h" name="header_bar" lbl="endstats_header_hellbourne_players" lbl_font="dyn_10" show_close="0" />
+                    </panel>
+                    <instance name="sharing_panel" index="5"/>
+                    <instance name="sharing_panel" index="6"/>
+                    <instance name="sharing_panel" index="7"/>
+                    <instance name="sharing_panel" index="8"/>
+                    <instance name="sharing_panel" index="9"/>
+                </panel>
+                
+                
+            </panel>
+        </panel>
+    </template>
+    
+    <template name="disconnect_confirmation_leaver">    
+        <label y="1.0h" width="-4.0h" height="3.0h" textalign="center" align="center" font="dyn_12" color="yellow" shadow="1" wrap="true" noclick="true">game_menu_disconnect_confirm</label>
+        <panel y="4.0h" align="center" color="invisible" width="100%" grow="true">
+            <frame  texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .75" borderthickness=".6h" />
+            <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
+            <panel y="0.5h" float="bottom" noclick="1" color="invisible" grow="true" width="-2.0h" align="center">
+                
+                <panel align="center" width="100%" color="invisible" grow="true" noclick="true" float="right">
+                    <label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" content="game_menu_currentleavepercent" />
+                    <label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(FtoA(param8 * 100, 2) # '%%');" />
+                </panel>                
+                <panel align="center" width="100%" color="invisible" grow="true" noclick="true" float="right">
+                    <label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" content="game_menu_newleavepercent" />
+                    <label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(FtoA(param9 * 100, 2) # '%%');" />
+                </panel>
+                <panel align="center" width="100%" color="invisible" grow="true" noclick="true" float="right">
+                    <label fitx="true" fitxpadding="1.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" content="game_menu_newleavethreshold" />
+                    <label fitx="true" fitxpadding="1.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(FtoA(param10 * 100, 2) # '%%');" />
+                </panel>
+                <label fity="true" fitypadding="0.5h" width="-2.0h" textalign="left" font="dyn_10" color="#3abde7" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(If(param7, 'You will NOT be able to join leaver protected games if you disconnect from this game.', 'You will NOT become a leaver if you disconnect from this game.'));" />
+            </panel>
+        </panel>
 
-		<instance
-			name="button2"
-			y="-0.5h"
-			x="1.0h"
-			height="2.4h"
-			width="10.0h"
-			align="left"
-			valign="bottom"
-			label="general_cancel"
-			onclick="Call('disconnect_confirm', 'FadeOut(250);');"
-		/>
+        <instance
+            name="button2"
+            y="-0.5h"
+            x="1.0h"
+            height="2.4h"
+            width="10.0h"
+            align="left"
+            valign="bottom"
+            label="general_cancel"
+            onclick="Call('disconnect_confirm', 'FadeOut(250);');"
+        />
 
-		<instance
-			name="button2"
-			y="-0.5h"
-			x="-1.0h"
-			height="2.4h"
-			width="10.0h"
-			align="right"
-			valign="bottom"
-			label="game_menu_disconnect_button"
-			onclick="HideWidget('disconnect_confirm'); Disconnect(); If(IsLoggedIn(), SetHostInterface('browser'), SetHostInterface('main'));"
-		/>	
-	</template>
-	
-	<template name="disconnect_confirmation">	
-		<label y="1.0h" width="100%" height="3.0h" textalign="center" align="center" font="dyn_12" color="yellow" shadow="1" wrap="true" noclick="true">game_menu_disconnect_confirm</label>
+        <instance
+            name="button2"
+            y="-0.5h"
+            x="-1.0h"
+            height="2.4h"
+            width="10.0h"
+            align="right"
+            valign="bottom"
+            label="game_menu_disconnect_button"
+            onclick="HideWidget('disconnect_confirm'); Disconnect(); If(IsLoggedIn(), SetHostInterface('browser'), SetHostInterface('main'));"
+        />  
+    </template>
+    
+    <template name="disconnect_confirmation">   
+        <label y="1.0h" width="100%" height="3.0h" textalign="center" align="center" font="dyn_12" color="yellow" shadow="1" wrap="true" noclick="true">game_menu_disconnect_confirm</label>
 
-		<panel y="4.0h" width="-2.0h" align="center" color="invisible" grow="true">
-			<frame texture="/ui/frames/tooltip_bg.tga" color="#0c1b3b" borderthickness=".6h"/>
-			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
-			<label fity="true" fitypadding="1.0h" width="-1.4h" textvalign="center" textalign="left" align="center" font="dyn_10" color="white" shadow="1" noclick="1" wrap="1">game_menu_disconnect_noleaver</label>
-		</panel>
+        <panel y="4.0h" width="-2.0h" align="center" color="invisible" grow="true">
+            <frame texture="/ui/frames/tooltip_bg.tga" color="#0c1b3b" borderthickness=".6h"/>
+            <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
+            <label fity="true" fitypadding="1.0h" width="-1.4h" textvalign="center" textalign="left" align="center" font="dyn_10" color="white" shadow="1" noclick="1" wrap="1">game_menu_disconnect_noleaver</label>
+        </panel>
 
-		<instance
-			name="button2"
-			y="-0.5h"
-			x="1.0h"
-			height="2.4h"
-			width="10.0h"
-			align="left"
-			valign="bottom"
-			label="general_cancel"
-			onclick="Call('disconnect_confirm', 'FadeOut(250);');"
-		/>
+        <instance
+            name="button2"
+            y="-0.5h"
+            x="1.0h"
+            height="2.4h"
+            width="10.0h"
+            align="left"
+            valign="bottom"
+            label="general_cancel"
+            onclick="Call('disconnect_confirm', 'FadeOut(250);');"
+        />
 
-		<instance
-			name="button2"
-			y="-0.5h"
-			x="-1.0h"
-			height="2.4h"
-			width="10.0h"
-			align="right"
-			valign="bottom"
-			label="game_menu_disconnect_button"
-			onclick="HideWidget('disconnect_confirm'); Disconnect(); If(IsLoggedIn(), SetHostInterface('browser'), SetHostInterface('main'));"
-		/>	
-	</template>
-	
-	<template name="quit_confirmation_leaver">
-		<label y="1.0h" width="-2.0h" height="3.0h" textalign="center" align="center" font="dyn_12" color="yellow" shadow="1" wrap="true" noclick="true">game_menu_quit_confirm</label>
-		<panel y="4.0h" align="center" color="invisible" width="100%" grow="true">
-			<frame  texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .75" borderthickness=".6h" />
-			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
-			<panel y="0.5h" float="bottom" noclick="1" color="invisible" grow="true" width="-2.0h" align="center">
-				
-				<panel align="center" width="100%" color="invisible" grow="true" noclick="true" float="right">
-					<label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" content="game_menu_currentleavepercent" />
-					<label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(FtoA(param8 * 100, 2) # '%%');" />
-				</panel>				
-				<panel align="center" width="100%" color="invisible" grow="true" noclick="true" float="right">
-					<label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" content="game_menu_newleavepercent" />
-					<label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(FtoA(param9 * 100, 2) # '%%');" />
-				</panel>
-				<panel align="center" width="100%" color="invisible" grow="true" noclick="true" float="right">
-					<label fitx="true" fitxpadding="1.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" content="game_menu_newleavethreshold" />
-					<label fitx="true" fitxpadding="1.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(FtoA(param10 * 100, 2) # '%%');" />
-				</panel>
-				<label fity="true" fitypadding="0.5h" width="-2.0h" textalign="left" font="dyn_10" color="#3abde7" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(If(param7, 'You will NOT be able to join leaver protected games i fyou disconnect from this game.', 'You will NOT become a leaver if you disconnect from this game.'));" />
-			</panel>
-		</panel>
-		
-		<instance
-			name="button2"
-			y="-0.5h"
-			x="1.0h"
-			height="2.4h"
-			width="10.0h"
-			align="left"
-			valign="bottom"
-			label="general_cancel"
-			onclick="Call('quit_confirm', 'FadeOut(250);');"
-		/>
+        <instance
+            name="button2"
+            y="-0.5h"
+            x="-1.0h"
+            height="2.4h"
+            width="10.0h"
+            align="right"
+            valign="bottom"
+            label="game_menu_disconnect_button"
+            onclick="HideWidget('disconnect_confirm'); Disconnect(); If(IsLoggedIn(), SetHostInterface('browser'), SetHostInterface('main'));"
+        />  
+    </template>
+    
+    <template name="quit_confirmation_leaver">
+        <label y="1.0h" width="-2.0h" height="3.0h" textalign="center" align="center" font="dyn_12" color="yellow" shadow="1" wrap="true" noclick="true">game_menu_quit_confirm</label>
+        <panel y="4.0h" align="center" color="invisible" width="100%" grow="true">
+            <frame  texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .75" borderthickness=".6h" />
+            <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
+            <panel y="0.5h" float="bottom" noclick="1" color="invisible" grow="true" width="-2.0h" align="center">
+                
+                <panel align="center" width="100%" color="invisible" grow="true" noclick="true" float="right">
+                    <label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" content="game_menu_currentleavepercent" />
+                    <label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(FtoA(param8 * 100, 2) # '%%');" />
+                </panel>                
+                <panel align="center" width="100%" color="invisible" grow="true" noclick="true" float="right">
+                    <label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" content="game_menu_newleavepercent" />
+                    <label fitx="true" fitxpadding="0.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(FtoA(param9 * 100, 2) # '%%');" />
+                </panel>
+                <panel align="center" width="100%" color="invisible" grow="true" noclick="true" float="right">
+                    <label fitx="true" fitxpadding="1.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" content="game_menu_newleavethreshold" />
+                    <label fitx="true" fitxpadding="1.5h" fity="true" fitypadding="0.5h" textalign="left" font="dyn_10" color="white" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(FtoA(param10 * 100, 2) # '%%');" />
+                </panel>
+                <label fity="true" fitypadding="0.5h" width="-2.0h" textalign="left" font="dyn_10" color="#3abde7" shadow="1" wrap="true" noclick="true" watch="AccountInfo" ontrigger="SetText(If(param7, 'You will NOT be able to join leaver protected games i fyou disconnect from this game.', 'You will NOT become a leaver if you disconnect from this game.'));" />
+            </panel>
+        </panel>
+        
+        <instance
+            name="button2"
+            y="-0.5h"
+            x="1.0h"
+            height="2.4h"
+            width="10.0h"
+            align="left"
+            valign="bottom"
+            label="general_cancel"
+            onclick="Call('quit_confirm', 'FadeOut(250);');"
+        />
 
-		<instance
-			name="button2"
-			y="-0.5h"
-			x="-1.0h"
-			height="2.4h"
-			width="10.0h"
-			align="right"
-			valign="bottom"
-			label="game_menu_quit_button"
-			onclick="PlaySound('/shared/sounds/ui/quit.wav'); SleepWidget(1600, 'Quit();');"
-		/>	
-	</template>
-	
-	<template name="quit_confirmation">	
-		<label y="1.0h" width="100%" height="3.0h" textalign="center" align="center" font="dyn_12" color="yellow" shadow="1" wrap="true" noclick="true">game_menu_quit_confirm</label>
+        <instance
+            name="button2"
+            y="-0.5h"
+            x="-1.0h"
+            height="2.4h"
+            width="10.0h"
+            align="right"
+            valign="bottom"
+            label="game_menu_quit_button"
+            onclick="PlaySound('/shared/sounds/ui/quit.wav'); SleepWidget(1600, 'Quit();');"
+        />  
+    </template>
+    
+    <template name="quit_confirmation"> 
+        <label y="1.0h" width="100%" height="3.0h" textalign="center" align="center" font="dyn_12" color="yellow" shadow="1" wrap="true" noclick="true">game_menu_quit_confirm</label>
 
-		<panel y="4.0h" width="-2.0h" align="center" color="invisible" grow="true">
-			<frame texture="/ui/frames/tooltip_bg.tga" color="#0c1b3b" borderthickness=".6h"/>
-			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
-			<label fity="true" fitypadding="1.0h" width="-1.4h" textvalign="center" textalign="left" align="center" font="dyn_10" color="white" shadow="1" noclick="1" wrap="1">game_menu_disconnect_noleaver</label>
-		</panel>
+        <panel y="4.0h" width="-2.0h" align="center" color="invisible" grow="true">
+            <frame texture="/ui/frames/tooltip_bg.tga" color="#0c1b3b" borderthickness=".6h"/>
+            <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h"/>
+            <label fity="true" fitypadding="1.0h" width="-1.4h" textvalign="center" textalign="left" align="center" font="dyn_10" color="white" shadow="1" noclick="1" wrap="1">game_menu_disconnect_noleaver</label>
+        </panel>
 
-		<instance
-			name="button2"
-			y="-0.5h"
-			x="1.0h"
-			height="2.4h"
-			width="10.0h"
-			align="left"
-			valign="bottom"
-			label="general_cancel"
-			onclick="Call('quit_confirm', 'FadeOut(250);');"
-		/>
+        <instance
+            name="button2"
+            y="-0.5h"
+            x="1.0h"
+            height="2.4h"
+            width="10.0h"
+            align="left"
+            valign="bottom"
+            label="general_cancel"
+            onclick="Call('quit_confirm', 'FadeOut(250);');"
+        />
 
-		<instance
-			name="button2"
-			y="-0.5h"
-			x="-1.0h"
-			height="2.4h"
-			width="10.0h"
-			align="right"
-			valign="bottom"
-			label="game_menu_quit_button"
-			onclick="PlaySound('/shared/sounds/ui/quit.wav'); SleepWidget(1600, 'Quit();');"
-		/>	
-	</template>
+        <instance
+            name="button2"
+            y="-0.5h"
+            x="-1.0h"
+            height="2.4h"
+            width="10.0h"
+            align="right"
+            valign="bottom"
+            label="game_menu_quit_button"
+            onclick="PlaySound('/shared/sounds/ui/quit.wav'); SleepWidget(1600, 'Quit();');"
+        />  
+    </template>
 
-	<!-- Background -->
-	<panel name="background" color="0 0 0 .6"/>
+    <!-- Background -->
+    <panel name="background" color="0 0 0 .6"/>
 
-	<!-- Main panel -->
-	<panel y="-5%" width="72.0h" height="66.5h" align="center" valign="center" visible="1" noclick="1" color="invisible">
-		<instance name="frame_stone" backercolor="0 0 0 .7" vscale=".19" uscale=".18" body="game_options" />
-	</panel>
+    <!-- Main panel -->
+    <panel y="-5%" width="72.0h" height="66.5h" align="center" valign="center" visible="1" noclick="1" color="invisible">
+        <instance name="frame_stone" backercolor="0 0 0 .7" vscale=".19" uscale=".18" body="game_options" />
+    </panel>
 
-	<!-- Options panel -->
-	<include file="/ui/game_options.package"/>
+    <!-- Options panel -->
+    <include file="/ui/game_options.package"/>
 
-	<panel name="Noptions" color="0 0 0 .8" visible="0" onframe="OptionsFrame();" onshow="OptionsOpen();">
-		<panel width="51.8hh" height="73.4h" align="center" valign="center" noclick="1" color="invisible">
-			<panel name="Noptions_content">
-				<instance name="frame_stone" backercolor="0 0 0 .7" vscale=".16" uscale=".25" body="Noptions" onclose="Call('Noptions', 'FadeOut(250);');" />
-			</panel>
-		</panel>
-	</panel>
+    <panel name="Noptions" color="0 0 0 .8" visible="0" onframe="OptionsFrame();" onshow="OptionsOpen();">
+        <panel width="51.8hh" height="73.4h" align="center" valign="center" noclick="1" color="invisible">
+            <panel name="Noptions_content">
+                <instance name="frame_stone" backercolor="0 0 0 .7" vscale=".16" uscale=".25" body="Noptions" onclose="Call('Noptions', 'FadeOut(250);');" />
+            </panel>
+        </panel>
+    </panel>
 
-	<!-- confirm disconnect -->
-	<panel color="0 0 0 .8" name="disconnect_confirm" visible="0" blockinput="true">
-		<panel watch="CanLeave" ontrigger="SetVisible(param);">
-			<instance
-				name="alert_box"
-				width="36.0h"
-				height="16.0h"
-				align="center"
-				label="game_menu_disconnect_header"
-				show_close="true"
-				closebtn_click="Call('disconnect_confirm', 'FadeOut(250);');"
-				body="disconnect_confirmation"
-			/>
-		</panel>
-		<panel watch="CanLeave" ontrigger="SetVisible(!param);">
-			<instance
-				name="alert_box"
-				width="36.0h"
-				height="24.0h"
-				align="center"
-				label="game_menu_disconnect_header"
-				show_close="true"
-				closebtn_click="Call('disconnect_confirm', 'FadeOut(250);');"
-				body="disconnect_confirmation_leaver"
-			/>
-		</panel>
-	</panel>
+    <!-- confirm disconnect -->
+    <panel color="0 0 0 .8" name="disconnect_confirm" visible="0" blockinput="true">
+        <panel watch="CanLeave" ontrigger="SetVisible(param);">
+            <instance
+                name="alert_box"
+                width="36.0h"
+                height="16.0h"
+                align="center"
+                label="game_menu_disconnect_header"
+                show_close="true"
+                closebtn_click="Call('disconnect_confirm', 'FadeOut(250);');"
+                body="disconnect_confirmation"
+            />
+        </panel>
+        <panel watch="CanLeave" ontrigger="SetVisible(!param);">
+            <instance
+                name="alert_box"
+                width="36.0h"
+                height="24.0h"
+                align="center"
+                label="game_menu_disconnect_header"
+                show_close="true"
+                closebtn_click="Call('disconnect_confirm', 'FadeOut(250);');"
+                body="disconnect_confirmation_leaver"
+            />
+        </panel>
+    </panel>
 
-	<!-- confirm quit -->
-	<panel color="0 0 0 .8" name="quit_confirm" visible="0" blockinput="true">
-		<panel watch="CanLeave" ontrigger="SetVisible(param);">
-			<instance
-				name="alert_box"
-				width="36.0h"
-				height="16.0h"
-				align="center"
-				label="game_menu_quit_header"
-				show_close="true"
-				closebtn_click="Call('quit_confirm', 'FadeOut(250);');"
-				body="quit_confirmation"
-			/>
-		</panel>
+    <!-- confirm quit -->
+    <panel color="0 0 0 .8" name="quit_confirm" visible="0" blockinput="true">
+        <panel watch="CanLeave" ontrigger="SetVisible(param);">
+            <instance
+                name="alert_box"
+                width="36.0h"
+                height="16.0h"
+                align="center"
+                label="game_menu_quit_header"
+                show_close="true"
+                closebtn_click="Call('quit_confirm', 'FadeOut(250);');"
+                body="quit_confirmation"
+            />
+        </panel>
 
-		<panel watch="CanLeave" ontrigger="SetVisible(!param);">
-			<instance
-				name="alert_box"
-				width="36.0h"
-				height="24.0h"
-				align="center"
-				label="game_menu_quit_header"
-				show_close="true"
-				closebtn_click="Call('quit_confirm', 'FadeOut(250);');"
-				body="quit_confirmation_leaver"
-			/>
-		</panel>
-	</panel>
-	
-	<!-- Tooltip -->
-	<floater name="menu_tooltip" visible="false" grow="true" color="invisible" align="center" valign="bottom" y="-1.2h">			
-		<frame texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .8" borderthickness=".6h" align="left" valign="top" noclick="1"/>
-		<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" noclick="1"/>
-		<label
-			y="0.8h" x="0.8h"
-			name="tooltip_label"
-			textalign="left" textvalign="top"
-			fitx="true" fitxmax="24h" fity="true"
-			wrap="true"
-			fitxpadding="0.8h" fitypadding="0.8h"
-			color="white" font="dyn_10"
-			watch="GameMenuTooltipText"
-			ontrigger="SetText(param);"
-		/>
-	</floater>
+        <panel watch="CanLeave" ontrigger="SetVisible(!param);">
+            <instance
+                name="alert_box"
+                width="36.0h"
+                height="24.0h"
+                align="center"
+                label="game_menu_quit_header"
+                show_close="true"
+                closebtn_click="Call('quit_confirm', 'FadeOut(250);');"
+                body="quit_confirmation_leaver"
+            />
+        </panel>
+    </panel>
+    
+    <!-- Tooltip -->
+    <floater name="menu_tooltip" visible="false" grow="true" color="invisible" align="center" valign="bottom" y="-1.2h">            
+        <frame texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .8" borderthickness=".6h" align="left" valign="top" noclick="1"/>
+        <frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" noclick="1"/>
+        <label
+            y="0.8h" x="0.8h"
+            name="tooltip_label"
+            textalign="left" textvalign="top"
+            fitx="true" fitxmax="24h" fity="true"
+            wrap="true"
+            fitxpadding="0.8h" fitypadding="0.8h"
+            color="white" font="dyn_10"
+            watch="GameMenuTooltipText"
+            ontrigger="SetText(param);"
+        />
+    </floater>
 </interface>

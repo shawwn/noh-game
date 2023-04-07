@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_GroundFamiliar4"
+    name="Ability_GroundFamiliar4"
 
-	icon="icon.tga"
-	anim=""
-	
-	casttime="0"
-	castactiontime="0"
+    icon="icon.tga"
+    anim=""
+    
+    casttime="0"
+    castactiontime="0"
 
-	actiontype="no_target"
-	casteffecttype=""
+    actiontype="no_target"
+    casteffecttype=""
 >
-	<onimpact>
-		<pushentitysearch global="true" targetscheme="ally_well" ignoreinvulnerable="true" />
-		<condition test="stack_entity != 0">
-			<order command="move" target="stack_position" queue="front" />
-		</condition>
-	</onimpact>
+    <onimpact>
+        <pushentitysearch global="true" targetscheme="ally_well" ignoreinvulnerable="true" />
+        <condition test="stack_entity != 0">
+            <order command="move" target="stack_position" queue="front" />
+        </condition>
+    </onimpact>
 </ability>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Succubis_Ability3_Invulnerable"
+    name="State_Succubis_Ability3_Invulnerable"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect=""
-	deatheffect=""
+    
+    
+    icon="icon.tga"
+    passiveeffect=""
+    deatheffect=""
 
-	
-	invulnerable="true"
+    
+    invulnerable="true"
 
 >
 

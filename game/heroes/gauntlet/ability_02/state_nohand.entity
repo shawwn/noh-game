@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Gauntlet_Ability2_NoHand"
+    name="State_Gauntlet_Ability2_NoHand"
 
-	icon="icon.tga"
-	ishidden="true"
-	modifierkey="gaunetlet_nohand"
+    icon="icon.tga"
+    ishidden="true"
+    modifierkey="gaunetlet_nohand"
 
 >
 

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Sordit_Ability1E"
+    name="State_Sordit_Ability1E"
 
-	icon="icon.tga"
-	
-	movespeedslowstart="0.01"
-	movespeedslowmid="0.15,0.2,0.25.0.3"
-	movespeedslowend="0.3,0.4,0.5,0.6"
-	movespeedslowduration="8000"
-	movespeedslowmidpos="0.33"
-	
-	impactinterval="3000"
-	deniable="true"
-	
-	passiveeffect="effects/state.effect"
-	
-	effecttype="StatusDebuff"
+    icon="icon.tga"
+    
+    movespeedslowstart="0.01"
+    movespeedslowmid="0.15,0.2,0.25.0.3"
+    movespeedslowend="0.3,0.4,0.5,0.6"
+    movespeedslowduration="8000"
+    movespeedslowmidpos="0.33"
+    
+    impactinterval="3000"
+    deniable="true"
+    
+    passiveeffect="effects/state.effect"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe >
-	</onframe>
+    <onframe >
+    </onframe>
 
-	<onimpact>
-		<playeffect effect="effects/impact.effect" source="target_entity"/>
-		<damage effecttype="Magic DOT" amount="20,30,40,50" />
-		<popup name="poison" a="result" source="target_entity" target="source_entity"/>
-	</onimpact>
+    <onimpact>
+        <playeffect effect="effects/impact.effect" source="target_entity"/>
+        <damage effecttype="Magic DOT" amount="20,30,40,50" />
+        <popup name="poison" a="result" source="target_entity" target="source_entity"/>
+    </onimpact>
 </state>

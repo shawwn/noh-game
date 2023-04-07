@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="cutup.max" file="3.model" type="K2" >
-	<anim name="idle" clip="3.clip"/>
+    <anim name="idle" clip="3.clip"/>
 </model>

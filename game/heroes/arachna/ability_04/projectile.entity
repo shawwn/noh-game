@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Arachna_Ability4"
+    name="Projectile_Arachna_Ability4"
 
-	speed="1500"
-	gravity="8000"
+    speed="1500"
+    gravity="8000"
 
-	impactstealth="true"
-	modelscale="2.4"
-	model="../summon/model2.mdf"
-	traileffect="effects/trail.effect"
-	effectscale="2.0"
-	impacteffect="effects/ability_01/projectile/effects/ability_01_impact.effect"
-	impactdistance="50"
+    impactstealth="true"
+    modelscale="2.4"
+    model="../summon/model2.mdf"
+    traileffect="effects/trail.effect"
+    effectscale="2.0"
+    impacteffect="effects/ability_01/projectile/effects/ability_01_impact.effect"
+    impactdistance="50"
 >
 </projectile>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Yogi_Ability6"
+    name="State_Yogi_Ability6"
 
-	
-	
-	icon="icons/ability_6.tga"
-	
-	effecttype=""
+    
+    
+    icon="icons/ability_6.tga"
+    
+    effecttype=""
 >
-	<onframe />
-	<onexpired>
-		<breaksoullink/>
-	</onexpired>
+    <onframe />
+    <onexpired>
+        <breaksoullink/>
+    </onexpired>
 </state>

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_BountyHunter_Ability4"	
-	
-	icon="icon.tga"
-	passiveeffect="../../../heroes/scout/ability_04/effects/target.effect"
-	revealed="true"
-	sighted="true"
-	armor="-1,-3,-5"
+    name="State_BountyHunter_Ability4"  
+    
+    icon="icon.tga"
+    passiveeffect="../../../heroes/scout/ability_04/effects/target.effect"
+    revealed="true"
+    sighted="true"
+    armor="-1,-3,-5"
 >
-	<onkilled>
-		<condition target="source_entity" test="not_target_type illusion">
-			<spawnunit name="Gadget_BountyHunter_Ability4" target="proxy_entity" pushentity="true" />
-			<kill target="stack_entity" source="proxy_entity" />
-		</condition>
-	</onkilled>
-	
-	<aura
-		gadget="Gadget_BountyHunter_Ability4_Reveal"
-		radius="0"
-		targetscheme="self"
-	/>
-	
-	<aura state="State_BountyHunter_Ability4_Ally" radius="800" duration="1000" targetscheme="enemy_units" />
+    <onkilled>
+        <condition target="source_entity" test="not_target_type illusion">
+            <spawnunit name="Gadget_BountyHunter_Ability4" target="proxy_entity" pushentity="true" />
+            <kill target="stack_entity" source="proxy_entity" />
+        </condition>
+    </onkilled>
+    
+    <aura
+        gadget="Gadget_BountyHunter_Ability4_Reveal"
+        radius="0"
+        targetscheme="self"
+    />
+    
+    <aura state="State_BountyHunter_Ability4_Ally" radius="800" duration="1000" targetscheme="enemy_units" />
 </state>

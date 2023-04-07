@@ -1,244 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="1">
 
-	<definitions>
+    <definitions>
 
-		<particlesystem name="system0" space="world" scale=".9">
+        <particlesystem name="system0" space="world" scale=".9">
 
-			<sound
-				linearfalloff="true"
-				falloffstart="0"
-				falloffend="2200"
-				volume="1"
-				sample="/shared/sounds/items/item_intelligence8_cast.wav"
-			/>
-	
-			<model
-				delay="2050"
-				name="ring"
-				life="1800"
-				model="ring2.mdf"
-				anim="idle"
-				yawspeed="0"
-				startscale="1"
-				endscale="8.0"
-				position="0.0 0.0 90.0"
-			/>
-	
-			<groundsprite
-				life="2500"
-				material="/shared/effects/materials/ice_reveal.material"
-				position="0 0 0"
-				startcolor=".2 .2 .2 "
-				endcolor=".6 .8 1"
-				startframe=".81"
-				midframe=".6"
-				endframe="0"
-				startsize="600"
-				endsize="600"
-			/>
-			
-			<groundsprite
-				delay="2500"
-				life="3300"
-				material="/shared/effects/materials/ice_reveal.material"
-				startcolor=".2 .3 .7"
-				midcolor=".2 .3 .7"
-				endcolor="0 0 0"
-				midcolorpos=".3"
-				startframe="0"
-				midframe="0"
-				endframe="1"
-				midframepos=".3"
-				startsize="600"
-				endsize="600"
-			/>
+            <sound
+                linearfalloff="true"
+                falloffstart="0"
+                falloffend="2200"
+                volume="1"
+                sample="/shared/sounds/items/item_intelligence8_cast.wav"
+            />
+    
+            <model
+                delay="2050"
+                name="ring"
+                life="1800"
+                model="ring2.mdf"
+                anim="idle"
+                yawspeed="0"
+                startscale="1"
+                endscale="8.0"
+                position="0.0 0.0 90.0"
+            />
+    
+            <groundsprite
+                life="2500"
+                material="/shared/effects/materials/ice_reveal.material"
+                position="0 0 0"
+                startcolor=".2 .2 .2 "
+                endcolor=".6 .8 1"
+                startframe=".81"
+                midframe=".6"
+                endframe="0"
+                startsize="600"
+                endsize="600"
+            />
+            
+            <groundsprite
+                delay="2500"
+                life="3300"
+                material="/shared/effects/materials/ice_reveal.material"
+                startcolor=".2 .3 .7"
+                midcolor=".2 .3 .7"
+                endcolor="0 0 0"
+                midcolorpos=".3"
+                startframe="0"
+                midframe="0"
+                endframe="1"
+                midframepos=".3"
+                startsize="600"
+                endsize="600"
+            />
 
-			<billboard
-				delay="100"
-				life="2800"
-				startcolor=".2 .28 .5"
-				endcolor="0 0 0"
-				startsize="000"
-				endsize="1580"
-				midsizepos=".4"
-				position="0 0 50"
-				material="/shared/effects/materials/shieldstarfish.material"
-				lockup="true"
-				pitch="90"
-			/>
+            <billboard
+                delay="100"
+                life="2800"
+                startcolor=".2 .28 .5"
+                endcolor="0 0 0"
+                startsize="000"
+                endsize="1580"
+                midsizepos=".4"
+                position="0 0 50"
+                material="/shared/effects/materials/shieldstarfish.material"
+                lockup="true"
+                pitch="90"
+            />
 
-			<billboard
-				delay="200"
-				life="2200"
-				startcolor="0 .25 1"
-				endcolor="0 0 0"
-				startsize="000"
-				endsize="2100"
-				midsizepos=".4"
-				position="0 0 50"
-				material="/shared/effects/materials/starlight.material"
-				lockup="true"
-				pitch="90"
-			/>
+            <billboard
+                delay="200"
+                life="2200"
+                startcolor="0 .25 1"
+                endcolor="0 0 0"
+                startsize="000"
+                endsize="2100"
+                midsizepos=".4"
+                position="0 0 50"
+                material="/shared/effects/materials/starlight.material"
+                lockup="true"
+                pitch="90"
+            />
 
-			<billboard
-				delay="100"
-				life="1800"
-				color="1 1 1"
-				startalpha="1.0"
-				midalpha="1.0"
-				endalpha="0.0"
-				midalphapos="0.75"
-				startparam="0.05"
-				endparam="0.02"
-				startsize="0"
-				endsize="2000"
-				midsizepos=".5"
-				depthbias="-45"
-				position="0 0 10"
-				material="/shared/effects/materials/refract_swell.material"
-				lockup="true"
-				pitch="90"
-			/>
+            <billboard
+                delay="100"
+                life="1800"
+                color="1 1 1"
+                startalpha="1.0"
+                midalpha="1.0"
+                endalpha="0.0"
+                midalphapos="0.75"
+                startparam="0.05"
+                endparam="0.02"
+                startsize="0"
+                endsize="2000"
+                midsizepos=".5"
+                depthbias="-45"
+                position="0 0 10"
+                material="/shared/effects/materials/refract_swell.material"
+                lockup="true"
+                pitch="90"
+            />
 
-			<billboard
-				delay="100"
-				life="1800"
-				startcolor="0 .25 .5"
-				endcolor="0 0 0"
-				startalpha="1.0"
-				midalpha="1.0"
-				endalpha="0.0"
-				midalphapos="0.75"
-				startsize="0"
-				endsize="1800"
-				midsizepos=".5"
-				depthbias="-45"
-				position="0 0 10"
-				material="/shared/effects/materials/corona_07.material"
-				lockup="true"
-				pitch="90"
-			/>
+            <billboard
+                delay="100"
+                life="1800"
+                startcolor="0 .25 .5"
+                endcolor="0 0 0"
+                startalpha="1.0"
+                midalpha="1.0"
+                endalpha="0.0"
+                midalphapos="0.75"
+                startsize="0"
+                endsize="1800"
+                midsizepos=".5"
+                depthbias="-45"
+                position="0 0 10"
+                material="/shared/effects/materials/corona_07.material"
+                lockup="true"
+                pitch="90"
+            />
 
-			<simpleemitter
-				count="64"
-				delay="270"
-				life="2000"
-				particlelife="1700"
-				minspeed="470"
-				maxspeed="480"
-				minangle="90"
-				maxangle="90"
-				direction="0 0 1"
-				particledirectionalspace="local"		
-				startparticlecolor="1 1 1"
-				material="/shared/effects/materials/ice_blast_add.material"
-				endparticlecolor="1 1 1"
-				position="0 0 15"	
-			>
-				<particle 
-					turn="1"	
-					startcolor=".2 .5 .6"
-					endcolor="0 0 0"
-					startalpha="1.0"
-					midalpha="1.0"
-					endalpha="0.0"
-					midalphapos="0.75"
-					startsize="100"
-					endsize="100"
-					midsizepos=".4"
-					lockup="1"
-					anchor="1"
-				/>
-			</simpleemitter>
-			
-			<simpleemitter
-				count="25"
-				delay="250"
-				life="2500"
-				particlelife="1600"				
-				minspeed="470"
-				maxspeed="485"
-				minangle="90"
-				maxangle="90"
-				direction="0 0 1"
-				particledirectionalspace="local"		
-				startparticlecolor="1 1 1"
-				material="/shared/effects/materials/stomp_02.material"
-				offsetsphere="10 10 0"
-				endparticlecolor="1 1 1"
-				position="0 0 50"	
-			>
-				<particle 
-					turn="1"	
-					startcolor="0 0 0"
-					midcolor=".1 .3 .5"
-					endcolor="0 0 0"
-					midcolorpos=".3"
-					startalpha="1.0"
-					midalpha="1.0"
-					endalpha="0.0"
-					midalphapos="0.75"
-					minsize="50"
-					maxsize="65"
-					midsizepos=".4"
-					lockup="1"
-					anchor="1"
-				/>
-			</simpleemitter>
-			
-			<terrainemitter	
-				delay="250"
-				startspawnrate="0"			
-				endspawnrate="130"
-				life="700"
-				startminparticlelife="3900"
-				startmaxparticlelife="3900"
-				endminparticlelife="1900"
-				endmaxparticlelife="1900"
-				startrange="500"
-				endrange="500"
-				material="/shared/effects/materials/crystals.material" 
-			>
-				<template name="snowflake">
-					<particle 
-						color=".7 .8 1"		
-						startalpha="0.6"
-						midalpha="0.6"
-						endalpha="0"
-						midalphapos="0.5"
-						minsize="25"
-						maxsize="100"
-						startscale="0.0"
-						midscale="1.0"
-						endscale="1.0"
-						minmidscalepos="0.15"
-						maxmidscalepos="0.35"
-						minyaw="0"
-						maxyaw="20"
-						minpitch="0"
-						maxpitch="20"
-						minangle="0"
-						maxangle="360"
-						scaleu="{scaleu}"
-						scalev="{scalev}"
-					/>
-				</template>
-				
-				<instance name="snowflake" scaleu="1.0" scalev="1.0" />
-				<instance name="snowflake" scaleu="-1.0" scalev="1.0" />
-				<instance name="snowflake" scaleu="1.0" scalev="-1.0" />
-				
-			</terrainemitter>
-				
-		</particlesystem>
+            <simpleemitter
+                count="64"
+                delay="270"
+                life="2000"
+                particlelife="1700"
+                minspeed="470"
+                maxspeed="480"
+                minangle="90"
+                maxangle="90"
+                direction="0 0 1"
+                particledirectionalspace="local"        
+                startparticlecolor="1 1 1"
+                material="/shared/effects/materials/ice_blast_add.material"
+                endparticlecolor="1 1 1"
+                position="0 0 15"   
+            >
+                <particle 
+                    turn="1"    
+                    startcolor=".2 .5 .6"
+                    endcolor="0 0 0"
+                    startalpha="1.0"
+                    midalpha="1.0"
+                    endalpha="0.0"
+                    midalphapos="0.75"
+                    startsize="100"
+                    endsize="100"
+                    midsizepos=".4"
+                    lockup="1"
+                    anchor="1"
+                />
+            </simpleemitter>
+            
+            <simpleemitter
+                count="25"
+                delay="250"
+                life="2500"
+                particlelife="1600"             
+                minspeed="470"
+                maxspeed="485"
+                minangle="90"
+                maxangle="90"
+                direction="0 0 1"
+                particledirectionalspace="local"        
+                startparticlecolor="1 1 1"
+                material="/shared/effects/materials/stomp_02.material"
+                offsetsphere="10 10 0"
+                endparticlecolor="1 1 1"
+                position="0 0 50"   
+            >
+                <particle 
+                    turn="1"    
+                    startcolor="0 0 0"
+                    midcolor=".1 .3 .5"
+                    endcolor="0 0 0"
+                    midcolorpos=".3"
+                    startalpha="1.0"
+                    midalpha="1.0"
+                    endalpha="0.0"
+                    midalphapos="0.75"
+                    minsize="50"
+                    maxsize="65"
+                    midsizepos=".4"
+                    lockup="1"
+                    anchor="1"
+                />
+            </simpleemitter>
+            
+            <terrainemitter 
+                delay="250"
+                startspawnrate="0"          
+                endspawnrate="130"
+                life="700"
+                startminparticlelife="3900"
+                startmaxparticlelife="3900"
+                endminparticlelife="1900"
+                endmaxparticlelife="1900"
+                startrange="500"
+                endrange="500"
+                material="/shared/effects/materials/crystals.material" 
+            >
+                <template name="snowflake">
+                    <particle 
+                        color=".7 .8 1"     
+                        startalpha="0.6"
+                        midalpha="0.6"
+                        endalpha="0"
+                        midalphapos="0.5"
+                        minsize="25"
+                        maxsize="100"
+                        startscale="0.0"
+                        midscale="1.0"
+                        endscale="1.0"
+                        minmidscalepos="0.15"
+                        maxmidscalepos="0.35"
+                        minyaw="0"
+                        maxyaw="20"
+                        minpitch="0"
+                        maxpitch="20"
+                        minangle="0"
+                        maxangle="360"
+                        scaleu="{scaleu}"
+                        scalev="{scalev}"
+                    />
+                </template>
+                
+                <instance name="snowflake" scaleu="1.0" scalev="1.0" />
+                <instance name="snowflake" scaleu="-1.0" scalev="1.0" />
+                <instance name="snowflake" scaleu="1.0" scalev="-1.0" />
+                
+            </terrainemitter>
+                
+        </particlesystem>
 
-	</definitions>
+    </definitions>
 
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-	</thread>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+    </thread>
 
 </effect>

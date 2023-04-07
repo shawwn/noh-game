@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_WolfMan_Ability3"
+    name="State_WolfMan_Ability3"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect=""
-	
-	basedamagemultiplier="0.10,0.15,0.20,0.25"
-	attackspeed="0.10,0.15,0.20,0.25"
+    
+    
+    icon="icon.tga"
+    passiveeffect=""
+    
+    basedamagemultiplier="0.10,0.15,0.20,0.25"
+    attackspeed="0.10,0.15,0.20,0.25"
 >
 </state>

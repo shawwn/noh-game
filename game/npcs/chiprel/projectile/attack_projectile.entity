@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_ChiprelAttack"
+    name="Projectile_ChiprelAttack"
 
-	speed="900"
-	gravity="2500"
+    speed="900"
+    gravity="2500"
 
-	modelscale=".7"
-	model="acorn.mdf"
+    modelscale=".7"
+    model="acorn.mdf"
 
-	traileffect="acorn_trail.effect"
-	impacteffect="acorn_impact.effect"
+    traileffect="acorn_trail.effect"
+    impacteffect="acorn_impact.effect"
 >
 </projectile>

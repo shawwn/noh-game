@@ -3,5 +3,5 @@
 
 <anim name="idle" clip="clips/death_1.clip" fps="30" loop="false"/>
 
-	
+    
 </model>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Valmont_Ability1"
+    name="State_Valmont_Ability1"
 
-	
-	
-	icon="icons/magia1.tga"
-	passiveeffect="effects/ability_02/slash.effect"
-	
-	invulnerable="true"
-	silenced="true"
-	perplexed="true"
-	immobilized="true"
-	
-	effecttype=""
+    
+    
+    icon="icons/magia1.tga"
+    passiveeffect="effects/ability_02/slash.effect"
+    
+    invulnerable="true"
+    silenced="true"
+    perplexed="true"
+    immobilized="true"
+    
+    effecttype=""
 >
 </state>

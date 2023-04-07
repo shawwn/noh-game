@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Treant_Ability2"
+    name="State_Treant_Ability2"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/healing_state.effect"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/healing_state.effect"
 
-	healthregen="1,2,3,4"
-	
-	effecttype="StatusBuff"
+    healthregen="1,2,3,4"
+    
+    effecttype="StatusBuff"
 >
 </state>

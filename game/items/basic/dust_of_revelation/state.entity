@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_DustOfRevelation"
+    name="State_DustOfRevelation"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect=""
-	
-	revealed="true"
-	
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect=""
+    
+    revealed="true"
+    
+    effecttype="StatusDebuff"
 >
 </state>

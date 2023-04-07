@@ -1,100 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect deferred="1" useentityeffectscale="1">
-	<definitions>
+    <definitions>
 
-		
-		
-		<particlesystem name="system0" space="world" scale="5.5">
+        
+        
+        <particlesystem name="system0" space="world" scale="5.5">
 
-	
-		<template name="beam">
-			<beam
-				expirelife="1000"
-				delay="100"			
-				bone_a="{a}"
-				bone_b="{b}"
-				size="{size}"
-				startcolor="1 0 1"
-				endcolor="0 0 0"
-				startalpha="1"
-				endalpha="0"
-				position="0 0 0"				
-				position_b="0 0 0"
-				material="/shared/effects/materials/goo.material"
-				startframe="{frame}"
-				framespeed="5"
-			/>	
-			<billboard
-				material="/shared/effects/materials/whitedot.material"
-				bone="{a}"
-				startscale="0"
-				midscale=".1"
-				endscale=".2"
-				midcolor="1 0 1"
-				endcolor="0 0 0"
-				life="1000"
-			/>		
+    
+        <template name="beam">
+            <beam
+                expirelife="1000"
+                delay="100"         
+                bone_a="{a}"
+                bone_b="{b}"
+                size="{size}"
+                startcolor="1 0 1"
+                endcolor="0 0 0"
+                startalpha="1"
+                endalpha="0"
+                position="0 0 0"                
+                position_b="0 0 0"
+                material="/shared/effects/materials/goo.material"
+                startframe="{frame}"
+                framespeed="5"
+            />  
+            <billboard
+                material="/shared/effects/materials/whitedot.material"
+                bone="{a}"
+                startscale="0"
+                midscale=".1"
+                endscale=".2"
+                midcolor="1 0 1"
+                endcolor="0 0 0"
+                life="1000"
+            />      
 
-			<billboard
-				material="/shared/effects/materials/whitedot.material"
-				bone="{b}"
-				startscale="0"
-				midscale=".1"
-				endscale=".2"
-				midcolor="1 0 1"
-				endcolor="0 0 0"
-				life="1000"
-			/>				
-			
+            <billboard
+                material="/shared/effects/materials/whitedot.material"
+                bone="{b}"
+                startscale="0"
+                midscale=".1"
+                endscale=".2"
+                midcolor="1 0 1"
+                endcolor="0 0 0"
+                life="1000"
+            />              
+            
 
-		</template>		
-		
-			<instance name="beam" a="_bone_fx_lefthand" b="_bone_fx_righthand" size="2" frame=".6"/>
-			<instance name="beam" a="_bone_fx_01" b="_bone_fx_04" size="2" frame=".6"/>
-			<instance name="beam" a="_bone_fx_02" b="_bone_fx_05" size="2" frame=".6"/>
-			<instance name="beam" a="_bone_fx_03" b="_bone_fx_06" size="2" frame=".6"/>
-			
-			
+        </template>     
+        
+            <instance name="beam" a="_bone_fx_lefthand" b="_bone_fx_righthand" size="2" frame=".6"/>
+            <instance name="beam" a="_bone_fx_01" b="_bone_fx_04" size="2" frame=".6"/>
+            <instance name="beam" a="_bone_fx_02" b="_bone_fx_05" size="2" frame=".6"/>
+            <instance name="beam" a="_bone_fx_03" b="_bone_fx_06" size="2" frame=".6"/>
+            
+            
 
-			
-			
-			<billboard	
-				
-				startsize="18"
-				midsize="15"
-				endsize="20"
-				position="0 0 -0.5"
-				bone="_bone_overhead"
-				life="700"
-				loop="1"
-				material="/shared/effects/materials/web_blend.material"
-				color="0 0 0"
-				startalpha="1"			
-				midalpha=".4"
-				endalpha="1"
-		
-			>
-			</billboard>		
-				
-			<billboard	
-				
-				startsize="18"
-				midsize="15"
-				endsize="20"
-				position="0 0 0"
-				bone="_bone_overhead"
-				life="700"
-				loop="1"
-				material="/shared/effects/materials/web_blend.material"
-				startcolor="1 .5 1"
-				midcolor="1 0 1"
-				endcolor="1 .5 1"
-				startalpha="1"			
-				midalpha=".4"
-				endalpha="1"
-		
-			>
-			</billboard>		
+            
+            
+            <billboard  
+                
+                startsize="18"
+                midsize="15"
+                endsize="20"
+                position="0 0 -0.5"
+                bone="_bone_overhead"
+                life="700"
+                loop="1"
+                material="/shared/effects/materials/web_blend.material"
+                color="0 0 0"
+                startalpha="1"          
+                midalpha=".4"
+                endalpha="1"
+        
+            >
+            </billboard>        
+                
+            <billboard  
+                
+                startsize="18"
+                midsize="15"
+                endsize="20"
+                position="0 0 0"
+                bone="_bone_overhead"
+                life="700"
+                loop="1"
+                material="/shared/effects/materials/web_blend.material"
+                startcolor="1 .5 1"
+                midcolor="1 0 1"
+                endcolor="1 .5 1"
+                startalpha="1"          
+                midalpha=".4"
+                endalpha="1"
+        
+            >
+            </billboard>        
 
       </particlesystem>
    </definitions>

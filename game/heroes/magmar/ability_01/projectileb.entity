@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Magmar_Ability1b"
+    name="Projectile_Magmar_Ability1b"
 
-	speed="3000"
-	gravity="0"
+    speed="3000"
+    gravity="0"
 
-	modelscale="1.0"
-	model="effects/gunk.mdf"
-	
-	canturn="0"
-	flying="true"
-	flyheight="11"
+    modelscale="1.0"
+    model="effects/gunk.mdf"
+    
+    canturn="0"
+    flying="true"
+    flyheight="11"
 >
 </projectile>

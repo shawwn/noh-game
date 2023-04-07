@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Gauntlet_Ability4"
+    name="State_Gauntlet_Ability4"
 
-	icon="icon.tga"
-	passiveeffect="effects/state.effect"
-	impacteffect="effects/purge_impact.effect"
-	
-	movespeedslowstart="0.8"
-	movespeedslowend="0.0"
-	
-	effecttype="StatusDebuff"
+    icon="icon.tga"
+    passiveeffect="effects/state.effect"
+    impacteffect="effects/purge_impact.effect"
+    
+    movespeedslowstart="0.8"
+    movespeedslowend="0.0"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe />
+    <onframe />
 </state>

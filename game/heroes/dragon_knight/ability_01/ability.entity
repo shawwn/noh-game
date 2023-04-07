@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_DragonKnight1"	
-	
-	
-	icon="icon.tga"
-	
-	anim="ability_1"
-	casttime="610"
-	castactiontime="0"
+    name="Ability_DragonKnight1"    
+    
+    
+    icon="icon.tga"
+    
+    anim="ability_1"
+    casttime="610"
+    castactiontime="0"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="target_position"
-	casteffecttype="Magic"
-	targetscheme="enemy_units"
-	
-	manacost="100,110,120,130"
-	cooldowntime="12000"
-	
-	range="500"
+    actiontype="target_position"
+    casteffecttype="Magic"
+    targetscheme="enemy_units"
+    
+    manacost="100,110,120,130"
+    cooldowntime="12000"
+    
+    range="500"
 >
-	<onimpact >
-		<spawnaffector name="Affector_DragonKnight_Ability1" proxy="source_entity" target="source_position"/>
-		<spawnaffector name="Affector_DragonKnight_Ability1_Damage" target="source_position" />
-	</onimpact>
+    <onimpact >
+        <spawnaffector name="Affector_DragonKnight_Ability1" proxy="source_entity" target="source_position"/>
+        <spawnaffector name="Affector_DragonKnight_Ability1_Damage" target="source_position" />
+    </onimpact>
 </ability>

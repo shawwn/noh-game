@@ -1,1397 +1,1397 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface name="game_hero_select" scenex="0" sceney="0" scenewidth="100%" sceneheight="88h">
 
-	<!-- Packages -->
-	<include file="ui_items.package"/>
-	<include file="game_chat.package"/>
-	
-	<!-- Dynamic Textures -->
-	<texture file="/ui/elements/line_break.tga" />
-	<texture file="/ui/elements/heroselection/player_action_ready_yes.tga" />
-	<texture file="/ui/elements/heroselection/player_action_ready_no.tga" />
-	<texture file="/ui/elements/heroselection/ready.tga" />
-	<texture file="/ui/elements/heroselection/not_ready.tga" />
-	
-	<effect file="/ui/common/models/hero_select/hero_swap.effect" />
-	<effect file="/ui/common/models/hero_select/hero_ready.effect" />
-	<effect file="/ui/common/models/hero_select/hero_select.effect" />
-	<effect file="/ui/common/models/arcade_text/countdown.effect" />
+    <!-- Packages -->
+    <include file="ui_items.package"/>
+    <include file="game_chat.package"/>
+    
+    <!-- Dynamic Textures -->
+    <texture file="/ui/elements/line_break.tga" />
+    <texture file="/ui/elements/heroselection/player_action_ready_yes.tga" />
+    <texture file="/ui/elements/heroselection/player_action_ready_no.tga" />
+    <texture file="/ui/elements/heroselection/ready.tga" />
+    <texture file="/ui/elements/heroselection/not_ready.tga" />
+    
+    <effect file="/ui/common/models/hero_select/hero_swap.effect" />
+    <effect file="/ui/common/models/hero_select/hero_ready.effect" />
+    <effect file="/ui/common/models/hero_select/hero_select.effect" />
+    <effect file="/ui/common/models/arcade_text/countdown.effect" />
 
-	<!-- Templates -->
-	<template name="player_pick_random">
-		<panel
-			onmouseover="ShowWidget('{tooltip}');"
-			onmouseout="HideWidget('{tooltip}');"
-			tooltip="repick_hero_tip{index}"
-			watch="HeroSelectPlayerInfo{index}"
-			ontrigger="{panel_ontrigger}"
-		>
-			<button
-				name="{button_name}"
-				color="invisible"
-				visible="{visible=true}"
-				onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav'); ShowWidget('{tooltip}');"
-				onmouseout="HideWidget('{tooltip}');"
-				onclick="{onclick} RefreshCursor();"
-				watch="HeroSelectPlayerInfo{index}"
-				ontrigger="{button_ontrigger}"
-			>
-				<widgetstate statename="up">
-					<image texture="/ui/elements/heroselection/repick_hero_up.tga" />
-				</widgetstate>
+    <!-- Templates -->
+    <template name="player_pick_random">
+        <panel
+            onmouseover="ShowWidget('{tooltip}');"
+            onmouseout="HideWidget('{tooltip}');"
+            tooltip="repick_hero_tip{index}"
+            watch="HeroSelectPlayerInfo{index}"
+            ontrigger="{panel_ontrigger}"
+        >
+            <button
+                name="{button_name}"
+                color="invisible"
+                visible="{visible=true}"
+                onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav'); ShowWidget('{tooltip}');"
+                onmouseout="HideWidget('{tooltip}');"
+                onclick="{onclick} RefreshCursor();"
+                watch="HeroSelectPlayerInfo{index}"
+                ontrigger="{button_ontrigger}"
+            >
+                <widgetstate statename="up">
+                    <image texture="/ui/elements/heroselection/repick_hero_up.tga" />
+                </widgetstate>
 
-				<widgetstate statename="over">
-					<image texture="/ui/elements/heroselection/repick_hero_over.tga" />
-				</widgetstate>
-				
-				<widgetstate statename="down" x="1" y="1">
-					<image texture="/ui/elements/heroselection/repick_hero_down.tga" />
-				</widgetstate>
+                <widgetstate statename="over">
+                    <image texture="/ui/elements/heroselection/repick_hero_over.tga" />
+                </widgetstate>
+                
+                <widgetstate statename="down" x="1" y="1">
+                    <image texture="/ui/elements/heroselection/repick_hero_down.tga" />
+                </widgetstate>
 
-				<widgetstate statename="disabled">
-					<image texture="/ui/elements/heroselection/repick_hero_disabled.tga" />
-				</widgetstate>
-			</button>
-		</panel>
-	</template>
-	
+                <widgetstate statename="disabled">
+                    <image texture="/ui/elements/heroselection/repick_hero_disabled.tga" />
+                </widgetstate>
+            </button>
+        </panel>
+    </template>
+    
 
-	<!-- Ready Button -->
-	<template name="picker_ready_button">
-		<panel color="invisible" noclick="1">
-		
-			<button
-				color="invisible"
-				visible="{visible=true}"
-				onmouseover="ShowWidget('ready_tip{index}');" onmouseout="HideWidget('ready_tip{index}');"
-				onclick="PlaySound('{sound=/shared/sounds/ui/ccpanel/button_click_02.wav}'); {onclick}"
-				watch="{watch=}"
-				ontrigger="{ontrigger=}"
+    <!-- Ready Button -->
+    <template name="picker_ready_button">
+        <panel color="invisible" noclick="1">
+        
+            <button
+                color="invisible"
+                visible="{visible=true}"
+                onmouseover="ShowWidget('ready_tip{index}');" onmouseout="HideWidget('ready_tip{index}');"
+                onclick="PlaySound('{sound=/shared/sounds/ui/ccpanel/button_click_02.wav}'); {onclick}"
+                watch="{watch=}"
+                ontrigger="{ontrigger=}"
 
-			>
-				<widgetstate statename="up">
-					<image texture="/ui/elements/heroselection/ready_up.tga" />
-					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="white" shadow="true" shadowcolor="black" watch="{labelwatch}" ontrigger="{labelontrigger}">{label}</label>
-				</widgetstate>
-				
-				<widgetstate statename="over">
-					<image texture="/ui/elements/heroselection/ready_over.tga" />
-					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="white" shadow="true" shadowcolor="black" watch="{labelwatch}" ontrigger="{labelontrigger}">{label}</label>
-				</widgetstate>
-				
-				<widgetstate statename="down" x="1" y="1">
-					<image texture="/ui/elements/heroselection/ready_down.tga" />
-					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="yellow" shadow="true" shadowcolor="black" watch="{labelwatch}" ontrigger="{labelontrigger}">{label}</label>
-				</widgetstate>
-				
-				<widgetstate statename="disabled">
-					<image texture="/ui/elements/heroselection/ready_down.tga" rendermode="grayscale"/>
-					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="white" shadow="true" shadowcolor="black" watch="{labelwatch}" ontrigger="{labelontrigger}">{label}</label>
-				</widgetstate>
-			</button>
-		
-		</panel>
-	</template>
-	
-	<!-- Player -->
-	<template name="player_info">
-		<panel width="18.0h" height="18.0h" align="center" color="invisible" noclick="1">
-			
+            >
+                <widgetstate statename="up">
+                    <image texture="/ui/elements/heroselection/ready_up.tga" />
+                    <label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="white" shadow="true" shadowcolor="black" watch="{labelwatch}" ontrigger="{labelontrigger}">{label}</label>
+                </widgetstate>
+                
+                <widgetstate statename="over">
+                    <image texture="/ui/elements/heroselection/ready_over.tga" />
+                    <label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="white" shadow="true" shadowcolor="black" watch="{labelwatch}" ontrigger="{labelontrigger}">{label}</label>
+                </widgetstate>
+                
+                <widgetstate statename="down" x="1" y="1">
+                    <image texture="/ui/elements/heroselection/ready_down.tga" />
+                    <label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="yellow" shadow="true" shadowcolor="black" watch="{labelwatch}" ontrigger="{labelontrigger}">{label}</label>
+                </widgetstate>
+                
+                <widgetstate statename="disabled">
+                    <image texture="/ui/elements/heroselection/ready_down.tga" rendermode="grayscale"/>
+                    <label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="{font=dyn_9}" color="white" shadow="true" shadowcolor="black" watch="{labelwatch}" ontrigger="{labelontrigger}">{label}</label>
+                </widgetstate>
+            </button>
+        
+        </panel>
+    </template>
+    
+    <!-- Player -->
+    <template name="player_info">
+        <panel width="18.0h" height="18.0h" align="center" color="invisible" noclick="1">
+            
 <!-- Me Indicator -->
-			<panel
-				name="yourslot{index}"
-				noclick="1"
-				x="-14.6h" y="0.4h"
-				width="20h" height="10h"
-				valign="center"
-				align="center"
-				color="0 0 1 1"
-				visible="false"
-				watch="HeroSelectPlayerInfo{index}"
-				ontrigger="
-					SetVisible(param1);
-					SetColor(param4);
-					If({index} ge 5, SetTexture('/ui/elements/me_right.tga'));
-					If({index} ge 5, SetX('14.6h'));"
-				texture="/ui/elements/me_left.tga"
-			/>
+            <panel
+                name="yourslot{index}"
+                noclick="1"
+                x="-14.6h" y="0.4h"
+                width="20h" height="10h"
+                valign="center"
+                align="center"
+                color="0 0 1 1"
+                visible="false"
+                watch="HeroSelectPlayerInfo{index}"
+                ontrigger="
+                    SetVisible(param1);
+                    SetColor(param4);
+                    If({index} ge 5, SetTexture('/ui/elements/me_right.tga'));
+                    If({index} ge 5, SetX('14.6h'));"
+                texture="/ui/elements/me_left.tga"
+            />
 
                               <!-- Swap -->
-			<panel>
-				<button
-					x="-25%"
-					width="25%" height="25@"
-					align="right" valign="center"
-					texture="/ui/elements/heroselection/swap_hero.tga"
-					watch="HeroSelectPlayerInfo{index}"
-					onmouseover="ShowWidget('swap_hero_tip{index}');"
-					onmouseout="HideWidget('swap_hero_tip{index}');"
-					ontrigger="If(!param1 and param8 and !param9 and param11 and !param12, SlideX(0, 500), SlideX('-25%', 500));"
-					onclick="SwapHeroRequest({index} % 5); PlaySound('/shared/sounds/ui/button_click_02.wav'); HideWidget('swap_hero_tip{index}');"
-				/>
-			</panel>
-
-			<!-- Portrait -->
-			<panel y="5.0h" width="9.0h" height="9.0h" align="center" color="black" />
-			<panel y="5.0h" width="8.4h" height="8.4h" align="center">
-				<image width="-1.0h" height="-1.0h" texture="/ui/elements/heroselection/nopick_{team}.tga" align="center" valign="center"/>
-				<image
-					watch="HeroSelectPlayerInfo{index}"
-					ontrigger="
-						SetVisible(param15);
-						SetTexture(param6);
-						SetOnmouseover('ShowWidget(\'hero_info\'); GetHeroInfo(\'' # param13 # '\');');"
-					onmouseout="HideWidget('hero_info');"
-				
-				/>
-				
-				<!-- Lock -->
-				<panel
-					x="-0.9h" y="-0.8h"
-					width="2.9h" height="2.9h"
-					align="right" valign="bottom"
-					texture="/ui/elements/lock.tga"
-					watch="HeroSelectPlayerInfo{index}"
-					ontrigger="SetVisible(param16);"
-					noclick="true"
-				/>
-
-				<!-- Select effect -->
-				<panel
-					visible="0" y="-2%" valign="center" color="invisible" align="center"
-					noclick="true" passivechildren="true"
-					watch="HeroSelectPlayerInfo{index}"
-					ontrigger="SetVisible(param15);"
-				>
-					<modelpanel	
-						onshow="PlaySound('/shared/sounds/ui/hero_select/button_ready2.wav'); SetEffect('/ui/common/models/hero_select/hero_select.effect'));"
-						model="common/models/hero_select/select.mdf"
-						anim="idle"
-						camerapos="0 1700 0"
-						cameraangles="0 0 180"
-						camerafov="2.0"
-						cameranear="1"
-						carmerafar="7000"
-						depthclear="false"
-						depthcompress="true"			
-						sunazimuth="140"
-						sunaltitude="10"
-						suncolor="1.4 1.3 1"
-					/>	
-				</panel>
-
-				<!-- Ready Effect -->
-				<panel name="hero_ready_effect{index}"  visible="0" y="-2%"  valign="center"  color="invisible" align="center"
-					noclick="true" passivechildren="true"
-					watch="HeroSelectPlayerInfo{index}"
-					ontrigger="SetVisible(param10);"
-				>
-					<modelpanel	
-						watch="HeroSelectPlayerInfo{index}"
-						ontrigger="SetEffect('/ui/common/models/hero_select/hero_ready.effect'));"
-						model="common/models/hero_select/circle.mdf"
-						anim="idle"
-						camerapos="0 1700 0"
-						cameraangles="0 0 180"
-						camerafov="2.0"
-						cameranear="1"
-						carmerafar="7000"
-						depthclear="false"
-						depthcompress="true"			
-						sunazimuth="140"
-						sunaltitude="10"
-						suncolor="1.4 1.3 1"
-					/>	
-				</panel>	
-
-				<!-- Swap Effect -->
-				<panel 
-					visible="0" y="-2%" valign="center" color="invisible" align="center"
-					noclick="true" passivechildren="true"
-					watch="HeroSelectPlayerInfo{index}"
-					ontrigger="SetVisible(param9 and param11);"
-				>
-					<modelpanel
-						watch="HeroSelectPlayerInfo{index}"
-						ontrigger="SetEffect('/ui/common/models/hero_select/hero_swap.effect'));"
-						model="common/models/hero_select/select.mdf"
-						anim="idle"
-						camerapos="0 1700 0"
-						cameraangles="0 0 180"
-						camerafov="2.0"
-						cameranear="1"
-						carmerafar="7000"
-						depthclear="false"
-						depthcompress="true"			
-						sunazimuth="140"
-						sunaltitude="10"
-						suncolor="1.4 1.3 1"
-					/>	
-				</panel>
-
-				<image
-					name="hero_loading_gloss"
-					align="center" valign="center"
-					noclick="true" passivechildren="true"
-					texture="/ui/common/portrait_gloss_up.tga"
-					rendermode="additive"
-				/>
-				
-				<button
-					color="invisible"
-					watch="HeroSelectPlayerInfo{index}"
-					ontrigger="SetVisible(!param1 and param9 and param11);"
-					onmouseover="ShowWidget('swap_hero_accept_tip{index}');"
-					onmouseout="HideWidget('swap_hero_accept_tip{index}');"
-					onclick="SwapHeroRequest({index} % 5, 0, 0); HideWidget('swap_hero_accept_tip{index}'); PlaySound('/shared/sounds/ui/hero_select/button_swap.wav');"
-				/>
-			</panel>
-
-			<!-- Ready -->
-			<panel x="0.3h" y="2.95h" width="9.2h" height="2.3h" align="right" onmouseover="ShowWidget('ready_tip{index}');" onmouseout="HideWidget('ready_tip{index}');">
-				<!-- Button -->
-				<instance
-					name="picker_ready_button"
-					index="{index}"
-					label="hselect_button_ready"
-					onclick="Ready();"
-					watch="HeroSelectPlayerInfo{index}"
-					ontrigger="
-						SetVisible(param1 and !param10);
-						SetEnabled(param15);
-						"
-				/>
-				
-				<!-- Ready / Not Ready Status -->
-				<panel noclick="1">
-					<image
-						noclick="1"
-						watch="HeroSelectPlayerInfo{index}"
-						ontrigger="
-							SetVisible(!param1 or param10);
-							If(param10,
-								SetTexture('/ui/elements/heroselection/ready.tga'),
-								SetTexture('/ui/elements/heroselection/not_ready.tga'));
-							If(param10,
-								PlaySound('/shared/sounds/ui/hero_select/button_ready.wav'));
-
-							"
-					/>
-					<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="dyn_9" color="white" shadow="true" shadowcolor="black" noclick="1">hselect_button_ready</label>
-				</panel>
-			</panel>
-			
-			<image texture="/ui/elements/heroselection/hero_selection_frame.tga" noclick="1"/>
-			
-			<!-- Player Color -->
-			<image 
-				texture="/ui/elements/heroselection/hero_selection_color.tga"
-				noclick="1"
-				watch="HeroSelectPlayerInfo{index}"
-				ontrigger="SetColor(param4);"
-			/>
-			
-			<!-- Repick -->
-			<panel y="3.0h" width="2.2h" height="2.2h" align="center" color="invisible" noclick="1">	
-				<image width="140%" height="140%" align="center" valign="center" texture="/ui/elements/cc_config_circhl.tga"/>
-				<instance
-					name="player_pick_random"
-					onclick="RepickHero(); HideWidget('repick_hero_tip{index}'); PlaySound('/shared/sounds/ui/hero_select/button_repick.wav');"
-					tooltip=""
-					index="{index}"
-					panel_ontrigger="SetVisible(param1);"
-					button_ontrigger="SetEnabled(param7 and param15);"
-				/>
-			</panel>			
-			
-			<!-- Unit Name -->
-			<panel y="1.1h" height="2.0h" width="-5.0h" align="center" valign="top" color="invisible" noclick="1">
-				<label height="100%" textvalign="center" textalign="center" font="dyn_10" color="white" shadow="1" watch="HeroSelectPlayerInfo{index}" ontrigger="SetText(param5);"/>
-			</panel>
-			
-			<!-- Gold -->
-			<panel x="1.4h" y="3.25h" height="1.7h" width="6.0h" align="left" valign="top" color="invisible" onmouseover="ShowWidget('gold_tip{index}');" onmouseout="HideWidget('gold_tip{index}');">
-				<label height="100%" width="-1.6h" textvalign="center" textalign="center" font="dyn_9" color="white" shadow="1" watch="HeroSelectPlayerInfo{index}" ontrigger="SetText(param17);" noclick="1"/>
-				<image x="-0.2h" width="1.6h" height="1.6h" valign="center" align="right" texture="/ui/common/gold.tga" noclick="1"/>
-			</panel>
-			
-			<!-- Selection Indicator -->
-			<panel
-				name="arrow_panel{index}"
-				noclick="1"
-				x="-5.6h" y="0.4h"
-				width="12h" height="7h"
-				valign="center"
-				align="center"
-				color="invisible"
-				visible="false"
-				watch="HeroSelectPlayerInfo{index}"
-				ontrigger="SetVisible(param14);"
-			>
-				<modelpanel
-					watch="HeroSelectPlayerInfo{index}"
-					ontrigger="if({index} ge 5, SetAnim('idle2')); if({index} ge 5, Call('arrow_panel{index}','SetX(\'5.4h\');'));"					
-					name="arrow{index}"
-					visible="1"
-					noclick="true"
-					model="common/models/arcade_text/arrow.mdf"
-					anim="idle"
-					camerapos="0 20 0"
-					cameraangles="0 0 180"
-					camerafov="45"
-					cameranear="1"
-					carmerafar="5000"
-					depthclear="false"
-					depthcompress="true"
-					sunazimuth="90"
-					sunaltitude="10"
-					suncolor="3.2 2 2"						
-				/>				
-			</panel>
-			<!-- Player Name -->
-			<panel y="-2.5h" height="2.0h" width="-5.0h" align="center" valign="bottom" color="invisible" noclick="1">
-				<label height="100%" textvalign="center" textalign="center" font="dyn_10" color="white" shadow="1" watch="HeroSelectPlayerInfo{index}" ontrigger="SetText(param3);"/>
-			</panel>			
-			
-		</panel>	
-	</template>
-	
-	<!-- Team Lists -->
-	<template name="team_list1">
-		<panel height="-4.0h" valign="top" color="invisible" noclick="1" float="bottom" reverse="1">
-			<panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo0" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
-				<instance name="player_info" index="0" team="legion" button_align="right"/>
-			</panel>
-			<panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo1" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
-				<instance name="player_info" index="1" team="legion" button_align="right"/>
-			</panel>
-			<panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo2" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
-				<instance name="player_info" index="2" team="legion" button_align="right"/>
-			</panel>
-			<panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo3" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
-				<instance name="player_info" index="3" team="legion" button_align="right"/>
-			</panel>
-			<panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo4" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
-				<instance name="player_info" index="4" team="legion" button_align="right"/>
-			</panel>			
-			<!-- Footer - Always Display -->
-			<panel height="9.0h" noclick="1" sticky="true" stickytoinvis="false">
-				<image y="-3.6h" x="-0.1h" width="36.0h" height="9.0h" align="left" valign="bottom" texture="/ui/elements/heroselection/hero_selection_footer_left.tga" noclick="1"/>
-			</panel>
-		</panel>
-	</template>
-
-	<template name="team_list2">
-		<panel height="-4.0h" valign="top" color="invisible" noclick="1" float="bottom" sticky="true" reverse="1">			
-			<panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo5" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
-				<instance name="player_info" index="5" team="hellbourne" button_align="left"/>
-			</panel>
-			<panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo6" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
-				<instance name="player_info" index="6" team="hellbourne" button_align="left"/>
-			</panel>
-			<panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo7" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
-				<instance name="player_info" index="7" team="hellbourne" button_align="left"/>
-			</panel>
-			<panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo8" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
-				<instance name="player_info" index="8" team="hellbourne" button_align="left"/>
-			</panel>
-			<panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo9" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
-				<instance name="player_info" index="9" team="hellbourne" button_align="left"/>
-			</panel>
-			<!-- Footer - Always Display -->
-			<panel height="9.0h" noclick="1" sticky="true" stickytoinvis="false">
-				<image y="-3.6h" x="-2.0h" width="36.0h" height="9.0h" align="left" valign="bottom" texture="/ui/elements/heroselection/hero_selection_footer_right.tga" noclick="1"/>
-			</panel>
-		</panel>
-	</template>
-
-	<!-- Match Start Timer -->
-	<template name="match_timer">
-		<panel y="-2.0h" valign="top" width="14.0h" height="7.4h" align="center" texture="/ui/elements/heroselection/timer_base.tga">
-			<label
-				height="85%" width="100%"
-				align="center"
-				textvalign="center" textalign="center"
-				color="white"
-				font="dyn_12" shadow="1"
-				watch="HeroSelectTimer"
-				ontrigger="SetText(FtoT(param0, 1, 0, '-'));"
-			/>
-		</panel>
-	</template>
-
-	<!-- Random button -->
-	<template name="random_button">
-		<panel y="0" width="{width=16h}" height="{height=8h}" align="center" noclick="true">
-			<panel width="45%" align="center" onmouseover="ShowWidget('random_hero_tip');" onmouseout="HideWidget('random_hero_tip');">
-				<button
-					color="invisible"
-					onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav'); ShowWidget('random_hero_tip');"
-					onmouseout="HideWidget('random_hero_tip');"
-					onclick="PlaySound('/shared/sounds/ui/hero_select/button_random.wav'); RandomHero();"
-					watch="HeroSelectInfo"
-					ontrigger="SetEnabled(!param7);"
-				>
-					<widgetstate statename="up">
-						<image width="222%" align="center" texture="/ui/elements/heroselection/random_up.tga" noclick="true"/>
-					</widgetstate>
-
-					<widgetstate statename="over">
-						<image width="222%" align="center" texture="/ui/elements/heroselection/random_over.tga" noclick="true"/>
-					</widgetstate>
-
-					<widgetstate statename="down">
-						<image width="222%" align="center" texture="/ui/elements/heroselection/random_down.tga" noclick="true"/>
-					</widgetstate>
-
-					<widgetstate statename="disabled">
-						<image width="222%" align="center" texture="/ui/elements/heroselection/random_disabled.tga" noclick="true"/>
-					</widgetstate>
-				</button>
-			</panel>
-		</panel>
-	</template>
-	
-	<!-- Hero Icon -->
-	<template name="hero_icon">
-		<panel
-			width="{width}" height="{height}"
-			color="white"
-			visible="true"
-			texture="/ui/elements/hero_picker_icon.tga"
-			valign="{valign}" align="{align}"
-			watch="HeroSelectHeroList{index}"
-			ontrigger="
-				If(param2 and param3, SetTexture(param1), SetTexture('/ui/elements/hero_picker_icon.tga'));
-				If(param4 or !param3 or !param2, SetRenderMode('normal'), SetRenderMode('grayscale'));
-				"
-		>
-			<button
-				texture="/ui/elements/button_bevel.tga"
-				watch="HeroSelectHeroList{index}"
-				onclick="PlaySound('/shared/sounds/ui/error.wav');"
-				ontrigger="
-					If(param4,
-						SetOnclick('SpawnHero(\'' # param0 # '\'); PlaySound(\'/shared/sounds/ui/hero_select/button_select.wav\');'),
-						SetOnclick('PlaySound(\'/shared/sounds/ui/error.wav\');')
-						);
-					If(param2,
-						SetOnmouseover('ShowWidget(\'hero_info\'); GetHeroInfo(\'' # param0 # '\');'),
-						SetOnmouseover('')
-						);
-					"
-				onmouseout="HideWidget('hero_info');"
-
-			/>
-		</panel>
-
-	</template>
-
-	<!-- Hero List - All Heroes -->
-	<template name="hero_list_ap">
-		<panel float="bottom" padding=".25h" color="invisible" noclick="1" visible="1" name="heroes">
-			<!-- Top Row -->
-			<panel height="10%" color="invisible">
-				<image texture="/ui/elements/heroselection/picker_ap.tga" y="-0.4h" width="101%" align="center" />
-				<image texture="/ui/elements/heroselection/team_legion.tga" x="18%" y="-0.4h" width="420@" height="105%" align="left" />
-				<image texture="/ui/elements/heroselection/team_hellbourne.tga" x="-18%" y="-0.4h" width="420@" height="105%" align="right" />
-			</panel>
-
-			<!-- Row 1 -->
-			<panel height="30%" color="invisible" name="agility">
-				<frame texture="/ui/info/backdrop.tga" width="49%" borderthickness="5.0h" color="#0aa30a" />
-				<frame texture="/ui/info/backdrop.tga" width="49%" align="right" borderthickness="5.0h" color="#ff3131" />
-				<image x="-0.7%" width="33.75@" height="135%" texture="/ui/elements/heroselection/category_agi.tga"/>
-				<image x="0.7%" width="33.75@" height="135%" align="right" texture="/ui/elements/heroselection/category_agi_2.tga"/>
-				
-				<!-- Legion -->
-				<panel x="5.3%" width="44%" height="90%" valign="center" color="invisible" float="bottom">
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="0" />
-						<instance name="hero_icon" width="100@" height="100%" index="1" />
-						<instance name="hero_icon" width="100@" height="100%" index="2" />
-						<instance name="hero_icon" width="100@" height="100%" index="3" />
-						<instance name="hero_icon" width="100@" height="100%" index="4" />
-					</panel>
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="5" />
-						<instance name="hero_icon" width="100@" height="100%" index="6" />
-						<instance name="hero_icon" width="100@" height="100%" index="7" />
-						<instance name="hero_icon" width="100@" height="100%" index="8" />
-						<instance name="hero_icon" width="100@" height="100%" index="9" />
-					</panel>
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="10" />
-						<instance name="hero_icon" width="100@" height="100%" index="11" />
-						<instance name="hero_icon" width="100@" height="100%" index="12" />
-						<instance name="hero_icon" width="100@" height="100%" index="13" />
-						<instance name="hero_icon" width="100@" height="100%" index="14" />
-					</panel>
-				</panel>
-
-				<!-- Hellbourne -->
-				<panel x="-1.9%" width="44%" height="90%" valign="center" align="right" color="invisible" float="bottom">
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="15" />
-						<instance name="hero_icon" width="100@" height="100%" index="16" />
-						<instance name="hero_icon" width="100@" height="100%" index="17" />
-						<instance name="hero_icon" width="100@" height="100%" index="18" />
-						<instance name="hero_icon" width="100@" height="100%" index="19" />
-					</panel>
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="20" />
-						<instance name="hero_icon" width="100@" height="100%" index="21" />
-						<instance name="hero_icon" width="100@" height="100%" index="22" />
-						<instance name="hero_icon" width="100@" height="100%" index="23" />
-						<instance name="hero_icon" width="100@" height="100%" index="24" />
-					</panel>
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="25" />
-						<instance name="hero_icon" width="100@" height="100%" index="26" />
-						<instance name="hero_icon" width="100@" height="100%" index="27" />
-						<instance name="hero_icon" width="100@" height="100%" index="28" />
-						<instance name="hero_icon" width="100@" height="100%" index="29" />
-					</panel>
-				</panel>
-			</panel>
-
-			<!-- Row 2 -->
-			<panel height="30%" color="invisible">
-				<frame texture="/ui/info/backdrop.tga" width="49%" borderthickness="5.0h" color="#136374" />
-				<frame texture="/ui/info/backdrop.tga" width="49%" align="right" borderthickness="5.0h" color="#9C06B7" />
-				<image x="-0.7%" width="33.75@" height="135%" texture="/ui/elements/heroselection/category_intel.tga"/>
-				<image x="0.7%" width="33.75@" height="135%" align="right" texture="/ui/elements/heroselection/category_intel_2.tga"/>
-				
-				<!-- Legion -->
-				<panel x="5.3%" width="44%" height="90%" valign="center" color="invisible" float="bottom">
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="30" />
-						<instance name="hero_icon" width="100@" height="100%" index="31" />
-						<instance name="hero_icon" width="100@" height="100%" index="32" />
-						<instance name="hero_icon" width="100@" height="100%" index="33" />
-						<instance name="hero_icon" width="100@" height="100%" index="34" />
-					</panel>
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="35" />
-						<instance name="hero_icon" width="100@" height="100%" index="36" />
-						<instance name="hero_icon" width="100@" height="100%" index="37" />
-						<instance name="hero_icon" width="100@" height="100%" index="38" />
-						<instance name="hero_icon" width="100@" height="100%" index="39" />
-					</panel>
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="40" />
-						<instance name="hero_icon" width="100@" height="100%" index="41" />
-						<instance name="hero_icon" width="100@" height="100%" index="42" />
-						<instance name="hero_icon" width="100@" height="100%" index="43" />
-						<instance name="hero_icon" width="100@" height="100%" index="44" />
-					</panel>
-				</panel>
-
-				<!-- Hellbourne -->
-				<panel x="-1.9%" width="44%" height="90%" valign="center" align="right" color="invisible" float="bottom">
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="45" />
-						<instance name="hero_icon" width="100@" height="100%" index="46" />
-						<instance name="hero_icon" width="100@" height="100%" index="47" />
-						<instance name="hero_icon" width="100@" height="100%" index="48" />
-						<instance name="hero_icon" width="100@" height="100%" index="49" />
-					</panel>
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="50" />
-						<instance name="hero_icon" width="100@" height="100%" index="51" />
-						<instance name="hero_icon" width="100@" height="100%" index="52" />
-						<instance name="hero_icon" width="100@" height="100%" index="53" />
-						<instance name="hero_icon" width="100@" height="100%" index="54" />
-					</panel>
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="55" />
-						<instance name="hero_icon" width="100@" height="100%" index="56" />
-						<instance name="hero_icon" width="100@" height="100%" index="57" />
-						<instance name="hero_icon" width="100@" height="100%" index="58" />
-						<instance name="hero_icon" width="100@" height="100%" index="59" />
-					</panel>
-				</panel>
-			</panel>
-
-			<!-- Row 3 -->
-			<panel height="30%" color="invisible">
-				<frame texture="/ui/info/backdrop.tga" width="49%" borderthickness="5.0h" color="#b7b506" />
-				<frame texture="/ui/info/backdrop.tga" width="49%" align="right" borderthickness="5.0h" color="#DE650B" />
-				<image x="-0.7%" width="33.75@" height="135%" texture="/ui/elements/heroselection/category_str.tga"/>
-				<image x="0.7%" width="33.75@" height="135%" align="right" texture="/ui/elements/heroselection/category_str_2.tga"/>
-				
-				<!-- Legion -->
-				<panel x="5.3%" width="44%" height="90%" valign="center" color="invisible" float="bottom">
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="60" />
-						<instance name="hero_icon" width="100@" height="100%" index="61" />
-						<instance name="hero_icon" width="100@" height="100%" index="62" />
-						<instance name="hero_icon" width="100@" height="100%" index="63" />
-						<instance name="hero_icon" width="100@" height="100%" index="64" />
-					</panel>
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="65" />
-						<instance name="hero_icon" width="100@" height="100%" index="66" />
-						<instance name="hero_icon" width="100@" height="100%" index="67" />
-						<instance name="hero_icon" width="100@" height="100%" index="68" />
-						<instance name="hero_icon" width="100@" height="100%" index="69" />
-					</panel>
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="70" />
-						<instance name="hero_icon" width="100@" height="100%" index="71" />
-						<instance name="hero_icon" width="100@" height="100%" index="72" />
-						<instance name="hero_icon" width="100@" height="100%" index="73" />
-						<instance name="hero_icon" width="100@" height="100%" index="74" />
-					</panel>
-				</panel>
-
-				<!-- Hellbourne -->
-				<panel x="-1.9%" width="44%" height="90%" valign="center" align="right" color="invisible" float="bottom">
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="75" />
-						<instance name="hero_icon" width="100@" height="100%" index="76" />
-						<instance name="hero_icon" width="100@" height="100%" index="77" />
-						<instance name="hero_icon" width="100@" height="100%" index="78" />
-						<instance name="hero_icon" width="100@" height="100%" index="79" />
-					</panel>
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="80" />
-						<instance name="hero_icon" width="100@" height="100%" index="81" />
-						<instance name="hero_icon" width="100@" height="100%" index="82" />
-						<instance name="hero_icon" width="100@" height="100%" index="83" />
-						<instance name="hero_icon" width="100@" height="100%" index="84" />
-					</panel>
-					<panel height="32%" color="invisible" float="right">
-						<instance name="hero_icon" width="100@" height="100%" index="85" />
-						<instance name="hero_icon" width="100@" height="100%" index="86" />
-						<instance name="hero_icon" width="100@" height="100%" index="87" />
-						<instance name="hero_icon" width="100@" height="100%" index="88" />
-						<instance name="hero_icon" width="100@" height="100%" index="89" />
-					</panel>
-				</panel>
-			</panel>
-
-			<instance name="random_button"/>
-		</panel>
-	</template>
-	<!-- END Hero List - All Heroes -->
-
-	<!-- Hero List - One Race -->
-	<template name="hero_list_normal">
-		<panel color="invisible" noclick="1" visible="1">		
-			<!-- Col 1 AGI -->
-			<panel width="32%" x="1%" align="left" color="invisible">
-				<frame texture="/ui/info/backdrop.tga" width="100%" borderthickness="5.0h" color="#0aa30a" float="bottom">
-					<image y="6.0h" height="5.3h" width="21.2h" align="center" texture="/ui/elements/heroselection/category_agi_horiz.tga" />
-					
-					<panel width="27.1h" align="center" color="invisible" float="right" padding="0">
-						<panel width="7.7h" color="invisible" float="bottom" padding="0">
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="0" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="1" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="2" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="3" />
-						</panel>
-						<panel width="5.5h" color="invisible" float="bottom" padding="0">
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="4" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="5" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="6" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="7" />
-						</panel>
-						<panel width="5.5h" color="invisible" float="bottom" padding="0">
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="8" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="9" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="10" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="11" />
-						</panel>
-						<panel width="5.5h" color="invisible" float="bottom" padding="0">
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="12" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="13" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="14" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="46" />
-						</panel>
-					</panel>
-				</frame>
-			</panel>
-			
-			<!-- Col 2 INTEL -->
-			<panel width="32%" align="center" color="invisible">
-				<frame texture="/ui/info/backdrop.tga" width="100%" borderthickness="5.0h" color="#136374" float="bottom">
-					<image y="6.0h" height="5.3h" width="21.2h" align="center" texture="/ui/elements/heroselection/category_intel_horiz.tga" />
-					<panel width="27.1h" valign="top" align="center" color="invisible" float="right" padding="0">
-						<panel width="7.7h" color="invisible" float="bottom" padding="0">
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="15" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="16" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="17" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="18" />
-						</panel>
-						<panel width="5.5h" color="invisible" float="bottom" padding="0">
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="19" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="20" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="21" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="22" />
-						</panel>
-						<panel width="5.5h" color="invisible" float="bottom" padding="0">
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="23" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="24" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="25" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="26" />
-						</panel>
-						<panel width="5.5h" color="invisible" float="bottom" padding="0">
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="27" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="28" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="29" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="47" />
-						</panel>
-					</panel>
-				</frame>
-			</panel>
-			
-			<!-- Col 3 STR -->
-			<panel width="32%" x="-1%" align="right" color="invisible">
-				<frame texture="/ui/info/backdrop.tga" width="100%" borderthickness="5.0h" color="#DE650B" float="bottom">
-					<image y="6.0h" height="5.3h" width="21.2h" align="center" texture="/ui/elements/heroselection/category_str_horiz.tga" />
-					<panel width="27.1h" valign="top" align="center" color="invisible" float="right" padding="0">
-						<panel width="7.7h" color="invisible" float="bottom" padding="0">
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="30" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="31" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="32" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="33" />
-						</panel>
-						<panel width="5.5h" color="invisible" float="bottom" padding="0">
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="34" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="35" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="36" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="37" />
-						</panel>
-						<panel width="5.5h" color="invisible" float="bottom" padding="0">
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="38" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="39" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="40" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="41" />
-						</panel>
-						<panel width="5.5h" color="invisible" float="bottom" padding="0">
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="42" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="43" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="44" />
-							<instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="45" />
-						</panel>
-					</panel>
-				</frame>
-			</panel>		
-
-			<instance name="random_button"/>
-		</panel>
-	</template>
-	<!-- END Hero List - One Race -->
-
-	<!-- Hero List - Random Draft -->
-	<template name="hero_list_rd">
-		<panel float="bottom" padding=".25h" color="invisible" noclick="1" visible="1">
-
-			<panel height="-2.0h" width="-2.0h" align="center" valign="center" color="invisible">
-				<frame texture="/ui/info/backdrop.tga" width="100%" borderthickness="5.0h" color=".5 .5 .5 1" />
-
-				<panel width="83.8%" height="-2.0h" align="center" valign="center" float="bottom" noclick="1">
-					<panel height="25%" align="center" color="invisible" float="right">
-						<instance name="hero_icon" height="100%" width="100@" index="0" />
-						<instance name="hero_icon" height="100%" width="100@" index="1" />
-						<panel width="100@" />
-						<panel width="100@" />
-						<instance name="hero_icon" height="100%" width="100@" index="2" />
-						<instance name="hero_icon" height="100%" width="100@" index="3" />
-					</panel>
-					<panel height="25%" color="invisible" float="right">
-						<instance name="hero_icon" height="100%" width="100@" index="4" />
-						<instance name="hero_icon" height="100%" width="100@" index="5" />
-						<instance name="hero_icon" height="100%" width="100@" index="6" />
-						<instance name="hero_icon" height="100%" width="100@" index="7" />
-						<instance name="hero_icon" height="100%" width="100@" index="8" />
-						<instance name="hero_icon" height="100%" width="100@" index="9" />
-					</panel>
-					<panel height="25%" color="invisible" float="right">
-						<instance name="hero_icon" height="100%" width="100@" index="10" />
-						<instance name="hero_icon" height="100%" width="100@" index="11" />
-						<instance name="hero_icon" height="100%" width="100@" index="12" />
-						<instance name="hero_icon" height="100%" width="100@" index="13" />
-						<instance name="hero_icon" height="100%" width="100@" index="14" />
-						<instance name="hero_icon" height="100%" width="100@" index="15" />
-					</panel>
-					<panel height="25%" color="invisible" float="right">
-						<panel width="100@" />
-						<instance name="hero_icon" height="100%" width="100@" index="16" />
-						<instance name="hero_icon" height="100%" width="100@" index="17" />
-						<instance name="hero_icon" height="100%" width="100@" index="18" />
-						<instance name="hero_icon" height="100%" width="100@" index="19" />
-						<panel width="100@" />
-					</panel>
-				</panel>
-			</panel>
-			
-			<instance name="random_button"/>
-		</panel>
-	</template>
-	<!-- END Hero List - Random Draft -->
-
-	<!-- Hero List - 3 Heros -->
-	<template name="hero_list_sd_ability_info">
-		<panel width="96%" height="5.0h" align="center" color="invisible" float="right" padding="1.0h">
-			<panel width="20%" noclick="1">
-				<image height="100%" width="100@" watch="HeroSelectHeroList{index}" ontrigger="SetTexture(*('param' # Round(14 + {ability} * 4))); If(param4, SetRenderMode('normal'), SetRenderMode('grayscale'));" />
-				<frame height="100%" width="100@" color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
-			</panel>
-			<panel width="80%" color="invisible" float="bottom" padding="0" noclick="1">
-				<label height="30%" color="#ffab01" shadow="1" font="dyn_10" textvalign="top" noclick="1" watch="HeroSelectHeroList{index}" ontrigger="SetText(*('param' # Round(13 + {ability} * 4)));"/>
-				<label height="35%" color="#03f3f3" shadow="1" font="dyn_9" textvalign="center" noclick="1" watch="HeroSelectHeroList{index}" ontrigger="SetText(Translate('game_hero_select_mana_cost', 'value', Round(*('param' # Round(15 + {ability} * 4)))));"/>
-				<label height="35%" color="white" shadow="1" font="dyn_9" textvalign="center" noclick="1" watch="HeroSelectHeroList{index}" ontrigger="SetText(Translate('game_hero_select_cooldown', 'time', Round(*('param' # Round(16 + {ability} * 4)) / 1000)));"/>
-			</panel>
-		</panel>
-	</template>
-	
-	<template name="hero_list_sd_unitdisplay">
-		<panel width="32%" color="invisible" align="{align}" watch="HeroSelectHeroList{index}" ontrigger="SetVisible(param2 and param3);">
-			<frame color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
-
-			<!-- Stats -->
-			<instance name="header_bar" height="6%" width="-2" align="center" watch="HeroSelectHeroList{index}" ontrigger="SetText(param5);"/>
-			<panel y="7.5%" width="96%" height="20%" align="center" color="invisible" float="right" noclick="1">
-
-				<panel width="40%">
-					<image width="86%" height="86@" align="center" watch="HeroSelectHeroList{index}" ontrigger="SetTexture(param1); If(param4, SetRenderMode('normal'), SetRenderMode('grayscale'));" />
-					<frame width="86%" height="86@" align="center" color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
-				</panel>
-
-				<panel width="58%" float="bottom" padding="3.0%">
-					<!-- Damage -->
-					<panel height="30%" color="invisible">
-						<panel x="5@" valign="center" width="90@" height="90%" color="white" texture="/ui/legion/damage_icon.tga" watch="HeroSelectHeroList{index}" ontrigger="If(param4, SetRenderMode('normal'), SetRenderMode('grayscale'));"/>
-						<panel width="75%" align="right">
-							<label font="dyn_9" color="yellow"  width="100%" height="50%" valign="top" textalign="left" textvalign="center" content="hselect_label_hd_damage"/>
-							<panel height="50%" valign="bottom" color="invisible">
-								<label
-									font="dyn_8" color="white" shadow="1" width="100%" height="100%" textalign="left" textvalign="center"
-									watch="HeroSelectHeroList{index}"
-									ontrigger="SetText(Round(param6) # ' - ' # Round(param7));"
-								/>
-							</panel>
-						</panel>
-					</panel>
-
-					<!-- Armor -->
-					<panel height="30%" color="invisible">
-						<panel x="5@" valign="center" width="90@" height="90%" color="white" texture="/ui/legion/armor_icon.tga" watch="HeroSelectHeroList{index}" ontrigger="If(param4, SetRenderMode('normal'), SetRenderMode('grayscale'));"/>
-						<panel width="75%" align="right">
-							<label font="dyn_9" color="yellow" shadow="1" width="100%" height="50%" valign="top" textalign="left" textvalign="center" content="hselect_label_hd_armor"/>
-							<panel height="50%" valign="bottom" color="invisible">
-								<label font="dyn_8" color="white" shadow="1" width="100%" height="100%" textalign="left" textvalign="center"
-								watch="HeroSelectHeroList{index}"
-								ontrigger="SetText(FtoA(param8, 2));"
-							/>
-							</panel>
-						</panel>
-					</panel>
-
-					<!-- Attributes -->
-					<panel height="30%" color="invisible" watch="ActiveHasAttributes" ontrigger="SetVisible(param);">
-						<panel x="5@" valign="center" width="90@" height="90%" color="white" texture="/ui/legion/plus_icon.tga" watch="HeroSelectHeroList{index}" ontrigger="If(param4, SetRenderMode('normal'), SetRenderMode('grayscale'));"/>
-						<panel width="75%" align="right">
-							<panel height="50%" valign="top" color="invisible" float="right" padding="0">
-								<label font="dyn_10" color="yellow" shadow="1" width="33.3%" height="100%" textalign="center" textvalign="bottom" content="hselect_label_strength"/>
-								<label font="dyn_10" color="yellow" shadow="1" width="33.3%" height="100%" textalign="center" textvalign="bottom" content="hselect_label_agility"/>
-								<label font="dyn_10" color="yellow" shadow="1" width="33.3%" height="100%" textalign="center" textvalign="bottom" content="hselect_label_intelligence"/>
-							</panel>
-							<panel height="50%" valign="bottom" color="invisible" float="right" padding="0">
-								<label font="dyn_8" color="white" shadow="1" width="33.3%" height="100%" textalign="center" textvalign="center"
-									watch="HeroSelectHeroList{index}"
-									ontrigger="SetText(Round(param9)); If(StringEquals(param12, 'strength'), SetColor('yellow'), SetColor('white'));"
-								/>
-								<label font="dyn_8" color="white" shadow="1" width="33.3%" height="100%" textalign="center" textvalign="center"
-									watch="HeroSelectHeroList{index}"
-									ontrigger="SetText(Round(param10)); If(StringEquals(param12, 'agility'), SetColor('yellow'), SetColor('white'));"
-								/>
-								<label font="dyn_8" color="white" shadow="1" width="33.3%" height="100%" textalign="center" textvalign="center"
-									watch="HeroSelectHeroList{index}"
-									ontrigger="SetText(Round(param11)); If(StringEquals(param12, 'intelligence'), SetColor('yellow'), SetColor('white'));"
-								/>
-							</panel>
-						</panel>
-					</panel>
-				</panel>
-			</panel>
-
-			<!-- Abilities -->
-			<instance name="header_bar" y="30.0%" height="5.0%" width="-2" align="center" lbl_font="dyn_9" color=".6 .6 .6 1" lbl="hselect_label_hd_abilities" />
-			<panel y="37.5%" height="50.0%" color="invisible" float="bottom" padding="1.5h" noclick="1">
-				<instance name="hero_list_sd_ability_info" index="{index}" ability="0"/>
-				<instance name="hero_list_sd_ability_info" index="{index}" ability="1"/>
-				<instance name="hero_list_sd_ability_info" index="{index}" ability="2"/>
-				<instance name="hero_list_sd_ability_info" index="{index}" ability="3"/>
-			</panel>
-			
-			<!-- Button -->
-			<button
-				color="invisible"
-				watch="HeroSelectHeroList{index}"
-				onmouseout="HideWidget('hero_info');"
-				ontrigger="
-					If(param4,
-						SetOnclick('SpawnHero(\'' # param0 # '\'); PlaySound(\'/shared/sounds/ui/hero_select/button_select.wav\'); HideWidget(\'hero_info\');'),
-						SetOnclick('PlaySound(\'/shared/sounds/ui/error.wav\');')
-						);
-					SetOnmouseover('ShowWidget(\'hero_info\'); PlaySound(\'/shared/sounds/ui/button_over_03.wav\'); GetHeroInfo(\'' # param0 # '\');');
-					"
-			>
-				<widgetstate statename="up">
-				</widgetstate>
-				<widgetstate statename="over">
-					<frame color="invisible" bordercolor="1 1 .25 .3" borderthickness=".3h" rendermode="additive"/>
-				</widgetstate>
-				<widgetstate statename="down">
-					<frame color="1 1 .25 .1" bordercolor="1 1 .25 .6" borderthickness=".3h" rendermode="additive"/>
-				</widgetstate>
-			</button>
-			<panel color="0 0 0 .4" watch="HeroSelectHeroList{index}" ontrigger="SetVisible(!param4);" noclick="true"/>
-		</panel>
-	</template>
-
-	<template name="hero_list_sd">
-		<panel float="bottom" padding=".25h" color="invisible" noclick="1" visible="1">
-			<panel height="-1.0h" valign="center" color="invisible">
-				<frame texture="/ui/info/backdrop.tga" width="100%" borderthickness="5.0h" color=".5 .5 .5 1" />
-
-				<panel width="-3.0h" height="-2.0h" valign="center" align="center" color="invisible">
-					<instance name="hero_list_sd_unitdisplay" index="0" align="left"/>
-					<instance name="hero_list_sd_unitdisplay" index="1" align="center"/>
-					<instance name="hero_list_sd_unitdisplay" index="2" align="right"/>
-				</panel>
-			</panel>
-			
-			<instance name="random_button" width="10h" height="5h"/>
-		</panel>
-	</template>
-	<!-- END Hero List - 3 Heros -->
-
-	<!-- Hero info -->
-	<template name="hero_ability_info">
-		<panel height="7.1h" width="-1.0h" align="center" color="invisible" watch="HeroSelectHeroAbilityInfo{index}" ontrigger="SetVisible(param0);">
-			<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="invisible"/>
-			<frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
-
-			<panel x="0.5h" width="5.9h" height="5.9h" valign="center">
-				<image texture="$checker" watch="HeroSelectHeroAbilityInfo{index}" ontrigger="SetTexture(param1);" />
-				<frame color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
-			</panel>
-
-			<panel x="6.9h" width="-7.5h" height="6.2h" valign="center" color="invisible" float="bottom">
-				<panel width="100%" height="1.3h" color="invisible">				
-					<label height="100%" color="#ffab01" shadow="1" font="dyn_9" textvalign="center" noclick="1" watch="HeroSelectHeroAbilityInfo{index}" ontrigger="SetText(param2);" />					
-				</panel>
-				
-				<label height="80%" color="white" shadow="1" font="dyn_8" textvalign="top" wrap="1" watch="HeroSelectHeroAbilityInfo{index}" ontrigger="SetText(param3);"/>
-			</panel>
-		</panel>
-	</template>
-
-	<template name="hero_info_panel">
-		<panel float="right" padding=".5h" valign="center" color="black" noclick="1" height="102%">
-
-			<panel width="27%" color="invisible" noclick="1">
-				<frame color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
-				<instance name="header_bar" width="-2" height="2.0h" align="center" lbl="hselect_header_hero_details" />
-
-				<panel y="2.2h" float="bottom" padding="0.3h">
-				
-					<label width="100%" height="1.8h" align="center" textalign="center" textvalign="center" font="dyn_12" color="#ffab01" shadow="true" watch="HeroSelectHeroInfo" ontrigger="SetText(param2);"/>
-					
-					<panel color="invisible" height="8.5h" float="right" padding="0.5h">
-					
-						<panel color="invisible" width="9.0h">
-							<!-- Avatar -->
-							<panel x="0.5h" width="8.5h" height="8.5h" align="left">
-								<image texture="$checker" watch="HeroSelectHeroInfo" ontrigger="SetTexture(param1);" />
-								<frame color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
-							</panel>
-						</panel>
-						
-						<panel color="invisible" width="-9.5h">
-						
-							<!-- Attributes -->
-							<panel width="-0.5h" align="left" color="invisible">
-								<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#092540"/>
-								<frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
-								<panel y="0.2h" width="-1.0h" align="center" color="invisible" float="bottom" padding="0.4h">
-
-									<label height="1.0h" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" textalign="center" noclick="1">hselect_label_hd_strength</label>
-									<label height="0.9h" color="#ffab01" shadow="1" font="dyn_8" textvalign="center" textalign="center" noclick="1" watch="HeroSelectHeroInfo" ontrigger="If(StringEquals(param4, 'strength'), SetColor('yellow'), SetColor('white')); SetText(Round(param5) # '  (+' # FtoA(param6, 1) # ')');"/>
-									
-									<label height="1.0h" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" textalign="center" noclick="1">hselect_label_hd_agility</label>
-									<label height="0.9h" color="#ffab01" shadow="1" font="dyn_8" textvalign="center" textalign="center" noclick="1" watch="HeroSelectHeroInfo" ontrigger="If(StringEquals(param4, 'agility'), SetColor('yellow'), SetColor('white')); SetText(Round(param7) # '  (+' # FtoA(param8, 1) # ')');"/>
-									
-									<label height="1.0h" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" textalign="center" noclick="1">hselect_label_hd_intel</label>
-									<label height="0.9h" color="#ffab01" shadow="1" font="dyn_8" textvalign="center" textalign="center" noclick="1" watch="HeroSelectHeroInfo" ontrigger="If(StringEquals(param4, 'intelligence'), SetColor('yellow'), SetColor('white')); SetText(Round(param9) # '  (+' # FtoA(param10, 1) # ')');"/>
-
-								</panel>
-							</panel>
-
-						</panel>
-
-					</panel>
-
-					<!-- Info -->
-					<panel height="18.5h" width="96%" align="center" color="invisible">
-						<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#252525"/>
-						<frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
-						<label height="-1.0h" width="-1.4h" align="center" valign="center" wrap="true" font="dyn_8" color="white" shadow="true" watch="HeroSelectHeroInfo" ontrigger="SetText(param3);"/>
-					</panel>
-
-				</panel>
-			</panel>
-
-			<panel width="16%" color="invisible" noclick="1">
-				<frame color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
-				<instance name="header_bar" width="-2" height="2.0h" align="center" lbl="hselect_header_statistics" />
-				<panel y="2.8h" valign="center" float="bottom" padding="1.0h" color="invisible" >
-
-					<!-- Damage -->
-					<panel height="12%" width="96%" align="center" color="invisible">
-						<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#3d0f0f"/>
-						<frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
-						<image x="12@" width="80@" height="80%" valign="center" texture="/ui/legion/damage_icon.tga" />
-						<panel x="105@" width="-105@" height="80%" valign="center" color="invisible" float="bottom">
-							<label height="40%" color="#ffab01" shadow="1" font="dyn_9" textvalign="center" noclick="1">hselect_label_hd_damage</label>
-							<label height="60%" color="white" shadow="1" font="dyn_8" textvalign="center" watch="HeroSelectHeroInfo" ontrigger="SetText(Round(param15) # ' - ' # Round(param16));"/>
-						</panel>
-					</panel>
-
-					<!-- Armor -->
-					<panel height="12%" width="96%" align="center" color="invisible">
-						<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#082c04"/>
-						<frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
-						<image x="12@" width="80@" height="80%" valign="center" texture="/ui/legion/armor_icon.tga" />
-						<panel x="105@" width="-105@" height="80%" valign="center" color="invisible" float="bottom">
-							<label height="40%" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" noclick="1">hselect_label_hd_armor</label>
-							<label height="60%" color="white" shadow="1" font="dyn_8" textvalign="center" watch="HeroSelectHeroInfo" ontrigger="SetText(FtoA(param17, 2));"/>
-						</panel>
-					</panel>
-
-					<!-- Movement Speed -->
-					<panel height="12%" width="96%" align="center" color="invisible">
-						<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#252525"/>
-						<frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
-						<image x="12@" width="80@" height="80%" valign="center" texture="/ui/legion/move_speed_icon.tga" />
-						<panel x="105@" width="-105@" height="80%" valign="center" color="invisible" float="bottom">
-							<label height="40%" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" noclick="1">hselect_label_hd_move_speed</label>
-							<label height="60%" color="white" shadow="1" font="dyn_8" textvalign="center" watch="HeroSelectHeroInfo" ontrigger="SetText(Round(param11));"/>
-						</panel>
-					</panel>
-
-					<!-- Attack Type -->
-					<panel height="12%" width="96%" align="center" color="invisible">
-						<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#252525"/>
-						<frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
-						<image x="12@" width="80@" height="80%" valign="center" texture="/ui/legion/plus_icon.tga" />
-						<panel x="105@" width="-105@" height="80%" valign="center" color="invisible" float="bottom">
-							<label height="40%" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" noclick="1">hselect_label_hd_attack_type</label>
-							<label height="60%" color="white" shadow="1" font="dyn_8" textvalign="center" watch="HeroSelectHeroInfo" ontrigger="SetText(param12);"/>
-						</panel>
-					</panel>
-
-					<!-- Attack Range -->
-					<panel height="12%" width="96%" align="center" color="invisible">
-						<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#252525"/>
-						<frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
-						<image x="12@" width="80@" height="80%" valign="center" texture="/ui/legion/plus_icon.tga" />
-						<panel x="105@" width="-105@" height="80%" valign="center" color="invisible" float="bottom">
-							<label height="40%" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" noclick="1">hselect_label_hd_attack_range</label>
-							<label height="60%" color="white" shadow="1" font="dyn_8" textvalign="center" watch="HeroSelectHeroInfo" ontrigger="SetText(Round(param13));"/>
-						</panel>
-					</panel>
-
-					<!-- Attack Rate -->
-					<panel height="12%" width="96%" align="center" color="invisible">
-						<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#252525"/>
-						<frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
-						<image x="12@" width="80@" height="80%" valign="center" texture="/ui/legion/plus_icon.tga" />
-						<panel x="105@" width="-105@" height="80%" valign="center" color="invisible" float="bottom">
-							<label height="40%" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" noclick="1">hselect_label_hd_attack_rate</label>
-							<label height="60%" color="white" shadow="1" font="dyn_8" textvalign="center" watch="HeroSelectHeroInfo" ontrigger="SetText(FtoA(1000 / param14, 2));"/>
-						</panel>
-					</panel>
-
-				</panel>
-
-			</panel>
-
-			<panel width="55.8%" valign="center">
-				<frame color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
-				<instance name="header_bar" width="-2" height="2.0h" align="center" lbl="hselect_label_hd_abilities" />
-
-				<panel y="2.2h" valign="center" float="bottom" padding="0.2h" color="invisible" >
-					<instance name="hero_ability_info" index="0"/>
-					<instance name="hero_ability_info" index="1"/>
-					<instance name="hero_ability_info" index="2"/>
-					<instance name="hero_ability_info" index="3"/>
-				</panel>
-
-			</panel>
-
-			<panel x="0" y="0" color="black" watch="HeroSelectHeroInfo" ontrigger="SetVisible(!param0);"/>
-		</panel>
-	</template>
-
-	<image width="177.7h" height="100h" align="center" texture="/ui/elements/lobby/background.tga" visible="1" noclick="1" />	
-	<image width="100%" height="25@" align="center" texture="/ui/elements/heroselection/main_arch.tga" visible="1" noclick="1"/>
-	<image x="-11.0h" width="50h" height="100h" align="left" valign="bottom" texture="/ui/elements/lobby/statue_legion.tga" visible="1" noclick="1"/>
-	<image x="11.0h" width="50h" height="100h" align="right" valign="bottom" texture="/ui/elements/lobby/statue_hellbourne.tga" visible="1" noclick="1"/>
-
-	<!-- Match Timer -->
-	<instance name="match_timer" />
-	
-	<panel color="invisible" height="-2.0h" align="center" valign="center" noclick="1" visible="1">
-
-		<!-- Center -->
-		<panel width="81.4h" color="invisible" align="center" name="center" watch="HeroSelectInfo" ontrigger="ShowOnly('hero_list_' # param2);">
-			<!-- Hero List -->
-			<instance
-				name="frame_stone_brown"
-				window_name="hero_list_ap"
-				group="hero_list"
-				backercolor="0 0 0 .6" uscale=".14" vscale=".2" y="8.6h" height="53.0h" width="105%" valign="top" align="center"
-				body="hero_list_ap"
-				visible="false"
-			/>
-			<instance
-				name="frame_stone_brown"
-				window_name="hero_list_normal"
-				group="hero_list"
-				backercolor="0 0 0 .6" uscale=".14" vscale=".2" y="8.6h" height="50.0h" width="105%" valign="top" align="center"
-				body="hero_list_normal"
-				visible="false"
-			/>
-			<instance
-				name="frame_stone_brown"
-				window_name="hero_list_rd"
-				group="hero_list"
-				backercolor="0 0 0 .6" uscale=".14" vscale=".2" y="8.6h" height="53.0h" width="105%" valign="top" align="center"
-				body="hero_list_rd"
-				visible="false"
-			/>
-			<instance
-				name="frame_stone_brown"
-				window_name="hero_list_sd"
-				group="hero_list"
-				backercolor="0 0 0 .6" uscale=".14" vscale=".2" y="8.6h" height="53.0h" width="105%" valign="top" align="center"
-				body="hero_list_sd"
-				visible="true"
-			/>
-
-			<!-- Chat -->
-			<instance name="frame_stone_brown"
-				backercolor="0 0 0 .6" uscale=".14" vscale=".328" height="38.3h" width="105%" valign="bottom" align="center"
-				body="lobby_chat_window"
-			/>
-
-			<!-- Hero Info -->
-			<instance name="frame_stone_brown"
-				backercolor="0 0 0 .6" uscale=".14" vscale=".328" height="38.3h" width="105%" valign="bottom" align="center"
-				body="hero_info_panel"
-				window_name="hero_info"
-				visible="false"
-			/>
-		</panel>
-
-		<!-- Legion Team List -->
-		<panel x="-50h" y="12.0h" width="18.0h" height="-12h" color="invisible" align="center" valign="top" noclick="1">
-			<instance name="team_list1" />
-			<image x="-11.8h" y="-17.1h" width="49.0h" height="24.5h" texture="/ui/elements/heroselection/legion_hdr.tga" noclick="1" />
-		</panel>		
-
-		<!-- Hellbourne Team List -->
-		<panel x="50h" y="12.0h" width="18.0h" height="-12h" color="invisible" align="center" valign="top" noclick="1">
-			<instance name="team_list2" />			
-			<image x="-20.1h" y="-17.6h" width="49.0h" height="24.5h" texture="/ui/elements/heroselection/hellbourne_hdr.tga" noclick="1" />
-		</panel>		
-
-	</panel>
-
-	<!-- Match Info -->
-	<panel y="5.0h" height="5.8h" width="50.0h" align="center" color="invisible" noclick="1">
-		<image texture="/ui/elements/heroselection/match_info.tga" noclick="1"/>
-		<label
-			y="0.5h"
-			noclick="1"
-			width="100%" height="100%"
-			textalign="center"
-			font="dyn_16" color="#ffab01" shadow="1"
-			watch="HeroSelectInfo"
-			ontrigger="
-				If(param5 and !param7,
-					SetText(Translate('game_hero_select_status_select_hero')),
-					SetText(Translate('game_hero_select_status_waiting'))
-					);
-				"
-		/>
-	</panel>
-	
-
-	<!-- Trigger:	HeroSelectInfo
-		param0: Game mode (string)
-		param1: Game options (string)
-		param2: Hero selection type (string) [sd|rd|ap|normal]
-		param3: NoRepick (bool)
-		param4: NoSwap (bool)
-		param5: Local player can pick (bool)
-		param6: Local player can swap (bool)
-		param7: Local player has a hero (bool)
-		param8: Final hero selection phase (bool) - False during alternating picks until all players have picked their heroes
-		param9: Cost to pick a hero (int)
-		param10: Cost to repick a hero (int)
-		param11: Cost to random a hero (int)
-		param12: Local player has repicked (bool)
-		param13: Local player has swapped (bool)
-	-->
-	
-	<!-- Player Action Button Tooltips -->
-	<template name="player_tooltip_set">
-		<panel height="20%" noclick="true" passivechildren="true" watch="HeroSelectPlayerInfo{index}" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
-			<!-- Swap -->
-			<instance
-				name="generic_tooltip"
-				tip_id="swap_hero_tip{index}"
-				height="7.5h"
-				visible="false"
-				title="hselect_swap_request_tip_header"
-				label="hselect_swap_request_tip_text"
-			/>
-			
-			<instance
-				name="generic_tooltip"
-				tip_id="swap_hero_accept_tip{index}"
-				height="11h"
-				visible="false"
-				title="hselect_swap_accept_tip_header"
-				label="hselect_swap_accept_tip_text"
-			/>
-
-			<!-- Repick -->
-			<instance
-				name="generic_tooltip"
-				tip_id="repick_hero_tip{index}"
-				height="12.2h"
-				visible="false"
-				title="game_hero_select_repick"
-				label_watch="HeroSelectInfo"
-				label_ontrigger="
-					If(param3, SetText(Translate('game_hero_select_repick_tip_disabled')),
-					If(param12, SetText(Translate('game_hero_select_repick_tip_already_used')),
-					If(param13, SetText(Translate('game_hero_select_repick_tip_already_swapped')),
-					If(!param7, SetText(Translate('game_hero_select_repick_tip_no_hero', 'gold', param10)),
-					If(param10 gt 0, SetText(Translate('game_hero_select_repick_tip', 'gold', param10)),
-					SetText(Translate('game_hero_select_repick_tip_free'))
-					)))));"
-			/>
-			
-			<!-- Gold -->
-			<instance
-				name="generic_tooltip"
-				tip_id="gold_tip{index}"
-				height="6h"
-				visible="false"
-				title="game_hero_select_starting_gold"
-				label_watch="HeroSelectPlayerInfo{index}"
-				label_ontrigger="
-					If(param1,
-						SetText(Translate('game_hero_select_starting_gold_tip_me', 'gold', param17)),
-						SetText(Translate('game_hero_select_starting_gold_tip_other', 'gold', param17))
-						);"
-			/>
-
-			<!-- Ready -->
-			<instance
-				name="generic_tooltip"
-				tip_id="ready_tip{index}"
-				height="12h"
-				visible="false"
-				title="hselect_button_ready"
-				label_watch="HeroSelectPlayerInfo{index}"
-				label_ontrigger="
-					If(param1,
-						If(param10,
-							SetText(Translate('game_hero_select_ready_tip_me_ready')),
-							If(param15,
-								SetText(Translate('game_hero_select_ready_tip')),
-								SetText(Translate('game_hero_select_ready_tip_no_hero'))
-							)
-						),
-						If(param10,
-							SetText(Translate('game_hero_select_ready_tip_other_ready')),
-							SetText(Translate('game_hero_select_ready_tip_not_ready'))
-						)
-					);"
-			/>
-		</panel>
-	</template>
-
-	<panel x="-30h" y="12h" width="20h" height="-16h" align="center" float="bottom" noclick="true" passivechildren="true">
-		<instance name="player_tooltip_set" index="0" />
-		<instance name="player_tooltip_set" index="1" />
-		<instance name="player_tooltip_set" index="2" />
-		<instance name="player_tooltip_set" index="3" />
-		<instance name="player_tooltip_set" index="4" />
-	</panel>
-
-	<panel x="30h" y="12h" width="20h" height="-16h" align="center" float="bottom" noclick="true" passivechildren="true">
-		<instance name="player_tooltip_set" index="5" />
-		<instance name="player_tooltip_set" index="6" />
-		<instance name="player_tooltip_set" index="7" />
-		<instance name="player_tooltip_set" index="8" />
-		<instance name="player_tooltip_set" index="9" />
-	</panel>
-
-	<!-- Random Tooltip -->
-	<instance
-		name="generic_tooltip" tip_id="random_hero_tip"
-		y="6h"
-		width="19h" height="6.0h"
-		align="center"
-		visible="false"
-		title="hselect_button_ready"
-		label_watch="HeroSelectInfo"
-		label_ontrigger="
-			If(param7, SetText(Translate('game_hero_select_random_tip_already_picked')),
-			If((param11 == 0) or param12, SetText(Translate('game_hero_select_random_tip_free')),
-			SetText(Translate('game_hero_select_random_tip', 'gold', param11))
-			));"
-	/>
-	
-	<!-- Arcade countdown -->
-	<panel y="5h" width="80h" height="30h" align="center" noclick="true"
-		watch="HeroSelectTimer"
-		ontrigger="If(param3 and (param0 le 10000), PlaySound('/shared/sounds/ui/hero_select/button_clock.wav'));"
-	>
-		<modelpanel
-			visible="false"
-			noclick="true"
-
-			model="common/models/arcade_text/countdown.mdf"
-			anim="idle"
-			camerapos="0 350 0"
-			cameraangles="0 0 180"
-			camerafov="50"
-			cameranear="1"
-			carmerafar="5000"
-			depthclear="false"
-			depthcompress="true"
-			sunazimuth="140"
-			sunaltitude="10"
-			suncolor="1.4 1.3 1"
-
-			onshow="SetAnim('idle'); SetEffect('/ui/common/models/arcade_text/countdown.effect');"
-			watch="HeroSelectTimer"
-			ontrigger="
-					If(param0 gt 6000, SetVisible(false));
-					If(param3 and (param0 le 6000), SetVisible(true));
-					If(param3 and (param0 le 1000), PlaySound('/shared/sounds/announcer/startgame.wav'));
-					"
-		/>
-	</panel>
+            <panel>
+                <button
+                    x="-25%"
+                    width="25%" height="25@"
+                    align="right" valign="center"
+                    texture="/ui/elements/heroselection/swap_hero.tga"
+                    watch="HeroSelectPlayerInfo{index}"
+                    onmouseover="ShowWidget('swap_hero_tip{index}');"
+                    onmouseout="HideWidget('swap_hero_tip{index}');"
+                    ontrigger="If(!param1 and param8 and !param9 and param11 and !param12, SlideX(0, 500), SlideX('-25%', 500));"
+                    onclick="SwapHeroRequest({index} % 5); PlaySound('/shared/sounds/ui/button_click_02.wav'); HideWidget('swap_hero_tip{index}');"
+                />
+            </panel>
+
+            <!-- Portrait -->
+            <panel y="5.0h" width="9.0h" height="9.0h" align="center" color="black" />
+            <panel y="5.0h" width="8.4h" height="8.4h" align="center">
+                <image width="-1.0h" height="-1.0h" texture="/ui/elements/heroselection/nopick_{team}.tga" align="center" valign="center"/>
+                <image
+                    watch="HeroSelectPlayerInfo{index}"
+                    ontrigger="
+                        SetVisible(param15);
+                        SetTexture(param6);
+                        SetOnmouseover('ShowWidget(\'hero_info\'); GetHeroInfo(\'' # param13 # '\');');"
+                    onmouseout="HideWidget('hero_info');"
+                
+                />
+                
+                <!-- Lock -->
+                <panel
+                    x="-0.9h" y="-0.8h"
+                    width="2.9h" height="2.9h"
+                    align="right" valign="bottom"
+                    texture="/ui/elements/lock.tga"
+                    watch="HeroSelectPlayerInfo{index}"
+                    ontrigger="SetVisible(param16);"
+                    noclick="true"
+                />
+
+                <!-- Select effect -->
+                <panel
+                    visible="0" y="-2%" valign="center" color="invisible" align="center"
+                    noclick="true" passivechildren="true"
+                    watch="HeroSelectPlayerInfo{index}"
+                    ontrigger="SetVisible(param15);"
+                >
+                    <modelpanel 
+                        onshow="PlaySound('/shared/sounds/ui/hero_select/button_ready2.wav'); SetEffect('/ui/common/models/hero_select/hero_select.effect'));"
+                        model="common/models/hero_select/select.mdf"
+                        anim="idle"
+                        camerapos="0 1700 0"
+                        cameraangles="0 0 180"
+                        camerafov="2.0"
+                        cameranear="1"
+                        carmerafar="7000"
+                        depthclear="false"
+                        depthcompress="true"            
+                        sunazimuth="140"
+                        sunaltitude="10"
+                        suncolor="1.4 1.3 1"
+                    />  
+                </panel>
+
+                <!-- Ready Effect -->
+                <panel name="hero_ready_effect{index}"  visible="0" y="-2%"  valign="center"  color="invisible" align="center"
+                    noclick="true" passivechildren="true"
+                    watch="HeroSelectPlayerInfo{index}"
+                    ontrigger="SetVisible(param10);"
+                >
+                    <modelpanel 
+                        watch="HeroSelectPlayerInfo{index}"
+                        ontrigger="SetEffect('/ui/common/models/hero_select/hero_ready.effect'));"
+                        model="common/models/hero_select/circle.mdf"
+                        anim="idle"
+                        camerapos="0 1700 0"
+                        cameraangles="0 0 180"
+                        camerafov="2.0"
+                        cameranear="1"
+                        carmerafar="7000"
+                        depthclear="false"
+                        depthcompress="true"            
+                        sunazimuth="140"
+                        sunaltitude="10"
+                        suncolor="1.4 1.3 1"
+                    />  
+                </panel>    
+
+                <!-- Swap Effect -->
+                <panel 
+                    visible="0" y="-2%" valign="center" color="invisible" align="center"
+                    noclick="true" passivechildren="true"
+                    watch="HeroSelectPlayerInfo{index}"
+                    ontrigger="SetVisible(param9 and param11);"
+                >
+                    <modelpanel
+                        watch="HeroSelectPlayerInfo{index}"
+                        ontrigger="SetEffect('/ui/common/models/hero_select/hero_swap.effect'));"
+                        model="common/models/hero_select/select.mdf"
+                        anim="idle"
+                        camerapos="0 1700 0"
+                        cameraangles="0 0 180"
+                        camerafov="2.0"
+                        cameranear="1"
+                        carmerafar="7000"
+                        depthclear="false"
+                        depthcompress="true"            
+                        sunazimuth="140"
+                        sunaltitude="10"
+                        suncolor="1.4 1.3 1"
+                    />  
+                </panel>
+
+                <image
+                    name="hero_loading_gloss"
+                    align="center" valign="center"
+                    noclick="true" passivechildren="true"
+                    texture="/ui/common/portrait_gloss_up.tga"
+                    rendermode="additive"
+                />
+                
+                <button
+                    color="invisible"
+                    watch="HeroSelectPlayerInfo{index}"
+                    ontrigger="SetVisible(!param1 and param9 and param11);"
+                    onmouseover="ShowWidget('swap_hero_accept_tip{index}');"
+                    onmouseout="HideWidget('swap_hero_accept_tip{index}');"
+                    onclick="SwapHeroRequest({index} % 5, 0, 0); HideWidget('swap_hero_accept_tip{index}'); PlaySound('/shared/sounds/ui/hero_select/button_swap.wav');"
+                />
+            </panel>
+
+            <!-- Ready -->
+            <panel x="0.3h" y="2.95h" width="9.2h" height="2.3h" align="right" onmouseover="ShowWidget('ready_tip{index}');" onmouseout="HideWidget('ready_tip{index}');">
+                <!-- Button -->
+                <instance
+                    name="picker_ready_button"
+                    index="{index}"
+                    label="hselect_button_ready"
+                    onclick="Ready();"
+                    watch="HeroSelectPlayerInfo{index}"
+                    ontrigger="
+                        SetVisible(param1 and !param10);
+                        SetEnabled(param15);
+                        "
+                />
+                
+                <!-- Ready / Not Ready Status -->
+                <panel noclick="1">
+                    <image
+                        noclick="1"
+                        watch="HeroSelectPlayerInfo{index}"
+                        ontrigger="
+                            SetVisible(!param1 or param10);
+                            If(param10,
+                                SetTexture('/ui/elements/heroselection/ready.tga'),
+                                SetTexture('/ui/elements/heroselection/not_ready.tga'));
+                            If(param10,
+                                PlaySound('/shared/sounds/ui/hero_select/button_ready.wav'));
+
+                            "
+                    />
+                    <label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="center" font="dyn_9" color="white" shadow="true" shadowcolor="black" noclick="1">hselect_button_ready</label>
+                </panel>
+            </panel>
+            
+            <image texture="/ui/elements/heroselection/hero_selection_frame.tga" noclick="1"/>
+            
+            <!-- Player Color -->
+            <image 
+                texture="/ui/elements/heroselection/hero_selection_color.tga"
+                noclick="1"
+                watch="HeroSelectPlayerInfo{index}"
+                ontrigger="SetColor(param4);"
+            />
+            
+            <!-- Repick -->
+            <panel y="3.0h" width="2.2h" height="2.2h" align="center" color="invisible" noclick="1">    
+                <image width="140%" height="140%" align="center" valign="center" texture="/ui/elements/cc_config_circhl.tga"/>
+                <instance
+                    name="player_pick_random"
+                    onclick="RepickHero(); HideWidget('repick_hero_tip{index}'); PlaySound('/shared/sounds/ui/hero_select/button_repick.wav');"
+                    tooltip=""
+                    index="{index}"
+                    panel_ontrigger="SetVisible(param1);"
+                    button_ontrigger="SetEnabled(param7 and param15);"
+                />
+            </panel>            
+            
+            <!-- Unit Name -->
+            <panel y="1.1h" height="2.0h" width="-5.0h" align="center" valign="top" color="invisible" noclick="1">
+                <label height="100%" textvalign="center" textalign="center" font="dyn_10" color="white" shadow="1" watch="HeroSelectPlayerInfo{index}" ontrigger="SetText(param5);"/>
+            </panel>
+            
+            <!-- Gold -->
+            <panel x="1.4h" y="3.25h" height="1.7h" width="6.0h" align="left" valign="top" color="invisible" onmouseover="ShowWidget('gold_tip{index}');" onmouseout="HideWidget('gold_tip{index}');">
+                <label height="100%" width="-1.6h" textvalign="center" textalign="center" font="dyn_9" color="white" shadow="1" watch="HeroSelectPlayerInfo{index}" ontrigger="SetText(param17);" noclick="1"/>
+                <image x="-0.2h" width="1.6h" height="1.6h" valign="center" align="right" texture="/ui/common/gold.tga" noclick="1"/>
+            </panel>
+            
+            <!-- Selection Indicator -->
+            <panel
+                name="arrow_panel{index}"
+                noclick="1"
+                x="-5.6h" y="0.4h"
+                width="12h" height="7h"
+                valign="center"
+                align="center"
+                color="invisible"
+                visible="false"
+                watch="HeroSelectPlayerInfo{index}"
+                ontrigger="SetVisible(param14);"
+            >
+                <modelpanel
+                    watch="HeroSelectPlayerInfo{index}"
+                    ontrigger="if({index} ge 5, SetAnim('idle2')); if({index} ge 5, Call('arrow_panel{index}','SetX(\'5.4h\');'));"                 
+                    name="arrow{index}"
+                    visible="1"
+                    noclick="true"
+                    model="common/models/arcade_text/arrow.mdf"
+                    anim="idle"
+                    camerapos="0 20 0"
+                    cameraangles="0 0 180"
+                    camerafov="45"
+                    cameranear="1"
+                    carmerafar="5000"
+                    depthclear="false"
+                    depthcompress="true"
+                    sunazimuth="90"
+                    sunaltitude="10"
+                    suncolor="3.2 2 2"                      
+                />              
+            </panel>
+            <!-- Player Name -->
+            <panel y="-2.5h" height="2.0h" width="-5.0h" align="center" valign="bottom" color="invisible" noclick="1">
+                <label height="100%" textvalign="center" textalign="center" font="dyn_10" color="white" shadow="1" watch="HeroSelectPlayerInfo{index}" ontrigger="SetText(param3);"/>
+            </panel>            
+            
+        </panel>    
+    </template>
+    
+    <!-- Team Lists -->
+    <template name="team_list1">
+        <panel height="-4.0h" valign="top" color="invisible" noclick="1" float="bottom" reverse="1">
+            <panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo0" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
+                <instance name="player_info" index="0" team="legion" button_align="right"/>
+            </panel>
+            <panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo1" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
+                <instance name="player_info" index="1" team="legion" button_align="right"/>
+            </panel>
+            <panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo2" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
+                <instance name="player_info" index="2" team="legion" button_align="right"/>
+            </panel>
+            <panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo3" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
+                <instance name="player_info" index="3" team="legion" button_align="right"/>
+            </panel>
+            <panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo4" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
+                <instance name="player_info" index="4" team="legion" button_align="right"/>
+            </panel>            
+            <!-- Footer - Always Display -->
+            <panel height="9.0h" noclick="1" sticky="true" stickytoinvis="false">
+                <image y="-3.6h" x="-0.1h" width="36.0h" height="9.0h" align="left" valign="bottom" texture="/ui/elements/heroselection/hero_selection_footer_left.tga" noclick="1"/>
+            </panel>
+        </panel>
+    </template>
+
+    <template name="team_list2">
+        <panel height="-4.0h" valign="top" color="invisible" noclick="1" float="bottom" sticky="true" reverse="1">          
+            <panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo5" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
+                <instance name="player_info" index="5" team="hellbourne" button_align="left"/>
+            </panel>
+            <panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo6" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
+                <instance name="player_info" index="6" team="hellbourne" button_align="left"/>
+            </panel>
+            <panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo7" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
+                <instance name="player_info" index="7" team="hellbourne" button_align="left"/>
+            </panel>
+            <panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo8" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
+                <instance name="player_info" index="8" team="hellbourne" button_align="left"/>
+            </panel>
+            <panel height="20%" color="invisible" noclick="1" watch="HeroSelectPlayerInfo9" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
+                <instance name="player_info" index="9" team="hellbourne" button_align="left"/>
+            </panel>
+            <!-- Footer - Always Display -->
+            <panel height="9.0h" noclick="1" sticky="true" stickytoinvis="false">
+                <image y="-3.6h" x="-2.0h" width="36.0h" height="9.0h" align="left" valign="bottom" texture="/ui/elements/heroselection/hero_selection_footer_right.tga" noclick="1"/>
+            </panel>
+        </panel>
+    </template>
+
+    <!-- Match Start Timer -->
+    <template name="match_timer">
+        <panel y="-2.0h" valign="top" width="14.0h" height="7.4h" align="center" texture="/ui/elements/heroselection/timer_base.tga">
+            <label
+                height="85%" width="100%"
+                align="center"
+                textvalign="center" textalign="center"
+                color="white"
+                font="dyn_12" shadow="1"
+                watch="HeroSelectTimer"
+                ontrigger="SetText(FtoT(param0, 1, 0, '-'));"
+            />
+        </panel>
+    </template>
+
+    <!-- Random button -->
+    <template name="random_button">
+        <panel y="0" width="{width=16h}" height="{height=8h}" align="center" noclick="true">
+            <panel width="45%" align="center" onmouseover="ShowWidget('random_hero_tip');" onmouseout="HideWidget('random_hero_tip');">
+                <button
+                    color="invisible"
+                    onmouseover="PlaySound('/shared/sounds/ui/button_over_02.wav'); ShowWidget('random_hero_tip');"
+                    onmouseout="HideWidget('random_hero_tip');"
+                    onclick="PlaySound('/shared/sounds/ui/hero_select/button_random.wav'); RandomHero();"
+                    watch="HeroSelectInfo"
+                    ontrigger="SetEnabled(!param7);"
+                >
+                    <widgetstate statename="up">
+                        <image width="222%" align="center" texture="/ui/elements/heroselection/random_up.tga" noclick="true"/>
+                    </widgetstate>
+
+                    <widgetstate statename="over">
+                        <image width="222%" align="center" texture="/ui/elements/heroselection/random_over.tga" noclick="true"/>
+                    </widgetstate>
+
+                    <widgetstate statename="down">
+                        <image width="222%" align="center" texture="/ui/elements/heroselection/random_down.tga" noclick="true"/>
+                    </widgetstate>
+
+                    <widgetstate statename="disabled">
+                        <image width="222%" align="center" texture="/ui/elements/heroselection/random_disabled.tga" noclick="true"/>
+                    </widgetstate>
+                </button>
+            </panel>
+        </panel>
+    </template>
+    
+    <!-- Hero Icon -->
+    <template name="hero_icon">
+        <panel
+            width="{width}" height="{height}"
+            color="white"
+            visible="true"
+            texture="/ui/elements/hero_picker_icon.tga"
+            valign="{valign}" align="{align}"
+            watch="HeroSelectHeroList{index}"
+            ontrigger="
+                If(param2 and param3, SetTexture(param1), SetTexture('/ui/elements/hero_picker_icon.tga'));
+                If(param4 or !param3 or !param2, SetRenderMode('normal'), SetRenderMode('grayscale'));
+                "
+        >
+            <button
+                texture="/ui/elements/button_bevel.tga"
+                watch="HeroSelectHeroList{index}"
+                onclick="PlaySound('/shared/sounds/ui/error.wav');"
+                ontrigger="
+                    If(param4,
+                        SetOnclick('SpawnHero(\'' # param0 # '\'); PlaySound(\'/shared/sounds/ui/hero_select/button_select.wav\');'),
+                        SetOnclick('PlaySound(\'/shared/sounds/ui/error.wav\');')
+                        );
+                    If(param2,
+                        SetOnmouseover('ShowWidget(\'hero_info\'); GetHeroInfo(\'' # param0 # '\');'),
+                        SetOnmouseover('')
+                        );
+                    "
+                onmouseout="HideWidget('hero_info');"
+
+            />
+        </panel>
+
+    </template>
+
+    <!-- Hero List - All Heroes -->
+    <template name="hero_list_ap">
+        <panel float="bottom" padding=".25h" color="invisible" noclick="1" visible="1" name="heroes">
+            <!-- Top Row -->
+            <panel height="10%" color="invisible">
+                <image texture="/ui/elements/heroselection/picker_ap.tga" y="-0.4h" width="101%" align="center" />
+                <image texture="/ui/elements/heroselection/team_legion.tga" x="18%" y="-0.4h" width="420@" height="105%" align="left" />
+                <image texture="/ui/elements/heroselection/team_hellbourne.tga" x="-18%" y="-0.4h" width="420@" height="105%" align="right" />
+            </panel>
+
+            <!-- Row 1 -->
+            <panel height="30%" color="invisible" name="agility">
+                <frame texture="/ui/info/backdrop.tga" width="49%" borderthickness="5.0h" color="#0aa30a" />
+                <frame texture="/ui/info/backdrop.tga" width="49%" align="right" borderthickness="5.0h" color="#ff3131" />
+                <image x="-0.7%" width="33.75@" height="135%" texture="/ui/elements/heroselection/category_agi.tga"/>
+                <image x="0.7%" width="33.75@" height="135%" align="right" texture="/ui/elements/heroselection/category_agi_2.tga"/>
+                
+                <!-- Legion -->
+                <panel x="5.3%" width="44%" height="90%" valign="center" color="invisible" float="bottom">
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="0" />
+                        <instance name="hero_icon" width="100@" height="100%" index="1" />
+                        <instance name="hero_icon" width="100@" height="100%" index="2" />
+                        <instance name="hero_icon" width="100@" height="100%" index="3" />
+                        <instance name="hero_icon" width="100@" height="100%" index="4" />
+                    </panel>
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="5" />
+                        <instance name="hero_icon" width="100@" height="100%" index="6" />
+                        <instance name="hero_icon" width="100@" height="100%" index="7" />
+                        <instance name="hero_icon" width="100@" height="100%" index="8" />
+                        <instance name="hero_icon" width="100@" height="100%" index="9" />
+                    </panel>
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="10" />
+                        <instance name="hero_icon" width="100@" height="100%" index="11" />
+                        <instance name="hero_icon" width="100@" height="100%" index="12" />
+                        <instance name="hero_icon" width="100@" height="100%" index="13" />
+                        <instance name="hero_icon" width="100@" height="100%" index="14" />
+                    </panel>
+                </panel>
+
+                <!-- Hellbourne -->
+                <panel x="-1.9%" width="44%" height="90%" valign="center" align="right" color="invisible" float="bottom">
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="15" />
+                        <instance name="hero_icon" width="100@" height="100%" index="16" />
+                        <instance name="hero_icon" width="100@" height="100%" index="17" />
+                        <instance name="hero_icon" width="100@" height="100%" index="18" />
+                        <instance name="hero_icon" width="100@" height="100%" index="19" />
+                    </panel>
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="20" />
+                        <instance name="hero_icon" width="100@" height="100%" index="21" />
+                        <instance name="hero_icon" width="100@" height="100%" index="22" />
+                        <instance name="hero_icon" width="100@" height="100%" index="23" />
+                        <instance name="hero_icon" width="100@" height="100%" index="24" />
+                    </panel>
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="25" />
+                        <instance name="hero_icon" width="100@" height="100%" index="26" />
+                        <instance name="hero_icon" width="100@" height="100%" index="27" />
+                        <instance name="hero_icon" width="100@" height="100%" index="28" />
+                        <instance name="hero_icon" width="100@" height="100%" index="29" />
+                    </panel>
+                </panel>
+            </panel>
+
+            <!-- Row 2 -->
+            <panel height="30%" color="invisible">
+                <frame texture="/ui/info/backdrop.tga" width="49%" borderthickness="5.0h" color="#136374" />
+                <frame texture="/ui/info/backdrop.tga" width="49%" align="right" borderthickness="5.0h" color="#9C06B7" />
+                <image x="-0.7%" width="33.75@" height="135%" texture="/ui/elements/heroselection/category_intel.tga"/>
+                <image x="0.7%" width="33.75@" height="135%" align="right" texture="/ui/elements/heroselection/category_intel_2.tga"/>
+                
+                <!-- Legion -->
+                <panel x="5.3%" width="44%" height="90%" valign="center" color="invisible" float="bottom">
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="30" />
+                        <instance name="hero_icon" width="100@" height="100%" index="31" />
+                        <instance name="hero_icon" width="100@" height="100%" index="32" />
+                        <instance name="hero_icon" width="100@" height="100%" index="33" />
+                        <instance name="hero_icon" width="100@" height="100%" index="34" />
+                    </panel>
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="35" />
+                        <instance name="hero_icon" width="100@" height="100%" index="36" />
+                        <instance name="hero_icon" width="100@" height="100%" index="37" />
+                        <instance name="hero_icon" width="100@" height="100%" index="38" />
+                        <instance name="hero_icon" width="100@" height="100%" index="39" />
+                    </panel>
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="40" />
+                        <instance name="hero_icon" width="100@" height="100%" index="41" />
+                        <instance name="hero_icon" width="100@" height="100%" index="42" />
+                        <instance name="hero_icon" width="100@" height="100%" index="43" />
+                        <instance name="hero_icon" width="100@" height="100%" index="44" />
+                    </panel>
+                </panel>
+
+                <!-- Hellbourne -->
+                <panel x="-1.9%" width="44%" height="90%" valign="center" align="right" color="invisible" float="bottom">
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="45" />
+                        <instance name="hero_icon" width="100@" height="100%" index="46" />
+                        <instance name="hero_icon" width="100@" height="100%" index="47" />
+                        <instance name="hero_icon" width="100@" height="100%" index="48" />
+                        <instance name="hero_icon" width="100@" height="100%" index="49" />
+                    </panel>
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="50" />
+                        <instance name="hero_icon" width="100@" height="100%" index="51" />
+                        <instance name="hero_icon" width="100@" height="100%" index="52" />
+                        <instance name="hero_icon" width="100@" height="100%" index="53" />
+                        <instance name="hero_icon" width="100@" height="100%" index="54" />
+                    </panel>
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="55" />
+                        <instance name="hero_icon" width="100@" height="100%" index="56" />
+                        <instance name="hero_icon" width="100@" height="100%" index="57" />
+                        <instance name="hero_icon" width="100@" height="100%" index="58" />
+                        <instance name="hero_icon" width="100@" height="100%" index="59" />
+                    </panel>
+                </panel>
+            </panel>
+
+            <!-- Row 3 -->
+            <panel height="30%" color="invisible">
+                <frame texture="/ui/info/backdrop.tga" width="49%" borderthickness="5.0h" color="#b7b506" />
+                <frame texture="/ui/info/backdrop.tga" width="49%" align="right" borderthickness="5.0h" color="#DE650B" />
+                <image x="-0.7%" width="33.75@" height="135%" texture="/ui/elements/heroselection/category_str.tga"/>
+                <image x="0.7%" width="33.75@" height="135%" align="right" texture="/ui/elements/heroselection/category_str_2.tga"/>
+                
+                <!-- Legion -->
+                <panel x="5.3%" width="44%" height="90%" valign="center" color="invisible" float="bottom">
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="60" />
+                        <instance name="hero_icon" width="100@" height="100%" index="61" />
+                        <instance name="hero_icon" width="100@" height="100%" index="62" />
+                        <instance name="hero_icon" width="100@" height="100%" index="63" />
+                        <instance name="hero_icon" width="100@" height="100%" index="64" />
+                    </panel>
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="65" />
+                        <instance name="hero_icon" width="100@" height="100%" index="66" />
+                        <instance name="hero_icon" width="100@" height="100%" index="67" />
+                        <instance name="hero_icon" width="100@" height="100%" index="68" />
+                        <instance name="hero_icon" width="100@" height="100%" index="69" />
+                    </panel>
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="70" />
+                        <instance name="hero_icon" width="100@" height="100%" index="71" />
+                        <instance name="hero_icon" width="100@" height="100%" index="72" />
+                        <instance name="hero_icon" width="100@" height="100%" index="73" />
+                        <instance name="hero_icon" width="100@" height="100%" index="74" />
+                    </panel>
+                </panel>
+
+                <!-- Hellbourne -->
+                <panel x="-1.9%" width="44%" height="90%" valign="center" align="right" color="invisible" float="bottom">
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="75" />
+                        <instance name="hero_icon" width="100@" height="100%" index="76" />
+                        <instance name="hero_icon" width="100@" height="100%" index="77" />
+                        <instance name="hero_icon" width="100@" height="100%" index="78" />
+                        <instance name="hero_icon" width="100@" height="100%" index="79" />
+                    </panel>
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="80" />
+                        <instance name="hero_icon" width="100@" height="100%" index="81" />
+                        <instance name="hero_icon" width="100@" height="100%" index="82" />
+                        <instance name="hero_icon" width="100@" height="100%" index="83" />
+                        <instance name="hero_icon" width="100@" height="100%" index="84" />
+                    </panel>
+                    <panel height="32%" color="invisible" float="right">
+                        <instance name="hero_icon" width="100@" height="100%" index="85" />
+                        <instance name="hero_icon" width="100@" height="100%" index="86" />
+                        <instance name="hero_icon" width="100@" height="100%" index="87" />
+                        <instance name="hero_icon" width="100@" height="100%" index="88" />
+                        <instance name="hero_icon" width="100@" height="100%" index="89" />
+                    </panel>
+                </panel>
+            </panel>
+
+            <instance name="random_button"/>
+        </panel>
+    </template>
+    <!-- END Hero List - All Heroes -->
+
+    <!-- Hero List - One Race -->
+    <template name="hero_list_normal">
+        <panel color="invisible" noclick="1" visible="1">       
+            <!-- Col 1 AGI -->
+            <panel width="32%" x="1%" align="left" color="invisible">
+                <frame texture="/ui/info/backdrop.tga" width="100%" borderthickness="5.0h" color="#0aa30a" float="bottom">
+                    <image y="6.0h" height="5.3h" width="21.2h" align="center" texture="/ui/elements/heroselection/category_agi_horiz.tga" />
+                    
+                    <panel width="27.1h" align="center" color="invisible" float="right" padding="0">
+                        <panel width="7.7h" color="invisible" float="bottom" padding="0">
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="0" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="1" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="2" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="3" />
+                        </panel>
+                        <panel width="5.5h" color="invisible" float="bottom" padding="0">
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="4" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="5" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="6" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="7" />
+                        </panel>
+                        <panel width="5.5h" color="invisible" float="bottom" padding="0">
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="8" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="9" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="10" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="11" />
+                        </panel>
+                        <panel width="5.5h" color="invisible" float="bottom" padding="0">
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="12" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="13" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="14" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="46" />
+                        </panel>
+                    </panel>
+                </frame>
+            </panel>
+            
+            <!-- Col 2 INTEL -->
+            <panel width="32%" align="center" color="invisible">
+                <frame texture="/ui/info/backdrop.tga" width="100%" borderthickness="5.0h" color="#136374" float="bottom">
+                    <image y="6.0h" height="5.3h" width="21.2h" align="center" texture="/ui/elements/heroselection/category_intel_horiz.tga" />
+                    <panel width="27.1h" valign="top" align="center" color="invisible" float="right" padding="0">
+                        <panel width="7.7h" color="invisible" float="bottom" padding="0">
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="15" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="16" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="17" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="18" />
+                        </panel>
+                        <panel width="5.5h" color="invisible" float="bottom" padding="0">
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="19" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="20" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="21" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="22" />
+                        </panel>
+                        <panel width="5.5h" color="invisible" float="bottom" padding="0">
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="23" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="24" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="25" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="26" />
+                        </panel>
+                        <panel width="5.5h" color="invisible" float="bottom" padding="0">
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="27" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="28" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="29" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="47" />
+                        </panel>
+                    </panel>
+                </frame>
+            </panel>
+            
+            <!-- Col 3 STR -->
+            <panel width="32%" x="-1%" align="right" color="invisible">
+                <frame texture="/ui/info/backdrop.tga" width="100%" borderthickness="5.0h" color="#DE650B" float="bottom">
+                    <image y="6.0h" height="5.3h" width="21.2h" align="center" texture="/ui/elements/heroselection/category_str_horiz.tga" />
+                    <panel width="27.1h" valign="top" align="center" color="invisible" float="right" padding="0">
+                        <panel width="7.7h" color="invisible" float="bottom" padding="0">
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="30" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="31" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="32" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="33" />
+                        </panel>
+                        <panel width="5.5h" color="invisible" float="bottom" padding="0">
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="34" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="35" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="36" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="37" />
+                        </panel>
+                        <panel width="5.5h" color="invisible" float="bottom" padding="0">
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="38" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="39" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="40" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="41" />
+                        </panel>
+                        <panel width="5.5h" color="invisible" float="bottom" padding="0">
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="42" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="43" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="44" />
+                            <instance name="hero_icon" align="right" width="5.5h" height="5.5h" index="45" />
+                        </panel>
+                    </panel>
+                </frame>
+            </panel>        
+
+            <instance name="random_button"/>
+        </panel>
+    </template>
+    <!-- END Hero List - One Race -->
+
+    <!-- Hero List - Random Draft -->
+    <template name="hero_list_rd">
+        <panel float="bottom" padding=".25h" color="invisible" noclick="1" visible="1">
+
+            <panel height="-2.0h" width="-2.0h" align="center" valign="center" color="invisible">
+                <frame texture="/ui/info/backdrop.tga" width="100%" borderthickness="5.0h" color=".5 .5 .5 1" />
+
+                <panel width="83.8%" height="-2.0h" align="center" valign="center" float="bottom" noclick="1">
+                    <panel height="25%" align="center" color="invisible" float="right">
+                        <instance name="hero_icon" height="100%" width="100@" index="0" />
+                        <instance name="hero_icon" height="100%" width="100@" index="1" />
+                        <panel width="100@" />
+                        <panel width="100@" />
+                        <instance name="hero_icon" height="100%" width="100@" index="2" />
+                        <instance name="hero_icon" height="100%" width="100@" index="3" />
+                    </panel>
+                    <panel height="25%" color="invisible" float="right">
+                        <instance name="hero_icon" height="100%" width="100@" index="4" />
+                        <instance name="hero_icon" height="100%" width="100@" index="5" />
+                        <instance name="hero_icon" height="100%" width="100@" index="6" />
+                        <instance name="hero_icon" height="100%" width="100@" index="7" />
+                        <instance name="hero_icon" height="100%" width="100@" index="8" />
+                        <instance name="hero_icon" height="100%" width="100@" index="9" />
+                    </panel>
+                    <panel height="25%" color="invisible" float="right">
+                        <instance name="hero_icon" height="100%" width="100@" index="10" />
+                        <instance name="hero_icon" height="100%" width="100@" index="11" />
+                        <instance name="hero_icon" height="100%" width="100@" index="12" />
+                        <instance name="hero_icon" height="100%" width="100@" index="13" />
+                        <instance name="hero_icon" height="100%" width="100@" index="14" />
+                        <instance name="hero_icon" height="100%" width="100@" index="15" />
+                    </panel>
+                    <panel height="25%" color="invisible" float="right">
+                        <panel width="100@" />
+                        <instance name="hero_icon" height="100%" width="100@" index="16" />
+                        <instance name="hero_icon" height="100%" width="100@" index="17" />
+                        <instance name="hero_icon" height="100%" width="100@" index="18" />
+                        <instance name="hero_icon" height="100%" width="100@" index="19" />
+                        <panel width="100@" />
+                    </panel>
+                </panel>
+            </panel>
+            
+            <instance name="random_button"/>
+        </panel>
+    </template>
+    <!-- END Hero List - Random Draft -->
+
+    <!-- Hero List - 3 Heros -->
+    <template name="hero_list_sd_ability_info">
+        <panel width="96%" height="5.0h" align="center" color="invisible" float="right" padding="1.0h">
+            <panel width="20%" noclick="1">
+                <image height="100%" width="100@" watch="HeroSelectHeroList{index}" ontrigger="SetTexture(*('param' # Round(14 + {ability} * 4))); If(param4, SetRenderMode('normal'), SetRenderMode('grayscale'));" />
+                <frame height="100%" width="100@" color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
+            </panel>
+            <panel width="80%" color="invisible" float="bottom" padding="0" noclick="1">
+                <label height="30%" color="#ffab01" shadow="1" font="dyn_10" textvalign="top" noclick="1" watch="HeroSelectHeroList{index}" ontrigger="SetText(*('param' # Round(13 + {ability} * 4)));"/>
+                <label height="35%" color="#03f3f3" shadow="1" font="dyn_9" textvalign="center" noclick="1" watch="HeroSelectHeroList{index}" ontrigger="SetText(Translate('game_hero_select_mana_cost', 'value', Round(*('param' # Round(15 + {ability} * 4)))));"/>
+                <label height="35%" color="white" shadow="1" font="dyn_9" textvalign="center" noclick="1" watch="HeroSelectHeroList{index}" ontrigger="SetText(Translate('game_hero_select_cooldown', 'time', Round(*('param' # Round(16 + {ability} * 4)) / 1000)));"/>
+            </panel>
+        </panel>
+    </template>
+    
+    <template name="hero_list_sd_unitdisplay">
+        <panel width="32%" color="invisible" align="{align}" watch="HeroSelectHeroList{index}" ontrigger="SetVisible(param2 and param3);">
+            <frame color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
+
+            <!-- Stats -->
+            <instance name="header_bar" height="6%" width="-2" align="center" watch="HeroSelectHeroList{index}" ontrigger="SetText(param5);"/>
+            <panel y="7.5%" width="96%" height="20%" align="center" color="invisible" float="right" noclick="1">
+
+                <panel width="40%">
+                    <image width="86%" height="86@" align="center" watch="HeroSelectHeroList{index}" ontrigger="SetTexture(param1); If(param4, SetRenderMode('normal'), SetRenderMode('grayscale'));" />
+                    <frame width="86%" height="86@" align="center" color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
+                </panel>
+
+                <panel width="58%" float="bottom" padding="3.0%">
+                    <!-- Damage -->
+                    <panel height="30%" color="invisible">
+                        <panel x="5@" valign="center" width="90@" height="90%" color="white" texture="/ui/legion/damage_icon.tga" watch="HeroSelectHeroList{index}" ontrigger="If(param4, SetRenderMode('normal'), SetRenderMode('grayscale'));"/>
+                        <panel width="75%" align="right">
+                            <label font="dyn_9" color="yellow"  width="100%" height="50%" valign="top" textalign="left" textvalign="center" content="hselect_label_hd_damage"/>
+                            <panel height="50%" valign="bottom" color="invisible">
+                                <label
+                                    font="dyn_8" color="white" shadow="1" width="100%" height="100%" textalign="left" textvalign="center"
+                                    watch="HeroSelectHeroList{index}"
+                                    ontrigger="SetText(Round(param6) # ' - ' # Round(param7));"
+                                />
+                            </panel>
+                        </panel>
+                    </panel>
+
+                    <!-- Armor -->
+                    <panel height="30%" color="invisible">
+                        <panel x="5@" valign="center" width="90@" height="90%" color="white" texture="/ui/legion/armor_icon.tga" watch="HeroSelectHeroList{index}" ontrigger="If(param4, SetRenderMode('normal'), SetRenderMode('grayscale'));"/>
+                        <panel width="75%" align="right">
+                            <label font="dyn_9" color="yellow" shadow="1" width="100%" height="50%" valign="top" textalign="left" textvalign="center" content="hselect_label_hd_armor"/>
+                            <panel height="50%" valign="bottom" color="invisible">
+                                <label font="dyn_8" color="white" shadow="1" width="100%" height="100%" textalign="left" textvalign="center"
+                                watch="HeroSelectHeroList{index}"
+                                ontrigger="SetText(FtoA(param8, 2));"
+                            />
+                            </panel>
+                        </panel>
+                    </panel>
+
+                    <!-- Attributes -->
+                    <panel height="30%" color="invisible" watch="ActiveHasAttributes" ontrigger="SetVisible(param);">
+                        <panel x="5@" valign="center" width="90@" height="90%" color="white" texture="/ui/legion/plus_icon.tga" watch="HeroSelectHeroList{index}" ontrigger="If(param4, SetRenderMode('normal'), SetRenderMode('grayscale'));"/>
+                        <panel width="75%" align="right">
+                            <panel height="50%" valign="top" color="invisible" float="right" padding="0">
+                                <label font="dyn_10" color="yellow" shadow="1" width="33.3%" height="100%" textalign="center" textvalign="bottom" content="hselect_label_strength"/>
+                                <label font="dyn_10" color="yellow" shadow="1" width="33.3%" height="100%" textalign="center" textvalign="bottom" content="hselect_label_agility"/>
+                                <label font="dyn_10" color="yellow" shadow="1" width="33.3%" height="100%" textalign="center" textvalign="bottom" content="hselect_label_intelligence"/>
+                            </panel>
+                            <panel height="50%" valign="bottom" color="invisible" float="right" padding="0">
+                                <label font="dyn_8" color="white" shadow="1" width="33.3%" height="100%" textalign="center" textvalign="center"
+                                    watch="HeroSelectHeroList{index}"
+                                    ontrigger="SetText(Round(param9)); If(StringEquals(param12, 'strength'), SetColor('yellow'), SetColor('white'));"
+                                />
+                                <label font="dyn_8" color="white" shadow="1" width="33.3%" height="100%" textalign="center" textvalign="center"
+                                    watch="HeroSelectHeroList{index}"
+                                    ontrigger="SetText(Round(param10)); If(StringEquals(param12, 'agility'), SetColor('yellow'), SetColor('white'));"
+                                />
+                                <label font="dyn_8" color="white" shadow="1" width="33.3%" height="100%" textalign="center" textvalign="center"
+                                    watch="HeroSelectHeroList{index}"
+                                    ontrigger="SetText(Round(param11)); If(StringEquals(param12, 'intelligence'), SetColor('yellow'), SetColor('white'));"
+                                />
+                            </panel>
+                        </panel>
+                    </panel>
+                </panel>
+            </panel>
+
+            <!-- Abilities -->
+            <instance name="header_bar" y="30.0%" height="5.0%" width="-2" align="center" lbl_font="dyn_9" color=".6 .6 .6 1" lbl="hselect_label_hd_abilities" />
+            <panel y="37.5%" height="50.0%" color="invisible" float="bottom" padding="1.5h" noclick="1">
+                <instance name="hero_list_sd_ability_info" index="{index}" ability="0"/>
+                <instance name="hero_list_sd_ability_info" index="{index}" ability="1"/>
+                <instance name="hero_list_sd_ability_info" index="{index}" ability="2"/>
+                <instance name="hero_list_sd_ability_info" index="{index}" ability="3"/>
+            </panel>
+            
+            <!-- Button -->
+            <button
+                color="invisible"
+                watch="HeroSelectHeroList{index}"
+                onmouseout="HideWidget('hero_info');"
+                ontrigger="
+                    If(param4,
+                        SetOnclick('SpawnHero(\'' # param0 # '\'); PlaySound(\'/shared/sounds/ui/hero_select/button_select.wav\'); HideWidget(\'hero_info\');'),
+                        SetOnclick('PlaySound(\'/shared/sounds/ui/error.wav\');')
+                        );
+                    SetOnmouseover('ShowWidget(\'hero_info\'); PlaySound(\'/shared/sounds/ui/button_over_03.wav\'); GetHeroInfo(\'' # param0 # '\');');
+                    "
+            >
+                <widgetstate statename="up">
+                </widgetstate>
+                <widgetstate statename="over">
+                    <frame color="invisible" bordercolor="1 1 .25 .3" borderthickness=".3h" rendermode="additive"/>
+                </widgetstate>
+                <widgetstate statename="down">
+                    <frame color="1 1 .25 .1" bordercolor="1 1 .25 .6" borderthickness=".3h" rendermode="additive"/>
+                </widgetstate>
+            </button>
+            <panel color="0 0 0 .4" watch="HeroSelectHeroList{index}" ontrigger="SetVisible(!param4);" noclick="true"/>
+        </panel>
+    </template>
+
+    <template name="hero_list_sd">
+        <panel float="bottom" padding=".25h" color="invisible" noclick="1" visible="1">
+            <panel height="-1.0h" valign="center" color="invisible">
+                <frame texture="/ui/info/backdrop.tga" width="100%" borderthickness="5.0h" color=".5 .5 .5 1" />
+
+                <panel width="-3.0h" height="-2.0h" valign="center" align="center" color="invisible">
+                    <instance name="hero_list_sd_unitdisplay" index="0" align="left"/>
+                    <instance name="hero_list_sd_unitdisplay" index="1" align="center"/>
+                    <instance name="hero_list_sd_unitdisplay" index="2" align="right"/>
+                </panel>
+            </panel>
+            
+            <instance name="random_button" width="10h" height="5h"/>
+        </panel>
+    </template>
+    <!-- END Hero List - 3 Heros -->
+
+    <!-- Hero info -->
+    <template name="hero_ability_info">
+        <panel height="7.1h" width="-1.0h" align="center" color="invisible" watch="HeroSelectHeroAbilityInfo{index}" ontrigger="SetVisible(param0);">
+            <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="invisible"/>
+            <frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
+
+            <panel x="0.5h" width="5.9h" height="5.9h" valign="center">
+                <image texture="$checker" watch="HeroSelectHeroAbilityInfo{index}" ontrigger="SetTexture(param1);" />
+                <frame color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
+            </panel>
+
+            <panel x="6.9h" width="-7.5h" height="6.2h" valign="center" color="invisible" float="bottom">
+                <panel width="100%" height="1.3h" color="invisible">                
+                    <label height="100%" color="#ffab01" shadow="1" font="dyn_9" textvalign="center" noclick="1" watch="HeroSelectHeroAbilityInfo{index}" ontrigger="SetText(param2);" />                   
+                </panel>
+                
+                <label height="80%" color="white" shadow="1" font="dyn_8" textvalign="top" wrap="1" watch="HeroSelectHeroAbilityInfo{index}" ontrigger="SetText(param3);"/>
+            </panel>
+        </panel>
+    </template>
+
+    <template name="hero_info_panel">
+        <panel float="right" padding=".5h" valign="center" color="black" noclick="1" height="102%">
+
+            <panel width="27%" color="invisible" noclick="1">
+                <frame color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
+                <instance name="header_bar" width="-2" height="2.0h" align="center" lbl="hselect_header_hero_details" />
+
+                <panel y="2.2h" float="bottom" padding="0.3h">
+                
+                    <label width="100%" height="1.8h" align="center" textalign="center" textvalign="center" font="dyn_12" color="#ffab01" shadow="true" watch="HeroSelectHeroInfo" ontrigger="SetText(param2);"/>
+                    
+                    <panel color="invisible" height="8.5h" float="right" padding="0.5h">
+                    
+                        <panel color="invisible" width="9.0h">
+                            <!-- Avatar -->
+                            <panel x="0.5h" width="8.5h" height="8.5h" align="left">
+                                <image texture="$checker" watch="HeroSelectHeroInfo" ontrigger="SetTexture(param1);" />
+                                <frame color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
+                            </panel>
+                        </panel>
+                        
+                        <panel color="invisible" width="-9.5h">
+                        
+                            <!-- Attributes -->
+                            <panel width="-0.5h" align="left" color="invisible">
+                                <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#092540"/>
+                                <frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
+                                <panel y="0.2h" width="-1.0h" align="center" color="invisible" float="bottom" padding="0.4h">
+
+                                    <label height="1.0h" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" textalign="center" noclick="1">hselect_label_hd_strength</label>
+                                    <label height="0.9h" color="#ffab01" shadow="1" font="dyn_8" textvalign="center" textalign="center" noclick="1" watch="HeroSelectHeroInfo" ontrigger="If(StringEquals(param4, 'strength'), SetColor('yellow'), SetColor('white')); SetText(Round(param5) # '  (+' # FtoA(param6, 1) # ')');"/>
+                                    
+                                    <label height="1.0h" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" textalign="center" noclick="1">hselect_label_hd_agility</label>
+                                    <label height="0.9h" color="#ffab01" shadow="1" font="dyn_8" textvalign="center" textalign="center" noclick="1" watch="HeroSelectHeroInfo" ontrigger="If(StringEquals(param4, 'agility'), SetColor('yellow'), SetColor('white')); SetText(Round(param7) # '  (+' # FtoA(param8, 1) # ')');"/>
+                                    
+                                    <label height="1.0h" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" textalign="center" noclick="1">hselect_label_hd_intel</label>
+                                    <label height="0.9h" color="#ffab01" shadow="1" font="dyn_8" textvalign="center" textalign="center" noclick="1" watch="HeroSelectHeroInfo" ontrigger="If(StringEquals(param4, 'intelligence'), SetColor('yellow'), SetColor('white')); SetText(Round(param9) # '  (+' # FtoA(param10, 1) # ')');"/>
+
+                                </panel>
+                            </panel>
+
+                        </panel>
+
+                    </panel>
+
+                    <!-- Info -->
+                    <panel height="18.5h" width="96%" align="center" color="invisible">
+                        <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#252525"/>
+                        <frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
+                        <label height="-1.0h" width="-1.4h" align="center" valign="center" wrap="true" font="dyn_8" color="white" shadow="true" watch="HeroSelectHeroInfo" ontrigger="SetText(param3);"/>
+                    </panel>
+
+                </panel>
+            </panel>
+
+            <panel width="16%" color="invisible" noclick="1">
+                <frame color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
+                <instance name="header_bar" width="-2" height="2.0h" align="center" lbl="hselect_header_statistics" />
+                <panel y="2.8h" valign="center" float="bottom" padding="1.0h" color="invisible" >
+
+                    <!-- Damage -->
+                    <panel height="12%" width="96%" align="center" color="invisible">
+                        <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#3d0f0f"/>
+                        <frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
+                        <image x="12@" width="80@" height="80%" valign="center" texture="/ui/legion/damage_icon.tga" />
+                        <panel x="105@" width="-105@" height="80%" valign="center" color="invisible" float="bottom">
+                            <label height="40%" color="#ffab01" shadow="1" font="dyn_9" textvalign="center" noclick="1">hselect_label_hd_damage</label>
+                            <label height="60%" color="white" shadow="1" font="dyn_8" textvalign="center" watch="HeroSelectHeroInfo" ontrigger="SetText(Round(param15) # ' - ' # Round(param16));"/>
+                        </panel>
+                    </panel>
+
+                    <!-- Armor -->
+                    <panel height="12%" width="96%" align="center" color="invisible">
+                        <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#082c04"/>
+                        <frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
+                        <image x="12@" width="80@" height="80%" valign="center" texture="/ui/legion/armor_icon.tga" />
+                        <panel x="105@" width="-105@" height="80%" valign="center" color="invisible" float="bottom">
+                            <label height="40%" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" noclick="1">hselect_label_hd_armor</label>
+                            <label height="60%" color="white" shadow="1" font="dyn_8" textvalign="center" watch="HeroSelectHeroInfo" ontrigger="SetText(FtoA(param17, 2));"/>
+                        </panel>
+                    </panel>
+
+                    <!-- Movement Speed -->
+                    <panel height="12%" width="96%" align="center" color="invisible">
+                        <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#252525"/>
+                        <frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
+                        <image x="12@" width="80@" height="80%" valign="center" texture="/ui/legion/move_speed_icon.tga" />
+                        <panel x="105@" width="-105@" height="80%" valign="center" color="invisible" float="bottom">
+                            <label height="40%" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" noclick="1">hselect_label_hd_move_speed</label>
+                            <label height="60%" color="white" shadow="1" font="dyn_8" textvalign="center" watch="HeroSelectHeroInfo" ontrigger="SetText(Round(param11));"/>
+                        </panel>
+                    </panel>
+
+                    <!-- Attack Type -->
+                    <panel height="12%" width="96%" align="center" color="invisible">
+                        <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#252525"/>
+                        <frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
+                        <image x="12@" width="80@" height="80%" valign="center" texture="/ui/legion/plus_icon.tga" />
+                        <panel x="105@" width="-105@" height="80%" valign="center" color="invisible" float="bottom">
+                            <label height="40%" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" noclick="1">hselect_label_hd_attack_type</label>
+                            <label height="60%" color="white" shadow="1" font="dyn_8" textvalign="center" watch="HeroSelectHeroInfo" ontrigger="SetText(param12);"/>
+                        </panel>
+                    </panel>
+
+                    <!-- Attack Range -->
+                    <panel height="12%" width="96%" align="center" color="invisible">
+                        <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#252525"/>
+                        <frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
+                        <image x="12@" width="80@" height="80%" valign="center" texture="/ui/legion/plus_icon.tga" />
+                        <panel x="105@" width="-105@" height="80%" valign="center" color="invisible" float="bottom">
+                            <label height="40%" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" noclick="1">hselect_label_hd_attack_range</label>
+                            <label height="60%" color="white" shadow="1" font="dyn_8" textvalign="center" watch="HeroSelectHeroInfo" ontrigger="SetText(Round(param13));"/>
+                        </panel>
+                    </panel>
+
+                    <!-- Attack Rate -->
+                    <panel height="12%" width="96%" align="center" color="invisible">
+                        <frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="#252525"/>
+                        <frame texture="/ui/frames/roundframe.tga" borderthickness="0.6h" color="#717171" />
+                        <image x="12@" width="80@" height="80%" valign="center" texture="/ui/legion/plus_icon.tga" />
+                        <panel x="105@" width="-105@" height="80%" valign="center" color="invisible" float="bottom">
+                            <label height="40%" color="#ffab01" shadow="1" font="dyn_9" textvalign="top" noclick="1">hselect_label_hd_attack_rate</label>
+                            <label height="60%" color="white" shadow="1" font="dyn_8" textvalign="center" watch="HeroSelectHeroInfo" ontrigger="SetText(FtoA(1000 / param14, 2));"/>
+                        </panel>
+                    </panel>
+
+                </panel>
+
+            </panel>
+
+            <panel width="55.8%" valign="center">
+                <frame color="invisible" bordercolor="#717171" borderthickness="1" noclick="1" />
+                <instance name="header_bar" width="-2" height="2.0h" align="center" lbl="hselect_label_hd_abilities" />
+
+                <panel y="2.2h" valign="center" float="bottom" padding="0.2h" color="invisible" >
+                    <instance name="hero_ability_info" index="0"/>
+                    <instance name="hero_ability_info" index="1"/>
+                    <instance name="hero_ability_info" index="2"/>
+                    <instance name="hero_ability_info" index="3"/>
+                </panel>
+
+            </panel>
+
+            <panel x="0" y="0" color="black" watch="HeroSelectHeroInfo" ontrigger="SetVisible(!param0);"/>
+        </panel>
+    </template>
+
+    <image width="177.7h" height="100h" align="center" texture="/ui/elements/lobby/background.tga" visible="1" noclick="1" />   
+    <image width="100%" height="25@" align="center" texture="/ui/elements/heroselection/main_arch.tga" visible="1" noclick="1"/>
+    <image x="-11.0h" width="50h" height="100h" align="left" valign="bottom" texture="/ui/elements/lobby/statue_legion.tga" visible="1" noclick="1"/>
+    <image x="11.0h" width="50h" height="100h" align="right" valign="bottom" texture="/ui/elements/lobby/statue_hellbourne.tga" visible="1" noclick="1"/>
+
+    <!-- Match Timer -->
+    <instance name="match_timer" />
+    
+    <panel color="invisible" height="-2.0h" align="center" valign="center" noclick="1" visible="1">
+
+        <!-- Center -->
+        <panel width="81.4h" color="invisible" align="center" name="center" watch="HeroSelectInfo" ontrigger="ShowOnly('hero_list_' # param2);">
+            <!-- Hero List -->
+            <instance
+                name="frame_stone_brown"
+                window_name="hero_list_ap"
+                group="hero_list"
+                backercolor="0 0 0 .6" uscale=".14" vscale=".2" y="8.6h" height="53.0h" width="105%" valign="top" align="center"
+                body="hero_list_ap"
+                visible="false"
+            />
+            <instance
+                name="frame_stone_brown"
+                window_name="hero_list_normal"
+                group="hero_list"
+                backercolor="0 0 0 .6" uscale=".14" vscale=".2" y="8.6h" height="50.0h" width="105%" valign="top" align="center"
+                body="hero_list_normal"
+                visible="false"
+            />
+            <instance
+                name="frame_stone_brown"
+                window_name="hero_list_rd"
+                group="hero_list"
+                backercolor="0 0 0 .6" uscale=".14" vscale=".2" y="8.6h" height="53.0h" width="105%" valign="top" align="center"
+                body="hero_list_rd"
+                visible="false"
+            />
+            <instance
+                name="frame_stone_brown"
+                window_name="hero_list_sd"
+                group="hero_list"
+                backercolor="0 0 0 .6" uscale=".14" vscale=".2" y="8.6h" height="53.0h" width="105%" valign="top" align="center"
+                body="hero_list_sd"
+                visible="true"
+            />
+
+            <!-- Chat -->
+            <instance name="frame_stone_brown"
+                backercolor="0 0 0 .6" uscale=".14" vscale=".328" height="38.3h" width="105%" valign="bottom" align="center"
+                body="lobby_chat_window"
+            />
+
+            <!-- Hero Info -->
+            <instance name="frame_stone_brown"
+                backercolor="0 0 0 .6" uscale=".14" vscale=".328" height="38.3h" width="105%" valign="bottom" align="center"
+                body="hero_info_panel"
+                window_name="hero_info"
+                visible="false"
+            />
+        </panel>
+
+        <!-- Legion Team List -->
+        <panel x="-50h" y="12.0h" width="18.0h" height="-12h" color="invisible" align="center" valign="top" noclick="1">
+            <instance name="team_list1" />
+            <image x="-11.8h" y="-17.1h" width="49.0h" height="24.5h" texture="/ui/elements/heroselection/legion_hdr.tga" noclick="1" />
+        </panel>        
+
+        <!-- Hellbourne Team List -->
+        <panel x="50h" y="12.0h" width="18.0h" height="-12h" color="invisible" align="center" valign="top" noclick="1">
+            <instance name="team_list2" />          
+            <image x="-20.1h" y="-17.6h" width="49.0h" height="24.5h" texture="/ui/elements/heroselection/hellbourne_hdr.tga" noclick="1" />
+        </panel>        
+
+    </panel>
+
+    <!-- Match Info -->
+    <panel y="5.0h" height="5.8h" width="50.0h" align="center" color="invisible" noclick="1">
+        <image texture="/ui/elements/heroselection/match_info.tga" noclick="1"/>
+        <label
+            y="0.5h"
+            noclick="1"
+            width="100%" height="100%"
+            textalign="center"
+            font="dyn_16" color="#ffab01" shadow="1"
+            watch="HeroSelectInfo"
+            ontrigger="
+                If(param5 and !param7,
+                    SetText(Translate('game_hero_select_status_select_hero')),
+                    SetText(Translate('game_hero_select_status_waiting'))
+                    );
+                "
+        />
+    </panel>
+    
+
+    <!-- Trigger:   HeroSelectInfo
+        param0: Game mode (string)
+        param1: Game options (string)
+        param2: Hero selection type (string) [sd|rd|ap|normal]
+        param3: NoRepick (bool)
+        param4: NoSwap (bool)
+        param5: Local player can pick (bool)
+        param6: Local player can swap (bool)
+        param7: Local player has a hero (bool)
+        param8: Final hero selection phase (bool) - False during alternating picks until all players have picked their heroes
+        param9: Cost to pick a hero (int)
+        param10: Cost to repick a hero (int)
+        param11: Cost to random a hero (int)
+        param12: Local player has repicked (bool)
+        param13: Local player has swapped (bool)
+    -->
+    
+    <!-- Player Action Button Tooltips -->
+    <template name="player_tooltip_set">
+        <panel height="20%" noclick="true" passivechildren="true" watch="HeroSelectPlayerInfo{index}" ontrigger="SetVisible(param0 ge 0);" sticky="true" stickytoinvis="false">
+            <!-- Swap -->
+            <instance
+                name="generic_tooltip"
+                tip_id="swap_hero_tip{index}"
+                height="7.5h"
+                visible="false"
+                title="hselect_swap_request_tip_header"
+                label="hselect_swap_request_tip_text"
+            />
+            
+            <instance
+                name="generic_tooltip"
+                tip_id="swap_hero_accept_tip{index}"
+                height="11h"
+                visible="false"
+                title="hselect_swap_accept_tip_header"
+                label="hselect_swap_accept_tip_text"
+            />
+
+            <!-- Repick -->
+            <instance
+                name="generic_tooltip"
+                tip_id="repick_hero_tip{index}"
+                height="12.2h"
+                visible="false"
+                title="game_hero_select_repick"
+                label_watch="HeroSelectInfo"
+                label_ontrigger="
+                    If(param3, SetText(Translate('game_hero_select_repick_tip_disabled')),
+                    If(param12, SetText(Translate('game_hero_select_repick_tip_already_used')),
+                    If(param13, SetText(Translate('game_hero_select_repick_tip_already_swapped')),
+                    If(!param7, SetText(Translate('game_hero_select_repick_tip_no_hero', 'gold', param10)),
+                    If(param10 gt 0, SetText(Translate('game_hero_select_repick_tip', 'gold', param10)),
+                    SetText(Translate('game_hero_select_repick_tip_free'))
+                    )))));"
+            />
+            
+            <!-- Gold -->
+            <instance
+                name="generic_tooltip"
+                tip_id="gold_tip{index}"
+                height="6h"
+                visible="false"
+                title="game_hero_select_starting_gold"
+                label_watch="HeroSelectPlayerInfo{index}"
+                label_ontrigger="
+                    If(param1,
+                        SetText(Translate('game_hero_select_starting_gold_tip_me', 'gold', param17)),
+                        SetText(Translate('game_hero_select_starting_gold_tip_other', 'gold', param17))
+                        );"
+            />
+
+            <!-- Ready -->
+            <instance
+                name="generic_tooltip"
+                tip_id="ready_tip{index}"
+                height="12h"
+                visible="false"
+                title="hselect_button_ready"
+                label_watch="HeroSelectPlayerInfo{index}"
+                label_ontrigger="
+                    If(param1,
+                        If(param10,
+                            SetText(Translate('game_hero_select_ready_tip_me_ready')),
+                            If(param15,
+                                SetText(Translate('game_hero_select_ready_tip')),
+                                SetText(Translate('game_hero_select_ready_tip_no_hero'))
+                            )
+                        ),
+                        If(param10,
+                            SetText(Translate('game_hero_select_ready_tip_other_ready')),
+                            SetText(Translate('game_hero_select_ready_tip_not_ready'))
+                        )
+                    );"
+            />
+        </panel>
+    </template>
+
+    <panel x="-30h" y="12h" width="20h" height="-16h" align="center" float="bottom" noclick="true" passivechildren="true">
+        <instance name="player_tooltip_set" index="0" />
+        <instance name="player_tooltip_set" index="1" />
+        <instance name="player_tooltip_set" index="2" />
+        <instance name="player_tooltip_set" index="3" />
+        <instance name="player_tooltip_set" index="4" />
+    </panel>
+
+    <panel x="30h" y="12h" width="20h" height="-16h" align="center" float="bottom" noclick="true" passivechildren="true">
+        <instance name="player_tooltip_set" index="5" />
+        <instance name="player_tooltip_set" index="6" />
+        <instance name="player_tooltip_set" index="7" />
+        <instance name="player_tooltip_set" index="8" />
+        <instance name="player_tooltip_set" index="9" />
+    </panel>
+
+    <!-- Random Tooltip -->
+    <instance
+        name="generic_tooltip" tip_id="random_hero_tip"
+        y="6h"
+        width="19h" height="6.0h"
+        align="center"
+        visible="false"
+        title="hselect_button_ready"
+        label_watch="HeroSelectInfo"
+        label_ontrigger="
+            If(param7, SetText(Translate('game_hero_select_random_tip_already_picked')),
+            If((param11 == 0) or param12, SetText(Translate('game_hero_select_random_tip_free')),
+            SetText(Translate('game_hero_select_random_tip', 'gold', param11))
+            ));"
+    />
+    
+    <!-- Arcade countdown -->
+    <panel y="5h" width="80h" height="30h" align="center" noclick="true"
+        watch="HeroSelectTimer"
+        ontrigger="If(param3 and (param0 le 10000), PlaySound('/shared/sounds/ui/hero_select/button_clock.wav'));"
+    >
+        <modelpanel
+            visible="false"
+            noclick="true"
+
+            model="common/models/arcade_text/countdown.mdf"
+            anim="idle"
+            camerapos="0 350 0"
+            cameraangles="0 0 180"
+            camerafov="50"
+            cameranear="1"
+            carmerafar="5000"
+            depthclear="false"
+            depthcompress="true"
+            sunazimuth="140"
+            sunaltitude="10"
+            suncolor="1.4 1.3 1"
+
+            onshow="SetAnim('idle'); SetEffect('/ui/common/models/arcade_text/countdown.effect');"
+            watch="HeroSelectTimer"
+            ontrigger="
+                    If(param0 gt 6000, SetVisible(false));
+                    If(param3 and (param0 le 6000), SetVisible(true));
+                    If(param3 and (param0 le 1000), PlaySound('/shared/sounds/announcer/startgame.wav'));
+                    "
+        />
+    </panel>
 </interface>

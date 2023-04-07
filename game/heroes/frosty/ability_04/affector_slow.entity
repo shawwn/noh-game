@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Frosty_Ability4_Slow"
+    name="Affector_Frosty_Ability4_Slow"
 
-	radius="635"
+    radius="635"
 
-	lifetime="4000"
-	targetselection="all"
-	targetscheme="enemy_units"
-	effecttype=""
+    lifetime="4000"
+    targetselection="all"
+    targetscheme="enemy_units"
+    effecttype=""
 >
-	<onframeimpact>
-		<applystate name="State_Frosty_Ability4" continuous="true" timeout="frametime" duration="1500" />
-	</onframeimpact>
+    <onframeimpact>
+        <applystate name="State_Frosty_Ability4" continuous="true" timeout="frametime" duration="1500" />
+    </onframeimpact>
 </affector>

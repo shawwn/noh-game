@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="ice.max" file="stone.model" type="K2">
-	<anim name="idle" clip="stone.clip" loop="1"/>
+    <anim name="idle" clip="stone.clip" loop="1"/>
 </model>

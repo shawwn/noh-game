@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_BarrierIdol_Immune"
+    name="State_BarrierIdol_Immune"
 
-	icon="icon.tga"
-	passiveeffect=""
-	immunitytype="BarrierImmunity"
+    icon="icon.tga"
+    passiveeffect=""
+    immunitytype="BarrierImmunity"
 >
 </state>

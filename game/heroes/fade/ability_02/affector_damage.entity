@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Fade_Ability1_Damage"
+    name="Affector_Fade_Ability1_Damage"
 
 
-	radius="125"
-	speed="1500"
-	
-	lifetime="500"
-	maximpactspertarget="1"
-	targetselection="all"
-	targetscheme="enemy_heroes"
-	effecttype="Magic"
-	persist="true"
+    radius="125"
+    speed="1500"
+    
+    lifetime="500"
+    maximpactspertarget="1"
+    targetselection="all"
+    targetscheme="enemy_heroes"
+    effecttype="Magic"
+    persist="true"
 
 >
-	<onimpact>
+    <onimpact>
         <applystate name="State_Stunned" duration="1000,1500,2000,2500" />
-		<applystate name="State_Fade_Ability1" duration="4000"/>
-	</onimpact>
+        <applystate name="State_Fade_Ability1" duration="4000"/>
+    </onimpact>
 </affector>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_MysticPotpourri"
-	
-	icon="icon.tga"
-	passiveeffect="state.effect"
-	forceanim=""
-	
-	healthregen="2"
-	
-	effecttype="StatusBuff"
+    name="State_MysticPotpourri"
+    
+    icon="icon.tga"
+    passiveeffect="state.effect"
+    forceanim=""
+    
+    healthregen="2"
+    
+    effecttype="StatusBuff"
 >
 </state>

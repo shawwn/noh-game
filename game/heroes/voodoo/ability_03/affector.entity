@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Voodoo_Ability3"
+    name="Affector_Voodoo_Ability3"
 
-	radius="165"
-	
-	lifetime="0"
-	targetselection="all"
-	targetscheme="enemy_heroes"
-	effecttype="Magic"
+    radius="165"
+    
+    lifetime="0"
+    targetselection="all"
+    targetscheme="enemy_heroes"
+    effecttype="Magic"
 >
-	<onimpact>
-		<applystate name="State_Voodoo_Ability3" duration="12000"/>	
-	</onimpact>
+    <onimpact>
+        <applystate name="State_Voodoo_Ability3" duration="12000"/> 
+    </onimpact>
 </affector>

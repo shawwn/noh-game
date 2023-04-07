@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Succubis_Ability3"
+    name="State_Succubis_Ability3"
 
-	
-	
-	icon="icon.tga"
-	
-	impactinterval="1000"
-	
-	immunitytype="IndirectImmunity"
-	
-	passiveeffect="effects/state.effect"
-	silenced="true"
-	perplexed="true"
-	immobilized="true"
-	disarmed="true"
-	frozen="true"
-	smackable="true"
+    
+    
+    icon="icon.tga"
+    
+    impactinterval="1000"
+    
+    immunitytype="IndirectImmunity"
+    
+    passiveeffect="effects/state.effect"
+    silenced="true"
+    perplexed="true"
+    immobilized="true"
+    disarmed="true"
+    frozen="true"
+    smackable="true"
 
-	nothreat="true"
-	
-	effecttype="StatusDebuff"
+    nothreat="true"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe/>
-	
-	<oninflict>
-		<applystate name="State_Succubis_Ability3_Invulnerable" duration="900" />
-	</oninflict>
+    <onframe/>
+    
+    <oninflict>
+        <applystate name="State_Succubis_Ability3_Invulnerable" duration="900" />
+    </oninflict>
 
-	
-	<onattackedstart>
-		<cantarget targetscheme="all" effecttype="Magic">
-			<applystate name="State_Succubis_Ability3" duration="4000,5000,6000,7000" />
-			<playeffect effect="effects/impact.effect" source="target_entity"/>
-			<expirestate name="State_Succubis_Ability3" target="source_entity" />
-		</cantarget>
-	</onattackedstart>
+    
+    <onattackedstart>
+        <cantarget targetscheme="all" effecttype="Magic">
+            <applystate name="State_Succubis_Ability3" duration="4000,5000,6000,7000" />
+            <playeffect effect="effects/impact.effect" source="target_entity"/>
+            <expirestate name="State_Succubis_Ability3" target="source_entity" />
+        </cantarget>
+    </onattackedstart>
 
-	<ondamaged>
-		<condition test="source_damage gt 0">
-			<condition test="not_entity_type State_Succubis_Ability3" target="inflictor_entity" >
-				<expire />
-			</condition>
-		</condition>
-	</ondamaged>
-	
-	<onimpact>
-		<playeffect effect="" source="target_entity"/>
-		<damage effecttype="" amount="20"  /> <!-- need to test if full damage is properly dealt, and if not, potentially hookup ignore invulnerable or come up with another way to handle it -->
-	</onimpact>
+    <ondamaged>
+        <condition test="source_damage gt 0">
+            <condition test="not_entity_type State_Succubis_Ability3" target="inflictor_entity" >
+                <expire />
+            </condition>
+        </condition>
+    </ondamaged>
+    
+    <onimpact>
+        <playeffect effect="" source="target_entity"/>
+        <damage effecttype="" amount="20"  /> <!-- need to test if full damage is properly dealt, and if not, potentially hookup ignore invulnerable or come up with another way to handle it -->
+    </onimpact>
 </state>

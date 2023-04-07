@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_PowerSupply"
+    name="State_PowerSupply"
 
-	icon="icon.tga"
-	ishidden="true"
+    icon="icon.tga"
+    ishidden="true"
 >
-	<onabilityimpact>
-		<casteffecttype entity="inflictor_entity" effecttype="Attack" />
-		<else>
-			<addcharges entity="this_spawner_entity" />
-		</else>
-	</onabilityimpact>
-	
-	<onframe />
+    <onabilityimpact>
+        <casteffecttype entity="inflictor_entity" effecttype="Attack" />
+        <else>
+            <addcharges entity="this_spawner_entity" />
+        </else>
+    </onabilityimpact>
+    
+    <onframe />
 </state>

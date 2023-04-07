@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Windrunner_Ability4"
+    name="State_Windrunner_Ability4"
 
-	
-	
-	icon="/heroes/ophelia/ability_04/icon.tga"
-	passiveeffect="effects/state.effect"
-	basedamagemultiplier="0.5,0.6,0.7"
-	attackspeed="3"
-	modifierkey="zerk"
-	effecttype="StatusBuff"
+    
+    
+    icon="/heroes/ophelia/ability_04/icon.tga"
+    passiveeffect="effects/state.effect"
+    basedamagemultiplier="0.5,0.6,0.7"
+    attackspeed="3"
+    modifierkey="zerk"
+    effecttype="StatusBuff"
 >
-<!--	<onframe />
+<!--    <onframe />
 
 -->
 </state>

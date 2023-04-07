@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Astrolabe_Aura"
+    name="State_Astrolabe_Aura"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="aura.effect"
-	
-	healthregen="3"
-	
-	effecttype="StatusBuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="aura.effect"
+    
+    healthregen="3"
+    
+    effecttype="StatusBuff"
 >
 </state>

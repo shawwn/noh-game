@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Bubbles_Ability4"
+    name="Affector_Bubbles_Ability4"
 
-	radius="400"
-	
-	lifetime="400"
-	maximpactspertarget="1"
-	targetselection="all"
-	targetscheme="visible_enemy_units"
-	effecttype="Magic"
-	persist="true"
+    radius="400"
+    
+    lifetime="400"
+    maximpactspertarget="1"
+    targetselection="all"
+    targetscheme="visible_enemy_units"
+    effecttype="Magic"
+    persist="true"
 >
-	<onimpact>
-		<applystate name="State_Stunned" duration="2000,2750,3500" />
-		<damage effecttype="Magic" amount="200,300,400" />
-		<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
-	</onimpact>
+    <onimpact>
+        <applystate name="State_Stunned" duration="2000,2750,3500" />
+        <damage effecttype="Magic" amount="200,300,400" />
+        <playeffect effect="effects/impact.effect" source="target_entity" target="target_entity"/>
+    </onimpact>
 </affector>

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Mortred_Aura"
+    name="State_Mortred_Aura"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect=""
-	displaylevel="true"
-	
-	evasion="0.075,0.10,0.125,0.15"
-	
-	effecttype="StatusBuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect=""
+    displaylevel="true"
+    
+    evasion="0.075,0.10,0.125,0.15"
+    
+    effecttype="StatusBuff"
 >
 <onframe >
-		<damage effecttype="Magic" amount="1" b="frametime" op="mult"/>
-	</onframe>
+        <damage effecttype="Magic" amount="1" b="frametime" op="mult"/>
+    </onframe>
 
 </state>

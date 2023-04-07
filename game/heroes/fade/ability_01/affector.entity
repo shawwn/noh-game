@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Fade"
+    name="Affector_Fade"
 
-	radius="350"
-	
-	targetselection="all"
-	targetscheme="organic_enemy_units"
-	effecttype="Magic"
+    radius="350"
+    
+    targetselection="all"
+    targetscheme="organic_enemy_units"
+    effecttype="Magic"
 >
-	<onimpact>
-		<damage effecttype="Magic" amount="100,150,200,250"/>
-		<cantarget targetscheme="enemy_units" effecttype="Magic">
-			<setvar0 a="target_maxmana" b=".06,.12,.18,.24" op="mult" />
-			<takemana amount="1" b="var0" op="mult" />
-			<condition test="result gt 0">
-				<popup name="manaburn" source="target_entity" target="source_entity" a="result" />
-			</condition>
-		</cantarget>
-		<playeffect effect="effects/impact.effect" target="" source="target_entity"/>
-	</onimpact>
+    <onimpact>
+        <damage effecttype="Magic" amount="100,150,200,250"/>
+        <cantarget targetscheme="enemy_units" effecttype="Magic">
+            <setvar0 a="target_maxmana" b=".06,.12,.18,.24" op="mult" />
+            <takemana amount="1" b="var0" op="mult" />
+            <condition test="result gt 0">
+                <popup name="manaburn" source="target_entity" target="source_entity" a="result" />
+            </condition>
+        </cantarget>
+        <playeffect effect="effects/impact.effect" target="" source="target_entity"/>
+    </onimpact>
 </affector>

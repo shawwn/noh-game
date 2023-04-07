@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Legionnaire2"
+    name="Ability_Legionnaire2"
 
-	icon="icon.tga"
-	statuseffecttooltip="State_Legionnaire_Ability2_Terrify"
-	
-	anim="ability_2_start"
-	casttime="800"
-	castactiontime="600"
-	
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    icon="icon.tga"
+    statuseffecttooltip="State_Legionnaire_Ability2_Terrify"
+    
+    anim="ability_2_start"
+    casttime="800"
+    castactiontime="600"
+    
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="target_entity"
-	targetscheme="enemy_units"
-	casteffecttype=""
-	
-	
-	manacost="40,50,60,70"
-	cooldowntime="30000"
-	
-	range="1000"
+    actiontype="target_entity"
+    targetscheme="enemy_units"
+    casteffecttype=""
+    
+    
+    manacost="40,50,60,70"
+    cooldowntime="30000"
+    
+    range="1000"
 >
-	<onimpact>
-		<applystate name="State_Legionnaire_Ability2_Self" target="source_entity" duration="5000" force="true" continuous="true" pushentity="true" />
-		<order command="attack" source="source_entity" force="true" forceduration="5000" restrict="true"/>
-		<order command="event" source="source_entity" target="target_entity" queue="front" restrict="true" ordername="Order_Legionnaire_Ability2" />
-	</onimpact>
-	
-	<onattackimpact>
-		<order command="attack" source="source_entity" target="proxy_entity" force="true" forceduration="0.01" restrict="true" />
-		<spawnaffector name="Affector_Legionnaire_Ability2" duration="4000,5000,6000,7000" target="source_entity" continuous="true" pushentity="true" />
-	</onattackimpact>	
+    <onimpact>
+        <applystate name="State_Legionnaire_Ability2_Self" target="source_entity" duration="5000" force="true" continuous="true" pushentity="true" />
+        <order command="attack" source="source_entity" force="true" forceduration="5000" restrict="true"/>
+        <order command="event" source="source_entity" target="target_entity" queue="front" restrict="true" ordername="Order_Legionnaire_Ability2" />
+    </onimpact>
+    
+    <onattackimpact>
+        <order command="attack" source="source_entity" target="proxy_entity" force="true" forceduration="0.01" restrict="true" />
+        <spawnaffector name="Affector_Legionnaire_Ability2" duration="4000,5000,6000,7000" target="source_entity" continuous="true" pushentity="true" />
+    </onattackimpact>   
 </ability>

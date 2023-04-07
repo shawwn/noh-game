@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Valmont_Ability1_Self"
+    name="State_Valmont_Ability1_Self"
 
-	
-	
-	icon="magia2.tga"
-	
-	passiveeffect="effects/thirst.effect"
-	
-	effecttype="StatusBuff"
-	
-	attackspeed="0.05,0.1,0.15,0.20"
-	modifierkey="bloodthirst"
+    
+    
+    icon="magia2.tga"
+    
+    passiveeffect="effects/thirst.effect"
+    
+    effecttype="StatusBuff"
+    
+    attackspeed="0.05,0.1,0.15,0.20"
+    modifierkey="bloodthirst"
 >
 </state>

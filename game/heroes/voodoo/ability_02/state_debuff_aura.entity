@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Voodoo_Ability2_Debuff_Aura"
+    name="State_Voodoo_Ability2_Debuff_Aura"
 
-	
-	
-	icon="icon.tga"
-	
-	passiveeffect="state_enemy_aura.effect"
-	
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    
+    passiveeffect="state_enemy_aura.effect"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe >
-		<damage effecttype="Magic DOT" amount="10,20,30,40" b="frametime" op="mult" />
-	</onframe>
+    <onframe >
+        <damage effecttype="Magic DOT" amount="10,20,30,40" b="frametime" op="mult" />
+    </onframe>
 </state>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_SandWraith_Ability1_Self_Antiwalking"
+    name="State_SandWraith_Ability1_Self_Antiwalking"
 
-	ishidden="true"
-	antiwalking="true"
-	
+    ishidden="true"
+    antiwalking="true"
+    
 >
 </state>

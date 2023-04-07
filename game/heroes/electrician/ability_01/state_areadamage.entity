@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Electrician_Ability1_Areadamage"
+    name="State_Electrician_Ability1_Areadamage"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/aoe.effect"
-	
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/aoe.effect"
+    
 >
-	<onframe >
-		<damage effecttype="Magic" amount="30,40,50,60" b="frametime" op="mult"/>
-	</onframe>
+    <onframe >
+        <damage effecttype="Magic" amount="30,40,50,60" b="frametime" op="mult"/>
+    </onframe>
 </state>

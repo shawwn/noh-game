@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_IronShield"
+    name="Item_IronShield"
 
-	icon="icon.tga"
-	
-	cost=""
-	components="Item_IronBuckler Item_DuckBoots Item_DuckBoots"
-	autoassemble="true"
-	
-	actiontype="passive"
-	
-	agility="6"
-	
+    icon="icon.tga"
+    
+    cost=""
+    components="Item_IronBuckler Item_DuckBoots Item_DuckBoots"
+    autoassemble="true"
+    
+    actiontype="passive"
+    
+    agility="6"
+    
 >
-	<onframe />
-	<modifier key="buckler_melee" condition="melee" modpriority="100"
-	>
-		<onattackedpredamage>
-			<combateffecttype effecttype="Attack">
-				<chance threshold=".8">
-					<setvalue name="combat_deflection" a="combat_deflection" b="20" op="max" />	
-				</chance>
-			</combateffecttype>
-		</onattackedpredamage>
-	</modifier>
+    <onframe />
+    <modifier key="buckler_melee" condition="melee" modpriority="100"
+    >
+        <onattackedpredamage>
+            <combateffecttype effecttype="Attack">
+                <chance threshold=".8">
+                    <setvalue name="combat_deflection" a="combat_deflection" b="20" op="max" /> 
+                </chance>
+            </combateffecttype>
+        </onattackedpredamage>
+    </modifier>
 
-	<modifier key="buckler_ranged" condition="ranged" modpriority="100"
-	>
-		<onattackedpredamage>
-			<combateffecttype effecttype="Attack">
-				<chance threshold=".8">
-					<setvalue name="combat_deflection" a="combat_deflection" b="10" op="max" />	
-				</chance>
-			</combateffecttype>
-		</onattackedpredamage>
-	</modifier>
+    <modifier key="buckler_ranged" condition="ranged" modpriority="100"
+    >
+        <onattackedpredamage>
+            <combateffecttype effecttype="Attack">
+                <chance threshold=".8">
+                    <setvalue name="combat_deflection" a="combat_deflection" b="10" op="max" /> 
+                </chance>
+            </combateffecttype>
+        </onattackedpredamage>
+    </modifier>
 </item>

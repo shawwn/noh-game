@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Punchdagger"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="500"
-	
-	actiontype="passive"
-	
-	damage="9"
+    name="Item_Punchdagger"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="500"
+    
+    actiontype="passive"
+    
+    damage="9"
 >
 </item>

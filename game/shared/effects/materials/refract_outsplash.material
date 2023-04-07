@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <material>
-	<parameters />
-	<phase
-		name="color"
-		vs="effect_refract"
-		ps="effect_refract"
-		srcblend="BLEND_SRC_ALPHA"
-		dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
-		cull="CULL_NONE"
-		translucent="true"
-		refractive="true"
-		alphawrite="false"
-		depthread="true"
-	>
-		<sampler
-			name="refraction"
-			texture="../textures/splashoutrefract.tga"
-			repeat_u="false"
-			repeat_v="false"
-			mipmaps="true"
-			fullquality="true"
-			nocompress="true"
-			filtering="true"
-		/>
-	</phase>
+    <parameters />
+    <phase
+        name="color"
+        vs="effect_refract"
+        ps="effect_refract"
+        srcblend="BLEND_SRC_ALPHA"
+        dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
+        cull="CULL_NONE"
+        translucent="true"
+        refractive="true"
+        alphawrite="false"
+        depthread="true"
+    >
+        <sampler
+            name="refraction"
+            texture="../textures/splashoutrefract.tga"
+            repeat_u="false"
+            repeat_v="false"
+            mipmaps="true"
+            fullquality="true"
+            nocompress="true"
+            filtering="true"
+        />
+    </phase>
 </material>

@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Voodoo1"
+    name="Ability_Voodoo1"
 
-	
-	
-	icon="icon.tga"
-	
-	anim="ability_1"
-	casttime="800"
-	castactiontime="250"
-	casteffect=""
+    
+    
+    icon="icon.tga"
+    
+    anim="ability_1"
+    casttime="800"
+    castactiontime="250"
+    casteffect=""
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="target_entity"
-	targetscheme="enemy_units"
-	casteffecttype="Magic"
-	
-	manacost="140"
-	cooldowntime="20000,18000,16000,14000"
-	
-	range="700"
-	
-	projectile="Projectile_Voodoo_Ability1"
+    actiontype="target_entity"
+    targetscheme="enemy_units"
+    casteffecttype="Magic"
+    
+    manacost="140"
+    cooldowntime="20000,18000,16000,14000"
+    
+    range="700"
+    
+    projectile="Projectile_Voodoo_Ability1"
 >
-	<onimpact >
-		<condition test="bounce_count eq 0">
-			<condition test="target_type hero">
-				<applystate name="State_Stunned" duration="1500"/>
-			</condition>
-			<condition test="not_target_type hero">
-				<damage effecttype="Magic" amount="75,100,125,150"/>
-				<applystate name="State_Stunned" duration="5000"/>
-			</condition>
-		</condition>
-		<condition test="bounce_count gt 0">
-			<condition test="target_type hero">
-				<applystate name="State_Stunned" duration="1000"/>
-			</condition>
-			<condition test="not_target_type hero">
-				<damage effecttype="Magic" amount="75,100,125,150"/>
-				<applystate name="State_Stunned" duration="5000"/>
-			</condition>
-		</condition>
-		<bounce count="2,4,6,8" range="600" targetscheme="visible_enemy_units" />
-	</onimpact>
-	
-	<onimpactinvalid>
-		<bounce count="2,4,6,8" range="600" targetscheme="visible_enemy_units" />
-	</onimpactinvalid>
+    <onimpact >
+        <condition test="bounce_count eq 0">
+            <condition test="target_type hero">
+                <applystate name="State_Stunned" duration="1500"/>
+            </condition>
+            <condition test="not_target_type hero">
+                <damage effecttype="Magic" amount="75,100,125,150"/>
+                <applystate name="State_Stunned" duration="5000"/>
+            </condition>
+        </condition>
+        <condition test="bounce_count gt 0">
+            <condition test="target_type hero">
+                <applystate name="State_Stunned" duration="1000"/>
+            </condition>
+            <condition test="not_target_type hero">
+                <damage effecttype="Magic" amount="75,100,125,150"/>
+                <applystate name="State_Stunned" duration="5000"/>
+            </condition>
+        </condition>
+        <bounce count="2,4,6,8" range="600" targetscheme="visible_enemy_units" />
+    </onimpact>
+    
+    <onimpactinvalid>
+        <bounce count="2,4,6,8" range="600" targetscheme="visible_enemy_units" />
+    </onimpactinvalid>
 </ability>

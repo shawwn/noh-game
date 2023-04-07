@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Deadwood_Ability4"
-	
-	icon="icon.tga"
-	passiveeffect="effects/state.effect"
-	
-	movespeedslowstart="1"
-	movespeedslowmid="0.35"
-	movespeedslowmidpos="0.2"
-	movespeedslowend="0.35"
-	
-	strengthpercharge="-1"
-	
-	effecttype="StatusDebuff"
+    name="State_Deadwood_Ability4"
+    
+    icon="icon.tga"
+    passiveeffect="effects/state.effect"
+    
+    movespeedslowstart="1"
+    movespeedslowmid="0.35"
+    movespeedslowmidpos="0.2"
+    movespeedslowend="0.35"
+    
+    strengthpercharge="-1"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe />
-	
-	<oninflict>
-		<evaluate a="target_strength" b="0.20" op="mult" />
-		<setcharges a="result" />
-	</oninflict>
+    <onframe />
+    
+    <oninflict>
+        <evaluate a="target_strength" b="0.20" op="mult" />
+        <setcharges a="result" />
+    </oninflict>
 </state>

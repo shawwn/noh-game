@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_BehemothsHeart"
-	
-	icon="icon.tga"
-	
-	cost="1200"
-	components="Item_AxeOfTheMalphai Item_Beastheart"
-	
-	actiontype="passive"
-	
-	strength="35"
-	maxhealth="300"
+    name="Item_BehemothsHeart"
+    
+    icon="icon.tga"
+    
+    cost="1200"
+    components="Item_AxeOfTheMalphai Item_Beastheart"
+    
+    actiontype="passive"
+    
+    strength="35"
+    maxhealth="300"
 >
-	<modifier key="BehemothsHeartStrength" condition="strength" modpriority="100" exclusive="true"
-		healthregenpercent="0.0075"
-	>
-	</modifier>
-	
-	<modifier key="BehemothsHeartAgility" condition="agility" modpriority="100" exclusive="true"
-	>
-		<onframe>
-			<applystate name="State_BehemothsHeartAgility_Aura" continuous="true" timeout="frametime" />
-		</onframe>
-		<onattackingdamageevent>
-			<setvalue name="damage_attempted" a="damage_attempted" b="1.10" op="mult" />
-		</onattackingdamageevent>
-	</modifier>
+    <modifier key="BehemothsHeartStrength" condition="strength" modpriority="100" exclusive="true"
+        healthregenpercent="0.0075"
+    >
+    </modifier>
+    
+    <modifier key="BehemothsHeartAgility" condition="agility" modpriority="100" exclusive="true"
+    >
+        <onframe>
+            <applystate name="State_BehemothsHeartAgility_Aura" continuous="true" timeout="frametime" />
+        </onframe>
+        <onattackingdamageevent>
+            <setvalue name="damage_attempted" a="damage_attempted" b="1.10" op="mult" />
+        </onattackingdamageevent>
+    </modifier>
 
-	<modifier key="BehemothsHeartIntelligence" condition="intelligence" modpriority="100" exclusive="true"
-		reducedcooldowns="0.15"
-		castspeed="0.3"
-	>
-	</modifier>
-	
-	<modifier key="BHeart_shopdescription" condition="BHeartdesc" modpriority="101"
-		reducedcooldowns="0"
-		castspeed="0"
-		healthregenpercent="0"
-	>
-		<onframe />
-	</modifier>
+    <modifier key="BehemothsHeartIntelligence" condition="intelligence" modpriority="100" exclusive="true"
+        reducedcooldowns="0.15"
+        castspeed="0.3"
+    >
+    </modifier>
+    
+    <modifier key="BHeart_shopdescription" condition="BHeartdesc" modpriority="101"
+        reducedcooldowns="0"
+        castspeed="0"
+        healthregenpercent="0"
+    >
+        <onframe />
+    </modifier>
 </item>

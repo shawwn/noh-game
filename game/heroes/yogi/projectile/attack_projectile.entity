@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_YogiAttack"
+    name="Projectile_YogiAttack"
 
-	speed="900"
-	gravity="2000"
-	canturn="true"
+    speed="900"
+    gravity="2000"
+    canturn="true"
 
-	modelscale="1.5"
-	model="model.mdf"
-	traileffect="trails.effect"
-	impacteffect="impact.effect"
+    modelscale="1.5"
+    model="model.mdf"
+    traileffect="trails.effect"
+    impacteffect="impact.effect"
 >
 </projectile>

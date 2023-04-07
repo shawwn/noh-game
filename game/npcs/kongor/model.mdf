@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="rig.max" file="high.model" type="K2" high="high.model" med="high.model" low="low.model" >
 
-	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true">
-		<frameevent frame="13" cmd="PlaySoundLinear /npcs/kongor/sounds/idle.wav 400 1800 .3"/>
+    <anim name="idle" clip="clips/default_1.clip" fps="30" loop="true">
+        <frameevent frame="13" cmd="PlaySoundLinear /npcs/kongor/sounds/idle.wav 400 1800 .3"/>
 
-		<frameevent frame="65" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.wav 0 2000 1"/>
-		<frameevent frame="65" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .25"/>
-		<frameevent frame="65" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+        <frameevent frame="65" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.wav 0 2000 1"/>
+        <frameevent frame="65" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .25"/>
+        <frameevent frame="65" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
 
-		<frameevent frame="79" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.wav 0 2000 1"/>
-		<frameevent frame="79" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .25"/>
-		<frameevent frame="79" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+        <frameevent frame="79" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.wav 0 2000 1"/>
+        <frameevent frame="79" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .25"/>
+        <frameevent frame="79" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
 
-		<frameevent frame="129" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.wav 0 2000 1"/>
-		<frameevent frame="129" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .25"/>
-		<frameevent frame="129" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+        <frameevent frame="129" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.wav 0 2000 1"/>
+        <frameevent frame="129" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .25"/>
+        <frameevent frame="129" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
 
-		<frameevent frame="141" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.wav 0 2000 1"/>
-		<frameevent frame="141" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .25"/>
-		<frameevent frame="141" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
-	</anim>
-	
-	<anim name="attack_1" clip="clips/attack_1.clip" fps="24" loop="false" blendtime="150">
-		<frameevent frame="7" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_grunt_1.wav 500 2500 1"/>
-		<frameevent frame="13" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_1.wav 400 1800 1"/>
-	</anim>
+        <frameevent frame="141" cmd="PlaySoundLinear /shared/sounds/footsteps/heavy_%.wav 0 2000 1"/>
+        <frameevent frame="141" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .25"/>
+        <frameevent frame="141" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+    </anim>
+    
+    <anim name="attack_1" clip="clips/attack_1.clip" fps="24" loop="false" blendtime="150">
+        <frameevent frame="7" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_grunt_1.wav 500 2500 1"/>
+        <frameevent frame="13" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_1.wav 400 1800 1"/>
+    </anim>
 
-	<anim name="attack_2" clip="clips/attack_2.clip" fps="30" loop="false" blendtime="150">
-		<frameevent frame="16" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_2.wav 400 1800 1"/>
-		<frameevent frame="5" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_grunt_4.wav 500 2500 1"/>
-		<frameevent frame="14" cmd="StartEffect effects/chest_pound_left.effect"/>
-		<frameevent frame="11" cmd="StartEffect effects/chest_pound_right.effect"/>
-		<frameevent frame="29" cmd="StartEffect effects/ground_impact.effect"/>
-	</anim>
+    <anim name="attack_2" clip="clips/attack_2.clip" fps="30" loop="false" blendtime="150">
+        <frameevent frame="16" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_2.wav 400 1800 1"/>
+        <frameevent frame="5" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_grunt_4.wav 500 2500 1"/>
+        <frameevent frame="14" cmd="StartEffect effects/chest_pound_left.effect"/>
+        <frameevent frame="11" cmd="StartEffect effects/chest_pound_right.effect"/>
+        <frameevent frame="29" cmd="StartEffect effects/ground_impact.effect"/>
+    </anim>
 
-	<anim name="attack_3" clip="clips/attack_3.clip" fps="20" loop="false" blendtime="150">
-		<frameevent frame="10" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_grunt_3.wav 500 2500 1"/>
-		<frameevent frame="13" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_3.wav 400 1800 1"/>
-		<frameevent frame="19" cmd="StartEffect effects/ground_impact.effect"/>
-	</anim>
+    <anim name="attack_3" clip="clips/attack_3.clip" fps="20" loop="false" blendtime="150">
+        <frameevent frame="10" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_grunt_3.wav 500 2500 1"/>
+        <frameevent frame="13" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_3.wav 400 1800 1"/>
+        <frameevent frame="19" cmd="StartEffect effects/ground_impact.effect"/>
+    </anim>
 
-	<anim name="attack_4" clip="clips/attack_4.clip" fps="20" loop="false" blendtime="150">
-		<frameevent frame="13" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_4.wav 400 1800 1"/>
-		<frameevent frame="15" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_grunt_4.wav 500 2500 1"/>
-	</anim>
+    <anim name="attack_4" clip="clips/attack_4.clip" fps="20" loop="false" blendtime="150">
+        <frameevent frame="13" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_4.wav 400 1800 1"/>
+        <frameevent frame="15" cmd="PlaySoundLinear /npcs/kongor/sounds/attack_grunt_4.wav 500 2500 1"/>
+    </anim>
 
-	<anim name="ability_1" clip="clips/ability_1.clip" fps="30" loop="false" blendtime="150"/>
-		
-	<anim name="walk_1" clip="clips/walk_1.clip" fps="32" loop="true" loopbackframe="1">
-		<frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
-		<frameevent frame="8" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 1000 2500 0.4"/>
+    <anim name="ability_1" clip="clips/ability_1.clip" fps="30" loop="false" blendtime="150"/>
+        
+    <anim name="walk_1" clip="clips/walk_1.clip" fps="32" loop="true" loopbackframe="1">
+        <frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+        <frameevent frame="8" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 1000 2500 0.4"/>
 
-		<frameevent frame="13" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
-		<frameevent frame="13" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 1000 2500 0.55"/>
+        <frameevent frame="13" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+        <frameevent frame="13" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 1000 2500 0.55"/>
 
-		<frameevent frame="16" cmd="PlaySoundLinear /npcs/kongor/sounds/run_%.wav 0 1800 .6"/>
+        <frameevent frame="16" cmd="PlaySoundLinear /npcs/kongor/sounds/run_%.wav 0 1800 .6"/>
 
-		<frameevent frame="21" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
-		<frameevent frame="21" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 1000 2500 0.4"/>
+        <frameevent frame="21" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+        <frameevent frame="21" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 1000 2500 0.4"/>
 
-		<frameevent frame="27" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
-		<frameevent frame="27" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 1000 2500 0.55"/>
-	</anim>
+        <frameevent frame="27" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+        <frameevent frame="27" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 1000 2500 0.55"/>
+    </anim>
 
-	<anim name="taunt_1" clip="clips/bored_1.clip" fps="30" loop="false" blendtime="150">
-		<frameevent frame="18" cmd="PlaySoundLinear /npcs/kongor/sounds/taunt.wav 500 2500 1"/>
-	</anim>
-		
-	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
-		<frameevent frame="1" cmd="PlaySoundLinear /npcs/kongor/sounds/death.wav 500 2500 1"/>
-	</anim>
+    <anim name="taunt_1" clip="clips/bored_1.clip" fps="30" loop="false" blendtime="150">
+        <frameevent frame="18" cmd="PlaySoundLinear /npcs/kongor/sounds/taunt.wav 500 2500 1"/>
+    </anim>
+        
+    <anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+        <frameevent frame="1" cmd="PlaySoundLinear /npcs/kongor/sounds/death.wav 500 2500 1"/>
+    </anim>
 
 </model>

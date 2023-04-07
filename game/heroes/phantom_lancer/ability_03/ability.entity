@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_PhantomLancer3"
+    name="Ability_PhantomLancer3"
 
-	icon="icon.tga"
-	
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
-	casteffect="cast.effect"
-	actiontype="target_self"
-	manacost="50,60,70,80"
-	cooldowntime="15000"
+    icon="icon.tga"
+    
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
+    casteffect="cast.effect"
+    actiontype="target_self"
+    manacost="50,60,70,80"
+    cooldowntime="15000"
 >
-	<onimpact effectdescription="true">
-		<dispel type="StatusBuff" />
-		<dispel type="StatusDebuff" />
-		<disjoint target="this_owner_entity" />
-		<spawnillusion target="this_owner_entity" count="1,2,2,3" lifetime="25000" receivedamagemultiplier="3.0" inflictdamagemultiplier="0.4" spawneffect="multiple_images.effect" deatheffect="multiple_images_death.effect" />
-	</onimpact>
+    <onimpact effectdescription="true">
+        <dispel type="StatusBuff" />
+        <dispel type="StatusDebuff" />
+        <disjoint target="this_owner_entity" />
+        <spawnillusion target="this_owner_entity" count="1,2,2,3" lifetime="25000" receivedamagemultiplier="3.0" inflictdamagemultiplier="0.4" spawneffect="multiple_images.effect" deatheffect="multiple_images_death.effect" />
+    </onimpact>
 
 </ability>

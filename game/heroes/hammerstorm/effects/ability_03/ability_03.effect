@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="ability_03">
 
-	<definitions>
-		<particlesystem name="system0" space="entity" scale="0.8">
+    <definitions>
+        <particlesystem name="system0" space="entity" scale="0.8">
 
 
-		<groundsprite
-			life="1100"
-			loop="true"
-			timenudge="0"
-			material="/shared/effects/materials/toughness_aura.material"
+        <groundsprite
+            life="1100"
+            loop="true"
+            timenudge="0"
+            material="/shared/effects/materials/toughness_aura.material"
 
-			startsize="45"
-			midsize="35"
-			endsize="45"
+            startsize="45"
+            midsize="35"
+            endsize="45"
 
-			midsizepos=".5"
-			startcolor=".2 .2 .2"
-			midcolor=".5 .5 .5"
-			endcolor=".2 .2 .2"
-			midcolorpos=".2"
-			minangle="15"
-			maxangle="55"
+            midsizepos=".5"
+            startcolor=".2 .2 .2"
+            midcolor=".5 .5 .5"
+            endcolor=".2 .2 .2"
+            midcolorpos=".2"
+            minangle="15"
+            maxangle="55"
 
-			angles="0 0 0"
-
-
-		/>
+            angles="0 0 0"
 
 
-
+        />
 
 
 
-	</particlesystem>
+
+
+
+    </particlesystem>
 
 
 
@@ -42,9 +42,9 @@
 </definitions>
 
 <thread>
-	<spawnparticlesystem instance="instance0" particlesystem="system0" />
-	<waitfordeath instance="instance0" />
-	<!-- <die /> -->
+    <spawnparticlesystem instance="instance0" particlesystem="system0" />
+    <waitfordeath instance="instance0" />
+    <!-- <die /> -->
 </thread>
 
 </effect>

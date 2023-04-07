@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="rabid_cast">
-	<definitions>
-		<particlesystem name="system0" space="world">
+    <definitions>
+        <particlesystem name="system0" space="world">
 
-			<sound
-				linearfalloff="true" 
-				falloffstart="1000"
-				falloffend="2500"
-				volume="0.5" 
-				sample="/heroes/yogi/ability_02/sounds/ability_02.wav"
-			/>
+            <sound
+                linearfalloff="true" 
+                falloffstart="1000"
+                falloffend="2500"
+                volume="0.5" 
+                sample="/heroes/yogi/ability_02/sounds/ability_02.wav"
+            />
 
 
 

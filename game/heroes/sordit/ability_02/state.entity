@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Sordit_Ability2"
+    name="State_Sordit_Ability2"
 
-	
-	icon="icon.tga"
-	passiveeffect=""
-	
-	effecttype="StatusDebuff"
-	
-	agility="-5,-10,-15,-20"
-	strength="-5,-10,-15,-20"
-	intelligence="-5,-10,-15,-20"
-	attackspeed="-0.05,-0.08,-0.12,-0.15"
+    
+    icon="icon.tga"
+    passiveeffect=""
+    
+    effecttype="StatusDebuff"
+    
+    agility="-5,-10,-15,-20"
+    strength="-5,-10,-15,-20"
+    intelligence="-5,-10,-15,-20"
+    attackspeed="-0.05,-0.08,-0.12,-0.15"
 >
 </state>

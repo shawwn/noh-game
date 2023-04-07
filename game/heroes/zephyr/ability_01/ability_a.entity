@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Zephyr1_push"
+    name="Ability_Zephyr1_push"
 
-	icon="icon.tga"	
-	
-	casttime="500"
-	castactiontime="0"
-	casteffect="effects/leap.effect"
-	noninterrupting="true"
-	
-	maxlevel="1"
-	requiredlevel="1"
-	
-	inheritmovement="true"
-	actiontype="target_position"
-	casteffecttype="Magic"
-	targetscheme="all_other_organic_units"
-	frontqueue="true"
-	noresponse="true"
-	
-	manacost="120"
-	cooldowntime="18000,16000,14000,12000"
-	cooldowntype="ZephyrGust"
-	
-	range="700"
-	
+    icon="icon.tga" 
+    
+    casttime="500"
+    castactiontime="0"
+    casteffect="effects/leap.effect"
+    noninterrupting="true"
+    
+    maxlevel="1"
+    requiredlevel="1"
+    
+    inheritmovement="true"
+    actiontype="target_position"
+    casteffecttype="Magic"
+    targetscheme="all_other_organic_units"
+    frontqueue="true"
+    noresponse="true"
+    
+    manacost="120"
+    cooldowntime="18000,16000,14000,12000"
+    cooldowntype="ZephyrGust"
+    
+    range="700"
+    
 >
-	<onimpact>
-		<spawnaffector name="Affector_Zephyr_Ability1" target="source_position" distance="0" />
-	</onimpact>
-	
-	<modifier key="Zephyr1" modpriority="90"
-		baselevel="1"
-		keyslot="1"
-	/>
-	
-	<modifier key="Zephyr2" modpriority="90"
-		baselevel="2"
-		keyslot="1"
-	/>
-	
-	<modifier key="Zephyr3" modpriority="90"
-		baselevel="3"
-		keyslot="1"
-	/>
-	
-	<modifier key="Zephyr4" modpriority="90"
-		baselevel="4"
-		keyslot="1"
-	/>
+    <onimpact>
+        <spawnaffector name="Affector_Zephyr_Ability1" target="source_position" distance="0" />
+    </onimpact>
+    
+    <modifier key="Zephyr1" modpriority="90"
+        baselevel="1"
+        keyslot="1"
+    />
+    
+    <modifier key="Zephyr2" modpriority="90"
+        baselevel="2"
+        keyslot="1"
+    />
+    
+    <modifier key="Zephyr3" modpriority="90"
+        baselevel="3"
+        keyslot="1"
+    />
+    
+    <modifier key="Zephyr4" modpriority="90"
+        baselevel="4"
+        keyslot="1"
+    />
 </ability>

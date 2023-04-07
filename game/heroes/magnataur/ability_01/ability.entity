@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Magnataur1"
-	
-	icon="icon.tga"
-	
-	anim="attack_1"
-	casttime="600"
-	castactiontime="400"
-	casteffect="effects/cast.effect"
-	impacteffect="effects/impact.effect" 
-	
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    name="Ability_Magnataur1"
+    
+    icon="icon.tga"
+    
+    anim="attack_1"
+    casttime="600"
+    castactiontime="400"
+    casteffect="effects/cast.effect"
+    impacteffect="effects/impact.effect" 
+    
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="target_position"
-	casteffecttype="Magic"
-	targetscheme="enemy_units_and_trees"
-	manacost="90,110,130,150"
-	cooldowntime="11000,10000,9000,8000"
-	
-	projectile="Projectile_Magnataur_Ability1"
-	range="500"
-	forcerange="850"
+    actiontype="target_position"
+    casteffecttype="Magic"
+    targetscheme="enemy_units_and_trees"
+    manacost="90,110,130,150"
+    cooldowntime="11000,10000,9000,8000"
+    
+    projectile="Projectile_Magnataur_Ability1"
+    range="500"
+    forcerange="850"
 >
 
-	<onimpact effectdescription="true">
-	<spawnaffector name="Affector_Magnataur_Ability1" target="source_position" />
-		<playeffect effect="effects/cast.effect" source="source_position" target="" />
-	</onimpact>
+    <onimpact effectdescription="true">
+    <spawnaffector name="Affector_Magnataur_Ability1" target="source_position" />
+        <playeffect effect="effects/cast.effect" source="source_position" target="" />
+    </onimpact>
 
 </ability>

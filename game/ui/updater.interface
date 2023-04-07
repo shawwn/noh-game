@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface name="updater">
-	<panel color="black" />
-	
-	<frame width="75h" height="7h" align="center" valign="center" bordercolor="white" borderthickness="0.5h" color="black">
-		<panel x="1.25h" y="1.25h" width="-2.5h" height="-2.5h">
-			<panel width="50%" color="white" watch="UpdateApplyPercent" ontrigger="SetWidth(FtoP(param));" />
-		</panel>
-	</frame>
+    <panel color="black" />
+    
+    <frame width="75h" height="7h" align="center" valign="center" bordercolor="white" borderthickness="0.5h" color="black">
+        <panel x="1.25h" y="1.25h" width="-2.5h" height="-2.5h">
+            <panel width="50%" color="white" watch="UpdateApplyPercent" ontrigger="SetWidth(FtoP(param));" />
+        </panel>
+    </frame>
 </interface>

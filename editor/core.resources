@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resourcelist>
-	<fontface file="/core/fonts/system.ttf" name="System">
-		<fontmap name="system" size="12" language="latin" gamma="1.5" outline="2.0" />
-		<fontmap name="system_small" size="10" language="latin" gamma="1.5" outline="2.0" />
-		<fontmap name="system_medium" size="12" language="latin" gamma="1.5" outline="2.0" />
-		<fontmap name="system_large" size="22" language="latin" gamma="1.5" outline="2.0" />
-	</fontface>
+    <fontface file="/core/fonts/system.ttf" name="System">
+        <fontmap name="system" size="12" language="latin" gamma="1.5" outline="2.0" />
+        <fontmap name="system_small" size="10" language="latin" gamma="1.5" outline="2.0" />
+        <fontmap name="system_medium" size="12" language="latin" gamma="1.5" outline="2.0" />
+        <fontmap name="system_large" size="22" language="latin" gamma="1.5" outline="2.0" />
+    </fontface>
 
-	<texture name="alphagrad" file="$alphagrad" />
-	<texture name="console_background" file="/core/textures/console_blank.tga" />
+    <texture name="alphagrad" file="$alphagrad" />
+    <texture name="console_background" file="/core/textures/console_blank.tga" />
 </resourcelist>
 

@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Javaras4"
+    name="Ability_Javaras4"
 
-	
-	
-	icon="icon.tga"
-	
-	anim="ability_4"
-	casttime="1000"
-	castactiontime="500"
+    
+    
+    icon="icon.tga"
+    
+    anim="ability_4"
+    casttime="1000"
+    castactiontime="500"
 
-	maxlevel="3"
-	requiredlevel="6,11,16"
+    maxlevel="3"
+    requiredlevel="6,11,16"
 
-	actiontype="target_entity"
-	targetscheme="enemy_units"
-	casteffecttype="Magic"
-	casteffect="cast.effect"
-	
-	manacost="125,200,275"
-	cooldowntime="120000,100000,80000"
+    actiontype="target_entity"
+    targetscheme="enemy_units"
+    casteffecttype="Magic"
+    casteffect="cast.effect"
+    
+    manacost="125,200,275"
+    cooldowntime="120000,100000,80000"
 
-	range="600"
-	
-	impacteffect="impact.effect"
+    range="600"
+    
+    impacteffect="impact.effect"
 >
-	<onimpact >
-		<damage effecttype="Magic" amount="0.60,0.85,1.10" b="target_missingmana" op="mult" />
-		<popup name="bonus_damage" a="result" />
-		<applystate name="State_Stunned" duration="100,200,300" />
-	</onimpact>
+    <onimpact >
+        <damage effecttype="Magic" amount="0.60,0.85,1.10" b="target_missingmana" op="mult" />
+        <popup name="bonus_damage" a="result" />
+        <applystate name="State_Stunned" duration="100,200,300" />
+    </onimpact>
 </ability>

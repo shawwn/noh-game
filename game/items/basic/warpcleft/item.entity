@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Warpcleft"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="2100"
-	
-	actiontype="passive"
-	
-	attackspeed=".55"
+    name="Item_Warpcleft"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="2100"
+    
+    actiontype="passive"
+    
+    attackspeed=".55"
 >
 </item>

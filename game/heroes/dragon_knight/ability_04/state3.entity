@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_DragonKnight_Ability4_3"
+    name="State_DragonKnight_Ability4_3"
 
-	
-	
-	icon="icon.tga"
-	displaylevel="true"
-	propagatetoillusions="true"
-	
-	damage="10"
-	movespeed="20"
+    
+    
+    icon="icon.tga"
+    displaylevel="true"
+    propagatetoillusions="true"
+    
+    damage="10"
+    movespeed="20"
 
-	morphmodel="../../../npcs/n_dragon_master/model.mdf"
-	morphpreglobalscale="2"
-	morphmodelscale="1.35"
-	morpheffectscale="0.7"
-	morphattackduration="500"
-	morphattackactiontime="400"
-	morphpriority="90"
-	morphattackprojectile="Projectile_DragonKnight_Attack_3"
-	morphattackcooldown="1700"
-	morphattackoffset="0 100 70"
-	morphattackrange="600"
-	morphattacktype="ranged"
-	morphttackimpacteffect="../../../heroes/maliken/effects/impact_heal.effect"
-	
-	effecttype=""
+    morphmodel="../../../npcs/n_dragon_master/model.mdf"
+    morphpreglobalscale="2"
+    morphmodelscale="1.35"
+    morpheffectscale="0.7"
+    morphattackduration="500"
+    morphattackactiontime="400"
+    morphpriority="90"
+    morphattackprojectile="Projectile_DragonKnight_Attack_3"
+    morphattackcooldown="1700"
+    morphattackoffset="0 100 70"
+    morphattackrange="600"
+    morphattacktype="ranged"
+    morphttackimpacteffect="../../../heroes/maliken/effects/impact_heal.effect"
+    
+    effecttype=""
 >
-	<onattack>
-		<addattackactions>
-			<cantarget targetscheme="enemy_units">
-				<splashdamage a="total_adjusted_damage" b="0.25" op="mult" radius="75" effecttype="Physical Splash" targetscheme="enemy_units" centerontarget="true" />
-				<splashdamage a="total_adjusted_damage" b="0.25" op="mult" radius="150" effecttype="Physical Splash" targetscheme="enemy_units" centerontarget="true" />
-				<splashdamage a="total_adjusted_damage" b="0.5" op="mult" radius="250" effecttype="Physical Splash" targetscheme="enemy_units" centerontarget="true" />
-			</cantarget>
-		</addattackactions>
-	</onattack>
-	<onexpired>
-		<playeffect effect="../../../heroes/maliken/ability_04/effects/cast.effect" source="source_entity" target="" />
-	</onexpired>
+    <onattack>
+        <addattackactions>
+            <cantarget targetscheme="enemy_units">
+                <splashdamage a="total_adjusted_damage" b="0.25" op="mult" radius="75" effecttype="Physical Splash" targetscheme="enemy_units" centerontarget="true" />
+                <splashdamage a="total_adjusted_damage" b="0.25" op="mult" radius="150" effecttype="Physical Splash" targetscheme="enemy_units" centerontarget="true" />
+                <splashdamage a="total_adjusted_damage" b="0.5" op="mult" radius="250" effecttype="Physical Splash" targetscheme="enemy_units" centerontarget="true" />
+            </cantarget>
+        </addattackactions>
+    </onattack>
+    <onexpired>
+        <playeffect effect="../../../heroes/maliken/ability_04/effects/cast.effect" source="source_entity" target="" />
+    </onexpired>
 </state>

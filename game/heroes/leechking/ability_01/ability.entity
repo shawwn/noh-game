@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Leechking1"
-	
-	icon="icon.tga"
-	
-	anim="attack_2"
-	casttime="860"
-	castactiontime="350"
+    name="Ability_Leechking1"
+    
+    icon="icon.tga"
+    
+    anim="attack_2"
+    casttime="860"
+    castactiontime="350"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="target_entity"
-	casteffecttype="Magic"
-	targetscheme="enemy_units"
-	
-	manacost="140"
-	cooldowntime="8000"
-	
-	projectile="Projectile_Leechking_Ability1"
-	range="625,725,825,925"
+    actiontype="target_entity"
+    casteffecttype="Magic"
+    targetscheme="enemy_units"
+    
+    manacost="140"
+    cooldowntime="8000"
+    
+    projectile="Projectile_Leechking_Ability1"
+    range="625,725,825,925"
 >
-	<onimpact >
-		<damage effecttype="Magic" amount="100,150,200,250"/>
-		<applystate name="State_Stunned" duration="2000"/>
-		<push force="150,170,190,220" duration="1250,1650,1950,2550"/>
-	</onimpact>
+    <onimpact >
+        <damage effecttype="Magic" amount="100,150,200,250"/>
+        <applystate name="State_Stunned" duration="2000"/>
+        <push force="150,170,190,220" duration="1250,1650,1950,2550"/>
+    </onimpact>
 </ability>

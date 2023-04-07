@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Excruciator"
+    name="State_Excruciator"
 
-	icon="icon.tga"
-	passiveeffect="blade.effect"
-	
-	effecttype="StatusBuff"
+    icon="icon.tga"
+    passiveeffect="blade.effect"
+    
+    effecttype="StatusBuff"
 
 >
 
-	<ondamaged>
-		<condition test="not_target_type Tower and not_target_type Well">
-			<condition test="enemy" source="source_entity" target="target_entity">
-				<condition test="source_damage gt 0.1" >
-					<currentdamageeffecttype effecttype="Returned" />
-					<else>
-						<condition target="target_entity" test="target_type hero">
-							<damage target="target_entity" effecttype="Returned" amount="0.80" b="source_damage" op="mult" />
-							<playeffect effect="impact_self.effect" source="source_entity" />
-							<playeffect effect="impact_enemy.effect" source="target_entity" target="" />
-						</condition>
-						<else>
-							<damage target="target_owner_entity" effecttype="Returned" amount="0.80" b="source_damage" op="mult" />
-							<playeffect effect="impact_self.effect" source="source_entity" />
-							<playeffect effect="impact_enemy.effect" source="target_owner_entity" target="" />
-						</else>
-					</else>
-				</condition>
-			</condition>
-		</condition>
-	</ondamaged>
-	
-	<onframe />
+    <ondamaged>
+        <condition test="not_target_type Tower and not_target_type Well">
+            <condition test="enemy" source="source_entity" target="target_entity">
+                <condition test="source_damage gt 0.1" >
+                    <currentdamageeffecttype effecttype="Returned" />
+                    <else>
+                        <condition target="target_entity" test="target_type hero">
+                            <damage target="target_entity" effecttype="Returned" amount="0.80" b="source_damage" op="mult" />
+                            <playeffect effect="impact_self.effect" source="source_entity" />
+                            <playeffect effect="impact_enemy.effect" source="target_entity" target="" />
+                        </condition>
+                        <else>
+                            <damage target="target_owner_entity" effecttype="Returned" amount="0.80" b="source_damage" op="mult" />
+                            <playeffect effect="impact_self.effect" source="source_entity" />
+                            <playeffect effect="impact_enemy.effect" source="target_owner_entity" target="" />
+                        </else>
+                    </else>
+                </condition>
+            </condition>
+        </condition>
+    </ondamaged>
+    
+    <onframe />
 </state>

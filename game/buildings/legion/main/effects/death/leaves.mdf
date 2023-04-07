@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="model_dead_high05.max" file="leaves.model" type="K2" >
-	<anim name="idle" clip="leaves.clip" loop="1" numframes="1" startframe="1"/>
+    <anim name="idle" clip="leaves.clip" loop="1" numframes="1" startframe="1"/>
 </model>

@@ -1,94 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <neutral
-	name="Neutral_TowerGuardian"
-	
-	
-	
-	icon="icon.tga"
-	portrait="icon.tga"
-	model="model.mdf"
-	skin=""
-	
-	passiveeffect=""
-	spawneffect=""
-	respawneffect=""
-	selectsound=""
-	orderconfirmedsound=""
-	
-	preglobalscale="2.3"
-	modelscale="1.0"
-	effectscale="2.0"
-	boundsheight="198"
-	boundsradius="48"
-	selectionradius="96"
-	targetoffset="0 0 100"
+    name="Neutral_TowerGuardian"
+    
+    
+    
+    icon="icon.tga"
+    portrait="icon.tga"
+    model="model.mdf"
+    skin=""
+    
+    passiveeffect=""
+    spawneffect=""
+    respawneffect=""
+    selectsound=""
+    orderconfirmedsound=""
+    
+    preglobalscale="2.3"
+    modelscale="1.0"
+    effectscale="2.0"
+    boundsheight="198"
+    boundsradius="48"
+    selectionradius="96"
+    targetoffset="0 0 100"
 
-	movespeed="270"
-	turnrate="160"
+    movespeed="270"
+    turnrate="160"
 
-	maxhealth="5000"
-	maxhealthperlevel="0"
-	healthregen="20"
-	maxmana="2000"
-	manaregen="10"
+    maxhealth="5000"
+    maxhealthperlevel="0"
+    healthregen="20"
+    maxmana="2000"
+    manaregen="10"
 
-	armor="3.5"
-	magicarmor="5.5"
-	immunity="BossImmunity"
+    armor="3.5"
+    magicarmor="5.5"
+    immunity="BossImmunity"
 
-	cancarryitems="false"
-	inventory0="Ability_TowerGuardian1"
-	inventory1="Ability_TowerGuardian2"
-	inventory2=""
-	inventory3=""
-	inventory4=""
-	inventory5=""
-	inventory6=""
-	inventory7=""
+    cancarryitems="false"
+    inventory0="Ability_TowerGuardian1"
+    inventory1="Ability_TowerGuardian2"
+    inventory2=""
+    inventory3=""
+    inventory4=""
+    inventory5=""
+    inventory6=""
+    inventory7=""
 
-	attackduration="1000"
-	attackactiontime="900"
-	attackcooldown="1000"
-	attackdamagemin="26"
-	attackdamagemax="26"
-	attacknumanims="3"
-	attackoffset="0 30 100"
-	attackprojectile=""
-	attackrange="130"
-	attackstarteffect=""
-	attackactioneffect=""
-	attackimpacteffect="/shared/sounds/impacts/impact_heavy.effect"
-	attacktype="melee"
-	combattype="Hero"
+    attackduration="1000"
+    attackactiontime="900"
+    attackcooldown="1000"
+    attackdamagemin="26"
+    attackdamagemax="26"
+    attacknumanims="3"
+    attackoffset="0 30 100"
+    attackprojectile=""
+    attackrange="130"
+    attackstarteffect=""
+    attackactioneffect=""
+    attackimpacteffect="/shared/sounds/impacts/impact_heavy.effect"
+    attacktype="melee"
+    combattype="Hero"
 
-	aggrorange="250"
-	sightrangeday="1400"
-	sightrangenight="1400"
-	
-	experiencebounty="1073"
-	goldbountymin="53"
-	goldbountymax="300"
-	goldbountyteam="100"
-	
-	corpsetime="10000"
-	corpsefadetime="10000"
-	corpsefadeeffect="/shared/effects/corpse_sink.effect"
-	
-	unittype="Boss Boss1"
+    aggrorange="250"
+    sightrangeday="1400"
+    sightrangenight="1400"
+    
+    experiencebounty="1073"
+    goldbountymin="53"
+    goldbountymax="300"
+    goldbountyteam="100"
+    
+    corpsetime="10000"
+    corpsefadetime="10000"
+    corpsefadeeffect="/shared/effects/corpse_sink.effect"
+    
+    unittype="Boss Boss1"
 >
-	<onkilled>
-		<delete target="proxy_entity" />
-		<spawnitem name="Item_TokenOfSight" target="source_entity" offset="0 0" />
-	</onkilled>
-	
-	<onattackedpreimpact>
-		<killillusions/>
-	</onattackedpreimpact>
-	
-	<onspawn>
-		<applystate name="State_TowerGuardian" duration="-1"/>
-		<spawnunit name="Gadget_TowerGuardian_SpawnZone" target="this_entity" pushentity="true" duration="-1" />
-		<setproxy entity="this_entity" target="stack_entity" />
-	</onspawn>
+    <onkilled>
+        <delete target="proxy_entity" />
+        <spawnitem name="Item_TokenOfSight" target="source_entity" offset="0 0" />
+    </onkilled>
+    
+    <onattackedpreimpact>
+        <killillusions/>
+    </onattackedpreimpact>
+    
+    <onspawn>
+        <applystate name="State_TowerGuardian" duration="-1"/>
+        <spawnunit name="Gadget_TowerGuardian_SpawnZone" target="this_entity" pushentity="true" duration="-1" />
+        <setproxy entity="this_entity" target="stack_entity" />
+    </onspawn>
 
 </neutral>

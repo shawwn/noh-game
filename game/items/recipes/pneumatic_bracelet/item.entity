@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Strength5"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="175"
-	components="Item_CrushingClaws Item_PretendersCrown"
-	
-	actiontype="passive"
-	
-	strength="6"
-	agility="3"
-	intelligence="3"
+    name="Item_Strength5"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="175"
+    components="Item_CrushingClaws Item_PretendersCrown"
+    
+    actiontype="passive"
+    
+    strength="6"
+    agility="3"
+    intelligence="3"
 >
 </item>

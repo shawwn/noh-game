@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect>
-	<definitions>
-		<particlesystem name="system0" space="world">
-		
-			<model
-				position="0 0 20"
-				scale=".7"
-				life="340"
-				model="arrows/arrow.mdf"
-				anim="idle"				
-				color="0 1 0"
-				startalpha="1.0"
-				midalpha="1.0"
-				endalpha="0.0"
-				midalphapos="0.9"
-			/>
-			
-			<groundsprite
-				life="300"
-				delay="200"
-				timenudge="0"
-				material="materials/ground_arrow_impact.material"
+    <definitions>
+        <particlesystem name="system0" space="world">
+        
+            <model
+                position="0 0 20"
+                scale=".7"
+                life="340"
+                model="arrows/arrow.mdf"
+                anim="idle"             
+                color="0 1 0"
+                startalpha="1.0"
+                midalpha="1.0"
+                endalpha="0.0"
+                midalphapos="0.9"
+            />
+            
+            <groundsprite
+                life="300"
+                delay="200"
+                timenudge="0"
+                material="materials/ground_arrow_impact.material"
 
-				startsize="0"
-				endsize="60"				
+                startsize="0"
+                endsize="60"                
 
-				midsizepos=".5"
-				startcolor="0 0 0"
-				midcolor="0 1 0"
-				endcolor="0 0 0"
-				midcolorpos=".1"
-				minangle="15"
-				maxangle="55"
-				startyaw="20"
-				emdyaw="220"
-				angles="0 0 0"
-			/>
-		
-		</particlesystem>
-	</definitions>
-	<thread>
-		<spawnparticlesystem instance="instance0" particlesystem="system0" />
-		<waitfordeath instance="instance0" />
-		<!-- <die /> -->
-	</thread>
+                midsizepos=".5"
+                startcolor="0 0 0"
+                midcolor="0 1 0"
+                endcolor="0 0 0"
+                midcolorpos=".1"
+                minangle="15"
+                maxangle="55"
+                startyaw="20"
+                emdyaw="220"
+                angles="0 0 0"
+            />
+        
+        </particlesystem>
+    </definitions>
+    <thread>
+        <spawnparticlesystem instance="instance0" particlesystem="system0" />
+        <waitfordeath instance="instance0" />
+        <!-- <die /> -->
+    </thread>
 </effect>
 
 <!-- [min|max][start|mid|end]property[speed][pos] -->

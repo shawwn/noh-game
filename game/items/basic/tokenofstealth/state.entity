@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_TokenOfStealth"
+    name="State_TokenOfStealth"
 
-	
-	
-	
-	icon="icon.tga"
-	
-	stealthtype="hero"
-	fadetime="500"
-	unitwalking="true"
+    
+    
+    
+    icon="icon.tga"
+    
+    stealthtype="hero"
+    fadetime="500"
+    unitwalking="true"
 
-	
-	effecttype="StatusBuff"
+    
+    effecttype="StatusBuff"
 >
-	<oninflict>
-		<forgetattacks />
-		<startfade />
-	</oninflict>
-	
-	<onattackstart>
-		<expire />
-	</onattackstart>
-	
-	<onactivatestart>
-		<expire />
-	</onactivatestart>
+    <oninflict>
+        <forgetattacks />
+        <startfade />
+    </oninflict>
+    
+    <onattackstart>
+        <expire />
+    </onattackstart>
+    
+    <onactivatestart>
+        <expire />
+    </onactivatestart>
 </state>

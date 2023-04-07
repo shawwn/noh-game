@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_ShieldOfTheFive"
-	
-	
-	
-	statuseffecttooltip="State_ShieldOfTheFive"
-	
-	icon="icon.tga"
-	
-	cost="200"
-	components="Item_Ringmail Item_MinorTotem"
-	
-	armor="5"
-	strength="2"
-	agility="2"
-	intelligence="2"
-	
-	actiontype="self_position"
-	targetscheme="ally_units"
-	targetradius="450"
-	frontqueue="true"
-	inheritmovement="true"
-	casttime="0"
-	castactiontime="0"
-	cooldowntime="25000"
-	cooldowntype="shieldofthefive"
-	manacost="10"
+    name="Item_ShieldOfTheFive"
+    
+    
+    
+    statuseffecttooltip="State_ShieldOfTheFive"
+    
+    icon="icon.tga"
+    
+    cost="200"
+    components="Item_Ringmail Item_MinorTotem"
+    
+    armor="5"
+    strength="2"
+    agility="2"
+    intelligence="2"
+    
+    actiontype="self_position"
+    targetscheme="ally_units"
+    targetradius="450"
+    frontqueue="true"
+    inheritmovement="true"
+    casttime="0"
+    castactiontime="0"
+    cooldowntime="25000"
+    cooldowntype="shieldofthefive"
+    manacost="10"
 >
-	<onimpact >
-		<spawnaffector name="Affector_ShieldOfTheFive"/>
-	</onimpact>
-	<onaction>
-		<playeffect effect="cast.effect" />
-	</onaction>
+    <onimpact >
+        <spawnaffector name="Affector_ShieldOfTheFive"/>
+    </onimpact>
+    <onaction>
+        <playeffect effect="cast.effect" />
+    </onaction>
 </item>

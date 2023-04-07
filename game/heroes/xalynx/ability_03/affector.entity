@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Xalynx_Ability3"
+    name="Affector_Xalynx_Ability3"
 
-	radius="650"
-	effect=""
-	targetselection="closest"
-	maxtotalimpacts="4,6,7,8"
-	targetscheme="enemy_units"
-	effecttype="Magic"
-	impacteffect="effects/impact.effect"
+    radius="650"
+    effect=""
+    targetselection="closest"
+    maxtotalimpacts="4,6,7,8"
+    targetscheme="enemy_units"
+    effecttype="Magic"
+    impacteffect="effects/impact.effect"
 >
-	<onimpact>
-		<damage effecttype="Magic" amount="80,145,205,265" />
-		<playeffect effect="effects/beam.effect" source="target_entity" target="proxy_entity"/>
-	</onimpact>
+    <onimpact>
+        <damage effecttype="Magic" amount="80,145,205,265" />
+        <playeffect effect="effects/beam.effect" source="target_entity" target="proxy_entity"/>
+    </onimpact>
 </affector>

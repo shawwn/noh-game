@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Chronos_Ability4"
+    name="State_Chronos_Ability4"
 
-	
-	
-	icon="icon.tga"
-	displaylevel="true"
-	passiveeffect=""
-	
-	immobilized="true"
-	silenced="true"
-	perplexed="true"
-	disarmed="true"
-	frozen="true"
-	stunned="true"
+    
+    
+    icon="icon.tga"
+    displaylevel="true"
+    passiveeffect=""
+    
+    immobilized="true"
+    silenced="true"
+    perplexed="true"
+    disarmed="true"
+    frozen="true"
+    stunned="true"
 >
 </state>

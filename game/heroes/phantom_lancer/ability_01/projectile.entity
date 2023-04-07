@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_PhantomLancer_Ability1"
+    name="Projectile_PhantomLancer_Ability1"
 
-	speed="1200"
-	gravity="500"
-	canturn="true"
-	modelscale="1.5"
+    speed="1200"
+    gravity="500"
+    canturn="true"
+    modelscale="1.5"
 
-	model="../../../heroes/puppetmaster/ability_03/effects/projectile.mdf"
-	traileffect="../../../heroes/puppetmaster/ability_03/effects/trail.effect"
-	impacteffect="../../../heroes/puppetmaster/ability_03/effects/impact.effect"
+    model="../../../heroes/puppetmaster/ability_03/effects/projectile.mdf"
+    traileffect="../../../heroes/puppetmaster/ability_03/effects/trail.effect"
+    impacteffect="../../../heroes/puppetmaster/ability_03/effects/impact.effect"
 >
 </projectile>

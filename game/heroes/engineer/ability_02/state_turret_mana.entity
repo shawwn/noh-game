@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Engineer_Ability2_Turret_Mana"
-	
-	icon="icon.tga"
-	passiveeffect=""
-	
-	disarmed="true"
-	
-	morphpriority="100"
-	morphsightrangeday="100"
-	morphsightrangenight="100"
-	
-	effecttype=""
+    name="State_Engineer_Ability2_Turret_Mana"
+    
+    icon="icon.tga"
+    passiveeffect=""
+    
+    disarmed="true"
+    
+    morphpriority="100"
+    morphsightrangeday="100"
+    morphsightrangenight="100"
+    
+    effecttype=""
 >
-	<onframe>
-		<evaluate a="0.067" b="source_maxmana" op="mult" />
-		<givemana target="source_entity" amount="result" b="frametime" op="mult" />
-		<setactivemodifierkey name="" />
-	</onframe>
+    <onframe>
+        <evaluate a="0.067" b="source_maxmana" op="mult" />
+        <givemana target="source_entity" amount="result" b="frametime" op="mult" />
+        <setactivemodifierkey name="" />
+    </onframe>
 </state>

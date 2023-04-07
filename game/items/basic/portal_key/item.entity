@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_PortalKey"
+    name="Item_PortalKey"
 
-	icon="icon.tga"
-	
-	cost="2150"
-	
-	actiontype="target_position"
-	activatescheme="movement"
-	allowoutofrangecast="true"
-	manacost="75"
-	casttime="0"
-	castactiontime="0"
-	range="1200"
-	minrange="200"
-	cooldowntime="14000"
-	cooldowntype="portalkey"
+    icon="icon.tga"
+    
+    cost="2150"
+    
+    actiontype="target_position"
+    activatescheme="movement"
+    allowoutofrangecast="true"
+    manacost="75"
+    casttime="0"
+    castactiontime="0"
+    range="1200"
+    minrange="200"
+    cooldowntime="14000"
+    cooldowntype="portalkey"
 >
-	<ondamaged>
-		<condition test="source_damage gt 0">
-			<condition test="target_type player_controlled">
-				<condition test="not_target_type self">
-					<startcooldown duration="3000" />
-				</condition>
-			</condition>
-		</condition>
-	</ondamaged>
+    <ondamaged>
+        <condition test="source_damage gt 0">
+            <condition test="target_type player_controlled">
+                <condition test="not_target_type self">
+                    <startcooldown duration="3000" />
+                </condition>
+            </condition>
+        </condition>
+    </ondamaged>
 
-	<onimpact >		
-		<playeffect effect="warp.effect" source="source_position" occlude="true"/>
-		<teleport target="target_position"/>		
-		<disjoint target="source_entity" />
-		<playeffect effect="warp.effect" source="source_position" occlude="true"/>
-	</onimpact>
+    <onimpact >     
+        <playeffect effect="warp.effect" source="source_position" occlude="true"/>
+        <teleport target="target_position"/>        
+        <disjoint target="source_entity" />
+        <playeffect effect="warp.effect" source="source_position" occlude="true"/>
+    </onimpact>
 </item>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_MajorTotem"
-	
-	icon="icon.tga"
-	
-	cost="540"
-	
-	actiontype="passive"
-	
-	strength="4"
-	agility="4"
-	intelligence="4"
+    name="Item_MajorTotem"
+    
+    icon="icon.tga"
+    
+    cost="540"
+    
+    actiontype="passive"
+    
+    strength="4"
+    agility="4"
+    intelligence="4"
 >
 </item>

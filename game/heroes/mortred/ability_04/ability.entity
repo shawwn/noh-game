@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Mortred4"
+    name="Ability_Mortred4"
 
-	
-	
-	icon="icon.tga"
-	
-	maxlevel="3"
-	requiredlevel="6,11,16"
+    
+    
+    icon="icon.tga"
+    
+    maxlevel="3"
+    requiredlevel="6,11,16"
 
-	actiontype="passive"
-	
-	criticalchance="0.15"
-	criticalmultiplier="2.0,3.0,4.0"
+    actiontype="passive"
+    
+    criticalchance="0.15"
+    criticalmultiplier="2.0,3.0,4.0"
 >
 </ability>

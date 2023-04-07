@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Tundra1"
-	
-	icon="icon.tga"
-	
-	anim="ability_1"
-	casttime="800"
-	castactiontime="500"
+    name="Ability_Tundra1"
+    
+    icon="icon.tga"
+    
+    anim="ability_1"
+    casttime="800"
+    castactiontime="500"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="target_position"
-	targetradius="150"
-	casteffecttype="Magic"
-	targetscheme="all_other_organic_units"
-	
-	manacost="120"
-	cooldowntime="13000"
-	
-	range="1300"
+    actiontype="target_position"
+    targetradius="150"
+    casteffecttype="Magic"
+    targetscheme="all_other_organic_units"
+    
+    manacost="120"
+    cooldowntime="13000"
+    
+    range="1300"
 >
-	<onimpact>
-		<spawnaffector name="Affector_Tundra_Ability1" target="source_position" distance="0"/>
-	</onimpact>
+    <onimpact>
+        <spawnaffector name="Affector_Tundra_Ability1" target="source_position" distance="0"/>
+    </onimpact>
 </ability>
-	
+    
 
-	
+    
 

@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Devourer1"
+    name="Ability_Devourer1"
 
-	
-	
-	
-	icon="icon.tga"
-	
-	anim="ability_1"
-	casttime="1400"
-	castactiontime="410"
+    
+    
+    
+    icon="icon.tga"
+    
+    anim="ability_1"
+    casttime="1400"
+    castactiontime="410"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="target_position"
-	targetradius="96"
-	casteffecttype="Physical Push"
-	targetscheme="hook_targets"
-	casteffect="effects/cast.effect"
-	
-	manacost="140"
-	cooldowntime="14000"
-	
-	projectile="Projectile_Devourer_Ability1"
-	range="1000"
-	forcerange="1000"
+    actiontype="target_position"
+    targetradius="96"
+    casteffecttype="Physical Push"
+    targetscheme="hook_targets"
+    casteffect="effects/cast.effect"
+    
+    manacost="140"
+    cooldowntime="14000"
+    
+    projectile="Projectile_Devourer_Ability1"
+    range="1000"
+    forcerange="1000"
 >
-	<onimpact >
-	</onimpact>
+    <onimpact >
+    </onimpact>
 </ability>

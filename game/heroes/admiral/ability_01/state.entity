@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Admiral_Ability1"
-	
-	icon="icon.tga"
-	ishidden="true"
-	
-	stunned="true"
+    name="State_Admiral_Ability1"
+    
+    icon="icon.tga"
+    ishidden="true"
+    
+    stunned="true"
 >
-	<onexpired>
-		<applystate name="State_Admiral_Ability1_Slow" duration="1000,2000,3000,4000"/>
-	</onexpired>
+    <onexpired>
+        <applystate name="State_Admiral_Ability1_Slow" duration="1000,2000,3000,4000"/>
+    </onexpired>
 
-	<onframe>
-		<damage effecttype="Magic" amount="40,60,80,100" b="frametime" op="mult"/>
-	</onframe>
+    <onframe>
+        <damage effecttype="Magic" amount="40,60,80,100" b="frametime" op="mult"/>
+    </onframe>
 </state>

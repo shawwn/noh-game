@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item
-	name="Item_Ringmail"
-	
-	
-	
-	
-	icon="icon.tga"
-	
-	cost="550"
-	
-	actiontype="passive"
-	
-	armor="5"
+    name="Item_Ringmail"
+    
+    
+    
+    
+    icon="icon.tga"
+    
+    cost="550"
+    
+    actiontype="passive"
+    
+    armor="5"
 >
 </item>

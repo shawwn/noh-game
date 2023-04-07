@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <affector
-	name="Affector_Minotaur_Ability1"
+    name="Affector_Minotaur_Ability1"
 
-	radius="200"
-	
-	targetscheme="enemy_units"
-	targetselection="all"
-	effecttype="Magic"
+    radius="200"
+    
+    targetscheme="enemy_units"
+    targetselection="all"
+    effecttype="Magic"
 >
-	<onimpact>
-		<damage effecttype="Magic" amount="100" />
-		<condition test="target_type hero">
-			<applystate name="State_Stunned" duration="2000"/>
-		</condition>
-		<condition test="not_target_type hero">
-			<applystate name="State_Stunned" duration="3000"/>
-		</condition>
-	</onimpact>
+    <onimpact>
+        <damage effecttype="Magic" amount="100" />
+        <condition test="target_type hero">
+            <applystate name="State_Stunned" duration="2000"/>
+        </condition>
+        <condition test="not_target_type hero">
+            <applystate name="State_Stunned" duration="3000"/>
+        </condition>
+    </onimpact>
 </affector>

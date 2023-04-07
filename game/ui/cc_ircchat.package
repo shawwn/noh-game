@@ -1,403 +1,403 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
-	<template name="chat_list_entry">
-		<panel texture="/ui/elements/line_break.tga" color="1 1 1 .1" align="left" valign="center" float="right" padding="10@" passivechildren="true">
-			<panel x="10@" width="75@" height="75%" sticky="true" stickytoinvis="false" onshow="If({admin=0} == 0, SetVisible(false));">
-				<image rendermode="grayscale" texture="/ui/icons/op.tga" noclick="1" onshow="If({admin=0} != 1, SetVisible(false));"/> 
-				<image texture="/ui/icons/op.tga" onshow="If({admin=0} != 2, SetVisible(false));"/> 
-				<image texture="/ui/icons/s2.tga" onshow="If({admin=0} != 3, SetVisible(false));"/> 
-			</panel>
-			<panel width="75@" height="75%" sticky="true" stickytoinvis="false" onshow="If({ingame=0} == 0, SetVisible(false));">
-				<image texture="/ui/icons/ingame_2.tga"/> 
-			</panel>
-			<panel sticky="true" stickytoinvis="false" stickysizing="true">
-				<label y="-0.1h" textalign="left" textvalign="center" font="dyn_12" color="white" shadow="true" content="{name}" onshow="If({ingame=0}, SetColor('#888888'));"/>
-			</panel>
-		</panel>
-	</template>
+    <template name="chat_list_entry">
+        <panel texture="/ui/elements/line_break.tga" color="1 1 1 .1" align="left" valign="center" float="right" padding="10@" passivechildren="true">
+            <panel x="10@" width="75@" height="75%" sticky="true" stickytoinvis="false" onshow="If({admin=0} == 0, SetVisible(false));">
+                <image rendermode="grayscale" texture="/ui/icons/op.tga" noclick="1" onshow="If({admin=0} != 1, SetVisible(false));"/> 
+                <image texture="/ui/icons/op.tga" onshow="If({admin=0} != 2, SetVisible(false));"/> 
+                <image texture="/ui/icons/s2.tga" onshow="If({admin=0} != 3, SetVisible(false));"/> 
+            </panel>
+            <panel width="75@" height="75%" sticky="true" stickytoinvis="false" onshow="If({ingame=0} == 0, SetVisible(false));">
+                <image texture="/ui/icons/ingame_2.tga"/> 
+            </panel>
+            <panel sticky="true" stickytoinvis="false" stickysizing="true">
+                <label y="-0.1h" textalign="left" textvalign="center" font="dyn_12" color="white" shadow="true" content="{name}" onshow="If({ingame=0}, SetColor('#888888'));"/>
+            </panel>
+        </panel>
+    </template>
 
-	<template name="channel_header">
-		<panel name="cc_panel_channel_header_panel_{channel}" width="-1.0h" height="2.5h" align="center" watch="ChatLeftChannel" ontrigger="If(!{permanent} and (StringEmpty(param) or StringEquals(param, '{channel}')), DestroyWidget(), Split(ShowOnly('cc_panel_chat_panel_{channel}'), ShowOnly('channel_header_selected_{channel}')));">
+    <template name="channel_header">
+        <panel name="cc_panel_channel_header_panel_{channel}" width="-1.0h" height="2.5h" align="center" watch="ChatLeftChannel" ontrigger="If(!{permanent} and (StringEmpty(param) or StringEquals(param, '{channel}')), DestroyWidget(), Split(ShowOnly('cc_panel_chat_panel_{channel}'), ShowOnly('channel_header_selected_{channel}')));">
 
-			<frame name="channel_header_unselected_{channel}"
-				group="channel_header_unselected"
-				visible="1"
-				texture="/ui/info/button.tga"
-				borderthickness="0.3h"
-				color="white"
-			/>
+            <frame name="channel_header_unselected_{channel}"
+                group="channel_header_unselected"
+                visible="1"
+                texture="/ui/info/button.tga"
+                borderthickness="0.3h"
+                color="white"
+            />
 
-			<frame name="channel_header_selected_{channel}"
-				group="channel_header_selected"
-				visible="false"
-				texture="/ui/info/button_down.tga"
-				borderthickness="0.3h"
-				color="white"
-				onload="If({startselected}, ShowOnly('channel_header_selected_{channel}'));
-				"
-			/>
+            <frame name="channel_header_selected_{channel}"
+                group="channel_header_selected"
+                visible="false"
+                texture="/ui/info/button_down.tga"
+                borderthickness="0.3h"
+                color="white"
+                onload="If({startselected}, ShowOnly('channel_header_selected_{channel}'));
+                "
+            />
 
-			<button color="invisible" onclick="ShowOnly('cc_panel_chat_panel_{channel}'); ShowOnly('channel_header_selected_{channel}');"/>
+            <button color="invisible" onclick="ShowOnly('cc_panel_chat_panel_{channel}'); ShowOnly('channel_header_selected_{channel}');"/>
 
-			<panel color="invisible" x="0.5h" align="left" valign="center" width="{subwidth=-2.2h}" height="-1.0h" noclick="1">
-				<label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="left" font="dyn_10" color="white" shadow="true" noclick="true" blockinput="false" shadowcolor="black">{channel_header}</label>
-			</panel>
+            <panel color="invisible" x="0.5h" align="left" valign="center" width="{subwidth=-2.2h}" height="-1.0h" noclick="1">
+                <label width="100%" height="100%" textvalign="center" textalign="center" valign="center" align="left" font="dyn_10" color="white" shadow="true" noclick="true" blockinput="false" shadowcolor="black">{channel_header}</label>
+            </panel>
 
-			<button
-				x="-0.5h"
-				width="1.7h" height="1.7h"
-				align="right"
-				valign="center"
-				color="1 1 1 1"
-				texture="/ui/info/close_button.tga"
-				onshow="If({permanent}, SetVisible(false));"
-				onclick="PlaySound('/ui/sounds/close.mp3'); if(!{permanent}, ChatLeaveChannel('{channel}'));"
-			/>
+            <button
+                x="-0.5h"
+                width="1.7h" height="1.7h"
+                align="right"
+                valign="center"
+                color="1 1 1 1"
+                texture="/ui/info/close_button.tga"
+                onshow="If({permanent}, SetVisible(false));"
+                onclick="PlaySound('/ui/sounds/close.mp3'); if(!{permanent}, ChatLeaveChannel('{channel}'));"
+            />
 
-		</panel>
-	</template>
+        </panel>
+    </template>
 
-	<template name="cc_panel_chat_channel">
-		<panel name="cc_panel_chat_panel_{channel}" color="invisible" float="bottom" padding="0.5h" reverse="true" group="chat_channel_window" onshow="CreateString('_cur_cc_panel_channel', '{channel}');" watch="ChatLeftChannel" ontrigger="If(!{permanent} and (StringEmpty(param) or StringEquals(param, '{channel}')), DestroyWidget());" onload="If({startselected}, ShowOnly(name));">			
-			<panel align="center" float="right" padding="1%" color="invisible" height="-1.6h">
-				<panel width="-18.0h">
-					<frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 .7" noclick="1" />
-					
-					<!-- Chat Header Bar -->
-					<panel height="2.8h" align="center">
-						<instance name="header_bar" show_close="0"/>						
-						<label x="0.5h" height="100%" width="100%" textvalign="center" color="white" shadow="1" font="dyn_10" noclick="1" watch="ChatChanTopic" ontrigger="if(StringEquals(param0, '{channel}'), If(!StringEquals(param1, ''), SetText(Translate('general_topic') # ': ' # param1), ClearText()));"/>
-					</panel>
-					
-					<!-- Chat Buffer -->
-					<textbuffer
-						name="cc_panel_chat_buffer_{channel}"
-						scrolltexture="/ui/info/combobox.tga"
-						handleheight="2.0h"
-						y="-0.5h"
-						width="-1.0h" height="-3.8h"
-						align="center" valign="bottom"
-						scrollbarsize="2.0h"
-						textalign="left"
-						font="dyn_10"
-						wrap="true"
-						anchorbottom="true"
-						usesmileys="true"
-						maxlines="1000"
-						shadow="true"
-						color="invisible"
-						textcolor="white"
-						linktochat="true"
-						chatchannel="{channel}"
-						isgamechat="false"
-						onclick="Call('cc_ircchat_window', 'BringToFront();');"
-					/>
-				</panel>
-				<panel width="17.0h" onclick="Call('ccwidget_whisper', 'BringToFront();');">
-					<frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 .7" noclick="1" />
-					<!-- Nicks in channel -->
-					<listbox
-						name="chat_{channel}_userbox"
-						y="1"
-						width="-2"
-						height="-1.0h"
-						align="center"
-						valign="top"
-						color="invisible"
-						font="dyn_10"
-						itemwidth="100%"
-						itemheight="2.3h"
-						highlight="under"
-						highlightcolor="#67a7da62"
-						highlightbordercolor="invisible"
-						select="true"
-						clearselection="true"
-						hoverselect="false"
-						exteriorscrollbars="false"
-						scrollbarplaceholder="false"
-						scrollbarsize="2.0h"
-						scrolltexture="/ui/info/combobox.tga"
-						handleheight="2.0h"
-						onclick="Call('cc_ircchat_window', 'BringToFront();');"
+    <template name="cc_panel_chat_channel">
+        <panel name="cc_panel_chat_panel_{channel}" color="invisible" float="bottom" padding="0.5h" reverse="true" group="chat_channel_window" onshow="CreateString('_cur_cc_panel_channel', '{channel}');" watch="ChatLeftChannel" ontrigger="If(!{permanent} and (StringEmpty(param) or StringEquals(param, '{channel}')), DestroyWidget());" onload="If({startselected}, ShowOnly(name));">          
+            <panel align="center" float="right" padding="1%" color="invisible" height="-1.6h">
+                <panel width="-18.0h">
+                    <frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 .7" noclick="1" />
+                    
+                    <!-- Chat Header Bar -->
+                    <panel height="2.8h" align="center">
+                        <instance name="header_bar" show_close="0"/>                        
+                        <label x="0.5h" height="100%" width="100%" textvalign="center" color="white" shadow="1" font="dyn_10" noclick="1" watch="ChatChanTopic" ontrigger="if(StringEquals(param0, '{channel}'), If(!StringEquals(param1, ''), SetText(Translate('general_topic') # ': ' # param1), ClearText()));"/>
+                    </panel>
+                    
+                    <!-- Chat Buffer -->
+                    <textbuffer
+                        name="cc_panel_chat_buffer_{channel}"
+                        scrolltexture="/ui/info/combobox.tga"
+                        handleheight="2.0h"
+                        y="-0.5h"
+                        width="-1.0h" height="-3.8h"
+                        align="center" valign="bottom"
+                        scrollbarsize="2.0h"
+                        textalign="left"
+                        font="dyn_10"
+                        wrap="true"
+                        anchorbottom="true"
+                        usesmileys="true"
+                        maxlines="1000"
+                        shadow="true"
+                        color="invisible"
+                        textcolor="white"
+                        linktochat="true"
+                        chatchannel="{channel}"
+                        isgamechat="false"
+                        onclick="Call('cc_ircchat_window', 'BringToFront();');"
+                    />
+                </panel>
+                <panel width="17.0h" onclick="Call('ccwidget_whisper', 'BringToFront();');">
+                    <frame texture="/ui/info/backdrop.tga" borderthickness="4.0h" color="1 1 1 .7" noclick="1" />
+                    <!-- Nicks in channel -->
+                    <listbox
+                        name="chat_{channel}_userbox"
+                        y="1"
+                        width="-2"
+                        height="-1.0h"
+                        align="center"
+                        valign="top"
+                        color="invisible"
+                        font="dyn_10"
+                        itemwidth="100%"
+                        itemheight="2.3h"
+                        highlight="under"
+                        highlightcolor="#67a7da62"
+                        highlightbordercolor="invisible"
+                        select="true"
+                        clearselection="true"
+                        hoverselect="false"
+                        exteriorscrollbars="false"
+                        scrollbarplaceholder="false"
+                        scrollbarsize="2.0h"
+                        scrolltexture="/ui/info/combobox.tga"
+                        handleheight="2.0h"
+                        onclick="Call('cc_ircchat_window', 'BringToFront();');"
 
-						ondoubleclick="CreateString('_temp_name', this); Call('cc_panel_chat_box_{channel}', 'SetInputLine(\'/w \' # _temp_name # \' \'); SetFocus(true);');"
+                        ondoubleclick="CreateString('_temp_name', this); Call('cc_panel_chat_box_{channel}', 'SetInputLine(\'/w \' # _temp_name # \' \'); SetFocus(true);');"
 
-						watch1="ChatUserEvent"
-						ontrigger1="If(StringEmpty(param0) or StringEquals(param0, '{channel}'), UICmd(param1));"
-						watch2="ChatUserNames"
-						ontrigger2="If(StringEmpty(param0) or StringEquals(param0, '{channel}'), Split(AddTemplateListItem('chat_list_entry', param1, 'name', param1, 'admin', param2, 'ingame', param3), SortListboxValue()));"
-						onrightclick="
-							CreateString('ui_lastSelectedUser', this);
-							CreateString('ui_tooltipTarget', 'cc_panel_userlist_rtclick_{channel}');
-							ShowWidget(ui_tooltipTarget);
-							Call(ui_tooltipTarget, 'SetX(\'' # param0 # '\');');
-							Call(ui_tooltipTarget, 'SetY(\'' # param1 # '\');');
-							PlaySound('/shared/sounds/ui/button_rightclick.mp3');"
-					/>
+                        watch1="ChatUserEvent"
+                        ontrigger1="If(StringEmpty(param0) or StringEquals(param0, '{channel}'), UICmd(param1));"
+                        watch2="ChatUserNames"
+                        ontrigger2="If(StringEmpty(param0) or StringEquals(param0, '{channel}'), Split(AddTemplateListItem('chat_list_entry', param1, 'name', param1, 'admin', param2, 'ingame', param3), SortListboxValue()));"
+                        onrightclick="
+                            CreateString('ui_lastSelectedUser', this);
+                            CreateString('ui_tooltipTarget', 'cc_panel_userlist_rtclick_{channel}');
+                            ShowWidget(ui_tooltipTarget);
+                            Call(ui_tooltipTarget, 'SetX(\'' # param0 # '\');');
+                            Call(ui_tooltipTarget, 'SetY(\'' # param1 # '\');');
+                            PlaySound('/shared/sounds/ui/button_rightclick.mp3');"
+                    />
 
-					<instance name="cc_rightclick_menu" menu_name="cc_panel_userlist_rtclick_{channel}" channel="{channel}"/>
+                    <instance name="cc_rightclick_menu" menu_name="cc_panel_userlist_rtclick_{channel}" channel="{channel}"/>
 
-					<panel name="cc_panel_join_channel_{channel}" align="center" color="0 0 0 1" valign="center" cangrab="true" noclick="1" visible="false" onshow="ChatUpdateChannels();">
-						<instance name="header_bar" lbl="main_lobby_new_channel_header" height="3.0h" show_close="true" onclick="Call('cc_panel_join_channel_text_{channel}', 'EraseInputLine();'); Call('cc_panel_join_channel_{channel}', 'FadeOut(250);');"/>
+                    <panel name="cc_panel_join_channel_{channel}" align="center" color="0 0 0 1" valign="center" cangrab="true" noclick="1" visible="false" onshow="ChatUpdateChannels();">
+                        <instance name="header_bar" lbl="main_lobby_new_channel_header" height="3.0h" show_close="true" onclick="Call('cc_panel_join_channel_text_{channel}', 'EraseInputLine();'); Call('cc_panel_join_channel_{channel}', 'FadeOut(250);');"/>
 
-						<panel height="3.8h" y="3.0h" width="-2" align="center">
-							<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 .7" noclick="1" />
-							<panel x="0.5h" width="-7.5h" height="2.2h" valign="center" color="0 0 0 .5">
-								<frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />
-								<textbox
-									name="cc_panel_join_channel_text_{channel}"
-									y="0.3h"
-									width="-1.0h"
-									valign="center" align="center"
-									maxlength="250"
-									textalign="left" textvalign="center"
-									font="dyn_10"
-									textcolor="white"
-									shadow="false"
-									color="invisible"
-									onshow="SetFocus(true);"
-									onenter="
-										PlaySound('/shared/sounds/ui/chat_send.wav');
-										ChatJoinChannel(this);
-										EraseInputLine();
-										HideWidget('cc_panel_join_channel_{channel}');"
-									onesc="EraseInputLine(); HideWidget('cc_panel_join_channel_{channel}');"
-								/>
-							</panel>
-							<instance
-								name="button2"
-								x="-0.5h"
-								height="2.2h" width="6h"
-								align="right" valign="center"
-								font="dyn_9"
-								label="general_go"
-								onclick="Call('cc_panel_join_channel_text_{channel}', 'ChatJoinChannel(this); EraseInputLine();'); HideWidget('cc_panel_join_channel_{channel}');"
-							/>
-						</panel>
+                        <panel height="3.8h" y="3.0h" width="-2" align="center">
+                            <frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 .7" noclick="1" />
+                            <panel x="0.5h" width="-7.5h" height="2.2h" valign="center" color="0 0 0 .5">
+                                <frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />
+                                <textbox
+                                    name="cc_panel_join_channel_text_{channel}"
+                                    y="0.3h"
+                                    width="-1.0h"
+                                    valign="center" align="center"
+                                    maxlength="250"
+                                    textalign="left" textvalign="center"
+                                    font="dyn_10"
+                                    textcolor="white"
+                                    shadow="false"
+                                    color="invisible"
+                                    onshow="SetFocus(true);"
+                                    onenter="
+                                        PlaySound('/shared/sounds/ui/chat_send.wav');
+                                        ChatJoinChannel(this);
+                                        EraseInputLine();
+                                        HideWidget('cc_panel_join_channel_{channel}');"
+                                    onesc="EraseInputLine(); HideWidget('cc_panel_join_channel_{channel}');"
+                                />
+                            </panel>
+                            <instance
+                                name="button2"
+                                x="-0.5h"
+                                height="2.2h" width="6h"
+                                align="right" valign="center"
+                                font="dyn_9"
+                                label="general_go"
+                                onclick="Call('cc_panel_join_channel_text_{channel}', 'ChatJoinChannel(this); EraseInputLine();'); HideWidget('cc_panel_join_channel_{channel}');"
+                            />
+                        </panel>
 
-						<panel y="7.4h" width="-1.0h" height="-8.0h" align="center" color="invisible">
-							<table
-								name="chat_channel_list_{channel}"
-								headingcolor="#0d151e"
-								altrowcolor="#152334"
-								color="#1f334a"
-								rows="16"
-								expandable="true"
-								rowheight="2.0h"
-								cols="70%,30%"
-								font="dyn_10"
-								bordercolor="invisible"
-								headings="general_channel_name,general_users"
-								headingid="head"
-								align="center"
-								usescrollbar="true"
-								exteriorscrollbars="1"
-								scrolltexture="/ui/info/combobox.tga"
-								scrollbarsize="2.0h"
-								handleheight="2.0h"
-								watch="ChatChannelList"
-								onclick="CreateString('_channel_name', GetData(0, row)); if(!StringEquals(dataid, 'head'), Call('cc_panel_join_channel_text_{channel}', 'SetInputLine(_channel_name);'));"
-								ondoubleclick="Call('cc_panel_join_channel_text_{channel}', 'ChatJoinChannel(this); EraseInputLine();'); HideWidget('cc_panel_join_channel_{channel}');"
-								textalign="left"
-								textvalign="center"
-								autosort="false"
-							/>
-						</panel>
-					</panel>
+                        <panel y="7.4h" width="-1.0h" height="-8.0h" align="center" color="invisible">
+                            <table
+                                name="chat_channel_list_{channel}"
+                                headingcolor="#0d151e"
+                                altrowcolor="#152334"
+                                color="#1f334a"
+                                rows="16"
+                                expandable="true"
+                                rowheight="2.0h"
+                                cols="70%,30%"
+                                font="dyn_10"
+                                bordercolor="invisible"
+                                headings="general_channel_name,general_users"
+                                headingid="head"
+                                align="center"
+                                usescrollbar="true"
+                                exteriorscrollbars="1"
+                                scrolltexture="/ui/info/combobox.tga"
+                                scrollbarsize="2.0h"
+                                handleheight="2.0h"
+                                watch="ChatChannelList"
+                                onclick="CreateString('_channel_name', GetData(0, row)); if(!StringEquals(dataid, 'head'), Call('cc_panel_join_channel_text_{channel}', 'SetInputLine(_channel_name);'));"
+                                ondoubleclick="Call('cc_panel_join_channel_text_{channel}', 'ChatJoinChannel(this); EraseInputLine();'); HideWidget('cc_panel_join_channel_{channel}');"
+                                textalign="left"
+                                textvalign="center"
+                                autosort="false"
+                            />
+                        </panel>
+                    </panel>
 
 
-				</panel>
-			</panel>
+                </panel>
+            </panel>
 
-			<panel height="3.2h" align="center" color="invisible">
-				<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 .7" noclick="1" />
-				<panel width="-18.0h" height="2.6h" valign="center" color="0 0 0 .5">
-					<frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />
-					<!-- Chat text -->
-					<textbox
-						name="cc_panel_chat_box_{channel}"
-						y="0.5h"
-						width="-1.0h"
-						valign="center" align="center"
-						maxlength="250"
-						textalign="left" textvalign="center"
-						font="dyn_10"
-						textcolor="white"
-						shadow="false"
-						color="invisible"
-						onshow="SetFocus(true); SetInputLine(GetCurrentChatMessage());"
-						onenter="
-							PlaySound('/shared/sounds/ui/chat_send.wav');
-							if(ChatSendMessage(this, '{channel}'), EraseInputLine());"
-						onesc="EraseInputLine(); SetFocus(true);"
-						onfocus="Call('cc_ircchat_window', 'BringToFront();');"
-						onclick="Call('cc_ircchat_window', 'BringToFront();');"
-						onkeydown="If(param == 281, ChatPrevHistory()); If(param == 283, ChatNextHistory()); If(param == 281 or param == 283, SetInputLine(ChatGetCurHistory()));"
-						onchange="SetCurrentChatMessage(this); if(StringLength(this) gt 0, EnableWidget('cc_panel_int_{channel}_send_message_button'), DisableWidget('cc_panel_int_{channel}_send_message_button'));"
-					/>
-				</panel>
-				<instance
-					name="button2"
-					button_name="cc_panel_int_{channel}_send_message_button"
-					enabled="false"
-					height="2.4h" width="17.0h"
-					align="right" valign="center"
-					font="dyn_10"
-					label="general_send_message"
-					onclick="SetActiveWidget('cc_panel_chat_box_{channel}'); Call('cc_panel_chat_box_{channel}', 'if(ChatSendMessage(this, \'{channel}\'), EraseInputLine());'); Call('cc_ircchat_window', 'BringToFront();');"
-				/>
-			</panel>
-		</panel>
-	</template>
-	
-	<template name="cc_panel_join_channel">
-		<panel align="center" color="invisible" visible="1" noclick="1">
-			<instance name="header_bar" lbl="main_lobby_new_channel_header" height="3.0h" show_close="true" onclick="Call('cc_panel_join_channel_text', 'EraseInputLine();'); Call('cc_panel_join_channel', 'FadeOut(250);');"/>
+            <panel height="3.2h" align="center" color="invisible">
+                <frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 .7" noclick="1" />
+                <panel width="-18.0h" height="2.6h" valign="center" color="0 0 0 .5">
+                    <frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />
+                    <!-- Chat text -->
+                    <textbox
+                        name="cc_panel_chat_box_{channel}"
+                        y="0.5h"
+                        width="-1.0h"
+                        valign="center" align="center"
+                        maxlength="250"
+                        textalign="left" textvalign="center"
+                        font="dyn_10"
+                        textcolor="white"
+                        shadow="false"
+                        color="invisible"
+                        onshow="SetFocus(true); SetInputLine(GetCurrentChatMessage());"
+                        onenter="
+                            PlaySound('/shared/sounds/ui/chat_send.wav');
+                            if(ChatSendMessage(this, '{channel}'), EraseInputLine());"
+                        onesc="EraseInputLine(); SetFocus(true);"
+                        onfocus="Call('cc_ircchat_window', 'BringToFront();');"
+                        onclick="Call('cc_ircchat_window', 'BringToFront();');"
+                        onkeydown="If(param == 281, ChatPrevHistory()); If(param == 283, ChatNextHistory()); If(param == 281 or param == 283, SetInputLine(ChatGetCurHistory()));"
+                        onchange="SetCurrentChatMessage(this); if(StringLength(this) gt 0, EnableWidget('cc_panel_int_{channel}_send_message_button'), DisableWidget('cc_panel_int_{channel}_send_message_button'));"
+                    />
+                </panel>
+                <instance
+                    name="button2"
+                    button_name="cc_panel_int_{channel}_send_message_button"
+                    enabled="false"
+                    height="2.4h" width="17.0h"
+                    align="right" valign="center"
+                    font="dyn_10"
+                    label="general_send_message"
+                    onclick="SetActiveWidget('cc_panel_chat_box_{channel}'); Call('cc_panel_chat_box_{channel}', 'if(ChatSendMessage(this, \'{channel}\'), EraseInputLine());'); Call('cc_ircchat_window', 'BringToFront();');"
+                />
+            </panel>
+        </panel>
+    </template>
+    
+    <template name="cc_panel_join_channel">
+        <panel align="center" color="invisible" visible="1" noclick="1">
+            <instance name="header_bar" lbl="main_lobby_new_channel_header" height="3.0h" show_close="true" onclick="Call('cc_panel_join_channel_text', 'EraseInputLine();'); Call('cc_panel_join_channel', 'FadeOut(250);');"/>
 
-			<panel height="3.0h" y="3.0h" align="center">
-				<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 .7" noclick="1" />
-				<panel width="-10.5h" height="80%" valign="center" color="0 0 0 .5">
-					<frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />
-					<textbox
-						name="cc_panel_join_channel_text"
-						y="0.5h"
-						width="-1.0h"
-						valign="center" align="center"
-						maxlength="250"
-						textalign="left" textvalign="center"
-						font="dyn_10"
-						textcolor="white"
-						shadow="false"
-						color="invisible"
-						onshow="SetFocus(true);"
-						onenter="
-							PlaySound('/shared/sounds/ui/chat_send.wav');
-							ChatJoinChannel(this);
-							EraseInputLine();
-							HideWidget('cc_panel_join_channel');"
-						onesc="EraseInputLine(); HideWidget('cc_panel_join_channel');"
-						onfocus="Call('cc_ircchat_window', 'BringToFront();');"
-					/>
-				</panel>
-				<instance
-					name="button2"
-					height="80%" width="10h"
-					align="right" valign="center"
-					font="dyn_9"
-					label="cc_panel_join_create"
-					onclick="Call('cc_panel_join_channel_text', 'ChatJoinChannel(this); EraseInputLine();'); HideWidget('cc_panel_join_channel'); Call('cc_ircchat_window', 'BringToFront();');"
-				/>
-			</panel>
+            <panel height="3.0h" y="3.0h" align="center">
+                <frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 .7" noclick="1" />
+                <panel width="-10.5h" height="80%" valign="center" color="0 0 0 .5">
+                    <frame color="invisible" bordercolor="#7b8c9b" borderthickness="1" noclick="1" />
+                    <textbox
+                        name="cc_panel_join_channel_text"
+                        y="0.5h"
+                        width="-1.0h"
+                        valign="center" align="center"
+                        maxlength="250"
+                        textalign="left" textvalign="center"
+                        font="dyn_10"
+                        textcolor="white"
+                        shadow="false"
+                        color="invisible"
+                        onshow="SetFocus(true);"
+                        onenter="
+                            PlaySound('/shared/sounds/ui/chat_send.wav');
+                            ChatJoinChannel(this);
+                            EraseInputLine();
+                            HideWidget('cc_panel_join_channel');"
+                        onesc="EraseInputLine(); HideWidget('cc_panel_join_channel');"
+                        onfocus="Call('cc_ircchat_window', 'BringToFront();');"
+                    />
+                </panel>
+                <instance
+                    name="button2"
+                    height="80%" width="10h"
+                    align="right" valign="center"
+                    font="dyn_9"
+                    label="cc_panel_join_create"
+                    onclick="Call('cc_panel_join_channel_text', 'ChatJoinChannel(this); EraseInputLine();'); HideWidget('cc_panel_join_channel'); Call('cc_ircchat_window', 'BringToFront();');"
+                />
+            </panel>
 
-			<panel y="7.0h" width="-1.0h" height="-7.0h" align="center" color="invisible">
-				<table
-					name="chat_channel_list"
-					headingcolor="#0d151e"
-					altrowcolor="#152334"
-					color="#1f334a"
-					rows="14"
-					expandable="true"
-					rowheight="2.0h"
-					cols="70%,30%"
-					font="dyn_10"
-					bordercolor="invisible"
-					headings="general_channel_name,general_users"
-					headingid="head"
-					align="center"
-					usescrollbar="true"
-					exteriorscrollbars="1"
-					scrolltexture="/ui/info/combobox.tga"
-					scrollbarsize="2.0h"
-					handleheight="2.0h"
-					watch="ChatChannelList"
-					onclick="CreateString('_channel_name', GetData(0, row)); if(!StringEquals(dataid, 'head'), Call('cc_panel_join_channel_text', 'SetInputLine(_channel_name);')); Call('cc_ircchat_window', 'BringToFront();');"
-					textalign="left"
-					textvalign="center"
-				/>
-			</panel>
-		</panel>
-	</template>
+            <panel y="7.0h" width="-1.0h" height="-7.0h" align="center" color="invisible">
+                <table
+                    name="chat_channel_list"
+                    headingcolor="#0d151e"
+                    altrowcolor="#152334"
+                    color="#1f334a"
+                    rows="14"
+                    expandable="true"
+                    rowheight="2.0h"
+                    cols="70%,30%"
+                    font="dyn_10"
+                    bordercolor="invisible"
+                    headings="general_channel_name,general_users"
+                    headingid="head"
+                    align="center"
+                    usescrollbar="true"
+                    exteriorscrollbars="1"
+                    scrolltexture="/ui/info/combobox.tga"
+                    scrollbarsize="2.0h"
+                    handleheight="2.0h"
+                    watch="ChatChannelList"
+                    onclick="CreateString('_channel_name', GetData(0, row)); if(!StringEquals(dataid, 'head'), Call('cc_panel_join_channel_text', 'SetInputLine(_channel_name);')); Call('cc_ircchat_window', 'BringToFront();');"
+                    textalign="left"
+                    textvalign="center"
+                />
+            </panel>
+        </panel>
+    </template>
 
-	<template name="cc_panel_chat">
+    <template name="cc_panel_chat">
 
-		<panel align="center" y="{y=0}" valign="bottom" height="100%" width="-2" float="right" padding="1%" onload="CreateInt('cc_panel_chat_buffer_StatusLastUpdate', 0);">
-			<!-- Chat Channels -->
-			<panel width="15.3h" height="-1.5h" y="0.5h" x="0.5h">
-				<frame texture="/ui/info/backdrop.tga" borderthickness="3.0h" color="1 1 1 .7" noclick="1" />				
-				<panel y="4.5h" float="bottom" padding="0.1h" watch="ChatNewChannel" ontrigger="If(!WidgetExists('cc_panel_channel_header_panel_' # param), Instantiate('channel_header', 'channel', param, 'channel_header', param, 'permanent', false, 'startselected', true));">
-					<instance name="channel_header" channel_header="Status" channel="Status" permanent="true" startselected="true"/>
-				</panel>
-				<panel y="0.2h" align="center" width="-0.4h" height="3.4h" color="0 0 0 .5" noclick="1">
-					<frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
-					<instance
-						name="button2"
-						font="dyn_10"
-						width="-1.0h"
-						height="-1.0h"
-						y="0.5h"
-						align="center"
-						label="main_lobby_join_new_channel"
-						onclick="Call('cc_panel_join_channel_' # _cur_cc_panel_channel, 'FadeIn(250);'); Call('cc_ircchat_window', 'BringToFront();');"
-					/>
-				</panel>
-			</panel>
+        <panel align="center" y="{y=0}" valign="bottom" height="100%" width="-2" float="right" padding="1%" onload="CreateInt('cc_panel_chat_buffer_StatusLastUpdate', 0);">
+            <!-- Chat Channels -->
+            <panel width="15.3h" height="-1.5h" y="0.5h" x="0.5h">
+                <frame texture="/ui/info/backdrop.tga" borderthickness="3.0h" color="1 1 1 .7" noclick="1" />               
+                <panel y="4.5h" float="bottom" padding="0.1h" watch="ChatNewChannel" ontrigger="If(!WidgetExists('cc_panel_channel_header_panel_' # param), Instantiate('channel_header', 'channel', param, 'channel_header', param, 'permanent', false, 'startselected', true));">
+                    <instance name="channel_header" channel_header="Status" channel="Status" permanent="true" startselected="true"/>
+                </panel>
+                <panel y="0.2h" align="center" width="-0.4h" height="3.4h" color="0 0 0 .5" noclick="1">
+                    <frame color=".05 .07 .1 .5" bordercolor="#455166" borderthickness="1" noclick="1" />
+                    <instance
+                        name="button2"
+                        font="dyn_10"
+                        width="-1.0h"
+                        height="-1.0h"
+                        y="0.5h"
+                        align="center"
+                        label="main_lobby_join_new_channel"
+                        onclick="Call('cc_panel_join_channel_' # _cur_cc_panel_channel, 'FadeIn(250);'); Call('cc_ircchat_window', 'BringToFront();');"
+                    />
+                </panel>
+            </panel>
 
-			<panel align="right" valign="top" height="-3.5h" y="0.5h" width="-17.0h" x="-0.5h" color="invisible" noclick="1" watch="ChatNewChannel" ontrigger="CreateInt('cc_panel_chat_buffer_' # param # 'LastUpdate', GetTime() - 1); If(!WidgetExists('cc_panel_chat_panel_' # param), Instantiate('cc_panel_chat_channel', 'channel', param, 'permanent', false, 'startselected', true));">
-				<instance name="cc_panel_chat_channel" channel="Status" permanent="true" startselected="true"/>
-			</panel>
-		</panel>
+            <panel align="right" valign="top" height="-3.5h" y="0.5h" width="-17.0h" x="-0.5h" color="invisible" noclick="1" watch="ChatNewChannel" ontrigger="CreateInt('cc_panel_chat_buffer_' # param # 'LastUpdate', GetTime() - 1); If(!WidgetExists('cc_panel_chat_panel_' # param), Instantiate('cc_panel_chat_channel', 'channel', param, 'permanent', false, 'startselected', true));">
+                <instance name="cc_panel_chat_channel" channel="Status" permanent="true" startselected="true"/>
+            </panel>
+        </panel>
 
-	</template>
-	
-	<template name="cc_panel_chat_package">
-		<panel name="cc_chat_full" color="0 0 0 .9" noclick="1" width="100%">
-			<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
-			<instance name="no_frame" y="1" backercolor="0 0 0 1" width="100%" height="100%" vis_ornate_top="1" uscale=".11" vscale=".20" body="cc_panel_chat" />
-		</panel>
-	</template>
+    </template>
+    
+    <template name="cc_panel_chat_package">
+        <panel name="cc_chat_full" color="0 0 0 .9" noclick="1" width="100%">
+            <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+            <instance name="no_frame" y="1" backercolor="0 0 0 1" width="100%" height="100%" vis_ornate_top="1" uscale=".11" vscale=".20" body="cc_panel_chat" />
+        </panel>
+    </template>
 
-		
-	<panel name="cc_ircchat_window" y="-59.5h" width="-47.0h" height="60.0h" align="left" x="0" color="invisible">
-		
-		<instance name="no_frame" body="cc_panel_chat_package" />		
-		
-		<!-- IRC Chat Expand / Collapse Buttons -->
-		<panel y="2.75h" width="-1.0h" height="2.8h" align="center" valign="bottom" color="0 0 0 .9" noclick="1" onload="CreateBool('cc_stats_expanded', false);"
-			watch="CCStatisticsVisible"
-			ontrigger="if(param and !cc_stats_expanded, Split(PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'), Call('cc_stats_window', 'SlideY(\'0\', 250);'), ShowWidget('collapse'), HideWidget('expand'), ToggleWidget('cc_expand_up'), ToggleWidget('cc_expand_over'), Set(cc_stats_expanded, true)));
-			if(!param and cc_stats_expanded, Split(PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'), Call('cc_stats_window', 'SlideY(\'-56.0h\', 250);'), HideWidget('collapse'), ShowWidget('expand'), ToggleWidget('cc_expand_up'), Set(cc_stats_expanded, false)));"
-		>
-			<frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 1" noclick="1" />
-			<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
-		
-			<panel name="chat_expand_btn" noclick="1">
-				<instance
-					height="2.2h" width="20.0h"
-					align="center"
-					valign="center"
-					name="button2"
-					font="dyn_10"
-					label="ccstats_button_show_ccchat"
-				onmouseover="PlaySound('/shared/sounds/ui/ccpanel/button_over_02.wav');"
-				onclick="Set(cc_stats_expanded, true); PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'); Call('cc_ircchat_window', 'SlideY(\'0\', 250); BringToFront();'); ShowWidget('chat_collapse_btn'); SetFocusName('cc_panel_chat_box_' # _cur_cc_panel_channel);" onshow="SleepWidget(1);" onwake="SetFocusName('cc_panel_chat_box_' # _cur_cc_panel_channel);"
-				/>
-			</panel>
-			
-			<panel visible="0" name="chat_collapse_btn" noclick="1">
-				<instance
-					height="2.2h" width="20.0h"
-					align="center"
-					valign="center"
-					name="button2"
-					font="dyn_10"
-					label="ccstats_button_hide_ccchat"
-				onmouseover="PlaySound('/shared/sounds/ui/ccpanel/button_over_02.wav');"
-				onclick="Set(cc_stats_expanded, false); PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'); Call('cc_ircchat_window', 'SlideY(\'-59.5h\', 250);'); HideWidget('chat_collapse_btn'); ShowWidget('chat_expand_btn');"
-				/>
-			</panel>			
-		</panel>
-		<!-- END IRC Chat Expand / Collapse Buttons -->
-	
-	</panel>
+        
+    <panel name="cc_ircchat_window" y="-59.5h" width="-47.0h" height="60.0h" align="left" x="0" color="invisible">
+        
+        <instance name="no_frame" body="cc_panel_chat_package" />       
+        
+        <!-- IRC Chat Expand / Collapse Buttons -->
+        <panel y="2.75h" width="-1.0h" height="2.8h" align="center" valign="bottom" color="0 0 0 .9" noclick="1" onload="CreateBool('cc_stats_expanded', false);"
+            watch="CCStatisticsVisible"
+            ontrigger="if(param and !cc_stats_expanded, Split(PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'), Call('cc_stats_window', 'SlideY(\'0\', 250);'), ShowWidget('collapse'), HideWidget('expand'), ToggleWidget('cc_expand_up'), ToggleWidget('cc_expand_over'), Set(cc_stats_expanded, true)));
+            if(!param and cc_stats_expanded, Split(PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'), Call('cc_stats_window', 'SlideY(\'-56.0h\', 250);'), HideWidget('collapse'), ShowWidget('expand'), ToggleWidget('cc_expand_up'), Set(cc_stats_expanded, false)));"
+        >
+            <frame texture="/ui/info/backdrop.tga" borderthickness="1.0h" color="1 1 1 1" noclick="1" />
+            <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
+        
+            <panel name="chat_expand_btn" noclick="1">
+                <instance
+                    height="2.2h" width="20.0h"
+                    align="center"
+                    valign="center"
+                    name="button2"
+                    font="dyn_10"
+                    label="ccstats_button_show_ccchat"
+                onmouseover="PlaySound('/shared/sounds/ui/ccpanel/button_over_02.wav');"
+                onclick="Set(cc_stats_expanded, true); PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'); Call('cc_ircchat_window', 'SlideY(\'0\', 250); BringToFront();'); ShowWidget('chat_collapse_btn'); SetFocusName('cc_panel_chat_box_' # _cur_cc_panel_channel);" onshow="SleepWidget(1);" onwake="SetFocusName('cc_panel_chat_box_' # _cur_cc_panel_channel);"
+                />
+            </panel>
+            
+            <panel visible="0" name="chat_collapse_btn" noclick="1">
+                <instance
+                    height="2.2h" width="20.0h"
+                    align="center"
+                    valign="center"
+                    name="button2"
+                    font="dyn_10"
+                    label="ccstats_button_hide_ccchat"
+                onmouseover="PlaySound('/shared/sounds/ui/ccpanel/button_over_02.wav');"
+                onclick="Set(cc_stats_expanded, false); PlaySound('/shared/sounds/ui/ccpanel/button_slide.wav'); Call('cc_ircchat_window', 'SlideY(\'-59.5h\', 250);'); HideWidget('chat_collapse_btn'); ShowWidget('chat_expand_btn');"
+                />
+            </panel>            
+        </panel>
+        <!-- END IRC Chat Expand / Collapse Buttons -->
+    
+    </panel>
 
 </package>

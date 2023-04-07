@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface name="main_popup">
-	<include file="ui_items.package"/>
-	
-	<panel name="main_popup_panel" visible="false" blockinput="true" color="0 0 0 .67" watch="HostErrorMessage" ontrigger="SetVisible(true);">		
-		<panel width="26.0h" height="17.4h" align="center" valign="center" noclick="1">
-		<frame color="0 0 0 .8" bordercolor="#455166" borderthickness="1" noclick="1" />		
-			<panel y="-0.5h" width="-1.0h" height="-3.4h" align="center" valign="bottom" noclick="1">
-				<frame texture="/ui/frames/tooltip_bg.tga" color="#2c4b6c" noclick="1"/>
-				<frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />				
-				<panel width="-1.0h" height="-1.0h" align="center" valign="center" color="invisible" noclick="1">				
+    <include file="ui_items.package"/>
+    
+    <panel name="main_popup_panel" visible="false" blockinput="true" color="0 0 0 .67" watch="HostErrorMessage" ontrigger="SetVisible(true);">      
+        <panel width="26.0h" height="17.4h" align="center" valign="center" noclick="1">
+        <frame color="0 0 0 .8" bordercolor="#455166" borderthickness="1" noclick="1" />        
+            <panel y="-0.5h" width="-1.0h" height="-3.4h" align="center" valign="bottom" noclick="1">
+                <frame texture="/ui/frames/tooltip_bg.tga" color="#2c4b6c" noclick="1"/>
+                <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />               
+                <panel width="-1.0h" height="-1.0h" align="center" valign="center" color="invisible" noclick="1">               
 
-					<label
-						x="1h" y="2.7h"
-						width="-2h" height="-5.2h"
-						color="white"
-						shadow="true" wrap="true"
-						font="dyn_10"
-						watch="HostErrorMessage"
-						ontrigger="SetText(param1);"
-						/>
-					
-					<instance
-						name="button2"
-						y="-0.5h"
-						width="10.0h" height="2.4h"
-						align="center" valign="bottom"
-						label="general_ok"
-						onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); Call('main_popup_panel', 'FadeOut(250);');"
-					/>
-					
-				</panel>				
-			</panel>			
-			<instance
-				name="header_bar"
-				buttonsize="1.8h"
-				height="2.4h"
-				width="-2"
-				y="1"
-				align="center"
-				lbl="popup_header"
-				watch="HostErrorMessage"
-				ontrigger="SetText(param0);"
-			/>			
-		</panel>
-	</panel>
+                    <label
+                        x="1h" y="2.7h"
+                        width="-2h" height="-5.2h"
+                        color="white"
+                        shadow="true" wrap="true"
+                        font="dyn_10"
+                        watch="HostErrorMessage"
+                        ontrigger="SetText(param1);"
+                        />
+                    
+                    <instance
+                        name="button2"
+                        y="-0.5h"
+                        width="10.0h" height="2.4h"
+                        align="center" valign="bottom"
+                        label="general_ok"
+                        onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); Call('main_popup_panel', 'FadeOut(250);');"
+                    />
+                    
+                </panel>                
+            </panel>            
+            <instance
+                name="header_bar"
+                buttonsize="1.8h"
+                height="2.4h"
+                width="-2"
+                y="1"
+                align="center"
+                lbl="popup_header"
+                watch="HostErrorMessage"
+                ontrigger="SetText(param0);"
+            />          
+        </panel>
+    </panel>
 </interface>

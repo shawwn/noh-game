@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Engineer_Ability2_Turret_Root"
-	
-	icon="icon.tga"
-	passiveeffect=""
-	
-	immobilized2="true"
-	ishidden="true"
-	
-	effecttype=""
+    name="State_Engineer_Ability2_Turret_Root"
+    
+    icon="icon.tga"
+    passiveeffect=""
+    
+    immobilized2="true"
+    ishidden="true"
+    
+    effecttype=""
 >
 </state>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Nomad_Ability1_Enemy"
+    name="State_Nomad_Ability1_Enemy"
 
-	
-	
-	icon="icon.tga"
-	passiveeffect="effects/state.effect"
-	
-	effecttype="StatusDebuff"
+    
+    
+    icon="icon.tga"
+    passiveeffect="effects/state.effect"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe >
-		<damage effecttype="Magic" amount="15,22,29,35" b="frametime" op="mult"/>
-	</onframe>
+    <onframe >
+        <damage effecttype="Magic" amount="15,22,29,35" b="frametime" op="mult"/>
+    </onframe>
 </state>

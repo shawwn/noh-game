@@ -7,8 +7,8 @@
 //=============================================================================
 // TEXCOORDX
 //=============================================================================
-#define CURRENT_COORD	0
-#define TEXCOORDC(c)	TEXCOORD##c
+#define CURRENT_COORD   0
+#define TEXCOORDC(c)    TEXCOORD##c
 #define TEXCOORDX TEXCOORDC(CURRENT_COORD)
 
 //=============================================================================

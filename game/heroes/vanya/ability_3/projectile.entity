@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Vanya_Ability3"
+    name="Projectile_Vanya_Ability3"
 
-	speed="2600"
-	gravity="0"
+    speed="2600"
+    gravity="0"
 
-	modelscale="1.0"
-	model=""
-		
-	canturn="true"
-	flying="true"
-	pathing="true"
-	flyheight="0"
+    modelscale="1.0"
+    model=""
+        
+    canturn="true"
+    flying="true"
+    pathing="true"
+    flyheight="0"
 >
-	<onspawn>
-		<spawnaffector name="Affector_Vanya_Ability3" target="this_entity" owner="this_owner_entity" />
-	</onspawn>
+    <onspawn>
+        <spawnaffector name="Affector_Vanya_Ability3" target="this_entity" owner="this_owner_entity" />
+    </onspawn>
 </projectile>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Bear3"
+    name="Ability_Bear3"
 
-	
-	
-	icon="summon/icons/ability_3.tga"
-	statuseffecttooltip="State_Yogi_Pet_Ability2"
-	
-	actiontype="passive"
+    
+    
+    icon="summon/icons/ability_3.tga"
+    statuseffecttooltip="State_Yogi_Pet_Ability2"
+    
+    actiontype="passive"
 >
-	<onattack >
-		<cantarget targetscheme="enemy_buildings">
-			<bonusdamagemult a="0.6" target=""/>
-		</cantarget>
-	</onattack>
+    <onattack >
+        <cantarget targetscheme="enemy_buildings">
+            <bonusdamagemult a="0.6" target=""/>
+        </cantarget>
+    </onattack>
 </ability>

@@ -3,6 +3,6 @@
 
 <spawnevent cmd="StartEffect passive.effect"/> 
 
-	<anim name="idle" clip="projectile.clip" loop="true" loopbackframe="1" fps="90"/>
+    <anim name="idle" clip="projectile.clip" loop="true" loopbackframe="1" fps="90"/>
 
 </model>

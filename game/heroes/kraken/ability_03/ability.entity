@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Kraken3"
-	
-	icon="icon.tga"
-	
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
-	passiveeffect="ability.effect"
-	
-	actiontype="no_target"
-	frontqueue="true"
-	inheritmovement="true"
-	casttime="0"
-	castactiontime="0"
-	cooldowntime="1000"
-	cooldowntype="krakenslowaura"
-	noresponse="true"
+    name="Ability_Kraken3"
+    
+    icon="icon.tga"
+    
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
+    passiveeffect="ability.effect"
+    
+    actiontype="no_target"
+    frontqueue="true"
+    inheritmovement="true"
+    casttime="0"
+    castactiontime="0"
+    cooldowntime="1000"
+    cooldowntype="krakenslowaura"
+    noresponse="true"
 >
-	<modifier key="krakenslowaura_off" modpriority="100"
-	>
-		<onimpact>
-			<setactivemodifierkey name="" />
-		</onimpact>
-		
-		<aura state="State_Kraken_Ability3" radius="0" targetscheme="enemy_units" propagatecondition="not_stealthed" />
-	</modifier>
-	
-	<modifier key="" modpriority="100"
-	>
-		<onimpact>
-			<setactivemodifierkey name="krakenslowaura_off" />
-		</onimpact>
-		<aura state="State_Kraken_Ability3" radius="450" targetscheme="enemy_units" propagatecondition="not_stealthed" />
-	</modifier>
+    <modifier key="krakenslowaura_off" modpriority="100"
+    >
+        <onimpact>
+            <setactivemodifierkey name="" />
+        </onimpact>
+        
+        <aura state="State_Kraken_Ability3" radius="0" targetscheme="enemy_units" propagatecondition="not_stealthed" />
+    </modifier>
+    
+    <modifier key="" modpriority="100"
+    >
+        <onimpact>
+            <setactivemodifierkey name="krakenslowaura_off" />
+        </onimpact>
+        <aura state="State_Kraken_Ability3" radius="450" targetscheme="enemy_units" propagatecondition="not_stealthed" />
+    </modifier>
 </ability>

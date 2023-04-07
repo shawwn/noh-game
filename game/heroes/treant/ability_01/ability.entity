@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Treant1"
+    name="Ability_Treant1"
 
-	
-	
-	icon="icon.tga"
-	statuseffecttooltip="State_Treant_Ability1"
-	
-	anim="ability_1"
-	casttime="1000"
-	castactiontime="500"
-	casteffect="effects/cast.effect"
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    
+    
+    icon="icon.tga"
+    statuseffecttooltip="State_Treant_Ability1"
+    
+    anim="ability_1"
+    casttime="1000"
+    castactiontime="500"
+    casteffect="effects/cast.effect"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="target_entity"
-	targetscheme="ally_units"
-	
-	casteffecttype="Magic"
-	
-	manacost="90,80,70,60"
-	cooldowntime="3000"
-	
-	range="300"
+    actiontype="target_entity"
+    targetscheme="ally_units"
+    
+    casteffecttype="Magic"
+    
+    manacost="90,80,70,60"
+    cooldowntime="3000"
+    
+    range="300"
 >
-	<onimpact >
-		<applystate name="State_Treant_Ability1" duration="15000,30000,45000,60000" />
-	</onimpact>
+    <onimpact >
+        <applystate name="State_Treant_Ability1" duration="15000,30000,45000,60000" />
+    </onimpact>
 </ability>

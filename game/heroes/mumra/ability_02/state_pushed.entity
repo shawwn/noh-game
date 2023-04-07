@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Mumra_Ability2_PushImmunity"
+    name="State_Mumra_Ability2_PushImmunity"
 
-	immobilized="true"
-	icon="icon.tga"
+    immobilized="true"
+    icon="icon.tga"
 >
 </state>

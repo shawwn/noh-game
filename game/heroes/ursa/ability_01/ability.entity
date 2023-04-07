@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Ursa1"
+    name="Ability_Ursa1"
 
-	
-	
-	icon="icon.tga"
-	
-	anim="attack_2"
-	casttime="500"
-	castactiontime="500"
+    
+    
+    icon="icon.tga"
+    
+    anim="attack_2"
+    casttime="500"
+    castactiontime="500"
 
-	maxlevel="4"
-	requiredlevel="1,3,5,7"
+    maxlevel="4"
+    requiredlevel="1,3,5,7"
 
-	actiontype="self_position"
-	targetscheme="enemy_units"
-	targetradius="365"
-	casteffecttype="Magic"
-	
-	manacost="75"
-	cooldowntime="7000"
+    actiontype="self_position"
+    targetscheme="enemy_units"
+    targetradius="365"
+    casteffecttype="Magic"
+    
+    manacost="75"
+    cooldowntime="7000"
 >
-	<onimpact >
-		<spawnaffector name="Affector_Ursa_Ability1_Slow" target="source_entity"/>
-		<playeffect effect="effects/ability_01_impact.effect" target="target_position" source="target_position"/>
-	</onimpact>
+    <onimpact >
+        <spawnaffector name="Affector_Ursa_Ability1_Slow" target="source_entity"/>
+        <playeffect effect="effects/ability_01_impact.effect" target="target_position" source="target_position"/>
+    </onimpact>
 </ability>

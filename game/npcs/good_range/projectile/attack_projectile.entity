@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_GoodCreepAttack"
+    name="Projectile_GoodCreepAttack"
 
-	speed="1200"
-	gravity="800"
+    speed="1200"
+    gravity="800"
 
-	modelscale=".5"
-	model="/shared/models/invis.mdf"
+    modelscale=".5"
+    model="/shared/models/invis.mdf"
 
-	traileffect="effects/arrow_trail.effect"
-	impacteffect="effects/impact.effect"
+    traileffect="effects/arrow_trail.effect"
+    impacteffect="effects/impact.effect"
 >
 </projectile>

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ability
-	name="Ability_Bear2"
+    name="Ability_Bear2"
 
-	
-	
-	icon="summon/icons/ability_2.tga"
-	statuseffecttooltip="State_Yogi_Pet_Ability2"
-	
-	actiontype="passive"
-	cooldowntime="5000"
+    
+    
+    icon="summon/icons/ability_2.tga"
+    statuseffecttooltip="State_Yogi_Pet_Ability2"
+    
+    actiontype="passive"
+    cooldowntime="5000"
 >
-	<onframe />
-	<onattackimpact />
-	<modifier key="attack" modpriority="50" exclusive="true">
-		<onattackimpact>
-			<condition test="canactivate">
-				<chance threshold="0.20">
-					<cantarget effecttype="Disable">
-						<applystate name="State_Yogi_Pet_Ability2" duration="3000" />
-						<startcooldown />
-					</cantarget>
-				</chance>
-			</condition>
-		</onattackimpact>
-	</modifier>
+    <onframe />
+    <onattackimpact />
+    <modifier key="attack" modpriority="50" exclusive="true">
+        <onattackimpact>
+            <condition test="canactivate">
+                <chance threshold="0.20">
+                    <cantarget effecttype="Disable">
+                        <applystate name="State_Yogi_Pet_Ability2" duration="3000" />
+                        <startcooldown />
+                    </cantarget>
+                </chance>
+            </condition>
+        </onattackimpact>
+    </modifier>
 </ability>

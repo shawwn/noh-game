@@ -7,21 +7,21 @@
 //=============================================================================
 // Uniform variables
 //=============================================================================
-uniform mat4	mSceneProj;
+uniform mat4    mSceneProj;
 
 //=============================================================================
 // Varying variables
 //=============================================================================
-varying vec4	v_vColor;
-varying vec4	v_vPositionScreen;
+varying vec4    v_vColor;
+varying vec4    v_vPositionScreen;
 
 //=============================================================================
 // Vertex shader
 //=============================================================================
 void main()
 {
-	gl_Position       = gl_ModelViewProjectionMatrix * gl_Vertex;
-	gl_TexCoord[0]    = gl_MultiTexCoord0;
-	v_vColor          = gl_Color;
-	v_vPositionScreen = mSceneProj * gl_Position;
+    gl_Position       = gl_ModelViewProjectionMatrix * gl_Vertex;
+    gl_TexCoord[0]    = gl_MultiTexCoord0;
+    v_vColor          = gl_Color;
+    v_vPositionScreen = mSceneProj * gl_Position;
 }

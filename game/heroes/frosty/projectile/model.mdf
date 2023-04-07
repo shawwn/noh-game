@@ -3,8 +3,8 @@
 
 <spawnevent cmd="StartEffect trail.effect"/>
 
-	<anim name="idle" clip="default_1.clip" fps="30" loop="true"/>
-	
+    <anim name="idle" clip="default_1.clip" fps="30" loop="true"/>
+    
 
-	
+    
 </model>

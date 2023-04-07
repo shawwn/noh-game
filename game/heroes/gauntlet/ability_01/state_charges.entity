@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_Gauntlet_Ability1_Charges"
-	
-	ishidden="true"
-	impactinterval="4000"
-	maxcharges="3"
+    name="State_Gauntlet_Ability1_Charges"
+    
+    ishidden="true"
+    impactinterval="4000"
+    maxcharges="3"
 >
-	<oninflict>
-		<starttimer entity="proxy_entity" duration="4000" />
-	</oninflict>
-	
-	<onimpact>
-		<startcooldown toolname="Ability_Gauntlet1" duration="100" />
-		<addcharges entity="proxy_entity" count="1" />
-		<condition test="charges gt 1">
-			<starttimer entity="proxy_entity" duration="4000" />
-			<changeduration b="4000" op="max" />
-		</condition>
-		<removecharge />
-	</onimpact>
+    <oninflict>
+        <starttimer entity="proxy_entity" duration="4000" />
+    </oninflict>
+    
+    <onimpact>
+        <startcooldown toolname="Ability_Gauntlet1" duration="100" />
+        <addcharges entity="proxy_entity" count="1" />
+        <condition test="charges gt 1">
+            <starttimer entity="proxy_entity" duration="4000" />
+            <changeduration b="4000" op="max" />
+        </condition>
+        <removecharge />
+    </onimpact>
 </state>

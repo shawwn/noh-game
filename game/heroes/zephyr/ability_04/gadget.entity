@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gadget
-	name="Gadget_Zephyr_Ability4"
-	
-	model="effects/windbone.mdf"
-	passiveeffect="effects/steamer.effect"
-	isselectable="false"
-	immobile="true"
-	invulnerable="true"
+    name="Gadget_Zephyr_Ability4"
+    
+    model="effects/windbone.mdf"
+    passiveeffect="effects/steamer.effect"
+    isselectable="false"
+    immobile="true"
+    invulnerable="true"
 
-	lifetime="6000,7000,8000"
+    lifetime="6000,7000,8000"
 >
-	<!--aura state="State_Zephyr_Ability4_Buff" radius="400" condition="owner or facing_angle lt 90"/>
-	<aura state="State_Zephyr_Ability4_Debuff" radius="400" condition="not_owner and facing_angle gt 90"/-->
-	<aura state="State_Zephyr_Ability4_Buff" radius="550" duration="500" targetscheme="ally_units"/>
-	<aura state="State_Zephyr_Ability4_Debuff" radius="550" duration="500" condition="enemy_units"/>
+    <!--aura state="State_Zephyr_Ability4_Buff" radius="400" condition="owner or facing_angle lt 90"/>
+    <aura state="State_Zephyr_Ability4_Debuff" radius="400" condition="not_owner and facing_angle gt 90"/-->
+    <aura state="State_Zephyr_Ability4_Buff" radius="550" duration="500" targetscheme="ally_units"/>
+    <aura state="State_Zephyr_Ability4_Debuff" radius="550" duration="500" condition="enemy_units"/>
 </gadget>

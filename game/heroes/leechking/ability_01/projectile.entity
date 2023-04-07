@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectile
-	name="Projectile_Leechking_Ability1"
+    name="Projectile_Leechking_Ability1"
 
-	speed="900"
-	gravity="50"
-	flying="true"
-	flyheight="50"
-	pitch="90"
-	modelscale="1.5"
-	model="effects/skel.mdf"
-	anim="fly"
-	traileffect="effects/trail.effect"
+    speed="900"
+    gravity="50"
+    flying="true"
+    flyheight="50"
+    pitch="90"
+    modelscale="1.5"
+    model="effects/skel.mdf"
+    anim="fly"
+    traileffect="effects/trail.effect"
 >
-	<onimpact>
-		<playeffect effect="" source="target_position" target="" occlude="true"/>
-	</onimpact>
+    <onimpact>
+        <playeffect effect="" source="target_position" target="" occlude="true"/>
+    </onimpact>
 </projectile>

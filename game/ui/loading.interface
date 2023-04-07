@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface name="loading">
-	<panel y="-8.5h" width="80@" height="30%" valign="top" align="center" noclick="1">
-		
-		<panel y="-10%" width="90%" height="70%" align="center" valign="bottom" noclick="1">
-			<image height="98%" texture="loadingscreens/loading_bar_bg.tga" noclick="1" />
-			<panel y="27%" width="91%" height="20%" align="center" noclick="1">
-				<panel watch="LoadingProgress" ontrigger="SetWidth(FtoP(param));" noclick="1">
-					<image watch="LoadingProgress" ontrigger="SetUScale(1 / param);" texture="loadingscreens/loading_bar_fg.tga" noclick="1" />
-					<image width="16" align="left" texture="loadingscreens/loading_bar_fg_l.tga" noclick="1" />
-					<image width="16" align="right" texture="loadingscreens/loading_bar_fg_r.tga" noclick="1" />
-				</panel>
-			</panel>
-			<image texture="loadingscreens/loading_bar_frame.tga" noclick="1" />
-			
-			<!--
-			<label
-				y="20%"
-				width="100%"
-				textalign="center"
-				font="dyn_16"
-				color="white"
-				watch="LoadingTitle"
-				ontrigger="SetText(param);"
-			/>
-			-->
-		</panel>
-	</panel>
+    <panel y="-8.5h" width="80@" height="30%" valign="top" align="center" noclick="1">
+        
+        <panel y="-10%" width="90%" height="70%" align="center" valign="bottom" noclick="1">
+            <image height="98%" texture="loadingscreens/loading_bar_bg.tga" noclick="1" />
+            <panel y="27%" width="91%" height="20%" align="center" noclick="1">
+                <panel watch="LoadingProgress" ontrigger="SetWidth(FtoP(param));" noclick="1">
+                    <image watch="LoadingProgress" ontrigger="SetUScale(1 / param);" texture="loadingscreens/loading_bar_fg.tga" noclick="1" />
+                    <image width="16" align="left" texture="loadingscreens/loading_bar_fg_l.tga" noclick="1" />
+                    <image width="16" align="right" texture="loadingscreens/loading_bar_fg_r.tga" noclick="1" />
+                </panel>
+            </panel>
+            <image texture="loadingscreens/loading_bar_frame.tga" noclick="1" />
+            
+            <!--
+            <label
+                y="20%"
+                width="100%"
+                textalign="center"
+                font="dyn_16"
+                color="white"
+                watch="LoadingTitle"
+                ontrigger="SetText(param);"
+            />
+            -->
+        </panel>
+    </panel>
 </interface>

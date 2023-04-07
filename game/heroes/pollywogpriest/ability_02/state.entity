@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <state
-	name="State_PollywogPriest_Ability2"
+    name="State_PollywogPriest_Ability2"
 
-	icon="../icons/ability_2.tga"
-	passiveeffect="effects/body.effect"
-	
-	disarmed="true"
-	silenced="true"
-	perplexed="true"
+    icon="../icons/ability_2.tga"
+    passiveeffect="effects/body.effect"
+    
+    disarmed="true"
+    silenced="true"
+    perplexed="true"
 
-	morphpriority="100"
-	morphmodel="effects/model.mdf"
-	morphpreglobalscale=".9"
-	morphmovespeed="100"
-	
-	effecttype="StatusDebuff"
+    morphpriority="100"
+    morphmodel="effects/model.mdf"
+    morphpreglobalscale=".9"
+    morphmovespeed="100"
+    
+    effecttype="StatusDebuff"
 >
-	<onframe />
+    <onframe />
 </state>

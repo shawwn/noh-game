@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <effect name="">
-	<definitions>
-		<particlesystem name="system0" space="world">
+    <definitions>
+        <particlesystem name="system0" space="world">
 
-			<billboard
-				size="75"
-				startcolor=".2 .5 .7"
-				endcolor="0 0 0"
-				position="-12 0 60"
-				material="/shared/effects/materials/whitedot.material"
-				loop="true"
-				depthbias="-200"
-				lockup="true"
-				pitch="270"
-			/>
-			
-		</particlesystem>
+            <billboard
+                size="75"
+                startcolor=".2 .5 .7"
+                endcolor="0 0 0"
+                position="-12 0 60"
+                material="/shared/effects/materials/whitedot.material"
+                loop="true"
+                depthbias="-200"
+                lockup="true"
+                pitch="270"
+            />
+            
+        </particlesystem>
    </definitions>
    <thread>
       <spawnparticlesystem instance="instance0" particlesystem="system0" />
