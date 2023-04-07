@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface name="alt_info_building"
+	watch="AltInfo3Name"
+	watch1="AltInfo3HasMana"
+	watch2="AltInfo3Color"
+	watch3="AltInfo3HasHealth"
+	watch4="AltInfo3IsInExpRange"
+	watch5="AltInfo3HealthPercent"
+	watch6="AltInfo3ManaPercent"
+	watch7="AltInfo3HealthLerp"
+	luatable="true"
+>
+	<frame
+		name="background_frame"
+		texture="/ui/frames/rounded_bg_white.tga"
+		color="#000000CA"
+		x="-0.5h"
+		y="-4.7h"
+		width="1.0h"
+		height="2.3h"
+		borderthickness="0.6h"
+	>
+		<frame
+			name="border_frame"
+			texture="/ui/frames/thick.tga"
+			color="#A0A0A0"
+			borderthickness="0.6h"
+		/>
+		<label
+			name="frame_label"
+			font="dyn_10"
+			color="white"
+			shadow="true"
+			width="100%"
+			height="95%"
+			textalign="center"
+			textvalign="center"
+		/>
+	</frame>
+	
+	<panel
+		name="main_panel"
+		x="-6.0h"
+		y="-10"
+		width="12h"
+		height="1.3h"
+		color="invisible"	
+		float="bottom"
+	>
+		<panel color="black" height="0.75h">
+			<panel x="1" y="1" width="-2" height="-2" color="black">
+				<panel name="health_lerp" color="0.7 0 0 1" noclick="1"/>
+				<panel name="health_bar" color="0 1 0 0" noclick="1">
+					<panel x="1" width="1" align="right" color="0 0 0 .75"> </panel>
+				</panel>
+				<if condition="bcg_useFFHealth" >
+					<image width="0%" texture="$white" color="invisible" visible="1"  name="health_bar_FF"  />	
+				</if>				
+			</panel>
+		</panel>
+		
+		<panel name="mana_panel" color="black" height=".30h" >
+			<panel x="1" y="0" width="-2" height="-1" color="black">
+				<panel name="mana_bar" width="0%" texture="/ui/info/mana_pos.tga" />
+			</panel>
+		</panel>		
+	</panel>
+
+	<?lua
+		local background_frame = object:GetWidget('background_frame')
+		local border_frame = object:GetWidget('border_frame')
+		local frame_label = object:GetWidget('frame_label')
+		local main_panel = object:GetWidget('main_panel')
+		
+		local health_lerp = object:GetWidget('health_lerp')
+		local health_bar = object:GetWidget('health_bar')
+		local health_bar_FF = object:GetWidget('health_bar_FF')
+		
+		local mana_panel = object:GetWidget('mana_panel')
+		local mana_bar = object:GetWidget('mana_bar')
+
+		function object:ontrigger (name) -- AltInfo3Name
+			if (name and string.len(name) > 0) then
+				background_frame:SetVisible(true)
+				background_frame:SetX((GetStringWidth('dyn_10', name) + background_frame:GetXFromString('1.2h')) * -0.5)
+				background_frame:SetWidth(GetStringWidth('dyn_10', name) + background_frame:GetXFromString('1.2h'))
+
+				border_frame:SetWidth('100%')
+
+				frame_label:SetWidth('100%')
+				frame_label:SetText(name)
+			else
+				background_frame:SetVisible(false)
+			end
+		end
+
+		function object:ontrigger1 (hasMana) -- AltInfo3HasMana
+			if (AtoB(hasMana)) then
+				background_frame:SetY(background_frame:GetYFromString('-2.3h') - 19)
+				mana_panel:SetVisible(true)
+			else
+				background_frame:SetY(background_frame:GetYFromString('-2.3h') - 14)
+				mana_panel:SetVisible(false)
+			end
+		end
+
+		function object:ontrigger2 (color) -- AltInfo3Color
+			border_frame:SetBorderColor(color)
+			if (self:GetWidget('health_bar_FF')) then
+				if color == '0.0000 1.0000 0.0000 1.0000' then
+					health_lerp:SetColor('0.7 0 0 1')
+					health_bar_FF:SetColor('0.2 1.0 0.2 0.8')
+					health_bar_FF:SetVisible(true)		
+				elseif color == '1.0000 0.0000 0.0000 1.0000' then
+					health_lerp:SetColor('1.0 1.0 0 0.7')
+					health_bar_FF:SetColor('1.0 0.0 0.0 0.8')
+					health_bar_FF:SetVisible(true)			
+				elseif color == '1.0000 1.0000 0.0000 1.0000' then
+					health_lerp:SetColor('0.7 0 0 1')
+					health_bar_FF:SetColor('0.2 1.0 0.2 0.8')
+					health_bar_FF:SetVisible(true)
+				else
+					health_bar_FF:SetVisible(false)
+				end
+			end			
+		end
+
+		function object:ontrigger3 (hasHealth) -- AltInfo3HasHealth
+			main_panel:SetVisible(AtoB(hasHealth))
+		end
+		
+		--[[
+		function object:ontrigger4 (isInExpRange) -- AltInfo3IsInExpRange (unused)
+			exp:SetVisible(AtoB(isInExpRange))
+		end
+		--]]
+
+		function object:ontrigger5 (healthPercent) -- AltInfo3HealthPercent
+			health_bar:SetWidth(ToPercent(healthPercent))
+			health_bar:SetColor(Saturate(1 - (healthPercent - 0.50) / 0.50), (healthPercent + (((healthPercent - 0.05) / 1.0) * 0.2)) / 0.45, 0, 1)
+			if (self:GetWidget('health_bar_FF')) then
+				health_bar_FF:SetWidth(ToPercent(healthPercent))
+			end			
+		end
+
+		function object:ontrigger6 (manaPercent) -- AltInfo3ManaPercent
+			mana_bar:SetWidth(ToPercent(manaPercent));
+		end
+
+		function object:ontrigger7 (healthLerp) -- AltInfo3HealthLerp
+			health_lerp:SetWidth(ToPercent(healthLerp));
+		end
+	?>	
+	
+</interface>
