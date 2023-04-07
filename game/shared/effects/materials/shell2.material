@@ -20,7 +20,7 @@
     >
         <sampler
             name="diffuse"
-            texture="/shared/effects/textures/quadmap4.jpg"
+            texture="/shared/effects/textures/quadmap4.tga"
             repeat_u="true"
             repeat_v="true"
             mipmaps="true"

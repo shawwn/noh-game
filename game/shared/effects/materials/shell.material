@@ -29,7 +29,7 @@
     >
         <sampler
             name="diffuse"
-            texture="../textures/shell.jpg"
+            texture="../textures/shell.tga"
             repeat_u="true"
             repeat_v="true"
             mipmaps="true"

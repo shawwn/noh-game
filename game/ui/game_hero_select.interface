@@ -7,8 +7,6 @@
     
     <!-- Dynamic Textures -->
     <texture file="/ui/elements/line_break.tga" />
-    <texture file="/ui/elements/heroselection/player_action_ready_yes.tga" />
-    <texture file="/ui/elements/heroselection/player_action_ready_no.tga" />
     <texture file="/ui/elements/heroselection/ready.tga" />
     <texture file="/ui/elements/heroselection/not_ready.tga" />
     
