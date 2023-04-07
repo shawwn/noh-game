@@ -1,0 +1,16 @@
+##### CVS
+/CVS/*
+**/CVS/*
+.cvsignore
+*/.cvsignore
+
+
+*.s2z
+*.s2z.old
+*.DS_Store
+*.dll
+/game/textures
+/game/textures_old
+
+*.dylib
+
