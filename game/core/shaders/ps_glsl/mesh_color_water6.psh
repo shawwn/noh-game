@@ -212,8 +212,8 @@ void main()
     vec3 cNormalmapColor2 = texture2D(normalmap2_0, gl_TexCoord[0].zw).agb;
     #endif
     
-    vec3 vTexNormal1 = vec3(cNormalmapColor1.rgb * 2.0f - 1.0f);
-    vec3 vTexNormal2 = vec3(cNormalmapColor2.rgb * 2.0f - 1.0f);
+    vec3 vTexNormal1 = vec3(cNormalmapColor1.rgb * 2.0 - 1.0);
+    vec3 vTexNormal2 = vec3(cNormalmapColor2.rgb * 2.0 - 1.0);
     
     vec3 vTexNormal = normalize(vTexNormal1 + vTexNormal2);
     
