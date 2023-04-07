@@ -1,170 +1,170 @@
-error_title                     À´Á­ÁÁ³
-error_unknown                   Î´ÖªÀ´Á­ÁÁ³À¡À£
+error_title						´íÎó
+error_unknown					Î´Öª´íÎó¡£
 
-disconnect_title                Î´ÁÀ¬À½Á“
-disconnect_not_host             Á„ÁºÀ±Á˜ÁÁ«À¾ÁŸÁ“ÁÁ–Á·À»ÁºÁŒÁ˜È¨À²Á…Á„ÁœÁ”Ú´Ë·Á¾ÁÁ±Á†Á·Á‰Ï¿ÀªÊ¼Á“ÁÏ·À¡À£
-disconnect_server_full          À·Á¾ÁÁ±Á†Á·Á’Á‘Á‚ÁºÀ¡À£
-disconnect_game_in_progress     Á„ÁºÀ³À¢ÁŠÔ¼Á“ÁˆÁ«ÀµÁ„Á“ÁÏ·Á•Á½Á”Ú½Á¸ÁÁÁ–Ğ¡À£
-disconnect_server_error         À·Á¾ÁÁ±Á†Á·À´Á­ÁÁ³À¡À£
-disconnect_not_invited          Á„ÁºÃ»Á“ÁÁŠÕµÀ½À¼Á“ÁˆÁ«À´Á‹Ë½ÁˆÁ‹Á“ÁÏ·ÀµÁ„Á‘Á»Á‡ë¡£
-disconnect_no_cookie            Á„ÁºÀ±Á˜ÁÁ«ÁÈµÁ‡Â¼À²Á…Á„ÁœÁ”Ú´Ë·Á¾ÁÁ±Á†Á·Á‰ÁÁ“ÁÏ·À¡À£
-disconnect_auth_failed          À·Á¾ÁÁ±Á†Á·ÁŞ·À¨À¶Á”Á„ÁºÀµÁ„Á•Ê»À§À½Á¸ÁÁÁŠÁšÈ¨À¡À£ Á‡Á«Á–Á˜ÁÂ³À¢ÁŠÔµÁ‡Â¼À¡À£
-disconnect_unknown              Á„ÁºÁ’Ñ¶Ï¿ÀªÁÀ¬À½Ó¡À£
-disconnect_timeout              À·Á¾ÁÁ±Á†Á·Ã»Á“ÁÁÁ¬Ó¦À¡À£
-disconnect_game_over            Á“ÁÏ·Á’Ñ½Á¡ÁŠÁ¸À¡À£
-disconnect_idle                 Á“Á‰Á“Ú´À¦Á“Ú¿Á•ÁÁ×´Ì¬À£À¬Á„ÁºÁ’Ñ¶Ï¿ÀªÁÀ¬À½Ó¡À£
-disconnect_terminated           Á„ÁºÁ’Ñ³À¬À³Á¶Á—Á®À´Á³À¶Ï¿ÀªÁÀ¬À½Á“Ê±À¼ä£¬À²À»Á”Á™Á”ÁŠÁÁ­Á–Á˜ÁÂ¼Á“ÁˆÁ«À´Á‹Á“ÁÏ·À¡À£
-disconnect_kicked               Á„ÁºÁ’Ñ±À»Á–Á·À»ÁºÁŒß³Á¶À´Á‹Á“ÁÏ·À¡À£
+disconnect_title				Î´Á¬½Ó
+disconnect_not_host				Äú±ØĞë¾ßÓĞÖ÷»úÌØÈ¨²ÅÄÜÔÚ´Ë·şÎñÆ÷ÉÏ¿ªÊ¼ÓÎÏ·¡£
+disconnect_server_full			·şÎñÆ÷ÒÑÂú¡£
+disconnect_game_in_progress		Äú³¢ÊÔ¼ÓÈëµÄÓÎÏ·ÕıÔÚ½øĞĞÖĞ¡£
+disconnect_server_error			·şÎñÆ÷´íÎó¡£
+disconnect_not_invited			ÄúÃ»ÓĞÊÕµ½¼ÓÈë´ËË½ÈËÓÎÏ·µÄÑûÇë¡£
+disconnect_no_cookie			Äú±ØĞëÏÈµÇÂ¼²ÅÄÜÔÚ´Ë·şÎñÆ÷ÉÏÓÎÏ·¡£
+disconnect_auth_failed			·şÎñÆ÷ÎŞ·¨¶ÔÄúµÄÕÊ»§½øĞĞÊÚÈ¨¡£ ÇëÖØĞÂ³¢ÊÔµÇÂ¼¡£
+disconnect_unknown				ÄúÒÑ¶Ï¿ªÁ¬½Ó¡£
+disconnect_timeout				·şÎñÆ÷Ã»ÓĞÏìÓ¦¡£
+disconnect_game_over			ÓÎÏ·ÒÑ½áÊø¡£
+disconnect_idle					ÓÉÓÚ´¦ÓÚ¿ÕÏĞ×´Ì¬£¬ÄúÒÑ¶Ï¿ªÁ¬½Ó¡£
+disconnect_terminated			ÄúÒÑ³¬³ö×î´ó¶Ï¿ªÁ¬½ÓÊ±¼ä£¬²»ÔÙÔÊĞíÖØĞÂ¼ÓÈë´ËÓÎÏ·¡£
+disconnect_kicked				ÄúÒÑ±»Ö÷»úÌß³ö´ËÓÎÏ·¡£
 
-rejected_invalid_request        Á„ÁºÀµÄ¿Í»À§À¶Ë·À¢Á‹ÍµÁ„ÁÀ¬À½Á“Á‡Á«Á‡Á³ÁÁĞ§À¡À£
-rejected_empty_address          À·Á¾ÁÁ±Á†Á·ÁŞ·À¨È·À¶À¨Á„ÁºÀµÄµÁ˜Ö·À¡À£
-rejected_wrong_game             À´Ë·Á¾ÁÁ±Á†Á·Á•Á½Á”ÁšÁ”Á‹ÁÁÁÁ­Ò»À¸Á¶Á“ÁÏ·À¡À£
-rejected_wrong_version          Á„ÁºÀµÄ°æ±¾Á“Á«À·Á¾ÁÁ±Á†Á·À°æ±¾À²À»Æ¥Á…ä¡£
-rejected_banned                 Á„ÁºÀ±À»À½Á»Ö¹À½Á¸ÁˆÁ«À´Ë·Á¾ÁÁ±Á†Á·À¡À£
-rejected_invalid_password       ÁƒÁœÁ‚Á«ÁÁĞ§À¡À£
-rejected_server_error           À·Á¾ÁÁ±Á†Á·À´Á­ÁÁ³À¡À£
+rejected_invalid_request		ÄúµÄ¿Í»§¶Ë·¢ËÍµÄÁ¬½ÓÇëÇóÎŞĞ§¡£
+rejected_empty_address			·şÎñÆ÷ÎŞ·¨È·¶¨ÄúµÄµØÖ·¡£
+rejected_wrong_game				´Ë·şÎñÆ÷ÕıÔÚÔËĞĞÁíÒ»¸öÓÎÏ·¡£
+rejected_wrong_version			ÄúµÄ°æ±¾Óë·şÎñÆ÷°æ±¾²»Æ¥Åä¡£
+rejected_banned					Äú±»½ûÖ¹½øÈë´Ë·şÎñÆ÷¡£
+rejected_invalid_password		ÃÜÂëÎŞĞ§¡£
+rejected_server_error			·şÎñÆ÷´íÎó¡£
 
 // chat system messages
-chat_connecting                 ^900* Á•Á½Á”ÁšÁÀ¬À½ÓµÀ½ÁÁ„ÁŒÁ¬À·Á¾ÁÁ±Á†Á·...
-chat_reconnecting               ^900* Á•Á½Á”ÁšÁÀ¬À½ÓµÀ½ÁÁ„ÁŒÁ¬À·Á¾ÁÁ±Á†Á·...À£À¨ÀµÁš {attempt} À´Î³À¢ÁŠÔ£À¬À¹À² {maxattempts} À´Î³À¢ÁŠÔ£À©
-chat_waiting_verification           ^900* Á•Á½Á”ÚµÈ´Á½ÁÁ„ÁŒÁ¬À·Á¾ÁÁ±Á†Á·Á‘Á©Ö¤Á‰Á­À·Á...
-chat_connected                  ^900* Á’Á‘ÁÀ¬À½Ó£À¡
-chat_disconnected               ^900* Á’Ñ¶Ï¿ÀªÁ“Á«ÁÁ„ÁŒÁ¬À·Á¾ÁÁ±Á†Á·ÀµÁ„ÁÀ¬À½Ó¡À£
-chat_reconnecting_delay             ^900* Á”Áš 30 ÁƒÁ«ÀºÁ³Á–Á˜ÁÁ‚ÁÀ¬À½Ó£À¨ÀµÁš {attempt} À´Î³À¢ÁŠÔ£À¬À¹À² {maxattempts} À´Î³À¢ÁŠÔ£À©À¡À£
-chat_not_connected              ^900* Á„ÁºÀ»À¹Î´ÁÀ¬À½ÓµÀ½ÁÁ„ÁŒÁ¬À·Á¾ÁÁ±Á†Á·À¡À£
-chat_new_channel                ^900* ÁÁ–Á”ÁšÁ•Á½Á”ÁšÆµÀµÁ€ ^090{channel}^900 Á–Ğ¶Ô»À°À¡À£
-chat_channel_message                ^990{sender}À£Àº^888 {message}
-chat_channel_message_sent           ^444"{name}À£Àº^* {message}
-chat_whisper                    ^099À£À¨Á€À´Á—Á” {sender} ÀµÁ„ÁƒÁœÌ¸À£À©^888{message}
-chat_whisper_sent               ^066À£À¨Á“Á« {target} ÁƒÁœÌ¸À£À©^888{message}
-chat_whisper_buddies                ^099<Á“Á«ÀºÁƒÁ“Á‘ÁƒÁœÌ¸> {message}
-chat_whisper_failed_self            ^900* Á„ÁºÁŞ·À¨Á“Á«Á—Ô¼ÀºÁƒÁœÌ¸À¡À£
-chat_user_offline               ^900* À¸ÁƒÁÁ¦À¼Ò²À»Á”ÁšÁß¡À£
-chat_im                     ^882{sender}À£Àº^888{message}
-chat_im_sent                    ^444{name}À£Àº^888{message}
-chat_im_failed                  ^900* {target} À²À»Á”ÁšÁß¡À£
-chat_clan_whisper               ^359À£À¨Á…Á‰ÏµÀ£À©{name}À£Àº^888{message}
-chat_clan_whisper_sent              ^458À£À¨Á…Á‰ÏµÀ£À©{name}À£Àº^888{message}
-chat_clan_whisper_failed            ^900* Á„ÁºÀ²À»ÁŠÁ´Á“ÁšÁˆÎºÁÁ…Á‰ÏµÀ¡À£
-chat_clan_im                    ^359{name}À£Àº^888{message}
-chat_clan_im_sent               ^458{name}À£Àº^888{message}
-chat_flooding                   ^900* ÁÁ»Ï¢Î´À·À¢Á‹Á - Á„ÁºÀ·À¢Á‹ÍµÁ„ÁÁ»Ï¢Ì«À¶à¡£ Á‡Á«Á‰ÔµÈ¼À¸Áƒë²¢Á–Á˜ÁŠÔ¡À£
-chat_max_channels               ^900* À´Á‹Ê±Á„ÁºÀ²À»Á„Ü¼Á“ÁˆÁ«À¸Á¼À¶Á ÆµÀµÁ€À£À¬Á‡Á«ÁŠÁ—ÁÁˆÁË³Á¶ÁÁ­Ò»À¸Á¶ÆµÀµÁ€À¡À£
-chat_banned                 ^900* Î´ÁÀ¬À½Á“ - Á„ÁºÀ±À»À½Á»Ö¹À½Á¸ÁˆÁ«À´Á‹ÁÁ„ÁŒÁ¬À·Á¾ÁÁ±Á†Á· {time} À·Á–Á–Ó¡À£
-chat_banned_connections             ^900* Ô­Á’Á²À£ÀºÁÀ¬À½Ó³À¢ÁŠÁ”Ì«À¶à¡£
-chat_banned_flooding                ^900* Ô­Á’Á²À£ÀºÁ“ÁÏ·ÁˆÁ‹ÁŠÁ½Ì«À¶à¡£
-chat_banned_unknown             ^900* Ô­Á’Á²À£ÀºÎ´ÖªÀ¡À£
-chat_banned_reconnect               ^900* Á•Á½Á”Ú³À¢ÁŠÁ”Á”Áš {time} ÁƒÁ«Á„ÁšÁ–Á˜ÁÁ‚ÁÀ¬À½Ó£À¨ÀµÁš {attempt} À´Î³À¢ÁŠÔ£À¬À¹À² {maxattempts} À´Î³À¢ÁŠÔ£À©À¡À£"
-chat_info_not_found             ^900* Î´Á•ÒµÀ½Á“Ã»À§À¡À°{name}À¡À±À¡À£
-chat_info_offline               ^900* {name} ÀµÀ±Ç°Á€Á«Áß£À¬Á—Á®ÀºÁ³Ò»À´ÁÁŠÁ‡Á”Áš {seen} À±À»À¿À´ÀµÀ½À¡À£
-chat_info_online_no_channels            ^900* {name} ÀµÀ±Ç°Á”ÁšÁßµÀ«À²À»Á”ÁšÁˆÎºÁÆµÀµÁ€Á–Ğ¡À£
-chat_info_online_one_channel            ^900* {name} ÀµÀ±Ç°Á”ÁšÁß²À¢Á”ÁšÆµÀµÁ€À¡À°{channel}À¡À±Á–Ğ¡À£
-chat_info_online_multi_channels         ^900* {name} ÀµÀ±Ç°Á”ÁšÁß²À¢Á”ÁšÁ’Á”ÁÁ‚ÆµÀµÁ€Á–Ğ£Àº{channels}
-chat_info_in_game               ^900* {name} ÀµÀ±Ç°Á”ÁšÁß²À¢Á”Ú¡À°{game}À¡À±Á“ÁÏ·Á–Ğ¡À£
-chat_ignored                    ^900* {name} Á’Ñ±À»ÀºÁ¶Á‚Ô¡À£
-chat_unignored                  ^900* {name} À²À»Á”Ù±À»ÀºÁ¶Á‚Ô¡À£
-chat_joining_game               ^900* À¼Á“ÁˆÁ«Á“ÁÏ·À¡À°{name}À¡À±À¡À£
-chat_left_game                  ^900* Á„ÁºÁ’Á‘Á€ë¿ªÁ“ÁÏ·À¡À£
-chat_user_info_online               ^900* ^990{name}^900 ÀµÀ±Ç°Á”ÁšÁß¡À£
-chat_user_info_offline              ^900* ^990{name}^900 ÀµÀ±Ç°Á€Á«Áß¡À£
-chat_user_info_in_game              ^900* ^990{name}^900 ÀµÀ±Ç°Á•Á½Á”Ú¡À°'{game}À¡À±Á“ÁÏ·Á–Ğ¡À£
-chat_adding_buddy               ^900* À½À« {name} ÁŒÁ­À¼Á“ÎªÀºÁƒÁ“Á‘...
-chat_failed_buddy_add               ^900* ÁŞ·À¨À½À« {target} ÁŒÁ­À¼ÓµÀ½Á„ÁºÀµÄºÁƒÁ“Á‘ÁĞ±Á­À¡À£
-chat_failed_buddy_add_self          ^900* Á„ÁºÀ²À»Á„Ü½À«Á—Ô¼ÀºÁŒÁ­À¼Á“ÎªÀºÁƒÁ“Ñ¡À£
-chat_failed_buddy_add_duplicate         ^900* Á„ÁºÀ²À»Á„Ü½À«Á—Ô¼ÀºÁŒÁ­À¼Á“ÎªÀºÁƒÁ“Ñ¡À£
-chat_failed_buddy_add_reason            ^900* ÁŞ·À¨À½À« {target} ÁŒÁ­À¼ÓµÀ½Á„ÁºÀµÄºÁƒÁ“Á‘ÁĞ±Á­À£Àº{reason}
-chat_failed_buddy_remove            ^900* ÁŞ·À¨À½À« {target} À´Á“Á„ÁºÀµÄºÁƒÁ“Á‘ÁĞ±Á­Á–ÁÉ¾À³Á½À¡À£
-chat_failed_buddy_remove_not_found      ^900* ÁŞ·À¨À½À«Á“Ã»À§À´Á“Á„ÁºÀµÄºÁƒÁ“Á‘ÁĞ±Á­Á–ÁÉ¾À³Á½À£ÀºÎ´Á•ÒµÀ½Á“Ã»À§À¡À£
-chat_clan_promoting             ^900* À½À«Á…Á‰ÏµÀ³Á‰Ô± {name} À½ÁºÁ‰Á½ÎªÀ¹Á™Ô±...
-chat_failed_clan_promote            ^900* ÁŞ·À¨À½ÁºÁ‰Á½ {target}À¡À£
-chat_failed_clan_promote_cannot_promote     ^900* Á„ÁºÀ²À»Á„Ü½ÁºÁ‰Á½À´Á‹Á“Ã»À§À¡À£
-chat_failed_clan_promote_generic        ^900* ÁŞ·À¨À½ÁºÁ‰Á½Á“Ã»À§À¡À£
-chat_clan_demoting              ^900* À½ÀµÀµÁÁ…Á‰ÏµÀ³Á‰Ô± {name} ÀµÄ¼À¶À±Á°...
-chat_failed_clan_demote             ^900* ÁŞ·À¨À½ÀµÀµÁ {target} ÀµÄ¼À¶À±Á°À¡À£
-chat_failed_clan_demote_cannot_demote       ^900* Á„ÁºÀ²À»Á„Ü½ÀµÀµÍ´Á‹Á“Ã»À§ÀµÄ¼À¶À±Á°À¡À£
-chat_failed_clan_demote_generic         ^900* ÁŞ·À¨À½ÀµÀµÁÁ“Ã»À§ÀµÄ¼À¶À±Á°À¡À£
-chat_clan_removing              ^900* É¾À³Á½Á…Á‰ÏµÀ³Á‰Ô± {name}...
-chat_failed_clan_remove             ^900* ÁŞ·À¨À´Á“Á…Á‰ÏµÁ–ÁÉ¾À³Á½ {target}À¡À£
-chat_failed_clan_remove_demote          ^900* Á”ÁšÉ¾À³Á½À´Á‹Á“Ã»À§Ç°À±Á˜Áë½µÀµÁÁ†ä¼¶À±Á°À¡À£
-chat_failed_clan_remove_generic         ^900* ÁŞ·À¨À´Á“Á…Á‰ÏµÁ–ÁÉ¾À³Á½Á“Ã»À§À¡À£
-chat_success_buddy_add              ^900* Á’Ñ½À« {target} ÁŒÁ­À¼ÓµÀ½Á„ÁºÀµÄºÁƒÁ“Á‘ÁĞ±Á­À¡À£
-chat_success_buddy_remove           ^900* Á’Ñ½À« {target} À´Á“Á„ÁºÀµÄºÁƒÁ“Á‘ÁĞ±Á­Á–ÁÉ¾À³Á½À¡À£
-chat_success_clan_promote           ^900* Á’Ñ³É¹À¦À½ÁºÁ‰Á½Á“Ã»À§À¡À£
-chat_success_clan_demote            ^900* Á’Ñ³É¹À¦À½ÀµÀµÁÁ“Ã»À§ÀµÄ¼À¶À±Á°À¡À£
-chat_success_clan_remove            ^900* Á’Ñ½À«Á“Ã»À§À´Á“Á…Á‰ÏµÁ–ÁÉ¾À³Á½À¡À£
+chat_connecting					^900* ÕıÔÚÁ¬½Óµ½ÁÄÌì·şÎñÆ÷...
+chat_reconnecting				^900* ÕıÔÚÁ¬½Óµ½ÁÄÌì·şÎñÆ÷...£¨µÚ {attempt} ´Î³¢ÊÔ£¬¹² {maxattempts} ´Î³¢ÊÔ£©
+chat_waiting_verification			^900* ÕıÔÚµÈ´ıÁÄÌì·şÎñÆ÷ÑéÖ¤Éí·İ...
+chat_connected					^900* ÒÑÁ¬½Ó£¡
+chat_disconnected				^900* ÒÑ¶Ï¿ªÓëÁÄÌì·şÎñÆ÷µÄÁ¬½Ó¡£
+chat_reconnecting_delay				^900* ÔÚ 30 ÃëºóÖØĞÂÁ¬½Ó£¨µÚ {attempt} ´Î³¢ÊÔ£¬¹² {maxattempts} ´Î³¢ÊÔ£©¡£
+chat_not_connected				^900* Äú»¹Î´Á¬½Óµ½ÁÄÌì·şÎñÆ÷¡£
+chat_new_channel				^900* ÏÖÔÚÕıÔÚÆµµÀ ^090{channel}^900 ÖĞ¶Ô»°¡£
+chat_channel_message				^990{sender}£º^888 {message}
+chat_channel_message_sent			^444"{name}£º^* {message}
+chat_whisper					^099£¨À´×Ô {sender} µÄÃÜÌ¸£©^888{message}
+chat_whisper_sent				^066£¨Óë {target} ÃÜÌ¸£©^888{message}
+chat_whisper_buddies				^099<ÓëºÃÓÑÃÜÌ¸> {message}
+chat_whisper_failed_self			^900* ÄúÎŞ·¨Óë×Ô¼ºÃÜÌ¸¡£
+chat_user_offline				^900* ¸ÃÍæ¼Ò²»ÔÚÏß¡£
+chat_im						^882{sender}£º^888{message}
+chat_im_sent					^444{name}£º^888{message}
+chat_im_failed					^900* {target} ²»ÔÚÏß¡£
+chat_clan_whisper				^359£¨ÅÉÏµ£©{name}£º^888{message}
+chat_clan_whisper_sent				^458£¨ÅÉÏµ£©{name}£º^888{message}
+chat_clan_whisper_failed			^900* Äú²»ÊôÓÚÈÎºÎÅÉÏµ¡£
+chat_clan_im					^359{name}£º^888{message}
+chat_clan_im_sent				^458{name}£º^888{message}
+chat_flooding					^900* ÏûÏ¢Î´·¢ËÍ - Äú·¢ËÍµÄÏûÏ¢Ì«¶à¡£ ÇëÉÔµÈ¼¸Ãë²¢ÖØÊÔ¡£
+chat_max_channels				^900* ´ËÊ±Äú²»ÄÜ¼ÓÈë¸ü¶àÆµµÀ£¬ÇëÊ×ÏÈÍË³öÁíÒ»¸öÆµµÀ¡£
+chat_banned					^900* Î´Á¬½Ó - Äú±»½ûÖ¹½øÈë´ËÁÄÌì·şÎñÆ÷ {time} ·ÖÖÓ¡£
+chat_banned_connections				^900* Ô­Òò£ºÁ¬½Ó³¢ÊÔÌ«¶à¡£
+chat_banned_flooding				^900* Ô­Òò£ºÓÎÏ·ÈËÊıÌ«¶à¡£
+chat_banned_unknown				^900* Ô­Òò£ºÎ´Öª¡£
+chat_banned_reconnect				^900* ÕıÔÚ³¢ÊÔÔÚ {time} ÃëÄÚÖØĞÂÁ¬½Ó£¨µÚ {attempt} ´Î³¢ÊÔ£¬¹² {maxattempts} ´Î³¢ÊÔ£©¡£"
+chat_info_not_found				^900* Î´ÕÒµ½ÓÃ»§¡°{name}¡±¡£
+chat_info_offline				^900* {name} µ±Ç°ÀëÏß£¬×îºóÒ»´ÎÊÇÔÚ {seen} ±»¿´µ½¡£
+chat_info_online_no_channels			^900* {name} µ±Ç°ÔÚÏßµ«²»ÔÚÈÎºÎÆµµÀÖĞ¡£
+chat_info_online_one_channel			^900* {name} µ±Ç°ÔÚÏß²¢ÔÚÆµµÀ¡°{channel}¡±ÖĞ¡£
+chat_info_online_multi_channels			^900* {name} µ±Ç°ÔÚÏß²¢ÔÚÒÔÏÂÆµµÀÖĞ£º{channels}
+chat_info_in_game				^900* {name} µ±Ç°ÔÚÏß²¢ÔÚ¡°{game}¡±ÓÎÏ·ÖĞ¡£
+chat_ignored					^900* {name} ÒÑ±»ºöÂÔ¡£
+chat_unignored					^900* {name} ²»ÔÙ±»ºöÂÔ¡£
+chat_joining_game				^900* ¼ÓÈëÓÎÏ·¡°{name}¡±¡£
+chat_left_game					^900* ÄúÒÑÀë¿ªÓÎÏ·¡£
+chat_user_info_online				^900* ^990{name}^900 µ±Ç°ÔÚÏß¡£
+chat_user_info_offline				^900* ^990{name}^900 µ±Ç°ÀëÏß¡£
+chat_user_info_in_game				^900* ^990{name}^900 µ±Ç°ÕıÔÚ¡°'{game}¡±ÓÎÏ·ÖĞ¡£
+chat_adding_buddy				^900* ½« {name} Ìí¼ÓÎªºÃÓÑ...
+chat_failed_buddy_add				^900* ÎŞ·¨½« {target} Ìí¼Óµ½ÄúµÄºÃÓÑÁĞ±í¡£
+chat_failed_buddy_add_self			^900* Äú²»ÄÜ½«×Ô¼ºÌí¼ÓÎªºÃÓÑ¡£
+chat_failed_buddy_add_duplicate			^900* Äú²»ÄÜ½«×Ô¼ºÌí¼ÓÎªºÃÓÑ¡£
+chat_failed_buddy_add_reason			^900* ÎŞ·¨½« {target} Ìí¼Óµ½ÄúµÄºÃÓÑÁĞ±í£º{reason}
+chat_failed_buddy_remove			^900* ÎŞ·¨½« {target} ´ÓÄúµÄºÃÓÑÁĞ±íÖĞÉ¾³ı¡£
+chat_failed_buddy_remove_not_found		^900* ÎŞ·¨½«ÓÃ»§´ÓÄúµÄºÃÓÑÁĞ±íÖĞÉ¾³ı£ºÎ´ÕÒµ½ÓÃ»§¡£
+chat_clan_promoting				^900* ½«ÅÉÏµ³ÉÔ± {name} ½úÉıÎª¹ÙÔ±...
+chat_failed_clan_promote			^900* ÎŞ·¨½úÉı {target}¡£
+chat_failed_clan_promote_cannot_promote		^900* Äú²»ÄÜ½úÉı´ËÓÃ»§¡£
+chat_failed_clan_promote_generic		^900* ÎŞ·¨½úÉıÓÃ»§¡£
+chat_clan_demoting				^900* ½µµÍÅÉÏµ³ÉÔ± {name} µÄ¼¶±ğ...
+chat_failed_clan_demote				^900* ÎŞ·¨½µµÍ {target} µÄ¼¶±ğ¡£
+chat_failed_clan_demote_cannot_demote		^900* Äú²»ÄÜ½µµÍ´ËÓÃ»§µÄ¼¶±ğ¡£
+chat_failed_clan_demote_generic			^900* ÎŞ·¨½µµÍÓÃ»§µÄ¼¶±ğ¡£
+chat_clan_removing				^900* É¾³ıÅÉÏµ³ÉÔ± {name}...
+chat_failed_clan_remove				^900* ÎŞ·¨´ÓÅÉÏµÖĞÉ¾³ı {target}¡£
+chat_failed_clan_remove_demote			^900* ÔÚÉ¾³ı´ËÓÃ»§Ç°±ØĞë½µµÍÆä¼¶±ğ¡£
+chat_failed_clan_remove_generic			^900* ÎŞ·¨´ÓÅÉÏµÖĞÉ¾³ıÓÃ»§¡£
+chat_success_buddy_add				^900* ÒÑ½« {target} Ìí¼Óµ½ÄúµÄºÃÓÑÁĞ±í¡£
+chat_success_buddy_remove			^900* ÒÑ½« {target} ´ÓÄúµÄºÃÓÑÁĞ±íÖĞÉ¾³ı¡£
+chat_success_clan_promote			^900* ÒÑ³É¹¦½úÉıÓÃ»§¡£
+chat_success_clan_demote			^900* ÒÑ³É¹¦½µµÍÓÃ»§µÄ¼¶±ğ¡£
+chat_success_clan_remove			^900* ÒÑ½«ÓÃ»§´ÓÅÉÏµÖĞÉ¾³ı¡£
 
 // chat notifications
-chat_notification_cc_panel          À°À´ F6 Á’Ô´ò¿ª¡À°Á‰Á§Á‡Á¸ÀºÁÁ…Á‰ÏµÀ¡À±ÁƒÁ¦À°å¡£
-chat_notification_buddy_online          {name} Á”ÁšÁß¡À£
-chat_notification_buddy_offline         {name} Á€Á«Áß¡À£
-chat_notification_buddy_joined_game     {name} Á’Ñ¼Á“ÁˆÁ«Á“ÁÏ·À¡À°{game}À¡À±À¡À£
-chat_notification_buddy_left_game       {name} Á’Á‘Á€ë¿ªÁ“ÁÏ·À¡À°{game}À¡À±À¡À£
-chat_notification_clan_online           {name} Á”ÁšÁß¡À£
-chat_notification_clan_offline          {name} Á€Á«Áß¡À£
-chat_notification_clan_joined_game      {name} Á’Ñ¼Á“ÁˆÁ«Á“ÁÏ·À¡À°{game}À¡À±À¡À£
-chat_notification_clan_left_game        {name} Á’Á‘Á€ë¿ªÁ“ÁÏ·À¡À°{game}À¡À±À¡À£
-chat_notification_clan_whisper          À£À¨Á…Á‰ÏµÀ£À©{name}À£Àº{message}
-chat_notification_clan_whisper_sent     À£À¨Á…Á‰ÏµÀ£À©{name}À£Àº{message}
+chat_notification_cc_panel			°´ F6 ÒÔ´ò¿ª¡°ÉçÇøºÍÅÉÏµ¡±Ãæ°å¡£
+chat_notification_buddy_online			{name} ÔÚÏß¡£
+chat_notification_buddy_offline			{name} ÀëÏß¡£
+chat_notification_buddy_joined_game		{name} ÒÑ¼ÓÈëÓÎÏ·¡°{game}¡±¡£
+chat_notification_buddy_left_game		{name} ÒÑÀë¿ªÓÎÏ·¡°{game}¡±¡£
+chat_notification_clan_online			{name} ÔÚÏß¡£
+chat_notification_clan_offline			{name} ÀëÏß¡£
+chat_notification_clan_joined_game		{name} ÒÑ¼ÓÈëÓÎÏ·¡°{game}¡±¡£
+chat_notification_clan_left_game		{name} ÒÑÀë¿ªÓÎÏ·¡°{game}¡±¡£
+chat_notification_clan_whisper			£¨ÅÉÏµ£©{name}£º{message}
+chat_notification_clan_whisper_sent		£¨ÅÉÏµ£©{name}£º{message}
 
 // chat commands
-chat_command_whisper                /ÁƒÁœÌ¸
-chat_command_whisper_short          /w
-chat_command_whisper_help           ^900*^505 /ÁƒÁœÌ¸ <ÁƒÁ»À³Á†> <ÁÁ»Ï¢>À¡À£
-chat_command_reply              /À´Á°À¸À´
-chat_command_reply_short            /r
-chat_command_reply_invalid          ^900* Ã»Á“ÁÁˆÁ‹Á“Á«Á„ÁºÁƒÁœÌ¸À£À¡
-chat_command_reply_help             ^900*^505 /À´Á°À¸À´ <ÁÁ»Ï¢>À¡À£
-chat_command_buddy              /ÀºÁƒÁ“Á‘
-chat_command_buddy_short            /b
-chat_command_buddy_list             ÁĞ±Á­
-chat_command_buddy_list_short           l
-chat_command_buddy_list_message         ^900* Á•Á½Á”ÁšÁĞ³Á¶ÀºÁƒÁ“Á‘...
-chat_command_buddy_list_none            ^900* Á„ÁºÀµÄºÁƒÁ“Á‘ÁĞ±Á­Á–ÁÃ»Á“ÁÁ“Ã»À§À¡À£
-chat_command_buddy_list_help            ^900*^505 /ÀºÁƒÁ“Á‘ÁĞ±Á­À¡À£
-chat_command_buddy_message          ÁÁ»Ï¢
-chat_command_buddy_message_short        m
-chat_command_buddy_message_help         ^900*^505 /ÀºÁƒÁ“Á‘ÁÁ»Ï¢ <ÁÁ»Ï¢>À¡À£
-chat_command_buddy_add              ÁŒÁ­À¼Á“
-chat_command_buddy_add_short            a
-chat_command_buddy_add_help         ^900*^505 /ÁŒÁ­À¼ÓºÁƒÁ“Á‘ <ÁªÇ³Á†>À¡À£
-chat_command_buddy_delete           É¾À³Á½
-chat_command_buddy_delete_short         d
-chat_command_buddy_delete_help          ^900*^505 /É¾À³Á½ÀºÁƒÁ“Á‘ <ÁªÇ³Á†>À¡À£
-chat_command_clan               /Á…Á‰Ïµ
-chat_command_clan_short             /c
-chat_command_clan_list              ÁĞ±Á­
-chat_command_clan_list_short            l
-chat_command_clan_list_message          ^900* Á•Á½Á”ÁšÁĞ³Á¶Á…Á‰ÏµÀ³Á‰Ô±...
-chat_command_clan_list_none         ^900* Á„ÁºÀµÁ„Á…Á‰ÏµÁ–ÁÃ»Á“ÁÁ“Ã»À§À¡À£
-chat_command_clan_list_help         ^900*^505 /Á…Á‰ÏµÁĞ±Á­À¡À£
-chat_command_clan_message           ÁÁ»Ï¢
-chat_command_clan_message_short         m
-chat_command_clan_message_help          ^900*^505 /Á…Á‰ÏµÁÁ»Ï¢ <ÁÁ»Ï¢>À¡À£
-chat_command_clear              /Á‡Á¥À³Á½
-chat_command_clear_short            /cl
-chat_command_join               /À¼Á“ÁˆÁ«
-chat_command_join_short             /j
-chat_command_invite             /Á‘Á»Á‡Á«
-chat_command_invite_short           /i
-chat_command_invite_help            ^900*^505 /Á‘Á»Á‡Á« <Á“Ã»À§>À¡À£
-chat_command_ignore             /ÀºÁ¶Á‚Á”
-chat_command_ignore_help            ^900*^505 /ÀºÁ¶Á‚Á” <Á“Ã»À§>À¡À£
-chat_command_unignore               /È¡ÁÁ»ÀºÁ¶Á‚Á”
-chat_command_unignore_help          ^900*^505 /È¡ÁÁ»ÀºÁ¶Á‚Á” <Á“Ã»À§>À¡À£
-chat_command_help               /À°Á¯Á–Áº
-chat_command_help_short             /h
-chat_command_character              /
-chat_command_invalid_format         ^900* ÁƒÁ¼ÁÁ®À¸Á±Ê½ÁÁĞ§À¡À£ Á•Á½È·À¸Á±Ê½ÎªÀ£Àº
-chat_command_invalid_format_multi       ^900* ÁƒÁ¼ÁÁ®À¸Á±Ê½ÁÁĞ§À¡À£ Á•Á½È·À¸Á±Ê½ÎªÁ’Á”ÁÂ¸Á±Ê½Ö®Ò»À£Àº
-chat_command_invalid_command            ^900* ÁƒÁ¼ÁÁ®ÁÁĞ§À¡À£ À¼Á¼ÁˆÁ« {helpcommand} Á’Ô»Á±ÀµÁƒÁƒÁ¼ÁÁ®ÁĞ±Á­À¡À£
-chat_command_help_valid             ^900* Á“ÁĞ§ÁƒÁ¼ÁÁ®À°Á¼Á€À¨À£Àº
-chat_command_help_whisper           ^900*^505 /ÁƒÁœÌ¸ <ÁªÇ³Á†> <ÁÁ»Ï¢>^900 - Á“Á«Á“Ã»À§ÁƒÁœÌ¸À¡À£
-chat_command_help_reply             ^900*^505 /À´Á°À¸À´ <ÁÁ»Ï¢>^900               - À´Á°À¸À´Á‰ÁÒ»À¸Á¶ÁƒÁœÌ¸ÁˆË¡À£
-chat_command_help_buddy             ^900*^505 /ÀºÁƒÁ“Á‘ <ÁƒÁ¼ÁÁ®> <À±Á¤ÁÀ¿>^900   - À¸Á·Á–Á–Á“Á«ÀºÁƒÁ“Á‘ÁÁ À¹ØµÁ„ÁƒÁ¼Áî¡£
-chat_command_help_clan              ^900*^505 /Á…Á‰Ïµ <ÁƒÁ¼ÁÁ®> <À±Á¤ÁÀ¿>^900    - À¸Á·Á–Á–Á“Á«Á…Á‰ÏµÁÁ À¹ØµÁ„ÁƒÁ¼Áî¡£
-chat_command_help_join              ^900*^505 /À¼Á“ÁˆÁ« <ÆµÀµÁ€>^900                - À¼Á“ÁˆÁ«Ö¸À¶À¨ÆµÀµÁ€À¡À£
-chat_command_help_ignore            ^900*^505 /ÀºÁ¶Á‚Á” <Á“Ã»À§>^900                 - ÀºÁ¶Á‚Á”Ö¸À¶À¨Á“Ã»À§À¡À£
-chat_command_help_unignore          ^900*^505 /È¡ÁÁ»ÀºÁ¶Á‚Á” <Á“Ã»À§>^900               - È¡ÁÁ»ÀºÁ¶Á‚Á”Ö¸À¶À¨Á“Ã»À§À¡À£
-chat_command_help_clear             ^900*^505 /Á‡Á¥À³Á½^900                         - Á‡Á¥À³Á½ÁÁ„ÁŒì»ºÀ³å¡£
-chat_command_help_invite            ^900*^505 /Á‘Á»Á‡Á« <Á“Ã»À§>^900                 - Á‘Á»Á‡Á«Ö¸À¶À¨Á“Ã»À§À¼Á“Áˆëµ±Ç°Á“ÁÏ·À¡À£
-chat_command_help_misc              ^900* À¼Á¼Áˆë²»À´Á¸À±Á¤ÁÀ¿ÀµÁ„ÁƒÁ¼ÁÁ®Á’Ô»Á±ÀµÁƒÁ†Á¤Ê¹Á“Ã·À½À·À¨ÁÁ…Ï¢À¡À£
+chat_command_whisper				/ÃÜÌ¸
+chat_command_whisper_short			/w
+chat_command_whisper_help			^900*^505 /ÃÜÌ¸ <Ãû³Æ> <ÏûÏ¢>¡£
+chat_command_reply				/´ğ¸´
+chat_command_reply_short			/r
+chat_command_reply_invalid			^900* Ã»ÓĞÈËÓëÄúÃÜÌ¸£¡
+chat_command_reply_help				^900*^505 /´ğ¸´ <ÏûÏ¢>¡£
+chat_command_buddy				/ºÃÓÑ
+chat_command_buddy_short			/b
+chat_command_buddy_list				ÁĞ±í
+chat_command_buddy_list_short			l
+chat_command_buddy_list_message			^900* ÕıÔÚÁĞ³öºÃÓÑ...
+chat_command_buddy_list_none			^900* ÄúµÄºÃÓÑÁĞ±íÖĞÃ»ÓĞÓÃ»§¡£
+chat_command_buddy_list_help			^900*^505 /ºÃÓÑÁĞ±í¡£
+chat_command_buddy_message			ÏûÏ¢
+chat_command_buddy_message_short		m
+chat_command_buddy_message_help			^900*^505 /ºÃÓÑÏûÏ¢ <ÏûÏ¢>¡£
+chat_command_buddy_add				Ìí¼Ó
+chat_command_buddy_add_short			a
+chat_command_buddy_add_help			^900*^505 /Ìí¼ÓºÃÓÑ <êÇ³Æ>¡£
+chat_command_buddy_delete			É¾³ı
+chat_command_buddy_delete_short			d
+chat_command_buddy_delete_help			^900*^505 /É¾³ıºÃÓÑ <êÇ³Æ>¡£
+chat_command_clan				/ÅÉÏµ
+chat_command_clan_short				/c
+chat_command_clan_list				ÁĞ±í
+chat_command_clan_list_short			l
+chat_command_clan_list_message			^900* ÕıÔÚÁĞ³öÅÉÏµ³ÉÔ±...
+chat_command_clan_list_none			^900* ÄúµÄÅÉÏµÖĞÃ»ÓĞÓÃ»§¡£
+chat_command_clan_list_help			^900*^505 /ÅÉÏµÁĞ±í¡£
+chat_command_clan_message			ÏûÏ¢
+chat_command_clan_message_short			m
+chat_command_clan_message_help			^900*^505 /ÅÉÏµÏûÏ¢ <ÏûÏ¢>¡£
+chat_command_clear				/Çå³ı
+chat_command_clear_short			/cl
+chat_command_join				/¼ÓÈë
+chat_command_join_short				/j
+chat_command_invite				/ÑûÇë
+chat_command_invite_short			/i
+chat_command_invite_help			^900*^505 /ÑûÇë <ÓÃ»§>¡£
+chat_command_ignore				/ºöÂÔ
+chat_command_ignore_help			^900*^505 /ºöÂÔ <ÓÃ»§>¡£
+chat_command_unignore				/È¡ÏûºöÂÔ
+chat_command_unignore_help			^900*^505 /È¡ÏûºöÂÔ <ÓÃ»§>¡£
+chat_command_help				/°ïÖú
+chat_command_help_short				/h
+chat_command_character				/
+chat_command_invalid_format			^900* ÃüÁî¸ñÊ½ÎŞĞ§¡£ ÕıÈ·¸ñÊ½Îª£º
+chat_command_invalid_format_multi		^900* ÃüÁî¸ñÊ½ÎŞĞ§¡£ ÕıÈ·¸ñÊ½ÎªÒÔÏÂ¸ñÊ½Ö®Ò»£º
+chat_command_invalid_command			^900* ÃüÁîÎŞĞ§¡£ ¼üÈë {helpcommand} ÒÔ»ñµÃÃüÁîÁĞ±í¡£
+chat_command_help_valid				^900* ÓĞĞ§ÃüÁî°üÀ¨£º
+chat_command_help_whisper			^900*^505 /ÃÜÌ¸ <êÇ³Æ> <ÏûÏ¢>^900 - ÓëÓÃ»§ÃÜÌ¸¡£
+chat_command_help_reply				^900*^505 /´ğ¸´ <ÏûÏ¢>^900               - ´ğ¸´ÉÏÒ»¸öÃÜÌ¸ÈË¡£
+chat_command_help_buddy				^900*^505 /ºÃÓÑ <ÃüÁî> <±äÁ¿>^900   - ¸÷ÖÖÓëºÃÓÑÏà¹ØµÄÃüÁî¡£
+chat_command_help_clan				^900*^505 /ÅÉÏµ <ÃüÁî> <±äÁ¿>^900    - ¸÷ÖÖÓëÅÉÏµÏà¹ØµÄÃüÁî¡£
+chat_command_help_join				^900*^505 /¼ÓÈë <ÆµµÀ>^900                - ¼ÓÈëÖ¸¶¨ÆµµÀ¡£
+chat_command_help_ignore			^900*^505 /ºöÂÔ <ÓÃ»§>^900                 - ºöÂÔÖ¸¶¨ÓÃ»§¡£
+chat_command_help_unignore			^900*^505 /È¡ÏûºöÂÔ <ÓÃ»§>^900               - È¡ÏûºöÂÔÖ¸¶¨ÓÃ»§¡£
+chat_command_help_clear				^900*^505 /Çå³ı^900                         - Çå³ıÁÄÌì»º³å¡£
+chat_command_help_invite			^900*^505 /ÑûÇë <ÓÃ»§>^900                 - ÑûÇëÖ¸¶¨ÓÃ»§¼ÓÈëµ±Ç°ÓÎÏ·¡£
+chat_command_help_misc				^900* ¼üÈë²»´ø±äÁ¿µÄÃüÁîÒÔ»ñµÃÆäÊ¹ÓÃ·½·¨ĞÅÏ¢¡£

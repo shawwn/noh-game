@@ -1,216 +1,216 @@
-kill0                               {killer_color}{killer}^* É±Á‹Á€ÁÁ‹ {victim_color}{victim}^*À£À¡ Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡
-kill1                               {killer_color}{killer}^* É±Á‹Á€ÁÁ‹ {victim_color}{victim}^*À£À¡ Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡ Ô®Á–ÁºÀ£Àº{assist0_color}{assist0}
-kill2                               {killer_color}{killer}^* É±Á‹Á€ÁÁ‹ {victim_color}{victim}^*À£À¡ Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡ Ô®Á–ÁºÀ£Àº{assist0_color}{assist0}^*À¡À¢{assist1_color}{assist1}
-kill3                               {killer_color}{killer}^* É±Á‹Á€ÁÁ‹ {victim_color}{victim}^*À£À¡ Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡ Ô®Á–ÁºÀ£Àº{assist0_color}{assist0}^*À¡À¢{assist1_color}{assist1}^*À¡À¢{assist2_color}{assist2}
-kill4                               {killer_color}{killer}^* É±Á‹Á€ÁÁ‹ {victim_color}{victim}^*À£À¡ Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡ Ô®Á–ÁºÀ£Àº{assist0_color}{assist0}^*À¡À¢{assist1_color}{assist1}^*À¡À¢{assist2_color}{assist2}^*À¡À¢{assist3_color}{assist3}
-first_kill                          {killer_color}{killer}^* Á’Á‘ÁÁÁˆÁ« ^rÀ·Á¨À¿Á±^*À£À¡ À£À¨^y+{gold}^* À½Á°À±Ò£À¡À£À©
-killstreak0                         {killer_color}{killer}^* ÁŠÁ‡ ^082ÁÀ¬À»À·É±ÁŠÁ–^*À£À¡
-killstreak1                         {killer_color}{killer}^* ÁŠÁ‡ ^204Á–Õ¼À«Õ½Ê¿^*À£À¡
-killstreak2                         {killer_color}{killer}^* ÁŠÁ‡ ^808À´À«Á†Á¦^*!
-killstreak3                         {killer_color}{killer}^* Á•Á½Á”Ú½Á¸ÁÁ^840ÁƒÍ¹À¥^*À£À¡
-killstreak4                         {killer_color}{killer}^* ÁŠÁ‡ ^440Ò°Á‚Á¹ÁˆÁ‹^*À£À¡À£À¡
-killstreak5                         {killer_color}{killer}^* ÁŠÁ‡ ^848Á–Á·Á”Á—^*À£À¡À£À¡
-killstreak6                         {killer_color}{killer}^* ÁŠÁ‡ ^800Å¦ÁÁ–Ë¹Á“Á‚Ê¿^*À£À¡À£À¡À£À¡
-killstreak7                         {killer_color}{killer}^* Á•Á½Á”Ú½Á¸ÁÁ ^840À´Á³ÁÁ€É±^*À£À¡À£À¡ Ä³ÁˆÁ‹Á’Ñ½À«Á‹Á»À»Á·É±À£À¡
+kill0								{killer_color}{killer}^* É±ËÀÁË {victim_color}{victim}^*£¡ Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡
+kill1								{killer_color}{killer}^* É±ËÀÁË {victim_color}{victim}^*£¡ Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡ Ô®Öú£º{assist0_color}{assist0}
+kill2								{killer_color}{killer}^* É±ËÀÁË {victim_color}{victim}^*£¡ Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡ Ô®Öú£º{assist0_color}{assist0}^*¡¢{assist1_color}{assist1}
+kill3								{killer_color}{killer}^* É±ËÀÁË {victim_color}{victim}^*£¡ Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡ Ô®Öú£º{assist0_color}{assist0}^*¡¢{assist1_color}{assist1}^*¡¢{assist2_color}{assist2}
+kill4								{killer_color}{killer}^* É±ËÀÁË {victim_color}{victim}^*£¡ Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡ Ô®Öú£º{assist0_color}{assist0}^*¡¢{assist1_color}{assist1}^*¡¢{assist2_color}{assist2}^*¡¢{assist3_color}{assist3}
+first_kill							{killer_color}{killer}^* ÒÑÏİÈë ^r·è¿ñ^*£¡ £¨^y+{gold}^* ½ğ±Ò£¡£©
+killstreak0							{killer_color}{killer}^* ÊÇ ^082Á¬»·É±ÊÖ^*£¡
+killstreak1							{killer_color}{killer}^* ÊÇ ^204ÖÕ¼«Õ½Ê¿^*£¡
+killstreak2							{killer_color}{killer}^* ÊÇ ^808´«Ææ^*!
+killstreak3							{killer_color}{killer}^* ÕıÔÚ½øĞĞ^840ÃÍ¹¥^*£¡
+killstreak4							{killer_color}{killer}^* ÊÇ ^440Ò°ÂùÈË^*£¡£¡
+killstreak5							{killer_color}{killer}^* ÊÇ ^848Ö÷Ô×^*£¡£¡
+killstreak6							{killer_color}{killer}^* ÊÇ ^800Å¦ÎÖË¹ÓÂÊ¿^*£¡£¡£¡
+killstreak7							{killer_color}{killer}^* ÕıÔÚ½øĞĞ ^840´óÍÀÉ±^*£¡£¡ Ä³ÈËÒÑ½«Ëû»÷É±£¡
 
-streakend0                          {killer} Á–Õ½Á¡ÁÁ‹ {victim} ÀµÁ„ ^082ÁÀ¬À»À·É±ÁŠÁ–^* ÀµÁ„ÁÀ¬É±À£À¬Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡
-streakend1                          {killer} Á–Õ½Á¡ÁÁ‹ {victim} ÀµÁ„ ^204Á–Õ¼À«Á“Á‚Ê¿^* ÀµÁ„ÁÀ¬É±À£À¬Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡
-streakend2                          {killer} Á–Õ½Á¡ÁÁ‹ {victim} ÀµÁ„ ^808À´À«Á†Á¦^* ÀµÁ„ÁÀ¬É±À£À¬Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡
-streakend3                          {killer} Á–Õ½Á¡ÁÁ‹ {victim} ÀµÁ„^840ÁƒÍ¹À¥^* ÀµÁ„ÁÀ¬É±À£À¬Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡
-streakend4                          {killer} Á–Õ½Á¡ÁÁ‹ {victim} ÀµÁ„ ^440Ò°Á‚Á¹ÁˆÁ‹^* ÀµÁ„ÁÀ¬É±À£À¬Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡
-streakend5                          {killer} Á–Õ½Á¡ÁÁ‹ {victim} ÀµÁ„ ^840Á–Á·Á”Á—^* ÀµÁ„ÁÀ¬É±À£À¬Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡
-streakend6                          {killer} Á–Õ½Á¡ÁÁ‹ {victim} ÀµÁ„ ^800Å¦ÁÁ–Ë¹Á“Á‚Ê¿^* ÀµÁ„ÁÀ¬É±À£À¬Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡
-streakend7                          {killer} Á–Õ½Á¡ÁÁ‹ {victim} ÀµÁ„ ^840À´Á³ÁÁ€É±^* ÀµÁ„ÁÀ¬É±À£À¬Ó®ÀµÁƒ ^y{gold}^* À½Á°À±Ò£À¡À£À¡
+streakend0							{killer} ÖÕ½áÁË {victim} µÄ ^082Á¬»·É±ÊÖ^* µÄÁ¬É±£¬Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡
+streakend1							{killer} ÖÕ½áÁË {victim} µÄ ^204ÖÕ¼«ÓÂÊ¿^* µÄÁ¬É±£¬Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡
+streakend2							{killer} ÖÕ½áÁË {victim} µÄ ^808´«Ææ^* µÄÁ¬É±£¬Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡
+streakend3							{killer} ÖÕ½áÁË {victim} µÄ^840ÃÍ¹¥^* µÄÁ¬É±£¬Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡
+streakend4							{killer} ÖÕ½áÁË {victim} µÄ ^440Ò°ÂùÈË^* µÄÁ¬É±£¬Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡
+streakend5							{killer} ÖÕ½áÁË {victim} µÄ ^840Ö÷Ô×^* µÄÁ¬É±£¬Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡
+streakend6							{killer} ÖÕ½áÁË {victim} µÄ ^800Å¦ÎÖË¹ÓÂÊ¿^* µÄÁ¬É±£¬Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡
+streakend7							{killer} ÖÕ½áÁË {victim} µÄ ^840´óÍÀÉ±^* µÄÁ¬É±£¬Ó®µÃ ^y{gold}^* ½ğ±Ò£¡£¡
 
-multikill0                          {killer} À´Á¯À³Á‰ ^008Ë«Ç¹Á‹Á™Á‰Á¤^*À£À¡
-multikill1                          {killer} À´Á¯À³Á‰ ^084Ã±Á—Á“Ï·À·À¨^*À£À¡À£À¡À£À¡
+multikill0							{killer} ´ï³É ^008Ë«Ç¹ËÙÉä^*£¡
+multikill1							{killer} ´ï³É ^084Ã±×ÓÏ··¨^*£¡£¡£¡
 
-killtower                           {killer} À´İ»Á™ÁÁ‹Ò»Á—Á¹Á‹Á¾À¡À£ {reward} Ó®ÀµÁƒ ^y{gold}^* À¶Á®ÁÁ¢À½Á°À±Ò£À¡
-denytower                           {player} Á’Á‘ ^444Á‡Á€ÁÈ´İ»Á™^* ÁÁ‹Ò»Á—Á¹Á‹Á¾À£À¡
-killcourier                         {victim} ÀµÁ„ÁÁ…Ê¹Á’Ñ±À» {killer} À»Á·É±À£À¡
+killtower							{killer} ´İ»ÙÁËÒ»×ùËş¡£ {reward} Ó®µÃ ^y{gold}^* ¶îÍâ½ğ±Ò£¡
+denytower							{player} ÒÑ ^444ÇÀÏÈ´İ»Ù^* ÁËÒ»×ùËş£¡
+killcourier							{victim} µÄĞÅÊ¹ÒÑ±» {killer} »÷É±£¡
 
-teamkillstreak0                     Ä³ÁˆÁ‹ÁÀ¬É±ÁÁ‹ 5 À¸Á¶Ó¢ÁÛ£À¡À£À¡À£À¡
-teamkillstreak1                     ^rÀ¾Á¼ÁÁ…^* ^rÁÀ¬É±ÁÁ‹ 5 À¸Á¶Ó¢ÁÛ£À¡À£À¡À£À¡^*
-teamkillstreak2                     ^170ÀµÁ˜Á“Á¼Á—Á¥^* ^170ÁÀ¬É± 5 À¸Á¶Ó¢ÁÛ£À¡À£À¡À£À¡^*
+teamkillstreak0						Ä³ÈËÁ¬É±ÁË 5 ¸öÓ¢ĞÛ£¡£¡£¡
+teamkillstreak1						^r¾üÍÅ^* ^rÁ¬É±ÁË 5 ¸öÓ¢ĞÛ£¡£¡£¡^*
+teamkillstreak2						^170µØÓü×å^* ^170Á¬É± 5 ¸öÓ¢ĞÛ£¡£¡£¡^*
 
-teamwipe                            {team} Á’Á‘ÁÁªÈ«À±À»ÁÁ»Áƒğ£¡£À¡À£À¡ 
+teamwipe							{team} ÒÑÍêÈ«±»ÏûÃğ£¡£¡£¡ 
 
-teamkill                            {killer} É±Á‹Á€ÁÁ‹ {victim}À£À¡À£À¡ À¶ÀªÊ§ÁÁ‹ ^y{gold}^* À½Á°À±Ò¡À£
+teamkill							{killer} É±ËÀÁË {victim}£¡£¡ ¶ªÊ§ÁË ^y{gold}^* ½ğ±Ò¡£
 
-neutralkill                         {victim} Á’Ñ±À»Á–ÁÁÀ¢À²À¿À¶Ó»Á·É±À¡À£
-kongorkill                          {victim} Á’Ñ±À» Kongor À»Á·É±À¡À£
+neutralkill							{victim} ÒÑ±»ÖĞÁ¢²¿¶Ó»÷É±¡£
+kongorkill							{victim} ÒÑ±» Kongor »÷É±¡£
 
-suicide                             {victim} Á—Á”É±ÁË£À¡
+suicide								{victim} ×ÔÉ±ÁË£¡
 
-kill                                {victim} Á’Ñ¾À­Á‹Á€ÁÁ¶À¡À£
+kill								{victim} ÒÑ¾­ËÀÍö¡£
 
-teamkilltower                       {killer} À´İ»Á™ÁÁ‹Ò»Á—Á¹Á‹Á¾À¡À£ {killer} Ó®ÀµÁƒ ^y{gold}^* À¶Á®ÁÁ¢À½Á°À±Ò£À¡
-teamdenytower                       {denier} ^444Á‡Á€ÁÈ´İ»Á™^* ÁÁ‹Ò»Á—Á¹Á‹Á¾À¡À£
+teamkilltower						{killer} ´İ»ÙÁËÒ»×ùËş¡£ {killer} Ó®µÃ ^y{gold}^* ¶îÍâ½ğ±Ò£¡
+teamdenytower						{denier} ^444ÇÀÏÈ´İ»Ù^* ÁËÒ»×ùËş¡£
 
-killkongor                          {killer} À»Á·É±ÁÁ‹ KongorÀ¡À£ {reward} Ó®ÀµÁƒ ^y{gold}^* À¶Á®ÁÁ¢À½Á°À±Ò£À¡
-teamkillkongor                      {killer} À»Á·É±ÁÁ‹ KongorÀ¡À£ {killer} Ó®ÀµÁƒ ^y{gold}^* À¶Á®ÁÁ¢À½Á°À±Ò£À¡
+killkongor							{killer} »÷É±ÁË Kongor¡£ {reward} Ó®µÃ ^y{gold}^* ¶îÍâ½ğ±Ò£¡
+teamkillkongor						{killer} »÷É±ÁË Kongor¡£ {killer} Ó®µÃ ^y{gold}^* ¶îÍâ½ğ±Ò£¡
 
-share0                              {player} À²À»Á”Á™Á“Á«Á„ÁºÀ·Á–ÁÁ­À¶Á”Á†äµ¥Î»ÀµÄ¿Á˜Á–Á†È¨À¡À£
-share1                              {player} Á•Á½Á“Á«Á„ÁºÀ·Á–ÁÁ­À¶Á”Á†äµ¥Î»ÀµÄ¿Á˜Á–Á†È¨À¡À£
-share2                              {player} Á•Á½Á“Á«Á„ÁºÀ·Á–ÁÁ­À¶Á”Á†Á¤ÁÁ…Ê¹ÀµÄ¿Á˜Á–Á†È¨À¡À£
-share3                              {player} Á•Á½Á“Á«Á„ÁºÀ·Á–ÁÁ­À¶Á”Á†äµ¥Î»ÀµÄ¿Á˜Á–Á†È¨À¡À£
+share0								{player} ²»ÔÙÓëÄú·ÖÏí¶ÔÆäµ¥Î»µÄ¿ØÖÆÈ¨¡£
+share1								{player} ÕıÓëÄú·ÖÏí¶ÔÆäµ¥Î»µÄ¿ØÖÆÈ¨¡£
+share2								{player} ÕıÓëÄú·ÖÏí¶ÔÆäĞÅÊ¹µÄ¿ØÖÆÈ¨¡£
+share3								{player} ÕıÓëÄú·ÖÏí¶ÔÆäµ¥Î»µÄ¿ØÖÆÈ¨¡£
 
-powerup                             {player} À¼Á±Á†Á°ÁÁ‹ ^r{powerup}^*
+powerup								{player} ¼ñÆğÁË ^r{powerup}^*
 
-creepupgrade                        À²À¿À¶Ó±Á¤ÀµÃ¸Á¼À¼Á“Ç¿À´ó¡­¡À­
-megacreeps                          {killer} À´İ»Á™ÁÁ‹ {victim} Á‹Á¹Á“ĞµÀ¥Î»ÀµÁ„Á‰ÁºÀ²ÁºÀ½À¨Á–Á¾À¡À£ {killer} ÁÁ–Á”ÁšÓµÁ“Ğ³À¬À¼À¶À²À¿À¶Ó¡À£
+creepupgrade						²¿¶Ó±äµÃ¸ü¼ÓÇ¿´ó¡­¡­
+megacreeps							{killer} ´İ»ÙÁË {victim} ËùÓĞµ¥Î»µÄÉú²ú½¨Öş¡£ {killer} ÏÖÔÚÓµÓĞ³¬¼¶²¿¶Ó¡£
 
-smackdown                           {victim} Á’Ñ±À» {killer} À»Á·Á€À£À£À¡
-humiliation                         {killer} ÁÁŸÁˆÁ¨ÁÁ‹ {victim}À£À¡
-nemesis                             {killer} ÁÁªÈ«ÁÀ¬É±ÁÁ‹ {victim} ÀµÁ„ 5 À¸Á¶Ó¢ÁÛ£À¡
-retribution                         {killer} ÁŠÜµÀ½ÁÁ‹ {victim} À»À¹À»Á·À£À¡
+smackdown							{victim} ÒÑ±» {killer} »÷À££¡
+humiliation							{killer} ĞßÈèÁË {victim}£¡
+nemesis								{killer} ÍêÈ«Á¬É±ÁË {victim} µÄ 5 ¸öÓ¢ĞÛ£¡
+retribution							{killer} ÊÜµ½ÁË {victim} »¹»÷£¡
 
-client_connected                    {player_color}{player}^* Á’Á‘ÁÀ¬À½Ó¡À£
-client_reconnected                  {player_color}{player}^* Á’Á‘Á–Á˜ÁÁ‚ÁÀ¬À½Ó¡À£ À£À¨Ê£Á“Á À¶Ï¿ÀªÁÀ¬À½Á“Ê±À¼ä£º{time}À£À©
-client_disconnected                 {player_color}{player}^* Á’Ñ¶Ï¿ÀªÁÀ¬À½Ó¡À£
-client_terminated                   {player_color}{player}^* Á’Ñ±À»Á–Á•Ö¹À¡À£ Á‹Á»ÁƒÇµÁ„Ó¢ÁÁ›Á’Ñ±À»ÁÁ»Áƒğ£¬²Æ²ÁºÀ½À«À±À»À·Á–Á…Á¤À¸Á¸Á†Á¤À¶Á“Áé¡£
+client_connected					{player_color}{player}^* ÒÑÁ¬½Ó¡£
+client_reconnected					{player_color}{player}^* ÒÑÖØĞÂÁ¬½Ó¡£ £¨Ê£Óà¶Ï¿ªÁ¬½ÓÊ±¼ä£º{time}£©
+client_disconnected					{player_color}{player}^* ÒÑ¶Ï¿ªÁ¬½Ó¡£
+client_terminated					{player_color}{player}^* ÒÑ±»ÖÕÖ¹¡£ ËûÃÇµÄÓ¢ĞÛÒÑ±»ÏûÃğ£¬²Æ²ú½«±»·ÖÅä¸øÆä¶ÓÎé¡£
 
-hero_pick                           {player_color}{player}^* Ñ¡Á”Á±ÁÁ‹ ^885{hero_name}^*À¡À£
-hero_random                         {player_color}{player}^* Á‹Á¦À»ÁºÑ¡Á”Á±ÁÁ‹ ^885{hero_name}^*À¡À£
-hero_repick                         {player_color}{player}^* Á•Á½Á”Ú½Á¸ÁÁÁ–Á˜ÁÁ‚Ñ¡Á”Á±À¡À£ ^885{hero_name}^* ÁÁ–Á”Ú¿Á‰Á“Ã¡À£
-hero_swap                           {player_color}{player}^* Á“Á« {player2_color}{player2}^* À½À»À»À»ÁÁ‹Ó¢ÁÛ¡À£
-hero_swap_request                   {player_color}{player}^* ÁŒÁ¡À³Á¶Á“Á«Á„ÁºÀ½À»À»À»Ó¢ÁÛ¡À£
+hero_pick							{player_color}{player}^* Ñ¡ÔñÁË ^885{hero_name}^*¡£
+hero_random							{player_color}{player}^* Ëæ»úÑ¡ÔñÁË ^885{hero_name}^*¡£
+hero_repick							{player_color}{player}^* ÕıÔÚ½øĞĞÖØĞÂÑ¡Ôñ¡£ ^885{hero_name}^* ÏÖÔÚ¿ÉÓÃ¡£
+hero_swap							{player_color}{player}^* Óë {player2_color}{player2}^* ½»»»ÁËÓ¢ĞÛ¡£
+hero_swap_request					{player_color}{player}^* Ìá³öÓëÄú½»»»Ó¢ĞÛ¡£
 
-player_ready                        {player_color}{player}^* Á’Á‘ ^gÀ¾ÁÁÁ·^*À¡À£
-player_unready                      {player_color}{player}^* ^rÁ‰ÁÎ´À¾ÁÁÁ·^*À¡À£
+player_ready						{player_color}{player}^* ÒÑ ^g¾ÍĞ÷^*¡£
+player_unready						{player_color}{player}^* ^rÉĞÎ´¾ÍĞ÷^*¡£
 
-error_target_invulnerable           Ä¿À±ê´¦Á“ÁšÁŞµÁ×´Ì¬À¡À£
-error_not_ready                     {tool} Á‰ÁÎ´À¾ÁÁÁ·À¡À£
-error_low_mana                      À·À¨ÁÀ¦ÖµÀ²À»Á—ã£¬ÁŞ·À¨Ê¹Á“Áƒ {tool}À¡À£
-error_no_proxy                      ÁŞ¿É¹À© {tool} Ê¹Á“ÃµÁ„ÁŒÁ¦À´ÁºÀµÀ¥Î»À¡À£
-error_not_unit_ability              À±Á˜ÁÁ«Ö¸À¶À¨Ò»À¸Á¶À¾ß±À¸À´Ë¼À¼Á„ÜµÄµÀ¥Î»À¡À£
-error_not_unit_item                 À±Á˜ÁÁ«Ö¸À¶À¨Ò»À¸Á¶ÓµÁ“Ğ´Á‹ÁÁ¯Æ·ÀµÄµÀ¥Î»À¡À£
-error_not_unit                      À±Á˜ÁÁ«Ö¸À¶À¨Ò»À¸Á¶ÀµÀ¥Î»À¡À£
-error_invalid_target                Á•â²»ÁŠÁ‡Ò»À¸Á¶Á“ÁĞ§Ä¿À±ê¡£
+error_target_invulnerable			Ä¿±ê´¦ÓÚÎŞµĞ×´Ì¬¡£
+error_not_ready						{tool} ÉĞÎ´¾ÍĞ÷¡£
+error_low_mana						·¨Á¦Öµ²»×ã£¬ÎŞ·¨Ê¹ÓÃ {tool}¡£
+error_no_proxy						ÎŞ¿É¹© {tool} Ê¹ÓÃµÄÌæ´úµ¥Î»¡£
+error_not_unit_ability				±ØĞëÖ¸¶¨Ò»¸ö¾ß±¸´Ë¼¼ÄÜµÄµ¥Î»¡£
+error_not_unit_item					±ØĞëÖ¸¶¨Ò»¸öÓµÓĞ´ËÎïÆ·µÄµ¥Î»¡£
+error_not_unit						±ØĞëÖ¸¶¨Ò»¸öµ¥Î»¡£
+error_invalid_target				Õâ²»ÊÇÒ»¸öÓĞĞ§Ä¿±ê¡£
 
-chat_all                            ^269[ALL] {color}{player}À£Àº^*{message}
-chat_team                           ^y[TEAM] {color}{player}À£Àº^*{message}
-server_message                      ^188[SERVER] ^yÀ·Á¾ÁÁ±Á†Á·ÁÁ»Ï¢À£Àº{message}
+chat_all							^269[ALL] {color}{player}£º^*{message}
+chat_team							^y[TEAM] {color}{player}£º^*{message}
+server_message						^188[SERVER] ^y·şÎñÆ÷ÏûÏ¢£º{message}
 
-error_item_unavailable              {item} Á”Ú´Ë´À¦À²À»À¿Á‰Á“Ã¡À£
-error_low_gold_item                 ÁŞ·À¨À¹ÀºÁ‚Á² {item}À¡À£
-error_low_gold_recipe               ÁŞ·À¨À¹ÀºÁ‚Á² {item}À¡À£
+error_item_unavailable				{item} ÔÚ´Ë´¦²»¿ÉÓÃ¡£
+error_low_gold_item					ÎŞ·¨¹ºÂò {item}¡£
+error_low_gold_recipe				ÎŞ·¨¹ºÂò {item}¡£
 
-str_bonus                           {value} ÁÀ¦ÁÀ¿
-str_bonus_per_level                 {value_per_level} Ã¿À¼À¶ÁÀ¦ÁÀ¿
-str_bonus_per_charge                {value_per_charge} Ã¿À²Á£ÁÀ¦ÁÀ¿
-agi_bonus                           {value} ÁƒÁ´À½Á
-agi_bonus_per_level                 {value_per_level} Ã¿À¼À¶ÁƒÁ´À½Á
-agi_bonus_per_charge                {value_per_charge} Ã¿À²Á£ÁƒÁ´À½Á
-int_bonus                           {value} Á–Á‡ÁÀ¦
-int_bonus_per_level                 {value_per_level} Ã¿À¼À¶Á–Á‡ÁÀ¦
-int_bonus_per_charge                {value_per_charge} Ã¿À²Á£Á–Á‡ÁÀ¦
-max_health_bonus                    {value} Á‰ÁºÁƒÁ¼ÖµÁ‰ÁÁÁ
-max_health_mult_bonus               {value}%% Á‰ÁºÁƒÁ¼ÖµÁ‰ÁÁÁ
-max_mana_bonus                      {value} À·À¨ÁÀ¦ÖµÁ‰ÁÁÁ
-max_mana_mult_bonus                 {value}%% À·À¨ÁÀ¦ÖµÁ‰ÁÁÁ
-base_damage_mult_bonus              {value}%% À»Á¹À´À¡Á‰ËºÀ¦
-damage_bonus                        {value} Á‰ËºÀ¦
-move_speed_bonus                    {value} Á’Æ¶À¯Á‹Ù¶Áˆ
-move_speed_mult_bonus               {value}%% Á’Æ¶À¯Á‹Ù¶Áˆ
-move_speed_mult_bonus_per_charge    {value}%% Ã¿À²Á£Á’Æ¶À¯Á‹Ù¶Áˆ
-move_speed_slow_bonus               {value}%% Á’Æ¶À¯À½ÀµÀµÁ
-move_speed_slow_bonus_per_charge    {value}%% Ã¿À²Á£Á’Æ¶À¯À½ÀµÀµÁ
-attack_speed_bonus                  {value} À¹À¥À»Á·Á‹Ù¶Áˆ
-attack_speed_bonus_per_charge       {value} Ã¿À²ã¹¥À»Á·Á‹Ù¶Áˆ
-cast_speed_bonus                    {value} Ê©À·À¨Á‹Ù¶Áˆ
-armor_bonus                         {value} À»À¤À¼Á—Öµ
-armor_bonus_per_charge              {value} Ã¿À²ã»¤À¼Á—Öµ
-magic_armor_bonus                   {value} Ä§À·À¨À»À¤À¼Á—Öµ
-magic_armor_bonus_per_charge        {value} Ã¿À²Á£Ä§À·À¨À»À¤À¼Á—Öµ
-health_regen_percent_bonus          {value}%% Ã¿ÁƒÁ«Á‰ÁºÁƒÁ¼
-health_regen_bonus                  {value} Á‰ÁºÁƒÁ¼ÖµÀ»Ø¸À´
-health_regen_mult_bonus             {value}%% Á‰ÁºÁƒÁ¼ÖµÀ»Ø¸À´
-mana_regen_percent_bonus            {value}%% Ã¿Áƒë·¨ÁÀ¦
-mana_regen_bonus                    {value} À·À¨ÁÀ¦ÖµÀ»Ø¸À´
-mana_regen_mult_bonus               {value}%% À·À¨ÁÀ¦ÖµÀ»Ø¸À´
-deflection_bonus                    Á“Á {value1}%% À¼À¸Á‚Ê¸Á±ÀµÀ² {value2} À¹À¥À»Á·Á‰ËºÀ¦
-evasion_bonus                       {value}%% Á‰ÁÀ±Áœ
-ranged_evasion_bonus                {value}%% Ô¶À³ÁŒÁ‰ÁÀ±Áœ
-melee_evasion_bonus                 {value}%% À½Á¼Õ½Á‰ÁÀ±Áœ
-miss_chance_bonus                   {value}%% Î´ÁƒÁ¼Á–Ğ¼À¸Á‚ÁŠ
-lifesteal_bonus                     {value}%% Á‰ÁºÁƒÁ¼ÁÁ¼È¡
-critical_bonus                      Á“Á {value1}%% À¼À¸Á‚Ê·À¢À¶À¯ {value2}x Á–Á‚ÁƒÁ¼Ò»À»Á·
-incoming_damage_mult_bonus          {value}%% À³ÁÁŠÁœÁ‰ËºÀ¦
-debuff_duration_mult_bonus          {value}%% À¼ÁµÁ’Á¦Ä§À·À¨À³Á–ÁÁ¸Ê±À¼Á¤
-heal_mult_bonus                     {value}%% ÁŠÜµÀ½ÀµÁ„Á–ÁÁÁ†
-silenced_bonus                      À³ÁÄ¬
-perplexed_bonus                     ÁƒÔ»Á³
-disarmed_bonus                      À½Á‰Ğµ
-immobilized_bonus                   À¶À¨Á‰Á­
-revealed_bonus                      ÁÁ”ÁÁ–
-reveal_bonus                        {value} ÁÁ”ÁÖ·À¶Î§
-stealth_bonus                       Ç±ÁĞ´Á¸Á“Á {value} ÁƒÁ«Àµİ¼ÁµÊ±À¼Á¤
-unitwalking_bonus                   ÀµÀ¥Î»Á’Æ¶À¯
-immunity_bonus                      {type} ÁƒÁ¢Á’ÁŸ
-invulnerable_bonus                  ÁŞµÁ
-dispel_on_damage_bonus              Á‡Á½É¢Á‰ËºÀ¦
-dispel_on_action_bonus              Á‡Á½É¢ÁĞ¶À¯
+str_bonus							{value} Á¦Á¿
+str_bonus_per_level					{value_per_level} Ã¿¼¶Á¦Á¿
+str_bonus_per_charge				{value_per_charge} Ã¿²ãÁ¦Á¿
+agi_bonus							{value} Ãô½İ
+agi_bonus_per_level					{value_per_level} Ã¿¼¶Ãô½İ
+agi_bonus_per_charge				{value_per_charge} Ã¿²ãÃô½İ
+int_bonus							{value} ÖÇÁ¦
+int_bonus_per_level					{value_per_level} Ã¿¼¶ÖÇÁ¦
+int_bonus_per_charge				{value_per_charge} Ã¿²ãÖÇÁ¦
+max_health_bonus					{value} ÉúÃüÖµÉÏÏŞ
+max_health_mult_bonus				{value}%% ÉúÃüÖµÉÏÏŞ
+max_mana_bonus						{value} ·¨Á¦ÖµÉÏÏŞ
+max_mana_mult_bonus					{value}%% ·¨Á¦ÖµÉÏÏŞ
+base_damage_mult_bonus				{value}%% »ù´¡ÉËº¦
+damage_bonus						{value} ÉËº¦
+move_speed_bonus					{value} ÒÆ¶¯ËÙ¶È
+move_speed_mult_bonus				{value}%% ÒÆ¶¯ËÙ¶È
+move_speed_mult_bonus_per_charge	{value}%% Ã¿²ãÒÆ¶¯ËÙ¶È
+move_speed_slow_bonus				{value}%% ÒÆ¶¯½µµÍ
+move_speed_slow_bonus_per_charge	{value}%% Ã¿²ãÒÆ¶¯½µµÍ
+attack_speed_bonus					{value} ¹¥»÷ËÙ¶È
+attack_speed_bonus_per_charge		{value} Ã¿²ã¹¥»÷ËÙ¶È
+cast_speed_bonus					{value} Ê©·¨ËÙ¶È
+armor_bonus							{value} »¤¼×Öµ
+armor_bonus_per_charge				{value} Ã¿²ã»¤¼×Öµ
+magic_armor_bonus					{value} Ä§·¨»¤¼×Öµ
+magic_armor_bonus_per_charge		{value} Ã¿²ãÄ§·¨»¤¼×Öµ
+health_regen_percent_bonus			{value}%% Ã¿ÃëÉúÃü
+health_regen_bonus					{value} ÉúÃüÖµ»Ø¸´
+health_regen_mult_bonus				{value}%% ÉúÃüÖµ»Ø¸´
+mana_regen_percent_bonus			{value}%% Ã¿Ãë·¨Á¦
+mana_regen_bonus					{value} ·¨Á¦Öµ»Ø¸´
+mana_regen_mult_bonus				{value}%% ·¨Á¦Öµ»Ø¸´
+deflection_bonus					ÓĞ {value1}%% ¼¸ÂÊ¸ñµ² {value2} ¹¥»÷ÉËº¦
+evasion_bonus						{value}%% ÉÁ±Ü
+ranged_evasion_bonus				{value}%% Ô¶³ÌÉÁ±Ü
+melee_evasion_bonus					{value}%% ½üÕ½ÉÁ±Ü
+miss_chance_bonus					{value}%% Î´ÃüÖĞ¼¸ÂÊ
+lifesteal_bonus						{value}%% ÉúÃüÎüÈ¡
+critical_bonus						ÓĞ {value1}%% ¼¸ÂÊ·¢¶¯ {value2}x ÖÂÃüÒ»»÷
+incoming_damage_mult_bonus			{value}%% ³ĞÊÜÉËº¦
+debuff_duration_mult_bonus			{value}%% ¼õÒæÄ§·¨³ÖĞøÊ±¼ä
+heal_mult_bonus						{value}%% ÊÜµ½µÄÖÎÁÆ
+silenced_bonus						³ÁÄ¬
+perplexed_bonus						ÃÔ»ó
+disarmed_bonus						½ÉĞµ
+immobilized_bonus					¶¨Éí
+revealed_bonus						ÏÔÏÖ
+reveal_bonus						{value} ÏÔÏÖ·¶Î§
+stealth_bonus						Ç±ĞĞ´øÓĞ {value} Ãëµİ¼õÊ±¼ä
+unitwalking_bonus					µ¥Î»ÒÆ¶¯
+immunity_bonus						{type} ÃâÒß
+invulnerable_bonus					ÎŞµĞ
+dispel_on_damage_bonus				ÇıÉ¢ÉËº¦
+dispel_on_action_bonus				ÇıÉ¢ĞĞ¶¯
 
-script_on_attack                    À¹À¥À»Á·
-script_on_attack_impact             À¹À¥À»Á·ÁƒÁ¼Á–Á
-script_on_attacked_pre_impact       ÁŠÜµÀ½À¹À¥À»Á·
-script_on_attacked_post_impact      ÁŠÜµÀ½À¹À¥À»Á·
-script_on_activate_pre_impact       À¼À¤À»Á®
-script_on_activate_impact           À¼À¤À»Á®
-script_on_ability_impact            À¼À¤À»î¼¼Á„Áœ
-script_on_damage                    Á”Á¬À³Á‰Á‰ËºÀ¦
-script_on_damaged                   ÁŠÜµÀ½Á‰ËºÀ¦
-script_on_kill                      À»Á·É±
-script_on_killed                    À±À»À»Á·É±
+script_on_attack					¹¥»÷
+script_on_attack_impact				¹¥»÷ÃüÖĞ
+script_on_attacked_pre_impact		ÊÜµ½¹¥»÷
+script_on_attacked_post_impact		ÊÜµ½¹¥»÷
+script_on_activate_pre_impact		¼¤»î
+script_on_activate_impact			¼¤»î
+script_on_ability_impact			¼¤»î¼¼ÄÜ
+script_on_damage					Ôì³ÉÉËº¦
+script_on_damaged					ÊÜµ½ÉËº¦
+script_on_kill						»÷É±
+script_on_killed					±»»÷É±
 
-action_toggle                       Á‡Ğ»À»
-action_no_target                    
-action_target_position              Ä¿À±ÁªÎ»Á–Áƒ
-action_target_unit                  Ä¿À±êµ¥Î»
-action_target_global                È«À¾Á–
-action_target_self                  Á—Á”Á‰Á­
-action_facing                       ÁƒÁ¦ÁÁ²
-action_self_position                Á—Á”Á‰Á­Î»Á–Áƒ
-action_attack                       À¹À¥À»Á·
+action_toggle						ÇĞ»»
+action_no_target					
+action_target_position				Ä¿±êÎ»ÖÃ
+action_target_unit					Ä¿±êµ¥Î»
+action_target_global				È«¾Ö
+action_target_self					×ÔÉí
+action_facing						ÃæÏò
+action_self_position				×ÔÉíÎ»ÖÃ
+action_attack						¹¥»÷
 
-ability_levelup_max                 ^gÁ—Á®À¸ß¼À¶À±Á°^*
-ability_levelup_available           ^yÀµÀ¥À»Á·Á’Á”ÁŒÁ¡À¸ß´Ë¼À¼Á„Ü¼À¶À±Á°^*
-ability_levelup_unavailable         ^rÎ´À´ïµ½ÒªÁ‡Á³^*
+ability_levelup_max					^g×î¸ß¼¶±ğ^*
+ability_levelup_available			^yµ¥»÷ÒÔÌá¸ß´Ë¼¼ÄÜ¼¶±ğ^*
+ability_levelup_unavailable			^rÎ´´ïµ½ÒªÇó^*
 
-aura_range_global                   È«À¾Á–
+aura_range_global					È«¾Ö
 
-item_recipe                         {name} Á…ä·½
+item_recipe							{name} Åä·½
 
-activate_ability                    ÀµÀ¥À»Á·Á’Ô¼À¤À»Á®À´Ë¼À¼Á„Áœ
-activate_item                       ÀµÀ¥À»Á·Á’Ô¼À¤À»Á®À´Á‹ÁÁ¯Æ·
-activate_item_no_share              ^rÁ’Ñ½Á»Á“Áƒ - Á“Á‰ {name} À³Á–Á“Ğ¡À£
-activate_item_borrowed              ^gÀ½Á¨Á—Á” 
-activate_passive                    ^gÀ´Ë¼À¼Á„ÁœÎªÀ±À»À¶À¯
+activate_ability					µ¥»÷ÒÔ¼¤»î´Ë¼¼ÄÜ
+activate_item						µ¥»÷ÒÔ¼¤»î´ËÎïÆ·
+activate_item_no_share				^rÒÑ½ûÓÃ - ÓÉ {name} ³ÖÓĞ¡£
+activate_item_borrowed				^g½è×Ô 
+activate_passive					^g´Ë¼¼ÄÜÎª±»¶¯
 
-attribute_strength                  ÁÀ¦ÁÀ¿
-attribute_agility                   ÁƒÁ´À½Á
-attribute_intelligence              Á–Á‡ÁÀ¦
+attribute_strength					Á¦Á¿
+attribute_agility					Ãô½İ
+attribute_intelligence				ÖÇÁ¦
 
-attribute_damage_bonus              {value} Á‰ËºÀ¦
-attribute_health_bonus              {value} Á‰ÁºÁƒÁ¼ÖµÁ‰ÁÁÁ
-attribute_health_regen_bonus        {value} Á‰ÁºÁƒÁ¼ÖµÀ»Ø¸À´
-attribute_attack_speed_bonus        {value} À¹À¥À»Á·Á‹Ù¶Áˆ
-attribute_armor_bonus               {value} À»À¤À¼Á—Öµ
-attribute_mana_bonus                {value} À·À¨ÁÀ¦ÖµÁ‰ÁÁÁ
-attribute_mana_regen_bonus          {value} À·À¨ÁÀ¦ÖµÀ»Ø¸À´
+attribute_damage_bonus				{value} ÉËº¦
+attribute_health_bonus				{value} ÉúÃüÖµÉÏÏŞ
+attribute_health_regen_bonus		{value} ÉúÃüÖµ»Ø¸´
+attribute_attack_speed_bonus		{value} ¹¥»÷ËÙ¶È
+attribute_armor_bonus				{value} »¤¼×Öµ
+attribute_mana_bonus				{value} ·¨Á¦ÖµÉÏÏŞ
+attribute_mana_regen_bonus			{value} ·¨Á¦Öµ»Ø¸´
 
-auto_assemble                       Á—Ô¶À¯
+auto_assemble						×Ô¶¯
 
-shop_action_view_recipe             ^yÀµÀ¥À»Á·Á’Ô²é¿´À´Á‹Á…ä·½
-shop_action_view_item               ^yÀµÀ¥À»Á·Á’Ô²é¿´À´Á‹ÁÁ¯Æ·
-shop_action_auto_assemble           ^yÀ´Á‹ÁÁ¯Æ·À½À«Á—Ô¶À¯×°À±À¸
-shop_action_already_purchased       ^gÁ’Á‘ÓµÁ“Ğ´Á‹ÁÁ¯Æ·
-shop_action_cannot_shop             ^rÀ´ËµÀ¥Î»ÁŞ·À¨Ğ¯À´Á¸ÁÁ¯Æ·
-shop_action_cannot_afford_item      ^rÁŞ·À¨À¹ÀºÁ‚Á²À´Á‹ÁÁ¯Æ·
-shop_action_cannot_afford_recipe    ^rÁŞ·À¨À¹ÀºÁ‚Á²À´Á‹Á…ä·½
-shop_action_purchase_item           ^yÀµÀ¥À»Á·Á’Ô¹ÀºÁ‚Á²À´Á‹ÁÁ¯Æ·
-shop_action_purchase_recipe         ^yÀµÀ¥À»Á·Á’Ô¹ÀºÁ‚Á²À´Á‹Á…ä·½
-shop_action_unavailable             ^rÁ”Ú´Ë´À¦À²À»À¿Á‰Á“Áƒ
+shop_action_view_recipe				^yµ¥»÷ÒÔ²é¿´´ËÅä·½
+shop_action_view_item				^yµ¥»÷ÒÔ²é¿´´ËÎïÆ·
+shop_action_auto_assemble			^y´ËÎïÆ·½«×Ô¶¯×°±¸
+shop_action_already_purchased		^gÒÑÓµÓĞ´ËÎïÆ·
+shop_action_cannot_shop				^r´Ëµ¥Î»ÎŞ·¨Ğ¯´øÎïÆ·
+shop_action_cannot_afford_item		^rÎŞ·¨¹ºÂò´ËÎïÆ·
+shop_action_cannot_afford_recipe	^rÎŞ·¨¹ºÂò´ËÅä·½
+shop_action_purchase_item			^yµ¥»÷ÒÔ¹ºÂò´ËÎïÆ·
+shop_action_purchase_recipe			^yµ¥»÷ÒÔ¹ºÂò´ËÅä·½
+shop_action_unavailable				^rÔÚ´Ë´¦²»¿ÉÓÃ
 
 // END

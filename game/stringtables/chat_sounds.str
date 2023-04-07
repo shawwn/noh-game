@@ -1,30 +1,30 @@
-SentChannelMessage  /shared/sounds/ui/ccpanel/cc_sent_channel_message.wav
-SentWhisper     /shared/sounds/ui/ccpanel/cc_sent_whisper.wav
-SentIM          /shared/sounds/ui/ccpanel/cc_im_sent.wav
-SentClanMessage     /shared/sounds/ui/ccpanel/cc_sent_clan_message.wav
+SentChannelMessage	/shared/sounds/ui/ccpanel/cc_sent_channel_message.wav
+SentWhisper		/shared/sounds/ui/ccpanel/cc_sent_whisper.wav
+SentIM			/shared/sounds/ui/ccpanel/cc_im_sent.wav
+SentClanMessage		/shared/sounds/ui/ccpanel/cc_sent_clan_message.wav
 
-RecievedChannelMessage  /shared/sounds/ui/ccpanel/cc_recieved_channel_message.wav
-RecievedWhisper     /shared/sounds/ui/ccpanel/cc_recieved_whisper.wav
-RecievedIM      /shared/sounds/ui/ccpanel/cc_im_recieved.wav
-RecievedClanMessage /shared/sounds/ui/ccpanel/cc_recieved_clan_message.wav
+RecievedChannelMessage	/shared/sounds/ui/ccpanel/cc_recieved_channel_message.wav
+RecievedWhisper		/shared/sounds/ui/ccpanel/cc_recieved_whisper.wav
+RecievedIM		/shared/sounds/ui/ccpanel/cc_im_recieved.wav
+RecievedClanMessage	/shared/sounds/ui/ccpanel/cc_recieved_clan_message.wav
 
-NotifyBuddyOnline   /shared/sounds/ui/ccpanel/cc_buddy_online.wav
-NotifyBuddyOffline  /shared/sounds/ui/ccpanel/cc_buddy_offline.wav
-NotifyBuddyLeftGame /shared/sounds/ui/ccpanel/cc_buddy_left_game.wav
-NotifyBuddyJoinGame /shared/sounds/ui/ccpanel/cc_buddy_joined_game.wav
+NotifyBuddyOnline	/shared/sounds/ui/ccpanel/cc_buddy_online.wav
+NotifyBuddyOffline	/shared/sounds/ui/ccpanel/cc_buddy_offline.wav
+NotifyBuddyLeftGame	/shared/sounds/ui/ccpanel/cc_buddy_left_game.wav
+NotifyBuddyJoinGame	/shared/sounds/ui/ccpanel/cc_buddy_joined_game.wav
 
-NotifyClanOnline    /shared/sounds/ui/ccpanel/cc_clan_member_online.wav
-NotifyClanOffline   /shared/sounds/ui/ccpanel/cc_clan_member_offline.wav
-NotifyClanLeftGame  /shared/sounds/ui/ccpanel/cc_clan_member_left_game.wav
-NotifyClanJoinGame  /shared/sounds/ui/ccpanel/cc_clan_member_joined_game.wav
+NotifyClanOnline	/shared/sounds/ui/ccpanel/cc_clan_member_online.wav
+NotifyClanOffline	/shared/sounds/ui/ccpanel/cc_clan_member_offline.wav
+NotifyClanLeftGame	/shared/sounds/ui/ccpanel/cc_clan_member_left_game.wav
+NotifyClanJoinGame	/shared/sounds/ui/ccpanel/cc_clan_member_joined_game.wav
 
-NotifyBuddyAdded    /shared/sounds/ui/ccpanel/cc_buddy_added.wav
-NotifyBuddyRemoved  /shared/sounds/ui/ccpanel/cc_removed_buddy.wav
-NotifyAddedAsBuddy  /shared/sounds/ui/ccpanel/cc_added_as_buddy.wav
-NotifyRemovedAsBuddy    /shared/sounds/ui/ccpanel/cc_removed_as_buddy.wav
+NotifyBuddyAdded	/shared/sounds/ui/ccpanel/cc_buddy_added.wav
+NotifyBuddyRemoved	/shared/sounds/ui/ccpanel/cc_removed_buddy.wav
+NotifyAddedAsBuddy	/shared/sounds/ui/ccpanel/cc_added_as_buddy.wav
+NotifyRemovedAsBuddy	/shared/sounds/ui/ccpanel/cc_removed_as_buddy.wav
 
-NotifyClanRank      /shared/sounds/ui/ccpanel/cc_clan_rank.wav
-NotifyClanAdd       /shared/sounds/ui/ccpanel/cc_clan_add.wav
-NotifyClanRemove    /shared/sounds/ui/ccpanel/cc_clan_remove.wav
+NotifyClanRank		/shared/sounds/ui/ccpanel/cc_clan_rank.wav
+NotifyClanAdd		/shared/sounds/ui/ccpanel/cc_clan_add.wav
+NotifyClanRemove	/shared/sounds/ui/ccpanel/cc_clan_remove.wav
 
 // END
