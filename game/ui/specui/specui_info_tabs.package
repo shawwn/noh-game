@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+
+	<template name="specui_datarow_sep">
+		<panel width="100%" height="0.3h" noclick="true" sticky="1" stickytoinvis="0"
+			watch="SpectatorHeroExists{index}" ontrigger="SetVisible(!StringEmpty(SpectatorPlayer{index}) and SpectatorHeroExists{index});"
+		>
+			<panel color=".15 .15 .15 1" y="-1" width="-1.0h" height="1" valign="center" noclick="true" />
+			<panel color="0 0 0 1" width="-1.0h" height="1" valign="center" noclick="true" />
+		</panel>
+	</template>
+
+	<template name="specui_stats_slot_header">
+		<panel width="100%" height="2.4h" padding="0.1h" noclick="1" sticky="1" stickytoinvis="0" color="1 0 1 0.0" >	
+			<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="{headercolor=.5 .5 .5 1}"  onload="If(specui_mini_mode1, If(StringEquals('{headercolor=.5 .5 .5 1}', '#460000CB'), Split(SetBorderColor('#46000066'), SetColor('#46000066')), Split(SetBorderColor('#123d2566'), SetColor('#123d2566'))));"/>
+			<frame x="0" texture="/ui/frames/roundframe.tga" color="0 0 0 1" borderthickness="0.6h" blockinput="false" noclick="true"/>	
+			<panel float="right" padding="0.1h" noclick="true">			
+			
+				<!-- Spacer -->
+				<panel width="3.8h" noclick="1" sticky="1" stickytoinvis="0"></panel>
+				<!-- Murder Death Kills -->
+				<panel width="8h" height="90%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_kda', 'specui_kda_tip', '/ui/elements/stat_icons/kill_death_ratio.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" sticky="1" stickytoinvis="0" color="invisible" >
+					<image x="0.0" y="0.1h" width="1.7h" height="1.7h" align="center" valign="center" noclick="1" visible="1" texture="/ui/elements/stat_icons/kill_death_ratio.tga" />
+				</panel>
+				<!-- XPPM -->
+				<panel width="4.0h" height="90%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_xp', 'specui_xp_tip', '/ui/specui/elements/PushMarkerExp.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" sticky="1" stickytoinvis="0" color="invisible" >
+					<image x="0.0" width="2.5h" height="2.5h" align="center" valign="center" noclick="1" visible="1" texture="/ui/specui/elements/PushMarkerExp.tga" />
+				</panel>
+				<!-- GPM -->
+				<panel width="4.5h" height="90%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_gm', 'specui_gm_tip', '/ui/specui/elements/PushMarkerGold.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" sticky="1" stickytoinvis="0" color="invisible" >
+					<image x="0.0" width="1.8h" height="1.8h" align="center" valign="center" noclick="1" visible="1" texture="/ui/specui/elements/PushMarkerGold.tga" />
+				</panel>		
+
+				<!-- Creep Kills -->
+				<panel width="3.8h" height="90%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_ck', 'specui_ck_tip', '/ui/elements/stat_icons/npc_kills.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" sticky="1" stickytoinvis="0" color="invisible" >
+					<image x="0.0" y="0.1h" width="1.7h" height="1.7h" align="center" valign="center" noclick="1" visible="1" texture="/ui/elements/stat_icons/npc_kills.tga" />
+				</panel>				
+			
+				<!-- Creep Denies -->
+				<panel width="3.8h" height="90%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_cd', 'specui_cd_tip', '/ui/elements/stat_icons/npc_kills.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" sticky="1" stickytoinvis="0" color="invisible" >
+					<image x="0.0" y="0.1h" width="1.7h" height="1.7h" align="center" valign="center" noclick="1" visible="1" texture="/ui/elements/stat_icons/npc_kills.tga" color="red" />
+				</panel>	
+			
+				<!-- Player Dmg -->
+				<panel width="4.1h" height="90%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_hdmg', 'specui_hdmg_tip', '/ui/elements/stat_icons/player_damage.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" sticky="1" stickytoinvis="0" color="invisible" >
+					<image x="0.0" y="0.1h" width="1.7h" height="1.7h" align="center" valign="center" noclick="1" visible="1" texture="/ui/elements/stat_icons/player_damage.tga" />
+				</panel>				
+
+				<!-- Building Dmg -->
+				<panel width="4.2h" height="90%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_bdmg', 'specui_bdmg_tip', '/ui/elements/stat_icons/razed.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" sticky="1" stickytoinvis="0" color="invisible" >
+					<image x="0.0" y="0.1h" width="1.7h" height="1.7h" align="center" valign="center" noclick="1" visible="1" texture="/ui/elements/stat_icons/razed.tga" />
+				</panel>
+			
+			</panel>
+			
+		</panel>
+	</template>		
+	<template name="specui_stats_slot">
+		<panel width="100%" height="2.4h" float="right" padding="0.1h" noclick="1" sticky="1" stickytoinvis="0"
+			watch="SpectatorHeroExists{index}" ontrigger="SetVisible(!StringEmpty(SpectatorPlayer{index}) and SpectatorHeroExists{index});"
+		>	
+			<!-- Level -->
+			<label width="2.1h" x="-0.6h" textvalign="center" textalign="center" font="dyn_11" color="white" shadow="1" watch="SpectatorPlayer{index}" ontrigger="SetText(param4);" noclick="1"/>
+			<!-- Icon -->
+			<frame width="100@" height="100%" align="left" valign="center" watch="SpectatorPlayer{index}" ontrigger="SetColor(param3);" noclick="1"
+			>
+				<image width="-2" height="-2" align="center" valign="center" watch="SpectatorPlayer{index}" ontrigger="SetTexture(param2);"  noclick="0"
+					onclick="SelectUnit(SpectatorHeroIndex{index});"
+					onrightclick="If(GetSelectedEntity() != SpectatorHeroIndex{index}, Set(cg_lockCamera, 1), Set(cg_lockCamera, !cg_lockCamera)); SelectUnit(SpectatorHeroIndex{index}); "					
+				/>
+			</frame> 
+
+			<!-- Murder Death Kills -->
+			<panel width="7.6h" height="90%" noclick="1" sticky="1" stickytoinvis="0" color="invisible" >
+				<label textvalign="center" textalign="center" font="dyn_11" color="0.3 1.0 .3 1" shadow="1" watch="SpectatorPlayer{index}" ontrigger="SetText('^g' # param5 # '^777/' # '^r' # param6 # '^777/' # '^y' # param7)" noclick="1"/>
+			</panel>
+			<!-- XPPM -->
+			<panel width="4.0h" height="90%" noclick="1" sticky="1" stickytoinvis="0" color="invisible" >
+				<label textvalign="center" textalign="center" font="dyn_11" color="0.7 0.5 1 1" shadow="1" watch="SpectatorPlayer{index}" ontrigger="SetText(Ceil(param9));" noclick="1"/>
+			</panel>
+			<!-- GPM -->
+			<panel width="4.5h" height="90%" noclick="1" sticky="1" stickytoinvis="0" color="invisible" >
+				<label textvalign="center" textalign="center" font="dyn_11" color="1 0.74 0 1" shadow="1" watch="SpectatorPlayer{index}" ontrigger="SetText(Ceil(param10));" noclick="1"/>
+			</panel>		
+			
+			<!-- Creep Kills -->
+			<panel width="3.8h" height="90%" noclick="1" sticky="1" stickytoinvis="0" color="invisible" >
+				<label textvalign="center" textalign="center" font="dyn_11" color="0.7 1.0 0.7 1" shadow="1" watch="SpectatorPlayer{index}" ontrigger="SetText(Ceil(param15));" noclick="1"/>
+			</panel>			
+			
+			<!-- Creep Denies -->
+			<panel width="3.8h" height="90%" noclick="1" sticky="1" stickytoinvis="0" color="invisible" >
+				<label textvalign="center" textalign="center" font="dyn_11" color="1.0 0.7 0.7 1" shadow="1" watch="SpectatorPlayer{index}" ontrigger="SetText(Ceil(param16));" noclick="1"/>
+			</panel>				
+			
+			<!-- Player Dmg -->
+			<panel width="4.2h" height="90%" noclick="1" sticky="1" stickytoinvis="0" color="invisible" onload="CreateFloat('specui_state_playerDamage_{index}', 0);" >
+				<label textvalign="center" textalign="center" font="dyn_11" color="0.7 1.0 0.7 1" shadow="1"  noclick="1" 
+					watch="SpectatorPlayer{index}" 
+					ontrigger="
+					CallEvent('specui_brain_bug', 2);
+					Set('specui_state_playerDamage_{index}', param13); If(specui_state_playerDamage_max gt 1 and FtoA(param13*100/specui_state_playerDamage_max, 0, 0) lt 101, SetText(FtoA(param13*100/specui_state_playerDamage_max, 0, 0)#'%'), SetText('-'));" 
+				/>
+			</panel>				
+			
+			<!-- Building Dmg -->
+			<panel width="4.2h" height="90%" noclick="1" sticky="1" stickytoinvis="0" color="invisible" onload="CreateFloat('specui_state_buildingDamage_{index}', 0);" >
+				<label textvalign="center" textalign="center" font="dyn_11" color="1.0 0.7 0.7 1" shadow="1"  noclick="1" 
+					watch="SpectatorPlayer{index}" 
+					ontrigger="
+					CallEvent('specui_brain_bug', 3);
+					Set('specui_state_buildingDamage_{index}', param14); If(specui_state_buildingDamage_max gt 1 and FtoA(param14*100/specui_state_buildingDamage_max, 0, 0) lt 101, SetText(FtoA(param14*100/specui_state_buildingDamage_max, 0, 0)#'%'), SetText('-'));" 
+				/>
+			</panel>				
+			
+		</panel>
+	</template>			
+	 
+	<template name="specui_overview_slot_header">
+		<panel width="100%" height="2.4h" noclick="1" sticky="1" stickytoinvis="0" color="0 1 1 0.0" >	
+			<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="0.6h" color="{headercolor=.5 .5 .5 1}" onload="If(specui_mini_mode1, If(StringEquals('{headercolor=.5 .5 .5 1}', '#460000CB'), Split(SetBorderColor('#46000066'), SetColor('#46000066')), Split(SetBorderColor('#123d2566'), SetColor('#123d2566'))));"/>
+			<frame x="0" texture="/ui/frames/roundframe.tga" color="0 0 0 1" borderthickness="0.6h" blockinput="false" noclick="true"/>	
+			<panel float="right" padding="0.1h" noclick="true">
+				<!-- Spacer -->
+				<panel width="16.8h" noclick="1" sticky="1" stickytoinvis="0"></panel>
+				<!-- Murder Death Kills -->
+				<panel width="7.6h" height="90%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_kda', 'specui_kda_tip', '/ui/elements/stat_icons/kill_death_ratio.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" sticky="1" stickytoinvis="0" color="invisible" >
+					<image x="0.0" y="0.1h" width="1.7h" height="1.7h" align="center" valign="center" noclick="1" visible="1" texture="/ui/elements/stat_icons/kill_death_ratio.tga" />
+				</panel>
+				<!-- XPPM -->
+				<panel width="4.0h" height="90%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_xp', 'specui_xp_tip', '/ui/specui/elements/PushMarkerExp.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" sticky="1" stickytoinvis="0" color="invisible" >
+					<image x="0.0" width="2.5h" height="2.5h" align="center" valign="center" noclick="1" visible="1" texture="/ui/specui/elements/PushMarkerExp.tga" />
+				</panel>
+				<!-- GPM -->
+				<panel width="4.5h" height="90%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_gm', 'specui_gm_tip', '/ui/specui/elements/PushMarkerGold.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" sticky="1" stickytoinvis="0" color="invisible" >
+					<image x="0.0" width="1.8h" height="1.8h" align="center" valign="center" noclick="1" visible="1" texture="/ui/specui/elements/PushMarkerGold.tga" />
+				</panel>		
+				<panel width="2.25h" height="90%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_bb', 'specui_bb_tip', '/ui/fe2/store/icons/hero_token2.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" sticky="1" stickytoinvis="0" color="invisible" >
+					<image x="0.0" y="0.1h" width="1.8h" height="1.8h" align="center" valign="center" noclick="1" visible="1" texture="/ui/fe2/store/icons/hero_token2.tga" />
+				</panel>
+			</panel>
+			
+		</panel>
+	</template>		
+	<template name="specui_overview_slot">
+		<panel width="100%" height="2.4h" float="right" padding="0.1h" noclick="1" sticky="1" stickytoinvis="0" 
+			watch="SpectatorHeroExists{index}" ontrigger="SetVisible(!StringEmpty(SpectatorPlayer{index}) and SpectatorHeroExists{index});"
+		>	
+			<!-- Level -->
+			<label width="2.1h" x="-0.6h" textvalign="center" textalign="center" font="dyn_11" color="white" shadow="1" watch="SpectatorPlayer{index}" ontrigger="SetText(param4);" noclick="1"/>
+			<!-- Icon -->
+			<image width="90@" height="90%" align="left" valign="center" watch="SpectatorPlayer{index}" ontrigger="SetTexture(param2);"  noclick="0"
+					onclick="SelectUnit(SpectatorHeroIndex{index});"
+					onrightclick="If(GetSelectedEntity() != SpectatorHeroIndex{index}, Set(cg_lockCamera, 1), Set(cg_lockCamera, !cg_lockCamera)); SelectUnit(SpectatorHeroIndex{index}); "						
+			/>
+			<!-- Name -->
+			<panel width="13h" noclick="1" sticky="1" stickytoinvis="0" >
+				<label x=".3h" width="-0.3h" y="-0.2h" valign="top" textvalign="center" textalign="left" font="dyn_11" color="white" shadow="1" watch="SpectatorPlayer{index}" ontrigger="SetText(param0); SetColor(param3);" noclick="1"/>
+			</panel>
+			<!-- Murder Death Kills -->
+			<panel width="7.6h" height="90%" noclick="1" sticky="1" stickytoinvis="0" color="invisible" >
+				<label textvalign="center" textalign="center" font="dyn_11" color="0.3 1.0 .3 1" shadow="1" watch="SpectatorPlayer{index}" ontrigger="SetText('^g' # param5 # '^777/' # '^r' # param6 # '^777/' # '^y' # param7)" noclick="1"/>
+			</panel>
+			<!-- XPPM -->
+			<panel width="4.0h" height="90%" noclick="1" sticky="1" stickytoinvis="0" color="invisible" >
+				<label textvalign="center" textalign="center" font="dyn_11" color="0.7 0.5 1 1" shadow="1" watch="SpectatorPlayer{index}" ontrigger="SetText(Ceil(param9));" noclick="1"/>
+			</panel>
+			<!-- GPM -->
+			<panel width="4.5h" height="90%" noclick="1" sticky="1" stickytoinvis="0" color="invisible" >
+				<label textvalign="center" textalign="center" font="dyn_11" color="1 0.74 0 1" shadow="1" watch="SpectatorPlayer{index}" ontrigger="SetText(Ceil(param10));" noclick="1"/>
+			</panel>		
+			<!-- Buyback
+			<panel width="3.0h" height="90%" noclick="1" sticky="1" stickytoinvis="0" color="invisible" >
+				<label textvalign="center" textalign="center" font="dyn_11" color="white" shadow="1" 
+					watch="SpectatorHeroNumBuybacksRemaining{index}"  ontrigger="If(param0 lt 10, If(param0 gt 0, Split(SetColor('white'), SetText(param0)), Split(SetColor('red'), SetText(param0))), Split(SetColor('white'), SetText('')));" noclick="1"/>
+			</panel>	
+			 -->
+			<panel width="2.25h" height="90%" noclick="1" sticky="1" stickytoinvis="0" color="invisible" >
+				<image x="0.0" y="-0.15h" width="1.5h" height="1.5h" align="left" valign="center" noclick="1" visible="1" texture="/ui/fe2/store/icons/hero_token2.tga" watch="SpectatorHeroNumBuybacksRemaining{index}" ontrigger="If(param0 lt 10, If(param0 ge 1, SetVisible(1), SetVisible(0)));" />
+				<image x="0.75h"  y="0.25h" width="1.5h" height="1.5h" align="left" valign="center" noclick="1" visible="1" texture="/ui/fe2/store/icons/hero_token2.tga" watch="SpectatorHeroNumBuybacksRemaining{index}" ontrigger="If(param0 lt 10, If(param0 ge 2, SetVisible(1), SetVisible(0)));" />
+			</panel>				
+		</panel>
+	</template>			
+	
+	<template name="specui_bottom_tab_1" >
+		<panel noclick="1" float="right" x="1%" padding="1%" valign="bottom" color="0 1 1 0.0" >
+			<panel noclick="1" float="bottom" padding="1%" width="49%" >
+				<panel width="100%" height="0.2h" noclick="true" />
+				<instance name="specui_overview_slot_header" team="0" headercolor="#123d25CB" /> 
+				<instance name="specui_overview_slot" index="0" />
+				<instance name="specui_datarow_sep" index="1" />
+				<instance name="specui_overview_slot" index="1" />
+				<instance name="specui_datarow_sep" index="2" />
+				<instance name="specui_overview_slot" index="2" />
+				<instance name="specui_datarow_sep" index="3" />
+				<instance name="specui_overview_slot" index="3" />
+				<instance name="specui_datarow_sep" index="4" />
+				<instance name="specui_overview_slot" index="4" /> 			
+			</panel>
+			<panel noclick="1" float="bottom" padding="1%" width="49%" >
+				<panel width="100%" height="0.2h" noclick="true" />
+				<instance name="specui_overview_slot_header" team="1" headercolor="#460000CB" /> 
+				<instance name="specui_overview_slot" index="5" />
+				<instance name="specui_datarow_sep" index="6" />
+				<instance name="specui_overview_slot" index="6" /> 
+				<instance name="specui_datarow_sep" index="7" />
+				<instance name="specui_overview_slot" index="7" /> 
+				<instance name="specui_datarow_sep" index="8" />
+				<instance name="specui_overview_slot" index="8" /> 
+				<instance name="specui_datarow_sep" index="9" />
+				<instance name="specui_overview_slot" index="9" /> 	
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="specui_bottom_tab_3" >
+		<instance name="specui_stats_graph" tab="gpm" paramtrigger="Round(param10)" label="Gold Per Minute" />
+	</template>
+	
+	<template name="specui_bottom_tab_4" >
+		<instance name="specui_stats_graph" tab="xpm" paramtrigger="Round(param9)" label="XP Per Minute" />
+	</template>	
+	
+	<template name="specui_bottom_tab_2" >
+		<panel noclick="1" float="right" x="1%" padding="1%" valign="bottom" color="0 1 1 0.0" >
+			<panel noclick="1" float="bottom" padding="1%" width="49%"   color="0 1 0 0.0" >	
+				<panel width="100%" height="0.2h" noclick="true" />
+				<instance name="specui_stats_slot_header" team="0" headercolor="#123d25CB" /> 
+				<instance name="specui_stats_slot" index="0" />
+				<instance name="specui_datarow_sep" index="1" />
+				<instance name="specui_stats_slot" index="1" />
+				<instance name="specui_datarow_sep" index="2" />
+				<instance name="specui_stats_slot" index="2" />
+				<instance name="specui_datarow_sep" index="3" />
+				<instance name="specui_stats_slot" index="3" />
+				<instance name="specui_datarow_sep" index="4" />
+				<instance name="specui_stats_slot" index="4" />
+			</panel>
+			<panel noclick="1" float="bottom" padding="1%" width="49%"  color="1 0 0 0.0" >
+				<instance name="specui_stats_slot_header" team="1" headercolor="#460000CB" />
+				<panel width="100%" height="0.2h" noclick="true" />
+				<instance name="specui_stats_slot" index="5" />
+				<instance name="specui_datarow_sep" index="6" />
+				<instance name="specui_stats_slot" index="6" />
+				<instance name="specui_datarow_sep" index="7" />
+				<instance name="specui_stats_slot" index="7" />
+				<instance name="specui_datarow_sep" index="8" />
+				<instance name="specui_stats_slot" index="8" />
+				<instance name="specui_datarow_sep" index="9" />
+				<instance name="specui_stats_slot" index="9" />
+			</panel>
+		</panel>	
+	</template>	
+	
+	<!-- Creeps 15 16
+	<template name="specui_bottom_tab_5" >
+		<instance name="specui_stats_graph_double" tab="ck" paramtrigger="Round(param15)" paramtrigger1="Round(param16)" label="Creep Kills" label1="Creep Denies" />
+	</template>		
+	 -->
+	<!-- Damage 13 14 -->
+	<template name="specui_bottom_tab_5" >
+		<!--
+		<instance name="specui_stats_graph_double" tab="dmg" paramtrigger="Round(param13)" paramtrigger1="Round(param14)" div="specui_state_playerDamage_max" div1="specui_state_buildingDamage_max" label="Hero Damage" label1="Building Damage" />
+		-->
+		<instance name="specui_stats_graph" tab="dmg" paramtrigger="Round(param13)"  div="specui_state_playerDamage_max" label="Hero Damage" />
+	</template>	
+	
+	<!-- Kills 5 6 7 -->
+	<!--
+	<template name="specui_bottom_tab_6" >		
+		<instance name="specui_stats_graph_double" tab="kills" paramtrigger="Round(param5)" paramtrigger1="Round(param7)" label="Kills" label1="Assists" />		
+		<instance name="specui_stats_graph" tab="kills" paramtrigger="Round(param5 + param7)" label="Kills + Assists" />
+	</template>		
+	 -->
+	 
+	<template name="Moptions_slider_bg">
+		<panel width="{width=100%}" height="{height=100%}">
+			<image width="-200@" align="center" texture="/ui/info/slider_backdrop_c.tga" />
+			<image height="100%" width="100@" align="left" texture="/ui/info/slider_backdrop_l.tga" />
+			<image height="100%" width="100@" align="right" texture="/ui/info/slider_backdrop_r.tga" />
+		</panel>
+	</template>
+	
+	<template name="Moptions_slider">
+		<panel width="{width=100%}" height="{height=100%}">
+			<panel width="{labelwidth=50%}" float="right">
+				<label color="white" font="dyn_10" textvalign="center" shadow="true" fitx="true" fitxpadding=".5h">{label}</label>
+			</panel>
+			<panel width="-{labelwidth=50%}" height="100%" align="right">
+				<panel x="-230@" width="160@" height="100%" visible="{showvalue=true}">
+					<cvarlabel textvalign="center" textalign="center" font="{font=dyn_10}" color="#3abde7" shadow="true" height="100%" onload="CreateString('{slider_name}_value');" cvar="{slider_name}_value" />
+					<image texture="/shared/icons/frame.tga" width="100%" height="100%" noclick="true" />
+				</panel>
+				<image x="-5%" width="50@" height="40%" valign="center" texture="/ui/info/arrow.tga" />
+				<instance name="Moptions_slider_bg" />
+				<panel width="-1.5h" height="100%" align="center">
+					<label color="white" height="100%" textvalign="center" shadow="true" font="{font=dyn_9}" valign="center" align="left" textalign="left">Low</label>
+					<label color="white" height="100%" textvalign="center" shadow="true" font="{font=dyn_9}" valign="center" align="right" textalign="right">High</label>
+				</panel>
+				<panel width="-300@" height="100%" align="center">
+					<slider
+						name="{slider_name}"
+						slotwidth="-1%" slotheight="0.6h"
+						slotcolor="1 1 1 1"
+						handlewidth="100@" handleheight="-10%"
+						handlecolor="1 1 1 1"
+						cvar="{cvar}"
+						minvalue="{minvalue}" maxvalue="{maxvalue}"
+						step="{step}"
+						texture="/ui/info/slider.tga"
+						onselect="PlaySound('/shared/sounds/ui/button_over_02.wav');"
+						onchange="PlaySound('/shared/sounds/ui/button_slide_01.wav'); Set({slider_name}_value, {value}); {action=};"
+						onshow="Set({slider_name}_value, {value});"
+					/>
+				</panel>
+			</panel>
+		</panel>
+	</template>
+
+	<template name="Moptions_slider_container">
+		<panel width="{width=100%}" align="center" height="2.5h" noclick="1">
+			<panel width="96%" align="center">
+				<panel width="-2.6h" height="100%" valign="center" align="left"	noclick="1">
+					<instance name="Moptions_slider" height="2.5h" showvalue="{showvalue=true}" labelwidth="{labelwidth=50%}" font="{font=dyn_9}" cvar="{cvar}" step="{step}" slider_name="{slider_name}" minvalue="{minvalue=0}" maxvalue="{maxvalue=1}" value="if({round_var=true}, (round ({cvar} * if({percent=true}, 100, 1))), {cvar})" label="{label}" action=""/>
+				</panel>
+				<instance name="tip_mark" tip_id="M{tip_id}" width="80@" height="80%" valign="center" align="right" />
+				<!-- <instance name="generic_tooltip_float_resizey" x="-56@" width="23h" align="right" tip_id="M{tip_id}" title="{tip_label}_header" label="{tip_label}" /> -->
+			</panel>
+		</panel>
+	</template>	
+	 
+	<!-- Options -->
+	<template name="specui_bottom_tab_8" >
+		<panel noclick="1" width="-1.8h" align="center" padding="1%" valign="bottom">
+		
+			<!-- Header -->
+			<panel y="0.8h" height="2.4h" noclick="true" >
+				<label height="100%" font="dyn_14" color="#59c3f8" shadow="true" textvalign="center" content="specui_options_header" noclick="true" />
+				<instance
+					name="button2"
+					width="10.0h" height="2.4h" x="-12h"
+					align="right"
+					valign="center"
+					label="Overlay" font="dyn_10"
+					onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+					onclick="ToggleWidget('bang_bbp_panelConfig');"
+				/>
+				<instance
+					name="button2"
+					width="10.0h" height="2.4h"
+					align="right"
+					valign="center"
+					label="general_help" font="dyn_10"
+					onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav');"
+					onclick="Call('specui_first_time', 'FadeIn(250);');"
+				/>
+				<panel y="0.7h" width="100%" height="0.3h" valign="bottom" noclick="true" sticky="1" stickytoinvis="0">
+					<panel color=".15 .15 .15 1" y="-1" height="1" valign="center" noclick="true" />
+					<panel color="0 0 0 1" width="-1.0h" height="1" valign="center" noclick="true" />
+				</panel>
+			</panel>
+		
+			<!-- Left Options -->
+			<panel noclick="1" float="bottom" padding="2.0%" y="4.1h" width="49%" align="left">
+				<panel height="2.5h" width="50%" noclick="1" align="left" valign="top" 
+					onload="Instantiate('Noptions_checkbox', 'height', '1.5h', 'tip_id', 'specui_options_showTips', 'font', 'dyn_9', 'valign', 'center', 'cvar', 'specui_show_tooltips', 'label', 'specui_options_showTips', 'enabled', '1', 'onshow', 'SetButtonState(specui_show_tooltips);');"
+				>				
+				</panel>
+				<panel height="2.5h" width="50%" noclick="1" align="left" valign="top" 
+					onload="Instantiate('Noptions_checkbox', 'height', '1.5h', 'tip_id', 'specui_options_showItemPurch', 'font', 'dyn_9', 'valign', 'center', 'cvar', 'specui_show_popup_item', 'label', 'specui_options_showItemPurch', 'enabled', '1', 'onshow', 'SetButtonState(specui_show_popup_item);');"
+				>	
+				</panel>
+				<panel height="2.5h" width="50%" noclick="1" align="left" valign="top" >
+					<instance name="Noptions_checkbox" height="1.5h" tip_id="replay_lockcam_tip" font="dyn_9" valign="center" cvar="cg_lockCamera" label="game_replay_control_lockcam" enabled="1" onshow="SetButtonState(cg_lockCamera);" />
+				</panel>	
+				<panel height="2.5h" width="50%" noclick="1" align="left" valign="top" 
+					onload="Instantiate('Noptions_checkbox', 'height', '1.5h', 'tip_id', 'specui_options_showHotkeys', 'font', 'dyn_9', 'valign', 'center', 'cvar', 'specui_show_hotkeys', 'label', 'specui_options_showHotkeys', 'enabled', '1', 'onshow', 'SetButtonState(specui_show_hotkeys);');"
+				>						
+				</panel>	
+				<panel height="2.5h" width="50%" noclick="1" align="left" valign="top" 
+					onload="Instantiate('Noptions_checkbox', 'height', '1.5h', 'tip_id', 'specui_options_detectCombat', 'font', 'dyn_9', 'valign', 'center', 'cvar', 'specui_show_popup_gank', 'label', 'specui_options_detectCombat', 'enabled', '1', 'onshow', 'SetButtonState(specui_show_popup_gank);');"
+				>				
+				</panel>	
+				<panel height="2.5h" width="50%" noclick="1" align="left" valign="top" 
+					onload="Instantiate('Noptions_checkbox', 'height', '1.5h', 'tip_id', 'specui_options_hideChat', 'font', 'dyn_9', 'valign', 'center', 'cvar', 'cg_ignoreReplaySpectatorChat', 'label', 'specui_options_hideChat', 'enabled', '1', 'onshow', 'SetButtonState(cg_ignoreReplaySpectatorChat);');"
+				>				
+				</panel>					
+			</panel>
+			
+			<!-- Right Options -->
+			<panel noclick="1" float="bottom" padding="1%" y="4.5h" width="49%" align="right">				
+				<panel height="3.5h" width="100%" noclick="1" align="left" valign="top" >
+					<instance name="Moptions_slider_container" round_var="true" percent="false" cvar="specui_itempop_gold_threshold" minvalue="100" maxvalue="2000" step="100" 
+						slider_name="specui_slider_itemCostThreshold" tip_id="specui_options_costThreshold" label="specui_options_costThreshold" tip_label="" 
+					/>
+				</panel>
+				<panel height="3.5h" width="100%" noclick="1" align="left" valign="top" >
+					<instance name="Moptions_slider_container" round_var="true" percent="false" cvar="specui_combatpop_display" minvalue="1" maxvalue="60" step="1" 
+						slider_name="specui_slider_cd_duration" tip_id="specui_options_popupLife" label="specui_options_popupLife" tip_label="" 
+					/>
+				</panel>
+				<panel height="3.5h" width="100%" noclick="1" align="left" valign="top" >
+					<instance name="Moptions_slider_container" round_var="true" percent="false" cvar="specui_combatpop_cooldown" minvalue="1" maxvalue="60" step="1" 
+						slider_name="specui_slider_cd_cd" tip_id="specui_options_popupCD" label="specui_options_popupCD" tip_label="" 
+					/>
+				</panel>
+				<panel height="2.5h" width="100%" noclick="1" align="left" valign="top" float="right" >
+					<panel height="2.5h" width="50%" noclick="1" align="left" valign="top" 
+						onload=" Instantiate('Noptions_checkbox', 'height', '1.5h', 'tip_id', 'specui_options_miniMode', 'font', 'dyn_9', 'valign', 'center', 'cvar', 'specui_mini_mode', 'label', 'specui_options_miniMode', 'enabled', '1', 'onshow', 'SetButtonState(specui_mini_mode);'); "
+					>						
+					</panel>		
+					<panel height="2.5h" width="50%" noclick="1" align="right" valign="top" 
+						onload=" Instantiate('Noptions_checkbox', 'height', '1.5h', 'tip_id', 'specui_options_miniMode1', 'font', 'dyn_9', 'valign', 'center', 'cvar', 'specui_mini_mode1', 'label', 'specui_options_miniMode1', 'enabled', '1', 'onshow', 'SetButtonState(specui_mini_mode1);'); "
+					>				
+					</panel>
+				</panel>
+				<panel height="2.5h" width="100%" noclick="1" align="left" valign="top" float="right" >
+					<panel height="2.5h" width="50%" noclick="1" align="left" valign="top" 
+						onload=" Instantiate('Noptions_checkbox', 'height', '1.5h', 'tip_id', 'specui_options_miniMode2', 'font', 'dyn_9', 'valign', 'center', 'cvar', 'specui_mini_mode2', 'label', 'specui_options_miniMode2', 'enabled', '1', 'onshow', 'SetButtonState(specui_mini_mode2);'); "
+					>						
+					</panel>		
+				</panel>				
+				<!--
+				<panel height="2.5h" width="50%" noclick="1" align="left" valign="top" >
+					<instance name="Noptions_checkbox" height="1.5h" tip_id="specui_options_abilityLvlUps" font="dyn_9" valign="center" cvar="specui_show_popup_ability_learn" label="specui_options_abilityLvlUps" enabled="0" />					
+				</panel>
+				<panel height="2.5h" width="50%" noclick="1" align="left" valign="top" >
+					<instance name="Noptions_checkbox" height="1.5h" tip_id="" font="dyn_9" valign="center" cvar="specui_show_popup_ability_use" label="specui_options_abilityUsage" enabled="0" />					
+				</panel>
+				-->
+			</panel>			
+			
+		</panel>				
+	</template>		
+	
+	<template name="specui_graph_bar" >
+		<frame group="specui_{id}_graph_bars" onevent="DestroyWidget();" noclick="0" width="{width=3h}" color="{color=orange}" valign="bottom" height="{height=1%}" visible="0"
+			onmouseover="SetColor('cyan');"  
+			onmouseout="SetColor('{color=orange}'); HideWidget('specui_graph_tooltips');" 
+			onhide="SetColor('{color=orange}'); HideWidget('specui_graph_tooltips');"
+			bordercolor="0 0 0 0.6"  borderthickness="1"
+			watch="SpecUISort{tab}{team}"
+			ontrigger="			
+				## Echo('SpecUISort{tab}{team} Sorting'); ##
+				If(({index} == param2),
+					SetHeight( 
+						Max (( (param1 / specui_graph_max_{tab}) * 100), 3) # '%' 
+					)
+				);	
+				If(({index} == param2),
+					If( (GetX() != (1-param0) * -1 * GetXFromString('4.0h')), Split(SlideX((1-param0) * -1 * GetXFromString('4.0h'), 250), SleepWidget(300, 'SetX(GetX());')) )
+				);
+				" 
+			watch1="SpectatorHeroPlayerInfo{index}"
+			ontrigger1="
+				SetOnMouseOver('
+					Trigger(\'SpecUIGraphTooltipUpdate\', \''# param0 #'\', \''# param1 #'\', \'specui_player_{tab}{team}_{index}\', \'{label}\', \'{div=0}\');
+					ShowWidget(\'specui_graph_tooltips\');
+				');
+				SetVisible(!StringEmpty(param1));
+			"	
+			watch2="SpectatorHeroExists{index}" ontrigger2="SetVisible(!StringEmpty(SpectatorPlayer{index}) and SpectatorHeroExists{index});"
+			onclick="SelectUnit(SpectatorHeroIndex{index});"
+			onrightclick="If(GetSelectedEntity() != SpectatorHeroIndex{index}, Set(cg_lockCamera, 1), Set(cg_lockCamera, !cg_lockCamera)); SelectUnit(SpectatorHeroIndex{index}); "	
+		>
+			<panel y="0" x="0" width="3h" height="4.7h" visible="0"  noclick="0" onload="SetY('-4.8h'); CreateInt('specui_player_{tab}{team}_{index}');" 
+				watch1="SpectatorPlayer{index}" ontrigger1="Set('specui_player_{tab}{team}_{index}', {paramtrigger});"
+				watch="SpectatorHeroPlayerInfo{index}" ontrigger="				
+					SetVisible(!StringEmpty(param1));
+					SetOnMouseOver('
+						Trigger(\'SpecUIGraphTooltipUpdate\', \''# param0 #'\', \''# param1 #'\', \'specui_player_{tab}{team}_{index}\', \'{label}\', \'{div=0}\');
+						ShowWidget(\'specui_graph_tooltips\');
+					');					
+					"					
+				onmouseout="HideWidget('specui_graph_tooltips');" 
+				onhide="HideWidget('specui_graph_tooltips');"
+				onclick="SelectUnit(SpectatorHeroIndex{index});"
+				onrightclick="If(GetSelectedEntity() != SpectatorHeroIndex{index}, Set(cg_lockCamera, 1), Set(cg_lockCamera, !cg_lockCamera)); SelectUnit(SpectatorHeroIndex{index}); "			
+			>
+				<!-- Hero Icon -->
+				<panel width="3h" height="3h" noclick="1" color="white" valign="top"  align="center"
+					watch="SpectatorHeroPlayerInfo{index}" ontrigger="SetColor(param1);"					
+				>
+					<image  height="92%" width="92@"  noclick="1" valign="center" align="center"  
+							onload="SetTexture(GetEntityIconPath('Hero_Ophelia'));"
+							watch="SpectatorHeroHeroInfo{index}" ontrigger="SetTexture(param1);"
+							watch1="SpectatorHeroStatus{index}" ontrigger1="If(param, SetRenderMode('normal'), SetRenderMode('grayscale'));" 
+					/>	
+				</panel>
+				<label height="1.7h" y="1" width="3.6h" align="center" valign="bottom" textalign="center" textvalign="bottom" font="dyn_11" color="#ffab01" content="{index}" noclick="1" outline="1"
+					watch1="SpectatorHeroPlayerInfo{index}" ontrigger1="If({div=0} != 0, SetText(''), SetText(Evaluate('specui_player_{tab}{team}_{index}'))); SetColor(If({team} == 0, '0.3 1 0.2 1.0', '1.0 0.3 0.0 1'));"
+					watch="SpectatorPlayer{index}" ontrigger="If({div=0} == 0, SetText({paramtrigger}), If(Round({paramtrigger}*100/{div=0}) lt 101, SetText(Round({paramtrigger}*100/{div=0})#'%'), SetText('')));"
+				/>					
+			</panel>
+			
+		</frame>
+	</template>
+	
+	<template name="specui_stats_graph" >	
+		<panel noclick="1" x="-1.2h" y="-0.7h" width="49h" height="80%" align="center" valign="bottom" group="specui_{tab}_graph_bars"  onevent1="SetVisible(1);" onevent2="SetVisible(0);" onevent3="SetVisible(0);"  >
+			<panel noclick="1" x="-21%" width="40%" float="right" valign="bottom" align="center" padding="1h" color="0.3 0.3 0.3 0.0" 
+				onhide="SetHeight('1%'); SleepWidget(0, '');" 
+				onshow="SetHeight('1%'); ScaleHeight('1%', 1); DoEvent(); Trigger('BangSpecUIThrottleToggle', 1); SleepWidget(400, 'DoEvent(1);');"
+				onload="CreateString('specui_player_{tab}0_preSortString'); CreateString('specui_player_{tab}0_postSortString'); CreateFloat('specui_graph_max_{tab}', 0);"
+				onevent="ScaleHeight('80%', 350);"
+				watch1="BangSpecUIThrottle"
+				ontrigger1="If(IsVisible(), DoEvent(1));"
+				onevent1="
+					## Echo('BangSpecUIThrottle Sorting'); ##
+					Set('specui_player_{tab}0_preSortString', '');
+					Set('specui_player_{tab}1_preSortString', '');
+					Set('specui_graph_max_{tab}', 0);
+					
+					For(0, 4, 1, '
+						Set(\'specui_player_{tab}0_preSortString\', Evaluate(\'specui_player_{tab}0_preSortString\') # Evaluate(\'specui_player_{tab}0_\'#iParam) # \',\' # iParam );
+						If(iParam lt 4, Set(\'specui_player_{tab}0_preSortString\', Evaluate(\'specui_player_{tab}0_preSortString\') # \'|\' ));
+						If( Evaluate(\'specui_player_{tab}0_\'#iParam) gt Evaluate(\'specui_graph_max_{tab}\'), Set(\'specui_graph_max_{tab}\', Evaluate(\'specui_player_{tab}0_\'#iParam)) );					
+					');
+					
+					For(5, 9, 1, '
+						Set(\'specui_player_{tab}1_preSortString\', Evaluate(\'specui_player_{tab}1_preSortString\') # Evaluate(\'specui_player_{tab}1_\'#iParam) # \',\' # iParam );
+						If(iParam lt 9, Set(\'specui_player_{tab}1_preSortString\', Evaluate(\'specui_player_{tab}1_preSortString\') # \'|\' ));
+						If( Evaluate(\'specui_player_{tab}1_\'#iParam) gt Evaluate(\'specui_graph_max_{tab}\'), Set(\'specui_graph_max_{tab}\', Evaluate(\'specui_player_{tab}1_\'#iParam)) );
+					');										
+					
+					Set('specui_player_{tab}1_postSortString', Sort(Evaluate('specui_player_{tab}1_preSortString'), '|', 0, ',', 0, 1));
+					Set('specui_player_{tab}0_postSortString', Sort(Evaluate('specui_player_{tab}0_preSortString'), '|', 1, ',', 0, 1));
+					
+					ExplodeTrigger('SpecUISort{tab}0', Evaluate('specui_player_{tab}0_postSortString'), '|', ',');
+					ExplodeTrigger('SpecUISort{tab}1', Evaluate('specui_player_{tab}1_postSortString'), '|', ',');
+				"				
+			>				
+				<instance name="specui_graph_bar" tab="{tab}" team="0" index="0" value="50" id="specui_{tab}_bars" width="3h" height="1%" color="0.3 1 0.2 1.0" paramtrigger="{paramtrigger}" div="{div=0}" label="{label}"   />
+				<instance name="specui_graph_bar" tab="{tab}" team="0" index="1" value="50" id="specui_{tab}_bars" width="3h" height="1%" color="0.3 1 0.2 1.0" paramtrigger="{paramtrigger}" div="{div=0}" label="{label}"   />
+				<instance name="specui_graph_bar" tab="{tab}" team="0" index="2" value="50" id="specui_{tab}_bars" width="3h" height="1%" color="0.3 1 0.2 1.0" paramtrigger="{paramtrigger}" div="{div=0}" label="{label}"   />
+				<instance name="specui_graph_bar" tab="{tab}" team="0" index="3" value="50" id="specui_{tab}_bars" width="3h" height="1%" color="0.3 1 0.2 1.0" paramtrigger="{paramtrigger}" div="{div=0}" label="{label}"   />
+				<instance name="specui_graph_bar" tab="{tab}" team="0" index="4" value="50" id="specui_{tab}_bars" width="3h" height="1%" color="0.3 1 0.2 1.0" paramtrigger="{paramtrigger}" div="{div=0}" label="{label}"   />			
+			</panel>
+			
+			<panel noclick="1" x="21%" width="40%" float="right" valign="bottom" align="center" padding="1h" color="0.3 0.3 0.3 0.0" 
+				onhide="SetHeight('1%'); SleepWidget(0, '');" 
+				onshow="SetHeight('1%'); ScaleHeight('1%', 1); DoEvent();"
+				onload="CreateString('specui_player_{tab}1_preSortString'); CreateString('specui_player_{tab}1_postSortString');"
+				onevent=" ScaleHeight('80%', 350);"
+			>				
+				<instance name="specui_graph_bar" tab="{tab}" team="1" index="5" value="50" id="specui_{tab}_bars" width="3h" height="1%" color="red" paramtrigger="{paramtrigger}" div="{div=0}" label="{label}"   />
+				<instance name="specui_graph_bar" tab="{tab}" team="1" index="6" value="50" id="specui_{tab}_bars" width="3h" height="1%" color="red" paramtrigger="{paramtrigger}" div="{div=0}" label="{label}"   />
+				<instance name="specui_graph_bar" tab="{tab}" team="1" index="7" value="50" id="specui_{tab}_bars" width="3h" height="1%" color="red" paramtrigger="{paramtrigger}" div="{div=0}" label="{label}"   />
+				<instance name="specui_graph_bar" tab="{tab}" team="1" index="8" value="50" id="specui_{tab}_bars" width="3h" height="1%" color="red" paramtrigger="{paramtrigger}" div="{div=0}" label="{label}"   />
+				<instance name="specui_graph_bar" tab="{tab}" team="1" index="9" value="50" id="specui_{tab}_bars" width="3h" height="1%" color="red" paramtrigger="{paramtrigger}" div="{div=0}" label="{label}"   />				
+			</panel>				
+		</panel>
+		<label x="0.5h" y="0.5h" width="18h" height="3h" align="left" valign="top" textvalign="top" textalign="left" font="dyn_12" color="#ffab01" outline="1" shadow="1" onload="SetText('{label}');" noclick="1"/>
+	</template>
+
+	<template name="specui_bottom_tab" >
+		<panel x="0" noclick="1" width="-2" align="center" name="specui_bottom_tab_{id}" group="specui_bottom_tab" visible="{visible=0}"  >
+			<frame texture="/ui/fe2/frames/top_tab.tga" borderthickness="0.8h" color="0 0 0 .65" blockinput="false" noclick="true" onload="If(specui_mini_mode1, Split(SetBorderColor('0 0 0 .25'), SetColor('0 0 0 .25')));" />
+			<frame texture="/ui/frames/roundframe.tga" color="0 0 0 1" borderthickness="0.8h" blockinput="false" noclick="true" onload="If(specui_mini_mode1, Split(SetBorderColor('0 0 0 .25'), SetColor('0 0 0 .25')));" />			
+			<instance name="specui_bottom_tab_{id}" />
+		</panel>
+	</template>
+
+	<template name="specui_bottom_header_tab" >
+		<panel noclick="1" width="{width=10h}" name="specui_bottom_header_tab_{id}" >
+			<frame texture="/ui/fe2/frames/top_tab.tga" borderthickness="0.8h" color="#2c3031DD" blockinput="false" noclick="true" onload="SetVisible(!specui_mini_mode1);" />
+			<frame texture="/ui/frames/roundframe.tga" color="0 0 0 1" borderthickness="0.8h" blockinput="false" noclick="true"/>			
+			<button
+				color="invisible"
+				onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav'); {onmouseover}"
+				onmouseout="{onmouseout}"
+				onhide="{onmouseout}"
+				onclick="PlaySound('/shared/sounds/ui/button_click_01.wav'); {onclick}"
+			>
+				<widgetstate statename="up"></widgetstate>
+				<widgetstate statename="over">
+					<frame texture="/ui/fe2/frames/top_tab.tga" borderthickness="0.8h" color="#35464c" blockinput="false" noclick="true" onload="SetVisible(!specui_mini_mode1);" />
+					<frame texture="/ui/frames/roundframe.tga" color="#016497" borderthickness="0.8h" blockinput="false" noclick="true"/>
+				</widgetstate>
+				<widgetstate statename="down">
+					<frame texture="/ui/fe2/frames/top_tab.tga" borderthickness="0.8h" color="#35464c" blockinput="false" noclick="true" onload="SetVisible(!specui_mini_mode1);" />
+					<frame texture="/ui/frames/roundframe.tga" color="0 0 0 1" borderthickness="0.8h" blockinput="false" noclick="true"/>
+				</widgetstate>				
+			</button>
+
+			<panel group="{type}_cover" visible="{cover_isvis=false}" name="specui_bottom_header_tab_{id}_cover" width="100%" height="100%" noclick="0" 
+				onclick="PlaySound('/shared/sounds/ui/button_click_01.wav'); {onclick}; SetVisible(0);"
+				onshow="DoEvent();" 
+				watch="BangSpecUIThrottle" 
+				ontrigger="If(IsVisible('specui_bottom_tab_{id}'), DoEvent());"				
+				onevent="
+					Set(specui_max_teamSize,
+						Max(
+							(Evaluate(SpectatorHeroExists0) + Evaluate(SpectatorHeroExists1) + Evaluate(SpectatorHeroExists2) + Evaluate(SpectatorHeroExists3) + Evaluate(SpectatorHeroExists4)),
+							(Evaluate(SpectatorHeroExists5) + Evaluate(SpectatorHeroExists6) + Evaluate(SpectatorHeroExists7) + Evaluate(SpectatorHeroExists8) + Evaluate(SpectatorHeroExists9))
+						)
+					);
+					Set(specui_max_teamHeight, ((  (  specui_max_teamSize + 1 ) *  GetHeightFromString('3.2h') ) + GetHeightFromString('1.8h')));
+					Call('spec_bottom_parent', 
+						'
+						SetWidth(\'{parentwidth=75h}\');
+						If(!{fittoplayers=0},	
+							SetHeight(\'{parentheight=20h}\'),
+							Split(SetAbsoluteY(GetAbsoluteY()), SetHeight(specui_max_teamHeight))
+						);	
+						'
+					);
+					CallEventParamsX('spec_bottom_parent', 2, 1);
+					ShowOnly('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover');
+					GroupCall('specui_bottom_tab_parent', 'DoEvent(0);');					
+				 "
+			>
+				<frame texture="/ui/fe2/frames/top_tab.tga" borderthickness="0.8h" color="#23485cDD" blockinput="false" noclick="true" onload="If(specui_mini_mode1, Split(SetBorderColor('#23485c88'), SetColor('#23485c88')));" />
+				<frame texture="/ui/frames/roundframe.tga" color="#002639" borderthickness="0.8h" blockinput="false" noclick="true" />
+			</panel>
+			<panel y="-0.3h" width="-20%" height="100%" align="center" noclick="true" x="-1.0h">				
+				<label fity="true" width="100%" align="center" valign="center" textalign="center" textvalign="center" noclick="true" font="dyn_10" color="white" wrap="true" shadow="true" >{lbl}</label>
+			</panel>
+			<panel noclick="1" height="2.0h" align="right" x="-0.5h" y="-0.3h" valign="center" onshow="Call('specui_keybind_{id}', 'SetVisible(specui_show_hotkeys);');">
+				<panel name="specui_keybind_{id}" grow="true" regrow="true" height="100%" align="right" noclick="1">
+					<frame texture="/ui/frames/key.tga" width="100%" height="100%" borderthickness="33@" align="right" color="1 1 1 0.5" noclick="1" onload="SetVisible(!specui_mini_mode1);" />
+					<label align="right" y="-1" fitx="true" fitxpadding="0.8h" font="dyn_11" textalign="center" textvalign="center" color=".1 .1 .1 1" shadow="true" shadowcolor=".8 .8 .8 1"
+						onload="If(specui_mini_mode1, Split(SetShadowColor('black'), SetColor('white'))); SetText(GetKeybindButton('spectator', 'Cmd', 'SpecUITab{id}'));" onshow="SetText(GetKeybindButton('spectator', 'Cmd', 'SpecUITab{id}'));" noclick="1"
+					/>
+				</panel>						
+			</panel>	
+			
+		</panel>
+	</template>
+
+	<template name="specui_bottom_header_tab_options" >
+		<panel noclick="1" width="{width=5h}" name="specui_bottom_header_tab_{id}" >
+			<frame texture="/ui/fe2/frames/top_tab.tga" borderthickness="0.8h" color="#2c3031DD" blockinput="false" noclick="true" onload="SetVisible(!specui_mini_mode1);" />
+			<frame texture="/ui/frames/roundframe.tga" color="0 0 0 1" borderthickness="0.8h" blockinput="false" noclick="true"/>			
+			<button
+				color="invisible"
+				onmouseover="PlaySound('/shared/sounds/ui/button_over_01.wav'); {onmouseover}"
+				onmouseout="{onmouseout}"
+				onhide="{onmouseout}"
+				onclick="PlaySound('/shared/sounds/ui/button_click_01.wav'); {onclick}"
+			>
+				<widgetstate statename="up"></widgetstate>
+				<widgetstate statename="over">
+					<frame texture="/ui/fe2/frames/top_tab.tga" borderthickness="0.8h" color="#35464c" blockinput="false" noclick="true" onload="SetVisible(!specui_mini_mode1);" />
+					<frame texture="/ui/frames/roundframe.tga" color="#016497" borderthickness="0.8h" blockinput="false" noclick="true"/>
+				</widgetstate>
+				<widgetstate statename="down">
+					<frame texture="/ui/fe2/frames/top_tab.tga" borderthickness="0.8h" color="#35464c" blockinput="false" noclick="true" onload="SetVisible(!specui_mini_mode1);" />
+					<frame texture="/ui/frames/roundframe.tga" color="0 0 0 1" borderthickness="0.8h" blockinput="false" noclick="true"/>
+				</widgetstate>				
+			</button>
+
+			<panel group="{type}_cover" visible="{cover_isvis=false}" name="specui_bottom_header_tab_{id}_cover" width="100%" height="100%" noclick="0"
+				onclick="PlaySound('/shared/sounds/ui/button_click_01.wav'); {onclick}; SetVisible(0);"
+				 onshow="Call('spec_bottom_parent', 'SetHeight(\'{parentheight}\'); SetWidth(\'{parentwidth}\'); ');"
+			>
+				<frame texture="/ui/fe2/frames/top_tab.tga" borderthickness="0.8h" color="#23485c" blockinput="false" noclick="true" />
+				<frame texture="/ui/frames/roundframe.tga" color="#002639" borderthickness="0.8h" blockinput="false" noclick="true"/>
+			</panel>		
+
+			<panel x="0" width="-20%" height="100%" align="center" noclick="true">				
+				<image x="0.0" y="-0.2h" width="1.7h" height="1.7h" align="center" valign="center" noclick="1" visible="1" texture="/ui/fe2/systembar/icons/options.tga" />
+			</panel>			
+		</panel>
+	</template>	
+	
+	
+</package>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	
+	<!-- 'bottom' section -->
+	<panel x="0" y="-2" width="75h" height="20h" valign="bottom" align="center" name="spec_bottom_parent" visible="1" noclick="true" color="0 0 0 0.0" 
+		onshow="Call('btn_specui_bottom_tab_visible', 'SetButtonState(0);');" 
+		onhide="Call('btn_specui_bottom_tab_visible', 'SetButtonState(1);');"
+		onevent2="If(param0, FadeIn(150), FadeOut(150));"
+		onevent1="Set(specui_bottom_tab_active, param0); SetSave('specui_bottom_tab_parent_visible', 1); DoEvent();"
+		onevent="
+			If(!IsVisible('specui_bottom_tab_'#specui_bottom_tab_active), 
+				Split(
+					##Echo('Wasnt visible'),##
+					GroupCall('specui_bottom_header_tab_cover', 'SetVisible(0);' ),					
+					Call('spec_bottom_tabs', 'DoEvent(0);'), 
+					If(WidgetExists('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover'), ShowOnly('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover')),
+					SleepWidget(20, 'ShowOnly(\'specui_bottom_tab_\'#specui_bottom_tab_active);'),
+					SetSave('specui_bottom_tab_visible', 1),
+					SetVisible(1)
+				),
+				Split(
+					##Echo('Was visible'),##				
+					GroupCall('specui_bottom_header_tab_cover', 'SetVisible(0);' ),	
+					Call('spec_bottom_tabs', 'DoEvent(1);'),
+					SetSave('specui_bottom_tab_visible', 0)
+				)
+			);
+			
+			SetSave('specui_bottom_tab_active');
+			
+			## specui_bottom_tab_active
+				0 - 
+				1 - Overview
+				2 - GP/M
+				3 - XP/M
+				4 - Stats
+				5 - Damage
+				6 - Kills
+				7 - Creepscore
+			##		
+		"
+	>
+	
+		<panel noclick="1" valign="top" height="-2.9h" y="21.5h" name="spec_bottom_tabs" visible="0"
+			group="specui_bottom_tab_parent"
+			onevent0="SlideY('0', 150); 	FadeIn(150);  "	
+			onevent1="SlideY('21.5h', 150); FadeOut(150);  "	
+			onhide="GroupCall('specui_bottom_header_tab_cover', 'SetVisible(0);' );"
+		>
+			<instance id="1" name="specui_bottom_tab" visible="1" fittoplayers="1" />
+			<instance id="2" name="specui_bottom_tab" fittoplayers="1" />
+			<instance id="3" name="specui_bottom_tab" />
+			<instance id="4" name="specui_bottom_tab" />			
+			<instance id="5" name="specui_bottom_tab" />
+			<instance id="6" name="specui_bottom_tab" />
+			<instance id="7" name="specui_bottom_tab" />
+			<instance id="8" name="specui_bottom_tab" />
+		</panel>	
+	
+		<panel y="1.0h" noclick="1" valign="bottom" height="3.8h" float="right">
+			<instance id="1" lbl="Players" width="14.0h" parentwidth="75.0h" parentheight="20.0h" onclick="Set(specui_bottom_tab_active, 1); CallEvent('spec_bottom_parent');" name="specui_bottom_header_tab" type="specui_bottom_header_tab" cover_isvis="1" onmouseover="" onmouseout="" fittoplayers="1" />
+			<instance id="2" lbl="Stats" width="14.0h" parentwidth="75.0h" parentheight="20.0h" onclick="Set(specui_bottom_tab_active, 2); CallEvent('spec_bottom_parent');" name="specui_bottom_header_tab" type="specui_bottom_header_tab" cover_isvis="0" onmouseover="" onmouseout="" fittoplayers="1" />
+			<instance id="3" lbl="G/M" width="14.0h" parentwidth="75.0h" parentheight="20.0h" onclick="Set(specui_bottom_tab_active, 3); CallEvent('spec_bottom_parent');" name="specui_bottom_header_tab" type="specui_bottom_header_tab" cover_isvis="0" onmouseover="" onmouseout="" />
+			<instance id="4" lbl="XP/M" width="14.0h" parentwidth="75.0h" parentheight="20.0h" onclick="Set(specui_bottom_tab_active, 4); CallEvent('spec_bottom_parent');"  name="specui_bottom_header_tab" type="specui_bottom_header_tab" cover_isvis="0" onmouseover="" onmouseout="" />
+			<!--
+				<instance id="5" lbl="Creeps" parentwidth="75.0h" parentheight="20.0h" onclick="Set(specui_bottom_tab_active, 5); CallEvent('spec_bottom_parent');" name="specui_bottom_header_tab" type="specui_bottom_header_tab" cover_isvis="0" onmouseover="" onmouseout="" />
+			-->
+			<instance id="5" lbl="Damage" width="14.0h" parentwidth="75.0h" parentheight="20.0h" onclick="Set(specui_bottom_tab_active, 5); CallEvent('spec_bottom_parent');" name="specui_bottom_header_tab" type="specui_bottom_header_tab" cover_isvis="0" onmouseover="" onmouseout="" />
+			<!--
+				<instance id="6" lbl="Kills" width="11.66h" parentwidth="75.0h" parentheight="20.0h" onclick="Set(specui_bottom_tab_active, 6); CallEvent('spec_bottom_parent');" name="specui_bottom_header_tab" type="specui_bottom_header_tab" cover_isvis="0" onmouseover="" onmouseout="" />
+			-->
+			<instance id="8" lbl="" width="5h" parentwidth="75.0h" parentheight="24.5h" onclick="Set(specui_bottom_tab_active, 8); CallEvent('spec_bottom_parent');" name="specui_bottom_header_tab_options" type="specui_bottom_header_tab" cover_isvis="0" onmouseover="" onmouseout="" />
+			
+		</panel>
+		
+	</panel>	
+	
+	
+</package>

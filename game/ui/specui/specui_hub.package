@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	
+	<trigger name="SpecUISortxpm0" />
+	<trigger name="SpecUISortxpm1" />
+	<trigger name="SpecUISortgpm0" />
+	<trigger name="SpecUISortgpm1" />			
+	<trigger name="SpecUISortck0" />
+	<trigger name="SpecUISortck1" />	
+	<trigger name="SpecUISortdmg0" />
+	<trigger name="SpecUISortdmg1" />	
+	<trigger name="SpecUISortkills0" />
+	<trigger name="SpecUISortkills1" />	
+	<trigger name="SpecUISortck10" />
+	<trigger name="SpecUISortck11" />	
+	<trigger name="SpecUISortdmg10" />
+	<trigger name="SpecUISortdmg11" />	
+	<trigger name="SpecUISortkills10" />
+	<trigger name="SpecUISortkills11" />		
+	<trigger name="BangSpecUIThrottle" />
+	<trigger name="BangSpecUIThrottleToggle" />
+	<trigger name="SpecUIGraphTooltipUpdate" />
+	<trigger name="PushGold" />
+	<trigger name="PushExp" />
+	<trigger name="PrePushGold" />
+	<trigger name="PrePushExp" />	
+	<trigger name="SpecUIToggleAll" />
+	<trigger name="SpecUIShowAll" />
+	<trigger name="SpecUIHideAll" />
+	<trigger name="SpecUIJumpIn" />
+	<trigger name="SpecUIPopItem" />
+	<trigger name="SpecUIPopAbility" />
+	<trigger name="SpecUILabelUpdate" />
+	<trigger name="SpecUICombatUpdate" /> 
+	<trigger name="SpecUICombatJump" /> 
+	<trigger name="SpecUICombat1" /> 
+	<trigger name="SpecUICombat2" />
+	<trigger name="SpecUICombat3" /> 
+	<trigger name="ReplayFFToggle" /> 	
+	<trigger name="ReplayLockToggle" />
+	<trigger name="ReplayToggle1" /> 	
+	
+	<!-- Early Load -->
+	<include file="/ui/specui/specui_pop_outs.package"/>
+	<include file="/ui/specui/specui_notifications.package"/>
+	<include file="/ui/specui/specui_push_bar.package"/>
+	<include file="/ui/specui/specui_unitframes.package"/>	
+	<include file="/ui/specui/specui_base_interface.package"/>
+	
+	<panel name="bang_specui_throttle_panel" onload="CreateInt('bang_specui_throttle', HostTime);" noclick="1"
+		   watch="HostTime" 
+		   ontrigger="
+		   If(bang_specui_throttle le HostTime, 
+				Split(
+					Set(bang_specui_throttle, HostTime + 1500),
+					Cmd('Trigger BangSpecUIThrottle')
+				)
+			);"
+		   watch1="BangSpecUIThrottleToggle" ontrigger1="If(param0, SetWatch('HostTime'), SetWatch('')); Set(bang_specui_throttle, HostTime + 3000);"	   
+	>	
+	</panel>
+	
+	<floater width="10h" x="1.0h" y="3.5h" grow="true" regrow="1" name="specui_graph_tooltips" color="invisible" visible="0" align="left">
+		<frame texture="/ui/frames/tooltip_bg.tga" color="0 0 0 1.0" borderthickness=".6h" />
+		<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" />
+		<panel width="-1.5h" align="center" grow="true"  regrow="1" float="right">
+				<label y="1.0h" x="0.6h" textvalign="top" textalign="left" font="dyn_10" noclick="1" color="#ffab01" shadow="1" wrap="0" width="100%" fity="true" fitypadding="0.8h" 
+						watch="SpecUIGraphTooltipUpdate" ontrigger="SetWidth(GetStringWidth('dyn_10', param0) + GetWidthFromString('1h')); SetText(param0); SetColor(param1);" />
+				<label  textvalign="top" textalign="left" font="dyn_10" noclick="1" color="#ffab01" shadow="1" wrap="0" width="100%" fity="true" fitypadding="0.8h" 
+						watch="SpecUIGraphTooltipUpdate" ontrigger="
+							SetWidth(GetStringWidth('dyn_10', Evaluate(param2) #' '# param3) + GetWidthFromString('1h'));
+							If(Evaluate(param4) gt 0,
+								If(Round((Evaluate(param2)/Evaluate(param4))*100) lt 101, SetText(Round((Evaluate(param2)/Evaluate(param4))*100) #'% '# param3 ), SetText('-')),
+								SetText(Evaluate(param2) #' '# param3 )
+							);
+						" 
+				/>				
+		</panel>
+	</floater>	
+	
+	<effectpanel
+		name="specui_effect_panel"
+		camerawidth="100a"
+		cameraheight="100"
+		noclick="true"
+	/>	
+	
+	<panel noclick="1" name="specui_brain_bug"		
+		onload="			
+			CreateFloat('specui_team_gold_0', 0);
+			CreateFloat('specui_team_gold_1', 0);
+			CreateFloat('specui_team_gold_0_percent', 50);
+			CreateFloat('specui_team_gold_1_percent', 50);			
+			CreateFloat('specui_team_gold_total', 0);
+			CreateFloat('specui_team_exp_0', 0);
+			CreateFloat('specui_team_exp_1', 0);	
+			CreateFloat('specui_team_exp_0_percent', 50);
+			CreateFloat('specui_team_exp_1_percent', 50);				
+			CreateFloat('specui_team_exp_total', 0);
+			CreateFloat('specui_state_buildingDamage_max', 99999);
+			CreateFloat('specui_state_playerDamage_max', 99999);			
+			CreateFloat('push_amount_GoldFloat', 50); 
+			CreateFloat('push_amount_ExpFloat', 50); 
+			CreateFloat('push_amount_preGoldFloat', 50); 
+			CreateFloat('push_amount_preExpFloat', 50); 
+			CreateFloat('push_change_Gold', 0); 
+			CreateFloat('push_change_Exp', 0);
+			CreateFloat('specui_replay_locked_time', 0); 
+			CreateFloat('specui_replay_pov_time', 0); 
+			CreateFloat('specui_tab_pressed_time', 0); 
+			CreateFloat('specui_hide_pressed_time', 0); 
+			CreateInt('push_duration', 1000);				
+			CreateBool('specui_was_locked', 0);
+			CreateFloat('specui_push_exag', 2);
+			CreateInt('specui_max_teamSize', 5);
+			CreateFloat('specui_max_teamHeight', 0);
+			
+			Cmd('CreateVar bool BangSBHoldKey 0;');
+			Cmd('CreateVar bool bang_sb_toggleUsed 0;');
+			If(!VarExists('specui_mini_mode2') or !VarExists('specui_push_stateTeamInfo') or !VarExists('specui_combatpop_cooldown'), DoEvent()); 
+			Trigger('BangSpecUIThrottleToggle', 1);
+			
+			Cmd('UnAlias SpecUIToggleUF; Alias SpecUIToggleUF UICall specui_brain_bug DoEvent(5);');
+			Cmd('UnAlias SpecUIToggleInfo; Alias SpecUIToggleInfo UICall specui_brain_bug DoEvent(6);');
+			Cmd('UnAlias SpecUITogglePush; Alias SpecUITogglePush UICall specui_brain_bug DoEvent(7);');
+			Cmd('UnAlias SpecUIToggleReplay; Alias SpecUIToggleReplay UICall specui_brain_bug DoEvent(8);');
+			
+			Cmd('UnAlias SpecUITab1; Alias SpecUITab1 UICall * CallEventParamsX(\'spec_bottom_parent\', 1, 1);');
+			Cmd('UnAlias SpecUITab2; Alias SpecUITab2 UICall * CallEventParamsX(\'spec_bottom_parent\', 1, 2);');
+			Cmd('UnAlias SpecUITab3; Alias SpecUITab3 UICall * CallEventParamsX(\'spec_bottom_parent\', 1, 3);');
+			Cmd('UnAlias SpecUITab4; Alias SpecUITab4 UICall * CallEventParamsX(\'spec_bottom_parent\', 1, 4);');
+			Cmd('UnAlias SpecUITab5; Alias SpecUITab5 UICall * CallEventParamsX(\'spec_bottom_parent\', 1, 5);');
+			Cmd('UnAlias SpecUITab6; Alias SpecUITab6 UICall * CallEventParamsX(\'spec_bottom_parent\', 1, 6);');
+			Cmd('UnAlias SpecUITab7; Alias SpecUITab7 UICall * CallEventParamsX(\'spec_bottom_parent\', 1, 7);');
+			Cmd('UnAlias SpecUITab8; Alias SpecUITab8 UICall * CallEventParamsX(\'spec_bottom_parent\', 1, 8);');
+			
+			Cmd('UnAlias ReplayFFStep; Alias ReplayFFStep UICall * ReplayIncPlaybackSpeed(\'1\');');
+			Cmd('UnAlias ReplayRWStep; Alias ReplayRWStep UICall * ReplayIncPlaybackSpeed(\'-1\');');
+			Cmd('UnAlias ReplayPause; Alias ReplayPause UICall * Toggle(\'replay_pause\');');			
+			
+			SleepWidget(100, 'DoEvent(9);');
+		"		 
+		
+		watch0="EventEnterGame EventLeaveGame" ontrigger0="DoEvent(1);"
+		watch1="GamePhase" ontrigger1="If(GamePhase le 4, DoEvent(1));"
+		onevent1="
+			Set('specui_team_gold_0', 0);
+			Set('specui_team_gold_1', 0);
+			Set('specui_team_gold_0_percent', 50);
+			Set('specui_team_gold_1_percent', 50);			
+			Set('specui_team_gold_total', 0);
+			Set('specui_team_exp_0', 0);
+			Set('specui_team_exp_1', 0);	
+			Set('specui_team_exp_0_percent', 50);
+			Set('specui_team_exp_1_percent', 50);				
+			Set('specui_team_exp_total', 0);
+			Set('specui_state_buildingDamage_max', 99999);
+			Set('specui_state_playerDamage_max', 99999);			
+			Set('push_amount_GoldFloat', 50); 
+			Set('push_amount_ExpFloat', 50); 
+			Set('push_amount_preGoldFloat', 50); 
+			Set('push_amount_preExpFloat', 50); 
+			Set('push_change_Gold', 0); 
+			Set('push_change_Exp', 0); 	
+			SleepWidget(10, 'Trigger(\'SpecUILabelUpdate\');');
+		"	
+		onevent9="
+			CallEventParamsX('spec_bottom_parent', 2, specui_bottom_tab_parent_visible);
+			CallEvent('spec_bottom_parent');
+			GroupCall('specui_push_buildings', 'DoEvent(specui_push_showBuildings);');
+			GroupCall('specui_push_team_info', 'DoEvent(specui_push_showTeamInfo);');		
+			GroupCall('unit_frames', 'DoEvent(specui_unitframe_state);');		
+			GroupCall('specui_ability_icon_cooldowns', 'SetVisible(specui_ability_icon_showCooldowns);');
+			GroupCall('specui_mana_bar_labels', 'SetVisible(specui_mana_bar_showLabels);');
+			GroupCall('specui_health_bar_labels', 'SetVisible(specui_health_bar_showLabels);');		
+			If(!specui_bottom_tab_parent_visible, GroupCall('specui_bottom_tab_parent', 'DoEvent(1);'), GroupCall('specui_bottom_tab_parent', 'DoEvent(0);'));
+			If(!specui_bottom_tab_parent_visible, GroupCall('specui_bottom_header_tab_cover', 'SetVisible(0);'), If(WidgetExists('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover'), ShowOnly('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover')));
+			Call('spec_top_parent', 'DoEvent('#specui_push_visible#');');
+		"
+		
+		onevent="
+			CreateBool('specui_mana_bar_showLabels', 0); 		SetSave('specui_mana_bar_showLabels');
+			CreateBool('specui_health_bar_showLabels', 0); 		SetSave('specui_health_bar_showLabels');
+			CreateBool('specui_ability_icon_showCooldowns', 0); SetSave('specui_ability_icon_showCooldowns');
+			CreateBool('specui_push_showBuildings', 0); 		SetSave('specui_push_showBuildings');
+			CreateBool('specui_push_showTeamInfo', 0); 			SetSave('specui_push_showTeamInfo');
+			CreateInt('specui_push_stateTeamInfo', 1); 			SetSave('specui_push_stateTeamInfo');
+			CreateBool('specui_bottom_tab_parent_visible', 1); 	SetSave('specui_bottom_tab_parent_visible');
+			CreateBool('specui_bottom_tab_visible', 1); 		SetSave('specui_bottom_tab_visible');
+			CreateInt('specui_bottom_tab_active', 1); 			SetSave('specui_bottom_tab_active');
+			CreateInt('specui_unitframe_state', 1); 			SetSave('specui_unitframe_state');	
+			CreateBool('specui_push_visible', 1); 				SetSave('specui_push_visible');
+			CreateBool('specui_show_tooltips', 1); 				SetSave('specui_show_tooltips');
+			CreateBool('specui_show_popup_ability_use', 1); 	SetSave('specui_show_popup_ability_use');
+			CreateBool('specui_show_popup_item', 1); 			SetSave('specui_show_popup_item');
+			CreateBool('specui_show_popup_gank', 1); 			SetSave('specui_show_popup_gank');
+			CreateBool('specui_show_popup_ability_learn', 1); 	SetSave('specui_show_popup_ability_learn');
+			CreateBool('specui_show_hotkeys', 1); 				SetSave('specui_show_hotkeys');
+			CreateFloat('specui_itempop_gold_threshold', 700); 	SetSave('specui_itempop_gold_threshold');
+			CreateFloat('specui_combatpop_cooldown', 10); 		SetSave('specui_combatpop_cooldown');
+			CreateFloat('specui_combatpop_display', 5); 		SetSave('specui_combatpop_display');
+			CreateBool('specui_mini_mode', 0); 					SetSave('specui_mini_mode');
+			CreateBool('specui_mini_mode1', 0); 				SetSave('specui_mini_mode1');
+			CreateBool('specui_mini_mode2', 0); 				SetSave('specui_mini_mode2');
+		"
+		onevent2="
+			## Hero Damage ##
+			Set(specui_state_playerDamage_max, 1);
+			For(0, 9, 1, '
+				Set(specui_state_playerDamage_max, specui_state_playerDamage_max + Evaluate(\'specui_state_playerDamage_\'#iParam));
+			');			
+			##Echo('specui_state_playerDamage_max: '#specui_state_playerDamage_max);##
+		"		
+		onevent3="
+			## Building Damage ##
+			Set(specui_state_buildingDamage_max, 1);
+			For(0, 9, 1, '
+				Set(specui_state_buildingDamage_max, specui_state_buildingDamage_max + Evaluate(\'specui_state_buildingDamage_\'#iParam));
+			');						
+			##Echo('specui_state_buildingDamage_max: '#specui_state_buildingDamage_max);##
+		"		
+		onevent5="
+			## Control Unit Frames ##
+			Set(specui_unitframe_state, specui_unitframe_state - 1);
+			If(specui_unitframe_state lt 0, Set(specui_unitframe_state, 2));
+			GroupCall('unit_frames', 'DoEvent(specui_unitframe_state);');
+			SetSave('specui_unitframe_state');
+		"		
+		onevent6="
+			## Control Tabs ##
+			Set(specui_bottom_tab_parent_visible, !specui_bottom_tab_parent_visible); SetSave('specui_bottom_tab_parent_visible'); 
+			If(!specui_bottom_tab_parent_visible, 
+				Split(
+					CallEventParamsX('spec_bottom_parent', 2, specui_bottom_tab_parent_visible),
+					GroupCall('specui_bottom_header_tab_cover', 'SetVisible(0);' )
+				),
+				Split(
+					CallEventParamsX('spec_bottom_parent', 2, specui_bottom_tab_parent_visible),
+					If(specui_bottom_tab_visible,
+						Split(
+							If(WidgetExists('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover'), ShowOnly('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover')),
+							GroupCall('specui_bottom_tab_parent', 'DoEvent(0);')
+						)
+					)
+				)
+			);
+		"		
+		onevent7="Set(specui_push_visible, !specui_push_visible);  Call('spec_top_parent', 'DoEvent('#specui_push_visible#');'); SetSave('specui_push_visible');"		
+		onevent8="Cmd('UICall replay_control_container ToggleWidget(\'replay_control_container\'); ');"							
+		watch2="SpecUIShowAll"
+		ontrigger2="
+			If(param0,
+				Split(
+					CallEventParamsX('spec_bottom_parent', 2, 1),
+					If(WidgetExists('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover'), ShowOnly('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover')),
+					GroupCall('specui_bottom_tab_parent', 'DoEvent(0);'),	
+					
+					Call('spec_top_parent', 'DoEvent(1);'),
+					GroupCall('specui_push_team_info', 'DoEvent(1);'),
+					GroupCall('specui_push_buildings', 'DoEvent(1);'),
+					
+					GroupCall('unit_frames', 'DoEvent(2);'),
+					
+					GroupCall('specui_ability_icon_cooldowns', 'SetVisible(1);'),
+					GroupCall('specui_mana_bar_labels', 'SetVisible(1);'),
+					GroupCall('specui_health_bar_labels', 'SetVisible(1);')					
+				),
+				Split(
+					CallEventParamsX('spec_bottom_parent', 2, specui_bottom_tab_parent_visible),
+					If(!specui_bottom_tab_visible, Split(GroupCall('specui_bottom_header_tab_cover', 'SetVisible(0);' ), GroupCall('specui_bottom_tab_parent', 'DoEvent(1);')), Split(GroupCall('specui_bottom_tab_parent', 'DoEvent(0);'), If(WidgetExists('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover'),ShowOnly('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover')))),
+					
+					Call('spec_top_parent', 'DoEvent('#specui_push_visible#');'),
+					GroupCall('specui_push_buildings', 'DoEvent(specui_push_showBuildings);'),
+					GroupCall('specui_push_team_info', 'DoEvent(specui_push_showTeamInfo);'),
+					
+					GroupCall('unit_frames', 'DoEvent(specui_unitframe_state);'),
+				
+					GroupCall('specui_ability_icon_cooldowns', 'SetVisible(specui_ability_icon_showCooldowns);'),
+					GroupCall('specui_mana_bar_labels', 'SetVisible(specui_mana_bar_showLabels);'),
+					GroupCall('specui_health_bar_labels', 'SetVisible(specui_health_bar_showLabels);')
+
+				)
+			);	
+		"
+		watch3="SpecUIHideAll"
+		ontrigger3="
+			If(param0,
+				Split(
+					CallEventParamsX('spec_bottom_parent', 2, 0),
+					GroupCall('specui_bottom_tab_parent', 'DoEvent(1);'),						
+					Call('spec_top_parent', 'DoEvent(0);'),					
+					GroupCall('unit_frames', 'DoEvent(0);')								
+				),
+				Split(
+					CallEventParamsX('spec_bottom_parent', 2, specui_bottom_tab_parent_visible),
+					If(!specui_bottom_tab_visible, Split(GroupCall('specui_bottom_header_tab_cover', 'SetVisible(0);' ), GroupCall('specui_bottom_tab_parent', 'DoEvent(1);')), Split(GroupCall('specui_bottom_tab_parent', 'DoEvent(0);'), If(WidgetExists('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover'), ShowOnly('specui_bottom_header_tab_'#specui_bottom_tab_active#'_cover')))),					
+					Call('spec_top_parent', 'DoEvent('#specui_push_visible#');'),
+					GroupCall('specui_push_buildings', 'DoEvent(specui_push_showBuildings);'),
+					GroupCall('specui_push_team_info', 'DoEvent(specui_push_showTeamInfo);'),				
+					GroupCall('unit_frames', 'DoEvent(specui_unitframe_state);')			
+				)
+			);	
+			Set(specui_hide_pressed_time, HostTime + 250);
+		"
+		watch4="SpecUIJumpIn"
+		ontrigger4="
+			If(!StringEmpty(SelectedPlayerInfo0),
+				If(param0,
+					If(replay_client != -1,
+						Cmd('UICall * SetReplayClient(-1)'), 
+						Cmd('Trigger SpecUISelectPOV &quot;'#(SelectedPlayerInfo0)#'&quot;')
+					)									
+				)
+			);
+			Set(specui_replay_pov_time, HostTime + 250);
+			"	
+		watch5="ReplayLockToggle"
+		ontrigger5="
+			If(param0,
+				Split(
+					Set(specui_was_locked, cg_lockcamera),
+					Set(cg_lockcamera, !cg_lockcamera)
+				),
+				If(HostTime ge specui_replay_locked_time,
+					Set(cg_lockcamera, specui_was_locked)
+				)
+			);
+			Set(specui_replay_locked_time, HostTime + 250);
+		"	
+		watch6="ReplayToggle1"
+		ontrigger6="
+			If(param0,
+				Split(
+					If(specui_unitframe_state ge 1, Set(specui_unitframe_state, 0), Set(specui_unitframe_state, 1)),		
+					GroupCall('unit_frames', 'DoEvent(specui_unitframe_state);'),
+					DoEvent(6), 
+					DoEvent(7), 
+					DoEvent(8)
+				)
+			);
+		"
+	/>
+	<panel noclick="1"
+		watch3="SpectatorTeamInfo0"
+		ontrigger3="
+			Set(specui_team_exp_0, param2);
+			Set(specui_team_gold_0, param3);
+		"	
+		onhide="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');"
+	/>	
+	<panel noclick="1"
+		watch4="SpectatorTeamInfo1"
+		ontrigger4="
+			Set(specui_team_exp_1, param2);
+			Set(specui_team_gold_1, param3);
+		"		
+	/>
+	<panel noclick="1"
+		watch7="BangSpecUIThrottle"
+		ontrigger7="If(IsVisible('spec_top_parent'), DoEvent(9));"		
+		onevent9="	
+			## Exp Push Bar ##		
+			Set(specui_team_exp_total, specui_team_exp_0 + specui_team_exp_1);		
+			Set(specui_team_exp_0_percent, ((specui_team_exp_0) / (specui_team_exp_total)  ) * 100 );
+			Set(specui_team_exp_1_percent, ((specui_team_exp_1) / (specui_team_exp_total)  ) * 100 );	
+			
+			Set(push_amount_preExpFloat, specui_team_exp_0_percent);	
+			
+			If(push_amount_preExpFloat != push_amount_ExpFloat,
+				If(push_amount_ExpFloat gt push_amount_preExpFloat,
+					Trigger('PrePushExp', (push_amount_ExpFloat - push_amount_preExpFloat), 'Exp' ),
+					Trigger('PrePushExp', (push_amount_preExpFloat - push_amount_ExpFloat), 'Exp' )
+				)
+			);	
+			Set(push_amount_ExpFloat, push_amount_preExpFloat);
+		"
+	/>	
+	<panel noclick="1"
+		watch9="PrePushExp"
+		ontrigger9="		
+			##Echo('^c'#param0#' '#param1#'  ' # Evaluate('push_amount_'#param1#'Float') );##
+			Set(push_change_Exp, param0);			
+			If( (( Evaluate('push_amount_ExpFloat') + push_change_Exp) ge 100) or (( Evaluate('push_amount_ExpFloat') + push_change_Exp) le 0), Set(push_change_Exp, 0 ));			
+			If(push_change_Exp gt 0,
+				##Split(##
+					Trigger('PushExp', ( Evaluate('push_amount_ExpFloat') + (1.0 * push_change_Exp )   ), (push_duration * 1.0 ), If(push_change_Exp ge 1, 1, If(push_change_Exp le -1, -1, 0) ) )					
+					##
+					SleepWidget((0.4 * push_duration ), '
+						Trigger(\'PushExp\', ( Evaluate(\'push_amount_ExpFloat\') + (0.4 * push_change_Exp )   ), (push_duration * 0.6 ), 0 );		
+						'
+					)
+					##
+				)
+			);
+		"		
+	/>	
+	<panel noclick="1"
+		watch7="BangSpecUIThrottle"
+		ontrigger7="If(IsVisible('spec_top_parent'), DoEvent(9));"		
+		onevent9="	
+			## Gold Push Bar ##		
+			Set(specui_team_gold_total, specui_team_gold_0 + specui_team_gold_1);		
+			Set(specui_team_gold_0_percent, ((specui_team_gold_0) / (specui_team_gold_total)  ) * 100 );
+			Set(specui_team_gold_1_percent, ((specui_team_gold_1) / (specui_team_gold_total)  ) * 100 );			
+			
+			Set(push_amount_preGoldFloat, specui_team_gold_0_percent);
+			
+			If(push_amount_preGoldFloat != push_amount_GoldFloat,
+				If(push_amount_GoldFloat gt push_amount_preGoldFloat,
+					Trigger('PrePushGold', (push_amount_GoldFloat - push_amount_preGoldFloat), 'Gold' ),
+					Trigger('PrePushGold', (push_amount_preGoldFloat - push_amount_GoldFloat), 'Gold' )
+				)
+			);		
+			Set(push_amount_GoldFloat, push_amount_preGoldFloat);
+		"
+	/>	
+	<panel noclick="1"
+		watch8="PrePushGold"
+		ontrigger8="		
+			##Echo('^y'#param0#' '#param1#'  ' # Evaluate('push_amount_'#param1#'Float') );##
+			Set(push_change_Gold, param0);			
+			If( (( Evaluate('push_amount_GoldFloat') + push_change_Gold) ge 100) or (( Evaluate('push_amount_GoldFloat') + push_change_Gold) le 0), Set(push_change_Gold, 0 ));			
+			If(push_change_Gold gt 0,
+				##Split(##
+					Trigger('PushGold', ( Evaluate('push_amount_'#param1#'Float') + (1.0 * push_change_Gold )   ), (push_duration * 1.0 ), If(push_change_Gold ge 1, 1, If(push_change_Gold le -1, -1, 0) ) )
+					##
+					SleepWidget((0.4 * push_duration ), '
+						Trigger(\'PushGold\', ( Evaluate(\'push_amount_'#param1#'Float\') + (0.4 * push_change_Gold )   ), (push_duration * 0.6 ), 0 );		
+						'
+					)
+					##
+				##)##
+			);
+		"		
+	/>
+
+	 
+	<template name="specui_tooltip_floater">
+		<floater name="{tip_id}"
+			x="{x=2.2h}" y="{y=-0.5h}"
+			width="{width=25.0h}"
+			align="{align=left}"
+			valign="{valign=top}"
+			visible="{visible=0}"
+			passivechildren="true" grow="true" regrow="true" 
+			watch="SpecUITooltipUpdate" ontrigger="SetVisible(!StringEmpty(param0) and specui_show_tooltips); If(!StringEmpty(param4), SetX(param4), SetX('2.2h')); If(!StringEmpty(param5), SetY(param5), SetY('-0.5h'));"
+		>
+			<frame texture="/ui/frames/tooltip_bg.tga" color="0 0 0 .8" borderthickness=".6h" />
+			<frame texture="/ui/frames/roundframe.tga" color="#A0A0A0" borderthickness=".6h" />			
+				<label
+					x="0.8h" y="0.6h"
+					textvalign="top"
+					textalign="left"
+					align="center"
+					font="dyn_10"
+					noclick="1"
+					color="#ffab01"
+					shadow="1"					
+					wrap="1"
+					fity="true"					
+					fitypadding="0.8h"
+					watch="SpecUITooltipUpdate" ontrigger="SetText(Translate(param0)); If(!StringEmpty(param3), SetColor(param3), SetColor('#ffab01'));"	
+				></label>			
+				<image x="-0.6h" y="{icony=0.6h}" noclick="1" height="{iconheight=2.5h}" width="{iconwidth=2.5h}" align="right" visible="0" color="{color=1 1 1 1}" stickytoinvis="0"
+					watch="SpecUITooltipUpdate" ontrigger="SetTexture(param2); SetVisible(!StringEmpty(param2));"	
+				/>
+				<panel y="2.5h" width="-1.6h" align="center" noclick="true" grow="true" regrow="true" float="bottom">
+					<label						
+						textvalign="top"
+						textalign="left"
+						align="center"
+						font="dyn_10"
+						noclick="1"
+						color="white"
+						shadow="1"					
+						wrap="1"
+						fity="true"
+						fitxpadding="0"
+						watch="SpecUITooltipUpdate" ontrigger="SetText(Translate(param1)); SetVisible(!StringEmpty(param1));"	
+					></label>
+					<panel height="1.0h" color="invisible" noclick="true"/>
+				</panel>			
+		</floater>
+	</template>	
+	<trigger name="SpecUITooltipUpdate" />
+	<instance name="specui_tooltip_floater" y="1.5h" x="2.5h" icony="0.4h" iconheight="1.8h" iconwidth="1.8h" tip_id="specui_tooltip_floater" />
+	
+	<!-- Late Load -->
+	<include file="/ui/specui/specui_info_tabs.package"/>
+	<include file="/ui/specui/specui_info_panel.package"/>
+	
+	<include file="/ui/specui/caster/caster.package"/>
+	
+</package>

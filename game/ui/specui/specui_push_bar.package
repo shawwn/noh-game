@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	
+	<if condition="specui_mini_mode" >
+		<template name="spec_push_bar" >
+			<!-- Hellbourne --> <!-- (((param0-50)*specui_push_exag)+50) -->
+			<frame width="{width=50%}" color="invisible" align="right" valign="top" bordercolor="black" height="100%" borderthickness="0" clip="0"
+				watch="Push{push}" ontrigger="ScaleWidth('-'#(Min(98, Max(2, (((param0-50)*specui_push_exag)+48) )))#'%', param1, 0);" 
+			>
+				<frame noclick="1" color="invisible" align="left" width="100%" rendermode="normal" bordercolor="cyan" borderthickness="0" >
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="1h" color="#75000088"/>								
+				</frame>	
+				
+			</frame> 		
+			
+			<!-- Legion -->
+			<frame width="{width=50%}" color="invisible" align="left" valign="top" bordercolor="black" height="100%" borderthickness="0" clip="0"
+				watch="Push{push}" ontrigger=" ScaleWidth((Min(98, Max(2, (((param0-50)*specui_push_exag)+50)  )))#'%', param1, 0);" 
+			>
+				<frame noclick="1" color="invisible" align="left" width="100%" rendermode="normal" bordercolor="cyan" borderthickness="0">
+					<frame texture="/ui/frames/rounded_button_bg_white.tga" borderthickness="1h" color="#03733588"/>			
+				</frame>
+				<image width="{iconWidth=100@}" height="{iconHeight=100%}" x="3%" align="right" valign="center" texture="{icon}" noclick="true"/>	
+			</frame>
+			<frame valign="center" align="center" color="0 0 0 0.4" height="90%" width="1" noclick="1"/>
+		</template>		
+	</if>	
+	
+	<if condition="!specui_mini_mode" >
+		<template name="spec_push_bar" >
+			<!-- Hellbourne --> <!-- (((param0-50)*specui_push_exag)+50) -->
+			<frame width="{width=50%}" color="invisible" align="right" valign="top" bordercolor="black" height="100%" borderthickness="0"
+				watch="Push{push}" ontrigger="ScaleWidth('-'#(Min(98, Max(2, (((param0-50)*specui_push_exag)+50) )))#'%', param1, 0);" 
+			>
+				<frame noclick="1" color="#750000" align="right" width="100%" rendermode="normal" bordercolor="purple" borderthickness="0"
+					watch="##Push{push}##" ontrigger="##If(param2 == 1, 0 );##"
+				/>
+				<frame noclick="1" color="1 1 1 0.3" align="right" width="100%" rendermode="normal" visible="0"  bordercolor="yellow" borderthickness="0"
+					watch="Push{push}" 
+					ontrigger="If(param2 == 1, Split(FadeIn(param1/3), SleepWidget(param1/3, 'FadeOut(100);')), SetVisible(0));"
+				/>
+			</frame> 		
+			
+			<!-- Legion -->
+			<frame width="{width=50%}" color="invisible" align="left" valign="top" bordercolor="black" height="100%" borderthickness="0"
+				watch="Push{push}" ontrigger=" ScaleWidth((Min(98, Max(2, (((param0-50)*specui_push_exag)+50)  )))#'%', param1, 0);" 
+			>
+				<frame noclick="1" color="#037335" align="left" width="100%" rendermode="normal" bordercolor="cyan" borderthickness="0" 
+					watch="##Push{push}##" ontrigger="##If(param2 == 1, 0 );##"
+				/>
+				<frame align="right" x="1.8h" width="86@" height="86%" color="invisible" bordercolor="yellow" borderthickness="0" 
+					watch="##Push{push}##" ontrigger=" ##If(param2 == -1 or param2 == 1, Call('specui_effect_panel', 'StartEffect(\'/ui/common/models/choose/choose.effect\', ' # GetAbsoluteFractionX(0.5) / GetScreenWidth() # ', ' # GetAbsoluteFractionY(0.5) / GetScreenHeight() # ', \'1 1 1 1\');')  );##"
+				>
+					<image width="{iconWidth=100@}" height="{iconHeight=100%}" x="-50%" align="center" valign="center" texture="{icon}" noclick="true"/>								
+				</frame>
+				<frame noclick="1" color="1 1 1 0.3" align="left" width="100%" rendermode="normal" visible="0"  bordercolor="yellow" borderthickness="0" 
+					watch="Push{push}" ontrigger="If(param2 == -1, Split(FadeIn(param1/3), SleepWidget(param1/3, 'FadeOut(100);')), SetVisible(0));"
+				/>			
+			</frame>
+			<frame valign="center" align="center" color="0 0 0 0.4" height="90%" width="1" noclick="1"/>
+		</template>		
+	</if>
+	
+	<!-- Graphic Framed Pushbar -->
+	<panel width="67.2h" height="8.4h" align="center" noclick="1" name="spec_top_parent"
+		onevent0="SlideY('-15h', 150); FadeOut(250);"
+		onevent1="SlideY('0', 150); FadeIn(250);"
+		onshow="Call('btn_specui_push_visible', 'SetButtonState(0);');" 
+		onhide="Call('btn_specui_push_visible', 'SetButtonState(1);');"				
+	>
+	
+		<!-- Left Tower/Raxx Drop
+			Expanded Y: 50.0%
+			Hidden Y: 22%
+		-->
+		<panel x="9.0%" y="20.0%" width="200@" height="50%" align="left" noclick="true" visible="0"
+			group="specui_push_buildings"
+			onevent0="SlideY('20%', 150); SleepWidget(150, 'SetVisible(0);');"	
+			onevent1="SlideY('50%', 150); SetVisible(1);"			
+		>
+			<if condition="!specui_mini_mode" ><image texture="/ui/specui/elements/PushBarLeftDropBG.tga" noclick="true" /></if>	
+			<panel x="32%" y="6%" height="30%" width="18%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_raxx_team', 'specui_raxx_team_tip', '/ui/specui/elements/icon_castle.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" >
+				<image width="100@" height="100%" texture="/ui/specui/elements/icon_castle.tga" noclick="true" color="#0bed21"/>
+				<image width="100@" height="100%" texture="/ui/specui/elements/icon_castle.tga" noclick="true" color="#ed160b99" 
+					onevent="SetVisible(0); FadeIn(50); ScaleHeight('200%', 150); ScaleWidth('200@', 150); SleepWidget(150, 'FadeOut(150); ScaleWidth(\'100@\', 150); ScaleHeight(\'100%\', 150); ');"
+					name="specui_legion_raxx_bump"
+				/>					
+				<label height="100%" width="-110@" align="right" textalign="center" textvalign="center" font="dyn_12" shadow="true" color="1 1 1 1" noclick="true" content="3" 
+					watch="SpectatorTeamInfo0" ontrigger="If(this != Round(param8 + param9), CallEvent('specui_legion_raxx_bump')); SetText(Round(param8 + param9));"
+				/>
+			</panel>			
+			<panel x="53%" y="6.5%" height="30%" width="18%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_tower_team', 'specui_tower_team_tip', '/ui/specui/elements/icon_tower.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" >
+				<image width="100@" height="100%" texture="/ui/specui/elements/icon_tower.tga" noclick="true" color="#0bed21" />
+				<image width="100@" height="100%" texture="/ui/specui/elements/icon_tower.tga" noclick="true" color="#ed160b99" 
+					onevent="SetVisible(0); FadeIn(50); ScaleHeight('200%', 150); ScaleWidth('200@', 150); SleepWidget(150, 'FadeOut(150); ScaleWidth(\'100@\', 150); ScaleHeight(\'100%\', 150); ');"
+					name="specui_legion_tower_bump"
+				/>				
+				<label height="100%" width="-110@" align="right" textalign="center" textvalign="center" font="dyn_12" shadow="true" color="1 1 1 1" noclick="true" content="1" 
+					watch="SpectatorTeamInfo0" ontrigger="If(this != Round(param7), CallEvent('specui_legion_tower_bump')); SetText(Round(param7));"
+				/>
+			</panel>			
+		</panel>
+		
+		<!-- Right Tower/Raxx Drop
+			Expanded Y: 50.0%
+			Hidden Y: 22%
+		-->
+		<panel x="-9.0%" y="20.0%" width="200@" height="50%" align="right" noclick="true" visible="0"
+			group="specui_push_buildings"
+			onevent0="SlideY('20%', 150); SleepWidget(150, 'SetVisible(0);');"	
+			onevent1="SlideY('50%', 150); SetVisible(1);"		
+		>
+			<if condition="!specui_mini_mode" ><image texture="/ui/specui/elements/PushBarRightDropBG.tga" noclick="true" /></if>
+			<panel x="32%" y="6%" height="30%" width="18%"  noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_raxx_team', 'specui_raxx_team_tip', '/ui/specui/elements/icon_castle.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');">
+				<image width="100@" height="100%" texture="/ui/specui/elements/icon_castle.tga" noclick="true" color="#ed160b"/>
+				<image width="100@" height="100%" texture="/ui/specui/elements/icon_castle.tga" noclick="true" color="#0bed2199" 
+					onevent="SetVisible(0); FadeIn(50); ScaleHeight('200%', 150); ScaleWidth('200@', 150); SleepWidget(150, 'FadeOut(150); ScaleWidth(\'100@\', 150); ScaleHeight(\'100%\', 150); ');"
+					name="specui_hellbourne_raxx_bump"
+				/>				
+				<label height="100%" width="-110@" align="right" textalign="center" textvalign="center" font="dyn_12" shadow="true" color="1 1 1 1" noclick="true" content="3" 
+					watch="SpectatorTeamInfo1" ontrigger="If(this != Round(param8 + param9), CallEvent('specui_hellbourne_raxx_bump')); SetText(Round(param8 + param9));"
+				/>
+			</panel>			
+			<panel x="53%" y="6.5%" height="30%" width="18%" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_tower_team', 'specui_tower_team_tip', '/ui/specui/elements/icon_tower.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" >
+				<image width="100@" height="100%" texture="/ui/specui/elements/icon_tower.tga" noclick="true" color="#ed160b" />
+				<image width="100@" height="100%" texture="/ui/specui/elements/icon_tower.tga" noclick="true" color="#0bed2199" 
+					onevent="SetVisible(0); FadeIn(50); ScaleHeight('200%', 150); ScaleWidth('200@', 150); SleepWidget(150, 'FadeOut(150); ScaleWidth(\'100@\', 150); ScaleHeight(\'100%\', 150); ');"
+					name="specui_hellbourne_tower_bump"
+				/>
+				<label height="100%" width="-110@" align="right" textalign="center" textvalign="center" font="dyn_12" shadow="true" color="1 1 1 1" noclick="true" content="1" 
+					watch="SpectatorTeamInfo1" ontrigger="If(this != Round(param7), CallEvent('specui_hellbourne_tower_bump')); SetText(Round(param7));"
+				/>
+			</panel>	
+			
+
+		</panel>
+	
+		<!-- Left Expanded Data SlideOut
+			Expanded X: -10.0%
+			Hidden X: 6.0%
+		-->
+		<panel x="6.0%" width="200@" height="100%" align="left" noclick="1" visible="0"
+			group="specui_push_team_info"
+			onevent0="SlideX('6.0%', 150); SleepWidget(150, 'SetVisible(0);');"	
+			onevent1="SlideX('-10.0%', 150); SetVisible(1);"			
+		>
+			<if condition="!specui_mini_mode" ><image texture="/ui/specui/elements/PushBarLeftExpanded.tga" noclick="1" /></if>
+			<panel x="-45%" y="1%" width="50%" height="19%" align="right" noclick="true" >				
+				<label x="-130@" height="100%" align="right" textvalign="true" textalign="right" font="dyn_10" color="#00ea5e" shadow="true" content="-" noclick="true" 
+					watch0="SpectatorTeamInfo0 SpectatorTeamInfo1 SpecUILabelUpdate" ontrigger0="
+					If(specui_push_stateTeamInfo == 0, 			SetText(''#FtoA(specui_team_gold_0, 0, 0, ',')#''),
+						If(specui_push_stateTeamInfo == 1,  	If(specui_team_gold_0 ge specui_team_gold_1, SetText('+'#FtoA((specui_team_gold_0-specui_team_gold_1), 0, 0, ',')#''), SetText('-'#FtoA((specui_team_gold_1-specui_team_gold_0), 0, 0, ',')#'')),
+							If(specui_push_stateTeamInfo == 2,  If(specui_team_gold_0_percent ge specui_team_gold_1_percent, SetText(''#FtoA((specui_team_gold_0_percent), 0, 0, ',')#'%'), SetText(''#FtoA((specui_team_gold_0_percent), 0, 0, ',')#'%')),
+																If(specui_team_gold_0_percent ge specui_team_gold_1_percent, SetText('+'#FtoA((specui_team_gold_0_percent-specui_team_gold_1_percent), 0, 0, ',')#'%'), SetText('-'#FtoA((specui_team_gold_1_percent-specui_team_gold_0_percent), 0, 0, ',')#'%'))
+							)
+						)
+					);
+					"
+				/>
+				<image width="100@" height="100%" align="right" texture="/ui/specui/elements/PushMarkerGold.tga" noclick="true" />
+			</panel>
+			<panel x="-44%" y="20%" width="50%" height="19%" align="right" noclick="true" >				
+				<label x="-130@" height="100%" align="right" textvalign="true" textalign="right" font="dyn_10" color="#00ea5e" shadow="true" content="-" noclick="true" 
+					watch1="SpectatorTeamInfo0 SpectatorTeamInfo1 SpecUILabelUpdate"  ontrigger1="
+					If(specui_push_stateTeamInfo == 0, 			SetText(''#FtoA(specui_team_exp_0, 0, 0, ',')#''),
+						If(specui_push_stateTeamInfo == 1, 	 	If(specui_team_exp_0 ge specui_team_exp_1, SetText('+'#FtoA((specui_team_exp_0-specui_team_exp_1), 0, 0, ',')#''), SetText('-'#FtoA((specui_team_exp_1-specui_team_exp_0), 0, 0, ',')#'')),
+							If(specui_push_stateTeamInfo == 2,	If(specui_team_exp_0_percent ge specui_team_exp_1_percent, SetText(''#FtoA((specui_team_exp_0_percent), 0, 0, ',')#'%'), SetText(''#FtoA((specui_team_exp_0_percent), 0, 0, ',')#'%')),
+																If(specui_team_exp_0_percent ge specui_team_exp_1_percent, SetText('+'#FtoA((specui_team_exp_0_percent-specui_team_exp_1_percent), 0, 0, ',')#'%'), SetText('-'#FtoA((specui_team_exp_1_percent-specui_team_exp_0_percent), 0, 0, ',')#'%'))
+							)
+						)
+					);		
+					"
+				/>
+				<image y="-0.1h" width="122@" height="122%" align="right" texture="/ui/specui/elements/PushMarkerExp.tga" noclick="true" />
+			</panel>			
+			<panel noclick="0" color="invisible" height="50%" align="right"
+				onmouseover="Trigger('SpecUITooltipUpdate', 'specui_teaminfo', 'specui_teaminfo_tip', '', '', '', '');" 
+				onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');"
+				onclick="
+					Set(specui_push_stateTeamInfo, (specui_push_stateTeamInfo + 1));
+					If(specui_push_stateTeamInfo ge 4, Set(specui_push_stateTeamInfo, 0));
+					SetSave(specui_push_stateTeamInfo);
+					Trigger('SpecUILabelUpdate');
+				"				
+			/>			
+		</panel>
+		
+		<!-- Right Expanded Data SlideOut
+			Expanded X: 10.0%
+			Hidden X: -6.0%
+		-->
+		<panel x="-6.0%" width="200@" height="100%" align="right" noclick="true" visible="0"
+			group="specui_push_team_info"
+			onevent0="SlideX('-6.0%', 150); SleepWidget(150, 'SetVisible(0);');"	
+			onevent1="SlideX('10.0%', 150); SetVisible(1);"			
+		>
+			<if condition="!specui_mini_mode" ><image texture="/ui/specui/elements/PushBarRightExpanded.tga" noclick="true" /></if>
+			
+			<panel x="45%" y="1%" width="50%" height="19%" align="left" noclick="true" >				
+				<label x="130@" height="100%" align="left" textvalign="true" textalign="left" font="dyn_10" color="#FF0000" shadow="true" content="-" noclick="true" 
+					watch0="SpectatorTeamInfo1 SpectatorTeamInfo0 SpecUILabelUpdate" 
+					ontrigger0="
+					If(specui_push_stateTeamInfo == 0, 			SetText(''#FtoA(specui_team_gold_1, 0, 0, ',')#''),
+						If(specui_push_stateTeamInfo == 1,  	If(specui_team_gold_1 ge specui_team_gold_0, SetText('+'#FtoA((specui_team_gold_1-specui_team_gold_0), 0, 0, ',')#''), SetText('-'#FtoA((specui_team_gold_0-specui_team_gold_1), 0, 0, ',')#'')),
+							If(specui_push_stateTeamInfo == 2,	If(specui_team_gold_1_percent ge specui_team_gold_0_percent, SetText(''#FtoA((specui_team_gold_1_percent), 0, 0, ',')#'%'), SetText(''#FtoA((specui_team_gold_1_percent), 0, 0, ',')#'%')),
+																If(specui_team_gold_1_percent ge specui_team_gold_0_percent, SetText('+'#FtoA((specui_team_gold_1_percent-specui_team_gold_0_percent), 0, 0, ',')#'%'), SetText('-'#FtoA((specui_team_gold_0_percent-specui_team_gold_1_percent), 0, 0, ',')#'%'))
+							)
+						)
+					);
+					"
+				/>
+				<image width="100@" height="100%" align="left" texture="/ui/specui/elements/PushMarkerGold.tga" noclick="true" />
+			</panel>
+			<panel x="45%" y="20%" width="50%" height="19%" align="left" noclick="true" >				
+				<label x="130@" height="100%" align="left" textvalign="true" textalign="left" font="dyn_10" color="#FF0000" shadow="true" content="-" noclick="true" 
+					watch1="SpectatorTeamInfo1 SpectatorTeamInfo0 SpecUILabelUpdate"  
+					ontrigger1="
+					If(specui_push_stateTeamInfo == 0, 			SetText(''#FtoA(specui_team_exp_1, 0, 0, ',')#''),
+						If(specui_push_stateTeamInfo == 1, 		If(specui_team_exp_1 ge specui_team_exp_0, SetText('+'#FtoA((specui_team_exp_1-specui_team_exp_0), 0, 0, ',')#''), SetText('-'#FtoA((specui_team_exp_0-specui_team_exp_1), 0, 0, ',')#'')),
+							If(specui_push_stateTeamInfo == 2,	If(specui_team_exp_1_percent ge specui_team_exp_0_percent, SetText(''#FtoA((specui_team_exp_1_percent), 0, 0, ',')#'%'), SetText(''#FtoA((specui_team_exp_1_percent), 0, 0, ',')#'%')),
+																If(specui_team_exp_1_percent ge specui_team_exp_0_percent, SetText('+'#FtoA((specui_team_exp_1_percent-specui_team_exp_0_percent), 0, 0, ',')#'%'), SetText('-'#FtoA((specui_team_exp_0_percent-specui_team_exp_1_percent), 0, 0, ',')#'%'))
+							)
+						)
+					);
+					"
+				/>
+				<image y="-0.1h" width="122@" height="122%" align="left" texture="/ui/specui/elements/PushMarkerExp.tga" noclick="true" />
+			</panel>
+			
+			<panel noclick="0" color="invisible" height="50%" align="left"
+				onmouseover="Trigger('SpecUITooltipUpdate', 'specui_teaminfo', 'specui_teaminfo_tip', '', '', '', '');" 
+				onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');"
+				onclick="
+					Set(specui_push_stateTeamInfo, (specui_push_stateTeamInfo + 1));
+					If(specui_push_stateTeamInfo ge 4, Set(specui_push_stateTeamInfo, 0));
+					SetSave(specui_push_stateTeamInfo);
+					Trigger('SpecUILabelUpdate');
+				"				
+			/>			
+		</panel>
+	 
+		<!-- Top Push Bar -->
+		<panel y="1%" width="71%" height="24%" align="center"  noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_gm_team', 'specui_gm_team_tip', '/ui/specui/elements/PushMarkerGold.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" passivechildren="1" >
+			<instance name="spec_push_bar" push="Gold" icon="/ui/specui/elements/PushMarkerGold.tga" />
+		</panel>
+		<!-- Bottom Push Bar -->
+		<panel y="26%" width="71%" height="24%" align="center" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_xp_team', 'specui_xp_team_tip', '/ui/specui/elements/PushMarkerExp.tga', '', '', '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" passivechildren="1">
+			<instance name="spec_push_bar" push="Exp" icon="/ui/specui/elements/PushMarkerExp.tga" iconWidth="146@" iconHeight="146%" />
+		</panel>		
+	
+		<if condition="!specui_mini_mode" ><panel texture="/ui/specui/elements/PushBarFrame.tga" align="center" noclick="true" /></if>
+		
+		<!-- Clock -->
+		<label
+			y="4.25h"
+			valign="top"
+			textalign="center"
+			height="1.6h"
+			font="dyn_12"
+			color="white" shadow="true"
+			watch="MatchTime"
+			ontrigger="If(param1, SetText(FtoT(param0, 1, 0, '-')), SetText(FtoT(param0, 1)));"
+			noclick="1"
+		/>
+				
+		<!-- Team Scores -->
+		<panel x="4.5h" y="0.35h" width="4.5h" height="4.0h" align="left" noclick="0" 
+			onmouseover="Trigger('SpecUITooltipUpdate', 'specui_legion', 'specui_legion_tip', '', '', '', '');" 
+			onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');"
+			onclick="
+				If(!VarExists('specui_push_showBuildings'), DoEvent());
+				SetSave(specui_push_showBuildings, !specui_push_showBuildings);
+				GroupCall('specui_push_buildings', 'DoEvent(specui_push_showBuildings);');
+			"
+			onevent="CreateBool('specui_push_showBuildings', 0);"
+			onrightclick="
+				If(!VarExists('specui_push_showTeamInfo'), DoEvent(1));
+				SetSave(specui_push_showTeamInfo, !specui_push_showTeamInfo);
+				GroupCall('specui_push_team_info', 'DoEvent(specui_push_showTeamInfo);');
+			"
+			onevent1="CreateBool('specui_push_showTeamInfo', 0);"			
+		>
+			
+			<panel y="-0.7h" valign="top" width="6.5h" height="5.5h" visible="0" align="center" noclick="1" color="invisible" clip="1"
+				watch="BaseHealth0" ontrigger="ScaleHeight((((1-param0)*GetHeightFromString('5.5h'))), 1); SetVisible(param0 lt 1);"
+			>
+				<panel valign="top"  width="6.5h" height="5.5h" texture="/ui/elements/crest_legion.tga" color="0.5 0.0 0 1.0" noclick="1" visible="1" />
+			</panel>
+			
+			<image width="5h" height="5h" visible="0" texture="/ui/elements/crest_legion.tga" valign="center" align="center" noclick="1" color="0 1 0 0.5"
+				onevent="SetVisible(0); FadeIn(50); ScaleHeight('10h', 150); ScaleWidth('10h', 150); SleepWidget(150, 'FadeOut(150); ScaleWidth(\'5h\', 150); ScaleHeight(\'5h\', 150); ');"
+				name="specui_legion_bump"
+			/>			
+			<label width="100%" height="100%" align="right" textalign="center" textvalign="center" font="dyn_18" color="white" outline="1" 
+				watch="ScoreboardTeam1" ontrigger="If(this != Round(param1), CallEvent('specui_legion_bump')); SetText(Round(param1));" 
+				noclick="1"
+			/>		
+		</panel>		
+		<panel x="-4.5h" y="0.35h" width="4.5h" height="4.0h" align="right" noclick="0"
+			onmouseover="Trigger('SpecUITooltipUpdate', 'specui_hellbourne', 'specui_hellbourne_tip', '', '', '', '');" 
+			onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');"
+			onclick="
+				If(!VarExists('specui_push_showBuildings'), DoEvent());
+				SetSave(specui_push_showBuildings, !specui_push_showBuildings);
+				GroupCall('specui_push_buildings', 'DoEvent(specui_push_showBuildings);');
+			"
+			onevent="CreateBool('specui_push_showBuildings', 0);"	
+			onrightclick="
+				If(!VarExists('specui_push_showTeamInfo'), DoEvent(1));
+				SetSave(specui_push_showTeamInfo, !specui_push_showTeamInfo);
+				GroupCall('specui_push_team_info', 'DoEvent(specui_push_showTeamInfo);');
+			"
+			onevent1="CreateBool('specui_push_showTeamInfo', 0);"				
+		>
+			<panel y="-1.2h" valign="top" width="6.5h" height="6.5h" visible="0" align="center" noclick="1" color="invisible" clip="1"
+				watch="BaseHealth1" ontrigger="ScaleHeight((((1-param0)*GetHeightFromString('6.5h'))), 1); SetVisible(param0 lt 1);"
+			>
+				<panel valign="top"  width="6.5h" height="6.5h" texture="/ui/elements/crest_hellbourne.tga" color="0.3 0.0 0 1.0" noclick="1" visible="1" />
+			</panel>			
+			<image width="5h" height="5h" visible="0" texture="/ui/elements/crest_hellbourne.tga" valign="center" align="center" noclick="true" color="1 0 0 0.5"
+				onevent="SetVisible(0); FadeIn(50); ScaleHeight('10h', 150); ScaleWidth('10h', 150); SleepWidget(150, 'FadeOut(150); ScaleWidth(\'5h\', 150); ScaleHeight(\'5h\', 150); ');"
+				name="specui_hellbourne_bump"
+			/>
+			<label width="100%" height="100%" align="right" textalign="center" textvalign="center" font="dyn_18" color="white" outline="true"  
+				watch="ScoreboardTeam2" 
+				ontrigger="If(this != Round(param1), CallEvent('specui_hellbourne_bump')); SetText(Round(param1));" noclick="1"
+				/>			
+		</panel>
+		<!-- combat detection -->
+		<instance name="specui_combat_detection_template" />
+	</panel>
+	
+</package>

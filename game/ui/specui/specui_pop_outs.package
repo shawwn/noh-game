@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	
+	<template name="specui_ItemPopout" >
+		<panel name="specui_ItemPopout{player}" noclick="1" height="7h" width="7h" color="1 1 0 0.0" align="center" valign="center" float="right" visible="0"
+			watch="" ontrigger="SetRotation(Sin(((param % 300) / 300) * (3.14159265 * 2)) * 2);"
+			onload="BringToFront(); If(StringEquals('{infoalign}', 'left'), SetX('-20h'), SetX('20h'));
+				CreateString('specui_item_popout_name_{player}', '');
+				CreateString('specui_item_popout_cost_{player}', ''); 
+				CreateBool('specui_item_popout_isScroll_{player}', ''); 
+				CreateBool('specui_item_popout_isRecipe_{player}', ''); 
+			"
+			watch1="SpectatorItemPurchased" 
+			ontrigger1="
+				If((param4 == {player}) and ((param1 ge specui_itempop_gold_threshold) or param3) and !(param2 and !param3) and specui_show_popup_item, 
+					If(StringEmpty(Evaluate('specui_item_popout_name_{player}')) or param3,
+						Split(
+							##Echo('Saving '#param0#' at '#HostTime),##
+							Set('specui_item_popout_name_{player}', param0),
+							Set('specui_item_popout_cost_{player}', param1),
+							Set('specui_item_popout_isScroll_{player}', param2),
+							Set('specui_item_popout_isRecipe_{player}', param3),
+							SleepWidget(100, 'DoEvent(9);')
+						)##,
+						Echo('Not adding because '#Evaluate('specui_item_popout_name_{player}')#' | '#param3)##
+					)
+				);"
+			
+			onevent9="
+				Trigger('SpecUIPopItem', Evaluate('specui_item_popout_name_{player}'), Evaluate('specui_item_popout_cost_{player}'), Evaluate('specui_item_popout_isScroll_{player}'), Evaluate('specui_item_popout_isRecipe_{player}'), {player});			
+				Set('specui_item_popout_name_{player}', '');
+				Set('specui_item_popout_cost_{player}', '');
+				Set('specui_item_popout_isScroll_{player}', '');
+				Set('specui_item_popout_isRecipe_{player}', '');	
+				DoEvent(0);
+			"
+			
+			onevent0="
+				FadeIn(100);
+				SetWatch(''); SetRotation(0);		
+				Call('spec_animated_item{player}', 'SetWatch(\'\'); SetRotation(0);');				
+				SetHeight('7h');
+				SetWidth('7h');			
+				If(StringEquals('{infoalign}', 'left'), SetX('-20h'), SetX('20h'));
+				SetY(0);			
+				SleepWidget(100, 'DoEvent(1);' );
+			"
+			
+			onevent1="
+				FadeIn(100);			
+				PlaySound('/ui/fe2/store/sounds/coin_jingle_4.wav', 0.4, 1);
+				Call('spec_animated_gold{player}', ' StartAnim(); ');			
+				SleepWidget(0, 'DoEvent(2);' ); 
+			"
+			
+			onevent2="
+				SetWatch('HostTime');
+				Call('spec_animated_item{player}', 'SetWatch(\'HostTime\');');						
+				Scale('14h', '14h', 500, false);
+				SleepWidget(250, 'DoEvent(3);' );
+			"
+			
+			onevent3="			
+				Scale('7h', '7h', 500, false);			
+				SleepWidget(500, 'DoEvent(4); ');			
+			"
+
+			onevent4="
+				If(StringEquals('{infoalign}', 'left'), SlideX('20h', 500), SlideX('-20h', 500));
+				SetWatch(''); SetRotation(0);		
+				Call('spec_animated_item{player}', 'SetWatch(\'\'); SetRotation(0);');									
+				FadeOut(800):
+			"
+			  
+		>
+
+			<animatedimage name="spec_animated_gold{player}"
+				height="150%" width="75%" y="-70%" x="-5%" valign="top" align="center" fps="30" loop="true" startframe="5" 
+				numframes="-1" loopbackframe="-1" texture="/ui/common/gold/gold.tga" noclick="true" 
+			/>
+		
+			<panel x="0" y="0" name="spec_animated_item{player}" width="85%" height="85@" valign="center" align="center" visible="1" watch0="" ontrigger0="" noclick="1" color="1 1 1 0.9"
+					watch1="SpecUIPopItem" ontrigger1="If(param4 == {player}, SetTexture(GetEntityIconPath(param0)));" 
+					watch="" ontrigger="SetRotation(Sin(((param % 300) / 300) * (3.14159265 * 2)) * 2);"
+			>
+				<image texture="/ui/elements/button_bevel_up.tga" noclick="1" />
+			</panel>
+		</panel>		
+	</template>
+
+</package>

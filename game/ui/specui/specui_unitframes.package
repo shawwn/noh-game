@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	
+	<template name="specui_inventory_item">
+		<panel x="{x}" y="{y}" width="100@" height="100%" noclick="0" valign="top" align="{align}" 
+			oninstantiate=" CreateInt('specui_ability_icon_cooldown_max_{player}_{slot}', 0); "		
+			watch2="Spectator{player}HeroInventoryCooldown{slot}"
+			ontrigger2="##Echo('{player} ' # param0 #' '#HostTime);##"
+			watch1="Spectator{player}HeroInventory{slot}"
+			ontrigger1="
+				If(!StringEmpty(GetEntityIconPath(param13)),
+					SetOnMouseOver(
+						'					
+						TriggerItemTooltip(
+							\'MSPlayerInventoryTip\',
+							\''#param13#'\',
+							false
+						);
+						Trigger(\'MSPlayerInventoryTipIcon\', GetEntityIconPath(\''#param13#'\'));
+						If(specui_show_tooltips, ShowWidget(\'endgameItemTooltip\'));					
+					'),
+					SetOnMouseOver('')
+				);
+			"		
+			onmouseout="HideWidget('endgameItemTooltip');"
+			onhide="HideWidget('endgameItemTooltip');"				
+		>
+			<image noclick="1"
+				valign="center" align="center"			
+				texture="/ui/legion/empty_pack.tga"
+				watch1="Spectator{player}HeroInventory{slot}"
+				ontrigger1="
+					SetTexture(GetEntityIconPath(param13));
+					SetVisible(param0);					
+					"						
+			/>
+			<image noclick="1"
+				valign="center" align="center" texture="/ui/legion/empty_pack.tga"
+				watch="Spectator{player}HeroInventory{slot}"
+				ontrigger=" SetVisible(!param0); "		
+			/>
+			<!-- Cooldown 2 -->
+			<piegraph
+				watch="Spectator{player}HeroInventoryCooldown{slot}" 
+				ontrigger="
+					If(param0 gt Evaluate('specui_ability_icon_cooldown_max_{player}_{slot}'), Set('specui_ability_icon_cooldown_max_{player}_{slot}', param0) );
+					SetVisible(param0 gt 0);
+					SetValue( (param0 / Evaluate('specui_ability_icon_cooldown_max_{player}_{slot}')) );
+					"
+				watch1="Spectator{player}HeroInventory{slot}"
+				ontrigger1=" SetTexture(GetEntityIconPath(param13)); SetVisible(param0); "	
+				start="270" end="-90" square="1" noclick="1" align="center" valign="center" 
+				color="0 0 0 0.5"
+				rendermode="grayscale"
+			/>			
+			<label font="dyn_12" color="white" shadow="1" shadowcolor="black" visible="{text=0}" textalign="center" textvalign="center"  width="100%" height="100%" align="center" valign="center" outline="1"
+				watch="Spectator{player}HeroInventoryCooldown{slot}"  ontrigger="If(GetStringWidth('dyn_10', param0) gt (GetWidth()*0.8), SetFont('dyn_8'), SetFont('dyn_10')); SetVisible(param0 gt 0);  SetText(param0)" noclick="1"					
+			/>			
+			<frame color="invisible" bordercolor=".2 .2 .2 1" borderthickness="1" noclick="true" />
+		</panel>
+	</template>		
+	
+	<template name="UF_hero_icon">
+		<panel width="100%" height="100%" noclick="true">			
+			
+			<!-- Colour / Icon -->
+			<image height="96%" width="96@" noclick="0" valign="center" align="center"  texture="/heroes/{hero}/icon.tga"
+				watch="SpectatorHeroHeroInfo{player}" ontrigger="SetTexture(param1);" watch1="SpectatorHeroStatus{player}" ontrigger1="If(param, SetRenderMode('normal'), SetRenderMode('grayscale'));"
+				onclick="SelectUnit(SpectatorHeroIndex{player});"
+				onrightclick="If(GetSelectedEntity() != SpectatorHeroIndex{player}, Set(cg_lockCamera, 1), Set(cg_lockCamera, !cg_lockCamera)); SelectUnit(SpectatorHeroIndex{player}); "	
+				onmouseover="Trigger('SpecUITooltipUpdate', SpectatorPlayer{player}, 'specui_player_tip', '', '', If({player} ge 5, '-27h', '5h'), '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');"
+			/>
+			<panel color="1 0 0 0.5" rendermode="normal" texture="/ui/elements/list_gradient.tga" vspeed="-0.6" vtile="1" visible="0" noclick="1"
+				watch1="SpectatorHeroStatus{player}" ontrigger1="If(param0, FadeOut(250), FadeIn(250));" 
+			/>			 
+			
+			<!-- Respawn -->
+			<label y="0.2h" watch="SpectatorHeroStatus{player}" noclick="1" ontrigger="SetVisible(!param);"  visible="0" font="dyn_14" color="white" shadow="true" outline="1" textalign="center" textvalign="center" 
+				watch1="SpectatorHeroRespawn{player}" ontrigger1="If(param1, SetText(Ceil(param0 / 1000)), SetText(''));"
+			/>
+			<!-- Disconnected -->
+			<panel watch="SpectatorHeroDisconnected{player}" color="0 0 0 0.8" ontrigger="SetVisible(param);" noclick="1" visible="0"> 
+				<image x="5%" y="0%" color="1 1 1 0.6" width="95%" height="95%" texture="/ui/elements/disconnect.tga" noclick="1" />
+				<label width="100%" height="100%" textalign="center" textvalign="center" color="yellow" noclick="1" outline="1" shadow="true" shadowcolor="black"	font="dyn_11" 
+					watch="SpectatorHeroDisconnectTime{player}" ontrigger="SetText(FtoT(param, 1, 0, '-'));" 
+				/>
+			</panel>
+			<!-- Loading In -->
+			<panel watch="SpectatorHeroLoadingPercent{player}" color="0 0 0 1" ontrigger="SetVisible(param lt 1);" noclick="1" visible="0"> 								
+				<piegraph x="5%"
+					watch="SpectatorHeroLoadingPercent{player}"
+					ontrigger=" SetVisible(param lt 1);" value="360"
+					start="270" end="-90" square="1" noclick="1" align="center" valign="center" 
+					color="0.2 0.2 0.2 1.0"
+					rendermode="grayscale"
+					texture="/ui/elements/lobby/icon_loading.tga"
+				/>
+				<piegraph x="5%"
+					watch="SpectatorHeroLoadingPercent{player}"
+					ontrigger=" SetVisible(param lt 1); SetValue(param); "
+					start="270" end="-90" square="1" noclick="1" align="center" valign="center" 
+					color="1 1 1 1.0"
+					rendermode="normal"
+					texture="/ui/elements/lobby/icon_loading.tga"
+				/>	
+				<label width="100%" height="100%" textalign="center" textvalign="center" color="white" shadow="true"  noclick="1" outline="1" font="dyn_11" 
+					watch="SpectatorHeroLoadingPercent{player}" ontrigger="SetText(FtoP(param, 0));" 
+				/>				
+			</panel>					
+			<!-- Voip Icon -->
+			<panel x="" watch="SpectatorHeroVoice{player}"	ontrigger="SetVisible(param0);" noclick="1" width="100%" height="100%" color="invisible" align="center" valign="center" visible="0" > 					
+				<modelpanel visible="1" width="100%" height="100%" noclick="1" model="common/models/arcade_text/invis.mdf" anim="idle" camerapos="-5 200 25" cameraangles="0 0 180" camerafov="10" cameranear="1" carmerafar="5000" depthclear="false" depthcompress="true" sunazimuth="-90" sunaltitude="180" suncolor="2 2 2" onshow="SetAnim('idle'); SetEffect('/shared/effects/talking.effect');" />	
+			</panel>			
+			<!-- Give Items to Ally -->
+			<panel color="invisible" texture="/ui/info/drop.tga" onmouseover="SetColor('white');" onmouseout="SetColor('invisible');" noclick="1"
+				watch="ItemCursorVisible" ontrigger="SetVisible(ItemCursorVisible); SetNoClick(!ItemCursorVisible); RefreshCursor();"				
+				onclick="ItemPlaceEntity(AllyIndex{player});" onrightclick="ItemPlaceEntity(AllyIndex{player});"
+			/>		
+		</panel>		
+	</template>
+	
+	<template name="UF_ability_pip">
+		<frame width="100@" height="100%" color="0 1 0 1" borderthickness="1" bordercolor="0 0 0 1" noclick="true" />
+	</template>	
+	
+	<template name="UF_ability_icon">		
+		<panel width="100@" height="100%" noclick="0" 
+			oninstantiate="
+				CreateInt('specui_ability_icon_cooldown_max_{player}_{ability}', 0);
+			"
+			onclick="
+				If(!VarExists('specui_ability_icon_showCooldowns'), DoEvent());
+				SetSave(specui_ability_icon_showCooldowns, !specui_ability_icon_showCooldowns);
+				GroupCall('specui_ability_icon_cooldowns', 'SetVisible(specui_ability_icon_showCooldowns);');
+			"
+			onevent="CreateBool('specui_ability_icon_showCooldowns', 0);"
+			watch="SpectatorHeroHeroInfo{player}" 
+			ontrigger="
+				##Echo(param0 #' | '#param3);##
+				SetOnMouseOver('					
+					## TriggerLevelupTooltips(\''#param3#'\'); ##
+					TriggerLevelupTooltipsIndex(SpectatorHeroIndex{player});
+					If(specui_show_tooltips, ShowWidget(\'ability_tooltip_simple{ability}\'));
+				'),
+			"
+			onmouseout="HideWidget('ability_tooltip_simple{ability}');"
+			onhide="HideWidget('ability_tooltip_simple{ability}');"		
+		>
+			<!-- Icon -->
+			<panel width="100%" height="100%" align="center" valign="center" color="invisible" noclick="1">
+				<image  noclick="1" watch0="SpectatorHeroAbility{ability}Info{player}"  
+					ontrigger0="
+						SetTexture(param11); 
+						If(param6 == 0 or param1, 
+							Split(
+								SetRenderMode('grayscale'), 
+								SetColor('1 1 1 0.3')
+							), 
+							If(param4 or param5 or !SpectatorHeroStatus{player},
+								Split(
+									SetRenderMode('grayscale'), 
+									SetColor('1 1 1 1.0')
+								),
+								Split(
+									SetRenderMode('normal'), 
+									SetColor('1 1 1 1.0')
+								)
+							)
+						); 
+						" 						
+				/>
+				<image  noclick="1" rendermode="grayscale"
+					watch0="SpectatorHeroAbility{ability}Info{player}"  
+					ontrigger0=" SetTexture(param11);"				
+					watch1="SpectatorHeroAbility{ability}Cooldown{player}" 
+					ontrigger1="SetVisible(SpectatorHeroAbility{ability}Cooldown{player} gt 0 and SpectatorHeroStatus{player});" 						
+				/>				
+			</panel>
+			
+			<!-- Overlay Colour  -->
+			<panel width="100%" height="100%" visible="1" color="invisible" rendermode="additive" noclick="1"
+				watch0="SpectatorHeroAbility{ability}Info{player}"  
+				ontrigger0="
+					SetVisible(param6 != 0 and SpectatorHeroStatus{player});
+					If(param4, SetColor('.7 0 0 .4'), If(param5, SetColor('0 0 .7 .4'), SetColor('invisible')));"
+
+			/>
+			
+			<!-- Cooldown 2 -->
+			<piegraph
+				watch="SpectatorHeroAbility{ability}Cooldown{player}" 
+				ontrigger="
+					If(param0 gt Evaluate('specui_ability_icon_cooldown_max_{player}_{ability}'), Set('specui_ability_icon_cooldown_max_{player}_{ability}', param0) );
+					SetVisible(param0 gt 0);
+					SetValue( (param0 / Evaluate('specui_ability_icon_cooldown_max_{player}_{ability}')) );
+					"
+				watch2="SpectatorHeroAbility{ability}Info{player}" 
+				ontrigger2="SetTexture(param11); SetVisible(param6 != 0 and SpectatorHeroStatus{player} and (SpectatorHeroAbility{ability}Cooldown{player} gt 0));"
+				start="270" end="-90" square="1" noclick="1" align="center" valign="center" 
+				color="0 0 0 0.5"
+				rendermode="grayscale"
+			/>
+			
+			<panel noclick="1" group="specui_ability_icon_cooldowns" visible="0" >
+				<!-- Cooldown -->
+				<label font="dyn_12" color="white" shadow="1" shadowcolor="black" visible="{text=0}" textalign="center" textvalign="center"  width="100%" height="100%" align="center" valign="center" outline="1"
+					watch="SpectatorHeroAbility{ability}Cooldown{player}" ontrigger="If(GetStringWidth('dyn_12', param0) gt (GetWidth()*0.8), SetFont('dyn_10'), SetFont('dyn_12')); SetVisible(param gt 0);  SetText(param)" noclick="1"					
+				/>
+			</panel>
+			 
+			 <!-- Border 1  -->
+			<frame
+				color="invisible" borderthickness="1"
+				watch2="SpectatorHeroAbility{ability}Info{player}" 
+				ontrigger2="
+					If(param6 ge 1, SetVisible(1), SetVisible(0)); 
+					If(SpectatorHeroStatus{player},					
+						If(param1, SetBorderColor('silver'), 
+						If(param4, SetBorderColor('red'),
+						If(param12, SetBorderColor('green'),
+						If(param8 and param7, SetBorderColor('yellow'),
+						If(param5, SetBorderColor('.5 .5 1 1'),
+						If(param2 or param3, SetBorderColor('lime'),
+						SetBorderColor('orange') 
+						)))))),
+						SetBorderColor('0.6 0.6 0.6 1')
+					); 
+					"
+				noclick="1" align="center" valign="center"
+			/>			
+			
+			<!-- Ally/Spec Level Indicator -->	
+			<panel float="right" x="4%" y="2%" padding="3%" height="55%" width="55%" align="left" valign="top" color="invisible" noclick="1" watch="SpectatorHeroExists{player}" ontrigger="SetVisible(param0);" >						
+				<frame float="right" width="25%" height="25%" align="left" valign="top" borderthickness="1" group="specui_icon_{ability}_{player}_pips" color="0 1 0 1" bordercolor="black" noclick="1" visible="0" 
+					watch="SpectatorHeroAbility{ability}Info{player}" 
+					ontrigger="
+					If(param6 ge 1, SetVisible(1), SetVisible(0)); 
+					If(SpectatorHeroStatus{player},					
+						If(param1, GroupCall('specui_icon_{ability}_{player}_pips', 'SetColor(\'silver\');'), 
+						If(param4, GroupCall('specui_icon_{ability}_{player}_pips', 'SetColor(\'red\');'),
+						If(param12, GroupCall('specui_icon_{ability}_{player}_pips', 'SetColor(\'green\');'),
+						If(param8 and param7, GroupCall('specui_icon_{ability}_{player}_pips', 'SetColor(\'yellow\');'),
+						If(param5, GroupCall('specui_icon_{ability}_{player}_pips', 'SetColor(\'.5 .5 1 1\');'),
+						If(param2 or param3, GroupCall('specui_icon_{ability}_{player}_pips', 'SetColor(\'lime\');'),
+						GroupCall('specui_icon_{ability}_{player}_pips', 'SetColor(\'orange\');')
+						)))))),
+						GroupCall('specui_icon_{ability}_{player}_pips', 'SetColor(\'0.6 0.6 0.6 1\');')
+					); 					
+					" 					
+				/>
+				<frame float="right" width="25%" height="25%" align="left" valign="top" borderthickness="1"  group="specui_icon_{ability}_{player}_pips" color="0 1 0 1" bordercolor="black" noclick="1" visible="0" 
+					watch="SpectatorHeroAbility{ability}Info{player}" 
+					ontrigger="If(param6 ge 2, SetVisible(1), SetVisible(0));" 
+				/>
+				<frame float="right" width="25%" height="25%" align="left" valign="top" borderthickness="1"  group="specui_icon_{ability}_{player}_pips" color="0 1 0 1" bordercolor="black" noclick="1" visible="0" 
+					watch="SpectatorHeroAbility{ability}Info{player}" 
+					ontrigger="If(param6 ge 3, SetVisible(1), SetVisible(0));" 				
+				/>
+				<frame float="right" width="25%" height="25%" align="left" valign="top" borderthickness="1"  group="specui_icon_{ability}_{player}_pips" color="0 1 0 1" bordercolor="black" noclick="1" visible="0" 
+					watch="SpectatorHeroAbility{ability}Info{player}" 
+					ontrigger=" If(param6 ge 4 and {ability} != 3, SetVisible(1), SetVisible(0));" 				
+				/>		
+			</panel>			
+		</panel>		
+		
+	</template>
+	
+
+	
+	<template name="UF_expanded_data">
+		<panel y="{y}" height="2.0h" noclick="true">
+			<image width="90@" height="90%" align="{oppositealign}" valign="center" texture="{icon}" noclick="true" />
+			<label fity="true" fitx="true" align="{infoalign}" valign="center" textvalign="center" font="dyn_11" color=".8 .8 .8 1" outline="true" noclick="true" content="xxx" />					
+		</panel>
+	</template>
+	
+	<if condition="!specui_mini_mode2" >
+	<template name="unit_frame">
+		<panel name="unit_frame_{player}" group="unit_frames" width="100%" height="10.7h" watch="SpectatorHeroExists{player}" ontrigger="SetVisible(param0);" visible="0" 
+			onevent0="If({player} ge 5, SlideX('15.0h', 250), SlideX('-15.0h', 250)); Cmd('UICall btn_specui_unitframe_state SetButtonState(1)');"
+			onevent1="If({player} ge 5, SlideX('0.0h', 250), SlideX('0.0h', 250));	  Cmd('UICall btn_specui_unitframe_state SetButtonState(0)');"
+			onevent2="If({player} ge 5, SlideX('-7.4h', 250), SlideX('7.4h', 250));   Cmd('UICall btn_specui_unitframe_state SetButtonState(2)');"
+		>
+
+			<!-- Hero Icon -->
+			<panel x="{direction}39.8%" y="9.2%" width="19.5%" height="19.5@" align="{infoalign}" noclick="true">
+				<instance name="UF_hero_icon" hero="{hero}" unitcolor="{unitcolor}" player="{player}" />
+			</panel>
+						
+			<!-- Unit Color Nubbin -->
+			<panel x="{direction}2.0%" y="61%" width="7%" height="7@" align="{infoalign}" noclick="0"
+				onclick="			
+					If({player} ge 5,
+						Call('unit_frame_{player}', '
+							If(GetX() != GetXFromString(\'15.0h\'),
+								GroupCall(\'unit_frames\', \'DoEvent(0);\'),
+								GroupCall(\'unit_frames\', \'DoEvent(1);\')
+							);
+						'),
+						Call('unit_frame_{player}', '
+							If(GetX() != GetXFromString(\'-15.0h\'),
+								GroupCall(\'unit_frames\', \'DoEvent(0);\'),
+								GroupCall(\'unit_frames\', \'DoEvent(1);\')
+							);
+						')
+					);						
+				"
+				onrightclick="			
+					If({player} ge 5,
+						Call('unit_frame_{player}', '
+							If(GetX() != GetXFromString(\'-7.4h\'),
+								GroupCall(\'unit_frames\', \'DoEvent(2);\'),
+								GroupCall(\'unit_frames\', \'DoEvent(1);\')
+							);
+						'),
+						Call('unit_frame_{player}', '
+							If(GetX() != GetXFromString(\'7.4h\'),
+								GroupCall(\'unit_frames\', \'DoEvent(2);\'),
+								GroupCall(\'unit_frames\', \'DoEvent(1);\')
+							);
+						')
+					);						
+				"	
+				onmouseover="Trigger('SpecUITooltipUpdate', 'specui_color_dot', 'specui_color_dot_tip', '', '', '', '');"
+				onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" 
+			>
+				<frame texture="/ui/frames/circle.tga" color="{unitcolor}" bordercolor="{unitcolor}" borderthickness="33%" noclick="1"/>
+			</panel>
+			 
+			<!-- Health Bar - Serves only fruit juice and sweet tea -->
+			<panel x="{direction}4%" y="37%" width="34.4%" height="13.0%" align="{infoalign}" noclick="0" passivechildren="1" color="invisible" 
+				onclick="
+					If(!VarExists('specui_health_bar_showLabels'), DoEvent());
+					SetSave(specui_health_bar_showLabels, !specui_health_bar_showLabels);
+					GroupCall('specui_health_bar_labels', 'SetVisible(specui_health_bar_showLabels);');
+				"
+				onevent="CreateBool('specui_health_bar_showLabels', 0);"				
+			>
+				<panel align="center" valign="center" width="-0.2h" height="-0.2h" color="0.0 0.0 0.0 1">					
+					<!-- Lerp	
+					<panel width="0%" align="{oppositealign=left}" watch="SpectatorHeroHealth{player}" ontrigger="If((bang_auf_hlerp{index}{player} - param2) gt 0.01, ScaleWidth(FtoP(param2), 500, 0), SetWidth(FtoP(param2))); Set(bang_auf_hlerp{index}{player}, param2);"  color="0 0 0 0" >
+						<image align="{oppositealign=left}" watch="SpectatorHeroHealth{player}" ontrigger="SetColor(Saturate(1 - (param2 - 0.8) / 0.5), (param2 - 0.55) / 0.25, 0, 0.3);" color=".1 1 .1 1" noclick="1" />
+					</panel>
+					  -->  				
+					<!--  bar -->
+					<panel align="{oppositealign=left}" color="lime" watch="SpectatorHeroHealth{player}"  ontrigger="SetVisible((param2 ge 0.00)); SetWidth(FtoP(param2)); SetColor(Saturate(1 - (param2 - 0.5) / 0.5), (param2 - 0.25) / 0.25, 0, 1.0);" noclick="1"  />
+					<!-- Bar backing -->
+					<image texture="/ui/legion/behind_bar.tga" rendermode="overlay" color="1 1 1 1"/>
+					<!-- Bar max value tick -->
+					<image align="{infoalign=right}" texture="/ui/legion/behind_bar.tga" width="1"  color="1 1 1 .2"  />
+					<!-- Gloss  -->
+					<image align="{oppositealign=left}" texture="/ui/elements/bar_highlight.tga" watch="SpectatorHeroHealth{player}" ontrigger="SetWidth(FtoP(1)); If(param2 le 0.25, SetColor(1, 0, 0, 0.36), SetColor(1, 0, 0, 0.0)); " />
+					<image align="{oppositealign=left}" texture="/ui/elements/bar_highlight.tga" watch="SpectatorHeroHealth{player}" ontrigger="SetWidth(FtoP(1)); SetColor(1, 1, 0, (0.4*Saturate((param2 * 2.15) - 0.25)));" />
+					<image align="{oppositealign=left}" texture="/ui/elements/bar_highlight.tga" watch="SpectatorHeroHealth{player}" ontrigger="SetWidth(FtoP(1)); SetColor(0, 1, 0, (0.3*Saturate((param2 * 1.7) - 1)));" />					
+				</panel>
+			</panel>			
+			 
+			<!-- Mana Bar -->
+			<panel x="{direction}4%" y="48.0%" width="32.6%" height="13.0%" align="{infoalign}" color="invisible" noclick="0" passivechildren="1" 
+				onclick="
+					If(!VarExists('specui_mana_bar_showLabels'), DoEvent());
+					SetSave(specui_mana_bar_showLabels, !specui_mana_bar_showLabels);
+					GroupCall('specui_mana_bar_labels', 'SetVisible(specui_mana_bar_showLabels);');
+				"
+				onevent="CreateBool('specui_mana_bar_showLabels', 0);"				
+			>
+				<panel width="-0.2h" height="-0.2h" align="center" valign="center" color="0.0 0.0 0.0 1">
+					<!-- Lerp
+					<panel width="0%" oninstantiate="SetVisible(bang_auf_ManaLerp); CreateFloat('bang_auf_mlerp{index}{player}'); If(bang_auf_ManaLerp and !StringEquals('{align}', 'right'), SetWatch('{who}Mana{player}'));" align="{align=left}" watch="" ontrigger="SetVisible(bang_auf_ManaLerp); If((bang_auf_mlerp{index}{player} - param2) gt 0.01, ScaleWidth(FtoP(param2), 500, 1), SetWidth(FtoP(param2))); Set(bang_auf_mlerp{index}{player}, param2);" > 
+						<instance name="statusbar_overlay" barimage="behind_bar2.tga" rendermode="" barcolor="0 .5 1 1" />
+					</panel>
+					 -->
+					<!-- Monochrome bar -->
+					<panel align="{oppositealign=left}" color="blue" watch="SpectatorHeroMana{player}"  ontrigger="SetVisible(param1 gt 0); SetWidth(FtoP(param2)); SetColor('0 0 1 1');"  noclick="1"  >
+						<image texture="/ui/legion/behind_bar2.tga" rendermode="overlay" color="0 .5 1 1" />
+						<image align="{infoalign=right}" texture="/ui/legion/behind_bar2.tga" width="1" color="0 1 1 .2"/>
+					</panel>
+					<!-- Cyan Gloss -->
+					<image align="{oppositealign=left}" texture="/ui/elements/bar_highlight.tga" watch="SpectatorHeroMana{player}" ontrigger="SetWidth(FtoP(1));" color="0 1 1 0.4"  />				
+				</panel>
+			</panel>			
+			
+			<!-- Color Ring / Frame Texture -->
+			<image width="42.0h" height="21.0h" align="{infoalign}" texture="/ui/specui/elements/team_color_{side}.tga" watch="SpectatorHeroPlayerInfo{player}" ontrigger="SetColor(param1);" noclick="true" />
+			<image width="42.0h" height="21.0h" align="{infoalign}" texture="/ui/specui/elements/{texture}" noclick="true" />
+			
+			<panel x="{direction}4%" y="37%" width="34.4%" height="11.0%" align="{infoalign}" noclick="1" passivechildren="1" color="invisible" >
+				<!-- Label  -->
+				<label y="-1" align="center" valign="center" width="-0.2h" height="-0.2h" textalign="center" textvalign="center" font="dyn_9" color="1 1 1 1" outline="true" content="xxx/xxx" noclick="true" visible="0" 
+					watch="SpectatorHeroHealth{player}"  ontrigger="SetText(FtoA(param0, 0)#'/'#FtoA(param1, 0));"
+					group="specui_health_bar_labels" 
+				/>
+			</panel>
+			
+			<panel x="{direction}4%" y="48.0%" width="32.6%" height="11.0%" align="{infoalign}" color="invisible" noclick="1" passivechildren="1" >
+				<!-- Label  -->
+				<label y="-1" width="-0.2h" height="-0.2h" align="center" valign="center"  textalign="center" textvalign="center" font="dyn_9" color="1 1 1 1" outline="true" content="xxx/xxx" noclick="true" visible="0" 
+					watch="SpectatorHeroMana{player}"  ontrigger="SetText(FtoA(param0, 0)#'/'#FtoA(param1, 0));"
+					group="specui_mana_bar_labels" 
+				/>				
+			</panel>
+			
+			<!-- Hero Lvl -->
+			<panel x="{direction}57.5%" y="21.0%" width="10.0%" height="10.0@" align="{infoalign}" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_level', 'specui_level_tip', '', '', If({player} ge 5, '-27h', ''), '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');" color="invisible">
+				<label textalign="center" textvalign="center" font="dyn_12" color="1 1 1 1" outline="true" noclick="true" content="1" 
+					watch="SpectatorHeroHeroInfo{player}"  ontrigger="SetText(param2);"
+				/>
+			</panel>
+			
+			<!-- Gold -->
+			<panel x="{direction}10.6%" y="15%" width="18.4%" height="15.8%" align="{infoalign}" noclick="0" onmouseover="Trigger('SpecUITooltipUpdate', 'specui_gold', 'specui_gold_tip', '', '', If({player} ge 5, '-27h', ''), '');" onmouseout="Trigger('SpecUITooltipUpdate', '', '', '', '', '', '');">
+				<label height="100%" textvalign="center" font="dyn_11" color="1 1 1 1" noclick="true" content="0" 
+					watch="SpectatorHeroGold{player}"  ontrigger="SetText(param);" textalign="{oppositealign}"
+				/>
+			</panel>
+			
+			<!-- Abils -->
+			<panel x="{direction}10.0%" y="65.0%" grow="true" height="3.2h" align="{infoalign}" float="right" padding="2.0%" noclick="true">
+				<instance name="UF_ability_icon" hero="{hero}" ability="0" player="{player}" />
+				<instance name="UF_ability_icon" hero="{hero}" ability="1" player="{player}" />
+				<instance name="UF_ability_icon" hero="{hero}" ability="2" player="{player}" />
+				<instance name="UF_ability_icon" hero="{hero}" ability="3" player="{player}" />
+			</panel>
+			
+			<!-- Expanded Content -->
+			<panel y="3.5%" x="{direction}72.0%" width="24.8%" height="83.8%" align="{infoalign}" valign="center" noclick="true">			
+				<panel height="100%" width="100%" noclick="1"> 
+					<panel height="32.4%" valign="top" noclick="1" > 
+						<instance name="specui_inventory_item" player="{player}" align="{infoalign}" slot="0" />
+						<instance name="specui_inventory_item" player="{player}" align="{oppositealign}" slot="1" />
+					</panel>
+					<panel height="32.4%" valign="center" noclick="1" > 
+						<instance name="specui_inventory_item" player="{player}" align="{infoalign}" slot="2" />
+						<instance name="specui_inventory_item" player="{player}" align="{oppositealign}" slot="3" />
+					</panel>
+					<panel height="32.4%" valign="bottom" noclick="1" > 
+						<instance name="specui_inventory_item" player="{player}" align="{infoalign}" slot="4" />
+						<instance name="specui_inventory_item" player="{player}" align="{oppositealign}" slot="5" />
+					</panel>
+				</panel>
+			</panel>			
+			<instance name="specui_ItemPopout" player="{player}" infoalign="{infoalign}" oppositealign="{oppositealign}"  />			
+		</panel>		
+	</template>
+	</if>
+	
+	<!-- Left Unit Frames
+	 X Values
+		Collapsed = -7.4h
+		Expanded = 0
+	-->
+	<panel name="UnitFramesLeft" x="-7.4h" y="5.5h" grow="true" width="24.6h" align="left" float="bottom" padding="1.5h" noclick="true" visible="1" >
+		<instance
+			name="unit_frame" player="0"
+			texture="UnitFrameLeft.tga" infoalign="right" oppositealign="left" side="left" direction="-"
+			
+			hero="accursed" unitcolor="#0042ff"
+		/>
+		<instance
+			name="unit_frame" player="1"
+			texture="UnitFrameLeft.tga" infoalign="right" oppositealign="left" side="left" direction="-"
+			
+			hero="aluna" unitcolor="#1ce6b9"
+		/>
+		<instance
+			name="unit_frame" player="2"
+			texture="UnitFrameLeft.tga" infoalign="right" oppositealign="left" side="left" direction="-"
+			
+			hero="andromeda" unitcolor="#9000c0"
+		/>
+		<instance
+			name="unit_frame" player="3"
+			texture="UnitFrameLeft.tga" infoalign="right" oppositealign="left" side="left" direction="-"
+			
+			hero="armadon" unitcolor="#fffc01" ShowExtData="true"
+		/>
+		<instance
+			name="unit_frame" player="4"
+			texture="UnitFrameLeft.tga" infoalign="right" oppositealign="left" side="left" direction="-"
+			
+			hero="chipper" unitcolor="#fe8a0e"
+		/>		
+	</panel>
+	
+	<!-- Right Unit Frames
+	 X Values
+		Collapsed = 7.4h
+		Expanded = 0
+	-->
+	<panel name="UnitFramesRight" x="7.4h" y="5.5h" grow="true" width="24.6h" align="right" float="bottom" padding="1.5h" noclick="true" visible="1" >
+		<instance
+			name="unit_frame" player="5"
+			texture="UnitFrameRight.tga" infoalign="left" oppositealign="right" side="right" direction=""
+			
+			hero="chronos" unitcolor="#e15db0"
+		/>
+		<instance
+			name="unit_frame" player="6"
+			texture="UnitFrameRight.tga" infoalign="left" oppositealign="right" side="right" direction=""
+			
+			hero="dampeer" unitcolor="#959698"
+		/>
+		<instance
+			name="unit_frame" player="7"
+			texture="UnitFrameRight.tga" infoalign="left" oppositealign="right" side="right" direction=""
+			
+			hero="deadwood" unitcolor="#7dbfef"
+		/>
+		<instance
+			name="unit_frame" player="8"
+			texture="UnitFrameRight.tga" infoalign="left" oppositealign="right" side="right" direction=""
+			
+			hero="defiler" unitcolor="#0f6246"
+		/>
+		<instance
+			name="unit_frame" player="9"
+			texture="UnitFrameRight.tga" infoalign="left" oppositealign="right" side="right" direction=""
+			
+			hero="devourer" unitcolor="#884614"
+		/>
+	</panel>
+	
+</package>
