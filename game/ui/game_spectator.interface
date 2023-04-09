@@ -1,0 +1,2040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface name="game_spectator" onshow="Cmd('Trigger movf_interfacegame 1');" onhide="Cmd('Trigger movf_interfacegame 0');" scenex="0" sceney="0" scenewidth="100%" sceneheight="100%" luatable="1" >
+	<!-- Packages -->
+	<childinterface file="ui_items_1.interface" />
+	<include file="/ui/movf.package"/>
+	<!-- -->
+	<childinterface file="/ui/game_chat.interface" />
+	<childinterface file="/ui/game_vote.interface" />
+	<childinterface file="/ui/game_mentor.interface" />
+	
+	<include file="/ui/tooltip_ability.package"/>
+	<include file="/ui/tooltip_ability_levelup.package"/>
+	<include file="/ui/tooltip_ability_info.package"/>
+	<include file="/ui/tooltip_attack_info.package"/>
+	<include file="/ui/tooltip_defense_info.package"/>
+	<include file="/ui/tooltip_attribute_info.package"/>
+	<include file="/ui/tooltip_health_info.package"/>
+	<include file="/ui/tooltip_mana_info.package"/>
+	<include file="/ui/tooltip_movement_info.package"/>
+	<include file="/ui/tooltip_unit_info.package"/>
+	<include file="/ui/tooltip_experience_info.package"/>
+	<include file="/ui/tooltip_hero.package"/>
+	<include file="/ui/tooltip_team_colors.package"/>
+	
+	<!-- SpecUI Textures -->
+	<texture file="/ui/specui/elements/PushBarFrame.tga" />
+	<texture file="/ui/specui/elements/PushBarLeftDropBG.tga" />
+	<texture file="/ui/specui/elements/PushBarRightDropBG.tga" />
+	<texture file="/ui/specui/elements/PushBarLeftExpanded.tga" />
+	<texture file="/ui/specui/elements/PushBarRightExpanded.tga" />	
+	<texture file="/ui/specui/elements/team_color_left.tga" />
+	<texture file="/ui/specui/elements/team_color_right.tga" />	
+	
+	<!-- Dynamic Textures -->
+	<texture file="/ui/elements/line_break.tga" />
+	<texture file="/ui/common/primary_strength.tga" />
+	<texture file="/ui/common/primary_agility.tga" />
+	<texture file="/ui/common/primary_intelligence.tga" />
+	<texture file="/ui/common/primary_none.tga" />
+	<texture file="/ui/common/share_none_none.tga"/>
+	<texture file="/ui/common/share_none_courier.tga" />
+	<texture file="/ui/common/share_none_full.tga" />
+	<texture file="/ui/common/share_courier_none.tga" />
+	<texture file="/ui/common/share_courier_courier.tga" />
+	<texture file="/ui/common/share_courier_full.tga" />
+	<texture file="/ui/common/share_full_none.tga" />
+	<texture file="/ui/common/share_full_courier.tga" />
+	<texture file="/ui/common/share_full_full.tga" />
+	
+	<texture file="/ui/specui/elements/legion_teamInfo.tga" />
+	<texture file="/ui/specui/elements/hellbourne_teamInfo.tga" />
+	<texture file="/ui/specui/elements/UnitFrameRight.tga" />
+	<texture file="/ui/specui/elements/UnitFrameLeft.tga" />
+	<texture file="/ui/legion/ability_coverup.tga" />
+	<texture file="/ui/specui/elements/map_border_left.tga" nocompress="true" />
+	<texture file="/ui/specui/elements/vis_onBG_up.tga" nocompress="true" />
+	<texture file="/ui/specui/elements/vis_onBG_over.tga" nocompress="true" />
+	<texture file="/ui/specui/elements/vis_onBG_down.tga" nocompress="true" />
+	<texture file="/ui/specui/elements/vis_offBG_up.tga" nocompress="true" />
+	<texture file="/ui/specui/elements/vis_offBG_over.tga" nocompress="true" />
+	<texture file="/ui/specui/elements/vis_offBG_down.tga" nocompress="true" />
+	
+	<texture file="/ui/specui/elements/PushMarkerExp.tga" nocompress="true" />
+	<texture file="/ui/specui/elements/PushMarkerGold.tga" nocompress="true" />
+	<texture file="/ui/fe2/store/icons/hero_token2.tga" nocompress="true" />
+	<texture file="/ui/elements/stat_icons/kill_death_ratio.tga" nocompress="true" />
+	<texture file="/ui/elements/stat_icons/npc_kills.tga" nocompress="true" />
+	<texture file="/ui/elements/stat_icons/npc_kills.tga" nocompress="true" />
+	<texture file="/ui/elements/stat_icons/player_damage.tga" nocompress="true" />
+	<texture file="/ui/elements/stat_icons/razed.tga" nocompress="true" />
+
+	<!-- Dynamic Effects -->
+	<effect file="/ui/common/models/choose/choose.effect" />
+	<effect file="/ui/common/effects/score_sparks_out.effect" />
+	<effect file="/ui/common/effects/score_sparks_in.effect" />
+	<effect file="/ui/common/models/arcade_text/bloodlust.effect" />
+
+	<!-- Dynamic Sounds -->
+	<sample file="/shared/sounds/ui/ability_select.wav" />
+	<sample file="/shared/sounds/ui/ability_refresh.wav" />
+	<sample file="/shared/sounds/ui/levelup_ability.wav" />
+	<sample file="/shared/sounds/ui/error.wav" />
+	<sample file="/shared/sounds/ui/shop.wav" />
+	<sample file="/shared/sounds/ui/popup.wav" />
+	<sample file="/shared/sounds/ui/sell.wav" />
+	<sample file="/shared/sounds/ui/shop_hide.wav" />
+	
+	<!-- Templates -->
+	<template name="arcade_text">
+		<modelpanel
+			name="{msg}"
+			visible="0"
+			noclick="true"
+			model="common/models/{msg}.mdf"
+			anim="idle"
+			cameradistance="0"
+			lookat="false"
+			camerapos="0 1300 0"
+			cameraangles="0 0 180"
+			camerafov="50"
+			cameranear="1"
+			carmerafar="5000"
+			depthclear="false"
+			depthcompress="true"
+			
+			sunazimuth="-90"
+			sunaltitude="180"
+			suncolor="{suncolor}"
+			
+			watch="{watch}"
+			ontrigger="
+				If({condition=true},
+					Split(
+						SetVisible(true),
+						SetAnim('idle'),
+						SetEffect('/ui/common/models/{set}/bloodlust.effect'),
+						SleepWidget({lifetime}, 'SetVisible(false);')
+					)
+				);
+			"
+		/>
+	</template>
+	
+	<template name="voice_set">
+		<instance name="arcade_text" set="{set}" msg="{set}/denied" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventTowerDeny" condition="StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/bloodlust" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventFirstKill" condition="StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/hattrick" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventMultiKill" condition="param == 1 and StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/quadkill" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventMultiKill" condition="param == 2 and StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/annihilation" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventMultiKill" condition="param == 3 and StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/bloodbath" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventKillStreak" condition="param == 10 and StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/immortal" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventKillStreak" condition="param == 15 and StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/genocide" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventTeamWipe" condition="StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/smackdown" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventSmackdown" condition="StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/humiliation" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventHumiliation"  condition="StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/nemesis" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventRival" condition="StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/payback" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventPayback" condition="StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/ragequit" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventRageQuit" condition="StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/victory" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventVictory" condition="StringEquals(param1, '{set}')"/>
+		<instance name="arcade_text" set="{set}" msg="{set}/defeat" lifetime="{lifetime}" suncolor="{suncolor}" watch="EventDefeat" condition="StringEquals(param1, '{set}')"/>
+	</template>
+	
+
+	
+	<template name="multi_select_unit">
+		<panel width="4.0h" watch="SelectedVisible{index}" ontrigger="SetVisible(param);">
+			<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="3" watch="SelectedColor{index}" ontrigger="SetBorderColor(param);"/>
+			<frame texture="/ui/frames/rounded_bg_white.tga" borderthickness="3" color="0 0 0 .9"/>
+			<frame texture="/ui/frames/roundframe.tga" watch="SelectedColor{index}" ontrigger="SetBorderColor(param);" borderthickness="3"/>
+
+			<panel align="center" valign="center" width="85%" height="85%" float="bottom" padding="1%" color="invisible">
+				<panel align="center" height="85@" width="85%" color="invisible" >
+					<image
+						watch="SelectedIcon{index}"
+						ontrigger="SetTexture(param);"
+						watch0="SelectedIllusion{index}"
+						ontrigger0="If(param, SetRenderMode('grayscale'), SetRenderMode('normal')); If(param, SetColor('0.35 1.3 0.35'), SetColor('white'));"
+					/>
+				</panel>
+				<panel height="7%" width="85%" color="black" watch="SelectedHealth{index}" ontrigger="SetVisible(param1 gt 0);">
+					<panel color="red" watch="SelectedHealth{index}" ontrigger="SetWidth(FtoP(param2));"/>
+					<panel color="yellow" watch="SelectedHealth{index}" ontrigger="SetWidth(FtoP(param2)); SetColor(1, 1, 0, Saturate((param2 * 2.5) - 0.25));" />
+					<panel color="lime" watch="SelectedHealth{index}" ontrigger="SetWidth(FtoP(param2)); SetColor(0, 1, 0, Saturate((param2 * 2) - 1));" />
+				</panel>
+				<panel height="7%" width="85%" color="black" watch="SelectedMana{index}" ontrigger="SetVisible(param1 gt 0);">
+					<panel color="blue" watch="SelectedMana{index}"  ontrigger="SetWidth(FtoP(param2));"/>
+				</panel>
+			</panel>
+			
+			<image
+				texture="/ui/info/drop.tga"
+				rendermode="additive"
+				color="white"
+				watch="SelectedActive{index}"
+				ontrigger="SetVisible(param);"
+			/>
+			
+			<panel
+				color="invisible"
+				onclick="SetControlUnit({index});"
+				onrightclick="DeselectUnit({index});"
+				onmouseover="ShowWidget('unit_tooltip_info{index}');"
+				onmouseout="HideWidget('unit_tooltip_info{index}');"
+			/>
+		</panel>
+	</template>
+
+
+	
+	
+
+	<template name="ability_button">
+		<panel>
+			<panel
+				watch="SelectedInventoryExists{slot}"
+				ontrigger="SetVisible(!param);"
+			>
+				<image texture="/ui/legion/ability_coverup.tga"/>
+			</panel>
+
+			<panel
+				watch="SelectedInventoryExists{slot}"
+				ontrigger="SetVisible(param);"
+				onclick="PrimaryAction({slot});"
+				onrightclick="SecondaryAction({slot});"
+				onmouseover="ShowWidget('ability_tooltip{slot}');"
+				onmouseout="HideWidget('ability_tooltip{slot}');"
+				watch2="EventSelectedInventoryUpgrade{slot}"
+				ontrigger2="If(IsVisible(), Call('effect_panel', 'StartEffect(\'/ui/common/models/choose/choose.effect\', ' # GetAbsoluteFractionX(0.5) / GetScreenWidth() # ', ' # GetAbsoluteFractionY(0.5) / GetScreenHeight() # ', \'1 1 1 1\');'));"
+			>
+				<!-- Icon -->
+				<image
+					watch="SelectedInventoryIcon{slot}"
+					ontrigger="SetTexture(param);"
+					watch0="SelectedInventoryStatus{slot}"
+					ontrigger0="If(param5, SetRenderMode('normal'), SetRenderMode('grayscale'));"
+					noclick="true"
+				/>
+
+				<!-- Cooldown -->
+				<piegraph start="270" end="-90" square="true" color="#000000cc" watch="SelectedInventoryCooldown{slot}" ontrigger="SetVisible(param1 > 0); SetValue(param2);" noclick="true"/>
+				
+				<!-- Timer -->
+				<label
+					y="0.2h"
+					width="100%"
+					height="100%"
+					textvalign="top"
+					textalign="center"
+					color="white"
+					shadow="true"
+					font="dyn_12"
+					watch="SelectedInventoryHasTimer{slot}"
+					ontrigger="SetVisible(param);"
+					watch1="SelectedInventoryTimer{slot}"
+					ontrigger1="SetText(FtoT(param + 949));"
+					noclick="true"
+				/>
+
+				<!-- Tooltip -->
+				<panel
+					onmouseover="ShowWidget('ability_tooltip{slot}');"
+					onmouseout="HideWidget('ability_tooltip{slot}');"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="SetVisible(param3 > 0 or param4 == 0); If(param3 > 0 or param4 == 0, SetColor('white'), SetColor('invisible'));"
+				/>
+
+				<!-- Highlight -->
+				<panel
+					texture="/ui/common/button_gloss_up.tga"
+					rendermode="additive"
+					onmouseover="ShowWidget('ability_tooltip{slot}');"
+					onmouseout="HideWidget('ability_tooltip{slot}');"
+					watch="SelectedInventoryCanActivate{slot}"
+					ontrigger="SetVisible(param);"
+					watch1="SelectedInventoryStatus{slot}"
+					ontrigger1="SetEnabled(param3 > 0 or param4 == 0); If(param3 > 0 or param4 == 0, SetColor('#cccccc'), SetColor('invisible'));"
+					interactive="false"
+				/>
+
+				<!-- Color overlay -->
+				<image
+					texture="$white"
+					rendermode="overlay"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="
+						SetVisible(true);
+						If(param3 == 0 and param4 > 0,
+							SetColor('#404040'),
+							If(param1,
+								SetColor('#676045'),
+								If(param2,
+									SetColor('#4444ff'),
+									SetVisible(false)
+								)
+							)
+						);
+						"
+					noclick="true"
+				/>
+
+				<!--  silenced intentory section... can move or add a timer later -->
+				<image align="center" valign="center" width="90%" height="90%" texture="elements/silence.tga" watch="Silenced" ontrigger="SetVisible(param);" color="1 1 1 1" noclick="1" visible="0"/>
+
+				<!-- Charges -->
+				<panel
+					width="38.5%"
+					height="38.5%"
+					align="right"
+					valign="bottom"
+					watch="SelectedInventoryCharges{slot}"
+					ontrigger="SetVisible(param gt 0);"
+					noclick="true"
+					passivechildren="true"
+					color="invisible"
+				>
+					<frame color="0 0 0 .7" bordercolor="white" borderthickness="1"/>
+					<label width="100%" height="100%" textalign="center" textvalign="center" color="white" shadow="true" font="dyn_8" watch="SelectedInventoryCharges{slot}" ontrigger="SetText(param);"/>
+				</panel>
+
+				<!-- Refresh effect -->
+				<modelpanel
+					visible="0"
+					noclick="true"
+					model="common/models/refresh/refresh.mdf"
+					anim="idle"
+					effect="common/models/refresh/refresh.effect"
+					camerapos="0 1 0"
+					cameraangles="0 0 180"
+					camerafov="45"
+					cameranear="1"
+					carmerafar="100"
+					depthclear="false"
+					depthcompress="true"
+					watch="EventSelectedInventoryReady{slot}"
+					ontrigger="SetVisible(true); SetAnim('idle'); SetEffect('/ui/common/models/refresh/refresh.effect'); SleepWidget(1333, 'SetVisible(false);');"
+					onshow="PlaySound('/shared/sounds/ui/ability_refresh.wav'); "
+				/>
+
+				<!-- Toggle active -->
+				<frame
+					borderthickness="2"
+					bordercolor="orange"
+					color="invisible"
+					visible="false"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="SetVisible(param0);"
+					noclick="true"
+					passivechildren="true"
+				>
+					<!--<image x="2" y="2" width="-4" height="-4" color="orange" texture="/ui/fps/selected.tga" rendermode="additive"/>-->
+					<modelpanel
+						visible="1"
+						noclick="true"
+						model="common/models/toggle/toggle.mdf"
+						anim="idle"
+						effect="common/models/toggle/toggle.effect"
+						camerapos="0 1 0"
+						cameraangles="0 0 180"
+						camerafov="45"
+						cameranear="1"
+						carmerafar="100"
+						depthclear="false"
+						depthcompress="true"
+						onshow="SetAnim('idle'); SetEffect('/ui/common/models/toggle/toggle.effect');"
+					/>
+				</frame>
+
+				<!-- Activating -->
+				<frame
+					borderthickness="2"
+					bordercolor="yellow"
+					color="invisible"
+					visible="false"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="SetVisible(param6);"
+					noclick="true"
+					passivechildren="true"
+				>
+					<image x="2" y="2" width="-4" height="-4" color="yellow" texture="/ui/fps/selected.tga" rendermode="additive"/>
+				</frame>
+				
+				<!-- Numeric cooldown timer -->
+				<panel color="invisible" noclick="1">
+					<label noclick="1" valign="center" align="center" textvalign="center" textalign="center" color="#87CEEB" shadow="1" font="dyn_10" watch="SelectedInventoryCooldown{slot}" ontrigger="SetVisible(param0); SetText(FtoT(param0, 0, 0, '-') # 's');" />
+				</panel>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="ability_button_small">
+		<panel>
+			<panel
+				watch="SelectedInventoryExists{slot}"
+				ontrigger="SetVisible(!param);"
+			>
+				<image texture="/ui/legion/empty_pack.tga"/>
+			</panel>
+			
+			<panel
+				watch="SelectedInventoryExists{slot}"
+				ontrigger="SetVisible(param);"
+				onclick="PrimaryAction({slot});"
+				onrightclick="SecondaryAction({slot});"
+				onmouseover="ShowWidget('ability_tooltip{slot}');"
+				onmouseout="HideWidget('ability_tooltip{slot}');"
+			>
+				<!-- Icon -->
+				<image
+					watch="SelectedInventoryIcon{slot}"
+					ontrigger="SetTexture(param);"
+					watch0="SelectedInventoryStatus{slot}"
+					ontrigger0="If(param5, SetRenderMode('normal'), SetRenderMode('grayscale'));"
+					noclick="true"
+				/>
+				
+				<!-- Cooldown -->
+				<piegraph start="270" end="-90" square="true" color="#000000cc" watch="SelectedInventoryCooldown{slot}" ontrigger="SetVisible(param1 > 0); SetValue(param2);" noclick="true"/>
+				
+				<!-- Tooltip -->
+				<panel
+					onmouseover="ShowWidget('ability_tooltip{slot}');"
+					onmouseout="HideWidget('ability_tooltip{slot}');"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="SetVisible(param3 > 0 or param4 == 0); If(param3 > 0 or param4 == 0, SetColor('white'), SetColor('invisible'));"
+				/>
+				
+				<!-- Color overlay -->
+				<image
+					texture="$white"
+					rendermode="overlay"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="
+						SetVisible(true);
+						If(param3 == 0 and param4 > 0,
+							SetColor('#404040'),
+							If(param1,
+								SetColor('#676045'),
+								If(param2,
+									SetColor('#4444ff'),
+									SetVisible(false)
+								)
+							)
+						);
+						"
+					noclick="true"
+				/>
+
+				<!-- Toggle active -->
+				<frame
+					borderthickness="2"
+					bordercolor="orange"
+					color="invisible"
+					visible="false"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="SetVisible(param0);"
+					noclick="true"
+					passivechildren="true"
+				>
+					<!--<image x="2" y="2" width="-4" height="-4" color="orange" texture="/ui/fps/selected.tga" rendermode="additive"/>-->
+					<modelpanel
+						visible="1"
+						noclick="true"
+						model="common/models/toggle/toggle.mdf"
+						anim="idle"
+						effect="common/models/toggle/toggle.effect"
+						camerapos="0 1 0"
+						cameraangles="0 0 180"
+						camerafov="45"
+						cameranear="1"
+						carmerafar="100"
+						depthclear="false"
+						depthcompress="true"
+						onshow="SetAnim('idle'); SetEffect('/ui/common/models/toggle/toggle.effect');"
+					/>
+				</frame>
+
+				<!-- Activating -->
+				<frame
+					borderthickness="2"
+					bordercolor="yellow"
+					color="invisible"
+					visible="false"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="SetVisible(param6);"
+					noclick="true"
+					passivechildren="true"
+				>
+					<image x="2" y="2" width="-4" height="-4" color="yellow" texture="/ui/fps/selected.tga" rendermode="additive"/>
+				</frame>
+			</panel>
+			<panel
+				color="invisible"
+				texture="/ui/info/drop.tga"
+				watch="ItemCursorVisible"
+				ontrigger="SetVisible(param); RefreshCursor();"
+				onmouseover="SetColor('white');"
+				onmouseout="SetColor('invisible');"
+				onclick="ItemPlace({slot});"
+				onrightclick="ItemPlace({slot});"
+			/>
+		</panel>
+	</template>
+
+	<template name="shared_ability_button">
+		<panel>
+			<panel
+				watch="SelectedInventoryExists{slot}"
+				ontrigger="SetVisible(!param);"
+			>
+				<image texture="/ui/legion/ability_coverup.tga"/>
+			</panel>
+
+			<panel
+				watch="SelectedInventoryExists{slot}"
+				ontrigger="SetVisible(param);"
+				onmouseover="ShowWidget('ability_levelup_tooltip_shared{slot}');"
+				onmouseout="HideWidget('ability_levelup_tooltip_shared{slot}');"
+				watch2="EventSelectedInventoryUpgrade{slot}"
+				ontrigger2="If(IsVisible(), Call('effect_panel', 'StartEffect(\'/ui/common/models/choose/choose.effect\', ' # GetAbsoluteFractionX(0.5) / GetScreenWidth() # ', ' # GetAbsoluteFractionY(0.5) / GetScreenHeight() # ', \'1 1 1 1\');'));"
+			>
+				<image
+					watch="SelectedInventoryIcon{slot}"
+					ontrigger="SetTexture(param);"
+					watch0="SelectedInventoryStatus{slot}"
+					ontrigger0="If(param0 and param11, SetRenderMode('normal'), SetRenderMode('grayscale'));"
+					noclick="true"
+				/>
+
+				<piegraph start="270" end="-90" square="true" color="#000000cc" watch="SelectedInventoryCooldown{slot}" ontrigger="SetVisible(param1 > 0); SetValue(param2);" noclick="true"/>
+
+				<panel
+					onmouseover="ShowWidget('ability_tooltip_shared{slot}');"
+					onmouseout="HideWidget('ability_tooltip_shared{slot}');"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="SetVisible(param5 > 0 or param7 == 0); If(param5 > 0 or param7 == 0, SetColor('white'), SetColor('invisible'));"
+				/>
+
+				<button
+					texture="/ui/common/button_gloss.tga"
+					rendermode="additive"
+					onclick="PlaySound('/shared/sounds/ui/ability_select.wav'); ActivateSharedTool({slot});"
+					onrightclick="PlaySound('/shared/sounds/ui/ability_select.wav'); ActivateSharedToolSecondary({slot});"
+					onmouseover="ShowWidget('ability_tooltip_shared{slot}');"
+					onmouseout="HideWidget('ability_tooltip_shared{slot}');"
+					watch="SelectedInventoryCanActivate{slot}"
+					ontrigger="SetVisible(param);"
+					watch1="SelectedInventoryStatus{slot}"
+					ontrigger1="SetEnabled(param5 > 0 or param7 == 0); If(param5 > 0 or param7 == 0, SetColor('#cccccc'), SetColor('invisible'));"
+					interactive="false"
+				/>
+
+				<image
+					texture="$white"
+					rendermode="overlay"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="
+						SetVisible(true);
+						If(param5 == 0 and param7 > 0,
+							SetColor('#404040'),
+							If(param2,
+								SetColor('#676045'),
+								If(param3,
+									SetColor('#4444ff'),
+									SetVisible(false)
+								)
+							)
+						);
+						"
+					noclick="true"
+				/>
+
+				<panel
+					width="38.5%"
+					height="38.5%"
+					align="right"
+					valign="bottom"
+					watch="SelectedInventoryCharges{slot}"
+					ontrigger="SetVisible(param gt 0);"
+					noclick="true"
+					passivechildren="true"
+					color="invisible"
+				>
+					<frame color="0 0 0 .7" bordercolor="white" borderthickness="1"/>
+					<label width="100%" height="100%" textalign="center" textvalign="center" color="white" shadow="true" font="dyn_8" watch="SelectedInventoryCharges{slot}" ontrigger="SetText(param);"/>
+				</panel>
+
+				<!-- Refresh effect -->
+				<modelpanel
+					visible="0"
+					noclick="true"
+					model="common/models/refresh/refresh.mdf"
+					anim="idle"
+					effect="common/models/refresh/refresh.effect"
+					camerapos="0 1 0"
+					cameraangles="0 0 180"
+					camerafov="45"
+					cameranear="1"
+					carmerafar="100"
+					depthclear="false"
+					depthcompress="true"
+					watch="EventSelectedInventoryReady{slot}"
+					ontrigger="SetVisible(true); SetAnim('idle'); SetEffect('/ui/common/models/refresh/refresh.effect'); SleepWidget(1333, 'SetVisible(false);');"
+					onshow="PlaySound('/shared/sounds/ui/ability_refresh.wav'); "
+				/>
+
+				<!-- Targeting -->
+				<frame
+					borderthickness="4"
+					bordercolor="orange"
+					color="invisible"
+					visible="false"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="SetVisible(param8);"
+					noclick="true"
+					passivechildren="true"
+				>
+					<image x="3" y="3" width="-6" height="-6" color="orange" texture="/ui/fps/selected.tga" rendermode="additive"/>
+
+					<modelpanel
+						noclick="true"
+						model="effects/portrait_lvlup/portrait_emitter.mdf"
+						anim="idle"
+						effect="effects/portrait_lvlup/ability_active.effect"
+						camerapos="-1 10 0"
+						cameraangles="0 0 180"
+						camerafov="60"
+						depthclear="false"
+						depthcompress="true"
+						onshow="SetEffect('/ui/effects/portrait_lvlup/ability_active.effect');"
+					/>
+				</frame>
+
+				<!-- Toggle active -->
+				<frame
+					borderthickness="2"
+					bordercolor="orange"
+					color="invisible"
+					visible="false"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="SetVisible(param1);"
+					noclick="true"
+					passivechildren="true"
+				>
+					<!--<image x="2" y="2" width="-4" height="-4" color="orange" texture="/ui/fps/selected.tga" rendermode="additive"/>-->
+					<modelpanel
+						visible="1"
+						noclick="true"
+						model="common/models/toggle/toggle.mdf"
+						anim="idle"
+						effect="common/models/toggle/toggle.effect"
+						camerapos="0 1 0"
+						cameraangles="0 0 180"
+						camerafov="45"
+						cameranear="1"
+						carmerafar="100"
+						depthclear="false"
+						depthcompress="true"
+						onshow="SetAnim('idle'); SetEffect('/ui/common/models/toggle/toggle.effect');"
+					/>
+				</frame>
+
+				<!-- Activating -->
+				<frame
+					borderthickness="2"
+					bordercolor="yellow"
+					color="invisible"
+					visible="false"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="SetVisible(param4);"
+					noclick="true"
+					passivechildren="true"
+				>
+					<image x="2" y="2" width="-4" height="-4" color="yellow" texture="/ui/fps/selected.tga" rendermode="additive"/>
+				</frame>
+				
+				<panel color="invisible" noclick="1" >
+					<label  noclick="1" valign="center" align="center" textvalign="center" textalign="center" color="#87CEEB" shadow="1" font="dyn_10" watch="SelectedInventoryCooldown{slot}" ontrigger="SetVisible(param0); SetText(FtoT(param, 0, 0, '-') # 's');" >					
+					
+					</label>
+				</panel>
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="inventory_info">
+		<panel>
+			<panel
+				watch="SelectedInventoryExists{slot}"
+				ontrigger="SetVisible(!param);"
+			>
+				<image texture="/ui/legion/empty_pack.tga"/>
+			</panel>
+			<panel
+				watch="SelectedInventoryExists{slot}"
+				ontrigger="SetVisible(param);"
+				onmouseover="ShowWidget('inventory_info_tooltip{slot}');"
+				onmouseout="HideWidget('inventory_info_tooltip{slot}');"
+				passivechildren="true"
+			>
+				<!-- Icon -->
+				<image
+					watch="SelectedInventoryIcon{slot}"
+					ontrigger="SetTexture(param);"
+					watch0="SelectedInventoryStatus{slot}"
+					ontrigger0="If(param5, SetRenderMode('normal'), SetRenderMode('grayscale'));"
+					watch1="SelectedInventoryRecipe{slot}"
+					ontrigger1="SetVisible(!param);"
+				/>
+				
+				<!-- Recipe scroll -->
+				<panel color="black" watch="SelectedInventoryRecipe{slot}" ontrigger="SetVisible(param);">
+					<image
+						width="55%" height="55%"
+						align="center" valign="center"
+						watch="SelectedInventoryIcon{slot}"
+						ontrigger="SetTexture(param);"
+					/>
+					<image texture="/ui/elements/shop/scroll_overlay.tga"/>
+				</panel>
+				
+				<!-- Bevel -->
+				<image
+					texture="/ui/elements/button_bevel_up.tga"
+				/>
+				
+				<!-- Cooldown overlay-->
+				<piegraph start="270" end="-90" square="true" color="#000000cc" watch="SelectedInventoryCooldown{slot}" ontrigger="SetVisible(param1 > 0); SetValue(param2);" noclick="true"/>
+				
+				<!-- Timer -->
+				<label
+					y="0.2h"
+					width="100%"
+					height="100%"
+					textvalign="top"
+					textalign="center"
+					color="white"
+					shadow="true"
+					font="dyn_9"
+					watch="SelectedInventoryHasTimer{slot}"
+					ontrigger="SetVisible(param);"
+					watch1="SelectedInventoryTimer{slot}"
+					ontrigger1="SetText(FtoT(param + 949));"
+					noclick="true"
+				/>
+				
+				<!-- Color overlay -->
+				<image
+					texture="$white"
+					rendermode="overlay"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="
+						SetVisible(true);
+						If(param3 == 0 and param4 > 0,
+							SetColor('#404040'),
+							If(param1,
+								SetColor('#676045'),
+								If(param2,
+									SetColor('#4444ff'),
+									SetVisible(false)
+								)
+							)
+						);
+						"
+					noclick="true"
+				/>
+
+				<!-- Shared -->
+				<image
+					width="40%" height="40%"
+					texture="/items/icons/shared.tga"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="SetVisible(param8 and param7);"
+					noclick="true"
+				/>
+
+				<!-- Muted -->
+				<image
+					width="40%" height="40%"
+					texture="/items/icons/muted.tga"
+					watch="SelectedInventoryStatus{slot}"
+					ontrigger="SetVisible(param8 and !param7);"
+					noclick="true"
+				/>
+				
+				<!-- Charges -->
+				<panel
+					width="42.00%"
+					height="42.00%"
+					align="right"
+					valign="bottom"
+					watch="SelectedInventoryCharges{slot}"
+					ontrigger="SetVisible(param gt 0);"
+					color="invisible"
+				>
+					<frame color="0 0 0 .7" bordercolor="white" borderthickness="1"/>
+					<label textalign="center" textvalign="center" color="white" font="dyn_7" watch="SelectedInventoryCharges{slot}" ontrigger="SetText(param);"/>
+				</panel>
+				
+				<!-- Numeric cooldown timer -->
+				<panel color="invisible" noclick="1">
+					<label noclick="1" valign="center" align="center" textvalign="center" textalign="center" color="#87CEEB" shadow="1" font="dyn_9" watch="SelectedInventoryCooldown{slot}" ontrigger="SetVisible(param0); SetText(FtoT(param0, 0, 0, '-') # 's');" />
+				</panel>
+			</panel>
+		</panel>
+	</template>
+
+	<template name="state_info">
+		<panel
+			height="{height=100%}"
+			width="{width=100@}"
+			watch0="SelectedInventoryExists{slot}"
+			ontrigger0="SetVisible(param);"
+			onmouseover="ShowWidget('state_info_tooltip{slot}');"
+			onmouseout="HideWidget('state_info_tooltip{slot}');"
+			onhide="HideWidget('state_info_tooltip{slot}');"
+			passivechildren="true"
+		>
+			<image
+				watch="SelectedInventoryIcon{slot}"
+				ontrigger="SetTexture(param);"
+			/>
+
+			<label
+				font="dyn_14"
+				textalign="center"
+				textvalign="center"
+				color="white"
+				shadow="true"
+				watch="SelectedInventoryCharges{slot}"
+				ontrigger="SetVisible(param gt 0); SetText(param);"
+			/>
+			
+			<!--<piegraph start="270" end="-90" texture="shared/elements/state_pie.tga" square="true" color="#000000cc" watch="ActiveStateCooldown{slot}" ontrigger="SetVisible(param1 > 0); SetValue(param2);" noclick="true"/>			-->
+			<piegraph
+				width="110%" height="110%"
+				align="center" valign="center"
+				start="270" end="-90"
+				texture="/ui/elements/state_pie.tga"
+				square="true"
+				watch="SelectedInventoryState{slot}"
+				ontrigger="If(param1, SetColor('.6 0 0'), If(param2, SetColor('0 .6 0'), SetColor('0 0 .6')));"
+				noclick="true"
+			/>
+			<piegraph
+				width="110%" height="110%"
+				align="center" valign="center"
+				start="270" end="-90"
+				texture="/ui/elements/state_pie.tga"
+				square="true"
+				noclick="true"
+				watch="SelectedInventoryDurationPercent{slot}"
+				ontrigger="SetValue(param);"
+				watch0="SelectedInventoryState{slot}"
+				ontrigger0="If(param1, SetColor('1 0 0'), If(param2, SetColor('0 1 0'), SetColor('0 0 1')));"
+			/>
+		</panel>
+	</template>
+	
+	<!-- ability frame templates-->
+	<template name="ability_frame_shared">
+		<!-- SINGLE-->
+		<panel
+			width="4.0h"
+			height="100%"
+			valign="center"
+			color="invisible"
+			watch="SelectedInventoryExists{slot}"
+			ontrigger="SetVisible(param);"
+			sticky="true"
+			stickytoinvis="false"
+			visible="false"
+			noclick="1"
+		>
+			<panel x="0" y="0" align="center" valign="center" height="4.0h" width="4.0h" >
+				<instance name="shared_ability_button" slot="{slot}"/>
+			</panel>
+			<image width="7.0h" height="7.0h" align="center" valign="center" texture="/ui/common/ability_frame.tga" noclick="1" />
+		</panel>
+	</template>
+
+	<!-- ability frame templates-->
+	<template name="ability_frame_single">
+		<!-- SINGLE-->
+		<panel
+			width="5.3h"
+			height="100%"
+			valign="center"
+			color="invisible"
+			watch="SelectedInventoryInterface{slot}"
+			ontrigger="SetVisible(StringEquals('single', param));"
+			sticky="true"
+			stickytoinvis="false"
+			visible="false"
+			noclick="1"
+		>
+			<panel x="0" y="0" align="center" valign="center" height="4.75h" width="4.75h">
+				<instance name="ability_button" slot="{slot}"/>
+			</panel>
+			<image width="7.6h" height="7.6h" align="center" valign="center" texture="/ui/common/spectator/ability_frame.tga" noclick="1" />
+		</panel>
+	</template>
+
+	<template name="ability_frame_single_plus_one">
+		<!-- SINGLE plus ONE-->
+		<panel
+			width="10.5h"
+			height="100%"
+			valign="center"
+			color="invisible"
+			watch="SelectedInventoryInterface{slot}"
+			ontrigger="SetVisible(StringEquals('single_plus_one', param));"
+			sticky="true"
+			stickytoinvis="false"
+			visible="false"
+		>
+			<panel y="0.8h" noclick="1">
+				<panel x="1.5h" y="1.1h" height="4.25h" width="4.25h" noclick="1">
+					<instance name="ability_button" slot="{slot_a}"/>
+				</panel>
+
+				<panel x="6.4h" y="2.85h" height="2.5h" width="2.5h" noclick="1">
+					<instance name="ability_button_small" slot="{slot_b}"/>
+				</panel>
+
+				<image width="14.9h" height="7.45h" texture="/ui/common/ability_frame_1.tga" noclick="1" />
+			</panel>
+		</panel>
+	</template>
+	
+	<template name="ability_frame_double">
+		<!-- double-->
+		<panel
+			width="7h"
+			height="100%"
+			valign="center"
+			color="invisible"
+			watch="SelectedInventoryInterface{slot}"
+			ontrigger="SetVisible(StringEquals('double', param));"
+			sticky="true"
+			stickytoinvis="false"
+			visible="false"
+		>
+			<panel y="1.7h">
+				<panel x="0.5h" y="1.0h" height="3.00h" width="3.00h" >
+					<instance name="ability_button_small" slot="{slot_a}"/>
+				</panel>
+
+				<panel x="3.5h" y="1.0h" height="3.00h" width="3.00h">
+					<instance name="ability_button_small" slot="{slot_b}"/>
+				</panel>
+			<!--	<image x="0h" y="0.5h" width="3.75h" height="3.75h" texture="/ui/common/ability_frame.tga" noclick="1" />
+				<image x="3.25h" y="0.5h" width="3.75h" height="3.75h" texture="/ui/common/ability_frame.tga" noclick="1" /> -->
+
+			</panel>
+		</panel>
+	</template>
+
+	<template name="ability_frame_single_plus_two">
+		<!-- SINGLE plus TWO-->
+		<panel
+			width="7h"
+			height="100%"
+			valign="center"
+			color="invisible"
+			watch="SelectedInventoryInterface{slot}"
+			ontrigger="SetVisible(StringEquals('single_plus_two', param));"
+			sticky="true"
+			stickytoinvis="false"
+			visible="false"
+			noclick="1"
+		>
+			<panel y="1.7h" noclick="1">
+				<panel align="center" x="0" y="-.13h" height="3.5h" width="3.5h" noclick="1">
+					<instance name="ability_button" slot="{slot_a}"/>
+				</panel>
+
+				<panel x="1.7h" y="3.44h" height="1.9h" width="1.9h" noclick="1">
+					<instance name="ability_button_small" slot="{slot_b}"/>
+				</panel>
+
+				<panel x="3.62h" y="3.44h" height="1.9h" width="1.9h" noclick="1">
+					<instance name="ability_button_small" slot="{slot_c}"/>
+				</panel>
+				<image height="14h" width="7h" y="-4.5h" texture="/ui/common/ability_frame_2.tga" noclick="1" />
+			</panel>
+		</panel>
+	</template>
+
+	<template name="ability_frame_triple">
+		<!-- Triple-->
+		<panel
+			width="7h"
+			height="100%"
+			valign="center"
+			color="invisible"
+			watch="SelectedInventoryInterface{slot}"
+			ontrigger="SetVisible(StringEquals('triple', param));"
+			sticky="true"
+			stickytoinvis="false"
+			visible="false"
+		>
+			<panel y="1.7h">
+				<panel x="0" y="-.265h" height="2.5h" width="2.5h" align="center">
+					<instance name="ability_button_small" slot="{slot_a}"/>
+				</panel>
+
+				<panel x=".63h" y="2.6h" height="2.4h" width="2.4h">
+					<instance name="ability_button_small" slot="{slot_b}"/>
+				</panel>
+
+				<panel x="4.0h" y="2.6h" height="2.4h" width="2.4h">
+					<instance name="ability_button_small" slot="{slot_c}"/>
+				</panel>
+				<image align="center" y="-1.5h" height="8h" width="8h" texture="/ui/common/ability_frame_3.tga" noclick="1" />
+			</panel>
+		</panel>
+	</template>
+
+	
+	<!-- Status Bar Overlay -->
+	<template name="statusbar_overlay">
+		<image texture="/ui/legion/{barimage=behind_bar.tga}" rendermode="{rendermode=overlay}" color="{barcolor=1 1 1 1}"/>
+		<image align="right" texture="/ui/legion/{barimage=behind_bar.tga}" width="1"  color="1 1 1 .5"/>
+		<!--image align="right" texture="/ui/legion/bar_glow.tga" x="0.5h" width="1.0h" rendermode="additive" height="110%" valign="center" color="1 1 1 .5"/-->
+	</template>	
+	
+	<template name="inventory_hoverinfo">
+		<panel x="{x}" y="{y}" width="4.6h" height="4.6h" noclick="1">
+			<image texture="/ui/common/empty_pack.tga"/>
+			
+			
+		</panel>
+	</template>
+	
+	<template name="stash_hoverinfo">
+		<panel x="{x}" y="{y}" width="4.6h" height="4.6h" noclick="1">
+			<image texture="/ui/common/spectator/empty_vaultslot.tga"/>
+			
+					
+		</panel>
+	</template>
+	
+	<template name="minimap_inventory_item">
+		<panel width="100@" height="100%" noclick="true">
+			<image texture="/ui/common/empty_pack.tga" color=".6 .6 .6 1" watch="MinimapHover" ontrigger=" if(!StringEmpty(*('param{param}')), Split(SetTexture(*('param{param}')), SetColor('1 1 1 1')), Split(SetTexture('/ui/common/empty_pack.tga'), SetColor('.6 .6 .6 1')));"/>			
+			<frame color="invisible" borderthickness="1" bordercolor=".1 .1 .1 1"/>
+		</panel>
+	</template>
+	
+	<template name="mapVisBtn">
+		<button
+			name="{id}"
+			x="{x}" y="{y}"
+			height="2.1h" width="2.1h"
+			numstates="{numstates=2}"
+			color="invisible"		
+			interactive="false"
+			cvar="{cvar}"
+			onclick="{onclick}"
+			onmouseover="ShowWidget('{tip_id}'); {onmouseover}"
+			onmouseout="HideWidget('{tip_id}'); {onmouseout}"
+			onload="{onload=}"
+		>
+			<widgetstate statename="up" >
+				<image texture="/ui/specui/elements/vis_onBG_up.tga"/>
+				<image x="-1" width="50%" height="50@" align="center" valign="center" texture="{icon}" color="0 .15 0 1" />
+			</widgetstate>
+			<widgetstate statename="over" >
+				<image texture="/ui/specui/elements/vis_onBG_over.tga"/>
+				<image width="50%" height="50@" align="center" valign="center" texture="{icon}" color=".1 .3 .1 1" />
+			</widgetstate>
+			<widgetstate statename="down" >
+				<image texture="/ui/specui/elements/vis_onBG_down.tga"/>
+				<image width="50%" height="50@" align="center" valign="center" texture="{icon}" color=".1 .3 .1 1" />
+			</widgetstate>
+			<widgetstate statename="up2" >
+				<image texture="/ui/specui/elements/vis_offBG_up.tga"/>
+				<image width="50%" height="50@" align="center" valign="center" texture="{icon}"  color="1 1 1 .5" />
+			</widgetstate>
+			<widgetstate statename="over2" >
+				<image texture="/ui/specui/elements/vis_offBG_over.tga"/>
+				<image width="50%" height="50@" align="center" valign="center" texture="{icon}"  color="1 1 1 .8" />
+			</widgetstate>
+			<widgetstate statename="down2" >
+				<image texture="/ui/specui/elements/vis_offBG_down.tga"/>
+				<image width="50%" height="50@" align="center" valign="center" texture="{icon}"  color=".5 .5 .5 .8" />
+			</widgetstate>			
+			<widgetstate statename="up3" >
+				<image texture="/ui/specui/elements/vis_onBG_up.tga"/>
+				<image width="50%" height="50@" align="center" valign="center" texture="{icon}"  color="1 1 1 .5" />
+			</widgetstate>
+			<widgetstate statename="over3" >
+				<image texture="/ui/specui/elements/vis_onBG_over.tga"/>
+				<image width="50%" height="50@" align="center" valign="center" texture="{icon}"  color="1 1 1 .8" />
+			</widgetstate>
+			<widgetstate statename="down3" >
+				<image texture="/ui/specui/elements/vis_onBG_down.tga"/>
+				<image width="50%" height="50@" align="center" valign="center" texture="{icon}"  color=".5 .5 .5 .8" />
+			</widgetstate>				
+		</button>	
+	</template>
+	
+	<include file="/ui/specui/specui_hub.package"/>	
+	
+	<panel name="arcade_messages" width="80h" height="30h" y="0h" align="center" color="invisible" noclick="1">
+		<instance name="voice_set" set="arcade_text" lifetime="1800" suncolor="4 1 1" />
+		<instance name="voice_set" set="unicorn" lifetime="3200" suncolor="4 1 1" />
+		<instance name="voice_set" set="balls" lifetime="3200" suncolor="1 1 1" />
+		<instance name="voice_set" set="english" lifetime="3200" suncolor="1 1 1" />
+	</panel>
+	
+
+	
+	<instance
+		name="button3"
+		label="game_disconnect"
+		id="game_disconnect"
+		y="8h"
+		height="3h"
+		width="15h"
+		align="center"
+		borderthickness="0.6h"
+		onclick="Disconnect();"
+		font="dyn_12"
+		watch="EndGame"
+		ontrigger="SetVisible(param);"
+	/>
+
+	<!-- Mini Map -->
+	<panel width="29.8h" height="29.8h" align="left" valign="bottom" color="invisible" cangrab="0">
+		<map outlinesize="0.19h" x="0.5h" y="-0.5h" width="23.2h" height="23.2h" align="left" valign="bottom" name="minimap" texture="!minimap_texture" watch="Minimap" onclick="If(MinimapClick(param0, param1), BreakDrag());" onrightclick="If(MinimapRightClick(param0, param1), BreakDrag());"/>		
+		<image texture="/ui/specui/elements/map_border_left.tga" valign="bottom" noclick="1"/>
+		<panel color="invisible" x="0.35h" y="4.6h" height="2.1h" width="2.1h" >
+			<button noclick="1" cvar="cg_unitPlayerColors" numstates="2" color="invisible">			
+				<widgetstate statename="up" >
+					<image texture="/ui/elements/team_colors_up.tga"/>
+				</widgetstate>	
+				<widgetstate statename="up2" >
+					<image texture="/ui/elements/team_colors_up2.tga"/>
+				</widgetstate>					
+			</button>			
+			<button
+				texture="/ui/elements/button_roundhl.tga" 			
+				onclick="toggle('cg_unitPlayerColors'); HideWidget('teamcolors_tooltip');"
+				onmouseover="ShowWidget('teamcolors_tooltip');"	
+				onmouseout="HideWidget('teamcolors_tooltip');"
+				interactive="false"
+			/>			
+		</panel>
+		
+		<!-- Unit Frames Toggle -->
+		<instance name="mapVisBtn" x="15.5h" y="4.75h"  id="btn_specui_unitframe_state" 	onload="SetButtonState(!specui_unitframe_state);" onclick="Cmd('SpecUIToggleUF');" tip_id="toggle_UnitFrames_tip" icon="/ui/fe2/systembar/icons/friends.tga" numstates="3" />
+		<!-- Info Tabs Toggle -->
+		<instance name="mapVisBtn" x="17.9h" y="4.75h" id="btn_specui_bottom_tab_visible"  onload="SetButtonState(!specui_bottom_tab_visible);" onclick="Cmd('SpecUIToggleInfo');" tip_id="toggle_Info_tip" icon="/ui/specui/elements/stats_icon.tga" />
+		<!-- Push Bar Toggle -->
+		<instance name="mapVisBtn" x="20.25h" y="4.75h"  id="btn_specui_push_visible" 		onload="SetButtonState(!specui_push_visible);" onclick="Cmd('SpecUITogglePush');" tip_id="toggle_PushBar_tip" icon="/ui/specui/elements/pushbar_icon.tga" />
+		<!-- Replay Controls Toggle -->
+		<instance name="mapVisBtn" x="22.7h" y="4.75h"  id="btn_game_replay_control" 		onload="SetButtonState(IsVisibleExt('game_replay_control', 'replay_control_container'));" onclick="Cmd('SpecUIToggleReplay');" tip_id="toggle_Controls_tip" icon="/ui/fe2/systembar/icons/offlinereplays.tga" />
+				
+	</panel>
+	
+	<!-- Map Hover Popup 
+		Needs to align left or right based on mini map location selection
+	-->
+	<floater grow="true" x="0.5h" y="1.0h" align="left" valign="bottom" color="invisible" noclick="true" name="mini_map_hover" visible="0" watch="MinimapHover" ontrigger="if(param0, ShowWidget(), HideWidget());" onload="ForceToFront();">
+		
+		<panel grow="true" growinvis="false" color="0 0 0 .6" noclick="true">
+			<frame color="invisible" borderthickness="1" bordercolor=".2 .2 .2 1" noclick="false"/>
+			
+			<!-- Hero -->
+			<panel
+				visible="false"
+				grow="true"
+				float="bottom"
+				watch="MinimapHover"
+				ontrigger="SetVisible(param1);"
+			>
+				<panel grow="true" height="1.8h">				
+					<panel x="0.3h" y="0.3h" width="1.8h" height="1.8h">
+						<image watch="MinimapHover" ontrigger="SetTexture(param4);" />
+						<frame color="invisible" borderthickness="1" bordercolor=".2 .2 .2 1" noclick="false"/>
+					</panel>
+					<label x="2.3h" y="0.1h" height="100%" font="dyn_9" textvalign="center" color="1 1 1 1" noclick="true" watch="MinimapHover" ontrigger="SetText(param3); SetWidth(GetStringWidth('dyn_9', param3) + GetXFromString('0.3h'));" content="--" />				
+				</panel>
+				<panel width="100%" height="0.2h" />
+				<!-- HP -->
+				<panel
+					width="100%" height="0.5h"
+					visible="true"
+					watch="MinimapHover"
+					ontrigger="
+						SetVisible(param5 gt 0);
+					"
+				>
+					<panel width="-0.6h" align="center">						
+						<panel watch="MinimapHover" ontrigger="SetWidth(FtoP(param5, 0)); SetColor(Saturate(1 - (param5 - 0.50) / 0.50), (param5 + (((param5 - 0.05) / 1.0)*0.2)) / 0.45, 0, 1);" color="0 1 0 0">
+							<frame color="invisible" borderthickness="1" bordercolor="0 0 0 1" noclick="false"/>
+						</panel>					
+					</panel>
+				</panel>
+				<!-- Mana -->
+				<panel
+					width="100%" height="0.5h"
+					visible="true"
+					watch="MinimapHover"
+					ontrigger="
+						SetVisible(param6 gt 0);
+					"
+				>
+					<panel width="-0.6h" align="center">						
+						<panel texture="/ui/info/mana_pos.tga" watch="MinimapHover" ontrigger="SetWidth(FtoP(param6, 0));">
+							<frame color="invisible" borderthickness="1" bordercolor="0 0 0 1" noclick="false"/>
+						</panel>
+					</panel>
+				</panel>
+				<panel width="100%" height="0.2h" />				
+				<!-- Inventory -->
+				<panel grow="true" height="1.7h" float="right" padding="0.1h">
+					<panel width="0.3h" height="100%"/>
+					<instance name="minimap_inventory_item" param="7" />
+					<instance name="minimap_inventory_item" param="8" />
+					<instance name="minimap_inventory_item" param="9" />
+					<instance name="minimap_inventory_item" param="10" />
+					<instance name="minimap_inventory_item" param="11" />
+					<instance name="minimap_inventory_item" param="12" />
+					<panel width="0.3h" height="100%"/>
+				</panel>
+
+				<panel width="100%" height="0.2h" />
+			</panel>				
+						
+			<!-- Shop -->
+			<panel
+				visible="false"
+				grow="true"
+				float="bottom"
+				watch="MinimapHover"
+				ontrigger="SetVisible(param2);"
+			>
+				<panel grow="true" height="1.8h">				
+					<panel x="0.3h" y="0.3h" width="1.8h" height="1.8h">
+						<image watch="MinimapHover" ontrigger="SetTexture(param4);" />
+						<frame color="invisible" borderthickness="1" bordercolor=".2 .2 .2 1" noclick="false"/>
+					</panel>
+					<label x="2.3h" y="0.1h" height="100%" font="dyn_9" textvalign="center" color="1 1 1 1" noclick="true" watch="MinimapHover" ontrigger="SetText(param3); SetWidth(GetStringWidth('dyn_9', param3) + GetXFromString('0.3h'));" content="--" />				
+				</panel>				
+				<panel width="100%" height="0.2h" sticky="true" stickytoinvis="false" />	
+			</panel>
+			
+			<!-- Building -->
+			<panel
+				visible="false"
+				grow="true"
+				growinvis="false"
+				float="bottom"
+				watch="MinimapHover"
+				ontrigger="SetVisible(!param2 and !param1);"
+			>
+				<panel grow="true" height="1.8h">				
+					<panel x="0.3h" y="0.3h" width="1.8h" height="1.8h">
+						<image watch="MinimapHover" ontrigger="SetTexture(param4);" />
+						<frame color="invisible" borderthickness="1" bordercolor=".2 .2 .2 1" noclick="false"/>
+					</panel>
+					<label x="2.3h" y="0.1h" height="100%" font="dyn_9" textvalign="center" color="1 1 1 1" noclick="true" watch="MinimapHover" ontrigger="SetText(param3); SetWidth(GetStringWidth('dyn_9', param3) + GetXFromString('0.3h'));" content="--" />				
+				</panel>
+				<!-- HP -->
+				<panel
+					width="100%" height="0.5h"
+					visible="true"
+					watch="MinimapHover"
+					ontrigger="SetVisible(param5 gt 0);"
+				>
+					<panel width="-0.6h" align="center">						
+						<panel width="2" color="1 0 0 1"/>
+						<panel watch="MinimapHover" ontrigger="SetWidth(FtoP(param5, 0)); SetColor(Saturate(1 - (param5 - 0.50) / 0.50), (param5 + (((param5 - 0.05) / 1.0)*0.2)) / 0.45, 0, 1);" color="0 1 0 0">
+							<frame color="invisible" borderthickness="1" bordercolor="0 0 0 1" noclick="false"/>
+						</panel>					
+					</panel>
+				</panel>				
+				<panel width="100%" height="0.2h" sticky="true" stickytoinvis="false" />				
+			</panel>			
+		</panel>		
+	</floater>
+
+
+	<!-- BOTTOM RIGHT -->
+	
+	<!-- Hero/Unit/Building Selection -->
+	<panel width="25.2h" height="25.0h" align="right" valign="bottom" color="invisible" cangrab="0">
+	
+		<!-- Hero Selected -->
+		<panel
+			width="29.8h"
+			height="29.8h"
+			align="right"
+			valign="bottom"
+			group="selected_info"
+			color="invisible"
+			noclick="1"
+			visible="false"
+			watch="SelectedVisible0 SelectedVisible1 SelectedType0"
+			ontrigger="SetVisible(SelectedVisible0 and !SelectedVisible1 and StringEquals(SelectedType0, 'hero'));"
+			
+		>
+
+			<!-- Icon -->
+			<panel x="-17.1h" y="-16.5h" height="6.0h" width="6.0h" align="right" valign="bottom">
+				<image texture="/ui/legion/portrait_background.tga" color="1 1 1 1"/>
+				
+				<panel
+					watch="SelectedIllusion0"
+					ontrigger="SetVisible(!param);"
+				>
+					<image
+						watch="SelectedIcon0"
+						ontrigger="SetVisible(StringLength(param) gt 0); SetTexture(param);"
+						watch0="SelectedHealth0"
+						ontrigger0="If(param0 == 0, SetRenderMode('grayscale'), SetRenderMode('normal')); If(param0 == 0, SetColor('gray'), SetColor('white'));"
+						
+					/>
+				</panel>
+
+				<panel
+					watch="SelectedIllusion0"
+					ontrigger="SetVisible(param);"
+				>
+					<image
+						watch="SelectedIcon0"
+						ontrigger="SetVisible(StringLength(param) gt 0); SetTexture(param);"
+						color="0.35 1.3 0.35"
+						rendermode="grayscale"
+					/>
+				</panel>
+				
+				<panel
+					onmouseldown="Action('PortraitCenterInfo', 1.0);"
+					onmouselup="Action('PortraitCenterInfo', 0.0);"
+					onmouseover="ShowWidget('unit_tooltip_info0');"
+					onmouseout="HideWidget('unit_tooltip_info0');"
+					onhide="Action('PortraitCenterInfo', 0.0);"
+				/>
+				
+				<!-- lifetime bar section-->
+				<panel watch="SelectedLifetime" ontrigger="SetVisible(param1 gt 0);" visible="false" noclick="true" passivechildren="true">
+					<piegraph texture="/ui/common/exp_ring.tga" start="225" end="-49" square="1" color=".2 .2 .1 1" value="1" noclick="true"/>
+					<piegraph texture="/ui/common/exp_ring.tga" watch="SelectedLifetime" ontrigger="SetValue(param2);" start="225" end="-49" square="1" color="#e5df2f" value=".2" noclick="true"/>
+
+					<label width="100%" height="100%" valign="center" textalign="center" textvalign="center" font="dyn_14" color="white" shadow="true" shadowoffset="2" watch="SelectedLifetime" ontrigger="SetText(Ceil(param0 / 1000) # ' s');" />
+				</panel>
+				
+				<image texture="/ui/common/portrait_gloss_up.tga" color="#ffffffbb" noclick="true" />
+			</panel>
+
+			<!-- Inventory -->
+			<panel x="-1.75h" y="-0.4h" width="11.9h" height="7.9h" align="right" valign="bottom" color="invisible">
+				<panel height="3.9h" width="3.9h" align="left" valign="top" color="invisible">
+					<instance name="inventory_info" slot="36"/>
+				</panel>
+				<panel height="3.9h" width="3.9h" align="center" valign="top" color="invisible">
+					<instance name="inventory_info" slot="37"/>
+				</panel>
+				<panel height="3.9h" width="3.9h" align="right" valign="top" color="invisible">
+					<instance name="inventory_info" slot="38"/>
+				</panel>
+
+				<panel height="3.9h" width="3.9h" align="left" valign="bottom" color="invisible">
+					<instance name="inventory_info" slot="39"/>
+				</panel>
+				<panel height="3.9h" width="3.9h" align="center" valign="bottom" color="invisible">
+					<instance name="inventory_info" slot="40"/>
+				</panel>
+				<panel height="3.9h" width="3.9h" align="right" valign="bottom" color="invisible">
+					<instance name="inventory_info" slot="41"/>
+				</panel>
+			</panel>
+
+			<!-- Health -->
+			<panel
+				x="-1.2h"
+				y="-18.8h"
+				width="14.5h"
+				height="1.5h"
+				align="right" valign="bottom"
+				color="0 .2 0 0"
+				watch="SelectedHealth0"
+				ontrigger="SetVisible(param1 gt 0);"
+				onmouseover="ShowWidget('health_tooltip_info');"
+				onmouseout="HideWidget('health_tooltip_info');"
+				passivechildren="true"
+			>
+				<panel color="red" watch="SelectedHealth0"/>
+				<panel color="yellow" watch="SelectedHealth0" ontrigger="SetColor(1, 1, 0, Saturate((param2 * 2.5) - 0.25));"/>
+				<panel color="lime" watch="SelectedHealth0" ontrigger="SetColor(0, 1, 0, Saturate((param2 * 2) - 1));"/>
+				<panel color="0 0 0 .75"/>
+				<panel watch="SelectedHealth0" ontrigger="SetWidth(FtoP(param2));" color="0 1 0 1">
+					<panel color="red" watch="SelectedHealth0"/>
+					<panel color="yellow" watch="SelectedHealth0" ontrigger="SetColor(1, 1, 0, Saturate((param2 * 2.5) - 0.25));"/>
+					<panel color="lime" watch="SelectedHealth0" ontrigger="SetColor(0, 1, 0, Saturate((param2 * 2) - 1));"/>
+
+					<instance name="statusbar_overlay"/>
+
+				</panel>
+				<image width="-0.6h" align="center" texture="/ui/elements/bar_highlight.tga"/>
+				<label font="dyn_8" color="white" shadow="1" width="100%" height="100%" textalign="center" textvalign="center" watch="SelectedHealth0" ontrigger="If(param2 lt 0, SetText(Translate('game_invulnerable')), SetText(Ceil(param0) # '/' # Ceil(param1)));"/>
+			</panel>
+
+			<!-- Mana -->
+			<panel
+				x="-1.2h"
+				y="-17.0h"
+				width="14.5h"
+				height="1.5h"
+				align="right" valign="bottom"
+				color="0 0 .1 1"
+				watch="SelectedMana0"
+				ontrigger="SetVisible(param1 gt 0);"
+				onmouseover="ShowWidget('mana_tooltip_info');"
+				onmouseout="HideWidget('mana_tooltip_info');"
+				passivechildren="true"
+			>
+				<panel watch="SelectedMana0" ontrigger="SetWidth(FtoP(param2));" color="0 .4 1 1">
+					<instance name="statusbar_overlay"/>
+				</panel>
+				<image width="-0.6h" align="center" texture="/ui/elements/bar_highlight.tga"/>
+				<label font="dyn_8" color="white" shadow="1" width="100%" height="100%" textalign="center" textvalign="center" watch="SelectedMana0" ontrigger="SetText(Ceil(param0) # '/' # Ceil(param1));"/>
+			</panel>
+
+
+			<!-- Framing -->
+			<image x="0.3h" y="0.5h" texture="/ui/common/spectator/player_select_info.tga" noclick="1" />
+			
+			<!-- Hero Abilities -->
+			<panel x="-1.5h" y="-8.7h" width="22.4h" height="7.8h" align="right" valign="bottom" color="invisible" noclick="1">
+				<panel name="panel_abilities" width="100%" align="center" float="right" color="invisible" padding="0" noclick="0">
+				
+					<instance name="ability_frame_single" slot="0"/>
+					<instance name="ability_frame_single_plus_one" slot="0" slot_a="0" slot_b="5"/>
+					<instance name="ability_frame_single_plus_two" slot="0" slot_a="0" slot_b="5" slot_c="6"/>
+					<instance name="ability_frame_triple" slot="0" slot_a="5" slot_b="6" slot_c="7"/>
+					<instance name="ability_frame_double" slot="0" slot_a="5" slot_b="6" />
+
+					<instance name="ability_frame_single" slot="1"/>
+					<instance name="ability_frame_single_plus_one" slot="1" slot_a="1" slot_b="5"/>
+					<instance name="ability_frame_single_plus_two" slot="1" slot_a="1" slot_b="5" slot_c="6"/>
+					<instance name="ability_frame_triple" slot="1" slot_a="5" slot_b="6" slot_c="7"/>
+					<instance name="ability_frame_double" slot="1" slot_a="5" slot_b="6" />
+
+					<instance name="ability_frame_single" slot="2"/>
+					<instance name="ability_frame_single_plus_one" slot="2" slot_a="2" slot_b="5"/>
+					<instance name="ability_frame_single_plus_two" slot="2" slot_a="3" slot_b="5" slot_c="6"/>
+					<instance name="ability_frame_triple" slot="2" slot_a="5" slot_b="6" slot_c="7"/>
+					<instance name="ability_frame_double" slot="2" slot_a="5" slot_b="6" />
+
+					<instance name="ability_frame_single" slot="3"/>
+					<instance name="ability_frame_single_plus_one" slot="3" slot_a="3" slot_b="5"/>
+					<instance name="ability_frame_single_plus_two" slot="3" slot_a="3" slot_b="5" slot_c="6"/>
+					<instance name="ability_frame_triple" slot="3" slot_a="5" slot_b="6" slot_c="7"/>
+					<instance name="ability_frame_double" slot="3" slot_a="5" slot_b="6" />
+
+					<panel width="0.0h" height="0.0h"
+						onframe="If(IsVisible(), Call('panel_abilities', 'SetWidth(' # GetX() # ');'));"
+						sticky="true"
+						stickytoinvis="false"
+					/>
+				</panel>
+			</panel>
+
+			<!-- Level -->
+			<panel x="-0.7h" y="-20.3h" height="3.6h" width="3.6h" valign="bottom" align="right"
+				passivechildren="true"
+				onmouseover="ShowWidget('experience_tooltip_info');"
+				onmouseout="HideWidget('experience_tooltip_info');"
+				watch="SelectedLevel0"
+				ontrigger="SetVisible(param1);"
+			>
+				<label width="100%" textalign="center" height="100%" textvalign="center" font="dyn_9" watch="SelectedLevel0" color="yellow" shadow="true" ontrigger="SetText(param0);"/>
+			</panel>
+
+			<!-- Name -->
+			<label x="0.7h" y="-21.2h" width="-13.2h" height="1.6h" align="right" valign="bottom" textalign="left" textvalign="center" color="white" font="dyn_10" watch="SelectedName0" ontrigger="SetText(param);" shadow="true" shadowoffset="2" noclick="true" />
+
+
+			<!-- Selected Stats -->
+			<panel x="-14.5h" y="-1.35h" width="8.8h" height="6.8h" align="right" valign="bottom" color="invisible" float="bottom" padding="0.25h">
+				<!-- Damage -->
+				<panel height="1.7h" watch="SelectedDamage" ontrigger="SetVisible(param1 != 0);" onmouseover="ShowWidget('attack_tooltip_info');" onmouseout="HideWidget('attack_tooltip_info');" passivechildren="true">
+					<image width="100@" height="100%" texture="/ui/common/damage_icon.tga"/>
+					<label x="15@" width="-100@" height="100%" align="right" font="dyn_8" color="white" shadow="1" textalign="left" textvalign="center"
+						watch="SelectedDamage"
+						ontrigger="SetText(' ' # Round(param0 + param2) # ' - ' # Round(param1 + param2));"
+					/>
+				</panel>
+				<!-- Armor -->
+				<panel height="1.7h" onmouseover="ShowWidget('defense_tooltip_info');" onmouseout="HideWidget('defense_tooltip_info');" passivechildren="true">
+					<image width="100@" height="100%" texture="/ui/common/armor_icon.tga"/>
+					<label x="15@" width="-100@" height="100%" align="right" font="dyn_8" color="white" shadow="1" textalign="left" textvalign="center"
+						watch="SelectedArmor"
+						ontrigger="SetText(' ' # FtoA(param1, 2));"
+					/>
+				</panel>
+				<!-- Movement Speed -->
+				<panel height="1.7h" watch="SelectedMoveSpeed" ontrigger="SetVisible(param1 != 0);" onmouseover="ShowWidget('movement_tooltip_info');" onmouseout="HideWidget('movement_tooltip_info');" passivechildren="true">
+					<image width="100@" height="100%" texture="/ui/common/move_speed_icon.tga"/>
+					<label x="15@" width="-100@" height="100%" align="right" font="dyn_8" color="white" shadow="1" textalign="left" textvalign="center"
+						watch="SelectedMoveSpeed"
+						ontrigger="SetText(' ' # Round(param1));"
+					/>
+				</panel>
+				<!-- Attributes -->
+				<panel height="1.7h" color="invisible" float="right" watch="SelectedHasAttributes" ontrigger="SetVisible(param);" onmouseover="ShowWidget('attribute_tooltip_info');" onmouseout="HideWidget('attribute_tooltip_info');" passivechildren="true">
+					<image width="100@" height="100%" texture="/ui/common/plus_icon.tga"/>
+					<label x="15@" width="-100@" height="100%" align="right" font="dyn_8" color="white" shadow="1" textalign="left" textvalign="center"
+						watch="SelectedAttributes"
+						ontrigger="SetText(' ' # Round(param0) # ' ' # Round(param1) # ' ' # Round(param2));"
+					/>
+				</panel>
+			</panel>
+
+			<!-- States -->
+			<panel x="-1.0h" y="-25.5h" width="24.0h" height="2.8h" align="right" valign="bottom" color="invisible" float="right" padding="0.5h" noclick="1">
+				<anchor x="0" y="0" />
+				<instance name="state_info" slot="9" />
+				<instance name="state_info" slot="10" />
+				<instance name="state_info" slot="11" />
+				<instance name="state_info" slot="12" />
+				<instance name="state_info" slot="13" />
+				<instance name="state_info" slot="14" />
+			</panel>
+		</panel>
+		
+		
+		<!-- Non-Hero Unit -->
+		<panel width="29.8h" height="29.8h" align="right" valign="bottom" group="selected_info" watch="SelectedVisible0 SelectedVisible1 SelectedType0" ontrigger="SetVisible(SelectedVisible0 and !SelectedVisible1 and !StringEquals(SelectedType0, 'building') and !StringEquals(SelectedType0, 'hero'));" color="invisible" noclick="1">
+
+			<panel width="24.0h" height="16.0h" align="right" valign="bottom" color="black"/>
+
+			<!-- Icon -->
+			<panel x="-17.1h" y="-8.7h" height="6.0h" width="6.0h" align="right" valign="bottom">
+				<image texture="/ui/legion/portrait_background.tga" color="1 1 1 1"/>
+				<image
+					watch="SelectedIcon0"
+					ontrigger="SetVisible(StringLength(param) gt 0); SetTexture(param);"
+					watch0="SelectedIllusion0"
+					ontrigger0="If(param, SetRenderMode('grayscale'), SetRenderMode('normal')); If(param, SetColor('0.35 1.3 0.35'), SetColor('white'));"
+					onmouseldown="Action('PortraitCenterInfo', 1.0);"
+					onmouselup="Action('PortraitCenterInfo', 0.0);"
+					onmouseover="ShowWidget('unit_tooltip_info0');"
+					onmouseout="HideWidget('unit_tooltip_info0');"
+					onhide="Action('PortraitCenterInfo', 0.0);"
+				/>
+				
+				<!-- lifetime bar section-->
+				<panel watch="SelectedLifetime" ontrigger="SetVisible(param1 gt 0);" visible="false" noclick="true" pasivechildren="true">
+					<piegraph texture="/ui/common/exp_ring.tga" start="225" end="-49" square="1" color=".2 .2 .1 1" value="1" noclick="true"/>
+					<piegraph texture="/ui/common/exp_ring.tga" watch="SelectedLifetime" ontrigger="SetValue(param2);" start="225" end="-49" square="1" color="#e5df2f" value=".2" noclick="true"/>
+
+					<label width="100%" height="100%" valign="center" textalign="center" textvalign="center" font="dyn_14" color="white" shadow="true" shadowoffset="2" watch="SelectedLifetime" ontrigger="SetText(Ceil(param0 / 1000) # ' s');" />
+				</panel>
+				
+				<image texture="/ui/common/portrait_gloss_up.tga" color="#ffffffbb" noclick="true" />
+			</panel>
+
+			<!-- Item catcher -->
+			<panel
+				x="-17.1h" y="-8.7h" height="6.0h" width="6.0h"
+				align="right" valign="bottom"
+				color="invisible"
+				texture="/ui/info/drop.tga"
+				watch="ItemCursorVisible"
+				ontrigger="SetVisible(ItemCursorVisible); RefreshCursor();"
+				onmouseover="SetColor('white');"
+				onmouseout="SetColor('invisible');"
+				onclick="ItemPlaceSelected(0);"
+				onrightclick="ItemPlaceSelected(0);"
+			/>
+
+			<!-- Inventory -->
+			<panel x="-1.75h" y="-0.4h" width="11.9h" height="7.9h" align="right" valign="bottom" color="invisible">
+				<panel height="3.9h" width="3.9h" align="left" valign="top" color="invisible">
+					<instance name="inventory_info" slot="36"/>
+				</panel>
+				<panel height="3.9h" width="3.9h" align="center" valign="top" color="invisible">
+					<instance name="inventory_info" slot="37"/>
+				</panel>
+				<panel height="3.9h" width="3.9h" align="right" valign="top" color="invisible">
+					<instance name="inventory_info" slot="38"/>
+				</panel>
+
+				<panel height="3.9h" width="3.9h" align="left" valign="bottom" color="invisible">
+					<instance name="inventory_info" slot="39"/>
+				</panel>
+				<panel height="3.9h" width="3.9h" align="center" valign="bottom" color="invisible">
+					<instance name="inventory_info" slot="40"/>
+				</panel>
+				<panel height="3.9h" width="3.9h" align="right" valign="bottom" color="invisible">
+					<instance name="inventory_info" slot="41"/>
+				</panel>
+			</panel>
+
+			<!-- Health -->
+			<panel
+				x="-1.2h"
+				y="-10.8h"
+				width="14.5h"
+				height="1.4h"
+				align="right" valign="bottom"
+				color="0 .2 0 0"
+				watch="SelectedHealth0"
+				ontrigger="SetVisible(param1 gt 0);"
+				onmouseover="ShowWidget('health_tooltip_info');"
+				onmouseout="HideWidget('health_tooltip_info');"
+				passivechildren="true"
+			>
+				<panel color="red" watch="SelectedHealth0"/>
+				<panel color="yellow" watch="SelectedHealth0" ontrigger="SetColor(1, 1, 0, Saturate((param2 * 2.5) - 0.25));"/>
+				<panel color="lime" watch="SelectedHealth0" ontrigger="SetColor(0, 1, 0, Saturate((param2 * 2) - 1));"/>
+				<panel color="0 0 0 .75"/>
+				<panel watch="SelectedHealth0" ontrigger="SetWidth(FtoP(param2));" color="0 1 0 1">
+					<panel color="red" watch="SelectedHealth0"/>
+					<panel color="yellow" watch="SelectedHealth0" ontrigger="SetColor(1, 1, 0, Saturate((param2 * 2.5) - 0.25));"/>
+					<panel color="lime" watch="SelectedHealth0" ontrigger="SetColor(0, 1, 0, Saturate((param2 * 2) - 1));"/>
+
+					<instance name="statusbar_overlay"/>
+
+				</panel>
+				<image width="-0.6h" align="center" texture="/ui/elements/bar_highlight.tga"/>
+				<label font="dyn_8" color="white" shadow="1" width="100%" height="100%" textalign="center" textvalign="center" watch="SelectedHealth0" ontrigger="If(param2 lt 0, SetText(Translate('game_invulnerable')), SetText(Ceil(param0) # '/' # Ceil(param1)));"/>
+			</panel>
+
+			<!-- Mana -->
+			<panel
+				x="-1.2h"
+				y="-9.0h"
+				width="14.5h"
+				height="1.4h"
+				align="right" valign="bottom"
+				color="0 0 .1 1"
+				watch="SelectedMana0"
+				ontrigger="SetVisible(param1 gt 0);"
+				onmouseover="ShowWidget('mana_tooltip_info');"
+				onmouseout="HideWidget('mana_tooltip_info');"
+				passivechildren="true"
+			>
+				<panel watch="SelectedMana0" ontrigger="SetWidth(FtoP(param2));" color="0 .4 1 1">
+
+					<instance name="statusbar_overlay"/>
+
+				</panel>
+				<image width="-0.6h" align="center" texture="/ui/elements/bar_highlight.tga"/>
+				<label font="dyn_8" color="white" shadow="1" width="100%" height="100%" textalign="center" textvalign="center" watch="SelectedMana0" ontrigger="SetText(Ceil(param0) # '/' # Ceil(param1));"/>
+			</panel>
+
+
+			<!-- Framing -->
+			<image texture="/ui/common/bot_right.tga" noclick="1" />
+			
+			<!-- Inventory Cover -->
+			<panel x="-1.85h" y="-0.4h" width="11.9h" height="7.9h" align="right" valign="bottom" color="invisible" watch="SelectedHasInventory" ontrigger="SetVisible(!param);" passivechildren="true">
+				<image width="22.5h" height="11.25h" texture="/ui/common/inventory_cover.tga" />
+			</panel>
+
+			<!-- Level -->
+			<panel x="-0.7h" y="-12.2h" height="3.6h" width="3.6h" valign="bottom" align="right"
+				passivechildren="true"
+				onmouseover="ShowWidget('experience_tooltip_info');"
+				onmouseout="HideWidget('experience_tooltip_info');"
+				watch="SelectedLevel0"
+				ontrigger="SetVisible(param1);"
+			>
+				<image x="-0.5h" y="-0.5h" width="5.0h" height="5.0h" texture="/ui/common/ability_toggle.tga" noclick="true" />
+				<label width="100%" textalign="center" height="100%" textvalign="center" font="dyn_9" watch="SelectedLevel0" color="yellow" shadow="true" ontrigger="SetText(param0);"/>
+			</panel>
+
+			<!-- Name -->
+			<label x="0.7h" y="-13.2h" width="-13.2h" height="1.6h" align="right" valign="bottom" textalign="left" textvalign="center" color="white" font="dyn_10" watch="SelectedName0" ontrigger="SetText(param);" shadow="true" shadowoffset="2" noclick="true" />
+
+
+			<!-- Selected Stats -->
+			<panel x="-14.5h" y="-1.0h" width="8.8h" height="6.8h" align="right" valign="bottom" color="invisible" float="bottom" padding="0.25h">
+				<!-- Damage -->
+				<panel height="1.6h" watch="SelectedDamage" ontrigger="SetVisible(param1 != 0);" onmouseover="ShowWidget('attack_tooltip_info');" onmouseout="HideWidget('attack_tooltip_info');" passivechildren="true">
+					<image width="100@" height="100%" texture="/ui/common/damage_icon.tga"/>
+					<label x="15@" width="-100@" height="100%" align="right" font="dyn_8" color="white" shadow="1" textalign="left" textvalign="center"
+						watch="SelectedDamage"
+						ontrigger="SetText(' ' # Round(param0 + param2) # ' - ' # Round(param1 + param2));"
+					/>
+				</panel>
+				<!-- Armor -->
+				<panel height="1.6h" onmouseover="ShowWidget('defense_tooltip_info');" onmouseout="HideWidget('defense_tooltip_info');" passivechildren="true">
+					<image width="100@" height="100%" texture="/ui/common/armor_icon.tga"/>
+					<label x="15@" width="-100@" height="100%" align="right" font="dyn_8" color="white" shadow="1" textalign="left" textvalign="center"
+						watch="SelectedArmor"
+						ontrigger="SetText(' ' # FtoA(param1, 2));"
+					/>
+				</panel>
+				<!-- Movement Speed -->
+				<panel height="1.6h" watch="SelectedMoveSpeed" ontrigger="SetVisible(param1 != 0);" onmouseover="ShowWidget('movement_tooltip_info');" onmouseout="HideWidget('movement_tooltip_info');" passivechildren="true">
+					<image width="100@" height="100%" texture="/ui/common/move_speed_icon.tga"/>
+					<label x="15@" width="-100@" height="100%" align="right" font="dyn_8" color="white" shadow="1" textalign="left" textvalign="center"
+						watch="SelectedMoveSpeed"
+						ontrigger="SetText(' ' # Round(param1));"
+					/>
+				</panel>
+				<!-- Attributes -->
+				<panel height="1.6h" color="invisible" float="right" watch="SelectedHasAttributes" ontrigger="SetVisible(param);" onmouseover="ShowWidget('attribute_tooltip_info');" onmouseout="HideWidget('attribute_tooltip_info');" passivechildren="true">
+					<image width="100@" height="100%" texture="/ui/common/plus_icon.tga"/>
+					<label x="15@" width="-100@" height="100%" align="right" font="dyn_8" color="white" shadow="1" textalign="left" textvalign="center"
+						watch="SelectedAttributes"
+						ontrigger="SetText(' ' # Round(param0) # ' ' # Round(param1) # ' ' # Round(param2));"
+					/>
+				</panel>
+			</panel>
+
+			<!-- States -->
+			<panel x="-1.0h" y="-17.5h" width="24.0h" height="2.4h" align="right" valign="bottom" color="invisible" float="right" padding="0.5h" noclick="1">
+				<anchor x="0" y="0" />
+				<instance name="state_info" width="2.4h" height="2.4h" slot="9" />
+				<instance name="state_info" width="2.4h" height="2.4h" slot="10" />
+				<instance name="state_info" width="2.4h" height="2.4h" slot="11" />
+				<instance name="state_info" width="2.4h" height="2.4h" slot="12" />
+				<instance name="state_info" width="2.4h" height="2.4h" slot="13" />
+				<instance name="state_info" width="2.4h" height="2.4h" slot="14" />
+			</panel>
+
+			<!-- Targetting Catcher -->
+			<button
+				color="invisible"
+				watch="ToolTargetingEntity"
+				ontrigger="SetVisible(param); RefreshCursor();"
+				onclick="SelectUnit(SelectedIndex0);"
+				interactive="false"
+			/>
+		</panel>
+
+
+		<!-- Buildings --> 
+		<panel width="29.8h" height="29.8h" align="right" valign="bottom" watch="SelectedVisible0 SelectedVisible1 SelectedType0" ontrigger="SetVisible(SelectedVisible0 and !SelectedVisible1 and StringEquals(SelectedType0, 'building'));" color="invisible" noclick="1">
+
+			<panel width="24.0h" height="12.0h" align="right" valign="bottom" color="black"/>
+
+			<!-- Icon -->
+			<panel x="-17.1h" y="-4.8h" height="6.0h" width="6.0h" align="right" valign="bottom">
+				<image texture="/ui/legion/portrait_background.tga" color="1 1 1 1"/>
+				<image
+					watch="SelectedIcon0"
+					ontrigger="SetVisible(StringLength(param) gt 0); SetTexture(param);"
+					watch0="SelectedIllusion0"
+					ontrigger0="If(param, SetRenderMode('grayscale'), SetRenderMode('normal')); If(param, SetColor('0.35 1.3 0.35'), SetColor('white'));"
+					onmouseldown="Action('PortraitCenterInfo', 1.0);"
+					onmouselup="Action('PortraitCenterInfo', 0.0);"
+					onmouseover="ShowWidget('unit_tooltip_info0');"
+					onmouseout="HideWidget('unit_tooltip_info0');"
+					onhide="Action('PortraitCenterInfo', 0.0);"
+				/>
+				<image texture="/ui/common/portrait_gloss_up.tga" color="#ffffffbb" noclick="true" />
+			</panel>
+
+			<!-- Health -->
+			<panel
+				x="-1.2h"
+				y="-7.0h"
+				width="14.5h"
+				height="1.4h"
+				align="right" valign="bottom"
+				color="0 .2 0 0"
+				watch="SelectedHealth0"
+				ontrigger="SetVisible(param1 gt 0);"
+				onmouseover="ShowWidget('health_tooltip_info');"
+				onmouseout="HideWidget('health_tooltip_info');"
+				passivechildren="true"
+			>
+				<panel color="red" watch="SelectedHealth0"/>
+				<panel color="yellow" watch="SelectedHealth0" ontrigger="SetColor(1, 1, 0, Saturate((param2 * 2.5) - 0.25));"/>
+				<panel color="lime" watch="SelectedHealth0" ontrigger="SetColor(0, 1, 0, Saturate((param2 * 2) - 1));"/>
+				<panel color="0 0 0 .75"/>
+				<panel watch="SelectedHealth0" ontrigger="SetWidth(FtoP(param2));" color="0 1 0 1">
+					<panel color="red" watch="SelectedHealth0"/>
+					<panel color="yellow" watch="SelectedHealth0" ontrigger="SetColor(1, 1, 0, Saturate((param2 * 2.5) - 0.25));"/>
+					<panel color="lime" watch="SelectedHealth0" ontrigger="SetColor(0, 1, 0, Saturate((param2 * 2) - 1));"/>
+
+					<instance name="statusbar_overlay"/>
+
+				</panel>
+				<image width="-0.6h" align="center" texture="/ui/elements/bar_highlight.tga"/>
+				<label font="dyn_8" color="white" shadow="1" width="100%" height="100%" textalign="center" textvalign="center" watch="SelectedHealth0" ontrigger="If(param2 lt 0, SetText(Translate('game_invulnerable')), SetText(Ceil(param0) # '/' # Ceil(param1)));"/>
+			</panel>
+			
+			<!-- Framing -->
+			<image height="50%" valign="bottom" texture="/ui/common/bot_right_structure.tga" noclick="1" />
+			
+			<!-- Shared abilities -->
+			<panel width="15.0h" height="8.0h" align="right" valign="bottom" color="invisible" noclick="1">
+
+				<panel x="0.4h" y="0.35h" width="100%" align="center" float="right" color="invisible" padding="0" noclick="0">
+					<instance name="ability_frame_shared" slot="33"/>
+					<instance name="ability_frame_shared" slot="34"/>
+					<instance name="ability_frame_shared" slot="35"/>
+				</panel>
+
+			</panel>
+
+			<!-- Level -->
+			<panel x="-0.7h" y="-8.3h" height="3.6h" width="3.6h" valign="bottom" align="right"
+				passivechildren="true"
+				onmouseover="ShowWidget('experience_tooltip_info');"
+				onmouseout="HideWidget('experience_tooltip_info');"
+				watch="SelectedLevel0"
+				ontrigger="SetVisible(param1);"
+			>
+				<image x="-0.5h" y="-0.5h" width="5.0h" height="5.0h" texture="/ui/common/ability_toggle.tga" noclick="true" />
+				<label width="100%" textalign="center" height="100%" textvalign="center" font="dyn_9" watch="SelectedLevel0" color="yellow" shadow="true" ontrigger="SetText(param0);"/>
+			</panel>
+
+			<!-- Name -->
+			<label x="0.7h" y="-9.3h" width="-13.2h" height="1.6h" align="right" valign="bottom" textalign="left" textvalign="center" color="white" font="dyn_10" watch="SelectedName0" ontrigger="SetText(param);" shadow="true" shadowoffset="2" noclick="true" />
+
+			<!-- Selected Stats -->
+			<panel x="-14.9h" y="-0.8h" width="8.8h" height="3.3h" align="right" valign="bottom" color="invisible" float="bottom" padding="0.2h">
+
+				<!-- Selected Damage -->
+				<panel width="-0.25h" height="1.7h" align="right" watch="SelectedDamage" ontrigger="SetVisible(param1 != 0);" onmouseover="ShowWidget('attack_tooltip_info');" onmouseout="HideWidget('attack_tooltip_info');" passivechildren="true">
+					<image width="1.7h" height="1.7h" texture="/ui/legion/damage_icon.tga"/>
+					<label width="-1.5h" height="100%" align="right" font="dyn_8" color="white" shadow="1" textalign="left" textvalign="center"
+						watch="SelectedDamage"
+						ontrigger=
+						"
+							If(param1 == 0.0,
+								ClearText(),
+								If(param2 == 0.0,
+									SetText(' ' # Round(param0) # ' - ' # Round(param1)),
+									If(param2 > 0.0,
+										SetText(' ' # Round(param0) # ' - ' # Round(param1) # ' ^g+' # Round(param2)),
+										SetText(' ' # Round(param0) # ' - ' # Round(param1) # ' ^r' # Round(param2))
+									)
+								)
+							);
+						"
+					/>
+				</panel>
+
+				<!-- Selected Armor -->
+				<panel width="-0.25h" height="1.7h" align="right" onmouseover="ShowWidget('defense_tooltip_info');" onmouseout="HideWidget('defense_tooltip_info');" passivechildren="true">
+					<image width="1.7h" height="1.7h" texture="/ui/common/armor_icon.tga"/>
+					<label width="-1.7h" height="100%" align="right" font="dyn_8" color="white" shadow="1" textalign="left" textvalign="center"
+						watch="SelectedArmor"
+						ontrigger=
+						"
+							If(param1 - param0 == 0.0,
+								SetText(' ' # FtoA(param0, 2)),
+								If(param1 - param0 > 0.0,
+									SetText(' ' # FtoA(param0, 2) # ' ^g+' # FtoA(param1 - param0, 2)),
+									SetText(' ' # FtoA(param0, 2) # ' ^r' # FtoA(param1 - param0, 2))
+								)
+							);
+						"
+					/>
+				</panel>
+
+			</panel>
+		</panel>
+
+		<!-- Multiple Units Selected -->
+		<panel width="29.8h" height="29.8h" align="right" valign="bottom" watch="SelectedVisible0 SelectedVisible1" ontrigger="SetVisible(SelectedVisible0 and SelectedVisible1);" noclick="1">
+
+			<panel width="24.0h" height="13.0h" align="right" valign="bottom" color="black"/>
+
+			<!-- Framing -->
+			<image texture="/ui/common/bot_right_multi.tga" noclick="1" />
+
+			<panel x="-0.8h" y="-0.4h" width="21.4h" height="13.8h" align="right" valign="bottom" color="invisible" visible="1" float="bottom" padding="0.2h">
+				<panel y="0.5h" height="4.2h" float="right" padding="0.1h">
+					<instance name="multi_select_unit" index="0"/>
+					<instance name="multi_select_unit" index="1"/>
+					<instance name="multi_select_unit" index="2"/>
+					<instance name="multi_select_unit" index="3"/>
+					<instance name="multi_select_unit" index="4"/>
+				</panel>
+
+				<panel height="4.2h" float="right" padding="0.1h">
+					<instance name="multi_select_unit" index="5"/>
+					<instance name="multi_select_unit" index="6"/>
+					<instance name="multi_select_unit" index="7"/>
+					<instance name="multi_select_unit" index="8"/>
+					<instance name="multi_select_unit" index="9"/>
+				</panel>
+
+				<panel height="4.2h" float="right" padding="0.1h">
+					<instance name="multi_select_unit" index="10"/>
+					<instance name="multi_select_unit" index="11"/>
+					<instance name="multi_select_unit" index="12"/>
+					<instance name="multi_select_unit" index="13"/>
+					<instance name="multi_select_unit" index="14"/>
+				</panel>
+			</panel>
+		</panel>			
+	</panel>
+	<!-- END BOTTOM RIGHT -->
+		
+	<!-- Inventory Hover Info -->
+	<floater
+		name="inventory_hoverinfo"
+		width="32.7h" height="15.0h"
+		color="invisible"
+		noclick="1"
+		visible="0"		
+	>	
+	
+		<!-- Inventory Slots-->
+		<instance name="inventory_hoverinfo" x="1.1h" y="4.5h" slot="0" />
+		<instance name="inventory_hoverinfo" x="6.2h" y="4.5h" slot="1" />
+		<instance name="inventory_hoverinfo" x="11.3h" y="4.5h" slot="2" />
+		<instance name="inventory_hoverinfo" x="1.1h" y="9.6h" slot="3" />
+		<instance name="inventory_hoverinfo" x="6.2h" y="9.6h" slot="4" />
+		<instance name="inventory_hoverinfo" x="11.3h" y="9.6h" slot="5" />		
+		<!-- Stash Slots-->
+		<instance name="stash_hoverinfo" x="16.7h" y="4.5h" slot="0" />
+		<instance name="stash_hoverinfo" x="21.8h" y="4.5h" slot="1" />
+		<instance name="stash_hoverinfo" x="26.9h" y="4.5h" slot="2" />
+		<instance name="stash_hoverinfo" x="16.7h" y="9.6h" slot="3" />
+		<instance name="stash_hoverinfo" x="21.8h" y="9.6h" slot="4" />
+		<instance name="stash_hoverinfo" x="26.9h" y="9.6h" slot="5" />
+		
+		<image width="56.0h" height="28.0h" texture="/ui/common/spectator/inventory_mouseoverbg.tga" noclick="1"/>		
+		<label x="1.8h" y="2.25h" height="2.0h" font="dyn_9" color="white" shadow="1" content="Inventory"/>
+		<label x="17.6h" y="2.25h" height="2.0h" font="dyn_9" color="white" shadow="1" content="Stash"/>	
+	</floater>
+	
+	<!-- Tooltips -->
+	<panel x="-1.0h" y="-29h" align="right"	valign="bottom" width="0" height="0" noclick="true" passivechildren="true">
+		<instance name="ability_tooltip" id="ability_tooltip_shared25" slot="33" help="true" />
+		<instance name="ability_tooltip" id="ability_tooltip_shared26" slot="34" help="true" />
+		<instance name="ability_tooltip" id="ability_tooltip_shared27" slot="35" help="true" />
+		
+		<instance name="ability_levelup_tooltip" id="ability_levelup_tooltip_shared25" slot="33" help="true" />
+		<instance name="ability_levelup_tooltip" id="ability_levelup_tooltip_shared26" slot="34" help="true" />
+		<instance name="ability_levelup_tooltip" id="ability_levelup_tooltip_shared27" slot="35" help="true" />
+
+		<instance name="attack_tooltip_info" />
+		<instance name="defense_tooltip_info" />
+		<instance name="attribute_tooltip_info" />
+		<instance name="health_tooltip_info" />
+		<instance name="mana_tooltip_info" />
+		<instance name="experience_tooltip_info" />
+		<instance name="movement_tooltip_info" />
+		
+		<instance name="team_colors_tooltip" />
+			
+		<instance name="unit_tooltip_info" slot="0" />
+		<instance name="unit_tooltip_info" slot="1" />
+		<instance name="unit_tooltip_info" slot="2" />
+		<instance name="unit_tooltip_info" slot="3" />
+		<instance name="unit_tooltip_info" slot="4" />
+		<instance name="unit_tooltip_info" slot="5" />
+		<instance name="unit_tooltip_info" slot="6" />
+		<instance name="unit_tooltip_info" slot="7" />
+		<instance name="unit_tooltip_info" slot="8" />
+		<instance name="unit_tooltip_info" slot="9" />
+		<instance name="unit_tooltip_info" slot="10" />
+		<instance name="unit_tooltip_info" slot="11" />
+		<instance name="unit_tooltip_info" slot="12" />
+		<instance name="unit_tooltip_info" slot="13" />
+		<instance name="unit_tooltip_info" slot="14" />
+		
+		<instance name="ability_info_tooltip" id="ability_tooltip0" slot="0" help="false" />
+		<instance name="ability_info_tooltip" id="ability_tooltip1" slot="1" help="false" />
+		<instance name="ability_info_tooltip" id="ability_tooltip2" slot="2" help="false" />
+		<instance name="ability_info_tooltip" id="ability_tooltip3" slot="3" help="false" />
+		<instance name="ability_info_tooltip" id="ability_tooltip4" slot="4" help="false" />
+		<instance name="ability_info_tooltip" id="ability_tooltip5" slot="5" help="false" />
+		<instance name="ability_info_tooltip" id="ability_tooltip6" slot="6" help="false" />
+		<instance name="ability_info_tooltip" id="ability_tooltip7" slot="7" help="false" />
+		<instance name="ability_info_tooltip" id="ability_tooltip8" slot="8" help="false" />
+
+		<instance name="ability_info_tooltip" id="inventory_info_tooltip36" slot="36" help="true" />
+		<instance name="ability_info_tooltip" id="inventory_info_tooltip37" slot="37" help="true" />
+		<instance name="ability_info_tooltip" id="inventory_info_tooltip38" slot="38" help="true" />
+		<instance name="ability_info_tooltip" id="inventory_info_tooltip39" slot="39" help="true" />
+		<instance name="ability_info_tooltip" id="inventory_info_tooltip40" slot="40" help="true" />
+		<instance name="ability_info_tooltip" id="inventory_info_tooltip41" slot="41" help="true" />
+
+		<instance name="ability_info_tooltip" id="state_info_tooltip9" slot="9" help="false" />
+		<instance name="ability_info_tooltip" id="state_info_tooltip10" slot="10" help="false" />
+		<instance name="ability_info_tooltip" id="state_info_tooltip11" slot="11" help="false" />
+		<instance name="ability_info_tooltip" id="state_info_tooltip12" slot="12" help="false" />
+		<instance name="ability_info_tooltip" id="state_info_tooltip13" slot="13" help="false" />
+		<instance name="ability_info_tooltip" id="state_info_tooltip14" slot="14" help="false" />
+		
+		<instance name="hero_tooltip" id="hero_tooltip0" type="SpectatorHero" slot="0" />
+		<instance name="hero_tooltip" id="hero_tooltip1" type="SpectatorHero" slot="1" />
+		<instance name="hero_tooltip" id="hero_tooltip2" type="SpectatorHero" slot="2" />
+		<instance name="hero_tooltip" id="hero_tooltip3" type="SpectatorHero" slot="3" />
+		<instance name="hero_tooltip" id="hero_tooltip4" type="SpectatorHero" slot="4" />
+		<instance name="hero_tooltip" id="hero_tooltip5" type="SpectatorHero" slot="5" />
+		<instance name="hero_tooltip" id="hero_tooltip6" type="SpectatorHero" slot="6" />
+		<instance name="hero_tooltip" id="hero_tooltip7" type="SpectatorHero" slot="7" />
+		<instance name="hero_tooltip" id="hero_tooltip8" type="SpectatorHero" slot="8" />
+		<instance name="hero_tooltip" id="hero_tooltip9" type="SpectatorHero" slot="9" />
+	</panel>
+	
+	<!--
+	<instance name="team_statskey_tip"/>
+	-->
+	
+	<!-- Chat -->
+	<panel noclick="true" passivechildren="true">
+		<instance name="game_chat_window" interface="game_spectator" xoffset="20h" yoffset="-32.5h"/>
+	</panel>
+	
+	<!-- Chat Log -->
+	<instance name="game_chat_textbuffer" interface="game_spectator" xoffset="20h" yoffset="-32.5h"/>
+
+	<effectpanel
+		name="effect_panel"
+		camerawidth="100a"
+		cameraheight="100"
+		watch0="MapEffect"
+		ontrigger0="StartEffect(param0, GetMinimapDrawX('minimap', param1) / GetScreenWidth(), GetMinimapDrawY('minimap', 1.0 - param2) / GetScreenHeight(), param3);"
+		noclick="true"
+	/>
+		
+	<instance name="vote_panel" align="center"/>
+	
+	<include file="/ui/fe2/notifications.package"/> <!-- Loaded from the FE2 dir, not the root /ui dir -->
+	
+	<!-- Movable Frames GUI -->
+	<panel name="movf_control_button_spec" noclick="1" x="37.0h"  height="2.0h" width="9.0h" />
+	<panel noclick="1" watch="movf_show" ontrigger="BringToFront();">
+		<panel visible="false" noclick="1" watch="movf_show" ontrigger="SetVisible(param);">
+			<instance name="movf_dragcollect"/>
+		</panel>
+		<panel name="movf_overlays" visible="false" noclick="1" watch="movf_show" ontrigger="SetVisible(param);"/>
+		<panel visible="false" noclick="1" watch="movf_show" ontrigger="SetVisible(param);">
+			<instance name="movf_dragbox"/>
+		</panel>
+		<include file="/ui/movf_control.package"/>
+	</panel>		
+	
+	<childinterface file="game_shop_v3.interface"/>
+	
+	<!-- Tooltips -->
+	<instance name="simple_tooltip_floater" tip_id="toggle_UnitFrames_tip" x="25" y="0" width="15.0h" align="left" visible="0" font="dyn_10" label="game_replay_tip_UnitFrames"/>
+	<instance name="simple_tooltip_floater" tip_id="toggle_PushBar_tip" x="25" y="0" width="15.0h" align="left" visible="0" font="dyn_10" label="game_replay_tip_PushBar"/>
+	<instance name="simple_tooltip_floater" tip_id="toggle_Info_tip" x="25" y="0" width="15.0h" align="left" visible="0" font="dyn_10" label="game_replay_tip_Info"/>
+	<instance name="simple_tooltip_floater" tip_id="toggle_Controls_tip" x="25" y="0" width="15.0h" align="left" visible="0" font="dyn_10" label="game_replay_tip_Controls"/>	
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="replay_lockcam_tip" title="game_replay_control_lockcam" label="game_replay_control_lockcam_tip"/>
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="specui_options_showTips" title="specui_options_showTips" label="specui_options_showTips_txt"/>
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="specui_options_showItemPurch" title="specui_options_showItemPurch" label="specui_options_showItemPurch_txt"/>
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="specui_options_showHotkeys" title="specui_options_showHotkeys" label="specui_options_showHotkeys_txt"/>
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="specui_options_detectCombat" title="specui_options_detectCombat" label="specui_options_detectCombat_txt"/>
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="specui_options_abilityLvlUps" title="specui_options_abilityLvlUps" label="specui_options_abilityLvlUps_txt"/>
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="specui_options_abilityUsage" title="specui_options_abilityUsage" label="specui_options_abilityUsage_txt"/>
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="Mspecui_options_costThreshold" title="specui_options_costThreshold" label="specui_options_costThreshold_txt"/>
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="specui_options_miniMode" title="specui_options_miniMode" label="specui_options_miniMode_txt"/>
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="specui_options_miniMode1" title="specui_options_miniMode1" label="specui_options_miniMode1_txt"/>	
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="specui_options_miniMode2" title="specui_options_miniMode2" label="specui_options_miniMode2_txt"/>
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="specui_options_hideChat" title="specui_options_hideChat" label="specui_options_hideChat_txt"/>	
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="Mspecui_options_popupLife" title="specui_options_popupLife" label="specui_options_popupLife_txt"/>
+	<instance name="generic_tooltip_floater" x="20" y="10" align="left" valign="bottom" tip_id="Mspecui_options_popupCD" title="specui_options_popupCD" label="specui_options_popupCD_txt"/>
+	
+</interface>
