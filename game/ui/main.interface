@@ -589,35 +589,35 @@
                                 If(!StringEquals(param0, 'success'), SetTextColor('1 .7 0 1'), SetTextColor('0.5 .35 0 1'));
                                 "
                             onshow="
-                          /*
+                          ##
                                 If(account_autoLogin, SetFocus('false'));
                                 If(account_autoLogin, SetInputLine(account_password), EraseInputLine());                                
-                          */
+                          ##
                                 "
                             onchange="
-                          /*
+                          ##
                                 If(account_autoLogin, Set(account_password, this));
-                          */
+                          ##
                                 Set(login_password, this);
                                 Call('main_login_button', 'SetEnabled(!StringEmpty(main_login_user) and !StringEmpty(main_login_password));');
                                 "
                             onenter="
                                 PlaySound('/shared/sounds/ui/button_click_02.wav');
                                 SetFocus('false');
-                          /*
+                          ##
                                 Login(main_login_user, main_login_password);
-                          */
+                          ##
                                 SaveLoginInfo();
                                 Login();
                                 "
                             watch1="ShowMainMenu"
                             ontrigger1="
-                          /*
+                          ##
                                 If(account_autoLogin and !IsLoggedIn(),
                                   If(cg_menuTransitions and _menuFirstPlay,
                                     SleepWidget(4000, 'Login(main_login_user, main_login_password);'),
                                       Login(main_login_user, main_login_password)));
-                          */
+                          ##
                           "
                         />
                     </panel>
@@ -636,11 +636,11 @@
                         font="dyn_9" label="main_checkbox_remember_me"
                         cvar="login_rememberName"
                         onclick="
-                      /*
+                      ##
                             If(login_rememberName, Set(account_username, main_login_user), Set(account_username, ''));
                             If(!login_rememberName, Set(account_password,  ''));
                             If(!login_rememberName, Set(account_autoLogin, false));
-                      */
+                      ##
                             SaveLoginInfo();
                             "
                     />
@@ -655,11 +655,11 @@
                         font="dyn_9" label="main_checkbox_auto_login"
                         cvar="account_autoLogin"
                         onclick="
-                      /*
+                      ##
                             If(account_autoLogin, Set(account_password, main_login_password), Set(account_password, ''));
                             If(account_autoLogin, Set(login_rememberName, true));
                             If(account_autoLogin, Set(account_username, main_login_user));
-                      */
+                      ##
                             SaveLoginInfo();
                             "
                     />
