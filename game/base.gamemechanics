@@ -6,7 +6,7 @@
     <attacktype name="ranged" deniedexpmultiplier="0.50" uphillmisschance="0.25" />
     
     <!-- Combat types -->
-    <combattypes list="Hero,Melee,Ranged,Siege,Structure,Tower">
+    <combattypes list="Hero,Melee,Ranged,Siege,Structure,Tower,Neutral">
         <combattable name="Hero">
             <attackmultiplier target="Hero" value="1.0"/>
             <attackmultiplier target="Melee" value="1.0"/>
@@ -141,8 +141,8 @@
 
         <combattable name="Siege">
             <attackmultiplier target="Hero" value="0.5"/>
-            <attackmultiplier target="Melee" value="1.25"/>
-            <attackmultiplier target="Ranged" value="1.25"/>
+            <attackmultiplier target="Melee" value="1.0"/>
+            <attackmultiplier target="Ranged" value="1.0"/>
             <attackmultiplier target="Siege" value="1.5"/>
             <attackmultiplier target="Structure" value="1.5"/>
             <attackmultiplier target="Tower" value="1.5"/>
