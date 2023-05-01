@@ -2,8 +2,8 @@
 <gamemechanics>
     <!-- Attack types -->
     <attacktype name="none" deniedexpmultiplier="1.0" />
-    <attacktype name="melee" deniedexpmultiplier="0.67" />
-    <attacktype name="ranged" deniedexpmultiplier="0.33" uphillmisschance="0.25" />
+    <attacktype name="melee" deniedexpmultiplier="0.50" />
+    <attacktype name="ranged" deniedexpmultiplier="0.50" uphillmisschance="0.25" />
     
     <!-- Combat types -->
     <combattypes list="Hero,Melee,Ranged,Siege,Structure,Tower">
