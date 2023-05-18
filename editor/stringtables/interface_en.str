@@ -185,6 +185,8 @@ mapedit_entity_property_team                Team
 mapedit_entity_property_level               Level
 mapedit_entity_property_type                Type
 mapedit_entity_property_model               Model
+mapedit_entity_property_anim                Animation
+mapedit_entity_property_anim_replay         Replay Animation
 mapedit_entity_property_skin                Skin
 mapedit_entity_property_target0             Target #0
 mapedit_entity_property_target1             Target #1
@@ -371,6 +373,8 @@ mapedit_scripts_existing_tip                Double click to edit an exisiting sc
 mapedit_scripts_edit                        Edit Script
 
 mapedit_enviro_title                        Environment
+
+mv_entity_properties                        Entity Properties (This is the only thing that works; ignore other buttons for now)
 
 mapedit_entity_properties                   Entity Properties
 mapedit_entity_properties_tree              Tree Properties
