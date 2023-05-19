@@ -13,4 +13,9 @@
 
 
 *.dylib
+*.dll
 *.app
+*.exe
+/NoH*
+/BeT*
+/K2*
