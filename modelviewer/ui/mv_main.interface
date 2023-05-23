@@ -3273,13 +3273,50 @@
                         onload="CreateString('anim2', ''); SetSelectedItemByValue(anim2);"
                 />
                 -->
+                <panel width="100%" height="0.5h" noclick="true" />
                 <instance
                     name="button2"
                     height="2.2h" width="15.0h"
                     label="mapedit_entity_property_anim_replay"
                     onclick="PlayAnim(anim);"
                 />
-                
+
+
+                <panel width="100%" height="0.5h" noclick="true" />
+                <instance name="mapedit_seperator" />
+
+                <!-- Effects -->
+                <instance
+                        name="mapedit_property_combobox"
+                        label="mapedit_entity_property_effect"
+                        onselect="Set('effect', this); PlayEffect(this, -1);"
+                        tip_id="entity_effect"
+                        onload="
+                        CreateString('effect', '');
+                        Clear();
+                        AddDirList('Ncombobox_item', '/', '*.effect', true, true, 'font', 'dyn_8');
+                    "
+                />
+                <panel width="100%" height="0.5h" noclick="true" />
+                <instance
+                        name="button2"
+                        height="2.2h" width="15.0h"
+                        label="mapedit_entity_property_effect_expire"
+                        onclick="Cmd('ExpireEffects');"
+                />
+                <instance
+                        name="button2"
+                        height="2.2h" width="15.0h"
+                        label="mapedit_entity_property_effect_stop"
+                        onclick="Cmd('StopEffects');"
+                />
+                <instance
+                        name="button2"
+                        height="2.2h" width="15.0h"
+                        label="mapedit_entity_property_effect_replay"
+                        onclick="PlayEffect(effect, -1);"
+                />
+
                 <panel x="-0.8h" width="18.0h" height="-0.6h" align="right" valign="top" noclick="true">
                     <panel width="100%" height="30.5h" noclick="true" />
                 </panel>

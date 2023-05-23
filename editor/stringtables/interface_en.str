@@ -187,6 +187,10 @@ mapedit_entity_property_type                Type
 mapedit_entity_property_model               Model
 mapedit_entity_property_anim                Animation
 mapedit_entity_property_anim_replay         Replay Animation
+mapedit_entity_property_effect              Effect
+mapedit_entity_property_effect_expire       Expire Effects
+mapedit_entity_property_effect_stop         Stop Effects
+mapedit_entity_property_effect_replay       Replay Effect
 mapedit_entity_property_skin                Skin
 mapedit_entity_property_target0             Target #0
 mapedit_entity_property_target1             Target #1
