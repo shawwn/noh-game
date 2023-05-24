@@ -5685,7 +5685,8 @@
                                             </panel>
                                         </widgetstate>
                                         <dirlistitems path="/world/sky/cloud_shadows" wildcard="*.tga" showpath="false" x="0.4h" font="dyn_9" color="white" textvalign="center" shadow="true" />
-                                    </combobox>                             
+                                        <dirlistitems path="/world/sky/cloud_shadows" wildcard="*.png" showpath="false" x="0.4h" font="dyn_9" color="white" textvalign="center" shadow="true" />
+                                    </combobox>
                                 </panel>
                                 <instance name="tip_mark" tip_id="enviro_cloud_tex_tip" width="2.0h" height="2.0h" valign="center" align="right" />                 
                             </panel>                            
