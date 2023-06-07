@@ -8,7 +8,7 @@
     <trigger name="UserNameCheckResult"/>
     <form
         name="UserNameCheck"
-        host="www.heroesofnewerth.com"
+        host="!masterserver"
         target="/signup/nick_check.php"
         statustrigger="UserNameCheckStatus"
         resulttrigger="UserNameCheckResult"
@@ -22,7 +22,7 @@
     <trigger name="CreateAccountResult"/>
     <form
         name="CreateAccount"
-        host="www.heroesofnewerth.com"
+        host="!masterserver"
         target="/signup/client_create_account.php"
         statustrigger="CreateAccountStatus"
         resulttrigger="CreateAccountResult"
@@ -90,7 +90,7 @@
                     <frame texture="/ui/info/backdrop.tga" borderthickness="2.0h" color="1 1 1 .5" noclick="1" />
                     <frame color="invisible" bordercolor="#455166" borderthickness="1" noclick="1" />
 
-                    <label y="3.6h" width="-1.4h" height="3.0h" align="center" textalign="left" font="dyn_9" wrap="1" color="#ffaa00" shadow="true" shadowcolor="black" noclick="1">maincacct_tip_nickname</label>
+                    <label y="3.6h" width="-1.4h" height="3.0h" align="center" textalign="left" font="dyn_9" wrap="1" color="#ffaa00" shadow="true" shadowcolor="black" noclick="1">create_acc_label_nick_name_tip</label>
 
                     <panel y="0.4h" width="-1.4h" height="3.0h" align="center">
                         <label
@@ -99,7 +99,7 @@
                             textalign="left" textvalign="center"
                             font="dyn_10" color="white" shadow="true" shadowcolor="black"
                             noclick="true"
-                            content="maincacct_label_c_nickname"
+                            content="create_acc_nickname"
                             watch="UpdateCreateAccountForm"
                             ontrigger="If(_nick_valid, SetColor('white'), SetColor('red'));"
                         />
@@ -163,7 +163,7 @@
                 <instance
                     name="create_account_field"
                     y="8.4h"
-                    label="maincacct_label_first_name"
+                    label="create_acc_first_name"
                     hastip="0"
                     order="4"
                     fieldname="field_firstname"
@@ -176,7 +176,7 @@
                 <instance
                     name="create_account_field"
                     y="11.4h"
-                    label="maincacct_label_last_name"
+                    label="create_acc_last_name"
                     hastip="0"
                     order="5"
                     fieldname="field_lastname"
@@ -189,7 +189,7 @@
                 <instance
                     name="create_account_field"
                     y="14.4h"
-                    label="maincacct_label_email"
+                    label="create_acc_email"
                     hastip="0"
                     order="6"
                     fieldname="field_email"
@@ -201,7 +201,7 @@
                 <instance
                     name="create_account_field"
                     y="17.4h"
-                    label="maincacct_label_confirm_email"
+                    label="create_acc_confirm_email"
                     hastip="0"
                     order="7"
                     fieldname="field_email2"
@@ -214,7 +214,7 @@
                 <instance
                     name="create_account_field"
                     y="20.4h"
-                    label="maincacct_label_password"
+                    label="create_acc_password"
                     hastip="0"
                     order="8"
                     passchar="*"
@@ -228,7 +228,7 @@
                 <instance
                     name="create_account_field"
                     y="23.4h"
-                    label="maincacct_label_confirm_password"
+                    label="create_acc_confirm_password"
                     hastip="0"
                     order="9"
                     passchar="*"
@@ -253,7 +253,7 @@
                 <instance
                     name="create_account_field"
                     y="0.4h"
-                    label="maincacct_label_refering_account"
+                    label="main_create_account_referer"
                     hastip="1"
                     fieldwidth="-1.8h"
                     order="10"
@@ -284,7 +284,7 @@
                         Call('right_widgets', 'SlideX(\'26.8%\', 500);');
                     "
                 >
-                    <label textalign="center" wrap="1" font="dyn_10" color="white" noclick="1">maincacct_label_tos</label>
+                    <label textalign="center" wrap="1" font="dyn_10" color="white" noclick="1">tos_header</label>
                 </panel>
 
                 <!-- Create account button -->
@@ -293,7 +293,7 @@
                     y="5.0h"
                     width="26.0h" height="2.4h"
                     align="center"
-                    label="maincacct_button_create_new_acct"
+                    label="create_acc_label_finsh_create_account"
                     enabled="false"
                     watch="UpdateCreateAccountForm"
                     ontrigger="
@@ -340,7 +340,7 @@
                             y="-1.0h"
                             width="18.0h" height="2.4h"
                             align="center" valign="bottom"
-                            label="maincacct_label_correct_an_error"
+                            label="creditcard_label_correct_error"
                             onclick="PlaySound('/shared/sounds/ui/button_click.mp3'); Call('create_problem', 'FadeOut(250);');"
                             visible="0"
                             watch="CreateAccountResult"

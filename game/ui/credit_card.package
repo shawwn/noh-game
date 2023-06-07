@@ -6,7 +6,7 @@
     <trigger name="PrimeUpgradeResult"/>
     <form
         name="PrimeUpgrade"
-        host="www.heroesofnewerth.com"
+        host="!masterserver"
         target="/signup/client_new_sub.php"
         statustrigger="PrimeUpgradeStatus"
         resulttrigger="PrimeUpgradeResult"
