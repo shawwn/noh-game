@@ -124,7 +124,17 @@
                     textalign="center"
                     textvalign="center"
                     watch="LocalGameList"
-                    onload="CreateString('_browser_last_selected_server', ''); CreateString('_browser_last_selected_server_name', ''); CreateBool('_valid_server', false); CreateBool('_reverse_sort', false); CreateInt('_last_sorted', 0);"
+                    onload="
+                    CreateString('_browser_last_selected_server', '');
+                    CreateString('_browser_last_selected_server_name', '');
+                    CreateBool('_valid_server', false);
+                    CreateBool('_reverse_sort', false);
+                    CreateInt('_last_sorted', 0);
+                    "
+                    watch0="GameListClear"
+                    ontrigger0="ClearData();"
+                    watch1="GameListAdd"
+                    ontrigger1="AppendData(param0, param0, param1, param2, param16#'/'#param17, param3#' '#param4);"
                     onshow="GetLocalGameList();"
                     onclick="
                         _valid_server = !StringEquals(dataid, 'head');
@@ -145,10 +155,13 @@
                         If(_valid_server, Set(_valid_server, !StringEmpty(dataid)));
                         If(_valid_server, Set(_browser_last_selected_server, dataid));
                         If(_valid_server, Set(_browser_last_selected_server_name, GetData(0, row)));
+                        ##
                         If(_valid_server, Call('game_list_selected', 'SetVisible(true); SetY(\'' # GetCellPositionY(col, row) # '\');'));
                         If(_valid_server, Disconnect());
                         If(_valid_server and !IsServerNumPassworded(dataid), Connect(dataid, _browser_last_selected_server));
                         If(_valid_server and IsServerNumPassworded(dataid), ShowWidget('connect_password'));
+                        ##
+                        If(_valid_server, Connect(dataid, _browser_last_selected_server, false));
                         If(StringEquals(dataid, 'head') and _last_sorted == col, Set(_reverse_sort, 1));
                         If(StringEquals(dataid, 'head') and _last_sorted != col, Set(_reverse_sort, 0));
                         If(_reverse_sort and StringEquals(dataid, 'head') and (col == 4 or col == 5 or col == 6 or col == 7), SortByColNumReverse(col));
